@@ -1,0 +1,10 @@
+Small follow-up to task 2. Read AGENTS.md, docs/EXPERIMENT.md, docs/TASK2.md first.
+
+Diagnosis (seen-10, PPO 3.5M steps, deterministic): PPO reaches top speed but overshoots corners: 2-14 off-track events per lap, 0/10 laps finished within 1000 steps, sometimes stuck on grass for hundreds of steps. Add two standard agent-interface options for the SB3 RL methods (PPO and SAC). They must NOT change the env's reward, termination, physics, metrics or per-frame logging:
+
+1. `--action-repeat N` (default 1 = current behaviour): the agent picks an action every N env frames; rewards over the N frames are summed for training. TimeLimit stays 1000 env frames (so 250 decisions at N=4). gamma stays as configured.
+2. `--throttle-axis` flag: the policy outputs 2 values [steer, throttle] in [-1,1]^2; gas = max(throttle, 0), brake = max(-throttle, 0). Default off.
+
+Both are recorded in config.json and applied automatically when the saved model is loaded for evaluation through cars.eval.runner: the runner/env still steps one frame at a time and logs every frame; the SB3 policy adapter must hold its action for N frames (and only observe/decide on decision frames) so evaluation matches training exactly. Periodic training-time evaluation must use the same wrappers. Existing runs (no such keys in config) load with the defaults.
+
+Add tests: action repeat sums rewards and preserves episode length/termination; adapter-held actions in the runner reproduce the training env's trajectory for a deterministic policy; throttle mapping bounds; old configs still load. Run `uv run pytest -q`. Then a short smoke: PPO 50k steps with --action-repeat 4 --throttle-axis on seen-10, evaluate on seen-10. Do NOT run long trainings, do NOT touch unseen/hard, do NOT git commit. Note: other training processes (runs/rl_ppo/full_inf_s0, runs/rl_sac/full_inf_s0) are running right now: do not modify, kill, or write into their run directories, and keep the smoke small (n-envs 4). Update docs/TASK2.md with the new options. End with a short report.

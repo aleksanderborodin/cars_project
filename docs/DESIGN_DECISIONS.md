@@ -4,7 +4,10 @@ Updated 2026-10-27. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
 [Research assessment](RESEARCH_PLAN.md) · [Status](STATUS.md)
 
 This is the concrete starting configuration proposed after the research review.
-It is not implemented, benchmarked, or the final frozen study. Numerical defaults
+It is not the final frozen study. An initial implementation/pilot now exists in
+[PILOT_2026-10-28.md](PILOT_2026-10-28.md), with deviations from the larger proposal
+below: a finite behavior grid, simple road prior and fitted ego dynamics.
+Numerical defaults
 below may change using development evidence only; log the reason and freeze them
 before final evaluation. The experiment specification remains authoritative.
 User decisions and optional ideas are recorded in [USER_INTENT.md](USER_INTENT.md).
@@ -51,6 +54,9 @@ system; **low** in a new algorithmic contribution or a native-benchmark advantag
 | Training replications | One seed for engineering; three for exploratory comparisons; five for headline learners | High in independent replication; medium in sufficiency | Increase model seeds when between-training variability dominates |
 
 These are requested capacities for a new manifest system, not existing lists.
+See [RUN_READINESS.md](RUN_READINESS.md) for the partition implementation,
+separate random streams and pre-run acceptance gates. Reserve the calibration
+partition early, but only use it if the calibration experiment is pursued.
 Reservation and overlap checking must respect the prohibition on inspecting
 held-out identities/results during design. Audit historical training-side records
 before reserving new partitions. Whole tracks and related counterfactual variants

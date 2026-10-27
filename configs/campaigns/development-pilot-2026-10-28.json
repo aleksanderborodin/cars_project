@@ -1,0 +1,42 @@
+{
+  "stage": "adaptive_engineering_development_pilot",
+  "registration": "retrospective ledger; not preregistered confirmatory research",
+  "partition": "development",
+  "tracks": 20,
+  "protocol": {"view": "local", "radius": 30.0, "resolution": 1.0, "action_repeat": 4, "version": 1},
+  "runs": [
+    {"label": "Local pursuit", "path": "runs/local_pursuit/devpilot_20261028_local20"},
+    {"label": "Fixed behavior, speed 60", "path": "runs/fixed_behavior/devpilot_20261028_fixed60"},
+    {"label": "Narrow data, wider search", "path": "runs/model_search/devpilot_20261028_search20"},
+    {"label": "Narrow data, bounded search", "path": "runs/model_search/devpilot_20261028_narrow_bounded"},
+    {"label": "Mixed data, wider search", "path": "runs/model_search/devpilot_20261028_mixed_wide"},
+    {"label": "Mixed data, bounded search (seed 0)", "path": "runs/model_search/devpilot_20261028_mixed_bounded"},
+    {"label": "Recurrent PPO, 100k pilot", "path": "runs/recurrent_ppo/devpilot_20261028_recurrent20"},
+    {"label": "Full-map expert (privileged)", "path": "runs/global_expert/devpilot_20261028_expert20"}
+  ],
+  "replicated_variant": [
+    "runs/model_search/devpilot_20261028_mixed_bounded",
+    "runs/model_search/devpilot_20261028_mixed_bounded_s1",
+    "runs/model_search/devpilot_20261028_mixed_bounded_s2"
+  ],
+  "reference": "runs/fixed_behavior/devpilot_20261028_fixed60",
+  "wider_candidate_speeds": [30, 40, 50, 60, 70, 80, 90],
+  "bounded_candidate_speeds": [20, 25, 30, 35, 40, 45, 50],
+  "steering_gains": [0.8, 1.0, 1.2],
+  "horizon_decisions": 20,
+  "selection_history": [
+    "Initial reconstruction bug fixed using development observations; both earlier smoke artifacts retained.",
+    "Initial search underperformed on 20 development tracks; public ego/action logs suggested out-of-distribution dynamics.",
+    "Collected mixed-speed data and ran a 2x2 data/candidate-grid comparison.",
+    "Repeated the unchanged mixed-data/bounded-grid configuration with collection seeds 1 and 2 after observing seed 0.",
+    "All analyses are exploratory and unadjusted for this adaptive selection."
+  ],
+  "user_only_monitor": {
+    "public_status": "runs/user_monitor/devpilot_20261028_user_monitor/status.json",
+    "ordinary_driving_repeat": "runs/model_search/devpilot_20261028_user_monitor",
+    "restriction": "No real oracle ranks, returns or regrets may be read into this analysis or any agent/training/selection loop.",
+    "excluded_from_statistics": true
+  },
+  "native_smoke": "runs/recurrent_ppo/devpilot_20261028_native_eval_smoke",
+  "held_out_evaluation": false
+}

@@ -44,6 +44,7 @@ Important distinctions from those sources:
 | Hafner et al., DreamerV3, Nature 2025 | [Published paper](https://www.nature.com/articles/s41586-025-08744-2) | [Author code](https://github.com/danijar/dreamerv3) | Recurrent visual world-model comparator; profile a small configuration first |
 | Fujimoto et al., MR.Q, 2025 | [Paper](https://arxiv.org/abs/2501.16142) | [Official code](https://github.com/facebookresearch/MRQ) | Additional modern model-free comparator; CarRacing adapter needed |
 | Recurrent PPO implementation | [SB3-Contrib documentation](https://sb3-contrib.readthedocs.io/en/master/modules/ppo_recurrent.html) | [Official repository](https://github.com/Stable-Baselines-Team/stable-baselines3-contrib) | First practical memory baseline; match observations, labels, and frame budgets |
+| RL Zoo recurrent CarRacing recipe | [Pinned configuration](https://github.com/DLR-RM/rl-baselines3-zoo/blob/61956d90d9f8ac126043ed4024efa12a462d97e1/hyperparams/ppo_lstm.yml) | Upstream commit pinned 2026-10-28 | Configuration audit only; our 100k-frame engineering adapter is not its reproduction |
 | Hafner, Yan & Lillicrap, Dreamer 4, 2025 | [Paper](https://arxiv.org/abs/2509.24527) | No reproduction selected | Contemporary video-world-model context; full Minecraft-scale study is outside scope |
 
 TD-MPC2, DreamerV3, and MR.Q are credible competitors, not verified current
@@ -59,6 +60,7 @@ controls, but beating them alone would not support a strong world-model claim.
 | Bansal et al., TaskMet, NeurIPS 2023 | [Paper](https://arxiv.org/abs/2312.05250), [code](https://github.com/facebookresearch/taskmet) | Task-driven predictive metrics; public code needs an execution audit |
 | Sunberg & Kochenderfer, continuous POMDP planning / POMCPOW, ICAPS 2018 | [Paper](https://arxiv.org/abs/1709.06196) | Belief planning and observation-dependent future actions |
 | Agarwal et al., *Deep Reinforcement Learning at the Edge of the Statistical Precipice*, NeurIPS 2021 | [Project and paper](https://agarwl.github.io/rliable/), [code](https://github.com/google-research/rliable) | IQM, uncertainty intervals, and reproducible comparison |
+| Henderson et al., *Deep Reinforcement Learning that Matters*, AAAI 2018 | [Paper](https://arxiv.org/abs/1709.06560) | Variability, reproducibility and standardized experimental reporting; informs pre-run gates |
 | Tang, Nguyen & Ha, *Neuroevolution of Self-Interpretable Agents*, GECCO 2020 | [Author project](https://attentionagent.github.io/) | Historical visual CarRacing context, not a current SOTA target |
 | Arockiaraj, Chang & Yee, *Transfer Learning for Customized Car Racing Environments*, 2026 preprint | [Paper](https://arxiv.org/html/2605.17928v1) | Recent simulator-specific context, not an authoritative ranking |
 | Gymnasium CarRacing | [Official documentation](https://gymnasium.farama.org/environments/box2d/car_racing/) | Base task and standard input/action/reward contract; record installed version |

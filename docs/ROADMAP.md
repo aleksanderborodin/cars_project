@@ -1,13 +1,17 @@
 # Roadmap and decision gates
 
-Updated 2026-10-27. [Index](../README.md) · [User intent](USER_INTENT.md) ·
+Updated 2026-10-28. [Index](../README.md) · [User intent](USER_INTENT.md) ·
 [Status](STATUS.md) · [Proposed numerical settings](DESIGN_DECISIONS.md)
 
 The main project is a working modular prediction → internal simulation/search →
 action → observation loop. Predictor-space selection, expert variants, and future
-agentic evolution must not silently replace this goal. All implementation stages
-below remain open. Use permitted seen-side development data; keep unseen/hard
+agentic evolution must not silently replace this goal. Initial A/B implementation
+and development pilots have run; see [the report](PILOT_2026-10-28.md).
+Use permitted seen-side development data; keep unseen/hard
 identities and results sealed until the frozen final campaign.
+Use [RUN_READINESS.md](RUN_READINESS.md) for the two freezes, data/provenance
+requirements, pilot gates and consequences of later protocol changes. No new
+paper collection or expensive training starts before the infrastructure gates.
 
 | Order | Deliverable | Evidence / gate |
 |---|---|---|
@@ -25,6 +29,12 @@ identities and results sealed until the frozen final campaign.
 
 ## First implementation sprint: A–B
 
+Status on 2026-10-28: disjoint namespaces, local/native interfaces, fitted ego
+dynamics, deterministic behavior search, local/expert references and a recurrent
+adapter are implemented and exercised. Basic-loop and reproducibility checks pass.
+Competitive control and strong-baseline gates do not yet pass. Multi-world road
+beliefs, modern reproductions and the final study are not completed.
+
 1. Implement the agent/evaluator boundary and versioned information contracts.
 2. Implement disjoint manifests before new paper training. Add provenance and costs.
 3. Verify official behavior, deterministic replay, input isolation, and logging.
@@ -33,6 +43,10 @@ identities and results sealed until the frozen final campaign.
 5. Compare with the retained expert and a full-map diagnostic on development data.
    Run a small native-input pilot and profile the entire decision pipeline.
 6. Save the working-system report, limitations, and next component priorities.
+
+The [first report](PILOT_2026-10-28.md) supplies that record. The next work is model/
+control robustness and a credible learned comparison. User-only ranking
+diagnostics cannot supply optimization feedback.
 
 A–B is roughly a one-to-two-week engineering target, not a completion promise.
 Profile actual throughput before fixing the full experimental budget. A geometry

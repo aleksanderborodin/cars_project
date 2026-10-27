@@ -9,6 +9,13 @@ trained predictor by downstream validation driving performance. It does not make
 special decision-focused predictor training the main project or a prerequisite.
 No new representation has been shown to work yet.
 
+The user has also proposed a **future** regret-based selection study, with rank
+secondary and potentially continuous/adaptive behavior optimization. Its purpose,
+attribution and limitations are in [RESEARCH_LOG.md](RESEARCH_LOG.md), R8. It is
+not active: the existing privileged ranking monitor is user-only and must not feed
+any agent, training, tuning or selection process. Ordinary racing outcomes remain
+the current permitted development feedback and system-level paper endpoints.
+
 ## 1. The distinction to preserve
 
 The user proposes the following outer loop:

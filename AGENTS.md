@@ -21,21 +21,31 @@ at `README.md`; use `docs/STATUS.md` to distinguish implemented code from propos
 
 ```text
 src/cars/
-  env/        state-only environment, state schema, metrics, existing split helpers
+  env/        legacy environment/state plus restricted local/native protocols and partitions
   policies/   privileged Policy interface, pure pursuit, MLP and SB3 policy loaders
   il/         behavior cloning, DAgger, demonstration collection
   rl/         SB3 PPO/SAC and action wrappers
   eval/       privileged evaluator, episode logs, aggregate reports
+  models/     fitted observed-ego dynamics
+  planning/   local references and finite candidate behavior search
+  research/   partition-enforced collection, fitting, recurrent training and development evaluation
+  monitoring/ one-way user-only privileged ranking sidecar
   training.py training seeds, metadata, run creation
   cli.py      uv run python -m cars.cli <command>
 scripts/      training progress utility
 tests/        pytest
 docs/         active specification, research, references, roadmap, status, development
 runs/         outputs and historical artifacts, gitignored
+reports/      small public development tables, figures and provenance
+private_diagnostics/ user-only monitor outputs, gitignored; agents must not read
 ```
 
-The local sensor interface, geometry-belief model, MPC, visual model, and modern
-baseline adapters are planned; do not describe them as implemented.
+The new `env/partitions.py`, `env/protocol.py`, `models/`, `planning/` and `research/`
+path implements restricted local/native protocols, fitted dynamics, deterministic
+finite behavior search and a recurrent-PPO adapter. `monitoring/` is a separate
+user-only sidecar. See the development report for measurements. Learned road
+distributions, scenario MPC, CEM, local visual reconstruction and modern world-model
+reproductions remain planned; do not describe them as implemented.
 
 ## Rules
 
@@ -44,8 +54,14 @@ baseline adapters are planned; do not describe them as implemented.
   Diagnostic generators and action/observation wrappers must be explicitly named.
 - Never read `unseen` or `hard` seeds/results while training or designing methods.
   Do not launch final held-out evaluation before freezing the study.
+- Privileged candidate-ranking outputs in `private_diagnostics/` are user-only.
+  Never read, summarize, index, or use real ranks/oracle returns/regrets in any
+  agent, training, tuning, checkpoint selection, or method-design loop. The
+  monitor is a one-way sidecar. Only public technical status/costs and synthetic
+  unit-test values may be inspected. This is an explicit user restriction.
 - Build disjoint train/dev/calibration/test manifests before new paper training;
-  current `seen-inf` sampling does not implement those exclusions.
+  use the research namespace/manifest implementation. Legacy `seen-inf` sampling
+  does not implement those exclusions and is not a new-paper collection path.
 - Local methods must not receive full tracks, raw truth, seeds, global progress,
   hidden-map simulator clones, or future scenario identities. Current APIs are
   privileged and must not be relabeled local.

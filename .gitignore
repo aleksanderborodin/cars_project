@@ -7,3 +7,4 @@ target/
 logs/
 .pytest_cache/
 videos/
+private_diagnostics/

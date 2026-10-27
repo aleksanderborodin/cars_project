@@ -466,9 +466,14 @@ full K=1/10/100/infinite grid are retired to the archive branch; neither address
 the central new question.
 Historical artifacts remain valid only under their original protocol.
 
-Verified gaps in current code:
+Historical gaps identified before the 2026-10-28 implementation (the table below
+is the original migration rationale, not current status). Restricted interfaces,
+namespaces, fitted dynamics, finite behavior search and a recurrent adapter now
+exist in a separate research path; see [STATUS.md](STATUS.md) and
+[PILOT_2026-10-28.md](PILOT_2026-10-28.md). Learned road beliefs and modern
+reproductions remain open.
 
-| Location | Current behavior | Required work |
+| Location | Behavior at initial audit | Work identified at that audit |
 |---|---|---|
 | `src/cars/policies/base.py`, `eval/runner.py` | Every policy receives full `TrackInfo` at reset and raw state at each step | New local protocol that never hands truth to the agent |
 | `src/cars/env/state.py` | StateObs includes approximately 140 m of future centreline/curvature and global progress | Visible-only, versioned sensors; do not just zero a few entries |
@@ -478,9 +483,10 @@ Verified gaps in current code:
 | Environment/logging | Truth-rich logs are useful for analysis | Agent-facing observation records separate from evaluator-only truth |
 | No geometry-belief/planning packages | No implemented forecasting or MPC module | Small typed interfaces for perception, belief, dynamics, and planning |
 
-Suggested additions, after this proposal: `env/observations.py`,
+Original suggested additions at proposal time: `env/observations.py`,
 `env/visibility.py`, `perception/`, `models/geometry.py`, `models/dynamics.py`,
-`planning/`, and `eval/diagnostics.py`. Names are suggestions, not existing APIs.
+`planning/`, and `eval/diagnostics.py`. These were suggested names; the actual
+2026-10-28 implementation paths are listed in the status/development documents.
 Avoid a large framework before the hypothesis has survived a pilot.
 
 The first concrete implementation milestone is **an information-safe local

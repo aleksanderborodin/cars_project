@@ -7,8 +7,14 @@ from cars.policies.baseline import BaselinePolicy
 
 
 def main() -> None:
+    import sys
+    if len(sys.argv) > 1 and sys.argv[1] == "research":
+        from cars.research.cli import main as research_main
+        research_main(sys.argv[2:])
+        return
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
+    commands.add_parser("research", help="partition-enforced development experiments; research --help")
     evaluation = commands.add_parser("eval")
     evaluation.add_argument("--method", choices=("base", "il_bc", "il_dagger", "rl_ppo", "rl_sac"), required=True)
     evaluation.add_argument("--model-path", help="learned run directory or model file (with normalization alongside)")

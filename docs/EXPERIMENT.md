@@ -1,10 +1,12 @@
 # Experiment design: modular prediction and control by search
 
-Updated 2026-10-27 following the research discussion. The project now targets a
+Updated 2026-10-28 following the research discussion. The project now targets a
 scientific paper about modular world models and online control, using Gymnasium CarRacing
 only and the current workstation. Physical robots and other simulators are out
-of scope. The new protocols, models, planners, and experiments below are
-**proposed, not implemented**.
+of scope. A first restricted local/native implementation and deterministic search
+pilot now exist; see [STATUS.md](STATUS.md) and the
+[development report](PILOT_2026-10-28.md). The broader learned road distributions,
+scenario planning, modern comparisons and final campaign below remain proposed.
 
 Read [USER_INTENT.md](USER_INTENT.md) for the user's decisions and paper goal.
 [RESEARCH_PLAN.md](RESEARCH_PLAN.md) details the geometry branch;
@@ -14,6 +16,8 @@ confidence, and alternatives are recorded in [DESIGN_DECISIONS.md](DESIGN_DECISI
 they remain development choices until frozen. The previous experiment
 is preserved on the [archive branch](ARCHIVE.md). Existing code and artifacts
 still implement that earlier protocol and retain their original interpretation.
+The [run-readiness plan](RUN_READINESS.md) specifies what to freeze before data
+collection, what to select in pilots, and what must pass before expensive runs.
 
 ## Research question
 
@@ -111,6 +115,10 @@ optimization route; its code remains archived now.
 - Before training, implement disjoint training, development, calibration, and
   test manifests. Development/calibration use permitted seen-side data. Audit
   overlap against historical training records; `seen-inf` needs exclusions.
+- Freeze the environment/information contract and partition mechanism before
+  paper data collection. Train/dev/test use disjoint tracks from the same
+  generator. Keep track, learning and planning random streams separate; log the
+  actual training tracks and reserve final identities without inspecting them.
 - Split supervised datasets by whole track; related diagnostic variants remain
   in one partition. Do not randomly split adjacent frames.
 - Select checkpoints, budgets, sensor ranges, risk settings, and ablations on
@@ -153,3 +161,8 @@ All runs retain immutable `runs/<method>/<run_id>/config.json`, models, cost
 records, and episode logs. Add protocol versions, partition hashes, supervision,
 sensor/history settings, and planning budgets. Preserve failures. Finish code
 changes with `uv run pytest -q`.
+
+The optional privileged candidate-ranking monitor is **user-only**. Its real
+outputs must never be read by agents or consumed by training, validation selection,
+tuning, or assistant method analysis. Only technical status/costs and synthetic
+tests are inspectable. See [RESEARCH_LOG.md](RESEARCH_LOG.md), R4–R5.

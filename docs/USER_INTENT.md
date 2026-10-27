@@ -1,11 +1,14 @@
 # User intent, decisions, and paper goal
 
-Updated 2026-10-27. [Index](../README.md) · [Experiment contract](EXPERIMENT.md) ·
+Updated 2026-10-28. [Index](../README.md) · [Experiment contract](EXPERIMENT.md) ·
 [Research assessment](PREDICTION_SELECTION.md)
 
 This document records the user's intended project in plain English. Paraphrases
 are identified as such. Assistant judgments are separate from user decisions.
 It is a living record, not evidence of a measured result or an accepted novelty claim.
+New questions, attributed ideas, motivations and probes are recorded in
+[RESEARCH_LOG.md](RESEARCH_LOG.md). Preserve the author and purpose when updating
+an idea rather than converting a question into an agreed design.
 
 ## Confirmed project constraints
 
@@ -17,6 +20,10 @@ It is a living record, not evidence of a measured result or an accepted novelty 
   can be validated independently and in combination.
 - Keep the active repository documented and indexed. Preserve obsolete work on
   archive branches, rather than retaining contradictory active plans.
+- Before main runs, anticipate partition, environment and experiment-design
+  problems so results remain useful and avoidable reruns are minimized. The
+  assistant's proposed implementation gates are in [RUN_READINESS.md](RUN_READINESS.md);
+  numerical partition counts and budgets remain proposals.
 
 ## Main system the user wants
 
@@ -157,3 +164,16 @@ Implement the common information/data/evaluation foundation and a working modula
 prediction → simulation/search → action loop. Retain expert diagnostics and run an
 early native-input pilot. Then compare complete systems and optionally investigate
 predictor spaces/selection. Agentic evolution remains a later experiment.
+
+The user additionally proposes future Bayesian/adaptive search over possible roads
+and promising behaviors/controller designs. An immediate candidate-ranking metric
+uses privileged outcomes to assess the original choice among fixed candidates.
+**Its real outputs are user-only:** it may run online, but no agent, training,
+tuning, checkpoint-selection or assistant-analysis process may consume them.
+This restriction takes precedence over using that diagnostic for method design.
+Details and motivations are preserved in research-log entries R3–R5.
+Another future option is regret-based prediction/model selection, with rank as
+a diagnostic and potentially continuous/adaptive behavior search instead of the
+current finite grid. It preserves normal predictor training as the default and
+does not authorize using current private oracle results. See research-log R8 for
+the user's purpose and the assistant's caveats.

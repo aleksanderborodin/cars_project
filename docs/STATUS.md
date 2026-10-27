@@ -1,61 +1,62 @@
 # Implementation and evidence status
 
-Updated 2026-10-27. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
-[Roadmap](ROADMAP.md)
+Updated 2026-10-28. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
+[Roadmap](ROADMAP.md) · [Actual development results](PILOT_2026-10-28.md)
 
-Concrete starting choices and their confidence are in
-[DESIGN_DECISIONS.md](DESIGN_DECISIONS.md). These settings remain proposed; the
-manifest capacities and model configurations have not been instantiated.
-The main system and optional expert, predictor-selection, and future evolution
-experiments are recorded in [USER_INTENT.md](USER_INTENT.md).
+The first development experiment is implemented and complete. The full paper
+campaign has not started. User decisions are in [USER_INTENT.md](USER_INTENT.md);
+attributed questions, ideas and probes are in [RESEARCH_LOG.md](RESEARCH_LOG.md).
 
-## Implemented foundation
+## Implemented
 
-| Component | Actual capability | Limitation for the proposed paper |
+| Component | Actual capability | Remaining limitation |
 |---|---|---|
-| `env/make.py`, `carracing.py` | State-only CarRacing factory; official standard dynamics/reward; deterministic track generation | No local observation protocol or visual training factory |
-| `env/state.py` | Truth extraction, track geometry, StateObs v1 | Privileged: future centreline/curvature and global features |
-| `policies/base.py`, `eval/runner.py` | Full-track reset and raw-state control evaluation | Unsuitable for information-restricted claims without a new interface |
-| `policies/baseline.py` | Pure-pursuit expert and speed controller | Privileged expert, not a local baseline |
-| `il/`, `policies/torch_mlp.py` | BC/DAgger and normalized MLP artifacts | Privileged teacher/data; no matched local supervision controls yet |
-| `rl/`, `policies/sb3.py` | Feedforward PPO/SAC, normalization, action-repeat and throttle options | Neither recurrence nor a modern world-model comparison |
-| `training.py` | Seeded collection, config/cost records, immutable run creation | No new disjoint partition manifests or `seen-inf` exclusions |
-| `env/metrics.py`, `eval/episode_log.py` | Return, completion, departure/exit metrics; reproducible detailed logs | Truth-rich logs must be separated from future agent-facing data |
-| `eval/report.py` | Mean/std and rliable IQM/bootstrap summaries | Groups only method/split; not ready for protocol/condition comparisons |
+| Legacy environment/policies/IL/RL | Official standard dynamics, privileged expert, BC/DAgger, PPO/SAC | Legacy interfaces/splits are not the restricted research protocol |
+| env/partitions.py | Disjoint namespaces, fixed dev/calibration manifests, test commitment, resumable training streams | Final-test runner intentionally absent; audit covers recorded historical training configs only |
+| env/protocol.py | Restricted local road mask plus ego sensors; native RGB without numeric state; sanitized info; action repeat | Local geometry is an ideal sensor; fixed-view local RGB not implemented |
+| models/dynamics.py | Observed-transition ridge dynamics, save/reload and integrated motion | Deterministic low-order model; no tire-state memory, ensemble or learned road belief |
+| planning/ | Local pursuit, same-family fixed controller, 21-candidate/20-step behavior search | Single straight road continuation; no CEM or multi-world planning |
+| research/data.py | Partition-checked collection, model fitting and development diagnostics | No large offline corpus, calibrated predictor or modern pretrained model |
+| research/recurrent.py | Local/native CNN-LSTM PPO adapter; recurrent reload; training-state continuation with fresh episodes | 100k pilot did not learn useful driving; strong reproduction remains open |
+| research/evaluation.py, eval/paired.py | Common development tracks, traces/costs, protocol checks, paired and crossed model/track intervals | Small/adaptive study; no final paper campaign |
+| monitoring/ | One-way online oracle-ranking sidecar, prefix replay, private live report | User-only outputs; no agent/learning/selection/assistant access to real ranking values |
+| Run artifacts | Immutable configs, source/dependency snapshots, hashes, datasets/models/traces | Ignored large runs/private reports need separate backup |
 
-## Planned, not implemented
+The legacy Policy.reset(track) / StateObs v1 path remains privileged. New
+restricted experiments use the research CLI; do not relabel legacy results or
+seen-inf collection as the new protocol.
 
-- Local geometry and fixed-view local vision observation contracts and leakage tests.
-- Disjoint training/development/calibration/test manifests and historical overlap audit.
-- Fitted vehicle dynamics, deterministic MPC, and scenario MPC with a simple prior.
-- Learned distribution of road continuations, calibration, and observation-aware planning.
-- Optional comparison of normally trained predictor spaces/configurations selected
-  by downstream validation driving; not end-to-end driving-loss training by default.
-- Recurrent model-free baseline; TD-MPC2, DreamerV3, and Valdi adapters/reproductions.
-- Visual reconstruction and same-supervision representation controls.
-- Protocol-aware paired reporting, latency diagnostics, frozen final study, paper results.
+## Measurements
 
-## Evidence ledger
+- Revised mixed-data/bounded-grid search: mean return 687.0 across three fitted
+  models and 20 common development tracks; 20% completion in each run.
+- Same-family fixed-speed reference: 613.4 return, 30% completion. The search
+  difference interval includes zero and completion is lower: no established win.
+- Full-map/raw-state expert: 888.5 return, 90% completion; privileged reference.
+- Recurrent PPO: 100,349 native training frames, poor driving; not a strong baseline.
+- Native RGB: 2,048-frame training smoke, two-track evaluation and recurrent reload
+  passed integration checks; not a visual performance result.
+- Monitor isolation: actions, rewards and permitted observations identical over
+  20 episodes with/without monitoring. Only public technical status/costs checked;
+  real oracle-ranking values were not read.
 
-| Statement | Status |
-|---|---|
-| The original foundation passed its tests | Verified before archival: 48 tests passed |
-| The retained foundation passes after cleanup | Verified: 47 tests passed; one Rust-specific test was archived with its implementation |
-| New protocols/methods outperform competitors | Not measured |
-| The candidate mechanism is novel | Unestablished; close prior art identified |
-| Standard CarRacing SOTA is beaten | Not established; no authoritative matched ranking verified |
-| Physical transfer or formal safety is demonstrated | Out of scope / not demonstrated |
-| Referenced papers and official code were surveyed | Literature review completed; no external reproduction executed |
+Full tables, costs, adaptive choices and uncertainty are in the pilot report.
+No final-test identities/results or legacy unseen/hard results were inspected.
 
-Validation commands and caveats are recorded in [DEVELOPMENT.md](DEVELOPMENT.md).
-Tests validate infrastructure behavior, not research performance. This revision
-does not run a new training campaign or inspect held-out results.
+## Open work
 
-## Current decision
+- Competent learned baseline and faithful upstream reproduction before headline runs.
+- Better model/control robustness and recovery, using permitted feedback only;
+  the user-only oracle is excluded.
+- Same-planner global/local diagnostic; the expert alone does not isolate information.
+- Learned road distributions, calibrated uncertainty, scenario MPC, adaptive/Bayesian
+  behavior search and local visual perception remain proposals.
+- TD-MPC2, DreamerV3, Valdi and other modern baseline reproductions are not executed.
+- Final frozen study, sufficiently powered comparisons, paper and release remain open.
+- Agentic evolution is future work; archived Rust/evolution tooling stays archived.
 
-Proceed with the common information/data/evaluation foundation and a working
-prediction/simulation/control loop, including expert diagnostics and an early
-native-input pilot. Optional predictor selection must not block this work.
-Agentic evolution remains future work; its archived code has not been restored.
-Budgets and publication aspirations are proposals, not measured feasibility or
-promised acceptance. This revision changes documentation, not algorithm code.
+The full suite now passes **58 tests** (three upstream SWIG deprecation warnings).
+The original cleanup had 47 retained tests. New coverage includes partition sealing,
+local isolation, protocol equivalence, fit/reload, continuation, paired statistics
+and synthetic ranking logic. Documentation links, CLI discovery and the dependency
+lock also validate. These checks establish infrastructure behavior, not superiority.

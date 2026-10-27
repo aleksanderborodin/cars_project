@@ -1,0 +1,79 @@
+{
+  "manifest_sha256": "e577f84952ad1de9de04fa31251df22af998454f1a23b6d2b3e2aa78cb1a2698",
+  "inputs": [
+    {
+      "path": "runs/local_pursuit/devpilot_20261028_local20",
+      "metrics_sha256": "d7884988c0f47b50ab5df5ce29259885106984cb3132632581907936e13a39e3",
+      "config_sha256": "4d80aa4dc37cd055d98c1e0adfb76e9ebfcc450a5bca00e8f553e65deb1b385e"
+    },
+    {
+      "path": "runs/fixed_behavior/devpilot_20261028_fixed60",
+      "metrics_sha256": "f61caff9c89e312dba34db4e692227f971d9480e5fdf7bd4b577fcd9d0a92654",
+      "config_sha256": "7a22ca0860dd6143103d51b3ccf4115f21ba24a7e7ffca3a1459aa2ee74a82be"
+    },
+    {
+      "path": "runs/model_search/devpilot_20261028_search20",
+      "metrics_sha256": "ebc08d41a4616bb24d87d712d267ddb88bd6993a1c6d727745237bf913ac7641",
+      "config_sha256": "49bf791000dfe0f571ce5e93e9cac39d082d0c571491fa10d85b89cf987719bd"
+    },
+    {
+      "path": "runs/model_search/devpilot_20261028_narrow_bounded",
+      "metrics_sha256": "830f4fc9d6290a27ecd8a1c98ea584f87ac2010652c5840c1dd5431231450a0f",
+      "config_sha256": "421911b215816bcdcbddc2301d640cbf60b65d234af710b21f5979332126f342"
+    },
+    {
+      "path": "runs/model_search/devpilot_20261028_mixed_wide",
+      "metrics_sha256": "16f041c95a35f542ddeaf74133f34385813a4c41814b19afa52ad79201bd1313",
+      "config_sha256": "0e4c5cf9f6f285aa840b819c5f60913cc965312beeb64e86ad78d58577a2eb50"
+    },
+    {
+      "path": "runs/model_search/devpilot_20261028_mixed_bounded",
+      "metrics_sha256": "241df21e859dba1800a7c66245a217dbc3b2d56f3a31b5f30649ba2b5fee047c",
+      "config_sha256": "0fb69089e782a588addb172db196a819065e9aa62ccdba0ebb18d1da85793f6b"
+    },
+    {
+      "path": "runs/recurrent_ppo/devpilot_20261028_recurrent20",
+      "metrics_sha256": "9e3075be09b969d92eb67e6547e7dfcf58ac833b7941d718527b00594cada538",
+      "config_sha256": "d4fff2feca4e38a1c2fb4149d2e771851760df2081c0cf15122e4448acfab8a9"
+    },
+    {
+      "path": "runs/global_expert/devpilot_20261028_expert20",
+      "metrics_sha256": "b7b24a5d615f93794380ce55325e466bc2be57f0ba947135a47c0ba45149fc66",
+      "config_sha256": "9bebe1b5b1657b04c9feb6b409fd4b06f7ea659759ce69469195d3633a3a4280"
+    }
+  ],
+  "replicated_variant": {
+    "paths": [
+      "runs/model_search/devpilot_20261028_mixed_bounded",
+      "runs/model_search/devpilot_20261028_mixed_bounded_s1",
+      "runs/model_search/devpilot_20261028_mixed_bounded_s2"
+    ],
+    "run_means": [
+      653.0045928661096,
+      701.2128075797187,
+      706.9312857723786
+    ],
+    "mean_return": 687.0495620727355,
+    "completion_by_run": [
+      0.2,
+      0.2,
+      0.2
+    ],
+    "difference_from_fixed": {
+      "mean_difference": 73.64085164586231,
+      "interval_95_percent": [
+        -24.19652960087747,
+        180.1586369931125
+      ],
+      "candidate_models": 3,
+      "reference_models": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "units": "independent model draws; paired track draws shared across models and methods",
+      "selection_adjusted": false
+    }
+  },
+  "interpretation": "adaptive development evidence; not selection-adjusted or confirmatory; PPO pilot is not competitive",
+  "user_only_oracle_values_read": false
+}

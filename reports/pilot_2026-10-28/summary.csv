@@ -1,0 +1,9 @@
+variant,run,mean_return,completion,mean_progress,mean_offroad_frames,information,episodes
+Local pursuit,runs/local_pursuit/devpilot_20261028_local20,583.200421785996,0.0,0.6832004217860069,16.15,local,20
+"Fixed behavior, speed 60",runs/fixed_behavior/devpilot_20261028_fixed60,613.4087104268731,0.3,0.7139987104268845,221.3,local,20
+"Narrow data, wider search",runs/model_search/devpilot_20261028_search20,391.01899927413217,0.0,0.4910189992741384,386.3,local,20
+"Narrow data, bounded search",runs/model_search/devpilot_20261028_narrow_bounded,637.9592241825997,0.2,0.7433792241826116,115.3,local,20
+"Mixed data, wider search",runs/model_search/devpilot_20261028_mixed_wide,442.0370937351772,0.1,0.5493920937351863,271.8,local,20
+"Mixed data, bounded search (seed 0)",runs/model_search/devpilot_20261028_mixed_bounded,653.0045928661095,0.2,0.7552545928661221,54.1,local,20
+"Recurrent PPO, 100k pilot",runs/recurrent_ppo/devpilot_20261028_recurrent20,-85.36766073248378,0.0,0.014632339267515549,959.0,local,20
+Full-map expert (privileged),runs/global_expert/devpilot_20261028_expert20,888.5363806620073,0.9,0.9708563806620211,30.6,global_privileged,20

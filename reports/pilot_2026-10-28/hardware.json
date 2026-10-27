@@ -1,0 +1,9 @@
+{
+  "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+  "python": "3.12.3",
+  "cpu": "AMD Ryzen 5 7500F 6-Core Processor",
+  "gpu_query": "NVIDIA GeForce RTX 5060 Ti, 16311 MiB, 595.99.02",
+  "torch": "2.14.1+cu130",
+  "experiment_compute": "NumPy dynamics/search and recurrent PPO ran on CPU; GPU inventory is not a claim of GPU usage",
+  "timing_caveat": "Some engineering jobs shared the workstation; timings are diagnostic, not an isolated real-time benchmark."
+}

@@ -1,10 +1,51 @@
-# Development guide: current executable foundation
+# Development guide: research and legacy execution paths
 
 [Index](../README.md) · [Specification](EXPERIMENT.md) · [Status](STATUS.md)
 
-This guide describes existing code, not the proposed local-geometry system.
-All examples use permitted seen-side data. Do not use the held-out splits during
-method development, even though the current CLI exposes them for eventual evaluation.
+The restricted research path is now implemented. The original privileged path
+is retained separately below. Do not use held-out splits during development.
+
+## Restricted research commands
+
+```bash
+uv run python -m cars.cli research --help
+uv run python -m cars.cli research reserve
+uv run python -m cars.cli research collect --episodes 2 --run-id demo_train
+uv run python -m cars.cli research collect --partition development --episodes 2 --run-id demo_dev
+uv run python -m cars.cli research fit --training runs/collection/demo_train --development runs/collection/demo_dev --run-id demo_model
+uv run python -m cars.cli research evaluate --method search --model runs/dynamics/demo_model --episodes 4 --run-id demo_search
+uv run python -m cars.cli research evaluate --method local --episodes 4 --run-id demo_local
+uv run python -m cars.cli research evaluate --method fixed --speed 60 --episodes 4 --run-id demo_fixed
+```
+
+Each command creates an immutable run with config, source snapshot, dependency
+versions/hashes, costs and relevant datasets/checkpoints/traces. Use fresh IDs.
+`collect --collector mixed` cycles local and fixed-speed collection policies.
+`evaluate --speed-grid ...` changes the candidate set; `--horizon` changes its
+decision horizon. These development choices are recorded with each result.
+
+```bash
+uv run python -m cars.cli research train-recurrent --frames 2048 --workers 2 --run-id demo_recurrent
+uv run python -m cars.cli research train-recurrent --frames 2048 --workers 2 --resume runs/recurrent_training/demo_recurrent --run-id demo_recurrent_continued
+uv run python -m cars.cli research evaluate --method recurrent --model runs/recurrent_training/demo_recurrent_continued --episodes 4 --run-id demo_recurrent_eval
+```
+
+Frame budgets are native-frame targets; PPO completes whole rollouts and records
+actual overshoot. Continuation preserves weights/optimizer/RNG/sampler state but
+starts fresh episodes; it is not exact mid-episode Box2D continuation. Worker count,
+seed and protocol must match. Older checkpoints lacking RNG snapshots are rejected
+for continuation. `--view native` selects official RGB plus previous actions only.
+
+`evaluate --user-monitor` exports frozen search candidates to a separate process
+on a fixed sparse development schedule. Its real outputs under `private_diagnostics/`
+are user-only: never open or feed them into agent/training/tuning/selection analysis.
+Only public technical status/costs under `runs/user_monitor/` may be inspected.
+The monitor uses extra simulator queries and may contend for CPU; keep its timing
+separate from ordinary inference profiling.
+
+The first campaign and public artifact rebuild command are in
+[PILOT_2026-10-28.md](PILOT_2026-10-28.md). No final-test command is exposed by the
+research CLI. The rest of this guide describes the **legacy privileged path**.
 
 ## Environment and checks
 

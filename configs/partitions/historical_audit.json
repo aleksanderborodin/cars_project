@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-28",
+  "scope": "historical training configuration metadata only; no results or held-out identities read",
+  "training_configs": [
+    {
+      "config": "runs/il_bc/task2_smoke/config.json",
+      "sha256": "5a1264a7713b9a69e6523d2dee6e376a4974601f44f95458a6554ec5b5b4ed06",
+      "known_sampler_below_2pow31": true
+    },
+    {
+      "config": "runs/il_dagger/task2_smoke/config.json",
+      "sha256": "a179416aff52a1d79d80bc4c50b83669cc11c568324b211af7519db1db48124d",
+      "known_sampler_below_2pow31": true
+    },
+    {
+      "config": "runs/rl_ppo/ar4_inf_s0/config.json",
+      "sha256": "3f3bcdbaa628608bc7943372aa07893c2d619dd5296badf46477904629a49e1e",
+      "known_sampler_below_2pow31": true
+    },
+    {
+      "config": "runs/rl_ppo/full_inf_s0/config.json",
+      "sha256": "ae8fc4209ed1ebc9c122ad3b9ba690aef38e69d0507440c89500a34293e175d0",
+      "known_sampler_below_2pow31": true
+    },
+    {
+      "config": "runs/rl_ppo/task2_interface_smoke_s0/config.json",
+      "sha256": "4e77fed5fc190160eb1f9b7ae226c22210f884eecdb6e28c2f88def808923455",
+      "known_sampler_below_2pow31": true
+    },
+    {
+      "config": "runs/rl_ppo/task2_smoke/config.json",
+      "sha256": "12ca200b111281463773c1d6ca4e8f1864ae3b529186eae34e349d106a685684",
+      "known_sampler_below_2pow31": true
+    },
+    {
+      "config": "runs/rl_sac/full_inf_s0/config.json",
+      "sha256": "9e813ec10b1de70ada895c735dc7abcd5c2f853df2cac5b6784e1a72c99b4f46",
+      "known_sampler_below_2pow31": true
+    },
+    {
+      "config": "runs/rl_sac/task2_smoke/config.json",
+      "sha256": "670c927d1ee0f9043f14e8e57de737fa9c5a41523dd641d34e7a7eebc1295fcd",
+      "known_sampler_below_2pow31": true
+    }
+  ],
+  "new_seed_namespace_starts_at": 1099511627776,
+  "old_artifacts_reused": false,
+  "limitation": "Does not certify undocumented arbitrary manual resets or data outside recorded training runs."
+}

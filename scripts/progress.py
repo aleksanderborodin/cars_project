@@ -1,6 +1,6 @@
 """One line per run: env steps so far and the mean return of the last 50 training episodes.
 
-    uv run python scripts/progress.py runs/rl_ppo/full_inf_s0 runs/rl_sac/full_inf_s0
+    uv run python scripts/progress.py runs/rl_ppo/dev_example
 """
 import sys
 from pathlib import Path

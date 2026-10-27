@@ -1,4 +1,4 @@
-"""Lazy, pickleable deterministic SB3 adapter for the Task 1 Policy protocol."""
+"""Lazy, pickleable deterministic SB3 adapter for the privileged Policy protocol."""
 import json
 from pathlib import Path
 import pickle

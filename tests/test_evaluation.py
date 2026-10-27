@@ -1,5 +1,4 @@
 import json
-from pathlib import Path
 
 import gymnasium as gym
 import numpy as np
@@ -8,12 +7,11 @@ import pytest
 
 from cars.env.make import make_env
 from cars.env.splits import episode_seeds
-from cars.env.state import CarState, TrackInfo
+from cars.env.state import CarState
 from cars.eval.episode_log import read_episode, write_episode
 from cars.eval.report import aggregate
 from cars.eval.runner import evaluate
 from cars.policies.baseline import BaselinePolicy
-from cars.policies.rust import RustPolicy, build_rust
 
 
 @pytest.fixture(scope="module")
@@ -70,26 +68,6 @@ def test_baseline_lap_is_bit_identical_to_official():
     finally:
         official.close()
         env.close()
-
-
-def test_rust_build_load_and_episode(tmp_path):
-    crate = Path(__file__).resolve().parents[1] / "rust/carctl"
-    library = build_rust(crate, tmp_path / "target")
-    policy = RustPolicy(library)
-    env = make_env(0, obs="raw")
-    try:
-        obs, _ = env.reset()
-        policy.reset(TrackInfo.from_env(env))
-        action = policy.act(CarState.from_env(env), obs)
-        assert action.shape == (3,) and action.dtype == np.float32
-        assert env.action_space.contains(action)
-    finally:
-        env.close()
-        policy.close()
-    frame = evaluate(RustPolicy(library), "seen-1", 1, tmp_path / "rust_run")
-    assert len(frame) == 1
-    assert 0 < frame.iloc[0].steps <= 1000
-    assert (tmp_path / "rust_run/candidate.so").is_file()
 
 
 def test_multiprocessing_matches_serial(tmp_path):

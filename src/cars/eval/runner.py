@@ -6,7 +6,6 @@ import hashlib
 import json
 import multiprocessing as mp
 from pathlib import Path
-import shutil
 from typing import Any
 
 import numpy as np
@@ -16,7 +15,6 @@ from cars.env.make import make_env
 from cars.env.splits import SPLITS, episode_seeds
 from cars.env.state import CarState, OBS_SCHEMA, OBS_VERSION, STATE_FIELDS, STATE_VERSION
 from cars.policies.base import Policy
-from cars.policies.rust import RustPolicy
 
 
 def _episode(job: tuple[Policy, int, int, str, dict[str, Any]]) -> dict:
@@ -44,15 +42,15 @@ def evaluate(policy: Policy, split: str, n_episodes: int, out_dir: str | Path,
              workers: int = 1, *, evaluation_seed: int = 0) -> pd.DataFrame:
     """out_dir is runs/<method>/<run_id>; results go in eval/<split>.
 
-    Policy must be deepcopyable and, for multiprocessing, pickleable. Rust
-    libraries are loaded inside spawn workers. A completed run is never replaced.
+    Policy must be deepcopyable and, for multiprocessing, pickleable.
+    A completed run is never replaced. This evaluator uses privileged inputs.
     """
     if workers < 1:
         raise ValueError("workers must be positive")
     seeds = episode_seeds(split, n_episodes, seed=evaluation_seed)
     root = Path(out_dir).resolve()
     directory = root / "eval" / split
-    method = getattr(policy, "method", "rust" if isinstance(policy, RustPolicy) else ("base" if type(policy).__name__ == "BaselinePolicy" else type(policy).__name__))
+    method = getattr(policy, "method", "base" if type(policy).__name__ == "BaselinePolicy" else type(policy).__name__)
     meta = {"method": method, "run_id": root.name, "split": split, "hard": SPLITS[split].hard}
     configuration = policy.configuration() if hasattr(policy, "configuration") else {"class": f"{type(policy).__module__}.{type(policy).__qualname__}", "repr": repr(policy)}
     if getattr(policy, "training_seed", None) is not None:
@@ -67,11 +65,6 @@ def evaluate(policy: Policy, split: str, n_episodes: int, out_dir: str | Path,
     if config_path.exists() or (directory / "metrics.csv").exists():
         raise FileExistsError(f"Evaluation already exists: {directory}")
     directory.mkdir(parents=True, exist_ok=True)
-    if isinstance(policy, RustPolicy):
-        candidate = root / "candidate.so"
-        shutil.copy2(policy.path, candidate)
-        policy = RustPolicy(candidate)
-        configuration["artifact"] = "candidate.so"
     source_root = Path(__file__).parents[1]
     sources = {str(p.relative_to(source_root)): hashlib.sha256(p.read_bytes()).hexdigest()
                for p in sorted(source_root.rglob("*.py"))}

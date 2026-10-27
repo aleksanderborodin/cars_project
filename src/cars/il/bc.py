@@ -1,4 +1,4 @@
-"""Behaviour cloning from the Task 1 baseline on seen tracks only."""
+"""Behaviour cloning from the privileged pure-pursuit expert on seen tracks."""
 from dataclasses import dataclass, replace
 from pathlib import Path
 import time

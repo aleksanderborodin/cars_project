@@ -1,4 +1,4 @@
-"""Seen-only training infrastructure; environment dynamics are left to Task 1."""
+"""Seen-only training infrastructure over the unmodified per-frame environment."""
 from dataclasses import asdict, is_dataclass
 from importlib.metadata import version
 import hashlib

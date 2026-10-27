@@ -1,30 +1,57 @@
-# Agent rules for this repo
+# Agent rules for this repository
 
-Read `docs/EXPERIMENT.md` first: it is the spec.
+Read `docs/EXPERIMENT.md` first: it is the active experiment spec. Start navigation
+at `README.md`; use `docs/STATUS.md` to distinguish implemented code from proposals.
 
-## Layout
+## Scope
 
-```
+- Gymnasium CarRacing only, simulation only, current workstation first.
+- Research question: when do explicit beliefs about unseen geometry improve control?
+- No established novelty, SOTA, safety, or sim-to-real result. Claims require evidence.
+- Previous plans and evolution tooling live on the archive branch documented in
+  `docs/ARCHIVE.md`. Do not restore them as current instructions or paper claims.
+
+## Implemented layout
+
+```text
 src/cars/
-  env/        make.py (factory), carracing.py (no-render subclass, hard tracks), state.py (CarState, TrackInfo, StateObs schema),
-              metrics.py (episode metrics wrapper), splits.py (seed sets)
-  policies/   base.py (Policy protocol), baseline.py (pure pursuit expert), rust.py (ctypes loader for Rust candidates), torch_mlp.py
-  il/         bc.py, dagger.py
-  rl/         train.py (SB3 PPO / SAC)
-  eval/       runner.py (evaluate policy on a split), episode_log.py (log writer/reader), report.py (tables, rliable)
-  evolve/     loop.py (Codex loop), digest.py (log digest for prompts)
-  cli.py      `python -m cars.cli <command>`
-rust/carctl/  Rust controller template (C ABI cdylib). src/policy.rs is the only file the evo loop edits.
+  env/        state-only environment, state schema, metrics, existing split helpers
+  policies/   privileged Policy interface, pure pursuit, MLP and SB3 policy loaders
+  il/         behavior cloning, DAgger, demonstration collection
+  rl/         SB3 PPO/SAC and action wrappers
+  eval/       privileged evaluator, episode logs, aggregate reports
+  training.py training seeds, metadata, run creation
+  cli.py      uv run python -m cars.cli <command>
+scripts/      training progress utility
 tests/        pytest
-runs/         outputs, gitignored
+docs/         active specification, research, references, roadmap, status, development
+runs/         outputs and historical artifacts, gitignored
 ```
+
+The local sensor interface, geometry-belief model, MPC, visual model, and modern
+baseline adapters are planned; do not describe them as implemented.
 
 ## Rules
 
-- Python 3.12, run everything with `uv run`. Add dependencies with `uv add`.
-- Never change the official reward, termination or physics of standard tracks. The hard generator only changes track and grip constants.
-- Never read `unseen` or `hard` seeds or results while training or designing a method.
-- Every run writes its config and seed; results must be reproducible from `runs/<method>/<run_id>/config.json`.
-- Determinism: the same seed gives the same track and, for a deterministic policy, the same episode.
-- Keep modules small and typed; numpy for maths; no pixel rendering in setting A.
-- Tests: `uv run pytest -q` must pass before you finish.
+- Python 3.12. Run Python with `uv run`; add dependencies with `uv add`.
+- Never change official reward, termination, or physics for standard tracks.
+  Diagnostic generators and action/observation wrappers must be explicitly named.
+- Never read `unseen` or `hard` seeds/results while training or designing methods.
+  Do not launch final held-out evaluation before freezing the study.
+- Build disjoint train/dev/calibration/test manifests before new paper training;
+  current `seen-inf` sampling does not implement those exclusions.
+- Local methods must not receive full tracks, raw truth, seeds, global progress,
+  hidden-map simulator clones, or future scenario identities. Current APIs are
+  privileged and must not be relabeled local.
+- Match and record information, history, supervision, action frequency, native
+  frames, model rollouts, and compute within each comparison.
+- Every run writes config and seeds and must be reproducible from
+  `runs/<method>/<run_id>/config.json`. Never overwrite completed runs.
+- Same seed and deterministic policy must reproduce the same track and episode
+  within the recorded software/hardware configuration.
+- Keep modules small and typed; use NumPy for maths. No rendering in state-only
+  setting A; visual protocols must enable and document it separately.
+- Keep `docs/STATUS.md` and the roadmap consistent with actual code. Treat research
+  hypotheses, planned budgets, published findings, and our measurements separately.
+- Run `uv run pytest -q` before finishing code changes. Check relevant CLI entry
+  points and local documentation links when changing navigation or commands.

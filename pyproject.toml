@@ -1,7 +1,7 @@
 [project]
 name = "cars"
 version = "0.1.0"
-description = "Add your description here"
+description = "CarRacing research infrastructure for planning with uncertain road geometry"
 requires-python = ">=3.12"
 dependencies = [
     "gymnasium[box2d]>=1.1",
@@ -24,6 +24,4 @@ build-backend = "hatchling.build"
 packages = ["src/cars"]
 
 [dependency-groups]
-dev = [
-    "playwright>=1.64.0",
-]
+dev = []

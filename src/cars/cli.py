@@ -1,27 +1,22 @@
-"""State-only training, evaluation, and isolated Rust builds."""
+"""Privileged-state training and evaluation infrastructure."""
 import argparse
 
 from cars.env.splits import SPLITS
 from cars.eval.runner import evaluate
 from cars.policies.baseline import BaselinePolicy
-from cars.policies.rust import RustPolicy, build_rust
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
     evaluation = commands.add_parser("eval")
-    evaluation.add_argument("--method", choices=("base", "rust", "il_bc", "il_dagger", "rl_ppo", "rl_sac"), required=True)
-    evaluation.add_argument("--rust-path")
+    evaluation.add_argument("--method", choices=("base", "il_bc", "il_dagger", "rl_ppo", "rl_sac"), required=True)
     evaluation.add_argument("--model-path", help="learned run directory or model file (with normalization alongside)")
     evaluation.add_argument("--split", choices=SPLITS, default="seen-10")
     evaluation.add_argument("--n", type=int, default=10)
     evaluation.add_argument("--out", required=True)
     evaluation.add_argument("--workers", type=int, default=1)
     evaluation.add_argument("--seed", type=int, default=0, help="seed sequence for seen-inf")
-    build = commands.add_parser("build-rust")
-    build.add_argument("crate_dir")
-    build.add_argument("--target-dir")
     for name in ("train-bc", "train-dagger", "train-rl"):
         train = commands.add_parser(name)
         train.add_argument("--split", choices=("seen-1", "seen-10", "seen-100", "seen-inf"), default="seen-10")
@@ -57,9 +52,6 @@ def main() -> None:
                 train.add_argument("--beta-start", type=float, default=0.5)
                 train.add_argument("--beta-end", type=float, default=0.0)
     args = parser.parse_args()
-    if args.command == "build-rust":
-        print(build_rust(args.crate_dir, args.target_dir))
-        return
     if args.command.startswith("train-"):
         values = vars(args).copy()
         command, run_id, runs_dir = (values.pop(key) for key in ("command", "run_id", "runs_dir"))
@@ -86,8 +78,6 @@ def main() -> None:
             root = train_dagger(DAggerConfig(**values), run_id, runs_dir)
         print(root)
         return
-    if args.method == "rust" and not args.rust_path:
-        parser.error("--rust-path is required for --method rust")
     if args.method.startswith(("il_", "rl_")):
         if not args.model_path:
             parser.error("--model-path is required for learned methods")
@@ -95,7 +85,7 @@ def main() -> None:
 
         policy = load_learned_policy(args.method, args.model_path)
     else:
-        policy = RustPolicy(args.rust_path) if args.method == "rust" else BaselinePolicy()
+        policy = BaselinePolicy()
     frame = evaluate(policy, args.split, args.n, args.out, args.workers, evaluation_seed=args.seed)
     columns = ["seed", "success", "return", "lap_time_s", "off_track_events", "off_track_steps", "crash", "progress", "steps"]
     print(frame[columns].to_string(index=False))

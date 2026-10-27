@@ -3,6 +3,10 @@
 Updated 2026-10-27. [Index](../README.md) · [Status](STATUS.md) ·
 [Detailed design](RESEARCH_PLAN.md)
 
+See [DESIGN_DECISIONS.md](DESIGN_DECISIONS.md) for concrete proposed settings,
+confidence, alternatives, and budgets. A small native-pixel feasibility pilot runs
+alongside the local-control pilot, before investing in the full learned system.
+
 The research direction and documentation are established. All implementation
 milestones below remain open. Run design/tuning only on permitted seen-side data.
 Do not open the existing `unseen`/`hard` seeds or results during these phases.
@@ -14,6 +18,7 @@ Do not open the existing `unseen`/`hard` seeds or results during these phases.
 | A3 | Protocol and cost metadata; report separation | Runs record sensors, supervision, action repeat, native frames, rollouts, labels, inference/training cost; incompatible protocols cannot silently pool |
 | B1 | Fitted short-horizon dynamics and competent local/global deterministic MPC | Rollout errors and latency measured; control works on development tracks |
 | B2 | Local/global/simple-prior comparison | Establish a meaningful hidden-information gap and whether a cheap curvature prior closes it |
+| B3 | Early native-pixel feasibility and baseline smoke runs | Identify scale/vehicle-state estimation, supervision, and runtime obstacles before assuming transfer from local geometry |
 | C | Compact conditional road-distribution model | Beats deterministic and simple-prior variants in decisions at comparable cost; forecast quality alone is insufficient |
 | D | Calibration and future-observation-aware planning | Isolate each contribution with matched data, dynamics, solver and budget; eliminate future-information leakage |
 | E | Strong competitor reproductions/adaptations | Recurrent model-free, TD-MPC2, visual DreamerV3, direct Valdi audit; document faithful replication versus adaptation |

@@ -15,6 +15,7 @@ hypothesis: there is **no demonstrated new-method advantage or SOTA result**.
 |---|---|
 | [Experiment specification](docs/EXPERIMENT.md) | Authoritative scope, information contracts, fairness, evaluation rules |
 | [Research plan](docs/RESEARCH_PLAN.md) | Honest novelty/feasibility assessment, closest work, proposed method and ablations |
+| [Design decisions](docs/DESIGN_DECISIONS.md) | Concrete starting settings, confidence, alternatives, and decision gates |
 | [References](docs/REFERENCES.md) | Primary papers, official code, comparison roles and reproduction status |
 | [Implementation status](docs/STATUS.md) | What exists, what does not, and evidence boundaries |
 | [Roadmap](docs/ROADMAP.md) | Ordered milestones, deliverables, and proceed/stop gates |

@@ -7,7 +7,9 @@ of scope. The new protocols, models, planners, and experiments below are
 **proposed, not implemented**.
 
 Read [RESEARCH_PLAN.md](RESEARCH_PLAN.md) for the literature review, novelty
-assessment, method, comparisons, and execution gates. The previous experiment
+assessment, method, comparisons, and execution gates. Proposed numerical defaults,
+confidence, and alternatives are recorded in [DESIGN_DECISIONS.md](DESIGN_DECISIONS.md);
+they remain development choices until frozen. The previous experiment
 is preserved on the [archive branch](ARCHIVE.md). Existing code and artifacts
 still implement that earlier protocol and retain their original interpretation.
 

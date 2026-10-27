@@ -3,6 +3,10 @@
 Updated 2026-10-27. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
 [Roadmap](ROADMAP.md)
 
+Concrete starting choices and their confidence are in
+[DESIGN_DECISIONS.md](DESIGN_DECISIONS.md). These settings remain proposed; the
+manifest capacities and model configurations have not been instantiated.
+
 ## Implemented foundation
 
 | Component | Actual capability | Limitation for the proposed paper |

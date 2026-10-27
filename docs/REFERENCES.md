@@ -63,6 +63,29 @@ controls, but beating them alone would not support a strong world-model claim.
 | Arockiaraj, Chang & Yee, *Transfer Learning for Customized Car Racing Environments*, 2026 preprint | [Paper](https://arxiv.org/html/2605.17928v1) | Recent simulator-specific context, not an authoritative ranking |
 | Gymnasium CarRacing | [Official documentation](https://gymnasium.farama.org/environments/box2d/car_racing/) | Base task and standard input/action/reward contract; record installed version |
 
+## Additional reading for search and downstream predictor selection
+
+These sources inform the optional study in [PREDICTION_SELECTION.md](PREDICTION_SELECTION.md).
+They do not make decision-focused predictor training the default.
+
+| Reference | Primary source / code | Role |
+|---|---|---|
+| PlaNet, Hafner et al., ICML 2019 | [Paper](https://proceedings.mlr.press/v97/hafner19a.html) | Pixel-based learned models with online planning; actor-free precedent |
+| DINO-WM, Zhou et al. | [Author project/paper/code](https://dino-wm.github.io/) | Reusable predictive visual features with test-time behavior optimization |
+| Learning to Act by Predicting the Future, Dosovitskiy & Koltun, ICLR 2017 | [Paper](https://arxiv.org/html/1611.01779v2) | Action-dependent future measurements as an alternative prediction target |
+| Objective Mismatch, Lambert et al., L4DC 2020 | [Proceedings](https://proceedings.mlr.press/v120/lambert20a.html) | Prediction scores and downstream control can disagree |
+| Value Equivalence, Grimm et al., NeurIPS 2020 | [Paper](https://arxiv.org/abs/2011.03506) | Planning-relevant representations without exact reconstruction |
+| Distributional Model Equivalence, Kastner et al., NeurIPS 2023 | [Paper](https://arxiv.org/abs/2307.01708), [code](https://github.com/tylerkastner/distribution-equivalence) | Risk-sensitive models need more than expected-value agreement |
+| Calibrated VAML, Voelcker et al., 2025 preprint | [Paper](https://arxiv.org/html/2505.22772v2), [code](https://github.com/adaptive-agents-lab/CVAML) | Bias in sampled value-aware losses; not ordinary probability calibration |
+| ARC-Bench, Zhang & Li, 2026 preprint | [Paper](https://arxiv.org/abs/2609.05461) | Candidate-ranking audits separate from closed-loop success |
+| Beyond Next-Screen Prediction, Tang et al., 2026 preprint | [Paper](https://arxiv.org/abs/2610.24372) | Direct ranker as an attribution control; findings are from GUI tasks |
+| Strictly Proper Scoring Rules, Gneiting & Raftery, 2007 | [Author-hosted paper](https://sites.stat.washington.edu/people/raftery/Research/PDF/Gneiting2007jasa.pdf) | Probability scoring and truthful predictive objectives |
+
+Valdi's Section 3 and appendix explicitly omit a policy prior and use CEM;
+therefore an actor-free search claim must compare with it, rather than claiming
+that actor-free CarRacing world-model control is new. Its original input and
+600-frame protocol still require separate reproduction. See the linked paper above.
+
 ## Required reproduction record
 
 For every selected competitor, add a record with:

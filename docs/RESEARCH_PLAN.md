@@ -1,8 +1,15 @@
-# Research plan: when does imagining unseen geometry help control?
+# Geometry research branch: when does imagining unseen geometry help control?
 
 Research date: 2026-10-27. Status: literature-grounded proposal, no new algorithm
 implemented or benchmark result established. Scope agreed with the user:
 **Gymnasium CarRacing only, simulation only, current workstation first.**
+
+This document details one branch of the broader prediction/simulation/control
+system in [USER_INTENT.md](USER_INTENT.md). Hidden-road forecasting and its
+information-gap gates apply to that branch. They are not the sole main project.
+For optional prediction-space selection after normal training, see
+[PREDICTION_SELECTION.md](PREDICTION_SELECTION.md). No special decision-focused
+predictor loss or fixed 100 m forecast is required by the user.
 
 This report distinguishes verified prior work, repository observations, and our
 hypotheses. Literature search cannot prove that a proposed mechanism is novel.
@@ -23,7 +30,7 @@ imagined trajectories, reconstructing local road geometry, and using uncertain
 maps for planning all have substantial prior art. A paper presenting only this
 pipeline plus a win over our current PPO/SAC would be weak.
 
-The promising question is narrower:
+The question for this geometry branch is:
 
 > Can explicit geometric beliefs produce better decisions under limited
 > visibility, and can we identify which uncertainty and future observations are
@@ -562,6 +569,7 @@ If a distinct algorithmic contribution emerges, a later title can name that
 mechanism. We should not promise sim-to-real transfer, formal safety, universal
 world-model superiority, or SOTA at every module from this experiment.
 
-The immediate recommendation is to build Phase A-B, then decide from evidence
-whether to invest in the learned geometry belief. This is the shortest route to
-finding out whether the idea supports the scientific claim we want to make.
+For this geometry branch, use the information-gap pilot to decide whether to
+invest in a learned geometry belief. The broader main-system priorities and
+optional experiments are governed by [EXPERIMENT.md](EXPERIMENT.md) and
+[USER_INTENT.md](USER_INTENT.md).

@@ -53,3 +53,12 @@ Git protects the source snapshot, not these ignored local outputs. Preserve that
 directory separately when migrating the workstation. No held-out run results
 were opened for this migration. The archive and active commits are local; this
 work does not publish or push them to the remote.
+
+## Research-scope checkpoint
+
+`archive/geometry-first-plan-2026-10-27` preserves commit `f8d980a`, the planning
+state before the user clarified that the complete prediction/simulation/control
+system is primary, normal predictor training with downstream validation selection
+is optional, and expert/agentic-evolution studies are additional experiments.
+The useful geometry analysis remains on main as a labeled research branch.
+Use [USER_INTENT.md](USER_INTENT.md) for the active interpretation.

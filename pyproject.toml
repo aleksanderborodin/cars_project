@@ -1,7 +1,7 @@
 [project]
 name = "cars"
 version = "0.1.0"
-description = "CarRacing research infrastructure for planning with uncertain road geometry"
+description = "CarRacing research for modular prediction, simulation, and online control"
 requires-python = ">=3.12"
 dependencies = [
     "gymnasium[box2d]>=1.1",

@@ -6,7 +6,13 @@ at `README.md`; use `docs/STATUS.md` to distinguish implemented code from propos
 ## Scope
 
 - Gymnasium CarRacing only, simulation only, current workstation first.
-- Research question: when do explicit beliefs about unseen geometry improve control?
+- Main project: modular prediction, internal simulation, online behavior search,
+  action execution, and replanning. Read `docs/USER_INTENT.md` for user decisions.
+- Predictor-space/hyperparameter selection uses downstream validation driving
+  after normal predictive training. Special decision-focused predictor losses are
+  not the default. Hidden-road prediction is one component, not the whole project.
+- Retain expert/known-track diagnostics as separate privileged experiments.
+  Agentic evolution (possibly Rust) is a future option, not the current work path.
 - No established novelty, SOTA, safety, or sim-to-real result. Claims require evidence.
 - Previous plans and evolution tooling live on the archive branch documented in
   `docs/ARCHIVE.md`. Do not restore them as current instructions or paper claims.

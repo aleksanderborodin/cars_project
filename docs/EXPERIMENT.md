@@ -1,13 +1,15 @@
-# Experiment design: planning with uncertain road geometry
+# Experiment design: modular prediction and control by search
 
 Updated 2026-10-27 following the research discussion. The project now targets a
-scientific paper about partially observed control, using Gymnasium CarRacing
+scientific paper about modular world models and online control, using Gymnasium CarRacing
 only and the current workstation. Physical robots and other simulators are out
 of scope. The new protocols, models, planners, and experiments below are
 **proposed, not implemented**.
 
-Read [RESEARCH_PLAN.md](RESEARCH_PLAN.md) for the literature review, novelty
-assessment, method, comparisons, and execution gates. Proposed numerical defaults,
+Read [USER_INTENT.md](USER_INTENT.md) for the user's decisions and paper goal.
+[RESEARCH_PLAN.md](RESEARCH_PLAN.md) details the geometry branch;
+[PREDICTION_SELECTION.md](PREDICTION_SELECTION.md) reviews optional predictor
+spaces and downstream model selection. Proposed numerical defaults,
 confidence, and alternatives are recorded in [DESIGN_DECISIONS.md](DESIGN_DECISIONS.md);
 they remain development choices until frozen. The previous experiment
 is preserved on the [archive branch](ARCHIVE.md). Existing code and artifacts
@@ -15,16 +17,22 @@ still implement that earlier protocol and retain their original interpretation.
 
 ## Research question
 
-When does an explicit distribution over unobserved road geometry improve
-closed-loop driving relative to deterministic reconstruction, simple statistical
-priors, and recurrent learned controllers, under matched information, supervision,
-interaction budgets, and inference cost?
+Can a modular internal model support competitive driving through simulation and
+online behavior search, and which perception, prediction, and control components
+determine its performance and cost? Compare with strong learned policies and
+established planning methods under matched information, supervision, and budgets.
 
-Separate visible-road reconstruction, belief over unseen geometry, vehicle
-dynamics, and planning. Investigate decision-relevant uncertainty and planning
-that respects when new geometry becomes observable. Modularity, world models,
-and uncertainty-aware MPC are established ideas; no novelty, SOTA, or safety
-claim is established for this project yet.
+The main loop is observe, model, simulate candidates, choose, execute briefly,
+and replan. Hidden-road reconstruction is one component/controlled study, not
+the sole task. Existing predictors may be reused. An optional study trains
+predictors normally, freezes them, trains/configures downstream control, and
+selects prediction spaces/hyperparameters/checkpoints by validation driving.
+It does not require driving-loss gradients through the predictor.
+
+Modularity, world models, and MPC are established ideas; no novelty, SOTA, or
+safety claim is established. Search explores a finite set/parameterization of
+behaviors; it does not enumerate every continuous action or guarantee the best
+real-world action. Agentic evolution remains future work, not a prerequisite.
 
 ## Environment and information contracts
 
@@ -80,13 +88,21 @@ infrastructure. Retire Rust/Codex evolution and the complete track-count K-grid
 to the archive branch. Historical runs remain preserved locally; they do not
 establish results under the new protocol.
 
-Prioritize local pure pursuit with a visibility/braking rule; deterministic
+Build the basic prediction/simulation/control system first. Prioritize local pure pursuit with a visibility/braking rule; deterministic
 local MPC; scenario MPC with a simple road prior; matched planners with learned
 single/multiple road forecasts; a strong recurrent model-free controller;
 TD-MPC2 with documented history adaptation; and DreamerV3 for visual comparison.
 Audit and attempt the directly relevant Valdi CarRacing reproduction. PETS-style
 dynamics ensembles and MR.Q are additional comparison candidates. Adaptations
 are labeled as adaptations, with original-protocol replication kept separate.
+
+Include actor-free planning references (PETS/PlaNet-style methods and Valdi), a
+learned controller using the same representation, and direct candidate scoring
+when claiming that explicit simulation adds value. Compare controllers with a
+fixed predictor and predictors with fixed control/search to attribute gains.
+Keep the expert/full-map experiment as a privileged diagnostic or declared
+teacher. Rust/agentic evolution can be reconsidered as a separate later controller
+optimization route; its code remains archived now.
 
 ## Splits, fairness, and evaluation
 
@@ -119,16 +135,19 @@ are labeled as adaptations, with original-protocol replication kept separate.
 
 ## Implementation order
 
-1. Information boundary, partition manifests, and evaluation metadata/tests.
-2. Deterministic local control, simple prior, and global diagnostic reference.
-3. Compact road-distribution model with a matched-planner comparison.
-4. Calibration, future-observation-aware planning, and strong learned baselines.
-5. Visual reconstruction after the local-geometry hypothesis survives.
+1. Information boundaries, partition manifests, and evaluation metadata/tests.
+2. Working internal-model/control loop, expert/global diagnostic, early native pilot.
+3. Complete-system comparison with strong learned policies and planning baselines.
+4. Focused model/planner ablations; optionally select normally trained predictor
+   spaces and hyperparameters by downstream validation driving.
+5. Complete visual/native experiments and resolve identified component failures.
 6. Freeze, run final evaluation, and write evidence-supported claims.
 
-Revise or stop the algorithm claim if a simple speed rule matches it, a learned
-prior does not improve decisions, gains depend on extra information, or the
-advantage disappears against competitive baselines at matched cost.
+Revise the algorithm claim if gains depend on extra information or disappear
+against competitive baselines at matched cost. A simple prior matching a learned
+road forecast retires that component claim, not automatically the whole system.
+Likewise, no hidden-road information gap changes the geometry experiment rather
+than making all model-based driving research invalid.
 
 All runs retain immutable `runs/<method>/<run_id>/config.json`, models, cost
 records, and episode logs. Add protocol versions, partition hashes, supervision,

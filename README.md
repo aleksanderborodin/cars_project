@@ -1,20 +1,23 @@
-# CarRacing: planning with uncertain road geometry
+# CarRacing: prediction, simulation, and control by search
 
-Research project on when an explicit belief about unseen road geometry helps a
-car choose better actions. Scope: **Gymnasium CarRacing only, simulation only,
+Research project on a modular system that observes, predicts, simulates candidate
+behaviors, chooses a control, and replans. Scope: **Gymnasium CarRacing only, simulation only,
 current workstation first**.
 
 The broad perception–world-model–planning pipeline is established prior work.
-Our candidate contribution concerns decision-relevant geometric uncertainty and
-planning that respects when future road segments become visible. It remains a
-hypothesis: there is **no demonstrated new-method advantage or SOTA result**.
+Our goal is competitive actual driving, supported by component-level evidence.
+Hidden-road forecasts are one possible component; predictor-space selection by
+validation driving is an optional study. There is **no demonstrated new-method
+advantage or SOTA result**.
 
 ## Documentation index
 
 | Document | Read it for |
 |---|---|
+| [User intent](docs/USER_INTENT.md) | User decisions, main system, paper goal, expert experiment, and future evolution option |
 | [Experiment specification](docs/EXPERIMENT.md) | Authoritative scope, information contracts, fairness, evaluation rules |
-| [Research plan](docs/RESEARCH_PLAN.md) | Honest novelty/feasibility assessment, closest work, proposed method and ablations |
+| [Geometry research](docs/RESEARCH_PLAN.md) | Literature, feasibility, and detailed design for the geometry/uncertainty branch |
+| [Predictor selection research](docs/PREDICTION_SELECTION.md) | Optional prediction spaces, normal training, downstream validation selection, and critiques |
 | [Design decisions](docs/DESIGN_DECISIONS.md) | Concrete starting settings, confidence, alternatives, and decision gates |
 | [References](docs/REFERENCES.md) | Primary papers, official code, comparison roles and reproduction status |
 | [Implementation status](docs/STATUS.md) | What exists, what does not, and evidence boundaries |
@@ -45,10 +48,10 @@ historical infrastructure results, not evidence for the proposed paper.
 
 ## Next milestone
 
-Build an information-safe local-geometry interface and a development-only pilot
-comparing a competent local controller, the same controller with full geometry,
-and a simple statistical road prior. Learn whether hidden geometry materially
-changes control before investing in a learned forecaster.
+Build the information/data/evaluation foundation and a working modular prediction
+and online-search loop. Include an expert/full-map diagnostic and an early
+native-input pilot. Improve predictors or add evolution only after this basic
+system is working; the latter remains future work.
 
 The previous project is preserved on
 `archive/pre-belief-research-2026-10-27`. Its obsolete plans and tooling are absent

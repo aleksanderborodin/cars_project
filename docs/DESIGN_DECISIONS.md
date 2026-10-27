@@ -7,6 +7,11 @@ This is the concrete starting configuration proposed after the research review.
 It is not implemented, benchmarked, or the final frozen study. Numerical defaults
 below may change using development evidence only; log the reason and freeze them
 before final evaluation. The experiment specification remains authoritative.
+User decisions and optional ideas are recorded in [USER_INTENT.md](USER_INTENT.md).
+These numerical choices are assistant proposals, not user commitments. The main
+project is the complete prediction/simulation/control system; the geometry model
+below is one candidate implementation. Predictor-space/model selection after
+normal training is optional. Agentic evolution remains future work.
 
 Confidence describes whether a choice is a sensible research decision, not the
 probability that our method wins. **High:** strong methodological justification.
@@ -22,11 +27,12 @@ Run a controlled partial-observation study and an early native-pixel pilot.
 The native-pixel experiment is required for the desired standard-benchmark claim;
 a result confined to the local protocols supports a narrower claim.
 
-Primary question: does a structured distribution of unseen road continuations
-improve control over a simple prior and strong learned controllers, and when?
-The candidate mechanism is planning with future local observations, supported
-by calibrated geometric uncertainty. Neither component nor their combination
-is assumed novel before further comparison. Prior art includes
+Primary question: can a modular predictive model support competitive driving
+through internal simulation and online search, at a practical data/compute cost?
+Geometry uncertainty and future-observation-aware planning are component studies.
+The user additionally proposes normal predictor training followed by downstream
+validation selection, not special end-to-end driving-loss training by default.
+No component or combination is assumed novel. Prior art includes
 [Trisovic et al.](https://arxiv.org/html/2508.02494v1) and
 [Valdi](https://arxiv.org/html/2607.00917v1).
 
@@ -93,7 +99,13 @@ Confidence: **high** in matched information/history and protocol separation;
 explicit forward field of view, denser observations, or one-frame actions. Select
 these based on information and control diagnostics before final comparisons.
 
-## 4. Method starting configuration
+## 4. Candidate geometry-based implementation
+
+Build the basic system before studying alternative prediction spaces. The road
+model and its forecast distance in this table are one engineering option, not
+requirements for every variant. Existing world-model implementations may be
+reused. See [PREDICTION_SELECTION.md](PREDICTION_SELECTION.md) for optional model
+selection; do not make that investigation block the working control loop.
 
 | Module | Initial implementation | Confidence | Alternative and evidence needed |
 |---|---|---|---|
@@ -120,7 +132,7 @@ corpus, and tuning effort. Each imagined road remains fixed throughout a rollout
 The planner never copies the live environment or gets its hidden geometry.
 Its internal objective does not change the simulator's official reward.
 
-## 5. Candidate contribution beyond basic scenario MPC
+## 5. Additional planning experiment after basic scenario MPC
 
 First implement valid shared-open-loop scenario MPC. Then test a small shared
 feedback controller inside rollouts: CEM optimizes its speed/control parameters,
@@ -131,7 +143,7 @@ visibility improves the conservatism/performance tradeoff.
 
 Compare open-loop and feedback rollouts at matched model-transition budgets.
 Evaluate calibration both geometrically and on events relevant to braking.
-This is the **proposed mechanism**, not a validated novel algorithm. If it merely
+This is an **optional mechanism study**, not a validated novel algorithm. If it merely
 reimplements an established method, the contribution must be an independently
 valuable result/analysis, or we must revise the method. A collection of standard
 modules plus a small score increase is insufficient evidence for a strong claim.
@@ -218,22 +230,23 @@ Run focused comparisons, not the full Cartesian product of every setting.
 | Stage | Concrete output | Proceed only if |
 |---|---|---|
 | A | Local interfaces, partition manifests, provenance, leakage and equivalence tests | Information boundaries and reproducibility hold |
-| B | Dynamics fit; competent local/global/simple-prior controllers; short native-input pilot | Hidden geometry affects decisions in a declared regime; native route and runtime risks are understood |
-| C | Compact forecast model and matched mean/sample comparisons | Learned predictions improve decisions beyond the simple prior |
-| D | Calibration and observation-feedback mechanism tests | Gain survives equal information, supervision and compute; novelty distinction is defensible |
+| B | Working internal model and online search; local/global expert diagnostics; native-input pilot | Competent control, valid observations, and measured runtime; geometry gaps guide only that component |
+| C | Complete-system comparison with fixed-predictor controller/search controls | Gains are attributable and survive appropriate learned-policy/planning baselines |
+| D | Optional predictor-space/model selection and focused planning/calibration ablations | Any added complexity improves validation driving at matched resources |
 | E | Visual/native adapters and strong competitor runs | Claims survive appropriate competitors; failures are investigated |
 | F | Frozen models, endpoints and all conditions; final evaluation and release | Test results have not influenced design; uncertainty supports the claimed effect |
 
 Do not launch all final training runs before B/C. Time estimates remain conditional:
 the first A/B sprint is roughly one to two engineering weeks; total publication
-time cannot be credibly fixed before profiling and the information-gap pilot.
+time cannot be credibly fixed before profiling and the basic control pilot.
 
 ## 9. What would change the plan
 
-No hidden-information gap means reconsider the scientific question, rather than
-manufacture a favorable benchmark. A simple prior matching learning means keep
-the simple model and abandon the learned-forecast advantage claim. Poor dynamics
-ranking means fix the simulator model before judging the geometry hypothesis.
+No hidden-information gap means reconsider the hidden-road component, rather
+than manufacture a favorable benchmark or stop the whole system automatically.
+A simple prior matching learning means keep the simple model and abandon that
+learned-forecast advantage claim. Poor dynamics ranking means fix the internal
+model before attributing failures to its geometry representation.
 Native-only failure narrows the claim. Strong baselines winning changes the result;
 it is not a reason to remove them. Weak novelty changes the method or the paper's
 contribution, not the description of existing work.
@@ -242,7 +255,7 @@ contribution, not the description of existing work.
 
 | System | Why choose it | Main limitation | Decision trigger |
 |---|---|---|---|
-| Recommended: explicit geometric belief plus observation-aware MPC | Interpretable uncertainty, controlled module swaps, direct test of the research question | Integration cost; possible mismatch between useful geometry and native images; novelty unproven | Continue while the information gap, learned belief, and feedback-planning gates pass |
+| Recommended: modular predictive model plus online behavior simulation/search | Matches the main user goal; allows existing models and controlled component swaps | Integration, model exploitation, runtime, and unproven novelty | Establish working control, then compare complete systems under matched resources |
 | Local geometry plus classical robust MPC and a simple road prior | Lowest model/training complexity; strong, understandable controller | A standard implementation is unlikely to provide an algorithmic paper contribution | Prefer it if learning adds no reliable advantage; retain it as a mandatory baseline regardless |
 | Latent world model plus planning, following TD-MPC2/Valdi | Works closer to native pixels; avoids explicit metric map reconstruction | Harder to diagnose geometric uncertainty; established method family | Prefer this direction if explicit geometry is the bottleneck and a distinct latent-model mechanism emerges |
 | Recurrent policy, optionally trained in a learned world or distilled from the planner | Cheap deployment; retains memory; closest to the train-in-an-internal-world variant | Model exploitation during imagination; representation/control gains can be confounded | Prefer deployment through a policy if MPC exceeds latency limits or adds little beyond the same belief |
@@ -253,3 +266,21 @@ that the proposed structured method beats them. None of these alternatives earns
 a novelty claim merely by being implemented in CarRacing. The recommendation is
 to use the simpler alternatives as serious competitors and let the pilot decide
 which research claim remains credible.
+
+
+## 11. Additional user ideas, outside the current critical path
+
+- **Expert/known-track experiment:** retain a competent privileged controller or
+  full-map planner. Compare information conditions separately and label any
+  demonstration supervision. Useful for locating perception/model/control limits;
+  not a guaranteed optimal reference.
+- **Predictor selection:** train normally; freeze each predictor; train/configure
+  the downstream driving system; choose prediction spaces/hyperparameters using
+  validation racing. No special driving-loss gradient is required.
+- **Agentic evolution:** later explore code/controller/planner optimization,
+  potentially in Rust, while keeping the predictor and information protocol fixed.
+  Account for adaptive validation use and search cost. Do not restore the archived
+  tooling or run evolution as part of the present implementation milestone.
+
+These distinctions follow [USER_INTENT.md](USER_INTENT.md). Assistant critiques
+and confidence in each idea are recorded there and in the optional research note.

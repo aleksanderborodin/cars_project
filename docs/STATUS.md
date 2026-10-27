@@ -6,6 +6,8 @@ Updated 2026-10-27. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
 Concrete starting choices and their confidence are in
 [DESIGN_DECISIONS.md](DESIGN_DECISIONS.md). These settings remain proposed; the
 manifest capacities and model configurations have not been instantiated.
+The main system and optional expert, predictor-selection, and future evolution
+experiments are recorded in [USER_INTENT.md](USER_INTENT.md).
 
 ## Implemented foundation
 
@@ -27,6 +29,8 @@ manifest capacities and model configurations have not been instantiated.
 - Disjoint training/development/calibration/test manifests and historical overlap audit.
 - Fitted vehicle dynamics, deterministic MPC, and scenario MPC with a simple prior.
 - Learned distribution of road continuations, calibration, and observation-aware planning.
+- Optional comparison of normally trained predictor spaces/configurations selected
+  by downstream validation driving; not end-to-end driving-loss training by default.
 - Recurrent model-free baseline; TD-MPC2, DreamerV3, and Valdi adapters/reproductions.
 - Visual reconstruction and same-supervision representation controls.
 - Protocol-aware paired reporting, latency diagnostics, frozen final study, paper results.
@@ -49,7 +53,9 @@ does not run a new training campaign or inspect held-out results.
 
 ## Current decision
 
-Proceed with Roadmap A–B only as the next implementation milestone. The local
-information boundary and value-of-information pilot must pass before committing
-to a learned hidden-road model. Budget and publication aspirations remain
-proposals, not measured feasibility or promised acceptance.
+Proceed with the common information/data/evaluation foundation and a working
+prediction/simulation/control loop, including expert diagnostics and an early
+native-input pilot. Optional predictor selection must not block this work.
+Agentic evolution remains future work; its archived code has not been restored.
+Budgets and publication aspirations are proposals, not measured feasibility or
+promised acceptance. This revision changes documentation, not algorithm code.

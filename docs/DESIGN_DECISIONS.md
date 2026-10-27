@@ -162,6 +162,13 @@ hidden simulator labels; vehicle motion/scale must also be inferred. Known rende
 or width priors are disclosed. This is a substantial adaptation, with **low-to-medium
 confidence**, and not merely replacing the input layer.
 
+In observation-only S, calibration must also use permitted observations or
+image-derived targets, not simulator geometry labels. Select checkpoints on
+validation task return under the same information rules as competitors. Hidden
+truth may support separately reported evaluator diagnostics, but cannot fit the
+calibrator or select the observation-only model. The geometry-likelihood
+calibration default above applies to the structured-supervision L/V study.
+
 Run its feasibility pilot early. If supervised geometry is necessary, report a
 native-input, privileged-supervision track with equal-label controls. Do not present
 it as an observation-only SOTA result. If gains appear only under restricted vision,

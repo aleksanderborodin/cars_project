@@ -32,10 +32,18 @@ try candidate behaviors inside that model, select the behavior with the best
 predicted outcome, execute a short part, observe again, and repeat. Validate the
 actual driving outcome in the real Gym environment.
 
-The internal model may be learned, partly engineered, or adapted from existing
-research. We do not need to invent every predictor or representation. The same
-predictive model should support evaluating multiple candidate behaviors; this
-is not a requirement to train a separate model for each maneuver.
+**Latest explicit correction, 2026-10-28:** the main world model is an algorithmic
+simulator written in code. Simulate proposed behaviors and choose by their
+outcomes, rather than replacing those simulations with a trained behavior scorer.
+The earlier broad allowance for learned/engineered internal models does not make
+a learned transition network the current default. The ridge pilot is a baseline,
+not the intended final engine. See [SIMULATOR_SEARCH_PLAN.md](SIMULATOR_SEARCH_PLAN.md).
+
+The same programmed simulator should evaluate multiple candidate behaviors.
+A behavior proposer can be an existing trained policy or an engineered controller;
+compare that original proposer against the same proposer plus simulated selection.
+Its training/pretraining still counts if used. We do not need to invent every
+perception, reconstruction or proposal component, nor train a model per maneuver.
 
 The main project is this complete prediction/simulation/control system. It is
 not restricted to predicting hidden roads. Full versus local information and
@@ -160,10 +168,16 @@ a SOTA claim, or immediate restoration of evolution/Rust tooling.
 
 ## Current priority
 
-The common foundation and initial modular loop now exist. Execute the controlled
-post-pilot batch in [NEXT_EXPERIMENTS.md](NEXT_EXPERIMENTS.md), then develop credible
-complete-system comparisons and investigate the component supported by evidence.
+The common foundation and the earlier learned-dynamics pilot exist. The active
+priority is the [programmed-simulator plan](SIMULATOR_SEARCH_PLAN.md): implement
+the coded engine, obtain development results, then improve behavior proposals,
+selection and observation-based reconstruction under controlled comparisons.
 Agentic evolution remains a later experiment.
+
+The user authorized autonomous progress without clarification interruptions and
+asked for results plus documentation of uncertain choices for later discussion.
+This authorizes implementation decisions within the agreed research boundary;
+it does not open final test or private oracle outputs.
 
 **User reaffirmation, 2026-10-28 (paraphrase):** proceed with the work, while
 preserving the broader goal and ideas because they may substantially change how

@@ -1,0 +1,76 @@
+{
+  "id": "physics_pilot_20261028",
+  "stage": "adaptive_development_engine_and_candidate_comparison",
+  "declaration": "written before new driving runs; follows explicit user requirement for a programmed simulator",
+  "protocol": {
+    "view": "local",
+    "radius": 30.0,
+    "resolution": 1.0,
+    "action_repeat": 4,
+    "version": 1
+  },
+  "partition": "development",
+  "partition_sha256": "f89bb2c62cc5e4b021c66597aa05751970514d17731a927fe17f4d5badfe0095",
+  "tracks": 20,
+  "new_training_frames": 0,
+  "evaluation_native_frame_cap": 40000,
+  "maximum_internal_physics_frames": 16800000,
+  "horizon_decisions": 20,
+  "steering_gains": [
+    0.8,
+    1.0,
+    1.2
+  ],
+  "engine": "Gymnasium Car.step and Box2D world.Step at 50 Hz, independent reconstructed worlds",
+  "vehicle_source_sha256": "df9d65d4d32a9d0189ca6672431b67cad84b195ef22c3908affc627bd29c4e56",
+  "uncertain_choices": {
+    "contact": "five wheel footprint samples; approximate reconstructed geometry contacts",
+    "hidden_state": "carry selected first imagined wheel state; correct observed hull velocity and yaw; no true wheel state",
+    "solver": "fresh worlds discard contact/constraint warm-start impulses",
+    "road": "one straight continuation, no calibrated distribution yet",
+    "score": "retain existing handcrafted progress/penalty score to isolate engine and candidate changes",
+    "runtime": "two independent CPU evaluation jobs; cost is not an isolated latency benchmark"
+  },
+  "conditions": [
+    {
+      "run_id": "physics_pilot_20261028_bounded",
+      "speeds": [
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50
+      ]
+    },
+    {
+      "run_id": "physics_pilot_20261028_wide",
+      "speeds": [
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90
+      ]
+    }
+  ],
+  "references": {
+    "fixed": "runs/fixed_behavior/controlaudit_20261028_fixed_v50_g12",
+    "fixed60": "runs/fixed_behavior/devpilot_20261028_fixed60",
+    "ridge": [
+      "runs/model_search/controlaudit_20261028_search_s0",
+      "runs/model_search/controlaudit_20261028_search_s1",
+      "runs/model_search/controlaudit_20261028_search_s2"
+    ]
+  },
+  "interpretation": "same-candidate bounded engine comparison first; wider family is a separate intervention, not a pure model effect",
+  "held_out_evaluation": false,
+  "user_only_oracle_access": false,
+  "process_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  }
+}

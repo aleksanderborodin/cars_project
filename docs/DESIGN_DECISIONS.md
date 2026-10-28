@@ -1,10 +1,17 @@
 # Proposed design decisions and confidence
 
-Updated 2026-10-27. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
+Updated 2026-10-28. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
 [Research assessment](RESEARCH_PLAN.md) · [Status](STATUS.md)
 
 This is the concrete starting configuration proposed after the research review.
-It is not the final frozen study. An initial implementation/pilot now exists in
+**Later architecture correction (2026-10-28):** a programmed simulator is now the
+main world model. [SIMULATOR_SEARCH_PLAN.md](SIMULATOR_SEARCH_PLAN.md) governs that
+engine and same-proposer comparisons. Learned transition/critic choices below
+are historical alternatives or comparison methods, not primary defaults. The
+observation, partition and honest-comparison requirements remain in force.
+The [programmed-simulator results](PROGRAMMED_SIMULATOR_RESULTS.md) now record
+completed engine/budget comparisons and their unresolved choices.
+This is not the final frozen study. The earlier implementation/pilot is recorded in
 [PILOT_2026-10-28.md](PILOT_2026-10-28.md), with deviations from the larger proposal
 below: a finite behavior grid, simple road prior and fitted ego dynamics.
 Numerical defaults
@@ -53,7 +60,9 @@ system; **low** in a new algorithmic contribution or a native-benchmark advantag
 | Legacy held-out sets | Keep existing unseen/hard sets sealed and separate | High | Use only in the frozen final campaign; do not inspect them to select designs |
 | Training replications | One seed for engineering; three for exploratory comparisons; five for headline learners | High in independent replication; medium in sufficiency | Increase model seeds when between-training variability dominates |
 
-These are requested capacities for a new manifest system, not existing lists.
+The partition mechanism and development/calibration manifests are now implemented;
+the final identities remain sealed. These counts are development choices until
+the final study freeze.
 See [RUN_READINESS.md](RUN_READINESS.md) for the partition implementation,
 separate random streams and pre-run acceptance gates. Reserve the calibration
 partition early, but only use it if the calibration experiment is pursued.

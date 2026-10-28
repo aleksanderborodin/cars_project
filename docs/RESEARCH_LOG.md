@@ -295,3 +295,99 @@ Earlier project intentions remain in USER_INTENT.md; this log extends that recor
   advantage.
 - **Status:** clarification documented in [STATUS.md](STATUS.md); no new campaign
   or regret-based training launched by this explanatory task.
+
+## R16 — Simulation, not a learned transition model, is the intended main engine
+
+- **Author/type:** explicit user correction, 2026-10-28.
+- **Intent:** use an algorithmic simulator written in code as the world model.
+  Simulate behaviors and choose by expected simulated outcomes instead of
+  training a model to make that behavioral choice. Compare against the underlying
+  behavior model/controller from which candidates are proposed.
+- **Consequence:** promote programmed vehicle physics to the primary engine.
+  Preserve learned-dynamics pilots as baselines and archive the preceding source/
+  plan checkpoint. Learned perception/proposers remain possible components; a
+  learned transition network or critic is not the main default.
+- **Assistant design:** reuse Gymnasium vehicle mechanics in separate worlds built
+  from observations; estimate hidden wheel state; start with unchanged candidates
+  and scoring for attribution, then improve maneuvers/search. The full detailed
+  plan and uncertainties are in [SIMULATOR_SEARCH_PLAN.md](SIMULATOR_SEARCH_PLAN.md).
+- **Novelty critique:** policy-guided lookahead and coded-physics MPC have prior
+  art. Beating competent frozen proposers and established planners at declared
+  information/compute budgets must be measured; SOTA is not promised.
+
+## R17 — Execute autonomously and retain uncertain choices for discussion
+
+- **Author/type:** user execution instruction, 2026-10-28, reaffirmed by “continue”.
+- **Intent:** obtain actual results and information without repeated clarification
+  interruptions; record choices where the assistant is unsure for later discussion.
+- **Implementation:** coded engine plus synthetic tests, then a declared 20-track
+  bounded/wider-candidate comparison. Record footprint approximation, latent
+  wheel observer, discarded solver warm starts, straight-road prior and scoring
+  limitations before interpreting results.
+- **Boundary:** no private candidate-monitor feedback, no hidden evaluation-state
+  cloning, no final-test access and no unsupported performance claim. Autonomous
+  work remains within the established experiment protocol.
+
+## R18 — Implement and measure the user's programmed-simulator architecture
+
+- **Author/type:** assistant implementation and measurements under R16–R17,
+  2026-10-28; the architecture intent comes from the user.
+- **Purpose:** test the actual requested engine before investing in larger learned
+  transition models. Preserve the existing candidate bank and score for an initial
+  comparison, then separately widen candidate speeds.
+- **Executed:** independent Box2D worlds using upstream vehicle equations, permitted
+  local observations, estimated wheel state and declared footprint contact. P0's
+  two conditions completed 40 episodes on 20 development tracks, within budget.
+- **Evidence:** bounded physics 653.6 return / 20% completion; wider physics 737.3 /
+  45%. One-step ego errors are substantially smaller than the frozen ridge models
+  on exactly the same transitions, but bounded driving did not improve. Wider
+  search also changes candidate pace, so its gain cannot be attributed solely to
+  the engine. Its 128.5 ms p95 latency exceeds the 80 ms decision interval.
+- **Critique:** the remaining problem includes candidate coverage, utility/horizon,
+  geometry assumptions and latent state. One-step fidelity does not prove accurate
+  counterfactual ranking. Do not read the user's private oracle to resolve this.
+- **Record:** [combined report](PROGRAMMED_SIMULATOR_RESULTS.md), P0 manifest and
+  public tables. No new model training or held-out evaluation.
+
+## R19 — Test a smaller search bank and complete its fixed-controller controls
+
+- **Author/type:** assistant adaptive design choice after P0, 2026-10-28.
+- **Intent:** find a useful runtime reference and avoid comparing against an
+  incomplete fixed-controller family. This is an engineering follow-up, not a
+  new optimizer or a final user commitment to seven candidates.
+- **Choice and uncertainty:** retain seven wider speeds with gain 1.2, selected
+  from the earlier fixed audit; record the new manifest before execution. Reducing
+  steering-gain coverage may lose useful behaviors as well as reduce compute.
+- **Executed:** one physics condition plus eleven missing fixed conditions,
+  240 new episodes on the same 20 tracks. Reuse ten existing fixed references.
+- **Evidence:** seven-candidate search 697.8 return / 40% completion / 48.9 ms p95;
+  best fixed across all 21 wider candidates remains speed50/gain1.2 at 716.1 / 20%.
+  Mean-return difference intervals include zero. All these comparisons are
+  development-adaptive and their intervals are not selection-adjusted.
+- **Verification:** 66 tests passed; full episode replay reproduced all actions,
+  rewards, observations and endings exactly. Isolated timing also confirms a cost
+  reduction. Neither is independent evidence of better driving.
+- **Decision:** retain both 7 and 21 as reference budgets. No final method chosen;
+  all jobs finished. Costs, source/config provenance and limitations are indexed.
+
+## R20 — Proposed next information diagnostic, with the same estimated car state
+
+- **Author/type:** assistant proposal motivated by R18–R19, 2026-10-28.
+- **Purpose:** determine whether improved available road geometry makes the current
+  coded planner useful before adding more complex forecasting or search. This
+  also advances the user's interest in known-track/expert experiments without
+  treating a different expert controller as a clean information ablation.
+- **Design:** explicit full-map adapter; same engine, estimated wheel state,
+  utility and horizon; wider 7/21 candidates × 20 development tracks, at most
+  40k native frames. Declare path-representation changes and an immutable manifest
+  before execution; report a privileged table. No true wheel state or private
+  candidate-ranking values.
+- **Confidence:** medium. A geometry intervention may help locate a bottleneck,
+  but a negative result will not uniquely identify state, scoring or search errors.
+  It is not evidence of standard-input superiority.
+- **Next decision:** strong improvement motivates permitted geometry reconstruction
+  and shared road hypotheses; otherwise prioritize maneuvers, utility/horizon and
+  state/contact diagnostics. Strong learned proposers and established planning
+  comparisons remain required in either case.
+- **Status:** proposed, not implemented or launched. The user's main architecture
+  remains intact; regret objectives and agentic evolution remain future ideas.

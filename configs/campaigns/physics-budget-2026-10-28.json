@@ -1,0 +1,237 @@
+{
+  "id": "physics_budget_20261028",
+  "stage": "adaptive_development_followup",
+  "decision_context": "after programmed-physics P0: wider search 737.3 return / 45% completion, but p95 about 128 ms; use gain 1.2 selected in earlier fixed-controller audit",
+  "partition": "development",
+  "partition_sha256": "f89bb2c62cc5e4b021c66597aa05751970514d17731a927fe17f4d5badfe0095",
+  "tracks": 20,
+  "protocol": {
+    "view": "local",
+    "radius": 30.0,
+    "resolution": 1.0,
+    "action_repeat": 4,
+    "version": 1
+  },
+  "physics_condition": {
+    "run_id": "physics_budget_20261028_gain12",
+    "speeds": [
+      30,
+      40,
+      50,
+      60,
+      70,
+      80,
+      90
+    ],
+    "gains": [
+      1.2
+    ],
+    "horizon": 20
+  },
+  "all_fixed_candidates": [
+    {
+      "candidate_index": 0,
+      "speed": 30,
+      "gain": 0.8,
+      "path": "runs/fixed_behavior/controlaudit_20261028_fixed_v30_g08"
+    },
+    {
+      "candidate_index": 1,
+      "speed": 40,
+      "gain": 0.8,
+      "path": "runs/fixed_behavior/controlaudit_20261028_fixed_v40_g08"
+    },
+    {
+      "candidate_index": 2,
+      "speed": 50,
+      "gain": 0.8,
+      "path": "runs/fixed_behavior/controlaudit_20261028_fixed_v50_g08"
+    },
+    {
+      "candidate_index": 3,
+      "speed": 60,
+      "gain": 0.8,
+      "path": "runs/fixed_behavior/physics_budget_20261028_fixed_v60_g08"
+    },
+    {
+      "candidate_index": 4,
+      "speed": 70,
+      "gain": 0.8,
+      "path": "runs/fixed_behavior/physics_budget_20261028_fixed_v70_g08"
+    },
+    {
+      "candidate_index": 5,
+      "speed": 80,
+      "gain": 0.8,
+      "path": "runs/fixed_behavior/physics_budget_20261028_fixed_v80_g08"
+    },
+    {
+      "candidate_index": 6,
+      "speed": 90,
+      "gain": 0.8,
+      "path": "runs/fixed_behavior/physics_budget_20261028_fixed_v90_g08"
+    },
+    {
+      "candidate_index": 7,
+      "speed": 30,
+      "gain": 1.0,
+      "path": "runs/fixed_behavior/controlaudit_20261028_fixed_v30_g10"
+    },
+    {
+      "candidate_index": 8,
+      "speed": 40,
+      "gain": 1.0,
+      "path": "runs/fixed_behavior/controlaudit_20261028_fixed_v40_g10"
+    },
+    {
+      "candidate_index": 9,
+      "speed": 50,
+      "gain": 1.0,
+      "path": "runs/fixed_behavior/controlaudit_20261028_fixed_v50_g10"
+    },
+    {
+      "candidate_index": 10,
+      "speed": 60,
+      "gain": 1.0,
+      "path": "runs/fixed_behavior/devpilot_20261028_fixed60"
+    },
+    {
+      "candidate_index": 11,
+      "speed": 70,
+      "gain": 1.0,
+      "path": "runs/fixed_behavior/physics_budget_20261028_fixed_v70_g10"
+    },
+    {
+      "candidate_index": 12,
+      "speed": 80,
+      "gain": 1.0,
+      "path": "runs/fixed_behavior/physics_budget_20261028_fixed_v80_g10"
+    },
+    {
+      "candidate_index": 13,
+      "speed": 90,
+      "gain": 1.0,
+      "path": "runs/fixed_behavior/physics_budget_20261028_fixed_v90_g10"
+    },
+    {
+      "candidate_index": 14,
+      "speed": 30,
+      "gain": 1.2,
+      "path": "runs/fixed_behavior/controlaudit_20261028_fixed_v30_g12"
+    },
+    {
+      "candidate_index": 15,
+      "speed": 40,
+      "gain": 1.2,
+      "path": "runs/fixed_behavior/controlaudit_20261028_fixed_v40_g12"
+    },
+    {
+      "candidate_index": 16,
+      "speed": 50,
+      "gain": 1.2,
+      "path": "runs/fixed_behavior/controlaudit_20261028_fixed_v50_g12"
+    },
+    {
+      "candidate_index": 17,
+      "speed": 60,
+      "gain": 1.2,
+      "path": "runs/fixed_behavior/physics_budget_20261028_fixed_v60_g12"
+    },
+    {
+      "candidate_index": 18,
+      "speed": 70,
+      "gain": 1.2,
+      "path": "runs/fixed_behavior/physics_budget_20261028_fixed_v70_g12"
+    },
+    {
+      "candidate_index": 19,
+      "speed": 80,
+      "gain": 1.2,
+      "path": "runs/fixed_behavior/physics_budget_20261028_fixed_v80_g12"
+    },
+    {
+      "candidate_index": 20,
+      "speed": 90,
+      "gain": 1.2,
+      "path": "runs/fixed_behavior/physics_budget_20261028_fixed_v90_g12"
+    }
+  ],
+  "new_fixed_jobs": [
+    {
+      "kind": "fixed",
+      "run_id": "physics_budget_20261028_fixed_v60_g08",
+      "speed": 60,
+      "gain": 0.8
+    },
+    {
+      "kind": "fixed",
+      "run_id": "physics_budget_20261028_fixed_v70_g08",
+      "speed": 70,
+      "gain": 0.8
+    },
+    {
+      "kind": "fixed",
+      "run_id": "physics_budget_20261028_fixed_v80_g08",
+      "speed": 80,
+      "gain": 0.8
+    },
+    {
+      "kind": "fixed",
+      "run_id": "physics_budget_20261028_fixed_v90_g08",
+      "speed": 90,
+      "gain": 0.8
+    },
+    {
+      "kind": "fixed",
+      "run_id": "physics_budget_20261028_fixed_v70_g10",
+      "speed": 70,
+      "gain": 1.0
+    },
+    {
+      "kind": "fixed",
+      "run_id": "physics_budget_20261028_fixed_v80_g10",
+      "speed": 80,
+      "gain": 1.0
+    },
+    {
+      "kind": "fixed",
+      "run_id": "physics_budget_20261028_fixed_v90_g10",
+      "speed": 90,
+      "gain": 1.0
+    },
+    {
+      "kind": "fixed",
+      "run_id": "physics_budget_20261028_fixed_v60_g12",
+      "speed": 60,
+      "gain": 1.2
+    },
+    {
+      "kind": "fixed",
+      "run_id": "physics_budget_20261028_fixed_v70_g12",
+      "speed": 70,
+      "gain": 1.2
+    },
+    {
+      "kind": "fixed",
+      "run_id": "physics_budget_20261028_fixed_v80_g12",
+      "speed": 80,
+      "gain": 1.2
+    },
+    {
+      "kind": "fixed",
+      "run_id": "physics_budget_20261028_fixed_v90_g12",
+      "speed": 90,
+      "gain": 1.2
+    }
+  ],
+  "previous_search": "runs/physics_search/physics_pilot_20261028_wide",
+  "evaluation_native_frame_cap": 240000,
+  "maximum_internal_physics_frames": 2800000,
+  "new_training_frames": 0,
+  "selection_rule": "highest mean official return, then completion, then candidate index; selection is development-only",
+  "timing": "physics run and three-worker fixed sweep may overlap; report contention and measure representative decisions separately",
+  "uncertainty": "restriction to one gain reduces coverage; speed and gain endpoints were informed by earlier development evidence; no improvement guaranteed",
+  "vehicle_source_sha256": "df9d65d4d32a9d0189ca6672431b67cad84b195ef22c3908affc627bd29c4e56",
+  "held_out_evaluation": false,
+  "user_only_oracle_access": false
+}

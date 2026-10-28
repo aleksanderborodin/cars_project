@@ -1,0 +1,220 @@
+{
+  "manifest_sha256": "147765a9cdef64725d932b99cf24365e40493d6a80d24db3b1a17da430c69742",
+  "inputs": [
+    {
+      "path": "runs/fixed_behavior/controlaudit_20261028_fixed_v30_g08",
+      "config_sha256": "f8be5db0815788ad2762f000b94083980190a6d3c48cc0f86d1a46c6e97b3b01",
+      "metrics_sha256": "e8e12573eff5c3e32b75c3f2b00bdf57ade383bd34084ecfdc309efebed8f29a"
+    },
+    {
+      "path": "runs/fixed_behavior/controlaudit_20261028_fixed_v40_g08",
+      "config_sha256": "1848b571fe33bedcca18374e2debf6b5a2941dad6e380d9929810c0e9cb58bd7",
+      "metrics_sha256": "abd26eecf46a71cc7daa36906722ee990bc3d95d74c214f716214ac7248d9814"
+    },
+    {
+      "path": "runs/fixed_behavior/controlaudit_20261028_fixed_v50_g08",
+      "config_sha256": "c96a7328ccb9747cb406e450d8b5b40aea2b193be812fa56bd83c3181f6e14f6",
+      "metrics_sha256": "4fae860effaf61499513b0065337bfb508b62d7ff75632f323b3d1c686933a68"
+    },
+    {
+      "path": "runs/fixed_behavior/physics_budget_20261028_fixed_v60_g08",
+      "config_sha256": "ce87951993bd3cc11c67b13671e07a9700d887df9a9d90513bc8996c48c3e60d",
+      "metrics_sha256": "e00c3013225a4985a1fd6031b1d5eb4b45a086e3a6ba2f44320e9da3f5588f6a"
+    },
+    {
+      "path": "runs/fixed_behavior/physics_budget_20261028_fixed_v70_g08",
+      "config_sha256": "c5d57e9fd7e96ce4b0cf4b2d8c38b52d5ecfea1e084252289774f30d6fc28c3d",
+      "metrics_sha256": "003ebb9142c3c04b26fd205b7b436daabbd93dc3f1a47b8eba5d52f0d2a82a25"
+    },
+    {
+      "path": "runs/fixed_behavior/physics_budget_20261028_fixed_v80_g08",
+      "config_sha256": "1a268299cf453b119fdb5c30757a2f2c07ff97ba8ae9dfd8730b88683e60f2aa",
+      "metrics_sha256": "a34a003de725441af1f49addc1c2ca146171ef0072278c5f5ac4dd9e78795e42"
+    },
+    {
+      "path": "runs/fixed_behavior/physics_budget_20261028_fixed_v90_g08",
+      "config_sha256": "1139adac32c1ff452f30a95ebdecbb1dca8820faddf99be804442f1acc9ac856",
+      "metrics_sha256": "ea3217af4fcaeffc1bd6570cd9cfb8710fef940a8e78abf17cfccc1d1d927cbf"
+    },
+    {
+      "path": "runs/fixed_behavior/controlaudit_20261028_fixed_v30_g10",
+      "config_sha256": "1c9a447a2994ec092f00e2a24ce577a814dd9d318fdea5b917fbd72f336e19af",
+      "metrics_sha256": "dccbc767467f5bff7839d3a34909659436044d6dcd993030467540ea6d2fc472"
+    },
+    {
+      "path": "runs/fixed_behavior/controlaudit_20261028_fixed_v40_g10",
+      "config_sha256": "cadc47c1ce1604a1937979c571d91324e2fccf474d01d5efc26442a07f6ec07f",
+      "metrics_sha256": "7b7645d5a7e299416fa7ff819931f46a4b993fcd74e5edc3fbe909b7dc7b6d9c"
+    },
+    {
+      "path": "runs/fixed_behavior/controlaudit_20261028_fixed_v50_g10",
+      "config_sha256": "a2416045a38e16c6c5888c718e86c34ac0a13caf62a5cd01a3f782fd247fdb15",
+      "metrics_sha256": "e69a8c084bbb2b656ccd81b42137eae4d28df1a4d6ab5cfaf97cb6e83d2e2859"
+    },
+    {
+      "path": "runs/fixed_behavior/devpilot_20261028_fixed60",
+      "config_sha256": "7a22ca0860dd6143103d51b3ccf4115f21ba24a7e7ffca3a1459aa2ee74a82be",
+      "metrics_sha256": "f61caff9c89e312dba34db4e692227f971d9480e5fdf7bd4b577fcd9d0a92654"
+    },
+    {
+      "path": "runs/fixed_behavior/physics_budget_20261028_fixed_v70_g10",
+      "config_sha256": "d9e6972a98fd0d7966facf8cbeaa95aa23a1dbd28ba770701f0aca510832c4a8",
+      "metrics_sha256": "a92a3642755938fb6041b45c3d32acbc96b3aaed05a33ba9386e29df17050d5b"
+    },
+    {
+      "path": "runs/fixed_behavior/physics_budget_20261028_fixed_v80_g10",
+      "config_sha256": "cee4502bcda65438438973c6ad01383c6f814d03c0d3bf8d5af4a33929c186bf",
+      "metrics_sha256": "b70ec2efc4e900de6ba2ee2b388fab6ba6bfbf45e1a836ed0b41ddb09bd47666"
+    },
+    {
+      "path": "runs/fixed_behavior/physics_budget_20261028_fixed_v90_g10",
+      "config_sha256": "21e52a176ea5b9c6d9f8cfa49ff6e9b7c66d68653353ba3153ff598e0c8e23a0",
+      "metrics_sha256": "b591b1fe708e6ceb29e5f511a24dd2b2bc505f7113b511003d6a012bb6ac10bf"
+    },
+    {
+      "path": "runs/fixed_behavior/controlaudit_20261028_fixed_v30_g12",
+      "config_sha256": "a77b6a93dea4be14fa5c1ade9076da551cdc99c11810e86bc667ca45cea00f39",
+      "metrics_sha256": "de103570a913ecb0d90ffd5096f9a24a5bd42e8600303b2b75797dd19356289e"
+    },
+    {
+      "path": "runs/fixed_behavior/controlaudit_20261028_fixed_v40_g12",
+      "config_sha256": "bae0339119554835384306a47874a3cb6da4db7757c77d1f5b3fa2817f10bf9c",
+      "metrics_sha256": "ba69153df4bb11f88b719f5547a684cbfa59541bf49a8a0cc79a18367d62d4f6"
+    },
+    {
+      "path": "runs/fixed_behavior/controlaudit_20261028_fixed_v50_g12",
+      "config_sha256": "c7abeb45336be578323788aefad61fc3330f3bdc1f02cda95f3906a935f95496",
+      "metrics_sha256": "f07c373ebc6005de7f04c8595404dd2b1008f0fe6b2a9260ca4221ddaee5820f"
+    },
+    {
+      "path": "runs/fixed_behavior/physics_budget_20261028_fixed_v60_g12",
+      "config_sha256": "6806e5599a4d282295b952bc15c83a7b9d26156b263d7d7b4322230e0a0bba70",
+      "metrics_sha256": "288e3c30953f027f2a70761e885fc632394761729ee9b8213d05479b20b17be1"
+    },
+    {
+      "path": "runs/fixed_behavior/physics_budget_20261028_fixed_v70_g12",
+      "config_sha256": "463d3343abd8d62d1ede73dcd60fd80e29c22db7ff42ff64c0379f69e4060bcb",
+      "metrics_sha256": "f830429b2263255dabbbfed0edcd62216a379ffcbf29fb61d6d8137f15bf871a"
+    },
+    {
+      "path": "runs/fixed_behavior/physics_budget_20261028_fixed_v80_g12",
+      "config_sha256": "d6904d6bc24f3af3f0c8706591353250687ab7c9804d17fd1521d05de99716b1",
+      "metrics_sha256": "0813f5c1665c35479db16ddd62ef29070b08f3e410c6baed80aa0fc13e19b886"
+    },
+    {
+      "path": "runs/fixed_behavior/physics_budget_20261028_fixed_v90_g12",
+      "config_sha256": "819ad7131ae39a358604a25c0554900b9369303b908e0d4fcb8fdd293e87b0fd",
+      "metrics_sha256": "875e276940e21fd2200e62388fee994795106c9e00bc93e0f605885b3c0ef5ec"
+    },
+    {
+      "path": "runs/physics_search/physics_budget_20261028_gain12",
+      "config_sha256": "b067e8211cf73ea540b3c9e1f1efcc417d741ed745d7f2debf1b825d31077c57",
+      "metrics_sha256": "c720371d9a5988f3fc1fa2db3921f2e59c79d5927194a7164123fd839a17409d"
+    },
+    {
+      "path": "runs/physics_search/physics_pilot_20261028_wide",
+      "config_sha256": "a251eb49466f46af1d08dde0706b16f66ab8f2b25e68f82308b0a2a0184ffd0b",
+      "metrics_sha256": "eedf07d755587023fc95b487aff99ca4e4ae3da1a78640336c23fd6a602cdfdb"
+    }
+  ],
+  "selected_fixed": {
+    "candidate_index": 16,
+    "speed": 50,
+    "gain": 1.2,
+    "path": "runs/fixed_behavior/controlaudit_20261028_fixed_v50_g12",
+    "mean_return": 716.1473308986353,
+    "completion": 0.2
+  },
+  "seven_candidate_search": {
+    "mean_return": 697.7888103547634,
+    "completion": 0.4,
+    "pipeline_latency_p50_ms": 44.78179899888346,
+    "pipeline_latency_p95_ms": 48.888904795603594,
+    "mean_deadline_miss_fraction": 0.0002,
+    "native_frames": 16889,
+    "decisions": 4227,
+    "model_transitions": 591780,
+    "internal_physics_frames": 2367120,
+    "wall_time_s": 194.4641407109957
+  },
+  "contrasts": {
+    "seven_minus_21": {
+      "mean_difference": -39.53617582693823,
+      "interval_95_percent": [
+        -179.947151570349,
+        93.53085274557442
+      ],
+      "candidate_models": 1,
+      "reference_models": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "units": "independent model draws; paired track draws shared across models and methods",
+      "selection_adjusted": false
+    },
+    "seven_minus_21_completion": {
+      "mean_difference": -0.04999999999999999,
+      "interval_95_percent": [
+        -0.24999999999999994,
+        0.10000000000000003
+      ],
+      "candidate_models": 1,
+      "reference_models": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "units": "independent model draws; paired track draws shared across models and methods",
+      "selection_adjusted": false
+    },
+    "seven_minus_best_fixed": {
+      "mean_difference": -18.35852054387192,
+      "interval_95_percent": [
+        -97.80092138562132,
+        58.08912259966562
+      ],
+      "candidate_models": 1,
+      "reference_models": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "units": "independent model draws; paired track draws shared across models and methods",
+      "selection_adjusted": false
+    },
+    "seven_minus_best_fixed_completion": {
+      "mean_difference": 0.2,
+      "interval_95_percent": [
+        0.04999999999999999,
+        0.4
+      ],
+      "candidate_models": 1,
+      "reference_models": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "units": "independent model draws; paired track draws shared across models and methods",
+      "selection_adjusted": false
+    },
+    "21_minus_best_fixed": {
+      "mean_difference": 21.177655283066315,
+      "interval_95_percent": [
+        -97.57612482255132,
+        156.7929520581794
+      ],
+      "candidate_models": 1,
+      "reference_models": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "units": "independent model draws; paired track draws shared across models and methods",
+      "selection_adjusted": false
+    }
+  },
+  "cost": {
+    "native_frames": 210765,
+    "internal_physics_frames": 2367120,
+    "new_training_frames": 0
+  },
+  "interpretation": "adaptive development; gain chosen from prior audit; best fixed selected on these same tracks; intervals not selection-adjusted",
+  "held_out_evaluation": false,
+  "user_only_oracle_values_read": false
+}

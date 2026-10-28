@@ -3,6 +3,12 @@
 Proposed 2026-10-28. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
 [Pilot evidence](PILOT_2026-10-28.md) · [Research log](RESEARCH_LOG.md)
 
+**Architecture superseded:** the user's subsequent clarification makes a coded
+simulator the main world model. Follow [SIMULATOR_SEARCH_PLAN.md](SIMULATOR_SEARCH_PLAN.md)
+for active work. This document preserves the prior batch and conditional ideas;
+it is not an instruction to train larger learned dynamics before implementing
+programmed simulation. Partition, comparison and baseline-validity rules persist.
+
 **Progress:** steps 1–2 are now complete; see the
 [control-audit report](CONTROL_AUDIT_2026-10-28.md) for results and the proposed
 60k-frame follow-up. The remaining steps below are proposed, not completed.

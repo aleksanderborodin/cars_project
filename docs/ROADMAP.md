@@ -4,9 +4,14 @@ Updated 2026-10-28. [Index](../README.md) · [User intent](USER_INTENT.md) ·
 [Status](STATUS.md) · [Proposed numerical settings](DESIGN_DECISIONS.md)
 
 The main project is a working modular prediction → internal simulation/search →
-action → observation loop. Predictor-space selection, expert variants, and future
+action → observation loop. **Active architecture:** the world model is a programmed
+simulator, as clarified by the user. Follow [SIMULATOR_SEARCH_PLAN.md](SIMULATOR_SEARCH_PLAN.md)
+for the current P0–P3 execution order and uncertain choices. The A–G milestones
+below remain the broad scientific roadmap; the former learned-dynamics engine
+is retained as a comparison. Predictor-space selection, expert variants, and future
 agentic evolution must not silently replace this goal. Initial A/B implementation
-and development pilots have run; see [the report](PILOT_2026-10-28.md).
+and development pilots have run; see the
+[latest report](PROGRAMMED_SIMULATOR_RESULTS.md).
 Use permitted seen-side development data; keep unseen/hard
 identities and results sealed until the frozen final campaign.
 Use [RUN_READINESS.md](RUN_READINESS.md) for the two freezes, data/provenance
@@ -29,8 +34,8 @@ paper collection or expensive training starts before the infrastructure gates.
 
 ## First implementation sprint: A–B
 
-Status on 2026-10-28: disjoint namespaces, local/native interfaces, fitted ego
-dynamics, deterministic behavior search, local/expert references and a recurrent
+Status on 2026-10-28: disjoint namespaces, local/native interfaces, programmed
+vehicle physics, fitted ego dynamics, deterministic behavior search, local/expert references and a recurrent
 adapter are implemented and exercised. Basic-loop and reproducibility checks pass.
 Competitive control and strong-baseline gates do not yet pass. Multi-world road
 beliefs, modern reproductions and the final study are not completed.
@@ -62,8 +67,14 @@ not be rebuilt. Remaining work follows the budgeted
 
 Steps 1–2 are complete: 473,737 evaluation frames, no new model training. The
 [control audit](CONTROL_AUDIT_2026-10-28.md) reports no established search advantage
-and many on-road timeouts. It proposes a 60k-frame pace/full-map diagnostic batch
-and records the baseline preparation. Those next runs have not started.
+and many on-road timeouts. Its 60k-frame pace/full-map proposal is deferred while
+we prioritize the user's coded-simulator architecture. The coded-physics comparison
+and reduced-cost follow-up are now complete: see
+[PROGRAMMED_SIMULATOR_RESULTS.md](PROGRAMMED_SIMULATOR_RESULTS.md). No mean-return
+advantage is established. Next proposed: a same-planner full-map diagnostic with
+estimated vehicle state, wider 7/21 candidates on 20 development tracks (40k native
+frame cap). It has not started. Baseline preparation remains useful for a competent
+frozen learned proposer and subsequent matched comparisons.
 User-only ranking diagnostics cannot supply optimization feedback.
 A geometry information-gap diagnostic informs one component; it is not a
 universal gate for all model-based control.

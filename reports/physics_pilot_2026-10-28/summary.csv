@@ -1,0 +1,3 @@
+run_id,mean_return,completion,mean_progress,mean_offroad_frames,pipeline_latency_p50_ms,pipeline_latency_p95_ms,mean_deadline_miss_fraction,native_frames,decisions,model_transitions,internal_physics_frames,wall_time_s
+physics_pilot_20261028_bounded,653.626602644458,0.2,0.7588916026444711,54.05,117.71778750335216,127.42104099561402,1.0,19055,4766,2001720,8006880,568.6315341989975
+physics_pilot_20261028_wide,737.3249861817017,0.45,0.8253649861817143,110.75,116.81680799665628,128.47254980442813,1.0,17608,4405,1850100,7400400,524.0970625240006

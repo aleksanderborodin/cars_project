@@ -1,0 +1,8 @@
+run_id,outcome,episodes
+physics_pilot_20261028_bounded,completed,4
+physics_pilot_20261028_bounded,playfield_exit,2
+physics_pilot_20261028_bounded,timeout_offroad,2
+physics_pilot_20261028_bounded,timeout_onroad,12
+physics_pilot_20261028_wide,completed,9
+physics_pilot_20261028_wide,timeout_offroad,5
+physics_pilot_20261028_wide,timeout_onroad,6

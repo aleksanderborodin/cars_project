@@ -62,3 +62,12 @@ system is primary, normal predictor training with downstream validation selectio
 is optional, and expert/agentic-evolution studies are additional experiments.
 The useful geometry analysis remains on main as a labeled research branch.
 Use [USER_INTENT.md](USER_INTENT.md) for the active interpretation.
+
+## Learned-dynamics pilot checkpoint
+
+`archive/learned-dynamics-pilot-2026-10-28` preserves commit `80f258e`, immediately
+before the user explicitly clarified that the main world model must be a coded
+simulator and that behavior selection should use its rollouts. The preceding
+plans, ridge dynamics and control-audit results are recoverable there. Useful
+baseline code/results remain on main, clearly labeled. Active architecture is in
+[SIMULATOR_SEARCH_PLAN.md](SIMULATOR_SEARCH_PLAN.md); historical evidence is not erased.

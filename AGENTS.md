@@ -8,6 +8,10 @@ at `README.md`; use `docs/STATUS.md` to distinguish implemented code from propos
 - Gymnasium CarRacing only, simulation only, current workstation first.
 - Main project: modular prediction, internal simulation, online behavior search,
   action execution, and replanning. Read `docs/USER_INTENT.md` for user decisions.
+- The main world model is a programmed simulator, per the user's explicit
+  correction. Read `docs/SIMULATOR_SEARCH_PLAN.md`. Learned ridge/neural dynamics
+  are comparison alternatives, not the primary engine. Simulate proposed behaviors
+  and compare the frozen proposer with/without simulated selection.
 - Predictor-space/hyperparameter selection uses downstream validation driving
   after normal predictive training. Special decision-focused predictor losses are
   not the default. Hidden-road prediction is one component, not the whole project.
@@ -26,13 +30,13 @@ src/cars/
   il/         behavior cloning, DAgger, demonstration collection
   rl/         SB3 PPO/SAC and action wrappers
   eval/       privileged evaluator, episode logs, aggregate reports
-  models/     fitted observed-ego dynamics
-  planning/   local references and finite candidate behavior search
+  models/     programmed observation-initialized vehicle physics; fitted ridge baseline
+  planning/   local references, shared road query, learned-model and coded-physics search
   research/   partition-enforced collection, fitting, recurrent training and development evaluation
   monitoring/ one-way user-only privileged ranking sidecar
   training.py training seeds, metadata, run creation
   cli.py      uv run python -m cars.cli <command>
-scripts/      training progress utility
+scripts/      campaign runners, public summaries, replay/timing checks, training progress
 tests/        pytest
 docs/         active specification, research, references, roadmap, status, development
 runs/         outputs and historical artifacts, gitignored
@@ -42,7 +46,9 @@ private_diagnostics/ user-only monitor outputs, gitignored; agents must not read
 
 The new `env/partitions.py`, `env/protocol.py`, `models/`, `planning/` and `research/`
 path implements restricted local/native protocols, fitted dynamics, deterministic
-finite behavior search and a recurrent-PPO adapter. `monitoring/` is a separate
+finite behavior search and a recurrent-PPO adapter. The new `models/physics.py`
+and `planning/physics_search.py` use upstream vehicle code in reconstructed worlds,
+with an explicit approximate contact/state estimator. `monitoring/` is a separate
 user-only sidecar. See the development report for measurements. Learned road
 distributions, scenario MPC, CEM, local visual reconstruction and modern world-model
 reproductions remain planned; do not describe them as implemented.
@@ -65,6 +71,9 @@ reproductions remain planned; do not describe them as implemented.
 - Local methods must not receive full tracks, raw truth, seeds, global progress,
   hidden-map simulator clones, or future scenario identities. Current APIs are
   privileged and must not be relabeled local.
+- Known physics code does not authorize true wheel/solver-state access. Initialize
+  local internal worlds from permitted observations/history; declare state/contact
+  approximations and count internal native physics steps separately from real data.
 - Match and record information, history, supervision, action frequency, native
   frames, model rollouts, and compute within each comparison.
 - Every run writes config and seeds and must be reproducible from

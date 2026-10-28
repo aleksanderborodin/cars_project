@@ -1,6 +1,6 @@
 # Research references and reproduction register
 
-Reviewed 2026-10-27. [Index](../README.md) · [Analysis](RESEARCH_PLAN.md) ·
+Reviewed 2026-10-28. [Index](../README.md) · [Analysis](RESEARCH_PLAN.md) ·
 [Comparison design](RESEARCH_PLAN.md#5-comparison-and-reproduction-plan)
 
 Sources below are primary papers, proceedings, author project pages, official
@@ -45,6 +45,9 @@ Important distinctions from those sources:
 | Fujimoto et al., MR.Q, 2025 | [Paper](https://arxiv.org/abs/2501.16142) | [Official code](https://github.com/facebookresearch/MRQ) | Additional modern model-free comparator; CarRacing adapter needed |
 | Recurrent PPO implementation | [SB3-Contrib documentation](https://sb3-contrib.readthedocs.io/en/master/modules/ppo_recurrent.html) | [Official repository](https://github.com/Stable-Baselines-Team/stable-baselines3-contrib) | First practical memory baseline; match observations, labels, and frame budgets |
 | RL Zoo recurrent CarRacing recipe | [Pinned configuration](https://github.com/DLR-RM/rl-baselines3-zoo/blob/61956d90d9f8ac126043ed4024efa12a462d97e1/hyperparams/ppo_lstm.yml) | Upstream commit pinned 2026-10-28 | Configuration audit only; our 100k-frame engineering adapter is not its reproduction |
+| Wang & Ba, POPLIN, ICLR 2020 | [Paper](https://arxiv.org/abs/1906.08649) | Paper's linked implementation; not installed here | Closely related policy-guided planning; prevents claiming proposer improvement by simulation is itself new |
+| Pinneri et al., iCEM, CoRL 2020 / PMLR 2021 | [Proceedings](https://proceedings.mlr.press/v155/pinneri21a.html) | No reproduction yet | Memory and correlated action sampling; proposed search foundation/comparator |
+| Sikchi et al., LOOP, CoRL 2021 / PMLR 2022 | [Proceedings](https://proceedings.mlr.press/v164/sikchi22a.html) | [Author project](https://hari-sikchi.github.io/loop/) | Learned-dynamics/terminal-value contrast; not the default coded-simulator architecture |
 | Hafner, Yan & Lillicrap, Dreamer 4, 2025 | [Paper](https://arxiv.org/abs/2509.24527) | No reproduction selected | Contemporary video-world-model context; full Minecraft-scale study is outside scope |
 
 TD-MPC2, DreamerV3, and MR.Q are credible competitors, not verified current
@@ -105,3 +108,8 @@ For every selected competitor, add a record with:
 Refresh the literature and novelty assessment before freezing the paper. Save
 formal citation metadata from primary publisher/arXiv records at manuscript time;
 do not invent venue details, bibliographic fields, benchmark rankings, or results.
+
+The programmed-physics backend reuses the locked Gymnasium 1.4.0
+[vehicle implementation](https://github.com/Farama-Foundation/Gymnasium/blob/v1.4.0/gymnasium/envs/box2d/car_dynamics.py).
+Record its installed source hash. This supplies mechanics, not hidden initial
+state, road geometry or an authorized clone of the evaluation environment.

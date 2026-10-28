@@ -31,13 +31,14 @@ def main(argv: list[str] | None = None) -> None:
     fitting.add_argument("--ridge", type=float, default=.01)
     fitting.add_argument("--run-id", required=True)
     evaluation = commands.add_parser("evaluate")
-    evaluation.add_argument("--method", choices=("local", "fixed", "search", "expert", "recurrent"), required=True)
+    evaluation.add_argument("--method", choices=("local", "fixed", "search", "physics", "expert", "recurrent"), required=True)
     evaluation.add_argument("--model", type=Path)
     evaluation.add_argument("--episodes", type=int, default=20)
     evaluation.add_argument("--horizon", type=int, default=20)
     evaluation.add_argument("--speed", type=float, default=60.)
     evaluation.add_argument("--gain", type=float, default=1., help="fixed-controller steering gain")
     evaluation.add_argument("--speed-grid", type=float, nargs="+")
+    evaluation.add_argument("--gain-grid", type=float, nargs="+", help="candidate steering gains for search/physics")
     evaluation.add_argument("--user-monitor", action="store_true", help="isolated private oracle-ranking report; never read by training or agents")
     evaluation.add_argument("--run-id", required=True)
     training = commands.add_parser("train-recurrent")
@@ -71,13 +72,20 @@ def main(argv: list[str] | None = None) -> None:
             driver = FixedBehavior(protocol, speed=args.speed, gain=args.gain)
         elif args.method == "expert":
             driver = BaselinePolicy()
+        elif args.method == "physics":
+            from cars.planning.physics_search import PhysicsSearch
+            driver = PhysicsSearch(protocol, SearchConfig(horizon=args.horizon,
+                speeds=tuple(args.speed_grid) if args.speed_grid else SearchConfig().speeds,
+                steering_gains=tuple(args.gain_grid) if args.gain_grid else SearchConfig().steering_gains))
         else:
             if args.model is None:
                 parser.error("--model is required")
             protocol = ProtocolConfig(**read_config(args.model)["protocol"])
             if args.method == "search":
                 driver = BehaviorSearch(protocol, Dynamics.load(args.model / "model.npz"),
-                                        SearchConfig(horizon=args.horizon, speeds=tuple(args.speed_grid) if args.speed_grid else SearchConfig().speeds),
+                                        SearchConfig(horizon=args.horizon,
+                                            speeds=tuple(args.speed_grid) if args.speed_grid else SearchConfig().speeds,
+                                            steering_gains=tuple(args.gain_grid) if args.gain_grid else SearchConfig().steering_gains),
                                         model_artifact=args.model)
             else:
                 from cars.research.recurrent import RecurrentDriver

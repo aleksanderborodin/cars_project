@@ -1,11 +1,11 @@
 """Finite behavior search in one fitted internal model (engineering baseline)."""
 from dataclasses import asdict, dataclass
 from pathlib import Path
+from typing import Protocol
 
 import numpy as np
 
 from cars.env.protocol import Observation, ProtocolConfig
-from cars.models.dynamics import Dynamics
 from cars.planning.local import centreline, controls, extend
 from cars.planning.world import LocalRoadWorld
 from cars.training import sha256
@@ -22,10 +22,17 @@ class SearchConfig:
     half_width_prior: float = 6.67
 
 
+class RolloutModel(Protocol):
+    repeat: int
+
+    def advance(self, pose: np.ndarray, ego: np.ndarray, action: np.ndarray,
+                previous: np.ndarray, grip: np.ndarray) -> tuple[np.ndarray, np.ndarray]: ...
+
+
 class BehaviorSearch:
     method = "model_search"
 
-    def __init__(self, protocol: ProtocolConfig, model: Dynamics, config: SearchConfig | None = None,
+    def __init__(self, protocol: ProtocolConfig, model: RolloutModel, config: SearchConfig | None = None,
                  model_artifact: Path | None = None):
         if model.repeat != protocol.action_repeat:
             raise ValueError("Dynamics and control frequencies differ")
@@ -48,6 +55,12 @@ class BehaviorSearch:
         self.candidate_actions = None
         self.candidate_costs = None
 
+    def _begin_rollout(self, observation: Observation, world: LocalRoadWorld, count: int) -> None:
+        pass
+
+    def _commit_rollout(self, selected: int) -> None:
+        pass
+
     def act(self, observation: Observation) -> np.ndarray:
         path = extend(centreline(observation, self.protocol))
         speeds, gains = np.meshgrid(self.config.speeds, self.config.steering_gains)
@@ -57,6 +70,7 @@ class BehaviorSearch:
         ego = np.repeat(observation["ego"][None], count, axis=0)
         previous = np.repeat(observation["previous_action"][None], count, axis=0)
         world = LocalRoadWorld(observation, self.protocol, path, self.config.half_width_prior)
+        self._begin_rollout(observation, world, count)
         road_query = world.query(pose[:, :2])
         total = np.zeros(count)
         first = controls(pose, ego, path, speeds, gains)
@@ -85,4 +99,5 @@ class BehaviorSearch:
                             "steering_gain": float(gains[selected]),
                             "selected_candidate": selected,
                             "predicted_cost": float(total[selected])}
+        self._commit_rollout(selected)
         return first[selected]

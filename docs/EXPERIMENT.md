@@ -3,9 +3,9 @@
 Updated 2026-10-28 following the research discussion. The project now targets a
 scientific paper about modular world models and online control, using Gymnasium CarRacing
 only and the current workstation. Physical robots and other simulators are out
-of scope. A first restricted local/native implementation and deterministic search
-pilot now exist; see [STATUS.md](STATUS.md) and the
-[development report](PILOT_2026-10-28.md). The broader learned road distributions,
+of scope. Restricted local/native interfaces, programmed physics and deterministic
+search now exist; see [STATUS.md](STATUS.md) and the
+[latest development report](PROGRAMMED_SIMULATOR_RESULTS.md). The broader learned road distributions,
 scenario planning, modern comparisons and final campaign below remain proposed.
 
 Read [USER_INTENT.md](USER_INTENT.md) for the user's decisions and paper goal.
@@ -19,8 +19,10 @@ historical artifacts keep their earlier protocol and interpretation; the new
 restricted research path is separate.
 The [run-readiness plan](RUN_READINESS.md) specifies what to freeze before data
 collection, what to select in pilots, and what must pass before expensive runs.
-The [next-experiment plan](NEXT_EXPERIMENTS.md) orders the immediate post-pilot
-corrections and comparisons. Its first batch is complete; the
+The [programmed-simulator plan](SIMULATOR_SEARCH_PLAN.md) is the active architecture
+following the user's correction: programmed physics is the main world model;
+candidate behaviors are selected by simulated outcomes. The earlier
+[next-experiment plan](NEXT_EXPERIMENTS.md) records the preceding work. Its first batch is complete; the
 [control audit](CONTROL_AUDIT_2026-10-28.md) reports the correction, matched fixed
 controls and failure evidence. Further diagnostics and baseline training remain open.
 
@@ -31,9 +33,14 @@ online behavior search, and which perception, prediction, and control components
 determine its performance and cost? Compare with strong learned policies and
 established planning methods under matched information, supervision, and budgets.
 
-The main loop is observe, model, simulate candidates, choose, execute briefly,
-and replan. Hidden-road reconstruction is one component/controlled study, not
-the sole task. Existing predictors may be reused. An optional study trains
+The main loop is observe, reconstruct/estimate, simulate candidates in a coded
+world, choose, execute briefly, and replan. The main dynamics engine reuses
+programmed vehicle mechanics in independent reconstructed worlds. Learned
+transition models are comparison alternatives, not the default main engine.
+A behavior proposer may be engineered or learned; the central comparison is
+the same frozen proposer with and without simulation-based selection.
+Hidden-road reconstruction is one component/controlled study, not
+the sole task. Existing perception/proposal models may be reused. An optional study trains
 predictors normally, freezes them, trains/configures downstream control, and
 selects prediction spaces/hyperparameters/checkpoints by validation driving.
 It does not require driving-loss gradients through the predictor.
@@ -81,8 +88,9 @@ labels and collection frames. Include controls receiving identical auxiliary
 labels or the same frozen reconstructed representation. Distinguish privileged
 supervision from observation-only learning in every comparison.
 
-Deployment planning uses an internal model built from permitted observations
-and priors. Copying the evaluation environment also copies its hidden road and
+Deployment planning uses programmed mechanics with a state/road estimate built
+from permitted observations and priors. Knowing the mechanics does not authorize
+access to true wheel state or full road. Copying the evaluation environment also copies its hidden road and
 is forbidden for local methods. Any simulator oracle is a separate diagnostic.
 
 Sampled road geometry persists throughout an imagined rollout. Evaluate actions
@@ -97,8 +105,9 @@ infrastructure. Retire Rust/Codex evolution and the complete track-count K-grid
 to the archive branch. Historical runs remain preserved locally; they do not
 establish results under the new protocol.
 
-Build the basic prediction/simulation/control system first. Prioritize local pure pursuit with a visibility/braking rule; deterministic
-local MPC; scenario MPC with a simple road prior; matched planners with learned
+Build the programmed simulation/control system first. Prioritize local pure pursuit
+with a visibility/braking rule; coded-physics local MPC and same-proposer selection
+controls; scenario MPC with a simple road prior; matched planners with learned
 single/multiple road forecasts; a strong recurrent model-free controller;
 TD-MPC2 with documented history adaptation; and DreamerV3 for visual comparison.
 Audit and attempt the directly relevant Valdi CarRacing reproduction. PETS-style
@@ -149,7 +158,8 @@ optimization route; its code remains archived now.
 ## Implementation order
 
 1. Information boundaries, partition manifests, and evaluation metadata/tests.
-2. Working internal-model/control loop, expert/global diagnostic, early native pilot.
+2. Programmed internal simulator with observation-based state reconstruction,
+   same-proposer control/search, expert/global diagnostics and native pilots.
 3. Complete-system comparison with strong learned policies and planning baselines.
 4. Focused model/planner ablations; optionally select normally trained predictor
    spaces and hyperparameters by downstream validation driving.

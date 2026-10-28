@@ -16,17 +16,28 @@ uv run python -m cars.cli research fit --training runs/collection/demo_train --d
 uv run python -m cars.cli research evaluate --method search --model runs/dynamics/demo_model --episodes 4 --run-id demo_search
 uv run python -m cars.cli research evaluate --method local --episodes 4 --run-id demo_local
 uv run python -m cars.cli research evaluate --method fixed --speed 60 --gain 1.2 --episodes 4 --run-id demo_fixed
+uv run python -m cars.cli research evaluate --method physics --speed-grid 20 25 30 35 40 45 50 --episodes 4 --run-id demo_physics
+uv run python -m cars.cli research evaluate --method physics --speed-grid 30 40 50 60 70 80 90 --gain-grid 1.2 --episodes 4 --run-id demo_physics7
 ```
 
 Each command creates an immutable run with config, source snapshot, dependency
 versions/hashes, costs and relevant datasets/checkpoints/traces. Use fresh IDs.
 `collect --collector mixed` cycles local and fixed-speed collection policies.
-`evaluate --speed-grid ...` changes the candidate set; `--horizon` changes its
+`evaluate --speed-grid ... --gain-grid ...` changes the search/physics candidate
+set; `--horizon` changes its
 decision horizon. Fixed controllers accept `--speed` and `--gain`. These
 development choices are recorded with each result. Search configurations now
 record `road_query=shared_road_query_v2`; old query results retain their original
 interpretation. New trajectory files contain post-episode evaluator-only
 `evaluation_offroad_frame_indices`, never an agent observation.
+
+`--method physics` uses programmed vehicle equations and Box2D in independent
+observation-initialized worlds; it needs no fitted model artifact. Current
+prototype contact/state approximations are declared in its config. It records
+`internal_physics_frames` separately from native evaluation frames and candidate
+decision transitions. `--method search --model ...` remains the fitted-dynamics
+baseline. The private candidate monitor currently supports that older fitted
+model path only; do not bypass its restrictions for a new engine.
 
 ```bash
 uv run python -m cars.cli research train-recurrent --frames 2048 --workers 2 --run-id demo_recurrent
@@ -51,7 +62,9 @@ The first campaign and public artifact rebuild command are in
 [PILOT_2026-10-28.md](PILOT_2026-10-28.md). The completed follow-up's manifest,
 runner and public analysis commands are in
 [CONTROL_AUDIT_2026-10-28.md](CONTROL_AUDIT_2026-10-28.md). Campaign runners create
-fresh immutable directories and reject overwrites. No final-test command is exposed by the
+fresh immutable directories and reject overwrites. The completed coded-physics
+campaigns and public rebuild commands are in
+[PROGRAMMED_SIMULATOR_RESULTS.md](PROGRAMMED_SIMULATOR_RESULTS.md). No final-test command is exposed by the
 research CLI. The rest of this guide describes the **legacy privileged path**.
 
 ## Environment and checks

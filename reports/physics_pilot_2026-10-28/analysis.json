@@ -1,0 +1,263 @@
+{
+  "manifest_sha256": "265497b14361fb6afc9db9e9ab157233687a7d448b06fb51635ea42fc8224cd0",
+  "inputs": [
+    {
+      "path": "runs/fixed_behavior/controlaudit_20261028_fixed_v50_g12",
+      "config_sha256": "c7abeb45336be578323788aefad61fc3330f3bdc1f02cda95f3906a935f95496",
+      "metrics_sha256": "f07c373ebc6005de7f04c8595404dd2b1008f0fe6b2a9260ca4221ddaee5820f",
+      "cost_sha256": "aefb1064e8037a5a9bd64a4e1b8e6d310d8661f5d831ae7e99165b01247f24e1"
+    },
+    {
+      "path": "runs/fixed_behavior/devpilot_20261028_fixed60",
+      "config_sha256": "7a22ca0860dd6143103d51b3ccf4115f21ba24a7e7ffca3a1459aa2ee74a82be",
+      "metrics_sha256": "f61caff9c89e312dba34db4e692227f971d9480e5fdf7bd4b577fcd9d0a92654",
+      "cost_sha256": "1cbaf10552052649d9382e1478b48a20910b1bc3e0f95c8f51f4d9a6dd1883bf"
+    },
+    {
+      "path": "runs/model_search/controlaudit_20261028_search_s0",
+      "config_sha256": "939bf0abda618b19c83d35b57f237bd8be87d63f459ea0db10d8000f2898add4",
+      "metrics_sha256": "a55da0ed1557939e33396e75732f86f37d38c9380cf85ffa109e80d29253a50b",
+      "cost_sha256": "2932adee3b56c853966671650813cf36805fd9bda0bd354a2180976201a1d3d7"
+    },
+    {
+      "path": "runs/model_search/controlaudit_20261028_search_s1",
+      "config_sha256": "dcb662f3b5dbb7f833072db5edc73a7577cdd950d65e324398804e73da8dd5f1",
+      "metrics_sha256": "6667fc17dcf00ffdd63de3191c37b9ff0f7325a77d84985fe7f0291eda7bb38a",
+      "cost_sha256": "f56470bba38ca9800b61ea1ea33947b2db210e1bbcda2533182792c352c83fc5"
+    },
+    {
+      "path": "runs/model_search/controlaudit_20261028_search_s2",
+      "config_sha256": "b25fab2bec9b428cd7b20d097b37c9f0adc1b61b77a2938289be37a92fd4099e",
+      "metrics_sha256": "b266bd62ebf1f2a119019c341b1f07a1e514d1795e0f4da814bf500824191d0e",
+      "cost_sha256": "40fdaf95f15bc931a9e8125d8885514f0b1c649207c6bd7978b12094baca9a42"
+    },
+    {
+      "path": "runs/physics_search/physics_pilot_20261028_bounded",
+      "config_sha256": "8e4d4712eb013c1940f09c6a174635c5b3e4151020fb628cabf73b193ca691b7",
+      "metrics_sha256": "5b32173702d73b2807dd1ba1eeb69874388a57aa0e2bc0760f1b4411e27d4fc0",
+      "cost_sha256": "1470b910c97e72a60d4fd4b70f29ae035f110121a6436690257ac847a7c1b70a"
+    },
+    {
+      "path": "runs/physics_search/physics_pilot_20261028_wide",
+      "config_sha256": "a251eb49466f46af1d08dde0706b16f66ab8f2b25e68f82308b0a2a0184ffd0b",
+      "metrics_sha256": "eedf07d755587023fc95b487aff99ca4e4ae3da1a78640336c23fd6a602cdfdb",
+      "cost_sha256": "1c679ac88d9b2d624cbc16742da4899554dd7234affd917678a98b1cecef80b6"
+    }
+  ],
+  "conditions": [
+    {
+      "run_id": "physics_pilot_20261028_bounded",
+      "mean_return": 653.626602644458,
+      "completion": 0.2,
+      "mean_progress": 0.7588916026444711,
+      "mean_offroad_frames": 54.05,
+      "pipeline_latency_p50_ms": 117.71778750335216,
+      "pipeline_latency_p95_ms": 127.42104099561402,
+      "mean_deadline_miss_fraction": 1.0,
+      "native_frames": 19055,
+      "decisions": 4766,
+      "model_transitions": 2001720,
+      "internal_physics_frames": 8006880,
+      "wall_time_s": 568.6315341989975,
+      "minus_fixed50_gain12": {
+        "mean_difference": -62.52072825417736,
+        "interval_95_percent": [
+          -142.75775806202998,
+          6.9317848141780205
+        ],
+        "candidate_models": 1,
+        "reference_models": 1,
+        "common_tracks": 20,
+        "reps": 5000,
+        "seed": 0,
+        "units": "independent model draws; paired track draws shared across models and methods",
+        "selection_adjusted": false
+      },
+      "minus_fixed60_gain10": {
+        "mean_difference": 40.21789221758479,
+        "interval_95_percent": [
+          -86.34419481550417,
+          165.54303565414727
+        ],
+        "candidate_models": 1,
+        "reference_models": 1,
+        "common_tracks": 20,
+        "reps": 5000,
+        "seed": 0,
+        "units": "independent model draws; paired track draws shared across models and methods",
+        "selection_adjusted": false
+      },
+      "minus_ridge_bounded": {
+        "mean_difference": -28.28800356052932,
+        "interval_95_percent": [
+          -116.75231466327307,
+          49.134626976642416
+        ],
+        "candidate_models": 1,
+        "reference_models": 3,
+        "common_tracks": 20,
+        "reps": 5000,
+        "seed": 0,
+        "units": "independent model draws; paired track draws shared across models and methods",
+        "selection_adjusted": false
+      },
+      "target_speed_counts": {
+        "20.0": 7,
+        "25.0": 8,
+        "30.0": 31,
+        "35.0": 16,
+        "40.0": 46,
+        "45.0": 52,
+        "50.0": 4606
+      },
+      "one_step_ego_diagnostics": {
+        "rows": 4761,
+        "units": [
+          "forward_m_s",
+          "left_m_s",
+          "yaw_rad_s"
+        ],
+        "physics_rmse": [
+          0.05475236066361571,
+          0.06295375372144384,
+          0.028884503461507508
+        ],
+        "ridge_rmse_on_same_transitions": [
+          [
+            0.598387139761051,
+            0.6682226896338286,
+            0.25742958790254006
+          ],
+          [
+            0.601142005373049,
+            0.6762871976114412,
+            0.25628186252507207
+          ],
+          [
+            0.5961095819502312,
+            0.7302855197164674,
+            0.2553755797740648
+          ]
+        ],
+        "interpretation": "same actual actions/transitions per condition; ordinary permitted ego observations; no candidate oracle; not long-horizon proof"
+      }
+    },
+    {
+      "run_id": "physics_pilot_20261028_wide",
+      "mean_return": 737.3249861817017,
+      "completion": 0.45,
+      "mean_progress": 0.8253649861817143,
+      "mean_offroad_frames": 110.75,
+      "pipeline_latency_p50_ms": 116.81680799665628,
+      "pipeline_latency_p95_ms": 128.47254980442813,
+      "mean_deadline_miss_fraction": 1.0,
+      "native_frames": 17608,
+      "decisions": 4405,
+      "model_transitions": 1850100,
+      "internal_physics_frames": 7400400,
+      "wall_time_s": 524.0970625240006,
+      "minus_fixed50_gain12": {
+        "mean_difference": 21.177655283066315,
+        "interval_95_percent": [
+          -97.57612482255132,
+          156.7929520581794
+        ],
+        "candidate_models": 1,
+        "reference_models": 1,
+        "common_tracks": 20,
+        "reps": 5000,
+        "seed": 0,
+        "units": "independent model draws; paired track draws shared across models and methods",
+        "selection_adjusted": false
+      },
+      "minus_fixed60_gain10": {
+        "mean_difference": 123.91627575482846,
+        "interval_95_percent": [
+          24.925940893167667,
+          242.6875762515057
+        ],
+        "candidate_models": 1,
+        "reference_models": 1,
+        "common_tracks": 20,
+        "reps": 5000,
+        "seed": 0,
+        "units": "independent model draws; paired track draws shared across models and methods",
+        "selection_adjusted": false
+      },
+      "minus_ridge_bounded": {
+        "mean_difference": 55.41037997671435,
+        "interval_95_percent": [
+          -34.46876788785411,
+          151.49900997636388
+        ],
+        "candidate_models": 1,
+        "reference_models": 3,
+        "common_tracks": 20,
+        "reps": 5000,
+        "seed": 0,
+        "units": "independent model draws; paired track draws shared across models and methods",
+        "selection_adjusted": false
+      },
+      "target_speed_counts": {
+        "30.0": 161,
+        "40.0": 159,
+        "50.0": 176,
+        "60.0": 191,
+        "70.0": 463,
+        "80.0": 2364,
+        "90.0": 891
+      },
+      "one_step_ego_diagnostics": {
+        "rows": 4397,
+        "units": [
+          "forward_m_s",
+          "left_m_s",
+          "yaw_rad_s"
+        ],
+        "physics_rmse": [
+          0.0992702885683356,
+          0.10565295259472929,
+          0.046585696147869074
+        ],
+        "ridge_rmse_on_same_transitions": [
+          [
+            1.1646570954148066,
+            1.6614015165381413,
+            0.4973814053926634
+          ],
+          [
+            1.0743960456261024,
+            1.6542419850967913,
+            0.4904282784241724
+          ],
+          [
+            1.022246533142779,
+            1.7411234088914664,
+            0.4924331576968208
+          ]
+        ],
+        "interpretation": "same actual actions/transitions per condition; ordinary permitted ego observations; no candidate oracle; not long-horizon proof"
+      }
+    }
+  ],
+  "wide_minus_bounded": {
+    "mean_difference": 83.69838353724367,
+    "interval_95_percent": [
+      -17.92847612564311,
+      203.3016365063471
+    ],
+    "candidate_models": 1,
+    "reference_models": 1,
+    "common_tracks": 20,
+    "reps": 5000,
+    "seed": 0,
+    "units": "independent model draws; paired track draws shared across models and methods",
+    "selection_adjusted": false
+  },
+  "native_frames": 36663,
+  "internal_physics_frames": 15407280,
+  "new_training_frames": 0,
+  "held_out_evaluation": false,
+  "user_only_oracle_values_read": false,
+  "interpretation": "adaptive development; one deterministic programmed planner per condition on 20 common tracks; no SOTA/novelty claim"
+}

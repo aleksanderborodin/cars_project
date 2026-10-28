@@ -1,0 +1,28 @@
+{
+  "run": "/home/sasha/Desktop/cars_project/runs/verification/physics_search_20261028",
+  "config_sha256": "134acae14fee54fbaaf1f4bb11299bfcd2989bf0a9c7880092cd97a04bb2eaca",
+  "replay": {
+    "identical_actions_rewards_observations_and_end_flags": true,
+    "native_frames": 681,
+    "decisions": 171,
+    "internal_physics_frames": 95760,
+    "wall_time_s": 8.06129503899865,
+    "trajectory_sha256": "19fd1f01a7595bd2f02e5d26ca28b64fbc2dbd24e9a0bd128eb53c98dcb92ed2"
+  },
+  "timing": {
+    "7": {
+      "samples": 60,
+      "p50_ms": 43.65896099989186,
+      "p95_ms": 45.75766200359794,
+      "max_ms": 46.53913299989654
+    },
+    "21": {
+      "samples": 60,
+      "p50_ms": 111.96753050171537,
+      "p95_ms": 123.58280790322169,
+      "max_ms": 136.93394100118894
+    }
+  },
+  "timing_internal_physics_frames": 134400,
+  "caveat": "reset-observer policy timing on recorded observations; not full online pipeline latency or independent racing evidence"
+}

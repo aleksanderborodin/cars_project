@@ -266,3 +266,32 @@ Earlier project intentions remain in USER_INTENT.md; this log extends that recor
   cause. The selected constant is tuned on this panel, and the 60 episodes are
   not 60 independent tracks. Preserve the user's broader architectural options.
 - **Status:** recorded after the completed batch; follow-up runs not started.
+
+## R15 — Clarify prediction fitting versus decision scoring and regret
+
+- **Author/type:** user questions and improvement priority, 2026-10-28.
+- **Intent:** improve search and decisions substantially, understand what our
+  predictor actually is, whether it is fitted for realism, and whether choices
+  or predictor selection currently minimize regret.
+- **Verified implementation:** learned ridge ego dynamics fitted to ordinary
+  one-step transition error; mathematical pose integration; engineered visible
+  reconstruction and straight unseen-road continuation. No neural dynamics,
+  learned road distribution or regret-based fitting/selection is implemented.
+  Online search minimizes a handcrafted rollout cost, not prediction error.
+- **Assistant clarification:** distinguish (1) fitting prediction parameters on
+  training data, (2) selecting predictor/control configurations using development
+  racing, and (3) choosing the immediate action by simulated outcomes. These have
+  different objectives. The user's earlier downstream-selection idea concerns
+  the second stage and does not require changing the first stage to a regret loss.
+- **Regret caveat:** subtracting each predicted utility from the same best
+  predicted utility cannot improve the current ordering. Independent candidate
+  outcomes can assess it, but existing private monitor values remain unavailable.
+  This question is not authorization to use those values or change the loss.
+- **Improvement direction:** test candidate pace/coverage and information first;
+  then compare model capacity/history, objective/horizon and search alternatives
+  with controlled changes. Judge the complete system by validation racing while
+  reporting predictive errors separately. The goal is useful decisions, and the
+  current implementation is replaceable; a larger predictor alone has no assured
+  advantage.
+- **Status:** clarification documented in [STATUS.md](STATUS.md); no new campaign
+  or regret-based training launched by this explanatory task.

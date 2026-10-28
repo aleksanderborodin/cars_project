@@ -26,6 +26,38 @@ The legacy Policy.reset(track) / StateObs v1 path remains privileged. New
 restricted experiments use the research CLI; do not relabel legacy results or
 seen-inf collection as the new protocol.
 
+## What is trained, scored and selected today
+
+| Part | Current implementation | Objective or selection rule |
+|---|---|---|
+| Car dynamics | Ridge regression with 22 designed features and three outputs: changes in forward velocity, lateral velocity and yaw rate | Squared error of scaled one-step changes on train-track transitions, plus coefficient regularization; ridge 0.01 in the current runs |
+| Imagined position/heading | Mathematical integration of the predicted velocities and yaw rate | No fitted position model or separate training objective |
+| Visible road | Exact restricted simulator road mask and heuristic path reconstruction | No learned perception module in this local-geometry study |
+| Unseen road | Constant terminal tangent and width prior | No learned road forecast, probability distribution or calibration |
+| Online decision | Simulate 21 speed/gain feedback candidates for 20 decisions (1.6 seconds); execute the first action for four native frames (0.08 seconds), then replan | Minimize hand-designed cost: departure/clearance, center distance, lateral velocity and unknown-space penalties minus predicted path progress |
+| Predictor configuration selection | Current feature design and ridge setting are engineering choices; variants were examined through development diagnostics/driving | No automated downstream predictor-selection study or regret objective implemented |
+
+The dynamics fit uses 66 coefficients, including intercepts, and predicts the
+next 0.08-second ego transition. It is learned from actual simulator transitions;
+the designed features and integration are mathematical components. Training loss
+does not optimize candidate ranking, race return or hindsight regret. The planner
+cost is not the official reward. Good one-step error therefore does not establish
+good candidate selection or race completion.
+
+The three dynamics models are independent development replications; deployment
+currently uses one at a time. They are not combined into a probabilistic ensemble.
+The optional future model-selection study trains predictors normally and selects
+representations/configurations through downstream validation driving. It remains
+distinct from explicitly training a predictor with a decision/regret loss.
+
+Hindsight regret compares the chosen behavior's measured utility with the best
+utility among the same candidate set, under a specified horizon and utility.
+Computing that difference entirely from the current model's predictions would
+produce the same choice as maximizing its predicted utility and would not provide
+an independent accuracy signal. Real candidate-monitor values remain user-only
+and unavailable for agent analysis, training or selection. Hindsight knowledge of
+the realized hidden world also differs from information available at decision time.
+
 ## Measurements
 
 - Original revised mixed-data/bounded-grid search: mean return 687.0 across three fitted

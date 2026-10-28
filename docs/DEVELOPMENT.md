@@ -227,3 +227,30 @@ After code changes run the full suite; after documentation/CLI changes check the
 referenced commands and local Markdown links. Update [STATUS.md](STATUS.md) with
 observed outcomes. Historical source and its original tests are recoverable via
 [ARCHIVE.md](ARCHIVE.md).
+
+## Frozen broad-development campaign
+
+```bash
+uv run python scripts/run_broad_driver.py
+uv run python scripts/summarize_broad_driver.py --campaign runs/campaigns/broad_driver_20261028 --output reports/broad_driver_2026-10-28
+```
+
+The declared campaign has already been launched; its fixed IDs refuse overwriting.
+Read `runs/campaigns/broad_driver_20261028/status.json` for technical progress.
+The runner copies production source and the reporter before starting child runs;
+children import that verified copy through `PYTHONPATH`. Every condition must
+replay the original first 20 episodes exactly. The reporter refuses incomplete
+or incompatible data. See [the declaration](BROAD_DEVELOPMENT_2026-10-28.md).
+
+The independent baseline probe is already queued with:
+
+```bash
+uv run python scripts/run_queued_driver.py --manifest configs/campaigns/driver-lr3e5-block-2026-10-28.json
+```
+
+Do not launch it twice: queue/run paths refuse overwriting. The queue copies
+source, tests, configuration, runner and reporter, then waits for the completed
+broad campaign. It serializes regression tests and training after that campaign.
+Public queue status is `runs/queues/driver_lr3e5_block_20261028/status.json`.
+`run_driver_block.py --reporter PATH` supports a copied reporter; its default
+behavior is unchanged. A failed/stale predecessor stops the queue for review.

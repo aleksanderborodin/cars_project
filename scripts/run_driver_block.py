@@ -15,6 +15,7 @@ from cars.training import sha256, write_json
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--manifest", type=Path, default=Path("configs/campaigns/driver-first-block-2026-10-28.json"))
+    parser.add_argument("--reporter", type=Path, default=Path("scripts/summarize_driver_block.py"))
     args = parser.parse_args()
     manifest = args.manifest
     spec = json.loads(manifest.read_text())
@@ -95,7 +96,7 @@ def main() -> None:
                 "evaluation_native_frames": sum(row["evaluation_native_frames"] for row in rows),
                 "wall_time_s": time.perf_counter() - started})
             if spec.get("report_directory"):
-                subprocess.run([sys.executable, "scripts/summarize_driver_block.py", "--campaign", str(root),
+                subprocess.run([sys.executable, str(args.reporter), "--campaign", str(root),
                     "--output", spec["report_directory"]], check=True, env=environment)
         except Exception as error:
             if process.poll() is None:

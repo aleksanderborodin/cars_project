@@ -5,7 +5,8 @@ scientific paper about modular world models and online control, using Gymnasium 
 only and the current workstation. Physical robots and other simulators are out
 of scope. Restricted local/native interfaces, programmed physics and deterministic
 search now exist; see [STATUS.md](STATUS.md) and the
-[latest development report](FROZEN_POLICY_RESULTS_2026-10-28.md). The broader learned road distributions,
+[latest completed development report](FROZEN_POLICY_RESULTS_2026-10-28.md).
+The [frozen 200-track development campaign](BROAD_DEVELOPMENT_2026-10-28.md) is running. The broader learned road distributions,
 scenario planning, modern comparisons and final campaign below remain proposed.
 
 Read [USER_INTENT.md](USER_INTENT.md) for the user's decisions and paper goal.

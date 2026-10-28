@@ -79,8 +79,8 @@ centerline reconstruction, so the information effect is not fully isolated. The
 configured driver block completed its 2M review with regression; the selected
 1M checkpoint now has a completed positive exploratory policy/search comparison.
 Cheap constant corrections did not reproduce the full gain, and a KL-stop training
-trial was not better. Broader tracks, established optimizers and baseline repair
-come next. See [the execution report](FROZEN_POLICY_RESULTS_2026-10-28.md).
+trial was not better. The [200-track frozen campaign](BROAD_DEVELOPMENT_2026-10-28.md)
+is running; established optimizers and baseline repair follow. See [the execution report](FROZEN_POLICY_RESULTS_2026-10-28.md).
 User-only ranking diagnostics cannot supply optimization feedback.
 A geometry information-gap diagnostic informs one component; it is not a
 universal gate for all model-based control.

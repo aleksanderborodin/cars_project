@@ -617,3 +617,70 @@ Earlier project intentions remain in USER_INTENT.md; this log extends that recor
   explicitly placed it in future work; current work remains the main local system.
 - **Record:** [information/control study](INFORMATION_AND_CONTROL_STUDY.md), including
   author intent, precise contrasts, confidence, fairness and possible conclusions.
+
+## R31 — Broaden before changing the successful search configuration
+
+- **Author/type:** assistant experiment choice under the user's instruction to execute.
+- **Purpose:** distinguish a repeatable one-policy gain from an effect confined to
+  the repeatedly inspected 20-track panel, retaining the already fitted cheap control.
+- **Decision:** four frozen conditions on all 200 development tracks; no new tuning,
+  fixed checkpoint and planning stream, nested 20/50/150-track reports, paired intervals.
+- **Implementation:** immutable executable source snapshot; sequential conditions;
+  exact first-20 replay gate, dependency/hash checks and automatic public report.
+- **Confidence/limit:** high confidence in the controlled comparison; uncertain
+  generalization and latency value. One checkpoint does not establish training-seed
+  robustness. All panels remain development data, and fixed order limits timing inference.
+- **Status:** launched, full results pending. Caps 800k native / 112M internal frames.
+- **Record:** [campaign declaration and analysis](BROAD_DEVELOPMENT_2026-10-28.md).
+
+## R32 — User requests continued autonomous execution and explicit uncertainty
+
+- **Author/type:** user's execution instruction, paraphrased.
+- **Intent:** keep implementing, running and reviewing experiments toward a real
+  scientific paper without waiting for repeated confirmation; document uncertain
+  decisions, alternatives and ideas so they can be discussed later.
+- **Assistant interpretation:** proceed through bounded, recorded development
+  probes; preserve failures and revise plans using public evidence. Do not silently
+  promise success, replace the main system with an optional idea, or skip validation.
+- **Boundary:** final study remains unfrozen; no test access or private-oracle feedback.
+  Independent baseline repair may be queued after the latency-sensitive campaign;
+  methodological choices that depend on its results wait for the completed analysis.
+
+## R33 — Queue a smaller-update baseline probe without changing the running study
+
+- **Author/type:** assistant single-factor development decision under R32.
+- **Purpose:** seek a stronger standalone learned controller after 2M regression
+  and the failed KL-stop trial. Retain meaningful optimization instead of combining
+  multiple unidentifiable changes.
+- **Choice:** fresh seed zero, learning rate 3e-5, ten epochs and no KL stop; original
+  architecture and 8M schedule, initial 2M review, four 50-track checkpoint evaluations.
+- **Uncertainty:** the learning rate is a conventional scale change, not a proven
+  fix; slower learning can look worse at 2M. One run cannot establish causality.
+- **Alternatives deferred:** additional seeds at the original rate; representation
+  or reward-normalization changes. None is silently combined with this probe.
+- **Execution:** immutable source/config/script snapshot queued after the broad
+  comparison and regression checks. Stop on failed/stale predecessor. No automatic
+  8M extension, test evaluation or replacement of old checkpoint identities.
+- **Status/cost cap:** queued, not trained; 2,008,191 training plus 200k evaluation
+  frames, separate reload-check cost. Failed attempts remain part of development.
+- **Record:** [declared probe](../configs/campaigns/driver-lr3e5-block-2026-10-28.json)
+  and [rationale/queue contract](BROAD_DEVELOPMENT_2026-10-28.md#queued-baseline-probe).
+
+## R34 — Audit established adaptive search before claiming its advantage
+
+- **Author/type:** assistant comparison design, grounded in official iCEM source.
+- **Intent:** test the user's central simulation-selection system against an
+  established optimizer, not present finite enumeration as an algorithmic novelty.
+- **Finding:** population size omits later iterations; within-decision elite reuse
+  caches rollouts, whereas shifted candidates require new simulations. Very small
+  elite counts can round the nominal reuse fraction to zero.
+- **Proposed design:** retain the frozen feedback actor and model; compare full-
+  sequence colored shooting with an adaptive residual-search implementation, then
+  use the existing knot search as a separate representation reference. Explicitly
+  label feedback residuals, incumbent retention and constrained populations as adaptations.
+- **Confidence:** high on fair budget/memory/state accounting; low on the initial
+  noise exponent, residual bounds and small-budget optimizer competence. Improved
+  predicted cost can still worsen driving through model error.
+- **Status:** pinned source and license audited; no optimizer implementation or
+  driving evidence. The 200-track frozen campaign continues unchanged.
+- **Record:** [audit, choices, alternatives and pilot gates](SEARCH_OPTIMIZER_AUDIT.md).

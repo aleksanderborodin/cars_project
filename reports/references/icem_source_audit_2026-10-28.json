@@ -1,0 +1,46 @@
+{
+  "revision": "98c1c1fe2bfc94a87e4658b6c793f4e81bc30203",
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "56ff5e2640960db9ebd89e3b202b612a3949f657e68be672e168a1e0aa7c1d80",
+      "source": "https://raw.githubusercontent.com/martius-lab/iCEM/98c1c1fe2bfc94a87e4658b6c793f4e81bc30203/LICENSE"
+    },
+    {
+      "path": "README.md",
+      "sha256": "19cd79f1e831f51c3ba1db797b2057946a7f5ab2e6751002e679974882592232",
+      "source": "https://raw.githubusercontent.com/martius-lab/iCEM/98c1c1fe2bfc94a87e4658b6c793f4e81bc30203/README.md"
+    },
+    {
+      "path": "icem/controllers/icem.py",
+      "sha256": "9c44c430fce91c37baf00e65c7e5d9234539532c588ffbe45fa84fb50c96a048",
+      "source": "https://raw.githubusercontent.com/martius-lab/iCEM/98c1c1fe2bfc94a87e4658b6c793f4e81bc30203/icem/controllers/icem.py"
+    },
+    {
+      "path": "icem/controllers/mpc.py",
+      "sha256": "f0e76c8f40f46913cc6c9e86daf28b2ccb2857db0a8efad76a41eca0403b96d1",
+      "source": "https://raw.githubusercontent.com/martius-lab/iCEM/98c1c1fe2bfc94a87e4658b6c793f4e81bc30203/icem/controllers/mpc.py"
+    },
+    {
+      "path": "icem/settings/defaults/i-cem-blitz.json",
+      "sha256": "65b9aa0eab3e0d2c411e640b75f1d1355daddb686a7e6291b2261e3fcf8cd314",
+      "source": "https://raw.githubusercontent.com/martius-lab/iCEM/98c1c1fe2bfc94a87e4658b6c793f4e81bc30203/icem/settings/defaults/i-cem-blitz.json"
+    },
+    {
+      "path": "icem/settings/fpp/i-cem-blitz.json",
+      "sha256": "c9d75499e0e37b86465b47aac08fd4f5138f6af832ef9758fc26388234dfe1c9",
+      "source": "https://raw.githubusercontent.com/martius-lab/iCEM/98c1c1fe2bfc94a87e4658b6c793f4e81bc30203/icem/settings/fpp/i-cem-blitz.json"
+    },
+    {
+      "path": "icem/settings/halfcheetah_running/i-cem-blitz.json",
+      "sha256": "bd79e95eff9d1447751c0e7c6c8e3c9f6d74e9f1add5c838fa641a168aa4ac84",
+      "source": "https://raw.githubusercontent.com/martius-lab/iCEM/98c1c1fe2bfc94a87e4658b6c793f4e81bc30203/icem/settings/halfcheetah_running/i-cem-blitz.json"
+    }
+  ],
+  "reviewed": "2026-10-28",
+  "repository": "https://github.com/martius-lab/iCEM",
+  "license": "MIT",
+  "status": "source audited; downloaded but not executed; no CarRacing reproduction",
+  "paper": "https://proceedings.mlr.press/v155/pinneri21a.html",
+  "local_download": "runs/references/icem_98c1c1fe2bfc94a87e4658b6c793f4e81bc30203"
+}

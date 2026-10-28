@@ -27,10 +27,12 @@ There is **no established general advantage, novelty or SOTA result**.
 | [Programmed simulator results](docs/PROGRAMMED_SIMULATOR_RESULTS.md) | Completed physics comparisons, reduced-cost search, verification, limitations and next diagnostic |
 | [Next moves](docs/NEXT_MOVES.md) | Active execution order: bounded diagnostic, competent frozen driver, paired search, broader comparisons and final freeze |
 | [Geometry and stronger driver](docs/GEOMETRY_AND_DRIVER_2026-10-28.md) | Completed full-map diagnostic, 2M training review, selected checkpoint and preceding search implementation |
+| [Broad development campaign](docs/BROAD_DEVELOPMENT_2026-10-28.md) | Running frozen 200-track comparison, exact replay gates, analysis and autonomous follow-ups |
 | [Frozen-policy search results](docs/FROZEN_POLICY_RESULTS_2026-10-28.md) | Completed search gain, cheap controls, renderer verification, failed KL repair and next decision |
 | [Geometry research](docs/RESEARCH_PLAN.md) | Literature, feasibility, and detailed design for the geometry/uncertainty branch |
 | [Predictor selection research](docs/PREDICTION_SELECTION.md) | Optional prediction spaces, normal training, downstream validation selection, and critiques |
 | [Design decisions](docs/DESIGN_DECISIONS.md) | Concrete starting settings, confidence, alternatives, and decision gates |
+| [Search optimizer audit](docs/SEARCH_OPTIMIZER_AUDIT.md) | Pinned iCEM source, adaptation choices, budget accounting and attribution controls; implementation pending |
 | [References](docs/REFERENCES.md) | Primary papers, official code, comparison roles and reproduction status |
 | [Implementation status](docs/STATUS.md) | What exists, what does not, and evidence boundaries |
 | [Roadmap](docs/ROADMAP.md) | Ordered milestones, deliverables, and proceed/stop gates |
@@ -88,10 +90,10 @@ decision points for the next campaigns. The
 and an exact episode replay. The
 [geometry/driver report](docs/GEOMETRY_AND_DRIVER_2026-10-28.md) records the completed
 full-map diagnostic and completed first training block. The [frozen-policy report](docs/FROZEN_POLICY_RESULTS_2026-10-28.md) records the
-completed search comparison and follow-ups. Next: broaden the frozen comparison
-to 200 development tracks, then compare an established optimizer at matched work.
-Baseline repair remains open after the unsuccessful KL trial. No experiments
-from this batch are still running. Geometry reconstruction remains a measured bottleneck.
+completed search comparison and follow-ups. The [frozen 200-track comparison](docs/BROAD_DEVELOPMENT_2026-10-28.md)
+is now running: direct, fixed correction, search 7 and search 21. An established
+optimizer comparison and a separately declared lower-learning-rate training probe
+follow. Baseline repair remains open after the unsuccessful KL trial. Geometry reconstruction remains a measured bottleneck.
 Bayesian search and evolution remain future options. Privileged candidate-ranking
 values are user-only and excluded from all agent/training/selection feedback.
 

@@ -16,7 +16,10 @@ profiling are also complete. The first configured 2M-frame driver block complete
 and regressed after its selected 1M checkpoint; unchanged training is stopped.
 The six-condition frozen-checkpoint comparison and three fixed-correction controls
 are complete. Search 21 improved this policy instance; a separate KL training
-trial was worse and not adopted. No runs from this batch remain active.
+trial was worse and not adopted. A new [200-track comparison](BROAD_DEVELOPMENT_2026-10-28.md)
+is running from a frozen source snapshot; its full results are pending. The
+lower-learning-rate training probe is frozen and queued after its completion;
+training has not started. No new baseline outcome is available.
 See the [latest report](FROZEN_POLICY_RESULTS_2026-10-28.md) for evidence and caveats.
 
 ## Implemented
@@ -37,7 +40,7 @@ See the [latest report](FROZEN_POLICY_RESULTS_2026-10-28.md) for evidence and ca
 | planning/occupancy.py, policy_controls.py | Equivalent sparse occupancy renderer and frozen-policy fixed offsets | Sampled exact renderer parity; three fitted offset controls do not establish all cheap alternatives are inferior |
 | research/evaluation.py, eval/paired.py | Common development tracks, traces/costs, protocol checks, paired and crossed model/track intervals | Small/adaptive study; no final paper campaign |
 | monitoring/ | One-way online oracle-ranking sidecar, prefix replay, private live report | User-only outputs; no agent/learning/selection/assistant access to real ranking values |
-| Run artifacts | Immutable configs, source/dependency snapshots, hashes, datasets/models/traces | Ignored large runs/private reports need separate backup |
+| Run artifacts | Immutable configs, executable frozen campaign source, source/dependency snapshots, hashes, datasets/models/traces | Ignored large runs/private reports need separate backup |
 
 The legacy Policy.reset(track) / StateObs v1 path remains privileged. New
 restricted experiments use the research CLI; do not relabel legacy results or

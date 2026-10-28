@@ -212,3 +212,9 @@ a diagnostic and potentially continuous/adaptive behavior search instead of the
 current finite grid. It preserves normal predictor training as the default and
 does not authorize using current private oracle results. See research-log R8 for
 the user's purpose and the assistant's caveats.
+
+**User execution instruction, 2026-10-28 (paraphrase):** carry out the agreed plan
+and keep iterating toward the data needed for the paper without routine questions.
+Document assistant decisions, uncertainty, rationale and ideas for later discussion.
+This is ongoing development authorization, not evidence that a SOTA outcome is
+achievable or that final-test/private-oracle restrictions have been lifted.

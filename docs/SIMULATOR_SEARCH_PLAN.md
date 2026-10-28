@@ -7,6 +7,8 @@ architecture plan. [User intent](USER_INTENT.md) · [Specification](EXPERIMENT.m
 P0 and the first P1 follow-up are complete. The
 [programmed-simulator report](PROGRAMMED_SIMULATOR_RESULTS.md) records results,
 costs and the proposed next diagnostic. Neither campaign establishes a return win.
+The [next-moves plan](NEXT_MOVES.md) now gives the detailed execution order and
+budgets for the remaining P1–P3 work, especially stronger frozen-policy comparisons.
 
 ## User intent and the central experiment
 

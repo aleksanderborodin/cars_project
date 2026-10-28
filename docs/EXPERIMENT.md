@@ -21,7 +21,10 @@ The [run-readiness plan](RUN_READINESS.md) specifies what to freeze before data
 collection, what to select in pilots, and what must pass before expensive runs.
 The [programmed-simulator plan](SIMULATOR_SEARCH_PLAN.md) is the active architecture
 following the user's correction: programmed physics is the main world model;
-candidate behaviors are selected by simulated outcomes. The earlier
+candidate behaviors are selected by simulated outcomes.
+The [next-moves plan](NEXT_MOVES.md) refines its remaining execution stages and
+records the proposed stronger-proposer experiments, budgets and decision gates.
+The earlier
 [next-experiment plan](NEXT_EXPERIMENTS.md) records the preceding work. Its first batch is complete; the
 [control audit](CONTROL_AUDIT_2026-10-28.md) reports the correction, matched fixed
 controls and failure evidence. Further diagnostics and baseline training remain open.

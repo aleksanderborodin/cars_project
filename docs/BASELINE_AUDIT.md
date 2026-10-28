@@ -6,6 +6,9 @@ Updated 2026-10-28. [Next experiments](NEXT_EXPERIMENTS.md) ·
 Status: source/configuration audit only. No new baseline training is part of the
 control-audit batch. The previous 100k-frame local policy remains an engineering
 pilot, not a competitive reference.
+The [next-moves plan](NEXT_MOVES.md) now specifies the proposed implementation,
+profiling and training order. Its first driver is a practical proposer/comparator,
+not an asserted current CarRacing SOTA method.
 
 ## Source and observed differences
 
@@ -54,9 +57,11 @@ This validates state handling, not sufficient learning or faithful reproduction.
 
 - **Matched local adaptation:** keep the local information contract and repeat 4.
   Adapt the encoder; declare all departures from the upstream configuration. The
-  existing proposed milestones are 200k, 500k and 2M native frames. Compare learning
-  curves and completion, not only a favorable checkpoint. Allow a larger declared
-  budget if these milestones leave the baseline undertrained.
+  updated proposal is one training seed with an 8M-native-frame maximum, an initial
+  health review at 2M, and checkpoints at 0.2/0.5/1/2/4/8M. The global schedule must
+  span the declared maximum from the outset; do not restart it at each milestone.
+  Compare learning curves and completion, not only a favorable checkpoint. This
+  proposed cap does not establish convergence or guarantee a competent baseline.
 - **Original-task recipe reproduction:** audit the upstream factory and reproduce
   its pixel preprocessing, control rate, architecture and full training budget.
   Account explicitly for our disjoint train/development seed procedure and version

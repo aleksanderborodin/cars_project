@@ -110,6 +110,9 @@ No final-test identities/results or legacy unseen/hard results were inspected.
 
 ## Open work
 
+- The [next-moves plan](NEXT_MOVES.md) gives the active order, capped development
+  experiments, stronger-driver training proposal and scientific decision gates.
+  It is a plan; no additional training or evaluation has started from it.
 - Steps 1–2 of the [next-experiment plan](NEXT_EXPERIMENTS.md) are complete.
   Its 60k-frame pace/full-map proposal is deferred by the coded-simulator priority.
 - Competent learned baseline and faithful upstream reproduction before headline runs.

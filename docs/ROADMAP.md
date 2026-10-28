@@ -6,7 +6,9 @@ Updated 2026-10-28. [Index](../README.md) · [User intent](USER_INTENT.md) ·
 The main project is a working modular prediction → internal simulation/search →
 action → observation loop. **Active architecture:** the world model is a programmed
 simulator, as clarified by the user. Follow [SIMULATOR_SEARCH_PLAN.md](SIMULATOR_SEARCH_PLAN.md)
-for the current P0–P3 execution order and uncertain choices. The A–G milestones
+for the current P0–P3 architecture and uncertain choices. The
+[next-moves plan](NEXT_MOVES.md) specifies the execution order, including baseline
+readiness, paired frozen-policy search and broader evaluation. The A–G milestones
 below remain the broad scientific roadmap; the former learned-dynamics engine
 is retained as a comparison. Predictor-space selection, expert variants, and future
 agentic evolution must not silently replace this goal. Initial A/B implementation

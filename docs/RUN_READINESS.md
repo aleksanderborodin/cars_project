@@ -35,8 +35,10 @@ task creates a new protocol version; do not silently replace earlier results.
 | Final standard test | Target 500 fixed tracks per model/primary condition | Frozen final campaign only |
 | Legacy unseen/hard | Existing sealed sets, separate from new partitions | Separate frozen evaluation if included; no method design access |
 
-Counts are proposals, not existing manifests or statistical guarantees. Reserve
-partitions early. If development variance justifies a larger test, extend it by a
+The train stream mechanism and 200-track development/calibration manifests are now
+implemented; the final test commitment remains sealed. Counts are not statistical
+guarantees and final counts remain subject to the study freeze. If development
+variance justifies a larger test, extend it by a
 predeclared random rule before the study freeze, without screening test tracks or
 scores. Calibration is optional: reserving tracks does not require running that
 experiment. Do not create several additional holdouts without a specific purpose.
@@ -106,12 +108,12 @@ Local geometry is an inexpensive mechanism pilot; run a native-input pilot early
 to catch adaptation failures before committing the full budget. Select primary
 conditions on development evidence before main training. Do not launch every
 combination of sensor range, predictor and horizon. Repeat four and 30 m local
-radius remain proposed pilot defaults, not validated requirements.
+radius are the implemented local pilot defaults, not scientifically optimal settings.
 
 Leakage checks cover reset/step `info`, full-map handles, raw truth, global
 progress, logs, filenames/IDs, caches and cloning of the actual evaluation world.
-The current `Policy.reset(track)` / `act(state, obs)` is privileged: local methods
-need a new restricted interface. Future simulated actions may depend on permitted
+The legacy `Policy.reset(track)` / `act(state, obs)` is privileged. Local methods
+now use the implemented restricted observation interface. Future simulated actions may depend on permitted
 simulated observations, never an otherwise hidden scenario identity.
 
 ## Artifacts and evaluation worth retaining

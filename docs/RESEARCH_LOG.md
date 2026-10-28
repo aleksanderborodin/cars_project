@@ -391,3 +391,32 @@ Earlier project intentions remain in USER_INTENT.md; this log extends that recor
   comparisons remain required in either case.
 - **Status:** proposed, not implemented or launched. The user's main architecture
   remains intact; regret objectives and agentic evolution remain future ideas.
+
+## R21 — Test improvement over a stronger underlying driver; make the next plan concrete
+
+- **Author/type:** user question and planning request, 2026-10-28.
+- **Intent:** assess whether improving an already strong or SOTA driver would
+  demonstrate that our simulation-selection method is useful, and obtain a
+  thoroughly considered plan for the next moves.
+- **Clarification:** the stronger underlying model here is the behavior proposer.
+  Programmed physics remains the primary world model. The current experiment uses
+  simple feedback controllers, not a strong learned policy. Stronger proposals
+  may help, but wrong world estimates or utility can also harm a better driver.
+- **Assistant recommendation:** preserve one capped same-planner geometry diagnostic,
+  prepare a competent recurrent-policy baseline, freeze its weights and compare
+  standalone behavior, random variation and coded simulation selection. Then add
+  established search with the same simulator/access/budget and broader development
+  replications. Preserve the original base behavior in the candidate set.
+- **Critique:** policy-guided planning already exists, including POPLIN. Improvement
+  over a verified strong driver is meaningful evidence under the tested conditions,
+  not automatic novelty, general usefulness, or standard-input SOTA. Extra physics
+  knowledge, latency and information advantages must be disclosed and controlled.
+  A planner's policy-only ablation must not replace its full original method.
+- **Concrete record:** [NEXT_MOVES.md](NEXT_MOVES.md) specifies implementation
+  prerequisites, limited experiment budgets, a staged 2M/8M first-driver proposal,
+  branching-memory requirements, paired-checkpoint statistics, reproduction/input
+  audits, broader development and final freeze. Numerical choices are assistant
+  proposals, not additional user commitments. Hardware was inspected; training
+  throughput and final calendar cost remain unmeasured.
+- **Status:** plan documented and indexed. No new training/evaluation started.
+  Private oracle, calibration and final-test access remain unchanged.

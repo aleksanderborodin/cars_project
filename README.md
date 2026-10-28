@@ -24,6 +24,7 @@ advantage or SOTA result**.
 | [Experiment specification](docs/EXPERIMENT.md) | Authoritative scope, information contracts, fairness, evaluation rules |
 | [Programmed simulator and search](docs/SIMULATOR_SEARCH_PLAN.md) | Active architecture, same-proposer comparisons, execution stages and uncertain choices |
 | [Programmed simulator results](docs/PROGRAMMED_SIMULATOR_RESULTS.md) | Completed physics comparisons, reduced-cost search, verification, limitations and next diagnostic |
+| [Next moves](docs/NEXT_MOVES.md) | Active execution order: bounded diagnostic, competent frozen driver, paired search, broader comparisons and final freeze |
 | [Geometry research](docs/RESEARCH_PLAN.md) | Literature, feasibility, and detailed design for the geometry/uncertainty branch |
 | [Predictor selection research](docs/PREDICTION_SELECTION.md) | Optional prediction spaces, normal training, downstream validation selection, and critiques |
 | [Design decisions](docs/DESIGN_DECISIONS.md) | Concrete starting settings, confidence, alternatives, and decision gates |
@@ -68,7 +69,9 @@ exploratory development evidence; legacy runs retain their historical protocol.
 
 ## Next milestone
 
-The [programmed-simulator report](docs/PROGRAMMED_SIMULATOR_RESULTS.md) records
+The [next-moves plan](docs/NEXT_MOVES.md) specifies budgets, prerequisites and
+decision points for the next campaigns. The
+[programmed-simulator report](docs/PROGRAMMED_SIMULATOR_RESULTS.md) records
 280 completed development episodes, short-term prediction gains, runtime tradeoffs
 and an exact episode replay. The next proposed diagnostic gives the same coded
 planner full-map geometry while retaining estimated vehicle state; it has not

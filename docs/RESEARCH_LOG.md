@@ -836,3 +836,28 @@ Earlier project intentions remain in USER_INTENT.md; this log extends that recor
   controls. Baseline validation and established planning comparisons remain open.
 - **Record:** [intervention design](INTERVENTION_STUDY.md) and
   [frozen declaration](../configs/campaigns/intervention-pilot-2026-10-29.json).
+
+## R43 — Oracle interventions hurt driving despite better executed-action prediction
+
+- **Origin:** measured results; assistant post-hoc audits and next-control proposal.
+- **Pilot:** all four cells completed, five common development tracks. Baseline
+  906.99/80%; visible-reference oracle 758.96/0%; hidden-road oracle 429.64/0%;
+  both 594.21/0%. Exact five-episode baseline replay passed. No reference fallbacks.
+- **Failure description:** all 15 oracle episodes were on-road timeouts. Sampled
+  mean speeds 58.80 baseline versus 43.37/26.90/35.21 m/s; braking increased.
+  These are executed outcomes, not private candidate ranks or regrets.
+- **Assistant follow-up:** declare a bounded audit of recorded baseline actions,
+  roots 50/100/150 on all five tracks, same estimated initial state and controls.
+  At 20 decisions, velocity-vector RMSE fell from 31.34888 to 0.00536 m/s with
+  oracle road. One-decision predictions matched exactly. No new real frames.
+- **Inference boundary:** better recorded-action prediction and worse driving
+  coexist here. This does not establish candidate-state fidelity or a unique
+  cause; reference/progress utility, horizon and imagined-policy inputs remain
+  possible limitations. Never call the three RL subproblems solved from this.
+- **Next assistant proposal:** separately declare a full-road objective-reference
+  control with the oracle road model, since the current `both` cell still extends
+  its visible objective by a tangent. Then validate compatibility/competence before
+  large V/L/F training. Do not hide failures or expand favorable subsets.
+- **Cost:** 19,447 native evaluation and 2,729,240 internal physics frames including
+  the 5,400-step prediction audit; zero new experiment training. All jobs complete.
+- **Record:** [full results, provenance and caveats](INTERVENTION_RESULTS_2026-10-29.md).

@@ -25,6 +25,11 @@ task is the [four-cell fixed-controller geometry pilot](INTERVENTION_STUDY.md),
 separating visible-reference reconstruction from hidden-road access. This brings
 the controlled diagnostic forward; the optimizer audit and baseline competence
 work remain necessary. No new oracle-policy training or test evaluation is enabled.
+That [pilot and executed-action audit](INTERVENTION_RESULTS_2026-10-29.md) are now
+complete. Oracle road improved recorded-action prediction but reduced driving
+score. The immediate next control is a separately declared full-road objective
+reference with oracle road; it remains proposed. Do not expand the failed cells
+automatically or call the oracle-input interventions validated performance ceilings.
 
 ## Objective and present evidence
 

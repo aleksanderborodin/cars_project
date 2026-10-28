@@ -73,6 +73,15 @@ imagined rollouts. Candidate zero is the original actor; three-knot residuals
 vary its controls. Random selection uses the same proposal rule without physics.
 Neither path supports the private oracle monitor. New cost records distinguish
 actor forward examples, internal physics frames and actual environment frames.
+`policy-intervention` is a separate privileged development method around that
+same local actor. `--reference oracle_visible` replaces only the objective path
+with the clipped visible directed centreline; `--continuation oracle` replaces
+only hidden-road occupancy/margins. Both default to the original reconstructed
+reference/prior, which must replay baseline episodes exactly. The adapter removes
+map fields before any real or imagined actor call. The outside-footprint penalty
+and observation-based vehicle observer stay fixed. See the
+[controlled intervention protocol](INTERVENTION_STUDY.md) for the declared
+four-cell pilot, costs, caveats and staged V/L/F policy study.
 The optional sparse renderer skips unnecessary occupancy work; reference remains
 the default. Its parity evidence and latency limits are in the latest report.
 `policy-bias` adds a declared constant offset to each real actor action without
@@ -222,6 +231,8 @@ round trips, multiprocessing evaluation, seed handling, learning smoke runs, and
 RL action adapters, restricted local/native interfaces, and shared road-query
 semantics. It does not establish the new method's performance. Upstream Box2D/SWIG deprecation warnings are
 currently expected.
+Default discovery targets `tests/` only. Saved experiment snapshots and private
+diagnostic directories are excluded; do not restore recursive root discovery.
 
 After code changes run the full suite; after documentation/CLI changes check the
 referenced commands and local Markdown links. Update [STATUS.md](STATUS.md) with

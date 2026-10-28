@@ -30,6 +30,7 @@ register separates user ideas, assistant refinements, prior work and measured ev
 |---|---|
 | [Paper blueprint](docs/PAPER_BLUEPRINT.md) | Central three-stage study, all project ideas with origin/status, validity checks, novelty and execution gates |
 | [Controlled intervention study](docs/INTERVENTION_STUDY.md) | Executable four-cell geometry diagnostic, isolation tests, pilot budget and staged V/L/F training design |
+| [Intervention results](docs/INTERVENTION_RESULTS_2026-10-29.md) | Completed negative driving pilot, executed-trajectory audit, better prediction with oracle road, and next validity gate |
 | [Completed broad results](docs/BROAD_RESULTS_2026-10-29.md) | Full 200-track comparison and failed lower-learning-rate probe; both campaigns finished |
 | [User intent](docs/USER_INTENT.md) | User decisions, main system, paper goal, expert experiment, and future evolution option |
 | [Task-useful simulator](docs/DECISION_USEFUL_SIMULATOR.md) | Future independent/approximate simulator, downstream adaptation, GPU and agentic options; realism optional |
@@ -111,6 +112,13 @@ consolidates the three-stage diagnostic study, stronger baseline requirements an
 established-optimizer comparison. Geometry reconstruction remains a measured bottleneck.
 Bayesian search and evolution remain future options. Privileged candidate-ranking
 values are user-only and excluded from all agent/training/selection feedback.
+
+The subsequent [controlled intervention pilot](docs/INTERVENTION_RESULTS_2026-10-29.md)
+is also complete. On five common development tracks, baseline search completed
+4/5; each oracle-intervention condition completed 0/5 with on-road timeouts.
+Oracle road greatly improved predictions of recorded controls while driving
+worsened. Reference/objective compatibility now needs a focused control before
+scaling the three-stage training study; no new jobs are active from this batch.
 
 The previous project is preserved on
 `archive/pre-belief-research-2026-10-27`. Its obsolete plans and tooling are absent

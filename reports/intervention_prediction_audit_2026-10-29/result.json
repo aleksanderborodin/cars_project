@@ -1,0 +1,12 @@
+{
+  "status": "complete",
+  "declaration_sha256": "371d7301d568c2b71695b186f94953c1f175b525305b2d7d60fc43d548ec3f6c",
+  "new_environment_frames": 0,
+  "observer_internal_frames": 3000,
+  "forecast_internal_frames": 2400,
+  "total_internal_frames": 5400,
+  "identical_one_decision_prediction_for_every_root": true,
+  "forecast_action_source": "recorded actions actually executed by baseline; no candidate selection",
+  "interpretation": "post-hoc fixed windows on baseline trajectories; not interactive candidate-ranking accuracy or causal utility diagnosis",
+  "private_oracle_outputs_read": false
+}

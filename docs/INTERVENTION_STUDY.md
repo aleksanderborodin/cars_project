@@ -11,6 +11,11 @@ removes the confounding in the earlier full-map diagnostic, then implement the
 separately trained information regimes. This first pilot does not replace the
 full study or establish that a learned policy perceives correctly.
 
+**Execution:** the pilot and a separately declared executed-action prediction
+audit are complete. [Results](INTERVENTION_RESULTS_2026-10-29.md) show worse driving
+in all oracle cells despite improved oracle-road prediction on recorded actions.
+The next gate is reference/objective compatibility, not a large training launch.
+
 ## First intervention: two independent geometry switches
 
 The earlier full-map experiment changed both the road model and the objective's

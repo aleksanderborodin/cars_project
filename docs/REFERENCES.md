@@ -61,7 +61,7 @@ controls, but beating them alone would not support a strong world-model claim.
 | Reference | Source | How we use it |
 |---|---|---|
 | Chen et al., *Learning by Cheating*, CoRL 2019 | [Paper](https://arxiv.org/abs/1912.12294), [code](https://github.com/dotchen/LearningByCheating) | Privileged training versus sensor-only deployment; equal-supervision controls |
-| Chen, Koltun & Krähenbühl, *Learning to Drive from a World on Rails*, ICCV 2021 | [Publisher paper](https://openaccess.thecvf.com/content/ICCV 2021/papers/Chen_Learning_To_Drive_From_a_World_on_Rails_ICCV_2021_paper.pdf) | Ego/external-world factorization and distillation; related work, not a CarRacing reproduction |
+| Chen, Koltun & Krähenbühl, *Learning to Drive from a World on Rails*, ICCV 2021 | [Publisher paper](https://openaccess.thecvf.com/content/ICCV2021/papers/Chen_Learning_To_Drive_From_a_World_on_Rails_ICCV_2021_paper.pdf) | Ego/external-world factorization and distillation; related work, not a CarRacing reproduction |
 | Renz et al., *PlanT*, CoRL 2022 / PMLR 2023 | [Proceedings paper](https://proceedings.mlr.press/v205/renz23a/renz23a.pdf) | Learned planning from compact object-level inputs; context for competent privileged-input controls |
 | Donti, Amos & Kolter, *Task-based End-to-end Model Learning*, NeurIPS 2017 | [Paper](https://arxiv.org/abs/1703.04529) | Decision-focused prediction is established prior work |
 | Bansal et al., TaskMet, NeurIPS 2023 | [Paper](https://arxiv.org/abs/2312.05250), [code](https://github.com/facebookresearch/taskmet) | Task-driven predictive metrics; public code needs an execution audit |

@@ -4,7 +4,7 @@ Updated 2026-10-29. [Index](../README.md) · [Experiment contract](EXPERIMENT.md
 [Evidence status](STATUS.md) · [Attributed chronology](RESEARCH_LOG.md)
 
 This is the consolidated home for the paper idea and the ideas recorded in this
-conversation, USER_INTENT and research-log R1–R42. It connects them to one study;
+conversation, USER_INTENT and research-log R1–R43. It connects them to one study;
 it does not activate every extension. The experiment contract still governs
 access and evaluation. Existing numerical defaults are development choices.
 Historical results retain their original protocol, and archived plans stay archived.
@@ -262,7 +262,8 @@ recommendations or engineering choices, not retrospectively user requirements.
 | A11 | Keep the core diagnostic paper focused; add one task-useful-model extension only if it supports that core | Recommended scope control; no automatic GPU/evolution expansion |
 | A12 | Judge novelty against privileged-input driving, policy-guided planning and decision-relevant modeling | Updated assessment below; no unsupported originality claim |
 | A13 | Add a predicted-future intermediate P when making explicit forecasting claims | Proposed matched-interface L/P/F comparison; oracle improvement alone does not identify forecasting error |
-| A14 | Independently switch visible objective-reference and hidden-road geometry before new oracle-policy training | Implemented and tested; [five-track pilot](INTERVENTION_STUDY.md) pending; explicit privileged supervision, no visual/RL-causality claim |
+| A14 | Independently switch visible objective-reference and hidden-road geometry before new oracle-policy training | Implemented/tested; [five-track pilot completed](INTERVENTION_RESULTS_2026-10-29.md) with negative driving effects; no visual/RL-causality claim |
+| A15 | Audit prediction of recorded executed controls after the oracle driving failure, then isolate objective compatibility | Completed 15-window audit: oracle road improved motion prediction; full-road objective-reference control remains proposed |
 
 ## Prior work and novelty assessment
 
@@ -274,7 +275,7 @@ These are **Prior work**, not project-origin ideas. Primary sources reviewed
 | [Learning by Cheating, CoRL 2019](https://arxiv.org/abs/1912.12294) | Learns a privileged driving teacher and transfers to a visual agent; separating perception and control through privileged inputs is established |
 | [DriveAdapter, ICCV 2023](https://arxiv.org/abs/2308.00398) | Separates perception and planning and addresses the gap between predicted and true privileged inputs; supports our interface-distribution caution |
 | [POPLIN, ICLR 2020](https://arxiv.org/abs/1906.08649) | Policy-guided online planning and policy distillation; search around learned proposals is established |
-| [World on Rails, ICCV 2021](https://openaccess.thecvf.com/content/ICCV 2021/papers/Chen_Learning_To_Drive_From_a_World_on_Rails_ICCV_2021_paper.pdf) | Factorizes ego response from external evolution and distills model-derived choices; our exogenous/endogenous distinction has precedent |
+| [World on Rails, ICCV 2021](https://openaccess.thecvf.com/content/ICCV2021/papers/Chen_Learning_To_Drive_From_a_World_on_Rails_ICCV_2021_paper.pdf) | Factorizes ego response from external evolution and distills model-derived choices; our exogenous/endogenous distinction has precedent |
 | [Value Equivalence, NeurIPS 2020](https://arxiv.org/abs/2011.03506) and [Objective Mismatch, L4DC 2020](https://proceedings.mlr.press/v120/lambert20a.html) | Planning usefulness and predictive accuracy are different objectives; a task-useful model alone is not a new principle |
 | [Valdi, July 2026 preprint](https://arxiv.org/html/2607.00917v1) | Direct CarRacing model-based planning reference; preliminary study with modified proprioception and 600-frame episodes, not a verified standard-task champion |
 | [Seyam et al., October 26, 2026 preprint](https://arxiv.org/html/2610.35448v1) | Explicitly diagnoses planning failures despite detection on NeuroNCAP, then improves planning with targeted scenes; the broad proposed failure explanation already has close prior art |

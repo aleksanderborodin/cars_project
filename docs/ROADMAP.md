@@ -25,6 +25,10 @@ paper collection or expensive training starts before the infrastructure gates.
 reconstruction and hidden-road information with a fixed actor/model/budget.
 It precedes new oracle-informed policy training and does not satisfy the strong
 baseline, established-optimizer or final-test gates below.
+The [completed pilot](INTERVENTION_RESULTS_2026-10-29.md) found worse oracle-cell
+driving despite better oracle-road prediction on recorded controls. Next isolate
+the objective/reference compatibility before expanding the diagnostic or training
+V/L/F policies; do not interpret these substitutions as component adequacy.
 
 | Order | Deliverable | Evidence / gate |
 |---|---|---|

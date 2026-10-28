@@ -1,0 +1,233 @@
+{
+  "manifest_sha256": "7d9367ff46644f8566ae92faa6003b8a677616262e889cb31cefb4a1e050da19",
+  "inputs": [
+    {
+      "run": "runs/policy_geometry_intervention/intervention_pilot_20261029_baseline",
+      "config_sha256": "697543240a194ac4f6335b946954781d225574cb9dab8660bdd03fa0e8d8feed",
+      "metrics_sha256": "99eb2e9f704e0a091fd0e22f4bf4ca0844894a2d3a18b9f4f42fecbd4864e060",
+      "cost_sha256": "da6604a27074256f56a216db6a65777aa49c665785d28dbe328366492222a0bb"
+    },
+    {
+      "run": "runs/policy_geometry_intervention/intervention_pilot_20261029_visible_reference",
+      "config_sha256": "2b54f99cc7393fe2ef56a26fbf5cc0ec52292b5801e6b749e5b1d1f7eaf1d216",
+      "metrics_sha256": "c7c770dd04bf6364eeddad537542b01baa05161fa110c34bd2d4e25d3416b352",
+      "cost_sha256": "9a5362b75b53975dfca0d30f6e0d2b3247df5ba2105392b8c8385837a612a1a8"
+    },
+    {
+      "run": "runs/policy_geometry_intervention/intervention_pilot_20261029_hidden_road",
+      "config_sha256": "ec549dae009e638da32472e5ad66e6fa7ccbacf65e4b0e1e7461ff1010eced4e",
+      "metrics_sha256": "67a71b9d5f4432eb3aeadc7cae1bd947eb2dde000da2a4ba78193dd4501a943e",
+      "cost_sha256": "e050e6228e303714195438b373147bb9d20ffdbed1bb43ec57d6b298583b3c38"
+    },
+    {
+      "run": "runs/policy_geometry_intervention/intervention_pilot_20261029_both",
+      "config_sha256": "e127b51838bd604f34e2dec325009c05dfdfe2a5bafbe351e5bd9c47ec8b6b3e",
+      "metrics_sha256": "5783edde5c531c51ea4ec739da030c697c673507ab24d883dd775d5fdff331bd",
+      "cost_sha256": "4a818a2e62e33f8248848ff2c29cde4ff02d20f25fe0a511e62125056f187d95"
+    }
+  ],
+  "contrasts": [
+    {
+      "metric": "return",
+      "name": "visible_reference_given_prior",
+      "mean": -148.03229723296607,
+      "per_track": [
+        -87.72253521126913,
+        -111.86440677965936,
+        -165.3067114093958,
+        -229.7750000000002,
+        -145.49283276450592
+      ],
+      "uncertainty": "descriptive five-track integration pilot; no significance/equivalence claim"
+    },
+    {
+      "metric": "return",
+      "name": "visible_reference_given_oracle_road",
+      "mean": 164.57000302803442,
+      "per_track": [
+        52.81690140844796,
+        474.57627118643023,
+        90.60402684563542,
+        184.37499999999966,
+        20.477815699658777
+      ],
+      "uncertainty": "descriptive five-track integration pilot; no significance/equivalence claim"
+    },
+    {
+      "metric": "return",
+      "name": "hidden_road_given_reconstructed_reference",
+      "mean": -477.3571296490889,
+      "per_track": [
+        -302.5112676056307,
+        -837.2881355932038,
+        -400.2060402684533,
+        -520.4000000000001,
+        -326.38020477815667
+      ],
+      "uncertainty": "descriptive five-track integration pilot; no significance/equivalence claim"
+    },
+    {
+      "metric": "return",
+      "name": "hidden_road_given_oracle_visible_reference",
+      "mean": -164.75482938808844,
+      "per_track": [
+        -161.97183098591358,
+        -250.8474576271143,
+        -144.2953020134221,
+        -106.25000000000023,
+        -160.40955631399197
+      ],
+      "uncertainty": "descriptive five-track integration pilot; no significance/equivalence claim"
+    },
+    {
+      "metric": "return",
+      "name": "interaction",
+      "mean": 312.60230026100055,
+      "per_track": [
+        140.5394366197171,
+        586.4406779660897,
+        255.91073825503122,
+        414.14999999999986,
+        165.9706484641647
+      ],
+      "uncertainty": "descriptive five-track integration pilot; no significance/equivalence claim"
+    },
+    {
+      "metric": "success",
+      "name": "visible_reference_given_prior",
+      "mean": -0.8,
+      "per_track": [
+        -1.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "uncertainty": "descriptive five-track integration pilot; no significance/equivalence claim"
+    },
+    {
+      "metric": "success",
+      "name": "visible_reference_given_oracle_road",
+      "mean": 0.0,
+      "per_track": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "uncertainty": "descriptive five-track integration pilot; no significance/equivalence claim"
+    },
+    {
+      "metric": "success",
+      "name": "hidden_road_given_reconstructed_reference",
+      "mean": -0.8,
+      "per_track": [
+        -1.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "uncertainty": "descriptive five-track integration pilot; no significance/equivalence claim"
+    },
+    {
+      "metric": "success",
+      "name": "hidden_road_given_oracle_visible_reference",
+      "mean": 0.0,
+      "per_track": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "uncertainty": "descriptive five-track integration pilot; no significance/equivalence claim"
+    },
+    {
+      "metric": "success",
+      "name": "interaction",
+      "mean": 0.8,
+      "per_track": [
+        1.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "uncertainty": "descriptive five-track integration pilot; no significance/equivalence claim"
+    },
+    {
+      "metric": "off_track_steps",
+      "name": "visible_reference_given_prior",
+      "mean": -0.8,
+      "per_track": [
+        0.0,
+        -4.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "uncertainty": "descriptive five-track integration pilot; no significance/equivalence claim"
+    },
+    {
+      "metric": "off_track_steps",
+      "name": "visible_reference_given_oracle_road",
+      "mean": 0.0,
+      "per_track": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "uncertainty": "descriptive five-track integration pilot; no significance/equivalence claim"
+    },
+    {
+      "metric": "off_track_steps",
+      "name": "hidden_road_given_reconstructed_reference",
+      "mean": -0.8,
+      "per_track": [
+        0.0,
+        -4.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "uncertainty": "descriptive five-track integration pilot; no significance/equivalence claim"
+    },
+    {
+      "metric": "off_track_steps",
+      "name": "hidden_road_given_oracle_visible_reference",
+      "mean": 0.0,
+      "per_track": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "uncertainty": "descriptive five-track integration pilot; no significance/equivalence claim"
+    },
+    {
+      "metric": "off_track_steps",
+      "name": "interaction",
+      "mean": 0.8,
+      "per_track": [
+        0.0,
+        4.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "uncertainty": "descriptive five-track integration pilot; no significance/equivalence claim"
+    }
+  ],
+  "native_frames": 19447,
+  "internal_physics_frames": 2723840,
+  "actor_forward_examples": 651776,
+  "new_experiment_training_frames": 0,
+  "interpretation": "fixed local actor; path-reconstruction and hidden-road module substitutions, not trained V/L/F comparison",
+  "private_oracle_outputs_accessed": false,
+  "held_out_evaluation": false
+}

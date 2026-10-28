@@ -1,0 +1,134 @@
+{
+  "analysis": "post_hoc; descriptive; no causal inference or statistical test",
+  "main_report_sha256": "45fde66b2aa85ffde946b72cea9ef09e9ab9639224f563d25ed3ee94301bcfad",
+  "script_sha256": "cf62135ef5fe8878222b455e873ff09ebb5d6ba9d4aff6eed39c55c4e695112c",
+  "inputs": [
+    {
+      "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_baseline/episodes/0000.npz",
+      "sha256": "a1a0796d70d431054f96704720ed84003be6105c80af580b326f6635afd606f8"
+    },
+    {
+      "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_baseline/episodes/0001.npz",
+      "sha256": "4bea5a19606cc0c4cb02f383f17460898144639d8dd0fa1b1ac41f1d9994eab8"
+    },
+    {
+      "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_baseline/episodes/0002.npz",
+      "sha256": "94239b083a9f6863c611b81d6bb2880005ca40b49eb4441a1fd8e52000f32be9"
+    },
+    {
+      "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_baseline/episodes/0003.npz",
+      "sha256": "65ee763d0adc8830571e0f76d2769e1c44a2389a8bdf87497b67af0078f0a4f4"
+    },
+    {
+      "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_baseline/episodes/0004.npz",
+      "sha256": "b962e7a3d220075cc2182a2403a33e37f0d3ef2bbc88b51f8a8ec5992b3db632"
+    },
+    {
+      "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_visible_reference/episodes/0000.npz",
+      "sha256": "5219a4bca740f0a7a0e3ca8265c38f724ea655dc4549368a1f1b9c68fe64548e"
+    },
+    {
+      "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_visible_reference/episodes/0001.npz",
+      "sha256": "67e8c1b5f6f777ca78192e3347a585c0319c674ce14bb0488308b8d9179752aa"
+    },
+    {
+      "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_visible_reference/episodes/0002.npz",
+      "sha256": "a9090203f7dd9288c38a65d2da6c03af7c64da095ec85d0796b7411c8b525492"
+    },
+    {
+      "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_visible_reference/episodes/0003.npz",
+      "sha256": "b23f567219ee68be979fbe5715205b12ce2d559a74acf7bb86eb6baffd9b351f"
+    },
+    {
+      "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_visible_reference/episodes/0004.npz",
+      "sha256": "d63c5462a0b8abfc3a5c5c61d3870300fb303674b8f722cdae9aad85e7914d7c"
+    },
+    {
+      "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_hidden_road/episodes/0000.npz",
+      "sha256": "ad6708a239d5fe0ad38e51876d5f865df6b96cdcdd2c4ced032d86b068df628d"
+    },
+    {
+      "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_hidden_road/episodes/0001.npz",
+      "sha256": "6d5390df10ccfccc3d6667e54ed41ea991590e527a5f78409c6710b21be0970e"
+    },
+    {
+      "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_hidden_road/episodes/0002.npz",
+      "sha256": "f4c5498ede4f81e49c8913f2c79876feebbc8099343ca9c55eb505e676e7f905"
+    },
+    {
+      "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_hidden_road/episodes/0003.npz",
+      "sha256": "3641ddda7f71cfd7ccef157751fc5ee3d53c42318e6eef15293184964b9106cb"
+    },
+    {
+      "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_hidden_road/episodes/0004.npz",
+      "sha256": "9e9b2e14888287f6ba3b30967f9304bbc74ec9a24b66d3e5efb490d71bc8f1df"
+    },
+    {
+      "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_both/episodes/0000.npz",
+      "sha256": "1d4e92e8f115826ef8af8e9f33760f55c95cfdc637131b98678df29733d6f6de"
+    },
+    {
+      "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_both/episodes/0001.npz",
+      "sha256": "1c38a32820ddc1d4708b67adf3d515b8a550a2bc6ed31ed742b6d106cd485785"
+    },
+    {
+      "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_both/episodes/0002.npz",
+      "sha256": "7d1824ac0d03559d90045e10e2f95224cb9d530c4659e6bfedab66c3b5504a29"
+    },
+    {
+      "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_both/episodes/0003.npz",
+      "sha256": "564db9076f2c25ead5728170f270b2fa8a967b31fa68bbf4ce48e80ba0d9c2ad"
+    },
+    {
+      "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_both/episodes/0004.npz",
+      "sha256": "a6b127450d62ebb8b0349f9fae82d1a60409d257a915a6f731c3cd3dcda4c166"
+    }
+  ],
+  "read_npz_fields": [
+    "frames",
+    "evaluation_offroad_frame_indices",
+    "observation_ego",
+    "truncated",
+    "terminated",
+    "action"
+  ],
+  "failure_definitions": {
+    "tail_native_frames": 100,
+    "low_speed_mps": 2.0,
+    "low_progress_fraction": 0.5,
+    "offroad": "zero wheel contact, official metric; indices saved only after episode",
+    "interpretation": "descriptive; low tail speed is not proof of a causal stall or recovery defect"
+  },
+  "definitions_source": "configs/campaigns/control-audit-2026-10-28.json",
+  "definitions_source_sha256": "cd77748530376173fd803db55485820988d09af3550dabb381f3e5b507504c9a",
+  "speed_estimator": "decision-end observed body-speed samples weighted by actual action duration; equal episode weighting in condition means",
+  "new_environment_frames": 0,
+  "private_oracle_outputs_read": false,
+  "outcomes": [
+    {
+      "condition": "baseline",
+      "outcome": "completed",
+      "episodes": 4
+    },
+    {
+      "condition": "baseline",
+      "outcome": "timeout_onroad",
+      "episodes": 1
+    },
+    {
+      "condition": "both",
+      "outcome": "timeout_onroad",
+      "episodes": 5
+    },
+    {
+      "condition": "hidden_road",
+      "outcome": "timeout_onroad",
+      "episodes": 5
+    },
+    {
+      "condition": "visible_reference",
+      "outcome": "timeout_onroad",
+      "episodes": 5
+    }
+  ]
+}

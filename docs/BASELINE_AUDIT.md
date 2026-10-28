@@ -14,6 +14,11 @@ The subsequent fresh `target_kl=0.02` probe also completed: best 697.04/4%, belo
 the original selected driver. It is not adopted; baseline repair remains open.
 See the [follow-up report](FROZEN_POLICY_RESULTS_2026-10-28.md) for all checkpoints
 and the substantial reduction in optimizer work caused by early stopping.
+The lower-learning-rate (3e-5) probe also completed: best 692.18/8%, below the
+original 858.11/30% on the same 50 tracks. Neither repair is adopted. See the
+[completed broad review](BROAD_RESULTS_2026-10-29.md). The current
+[fixed-controller geometry intervention](INTERVENTION_STUDY.md) diagnoses this
+one selected actor/search pipeline; it does not establish baseline convergence.
 The [next-moves plan](NEXT_MOVES.md) now specifies the proposed implementation,
 profiling and training order. Its first driver is a practical proposer/comparator,
 not an asserted current CarRacing SOTA method.

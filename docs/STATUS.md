@@ -27,7 +27,14 @@ full-map diagnostic matrix, GPU backend or agentic evolution has been implemente
 **Current work:** [controlled geometry interventions](INTERVENTION_STUDY.md) are
 implemented: independent visible-reference and hidden-road substitutions around
 the same frozen local actor, with unchanged objective weights/visibility penalty.
-The five-track/four-cell development pilot is declared; its result is pending.
+The five-track/four-cell development pilot is complete: baseline 906.99/80%;
+visible-reference oracle 758.96/0%; hidden-road oracle 429.64/0%; both 594.21/0%.
+All oracle conditions timed out on road, with lower speeds/more braking. A separate
+15-window executed-action audit found better motion prediction with oracle road
+(1.6-second velocity RMSE 0.00536 versus 31.35 m/s). These narrow results motivate
+an objective/interface audit, not component-adequacy or SOTA claims. See the
+[complete intervention report](INTERVENTION_RESULTS_2026-10-29.md). No jobs remain
+active from this batch. The full-road objective-reference control is still proposed.
 The actor receives only its original local fields. Global training stays sealed.
 
 ## Implemented
@@ -94,6 +101,11 @@ and unavailable for agent analysis, training or selection. Hindsight knowledge o
 the realized hidden world also differs from information available at decision time.
 
 ## Measurements
+
+- Four-cell/five-track geometry pilot and executed-action prediction audit complete;
+  see the [new report](INTERVENTION_RESULTS_2026-10-29.md). Better oracle-road
+  prediction did not translate to better driving. Cost: 19,447 native evaluation
+  frames and 2,729,240 internal native physics steps including the follow-up audit.
 
 - Latest 200-track comparison: direct 862.42/35.5%, fixed correction 865.95/39.5%,
   search 7 873.05/58.5%, search 21 884.48/72%. Search 21 minus direct return +22.06

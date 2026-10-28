@@ -375,3 +375,11 @@ The high-confidence decisions are frozen-checkpoint comparisons, information
 separation, accounting and test isolation. PPO suitability, 8M sufficiency, residual
 parameterization, useful horizon/utility and the eventual winning method remain
 empirical uncertainties. A SOTA result or paper acceptance cannot be promised.
+
+The user's [task-useful simulator option](DECISION_USEFUL_SIMULATOR.md) is deferred:
+our own approximate/abstract engine, possible GPU execution, and optional code or
+parameter adaptation by downstream driving. Realism is not required. The main
+understanding-versus-decision question and frozen-proposer comparison remain the
+priority; current campaigns and the established-optimizer comparison continue.
+A fidelity-preserving implementation optimization and a deliberately task-adapted
+model are distinct experiments with different numerical acceptance criteria.

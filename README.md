@@ -9,6 +9,12 @@ behaviors by simulated outcomes. Learned dynamics are retained as pilot baseline
 The key comparison is a frozen behavior proposer with and without simulation
 selection; no newly learned behavior scorer is required by the main approach.
 
+The scientific goal separates **understanding the situation** from **choosing
+what to do**: identify which components limit driving and test whether simulated
+selection among a frozen proposer's sampled behaviors improves its performance.
+A future task-useful simulator may be approximate or abstract; realism is not
+required if the resulting decisions improve actual driving.
+
 The broad perception–world-model–planning pipeline is established prior work.
 Our goal is competitive actual driving, supported by component-level evidence.
 Hidden-road forecasts are one possible component; predictor-space selection by
@@ -20,6 +26,7 @@ There is **no established general advantage, novelty or SOTA result**.
 | Document | Read it for |
 |---|---|
 | [User intent](docs/USER_INTENT.md) | User decisions, main system, paper goal, expert experiment, and future evolution option |
+| [Task-useful simulator](docs/DECISION_USEFUL_SIMULATOR.md) | Future independent/approximate simulator, downstream adaptation, GPU and agentic options; realism optional |
 | [Information and control study](docs/INFORMATION_AND_CONTROL_STUDY.md) | Future local/full-map learned/search matrix, three-module decomposition, user motivation and claim limits |
 | [Research log](docs/RESEARCH_LOG.md) | Attributed ideas/questions, intent, context, probes and the user-only ranking-monitor restriction |
 | [Experiment specification](docs/EXPERIMENT.md) | Authoritative scope, information contracts, fairness, evaluation rules |

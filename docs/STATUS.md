@@ -145,7 +145,7 @@ No final-test identities/results or legacy unseen/hard results were inspected.
   experiments, stronger-driver training proposal and scientific decision gates.
   Its geometry diagnostic and first training block are complete. The selected
   checkpoint search comparison and cheap-control follow-ups are complete. The KL
-  repair trial did not improve the baseline. Broader and final studies remain unstarted.
+  repair trial did not improve the baseline. The broader development comparison is running; the final study remains unstarted.
 - Steps 1–2 of the [next-experiment plan](NEXT_EXPERIMENTS.md) are complete.
   Its 60k-frame pace/full-map proposal is deferred by the coded-simulator priority.
 - Competent learned baseline and faithful upstream reproduction before headline runs.
@@ -158,9 +158,12 @@ No final-test identities/results or legacy unseen/hard results were inspected.
   behavior search and local visual perception remain proposals.
 - TD-MPC2, DreamerV3, Valdi and other modern baseline reproductions are not executed.
 - Final frozen study, sufficiently powered comparisons, paper and release remain open.
+- A [task-useful independent simulator](DECISION_USEFUL_SIMULATOR.md), GPU backend
+  and driving-guided parameter/code adaptation are documented future ideas, not
+  implemented. Realism is not an acceptance criterion for that proposed variant.
 - Agentic evolution is future work; archived Rust/evolution tooling stays archived.
 
-The full suite now passes **79 tests** (three upstream SWIG deprecation warnings).
+The latest completed full suite passed **80 tests** (three upstream SWIG deprecation warnings).
 The original cleanup had 47 retained tests. New coverage includes partition sealing,
 local isolation, protocol equivalence, fit/reload, continuation, paired statistics
 and synthetic ranking logic. Documentation links, CLI discovery and the dependency

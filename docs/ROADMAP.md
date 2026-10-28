@@ -99,6 +99,11 @@ universal gate for all model-based control.
   Rust, if it fits the system and improves results. The archived implementation
   remains archived. This is not part of A–B and is not currently running.
 
+- **Task-useful simulator:** future separately implemented/approximate or abstract
+  programmed model, potentially GPU-executed and adapted by driving outcomes.
+  Realism is optional; compare model selection, implementation speed and agentic
+  code adaptation separately. See [intent and design](DECISION_USEFUL_SIMULATOR.md).
+
 ## Claim gates
 
 - Gains must survive information, supervision, training and inference-cost controls.

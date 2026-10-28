@@ -32,10 +32,15 @@ controls and failure evidence. Further diagnostics and baseline training remain 
 
 ## Research question
 
-Can a modular internal model support competitive driving through simulation and
-online behavior search, and which perception, prediction, and control components
-determine its performance and cost? Compare with strong learned policies and
-established planning methods under matched information, supervision, and budgets.
+Separate **understanding the situation** from **deciding how to act**. Which
+road/state/prediction components are already sufficient for the tested task and
+which limit performance? Does simulation-based selection among a frozen proposer's
+sampled behavior variants improve driving over executing that proposer directly?
+These are the user's central questions, not a requirement to make every internal
+prediction physically faithful. Use controlled component substitutions and compare
+strong learned policies and established planners under matched information,
+supervision and budgets. Component adequacy is conditional on this setting; no
+whole subproblem is declared universally solved.
 
 The main loop is observe, reconstruct/estimate, simulate candidates in a coded
 world, choose, execute briefly, and replan. The main dynamics engine reuses
@@ -52,6 +57,13 @@ The user's proposed future [information/control study](INFORMATION_AND_CONTROL_S
 crosses local/full-map inputs with learned/search control and separates road,
 vehicle-prediction and decision errors. It remains proposed; current global
 diagnostics do not constitute a full-information learned-policy comparison.
+
+The user additionally proposes a [task-useful programmed simulator](DECISION_USEFUL_SIMULATOR.md),
+possibly independently implemented, GPU-accelerated or adapted through an agentic
+loop. **Realism is optional in that future variant; actual driving usefulness is
+the selection objective.** Prediction accuracy remains a diagnostic. This is a
+separate future model-construction experiment, not an active evolution campaign
+or a change to current frozen runs or normal predictor-training defaults.
 
 Modularity, world models, and MPC are established ideas; no novelty, SOTA, or
 safety claim is established. Search explores a finite set/parameterization of

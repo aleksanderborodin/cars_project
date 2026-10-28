@@ -8,6 +8,9 @@ at `README.md`; use `docs/STATUS.md` to distinguish implemented code from propos
 - Gymnasium CarRacing only, simulation only, current workstation first.
 - Main project: modular prediction, internal simulation, online behavior search,
   action execution, and replanning. Read `docs/USER_INTENT.md` for user decisions.
+- Main scientific goal: separate understanding from deciding, identify which
+  components are sufficient or limiting in the tested setting, and test improvement
+  from simulated selection among a frozen proposer's sampled behavior variants.
 - The main world model is a programmed simulator, per the user's explicit
   correction. Read `docs/SIMULATOR_SEARCH_PLAN.md`. Learned ridge/neural dynamics
   are comparison alternatives, not the primary engine. Simulate proposed behaviors
@@ -17,6 +20,10 @@ at `README.md`; use `docs/STATUS.md` to distinguish implemented code from propos
   not the default. Hidden-road prediction is one component, not the whole project.
 - Retain expert/known-track diagnostics as separate privileged experiments.
   Agentic evolution (possibly Rust) is a future option, not the current work path.
+- A future custom simulator may be approximate or abstract: realism is optional,
+  actual driving usefulness is the objective. Independent implementation, GPU
+  execution and driving-guided parameter/code adaptation are separate future
+  studies in `docs/DECISION_USEFUL_SIMULATOR.md`; do not activate them implicitly.
 - No established novelty, SOTA, safety, or sim-to-real result. Claims require evidence.
 - Previous plans and evolution tooling live on the archive branch documented in
   `docs/ARCHIVE.md`. Do not restore them as current instructions or paper claims.

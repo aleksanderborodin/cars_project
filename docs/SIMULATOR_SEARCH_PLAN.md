@@ -28,6 +28,14 @@ optional perception, road hypotheses or proposal models is separate from using
 simulation for the decision. Do not silently turn the main project back into
 learning a transition network or a learned critic.
 
+The user's main scientific purpose is to separate understanding from deciding:
+use controlled component changes to identify limitations and test whether choosing
+among sampled behaviors improves driving. A future [task-useful simulator](DECISION_USEFUL_SIMULATOR.md)
+may be independently implemented, approximate or abstract, and optionally adapted
+by code/parameter search or executed on a GPU. Realism is not required for that
+variant; actual driving usefulness is the criterion. Reusing upstream mechanics
+below is the current engineering choice, not a permanent requirement on all models.
+
 The user also authorized autonomous execution and asked us to record uncertain
 choices for later discussion. The choices below are assistant implementation
 decisions, not additional user commitments or established scientific findings.

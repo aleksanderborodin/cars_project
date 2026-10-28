@@ -56,6 +56,49 @@ comparisons and possible components/variants. The project does not prohibit all
 learning: the predictor, perception, or a downstream controller may be trained.
 Which variant needs a learned actor must be explicitly reported.
 
+## Main scientific purpose: understanding versus deciding
+
+**User reaffirmation, 2026-10-28 (paraphrase):** the main goal is to distinguish
+understanding the situation from deciding how to act, identify which parts are
+already sufficient and which still limit performance, and show whether selecting
+among sampled behavior variants improves the underlying model's driving.
+
+World understanding includes road/state representation and action-conditioned
+prediction; deciding includes proposing, comparing and executing behaviors.
+Use controlled substitutions and frozen components so a whole-system score does
+not hide where improvements originate. The useful first comparison remains the
+same frozen proposer alone versus sampled variants selected by programmed
+simulation, with random sampling and cheap corrections as controls.
+
+Assistant interpretation: report which component is adequate or limiting **for
+our tested task, information and budgets**. A search improvement does not by
+itself prove perception is solved; a model error does not prove it limits driving.
+The [information/control study](INFORMATION_AND_CONTROL_STUDY.md) describes further
+interventions. The two-task distinction is central now even though its full-map
+matrix is a future experiment. Optional simulator/predictor/evolution ideas must
+serve this purpose rather than displace it.
+
+## Future option: a simulator useful for decisions without requiring realism
+
+**User proposal and clarification, 2026-10-28 (paraphrase):** implement our own
+simulator, possibly much faster on a GPU; adapt its parameters or code according
+to the resulting driving usefulness, perhaps through agentic rewriting/evolution.
+It does not need to be realistic, only useful for choosing actions. Physical
+similarity is an option, not a requirement; prediction accuracy is diagnostic.
+
+User motivations: test independence from the target simulator's code, test whether
+an inexact/abstract model still improves behavior selection, and develop evidence
+relevant to a possible eventual real-world approach. These are separate hypotheses.
+The [future simulator study](DECISION_USEFUL_SIMULATOR.md) preserves intent,
+comparison controls, compute/feedback accounting and claim limits. It remains a
+future option and does not launch evolution or replace the current engine.
+
+Assistant critique: actual driving determines usefulness, not optimistic internal
+scores. Success without reusing target dynamics would not establish physical
+transfer or erase prior source knowledge. Any data-driven program adaptation
+counts as optimization; all train/development/test and private-oracle rules persist.
+This does not change the earlier default for normally trained learned predictors.
+
 ## Predictor training and selection: clarified user intent
 
 Paraphrase: train candidate predictors normally, using ordinary supervised or

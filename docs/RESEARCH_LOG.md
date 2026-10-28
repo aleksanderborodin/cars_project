@@ -698,3 +698,43 @@ Earlier project intentions remain in USER_INTENT.md; this log extends that recor
   all declared nested panels retained. Additional fixed-correction pairwise
   contrasts are labeled descriptive. No method or queue changes from this view.
 - **Record:** [table, uncertainty and provenance](../reports/broad_driver_completed_2026-10-28_1810/README.md).
+
+## R36 — User's future independent, fast simulator selected for useful decisions
+
+- **Author/type:** user proposal followed by explicit clarifications, paraphrased.
+- **Intent:** build our own simulator, possibly GPU-fast, adapt it through parameters
+  or agentic rewriting/evolution, and evaluate its usefulness to final behavior
+  choices. The user explicitly says it need not be realistic; usefulness is enough.
+- **Motivations:** test whether improvement requires target simulator code or exact
+  simulation, and motivate possible eventual real-world use through weaker assumptions.
+- **Assistant design:** separate source reuse, model approximation, downstream model
+  selection, backend speed and code evolution. Compare prediction-calibrated and
+  driving-selected models with fixed control; compare parameter-only tuning against
+  code adaptation with recorded feedback budgets. Count adaptation as optimization.
+- **Critique/confidence:** high confidence in separating these claims; advantage
+  unknown. We already know upstream code, so independent implementation is not
+  proof of source-unavailable design. Gym success is not sim-to-real evidence.
+  GPU throughput and task-guided models have prior art; no new result is asserted.
+- **Status:** future option only. No new engine, GPU dependency, evolution agent or
+  campaign. Normal predictive training remains the default for the earlier predictor
+  study. Private rank/regret feedback is still forbidden; current runs are unchanged.
+- **Record:** [intent, controls, sources and open decisions](DECISION_USEFUL_SIMULATOR.md).
+
+## R37 — User reaffirms the main understanding-versus-decision goal
+
+- **Author/type:** user clarification and request to preserve the project's ideas.
+- **Intent:** distinguish understanding the world from deciding what to do; identify
+  which parts are already sufficient and which remain limiting; demonstrate whether
+  simply choosing among sampled variants improves the underlying driver's results.
+- **Assistant interpretation:** freeze proposer/representation/model when testing
+  selection, then use controlled component substitutions to attribute limitations.
+  Include direct execution, random variation and simulated selection. The third
+  diagnostic split remains road inference, vehicle prediction and decision/control.
+- **Claim limit:** a successful complete system does not prove its understanding is
+  solved, and an inaccurate model may still be sufficient. Adequacy is conditional
+  on tested tasks, information and resources. Simulated selection need not be
+  universally superior, nor can it enumerate all continuous behaviors.
+- **Priority:** this is the main research question. The custom simulator, GPU,
+  agentic evolution and predictor-selection ideas remain supporting future options.
+- **Action:** foregrounded the goal in README, specification and USER_INTENT;
+  linked the detailed future simulator proposal and retained existing study order.

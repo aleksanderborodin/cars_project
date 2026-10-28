@@ -26,6 +26,12 @@ that a learned model cannot match search or that all possible actions are enumer
 The user explicitly places this extension in future work; it should not interrupt
 the current restricted-policy comparison or silently replace the main system.
 
+**Subsequent user clarification:** the understanding-versus-deciding distinction
+is the main scientific goal now; the full-map matrix is one future way to examine
+it. Identify components sufficient for our tested setting, not universally solved
+problems. Simulator realism is optional if useful choices survive in actual
+closed-loop driving; see [the future task-useful simulator study](DECISION_USEFUL_SIMULATOR.md).
+
 ## Define what is fully known
 
 Start with **full road geometry**: the entire ordered track/map is available at

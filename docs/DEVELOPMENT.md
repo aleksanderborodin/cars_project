@@ -230,6 +230,10 @@ observed outcomes. Historical source and its original tests are recoverable via
 
 ## Frozen broad-development campaign
 
+The declared comparison and queued lower-LR probe are complete. See the
+[completed review](BROAD_RESULTS_2026-10-29.md). Commands below document reproduction
+and orchestration; their original run IDs remain immutable.
+
 ```bash
 uv run python scripts/run_broad_driver.py
 uv run python scripts/summarize_broad_driver.py --campaign runs/campaigns/broad_driver_20261028 --output reports/broad_driver_2026-10-28

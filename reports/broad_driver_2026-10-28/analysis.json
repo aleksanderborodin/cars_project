@@ -1,0 +1,652 @@
+{
+  "manifest_sha256": "6b016e231bdd902ac793ba8509621d84bcf800d71bfcd8932f2c553b1061a515",
+  "checkpoint_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741",
+  "inputs": [
+    {
+      "condition": "direct",
+      "run": "runs/recurrent_ppo/broad_driver_20261028_direct",
+      "config_sha256": "7c37bd8e4f4e4c9df6905a3d6ec30ddc83a21c8e34669eff1aed1349d4f26ec7",
+      "metrics_sha256": "d6f225d389e8a36b21782e557359c58136d26367c1f0a3596a8d8959df8b27a6",
+      "cost_sha256": "1a3bfa121916b683ea6d83f75caee8c32be69dd4a4689b02b527dd73f04ea5ef"
+    },
+    {
+      "condition": "mean7",
+      "run": "runs/policy_bias/broad_driver_20261028_mean7",
+      "config_sha256": "0cb91159f98157ed39f2be38f8c36c52e7296c5c3c3382dd09652c8060252639",
+      "metrics_sha256": "05adb4b97c950cce9ddc062152a470cba73bf565a0b93a8cc6a5bedb30699ea2",
+      "cost_sha256": "ffa2bcffe854bfa40225f2bc2d187963be871585d68b3f4a92689f2156f87c82"
+    },
+    {
+      "condition": "search7",
+      "run": "runs/policy_physics_search/broad_driver_20261028_search7",
+      "config_sha256": "9e539ac311872a8d6214b8504697a807ddf9c285a808541765da32cac4735967",
+      "metrics_sha256": "1f473d22c70de0cc1b47d38e90fa46449b7daf90a4191d4e2fa75cc8e4bbf64e",
+      "cost_sha256": "f3a62e1ade74e3e8a56d2e726d8e5605cd2afb46bd4d7c2e44003109d8662dbc"
+    },
+    {
+      "condition": "search21",
+      "run": "runs/policy_physics_search/broad_driver_20261028_search21",
+      "config_sha256": "96c31dd67dfaa0d1785bb3b11452151eef3d2d3ce05627fd8dd3b3d35625f050",
+      "metrics_sha256": "e5e81c1ec0c897bacc5a4e85d5fa9f09b8496effb2118cdac40a9b447ea5f828",
+      "cost_sha256": "7a8eb6fb4c19fe6d4be49cce8461ba7d8daf269e15ae8deda3137cfafcb688b5"
+    }
+  ],
+  "paired_differences": [
+    {
+      "panel": "all_200",
+      "candidate": "search7",
+      "reference": "direct",
+      "role": "primary",
+      "metric": "return",
+      "mean_difference": 10.636585866403072,
+      "interval_95_percent": [
+        -2.559401624372803,
+        22.797912593764803
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 200,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "all_200",
+      "candidate": "search7",
+      "reference": "direct",
+      "role": "primary",
+      "metric": "success",
+      "mean_difference": 0.23,
+      "interval_95_percent": [
+        0.16,
+        0.305
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 200,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "all_200",
+      "candidate": "search21",
+      "reference": "direct",
+      "role": "primary",
+      "metric": "return",
+      "mean_difference": 22.062187739673035,
+      "interval_95_percent": [
+        10.178526972759004,
+        33.346449136679034
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 200,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "all_200",
+      "candidate": "search21",
+      "reference": "direct",
+      "role": "primary",
+      "metric": "success",
+      "mean_difference": 0.365,
+      "interval_95_percent": [
+        0.295,
+        0.44
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 200,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "all_200",
+      "candidate": "search21",
+      "reference": "mean7",
+      "role": "supporting cheap-control comparison",
+      "metric": "return",
+      "mean_difference": 18.529606394968866,
+      "interval_95_percent": [
+        5.174921348436832,
+        32.15389420693898
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 200,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "all_200",
+      "candidate": "search21",
+      "reference": "mean7",
+      "role": "supporting cheap-control comparison",
+      "metric": "success",
+      "mean_difference": 0.325,
+      "interval_95_percent": [
+        0.255,
+        0.395
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 200,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "all_200",
+      "candidate": "search21",
+      "reference": "search7",
+      "role": "secondary compute comparison",
+      "metric": "return",
+      "mean_difference": 11.425601873269962,
+      "interval_95_percent": [
+        -0.8527869392885173,
+        24.145946074758
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 200,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "all_200",
+      "candidate": "search21",
+      "reference": "search7",
+      "role": "secondary compute comparison",
+      "metric": "success",
+      "mean_difference": 0.135,
+      "interval_95_percent": [
+        0.075,
+        0.2
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 200,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "pilot_20",
+      "candidate": "search7",
+      "reference": "direct",
+      "role": "primary",
+      "metric": "return",
+      "mean_difference": 22.153833239692272,
+      "interval_95_percent": [
+        -2.161803152555817,
+        48.30095155486035
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "pilot_20",
+      "candidate": "search7",
+      "reference": "direct",
+      "role": "primary",
+      "metric": "success",
+      "mean_difference": 0.3,
+      "interval_95_percent": [
+        0.1,
+        0.5
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "pilot_20",
+      "candidate": "search21",
+      "reference": "direct",
+      "role": "primary",
+      "metric": "return",
+      "mean_difference": 42.38911674455979,
+      "interval_95_percent": [
+        15.380979893805286,
+        76.93769531290077
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "pilot_20",
+      "candidate": "search21",
+      "reference": "direct",
+      "role": "primary",
+      "metric": "success",
+      "mean_difference": 0.45,
+      "interval_95_percent": [
+        0.25,
+        0.65
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "pilot_20",
+      "candidate": "search21",
+      "reference": "mean7",
+      "role": "supporting cheap-control comparison",
+      "metric": "return",
+      "mean_difference": 45.490511337827535,
+      "interval_95_percent": [
+        6.513229537086729,
+        112.57670013886631
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "pilot_20",
+      "candidate": "search21",
+      "reference": "mean7",
+      "role": "supporting cheap-control comparison",
+      "metric": "success",
+      "mean_difference": 0.25,
+      "interval_95_percent": [
+        0.05,
+        0.45
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "pilot_20",
+      "candidate": "search21",
+      "reference": "search7",
+      "role": "secondary compute comparison",
+      "metric": "return",
+      "mean_difference": 20.23528350486752,
+      "interval_95_percent": [
+        7.5412021306734855,
+        37.274314458356244
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "pilot_20",
+      "candidate": "search21",
+      "reference": "search7",
+      "role": "secondary compute comparison",
+      "metric": "success",
+      "mean_difference": 0.15,
+      "interval_95_percent": [
+        0.0,
+        0.3
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "selection_50",
+      "candidate": "search7",
+      "reference": "direct",
+      "role": "primary",
+      "metric": "return",
+      "mean_difference": 21.449796154960037,
+      "interval_95_percent": [
+        2.7762911081100867,
+        39.45911052961771
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 50,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "selection_50",
+      "candidate": "search7",
+      "reference": "direct",
+      "role": "primary",
+      "metric": "success",
+      "mean_difference": 0.32,
+      "interval_95_percent": [
+        0.2,
+        0.46
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 50,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "selection_50",
+      "candidate": "search21",
+      "reference": "direct",
+      "role": "primary",
+      "metric": "return",
+      "mean_difference": 37.46242997218195,
+      "interval_95_percent": [
+        20.96964483897186,
+        56.05928173777998
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 50,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "selection_50",
+      "candidate": "search21",
+      "reference": "direct",
+      "role": "primary",
+      "metric": "success",
+      "mean_difference": 0.4,
+      "interval_95_percent": [
+        0.26,
+        0.54
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 50,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "selection_50",
+      "candidate": "search21",
+      "reference": "mean7",
+      "role": "supporting cheap-control comparison",
+      "metric": "return",
+      "mean_difference": 32.72406099263672,
+      "interval_95_percent": [
+        13.627567882564398,
+        61.61352645333983
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 50,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "selection_50",
+      "candidate": "search21",
+      "reference": "mean7",
+      "role": "supporting cheap-control comparison",
+      "metric": "success",
+      "mean_difference": 0.3,
+      "interval_95_percent": [
+        0.16,
+        0.44
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 50,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "selection_50",
+      "candidate": "search21",
+      "reference": "search7",
+      "role": "secondary compute comparison",
+      "metric": "return",
+      "mean_difference": 16.012633817221914,
+      "interval_95_percent": [
+        7.858566743768132,
+        27.183755006898025
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 50,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "selection_50",
+      "candidate": "search21",
+      "reference": "search7",
+      "role": "secondary compute comparison",
+      "metric": "success",
+      "mean_difference": 0.08,
+      "interval_95_percent": [
+        -0.02,
+        0.18
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 50,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "remaining_150",
+      "candidate": "search7",
+      "reference": "direct",
+      "role": "primary",
+      "metric": "return",
+      "mean_difference": 7.032182436884085,
+      "interval_95_percent": [
+        -10.453396003008107,
+        22.44058174682614
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 150,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "remaining_150",
+      "candidate": "search7",
+      "reference": "direct",
+      "role": "primary",
+      "metric": "success",
+      "mean_difference": 0.2,
+      "interval_95_percent": [
+        0.11333333333333333,
+        0.2866666666666667
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 150,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "remaining_150",
+      "candidate": "search21",
+      "reference": "direct",
+      "role": "primary",
+      "metric": "return",
+      "mean_difference": 16.92877366217006,
+      "interval_95_percent": [
+        2.476450627622402,
+        30.653127817547162
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 150,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "remaining_150",
+      "candidate": "search21",
+      "reference": "direct",
+      "role": "primary",
+      "metric": "success",
+      "mean_difference": 0.35333333333333333,
+      "interval_95_percent": [
+        0.2733333333333333,
+        0.44
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 150,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "remaining_150",
+      "candidate": "search21",
+      "reference": "mean7",
+      "role": "supporting cheap-control comparison",
+      "metric": "return",
+      "mean_difference": 13.79812152907958,
+      "interval_95_percent": [
+        -2.765176507409724,
+        29.506947525846627
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 150,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "remaining_150",
+      "candidate": "search21",
+      "reference": "mean7",
+      "role": "supporting cheap-control comparison",
+      "metric": "success",
+      "mean_difference": 0.3333333333333333,
+      "interval_95_percent": [
+        0.25333333333333335,
+        0.41333333333333333
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 150,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "remaining_150",
+      "candidate": "search21",
+      "reference": "search7",
+      "role": "secondary compute comparison",
+      "metric": "return",
+      "mean_difference": 9.896591225285981,
+      "interval_95_percent": [
+        -5.880404358133801,
+        26.948531740580353
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 150,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    },
+    {
+      "panel": "remaining_150",
+      "candidate": "search21",
+      "reference": "search7",
+      "role": "secondary compute comparison",
+      "metric": "success",
+      "mean_difference": 0.15333333333333332,
+      "interval_95_percent": [
+        0.08,
+        0.23333333333333334
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 150,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and one fixed planning stream; tracks only"
+    }
+  ],
+  "native_frames": 737023,
+  "internal_physics_frames": 99945440,
+  "actor_forward_examples": 23921439,
+  "training_cost": "zero new training; original policy development and all unsuccessful trials remain additional",
+  "interpretation": "200-track development comparison; overlapping20/50 subsets and remaining150 are not final holdouts; one selected model and fixed planning stream",
+  "multiplicity": "nominal unadjusted exploratory intervals; no confirmatory significance or SOTA claim",
+  "held_out_evaluation": false,
+  "user_only_oracle_values_read": false
+}

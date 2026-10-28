@@ -1,6 +1,6 @@
 # Research questions, ideas, intent and probes
 
-Updated 2026-10-28. [Index](../README.md) · [User intent](USER_INTENT.md) ·
+Updated 2026-10-29. [Index](../README.md) · [User intent](USER_INTENT.md) ·
 [Implementation/evidence](STATUS.md)
 
 This log preserves who proposed an idea, why, and what would test it. User wording
@@ -738,3 +738,70 @@ Earlier project intentions remain in USER_INTENT.md; this log extends that recor
   agentic evolution and predictor-selection ideas remain supporting future options.
 - **Action:** foregrounded the goal in README, specification and USER_INTENT;
   linked the detailed future simulator proposal and retained existing study order.
+
+## R38 — User specifies oracle-current, oracle-future and action-selection interventions
+
+- **Author/type:** user's detailed paper formulation, 2026-10-29, paraphrased.
+- **Intent:** distinguish three difficulties: current-scene understanding, prediction
+  of future geometry/action consequences, and choosing the driving action. Train
+  comparable policies on true current information and then true future road; compare
+  each with selection among simulated variants of that same policy. Identify which
+  difficulties remain and test strong policies as well as the initial PPO.
+- **Further user ideas:** imperfect or independently implemented simulation may
+  already suffice under partial information; prediction/model selection by final
+  driving usefulness; optional evolution; untouched final evaluation. The desired
+  action-selection-bottleneck explanation remains a hypothesis.
+- **Assistant refinements:** distinguish retraining-under-information from controlled
+  component replacement; maintain shared interfaces and test distribution shift;
+  split hidden-road uncertainty from action-conditioned vehicle motion. Extra
+  hidden-road knowledge can remove irreducible uncertainty, not merely fix errors.
+- **Limits:** a remaining search gain depends on model, objective, candidate coverage
+  and compute. It cannot establish that every RL policy controls poorly or that an
+  end-to-end policy's perception is solved. No private oracle outputs are opened.
+- **Status:** proposed study, no new oracle-training protocol or campaign launched.
+- **Record:** [central blueprint and comparison matrix](PAPER_BLUEPRINT.md).
+
+## R39 — User requests one consolidated idea register with explicit origin
+
+- **Author/type:** user's organization and attribution instruction, 2026-10-29.
+- **Intent:** collect ideas from the entire project discussion, use them to improve
+  the paper, and clearly distinguish the user's ideas from the assistant's proposals.
+- **Action:** central blueprint with 26 user ideas and 13 assistant refinements, plus
+  explicitly attributed prior work. Origin and evidence status are separate fields.
+  Conversational origin is not a claim of scientific priority. Detailed earlier
+  rationale, corrections, failed experiments and archived work remain linked.
+- **Rule:** future updates must preserve this distinction; do not silently convert
+  an assistant numerical choice or an untested user hypothesis into an agreed fact.
+
+## R40 — Completed broad evidence and failed smaller-update probe
+
+- **Author/type:** measured evidence; assistant verification and continuation choice.
+- **Results:** all 200 development tracks complete. Direct 862.42/35.5%; fixed
+  correction 865.95/39.5%; search 7 873.05/58.5%; search 21 884.48/72.0%.
+  Search 21 minus direct return +22.06 [10.18, 33.35] and completion +36.5 points
+  [29.5, 44.0], nominal paired track-only intervals for one checkpoint/stream.
+- **Cost/limit:** 99,945,440 internal native physics steps and 737,023 native evaluation
+  frames; search 21 p95 latency 362.11 ms exceeds the 80 ms action interval.
+- **Failed probe:** lower-LR trial best 692.18/8% on 50 tracks; final 624.51/0%.
+  Cost 2,006,916 training plus 199,612 evaluation and 8 reload-check frames.
+- **Assistant decision:** retain the original selected actor, preserve the failure,
+  do not adopt/automatically extend the repair. Strong baseline verification remains
+  necessary; this does not establish that learned action selection is intrinsically poor.
+- **Verification:** both reports complete; input/checkpoint hashes checked, figures
+  inspected; queued full regression suite 80 passed. Final test/private data untouched.
+- **Record:** [completed review and artifacts](BROAD_RESULTS_2026-10-29.md).
+
+## R41 — Close prior art sharpens the novelty target
+
+- **Author/type:** assistant literature assessment responding to R38–R39.
+- **Finding:** privileged-input driving, separating perception/planning, policy-guided
+  online planning, distillation and task-useful models are established. An October 26,
+  2026 preprint also explicitly diagnoses planning failures despite successful detection.
+- **Assistant proposal:** seek a validated three-stage intervention study and measured
+  residual decision headroom, not novelty for the general decomposition or search idea.
+  Test whether the result survives competent policies, information/model controls,
+  computational budgets and a direct-policy distillation comparison.
+- **Confidence:** high that these controls matter; moderate potential for a substantive
+  empirical paper; unestablished algorithmic novelty/SOTA or acceptance probability.
+- **Record:** primary citations and claim-specific distinctions in
+  [the blueprint](PAPER_BLUEPRINT.md#prior-work-and-novelty-assessment) and REFERENCES.

@@ -128,7 +128,8 @@ which supports CPU/GPU kernels. It is not installed or selected for this project
 no speedup is inferred from its availability. Pin and audit any selected backend
 before changing the environment. No dependency changes during the frozen campaign.
 
-Next activation gate: finish the current frozen comparison and review the
+The frozen broad comparison is complete. Next activation gate: review the
 established-optimizer work and public cost/error evidence. Declare one bounded
-model substitution before any GPU/evolution expansion. The current runs continue
-under their original source snapshots and settings.
+model substitution before any GPU/evolution expansion. Completed run artifacts retain their original source snapshots and settings.
+The [paper blueprint](PAPER_BLUEPRINT.md) places this extension after the core
+perception/forecasting/action-selection study and required comparisons.

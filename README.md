@@ -21,10 +21,15 @@ Hidden-road forecasts are one possible component; predictor-space selection by
 validation driving is an optional study. A frozen-policy development comparison now shows a promising search gain.
 There is **no established general advantage, novelty or SOTA result**.
 
+Start with the [paper blueprint](docs/PAPER_BLUEPRINT.md): the consolidated idea
+register separates user ideas, assistant refinements, prior work and measured evidence.
+
 ## Documentation index
 
 | Document | Read it for |
 |---|---|
+| [Paper blueprint](docs/PAPER_BLUEPRINT.md) | Central three-stage study, all project ideas with origin/status, validity checks, novelty and execution gates |
+| [Completed broad results](docs/BROAD_RESULTS_2026-10-29.md) | Full 200-track comparison and failed lower-learning-rate probe; both campaigns finished |
 | [User intent](docs/USER_INTENT.md) | User decisions, main system, paper goal, expert experiment, and future evolution option |
 | [Task-useful simulator](docs/DECISION_USEFUL_SIMULATOR.md) | Future independent/approximate simulator, downstream adaptation, GPU and agentic options; realism optional |
 | [Information and control study](docs/INFORMATION_AND_CONTROL_STUDY.md) | Future local/full-map learned/search matrix, three-module decomposition, user motivation and claim limits |
@@ -34,7 +39,7 @@ There is **no established general advantage, novelty or SOTA result**.
 | [Programmed simulator results](docs/PROGRAMMED_SIMULATOR_RESULTS.md) | Completed physics comparisons, reduced-cost search, verification, limitations and next diagnostic |
 | [Next moves](docs/NEXT_MOVES.md) | Active execution order: bounded diagnostic, competent frozen driver, paired search, broader comparisons and final freeze |
 | [Geometry and stronger driver](docs/GEOMETRY_AND_DRIVER_2026-10-28.md) | Completed full-map diagnostic, 2M training review, selected checkpoint and preceding search implementation |
-| [Broad development campaign](docs/BROAD_DEVELOPMENT_2026-10-28.md) | Running frozen 200-track comparison, exact replay gates, analysis and autonomous follow-ups |
+| [Broad development campaign](docs/BROAD_DEVELOPMENT_2026-10-28.md) | Frozen 200-track declaration, exact replay gates, analysis and historical interim snapshots |
 | [Frozen-policy search results](docs/FROZEN_POLICY_RESULTS_2026-10-28.md) | Completed search gain, cheap controls, renderer verification, failed KL repair and next decision |
 | [Geometry research](docs/RESEARCH_PLAN.md) | Literature, feasibility, and detailed design for the geometry/uncertainty branch |
 | [Predictor selection research](docs/PREDICTION_SELECTION.md) | Optional prediction spaces, normal training, downstream validation selection, and critiques |
@@ -97,10 +102,12 @@ decision points for the next campaigns. The
 and an exact episode replay. The
 [geometry/driver report](docs/GEOMETRY_AND_DRIVER_2026-10-28.md) records the completed
 full-map diagnostic and completed first training block. The [frozen-policy report](docs/FROZEN_POLICY_RESULTS_2026-10-28.md) records the
-completed search comparison and follow-ups. The [frozen 200-track comparison](docs/BROAD_DEVELOPMENT_2026-10-28.md)
-is now running: direct, fixed correction, search 7 and search 21. An established
-optimizer comparison and a separately declared lower-learning-rate training probe
-follow. Baseline repair remains open after the unsuccessful KL trial. Geometry reconstruction remains a measured bottleneck.
+completed search comparison and follow-ups. The [200-track comparison and training probe](docs/BROAD_RESULTS_2026-10-29.md)
+are complete: search 21 scored 884.48/72% versus direct 862.42/35.5%, at substantial
+latency cost. The lower-learning-rate probe did not improve the original driver.
+No jobs from this batch remain active. The [paper blueprint](docs/PAPER_BLUEPRINT.md)
+consolidates the three-stage diagnostic study, stronger baseline requirements and
+established-optimizer comparison. Geometry reconstruction remains a measured bottleneck.
 Bayesian search and evolution remain future options. Privileged candidate-ranking
 values are user-only and excluded from all agent/training/selection feedback.
 

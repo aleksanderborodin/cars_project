@@ -2,10 +2,11 @@
 
 [Index](../README.md) · [Specification](EXPERIMENT.md) · [Previous evidence](FROZEN_POLICY_RESULTS_2026-10-28.md)
 
-Declared and launched 2026-10-28. This is a development campaign, not the final
-paper evaluation. Live technical status is in
-`runs/campaigns/broad_driver_20261028/status.json`; the full report is generated only
-after all conditions finish and their provenance checks pass.
+Declared, launched and completed 2026-10-28. This is a development campaign,
+not the final paper evaluation. Both the comparison and queued training probe
+finished; see [the completed review](BROAD_RESULTS_2026-10-29.md). Technical records
+remain in `runs/campaigns/broad_driver_20261028/status.json`. The declaration and
+historical interim snapshots below preserve what was decided before the results.
 
 ## Question and declaration
 
@@ -91,8 +92,10 @@ This campaign alone cannot supply all data required for a SOTA claim.
 ## Queued baseline probe
 
 The [lower-learning-rate declaration](../configs/campaigns/driver-lr3e5-block-2026-10-28.json)
-is frozen and its queue launched. Status is
-`runs/queues/driver_lr3e5_block_20261028/status.json`. This is queued, not trained.
+was frozen before its queue launched. It is now complete; the best checkpoint
+scored 692.18/8% and was not adopted. Status is
+`runs/queues/driver_lr3e5_block_20261028/status.json`. The following preserves the
+original design and rationale; the completed review reports its outcome.
 
 The sole algorithm change from the original driver is initial learning rate
 3e-5 instead of 1e-4. Retain ten PPO epochs, no KL stop, fresh training seed zero,

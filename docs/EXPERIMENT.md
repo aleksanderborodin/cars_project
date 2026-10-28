@@ -1,14 +1,19 @@
 # Experiment design: modular prediction and control by search
 
-Updated 2026-10-28 following the research discussion. The project now targets a
+Updated 2026-10-29 following the research discussion. The project now targets a
 scientific paper about modular world models and online control, using Gymnasium CarRacing
 only and the current workstation. Physical robots and other simulators are out
 of scope. Restricted local/native interfaces, programmed physics and deterministic
 search now exist; see [STATUS.md](STATUS.md) and the
-[latest completed development report](FROZEN_POLICY_RESULTS_2026-10-28.md).
-The [frozen 200-track development campaign](BROAD_DEVELOPMENT_2026-10-28.md) is running. The broader learned road distributions,
+[latest completed development report](BROAD_RESULTS_2026-10-29.md).
+The [frozen 200-track development campaign](BROAD_DEVELOPMENT_2026-10-28.md) and
+lower-learning-rate probe are complete. The broader learned road distributions,
 scenario planning, modern comparisons and final campaign below remain proposed.
 
+The [paper blueprint](PAPER_BLUEPRINT.md) consolidates the user's three-stage
+perception/forecasting/action-selection study, attributed ideas, critiques and
+comparison design. It proposes oracle-current and oracle-future training regimes;
+these are not implemented or authorized to bypass existing information boundaries.
 Read [USER_INTENT.md](USER_INTENT.md) for the user's decisions and paper goal.
 [RESEARCH_PLAN.md](RESEARCH_PLAN.md) details the geometry branch;
 [PREDICTION_SELECTION.md](PREDICTION_SELECTION.md) reviews optional predictor
@@ -32,7 +37,7 @@ controls and failure evidence. Further diagnostics and baseline training remain 
 
 ## Research question
 
-Separate **understanding the situation** from **deciding how to act**. Which
+Separate **understanding the situation** from **deciding how to act**. Distinguish current-scene perception, future prediction and action selection. Which
 road/state/prediction components are already sufficient for the tested task and
 which limit performance? Does simulation-based selection among a frozen proposer's
 sampled behavior variants improve driving over executing that proposer directly?

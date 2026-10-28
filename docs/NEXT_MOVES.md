@@ -1,6 +1,6 @@
 # Next moves: establish useful simulation improvement over strong drivers
 
-2026-10-28. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
+Updated 2026-10-29. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
 [Architecture](SIMULATOR_SEARCH_PLAN.md) · [Evidence](PROGRAMMED_SIMULATOR_RESULTS.md)
 
 This is the active execution order after the programmed-physics pilot. It refines
@@ -13,9 +13,11 @@ writing this plan. Every stage requires its own saved, resolved manifest before 
 are complete; the first 2M-frame block completed with regression after 1M. The
 standalone-selected 1M checkpoint now has a completed positive stage-3 development
 comparison. Three cheap fixed-correction controls did not reproduce its full gain.
-A KL-stopping baseline trial was worse; baseline repair remains open. The new
-[frozen 200-track comparison](BROAD_DEVELOPMENT_2026-10-28.md) is running. See the
-[execution report](FROZEN_POLICY_RESULTS_2026-10-28.md); the original decisions below
+Both KL-stopping and lower-learning-rate probes were worse; baseline repair
+remains open. The [200-track comparison](BROAD_RESULTS_2026-10-29.md) is complete.
+The [paper blueprint](PAPER_BLUEPRINT.md) consolidates the next-stage three-level
+diagnostic study, source attribution and validity requirements. See the
+[execution report](BROAD_RESULTS_2026-10-29.md); the original decisions below
 remain recorded as the pre-execution plan.
 
 ## Objective and present evidence
@@ -26,7 +28,8 @@ may be learned; the primary world model remains programmed physics and the
 selector uses simulated outcomes. We are not proposing to replace the engine
 with a larger learned transition model or train a new value scorer by default.
 
-Current evidence is limited: on 20 repeatedly used development tracks, wider
+Historical starting evidence for the original plan: on 20 repeatedly used
+development tracks, wider
 21-candidate search scores 737.3 with 45% completion, versus 716.1/20% for the best
 fixed controller. Seven candidates score 697.8/40%, with 48.9 ms p95 latency.
 No reliable mean-return advantage is established. A stronger proposer could improve
@@ -336,26 +339,23 @@ tradeoff. A weak result is evidence to understand, not permission to remove base
 ## Immediate work queue and deferred choices
 
 1. Broaden the original frozen-checkpoint comparison to all 200 development tracks
-   before further planner tuning. Declared and running four conditions: direct, search 7,
+   before further planner tuning. Completed four conditions: direct, search 7,
    search 21, and the already fitted mean-7 constant correction. Keep weights,
    utility, residual scales, horizon, planning seed and offset fixed. Use the
    explicitly recorded sparse renderer for search, with its parity evidence.
    Cap: 800k native evaluation frames and 112M internal physics frames. This
-   [manifest](../configs/campaigns/broad-driver-2026-10-28.json) is frozen and launched. Report the original 20 and the 50-track
-   selection panel as nested development subsets, not independent holdouts.
+   [manifest](../configs/campaigns/broad-driver-2026-10-28.json) was frozen and completed. The original 20 and the 50-track
+   selection panels are reported as nested development subsets, not independent holdouts.
 2. Implement the [audited iCEM-style adaptation](SEARCH_OPTIMIZER_AUDIT.md) using the same coded engine, information,
    proposer, horizon and utility; match total simulator work across iterations.
    Profile cost before a capped comparison. No novel-optimizer claim follows
    from adopting it. Preserve the current random-shooting result as reference.
-3. Repair baseline training separately. The first target-KL0.02 probe reduced
-   optimization sharply and was worse. The next single-factor probe is declared
-   and queued after the broad campaign:
-   learning rate 3e-5 instead of 1e-4, no KL stop, ten epochs, fresh seed zero,
-   same 8M global schedule and 2M initial review with four 50-track checks.
-   Its cap is again 2,008,191 training and 200k evaluation frames; the
-   [declaration](../configs/campaigns/driver-lr3e5-block-2026-10-28.json) and executable
-   source are frozen. Regression checks precede training. This is a hypothesis, not a guaranteed fix. Keep
-   the original selected checkpoint and completed search table unchanged.
+3. Audit baseline training/reproduction after two unsuccessful single-factor probes.
+   The lower-learning-rate block completed; best 692.18/8% did not improve the
+   original 858.11/30% on the same 50-track selection panel. Keep the original
+   checkpoint; do not automatically extend either failed repair or launch another
+   optimizer sweep. Review implementation, competence and independent replications.
+   [Full results and costs](BROAD_RESULTS_2026-10-29.md) retain both failures.
 4. After broader evidence, run independent training seeds and prespecified
    planning-stream repeats; freeze each proposer by standalone performance.
    Continue the native-input reproduction audit before claiming comparability
@@ -380,6 +380,6 @@ The user's [task-useful simulator option](DECISION_USEFUL_SIMULATOR.md) is defer
 our own approximate/abstract engine, possible GPU execution, and optional code or
 parameter adaptation by downstream driving. Realism is not required. The main
 understanding-versus-decision question and frozen-proposer comparison remain the
-priority; current campaigns and the established-optimizer comparison continue.
+priority; the completed campaigns remain fixed and the established-optimizer comparison remains planned.
 A fidelity-preserving implementation optimization and a deliberately task-adapted
 model are distinct experiments with different numerical acceptance criteria.

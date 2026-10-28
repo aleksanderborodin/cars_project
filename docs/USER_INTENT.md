@@ -1,7 +1,10 @@
 # User intent, decisions, and paper goal
 
-Updated 2026-10-28. [Index](../README.md) · [Experiment contract](EXPERIMENT.md) ·
+Updated 2026-10-29. [Index](../README.md) · [Experiment contract](EXPERIMENT.md) ·
 [Research assessment](PREDICTION_SELECTION.md)
+
+The [paper blueprint](PAPER_BLUEPRINT.md) is the single consolidated starting point:
+it distinguishes user ideas, assistant refinements, prior work and evidence status.
 
 This document records the user's intended project in plain English. Paraphrases
 are identified as such. Assistant judgments are separate from user decisions.
@@ -77,6 +80,24 @@ The [information/control study](INFORMATION_AND_CONTROL_STUDY.md) describes furt
 interventions. The two-task distinction is central now even though its full-map
 matrix is a future experiment. Optional simulator/predictor/evolution ideas must
 serve this purpose rather than displace it.
+
+**User's detailed three-stage formulation, 2026-10-29 (paraphrase):** train
+comparable policies with ground-truth current spatial information, then additionally
+with true future-road geometry, to examine perception and prediction limitations.
+At each stage simulate variants of the same policy and select a behavior; compare
+ordinary and strong policies both directly and with search. Also test useful
+imperfect/potentially independent simulators, with prediction choices selected by
+actual driving outcomes, then evaluate the frozen system on wholly untouched data.
+The user wants a validated decomposition and evidence about where an end-to-end
+policy struggles, with action selection as a central hypothesis, not a predetermined
+finding. Keep agentic adaptation as a possible extension. The assistant's critiques
+about retraining confounds, irreducible uncertainty, dynamics and compute are
+refinements of this proposal, not changes to who originated it.
+
+**User organization instruction, 2026-10-29:** collect the project's ideas in one
+place, improve the proposed paper where justified, and clearly distinguish the
+user's ideas from the assistant's. The blueprint records both, and separately
+attributes established prior work and the status of measured results.
 
 ## Future option: a simulator useful for decisions without requiring realism
 

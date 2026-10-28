@@ -1,7 +1,7 @@
 # Implementation and evidence status
 
-Updated 2026-10-28. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
-[Roadmap](ROADMAP.md) · [Latest development results](FROZEN_POLICY_RESULTS_2026-10-28.md)
+Updated 2026-10-29. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
+[Roadmap](ROADMAP.md) · [Latest development results](BROAD_RESULTS_2026-10-29.md)
 
 The first development experiment and control-audit follow-up are complete. The full paper
 campaign has not started. User decisions are in [USER_INTENT.md](USER_INTENT.md);
@@ -16,13 +16,13 @@ profiling are also complete. The first configured 2M-frame driver block complete
 and regressed after its selected 1M checkpoint; unchanged training is stopped.
 The six-condition frozen-checkpoint comparison and three fixed-correction controls
 are complete. Search 21 improved this policy instance; a separate KL training
-trial was worse and not adopted. A new [200-track comparison](BROAD_DEVELOPMENT_2026-10-28.md)
-is running from a frozen source snapshot; its full results are pending. The
-[three completed conditions](../reports/broad_driver_completed_2026-10-28_1810/README.md)
-show search-7 completion 58.5% versus direct 35.5%, with uncertain mean-return gain. The
-lower-learning-rate training probe is frozen and queued after its completion;
-training has not started. No new baseline outcome is available.
-See the [latest report](FROZEN_POLICY_RESULTS_2026-10-28.md) for evidence and caveats.
+trial was worse and not adopted. The [200-track comparison and lower-learning-rate
+probe](BROAD_RESULTS_2026-10-29.md) are complete; no jobs from this batch remain active.
+Search 21 achieved 884.48/72% versus direct 862.42/35.5%, with 362.11 ms p95 latency.
+The lower-learning-rate trial's best checkpoint was 692.18/8% on 50 tracks and was
+not adopted. The [paper blueprint](PAPER_BLUEPRINT.md) now consolidates the proposed
+three-stage intervention study and explicitly attributed ideas. No trained visual/
+full-map diagnostic matrix, GPU backend or agentic evolution has been implemented.
 
 ## Implemented
 
@@ -37,8 +37,8 @@ See the [latest report](FROZEN_POLICY_RESULTS_2026-10-28.md) for evidence and ca
 | research/data.py | Partition-checked collection, model fitting and development diagnostics | No large offline corpus, calibrated predictor or modern pretrained model |
 | research/recurrent.py | Local/native CNN-LSTM PPO adapter; recurrent reload; training-state continuation with fresh episodes | 100k pilot did not learn useful driving; strong reproduction remains open |
 | planning/global_search.py | Explicit full-map geometry diagnostic with unchanged estimated vehicle state | Also changes centerline reconstruction; privileged, not equal-input superiority |
-| research/driver_training.py and driver_* | Configured PPO, deterministic pooling, reward normalization, post-update checkpoints, native-frame schedule, CPU/GPU profiles | Local adaptation; original 1M checkpoint retained; KL-stop repair failed to improve it; convergence/competitive baseline not established |
-| planning/policy_search.py | Frozen recurrent feedback proposals, smooth residuals, isolated imagined memory, coded simulation selection and random control | Search-7 completion gain on 200 development tracks; 21-candidate broad run pending; high cost, no multi-seed evidence |
+| research/driver_training.py and driver_* | Configured PPO, deterministic pooling, reward normalization, post-update checkpoints, native-frame schedule, CPU/GPU profiles | Local adaptation; original 1M checkpoint retained; KL-stop and lower-LR repairs failed to improve it; convergence/competitive baseline not established |
+| planning/policy_search.py | Frozen recurrent feedback proposals, smooth residuals, isolated imagined memory, coded simulation selection and random control | Search 7/21 gains on 200 development tracks for one frozen checkpoint; high cost, no multi-seed evidence |
 | planning/occupancy.py, policy_controls.py | Equivalent sparse occupancy renderer and frozen-policy fixed offsets | Sampled exact renderer parity; three fitted offset controls do not establish all cheap alternatives are inferior |
 | research/evaluation.py, eval/paired.py | Common development tracks, traces/costs, protocol checks, paired and crossed model/track intervals | Small/adaptive study; no final paper campaign |
 | monitoring/ | One-way online oracle-ranking sidecar, prefix replay, private live report | User-only outputs; no agent/learning/selection/assistant access to real ranking values |
@@ -87,6 +87,12 @@ and unavailable for agent analysis, training or selection. Hindsight knowledge o
 the realized hidden world also differs from information available at decision time.
 
 ## Measurements
+
+- Latest 200-track comparison: direct 862.42/35.5%, fixed correction 865.95/39.5%,
+  search 7 873.05/58.5%, search 21 884.48/72%. Search 21 minus direct return +22.06
+  [10.18, 33.35], exploratory track-only interval; p95 latency 362.11 ms.
+- Lower-LR probe best 692.18/8% on 50 tracks; not adopted. Costs 2,006,916 training,
+  199,612 evaluation and 8 reload-check frames. See the latest completed report.
 
 - Frozen learned policy on 20 common development tracks: direct 863.55/40%;
   search 7 gives 885.70/70%, search 21 gives 905.94/85%. The latter return gain is
@@ -145,7 +151,7 @@ No final-test identities/results or legacy unseen/hard results were inspected.
   experiments, stronger-driver training proposal and scientific decision gates.
   Its geometry diagnostic and first training block are complete. The selected
   checkpoint search comparison and cheap-control follow-ups are complete. The KL
-  repair trial did not improve the baseline. The broader development comparison is running; the final study remains unstarted.
+  repair trial did not improve the baseline. The broader comparison and lower-LR probe are complete; the final study remains unstarted.
 - Steps 1–2 of the [next-experiment plan](NEXT_EXPERIMENTS.md) are complete.
   Its 60k-frame pace/full-map proposal is deferred by the coded-simulator priority.
 - Competent learned baseline and faithful upstream reproduction before headline runs.

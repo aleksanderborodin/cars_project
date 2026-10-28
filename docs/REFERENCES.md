@@ -1,6 +1,6 @@
 # Research references and reproduction register
 
-Reviewed 2026-10-28. [Index](../README.md) · [Analysis](RESEARCH_PLAN.md) ·
+Reviewed 2026-10-29. [Index](../README.md) · [Analysis](RESEARCH_PLAN.md) ·
 [Comparison design](RESEARCH_PLAN.md#5-comparison-and-reproduction-plan)
 
 Sources below are primary papers, proceedings, author project pages, official
@@ -21,6 +21,8 @@ The search is substantial but not proof that the candidate mechanism is novel.
 | Wang et al., *CogniPlan*, CoRL 2025 | Completed unseen layouts and uncertainty-aware navigation | [Proceedings](https://proceedings.mlr.press/v305/wang25d.html) | [Author code](https://github.com/marmotlab/CogniPlan); related work / mechanism comparator |
 | Manchingal et al., *Uncertainty-Aware Autonomous Vehicles: Predicting the Road Ahead*, 2025 preprint / ICRA 2026 | Uncertain future-turn prediction affects speed | [Paper](https://arxiv.org/html/2510.22680v1), [publication record](https://jkooij.github.io/publications/2026_uroadpred/) | Related work; no integration |
 | Lindenberg & Chitta, *Valdi: Value Diffusion World Models*, July 2026 preprint | Stochastic latent diffusion MPC directly in CarRacing | [Paper](https://arxiv.org/html/2607.00917v1) | [Author code](https://github.com/Kit115/ValueDiffusionWorldModels); priority audit and reproduction attempt |
+| Jia et al., *DriveAdapter*, ICCV 2023 | Privileged planning/perception separation and predicted-versus-ground-truth interface mismatch | [Paper](https://arxiv.org/abs/2308.00398) | Related work for intervention validity; not reproduced here |
+| Seyam et al., *Model-Aware Generation of Safety-Critical Scenes for Robust End-to-End Driving via Distilled Planner Surrogates*, October 26, 2026 preprint | Explicit planning-versus-perception failure diagnosis and targeted planner improvement | [Version 1, especially IV-B](https://arxiv.org/html/2610.35448v1) | Paper states release is planned; no implementation/reproduction verified here |
 
 Important distinctions from those sources:
 
@@ -59,6 +61,8 @@ controls, but beating them alone would not support a strong world-model claim.
 | Reference | Source | How we use it |
 |---|---|---|
 | Chen et al., *Learning by Cheating*, CoRL 2019 | [Paper](https://arxiv.org/abs/1912.12294), [code](https://github.com/dotchen/LearningByCheating) | Privileged training versus sensor-only deployment; equal-supervision controls |
+| Chen, Koltun & Krähenbühl, *Learning to Drive from a World on Rails*, ICCV 2021 | [Publisher paper](https://openaccess.thecvf.com/content/ICCV 2021/papers/Chen_Learning_To_Drive_From_a_World_on_Rails_ICCV_2021_paper.pdf) | Ego/external-world factorization and distillation; related work, not a CarRacing reproduction |
+| Renz et al., *PlanT*, CoRL 2022 / PMLR 2023 | [Proceedings paper](https://proceedings.mlr.press/v205/renz23a/renz23a.pdf) | Learned planning from compact object-level inputs; context for competent privileged-input controls |
 | Donti, Amos & Kolter, *Task-based End-to-end Model Learning*, NeurIPS 2017 | [Paper](https://arxiv.org/abs/1703.04529) | Decision-focused prediction is established prior work |
 | Bansal et al., TaskMet, NeurIPS 2023 | [Paper](https://arxiv.org/abs/2312.05250), [code](https://github.com/facebookresearch/taskmet) | Task-driven predictive metrics; public code needs an execution audit |
 | Sunberg & Kochenderfer, continuous POMDP planning / POMCPOW, ICAPS 2018 | [Paper](https://arxiv.org/abs/1709.06196) | Belief planning and observation-dependent future actions |
@@ -113,3 +117,9 @@ The programmed-physics backend reuses the locked Gymnasium 1.4.0
 [vehicle implementation](https://github.com/Farama-Foundation/Gymnasium/blob/v1.4.0/gymnasium/envs/box2d/car_dynamics.py).
 Record its installed source hash. This supplies mechanics, not hidden initial
 state, road geometry or an authorized clone of the evaluation environment.
+
+The [paper blueprint](PAPER_BLUEPRINT.md#prior-work-and-novelty-assessment) maps
+these references to specific novelty/identification claims. The October 2026
+preprint's detected-threat analysis is not a causal proof that all relevant
+perception/prediction is correct. Our proposed oracle interventions need their
+own validation; the general perception-versus-planning claim is already prior art.

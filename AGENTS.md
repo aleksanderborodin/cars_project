@@ -2,6 +2,8 @@
 
 Read `docs/EXPERIMENT.md` first: it is the active experiment spec. Start navigation
 at `README.md`; use `docs/STATUS.md` to distinguish implemented code from proposals.
+`docs/PAPER_BLUEPRINT.md` consolidates the paper and idea register. Preserve idea
+origin (user, assistant, prior work) separately from evidence/implementation status.
 
 ## Scope
 

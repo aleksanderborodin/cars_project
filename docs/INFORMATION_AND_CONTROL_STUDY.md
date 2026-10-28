@@ -9,6 +9,10 @@ is launched by this document. Current `global` observations remain restricted to
 development diagnostics; a future training interface needs its own explicit
 protocol, tests, partition enforcement and budget.
 
+The [paper blueprint](PAPER_BLUEPRINT.md) now consolidates the user's expanded
+three-stage formulation, oracle-current/oracle-future training, assistant validity
+refinements and prior art. This document retains the full-map sub-study details.
+
 ## User's idea and purpose
 
 User proposal, paraphrased: compare methods when the road is fully known, so the
@@ -140,8 +144,8 @@ budget before explaining a loss as a fundamental limitation of learned control.
 
 The assistant judges the comparison structure useful with **high confidence**;
 whether local search beats a strong full-map learned driver remains **unknown**.
-The available positive result is only L-search versus one L-direct instance on
-20 development tracks. G-direct and the paired G-search condition do not yet exist.
+The available positive result is L-search versus one L-direct instance on
+200 development tracks; see [the completed review](BROAD_RESULTS_2026-10-29.md). G-direct and the paired G-search condition do not yet exist.
 
 Online planning and learned-policy proposals have substantial prior art.
 [PETS](https://arxiv.org/abs/1805.12114) combines learned probabilistic dynamics with

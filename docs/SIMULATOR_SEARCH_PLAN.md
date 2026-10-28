@@ -12,7 +12,9 @@ budgets for the remaining P1–P3 work, especially stronger frozen-policy compar
 Its full-map diagnostic and first 2M driver block are complete. The selected 1M
 checkpoint now has a positive 20-track search comparison. Fixed-correction
 controls did not recover its full gain; a KL training repair was unsuccessful.
-See the [current execution report](FROZEN_POLICY_RESULTS_2026-10-28.md).
+The broad 200-track follow-up and lower-LR probe are now complete; see the
+[current execution report](BROAD_RESULTS_2026-10-29.md) and consolidated
+[paper blueprint](PAPER_BLUEPRINT.md).
 
 ## User intent and the central experiment
 

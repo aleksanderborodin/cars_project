@@ -4,6 +4,7 @@ This is a declared local-input adaptation of a pinned RL Zoo recipe. It is not
 the old 100k engineering trainer or an original-pixel benchmark reproduction.
 """
 from functools import partial
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -65,7 +66,9 @@ def train_driver(run_id: str, config: DriverTrainingConfig, *, stop_at: int,
     completed: list[int] = []
     if resume:
         parent = read_config(resume)
-        if (parent["settings"].get("training") != config.resolved() or parent["protocol"] != protocol.__dict__
+        parent_training = dict(parent["settings"].get("training", {}))
+        parent_training.setdefault("target_kl", None)  # older v2 runs had no KL stopping
+        if (parent_training != config.resolved() or parent["protocol"] != protocol.__dict__
                 or parent["settings"].get("encoder") != ENCODER):
             raise ValueError("Continuation requires identical resolved config and protocol")
         state = json.loads((resume / "training_state.json").read_text())
@@ -74,7 +77,7 @@ def train_driver(run_id: str, config: DriverTrainingConfig, *, stop_at: int,
         if stop_at <= schedule.frames:
             raise ValueError("Continuation must advance past the saved native frame")
     initial_frames = schedule.frames
-    settings = {"partition": "train", "trainer_version": 2, "training": config.resolved(),
+    settings = {"partition": "train", "trainer_version": 3, "training": config.resolved(),
         "stop_at_native_frames": stop_at, "parent_run": str(resume.resolve()) if resume else None,
         "algorithm": "RecurrentPPO", "policy": "MultiInputLstmPolicy",
         "encoder": ENCODER,
@@ -85,9 +88,10 @@ def train_driver(run_id: str, config: DriverTrainingConfig, *, stop_at: int,
         "selection": "scheduled checkpoints; choose standalone mean development return, then completion, then earlier",
         "schedule": "linear in cumulative actual native frames over declared global budget",
         "deterministic_algorithms": True, "cublas_workspace_config": os.environ["CUBLAS_WORKSPACE_CONFIG"],
+        "kl_stopping": "upstream minibatch approximate-KL check at 1.5*target; not a hard trust-region guarantee",
         "continuation": "post-update optimizer/RNG/normalizer/stream restored; fresh episodes and memory",
         "upstream_recipe_commit": "61956d90d9f8ac126043ed4024efa12a462d97e1",
-        "adaptation": "local encoder, repeat 4, native-frame budget; not original pixel recipe"}
+        "adaptation": f"{protocol.view} encoder, repeat {protocol.action_repeat}, native-frame budget; not original pixel recipe"}
     root = begin_run("driver_training", run_id, protocol, settings, runs_dir)
     factories = [partial(training_environment, protocol, config.seed, i, config.workers) for i in range(config.workers)]
     raw = SubprocVecEnv(factories, start_method="spawn") if config.vector_backend == "subproc" else DummyVecEnv(factories)
@@ -110,6 +114,7 @@ def train_driver(run_id: str, config: DriverTrainingConfig, *, stop_at: int,
                 batch_size=config.batch_size, n_epochs=config.n_epochs, learning_rate=schedule,
                 gamma=config.gamma, gae_lambda=config.gae_lambda, ent_coef=config.ent_coef,
                 vf_coef=config.vf_coef, max_grad_norm=config.max_grad_norm, clip_range=config.clip_range,
+                target_kl=config.target_kl,
                 use_sde=config.use_sde, sde_sample_freq=config.sde_sample_freq, device=config.device,
                 seed=config.seed, verbose=0, policy_kwargs={"features_extractor_class": DriverSensorEncoder,
                     "features_extractor_kwargs": {"features_dim": config.features_dim},
@@ -117,6 +122,13 @@ def train_driver(run_id: str, config: DriverTrainingConfig, *, stop_at: int,
                     "ortho_init": False, "enable_critic_lstm": False, "log_std_init": config.log_std_init,
                     "net_arch": {"pi": [64, 64], "vf": [64, 64]}})
         model.lr_schedule = schedule
+        # Byte fingerprinting does not consume any training random stream.
+        digest = hashlib.sha256()
+        for name, value in sorted(model.policy.state_dict().items()):
+            digest.update(name.encode())
+            digest.update(value.detach().cpu().numpy().tobytes())
+        write_json(root / "initial_policy.json", {"parameters_sha256": digest.hexdigest(),
+            "fresh_initialization": resume is None, "target_kl": model.target_kl})
         initial_decisions, initial_updates = model.num_timesteps, model._n_updates
         model.set_logger(configure(str(root / "logs"), ["csv", "json"]))
         callback = NativeClock(schedule, root, stop_at)
@@ -126,6 +138,7 @@ def train_driver(run_id: str, config: DriverTrainingConfig, *, stop_at: int,
         write_json(root / "status.json", {"status": "running", "native_frames": schedule.frames})
         while schedule.frames < stop_at:
             update_start = time.perf_counter()
+            epochs_before = model._n_updates
             model.learn(total_timesteps=config.workers * config.n_steps, callback=callback,
                         reset_num_timesteps=False, log_interval=None)
             training = {key: float(value) for key, value in model.logger.name_to_value.items()
@@ -135,7 +148,10 @@ def train_driver(run_id: str, config: DriverTrainingConfig, *, stop_at: int,
             if not all(torch.isfinite(parameter).all() for parameter in model.policy.parameters()):
                 raise FloatingPointError("Nonfinite policy parameters")
             row = {"native_frames": schedule.frames, "decisions": model.num_timesteps,
-                   "update_wall_time_s": time.perf_counter() - update_start, **training}
+                   "update_wall_time_s": time.perf_counter() - update_start,
+                   "epochs_entered_this_rollout": model._n_updates - epochs_before,
+                   "optimizer_steps_cumulative": max(int(state["step"]) for state in model.policy.optimizer.state.values() if "step" in state),
+                   **training}
             with (root / "learning.jsonl").open("a") as file:
                 file.write(json.dumps(row) + "\n")
             model.logger.dump(step=model.num_timesteps)

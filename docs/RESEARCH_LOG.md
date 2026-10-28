@@ -531,3 +531,89 @@ Earlier project intentions remain in USER_INTENT.md; this log extends that recor
 - **Records:** [execution report](GEOMETRY_AND_DRIVER_2026-10-28.md),
   [health review](../reports/driver_first_block_2026-10-28/health_review.json), and
   [frozen-driver manifest](../configs/campaigns/frozen-driver-2026-10-28.json).
+
+## R26 — Measured improvement around one frozen learned driver
+
+- **Author/type:** assistant result review of the user's main same-proposer idea.
+- **Evidence:** on 20 common development tracks, direct driving scored 863.55/40%
+  return/completion, search 7 scored 885.70/70%, and search 21 scored 905.94/85%.
+  The 21-minus-direct return difference is +42.39 [14.36, 75.60], an exploratory
+  track-only interval conditional on one selected checkpoint and fixed streams.
+- **Purpose:** test choosing by coded simulated outcomes without learning a new
+  selector. The selected checkpoint was fixed from standalone performance first.
+- **Limits:** reused development tracks, one model, no multiplicity/selection
+  adjustment or native-input comparison. At 171.6/457.5 ms p95, the search is costly.
+  Random variations drive very slowly; beating them is weaker evidence than the
+  same-policy contrast. No private per-action correctness/rank signal was read.
+- **Validation:** identical source/checkpoint hashes for six conditions, public
+  trace/work consistency and exact replay checks passed. All controls are retained.
+- **Decision:** preserve this positive but narrow result; broaden development
+  and compare established search before claiming general algorithmic superiority.
+
+## R27 — A controlled PPO repair did not work
+
+- **Author/type:** assistant single-factor probe after the original regression.
+- **Hypothesis:** the upstream target-KL stop might prevent harmful large updates.
+  Fresh seed-zero training changed only that algorithm setting to 0.02, retaining
+  the original architecture, schedule and data/checkpoint budgets.
+- **Result:** best checkpoint 697.04/4%, final 570.17/0%; worse than the original
+  selected driver. Early stopping reduced optimizer steps from 39,200 to 2,983;
+  205/245 rollout updates stopped within their first epoch. All diagnostics finite.
+- **Decision:** do not adopt or extend this setting. The original frozen actor
+  and search table stay unchanged. A later lower-learning-rate probe retaining
+  ten epochs is proposed, not launched. Do not infer universal KL harm or a proven
+  cause of the original regression from this one trial.
+- **Costs:** 2,006,884 new training frames, 195,829 development evaluation frames,
+  eight reload-check frames; failed hypothesis retained in the public report.
+
+## R28 — Improve computational work without changing simulated decisions
+
+- **Author/type:** assistant profiling observation and implementation refinement.
+- **Purpose:** reduce the high search cost before expanding evaluation. Instrumented
+  cached training observations implicated imagined road rendering; it calculated
+  margins and nearest-path distances not needed for binary policy observations.
+- **Change:** explicit sparse-occupancy renderer, retaining the same world, coordinate
+  transform and threshold semantics. Original rendering remains the default.
+- **Evidence:** edge/random tests, sampled candidate actions/costs and two complete
+  race replays matched exactly. Median three-snapshot times fell about 30–35%.
+  Training contention and small samples prevent replacing the main latency table.
+- **Limit:** both remain above 80 ms. This is a computational refactor, not a new
+  prediction model or proof of real-time performance. No Rust/evolution campaign.
+
+## R29 — Test whether a cheap constant correction explains the gain
+
+- **Author/type:** assistant alternative explanation, tested before broad scaling.
+- **Question/purpose:** could adding fixed steering/gas/brake offsets to the actor
+  recover the benefit attributed to adaptive online simulation?
+- **Design:** average executed-minus-base actions per episode and then equally
+  across 20 public development episodes. Declare full mean-7, full mean-21 and
+  gas-only mean-21 controls before racing. No private oracle data or new labels.
+- **Evidence:** return/completion 860.45/60%, 763.67/10%, 738.93/5%. The first gives
+  cheap completion improvement but no mean-return gain; none recovers search 21's
+  905.94/85%. Costs: 56,896 native frames, zero internal physics, zero new training.
+- **Limit:** offsets are fitted/evaluated on the same adaptive panel. This excludes
+  these particular constant corrections, not all cheaper policies or scoring methods.
+- **Record for R26–R29:** [completed report](FROZEN_POLICY_RESULTS_2026-10-28.md),
+  linked declarations, tables, uncertainty, failure evidence, costs and next moves.
+
+## R30 — User's future full-information and cross-information study
+
+- **Author/type:** user future proposal and broader scientific ambition, paraphrased.
+- **Intent:** show what trying behaviors in simulation offers when the entire road
+  is known; also test whether restricted-information search can outperform a learned
+  driver trained/deployed with full information. Separate road understanding from
+  navigation, possibly into three modules, to explain benefits with imperfect parts.
+- **Assistant design:** local/full-map × direct learned/same-frozen-policy search,
+  with road inference, vehicle prediction and decision/control as diagnostic modules.
+  Add competent full-map learning and established planning controls. Distinguish
+  known geometry from hidden vehicle/solver state and known-map deployment from
+  per-track optimization. Existing global diagnostics do not fill this matrix.
+- **Critique:** a full-information optimal controller can ignore extra information
+  and emulate a local method when allowed the same computation. A practical crossover
+  would establish a result for tested algorithms/resources, not universal superiority
+  over learned policies or a new field. PETS/POPLIN and MPC are relevant prior art.
+- **Status:** documented future study; no global training, exact-state cloning,
+  held-out access or private ranking feedback authorized by this entry. The user
+  explicitly placed it in future work; current work remains the main local system.
+- **Record:** [information/control study](INFORMATION_AND_CONTROL_STUDY.md), including
+  author intent, precise contrasts, confidence, fairness and possible conclusions.

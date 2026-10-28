@@ -1,0 +1,246 @@
+{
+  "manifest_sha256": "925d7a41b154ac89bc00bddafadcd47bd863f8c501bdb47c855e5e7348e65958",
+  "inputs": [
+    {
+      "condition": "direct",
+      "config_sha256": "dcc8bf8a959c00e3409ef91f5ffa3fb690ba142123545bd8363a84a0ede480fc",
+      "metrics_sha256": "9dd9cae93199c5c73c451aad17c1e8512529ec3c3b5c30b16b9f8858af6fba2e"
+    },
+    {
+      "condition": "search7",
+      "config_sha256": "03b84fe9f8ed9823f4640b20188f81a5e11803142d07701fee9a282c0cf19796",
+      "metrics_sha256": "c372ea8b9e1491ad9b53a323bcf6f49bfe16f622348ced408c87e02cc8f4517d"
+    },
+    {
+      "condition": "search21",
+      "config_sha256": "9d1100610914505f154065204c92ad0c28c4bd389a0108d63947f2baa17c6c68",
+      "metrics_sha256": "a1bfe78d83bf2f9135addab8d52e4f1aae3c80be08d8b36d17ae9c58fec7ae70"
+    },
+    {
+      "condition": "mean7",
+      "config_sha256": "7bb7af887cf3f083b1ee81e3ff213a57ec2280371748566b6193d51bd5f6d998",
+      "metrics_sha256": "53b50976cd888415fb67e01f3c9adc6fc2eb4add74dc201f7b8ffc5492447b04"
+    },
+    {
+      "condition": "mean21",
+      "config_sha256": "4fd5becbfd881832deaf66a69430e57b24ecd923ec56efb2d118b426e4dc910d",
+      "metrics_sha256": "0051e75e713f278f5494cee2f1da1767f62527ac94f23e235eff0e6b679d045b"
+    },
+    {
+      "condition": "gas21",
+      "config_sha256": "f5320463f5e168c7751ddff125b3adea449a97f71a22984e72c8e2f9a16df499",
+      "metrics_sha256": "82d4d9cff0e0a1f683da03e99bb2b620db6d1376c59d34caa83d2528860cd222"
+    }
+  ],
+  "contrasts": [
+    {
+      "candidate": "mean7",
+      "reference": "direct",
+      "metric": "return",
+      "mean_difference": -3.1013945932677416,
+      "interval_95_percent": [
+        -46.375222088894965,
+        26.14239643972214
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "fixed selected checkpoint, same adaptive development fitting/evaluation panel; tracks only"
+    },
+    {
+      "candidate": "mean7",
+      "reference": "direct",
+      "metric": "success",
+      "mean_difference": 0.2,
+      "interval_95_percent": [
+        0.0,
+        0.45
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "fixed selected checkpoint, same adaptive development fitting/evaluation panel; tracks only"
+    },
+    {
+      "candidate": "mean7",
+      "reference": "search21",
+      "metric": "return",
+      "mean_difference": -45.490511337827535,
+      "interval_95_percent": [
+        -111.15322739670744,
+        -5.704840435318372
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "fixed selected checkpoint, same adaptive development fitting/evaluation panel; tracks only"
+    },
+    {
+      "candidate": "mean7",
+      "reference": "search21",
+      "metric": "success",
+      "mean_difference": -0.25,
+      "interval_95_percent": [
+        -0.45,
+        -0.05
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "fixed selected checkpoint, same adaptive development fitting/evaluation panel; tracks only"
+    },
+    {
+      "candidate": "mean21",
+      "reference": "direct",
+      "metric": "return",
+      "mean_difference": -99.87965767359731,
+      "interval_95_percent": [
+        -167.4841750738097,
+        -43.417969156140536
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "fixed selected checkpoint, same adaptive development fitting/evaluation panel; tracks only"
+    },
+    {
+      "candidate": "mean21",
+      "reference": "direct",
+      "metric": "success",
+      "mean_difference": -0.3,
+      "interval_95_percent": [
+        -0.5,
+        -0.1
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "fixed selected checkpoint, same adaptive development fitting/evaluation panel; tracks only"
+    },
+    {
+      "candidate": "mean21",
+      "reference": "search21",
+      "metric": "return",
+      "mean_difference": -142.26877441815714,
+      "interval_95_percent": [
+        -227.261699308962,
+        -70.18037911847019
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "fixed selected checkpoint, same adaptive development fitting/evaluation panel; tracks only"
+    },
+    {
+      "candidate": "mean21",
+      "reference": "search21",
+      "metric": "success",
+      "mean_difference": -0.75,
+      "interval_95_percent": [
+        -0.9,
+        -0.55
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "fixed selected checkpoint, same adaptive development fitting/evaluation panel; tracks only"
+    },
+    {
+      "candidate": "gas21",
+      "reference": "direct",
+      "metric": "return",
+      "mean_difference": -124.6149677031347,
+      "interval_95_percent": [
+        -197.28402447855314,
+        -62.27567658331319
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "fixed selected checkpoint, same adaptive development fitting/evaluation panel; tracks only"
+    },
+    {
+      "candidate": "gas21",
+      "reference": "direct",
+      "metric": "success",
+      "mean_difference": -0.35,
+      "interval_95_percent": [
+        -0.55,
+        -0.15
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "fixed selected checkpoint, same adaptive development fitting/evaluation panel; tracks only"
+    },
+    {
+      "candidate": "gas21",
+      "reference": "search21",
+      "metric": "return",
+      "mean_difference": -167.00408444769448,
+      "interval_95_percent": [
+        -245.00520474647362,
+        -97.13632856295021
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "fixed selected checkpoint, same adaptive development fitting/evaluation panel; tracks only"
+    },
+    {
+      "candidate": "gas21",
+      "reference": "search21",
+      "metric": "success",
+      "mean_difference": -0.8,
+      "interval_95_percent": [
+        -0.95,
+        -0.6
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "fixed selected checkpoint, same adaptive development fitting/evaluation panel; tracks only"
+    }
+  ],
+  "new_native_frames": 56896,
+  "new_internal_physics_frames": 0,
+  "interpretation": "same-panel fitted cheap controls; diagnostic, no held-out/strong-baseline superiority claim",
+  "user_only_oracle_values_read": false,
+  "held_out_evaluation": false
+}

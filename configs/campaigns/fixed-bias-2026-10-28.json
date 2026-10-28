@@ -1,0 +1,257 @@
+{
+  "id": "fixed_bias_20261028",
+  "partition": "development",
+  "tracks": 20,
+  "checkpoint": "runs/driver_training/driver_main_20261028_s0_to2m/checkpoints/frames_001007379",
+  "checkpoint_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741",
+  "protocol_id": "local-v1-3efff3317ff2",
+  "partition_sha256": "f89bb2c62cc5e4b021c66597aa05751970514d17731a927fe17f4d5badfe0095",
+  "conditions": [
+    {
+      "name": "mean7",
+      "bias": [
+        -0.020329134861683883,
+        0.035572741499662726,
+        0.006234448249297639
+      ],
+      "run_id": "fixed_bias_20261028_mean7"
+    },
+    {
+      "name": "mean21",
+      "bias": [
+        -0.03712141216965205,
+        0.07583035788584205,
+        0.00520238091275484
+      ],
+      "run_id": "fixed_bias_20261028_mean21"
+    },
+    {
+      "name": "gas21",
+      "bias": [
+        0.0,
+        0.07583035788584205,
+        0.0
+      ],
+      "run_id": "fixed_bias_20261028_gas21"
+    }
+  ],
+  "reference_campaign": "runs/campaigns/frozen_driver_20261028",
+  "input_hashes": [
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search7/episodes/0000.npz",
+      "trace_sha256": "6ca05ecd9b7e4ed62fa6a1ed7d5bf0d7db9460bb0ec542dfcbba26b4152c11d8",
+      "diagnostics_sha256": "aeee517aa353bc0564661d5a3f72392174bf8aaf80ae28a90f9e55866892c291"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search7/episodes/0001.npz",
+      "trace_sha256": "cd39150efbbe0a691a6a9b5cac5e85495554efbcf932238a1f6baf9e55399a1e",
+      "diagnostics_sha256": "95b39f08ee781cee9405e078abd098cdacf9c64e022cadda95899d29ce19d921"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search7/episodes/0002.npz",
+      "trace_sha256": "eaa4030007f9ea8365d648edde5c3eca5bfae2d1c5ace944895ccf6edafd413d",
+      "diagnostics_sha256": "b7c2c9d87be0bf051e68bbc97d2753de5c5cd7042f408d761320c2860fb24b07"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search7/episodes/0003.npz",
+      "trace_sha256": "73483032835761267760c69d5abd6ad26450728824e3629e12db1b76bd69e89e",
+      "diagnostics_sha256": "669d73e95dc708002bef9a3f3ed2dd69fd93455970bef063de82ddfca52c85f8"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search7/episodes/0004.npz",
+      "trace_sha256": "8da97e42c38ef4a8dcd05272e727fa02f373033bc0f816b07a31125ee4696e17",
+      "diagnostics_sha256": "3b1a5fc24bc0dd40bfff9054a4ff0c8877837028d81a55d1cab87a899c7cbae9"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search7/episodes/0005.npz",
+      "trace_sha256": "e552397f66faab5d62b3a31028464351491b49047205886a62e51809bb7aa06e",
+      "diagnostics_sha256": "c59d52ae059937047904a5c9bd78203e89c7dfec1f28186ce3ac4285593b5902"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search7/episodes/0006.npz",
+      "trace_sha256": "aa3ee3819a630e583776668fe28898825b85f4e74bd0e12d4ed5ce50c61282e8",
+      "diagnostics_sha256": "e3c0f62f21959bc466ba9651f4114f2b0bcc70cca0003bdc43591f24bd9dd9f4"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search7/episodes/0007.npz",
+      "trace_sha256": "5abda0bf78880e35e2b5cded39a0ce12de7fd678ecab3f142815577c4fed3a2d",
+      "diagnostics_sha256": "4dd9bc5242d318e44f79c94a2371855a31026cba5994765e53e533704055ab54"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search7/episodes/0008.npz",
+      "trace_sha256": "6f93fb107f366e13cc8614948a6e39a70c00ef522091836bcd829a9666a433f9",
+      "diagnostics_sha256": "fdc087716af2c0e9e521c98aef695096b8c84a6037d9937724d05b2c565de7ce"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search7/episodes/0009.npz",
+      "trace_sha256": "817ae773cc0034e18f9c5c10bc144c9968f6a78bd71cb7141a50253636331f5d",
+      "diagnostics_sha256": "72f44c79bc2626490a1334e0f5ff7a888a44dacaa8b8c192a28b4fc785e89cb6"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search7/episodes/0010.npz",
+      "trace_sha256": "3c91d0e9b04a7db2dceb67d20deec15580900057a272211e8b41f13ee315e951",
+      "diagnostics_sha256": "e147bd2d6916fe89014d49ce9392e9fcd4ba95babe58ef907a9efef1363ea0c7"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search7/episodes/0011.npz",
+      "trace_sha256": "052f7b2a770f2ceb904d8cb9676aba884432e5c54a7e0437c2426aa389b64610",
+      "diagnostics_sha256": "98eb82a716770ff7a282f49b130053660b4d24aadfa4bb62042f656173b01ec7"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search7/episodes/0012.npz",
+      "trace_sha256": "57e7f1d2fd7224563a4962c7179ba62d4e98c63bd4b05785b51c2a32f0ba626c",
+      "diagnostics_sha256": "15b008264ecad12abbc5b856dfc439144a7017e90ddcc9eb462fbe2cb3a7bfe7"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search7/episodes/0013.npz",
+      "trace_sha256": "f873944c990a0e172b358c1cbeb20e9c2c2d050f66b95313ca2b1a47e16f4e7c",
+      "diagnostics_sha256": "ed0e30af93f6a10711ec11f45ae3eb101f98cde3b7169781ab181e5b1406dd58"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search7/episodes/0014.npz",
+      "trace_sha256": "35f002b9ec536bd24d23d04b7054dcb5340cc3aba4e372e71feea9934dcc8d3e",
+      "diagnostics_sha256": "2e4c6f57e90e297c6ab7a14bc2c20bacfa763658d0bbf50d7abb07130bd83364"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search7/episodes/0015.npz",
+      "trace_sha256": "1503766b8050199a1436e30db98a73fce1bbdef6a7a11f04b5f0c9aa96c64ef8",
+      "diagnostics_sha256": "d6a525dda5b6558c8feb5360409f6cb0d67f4ee6e9a390c0695d366e0f7831d3"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search7/episodes/0016.npz",
+      "trace_sha256": "b19ee0fd90a6a10fd826c29e154827bf1b16da4c565d623c7e5d67bef45b410b",
+      "diagnostics_sha256": "5a8a3a4049648d6a49d42356f6d659eee003c7042502508aac4887f852a9dd8a"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search7/episodes/0017.npz",
+      "trace_sha256": "ddaba786e532e7407d7d74a1c4c973415d98eb18b2e02c490b8f344653b08bb3",
+      "diagnostics_sha256": "8cf3fe2f403b53b879b36ce032eff663a91035627b5f306918c5053608678159"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search7/episodes/0018.npz",
+      "trace_sha256": "6af2cec5e5d5d6acf285ed1560fb8040b6efcff641ec54b284a183c5fc4b77be",
+      "diagnostics_sha256": "7dbf4adf546a48248999c72f4967024b04824ef930f60f800e3faf8f45bb0f76"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search7/episodes/0019.npz",
+      "trace_sha256": "0e11a3b0d943245ad750ae04ffdd0cfae6731920bf8e68cf6505f96212644c05",
+      "diagnostics_sha256": "f20393d5bdc93a2f06f77dd7235e644f3686d0e94ebdfd13bff1b7482f931858"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search21/episodes/0000.npz",
+      "trace_sha256": "60732d2161653d54f8049c67f63e7da18cf88a138266140da7145796f2633422",
+      "diagnostics_sha256": "98e9ab476f303a3e6e3063f3efdbc764189713d48d49473c6ae94c674b7d3be7"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search21/episodes/0001.npz",
+      "trace_sha256": "b7ccf4b30de21cef62f5f2518367c707cbdea66ff4aa05574ca0aef94944d3f6",
+      "diagnostics_sha256": "6b2aac402c2dea6098517db51156f3c2095338a806cc73d007fd51b557b003d0"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search21/episodes/0002.npz",
+      "trace_sha256": "0df515fbae8b4f8ac3675d9d23d0d9e217dbea02431529c9bb170e32b99a42e7",
+      "diagnostics_sha256": "6b3513f67d1506c2d3e32759faa8848669540eccebacb693e74104e47e88c124"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search21/episodes/0003.npz",
+      "trace_sha256": "9cd922f1635b27c6f80fdbcec3e1692ed4954a1e4b226b5d5a648edc8d52771b",
+      "diagnostics_sha256": "54dc4714805d4f1d91d78bf5b07682274fd8746f458d33e6f38f7f446d5be96b"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search21/episodes/0004.npz",
+      "trace_sha256": "ee928dc16ee4a676aff2ed22c6efad91c88b94cd8425f0470edcc81c502b05c8",
+      "diagnostics_sha256": "100f5eb9c155247dfc776e3275ab2a6411ee8d07d1ad2152738fdca55abc90ae"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search21/episodes/0005.npz",
+      "trace_sha256": "2a96f35866211d19f2400be629a2e179a942eeb26a4682c6870ba91cfe8b083e",
+      "diagnostics_sha256": "eebb2fa0f59bdfd80ed5fb39091f0dfa486d0949e39f63456340bb420fb3e434"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search21/episodes/0006.npz",
+      "trace_sha256": "5247d0e771f76b7f08aa6def54e3e120a49f4f914a8e6b5bd1e1aca8dbe2d860",
+      "diagnostics_sha256": "c6d5b667e4ec36dbee43a7ff9c618c3ef92a4a575b0ebda47846084278084600"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search21/episodes/0007.npz",
+      "trace_sha256": "5fa85777871417547f87b59d07589b221b6db3c48a69e6b85f135963e2e6e55d",
+      "diagnostics_sha256": "2cd56c7dfa9da98ab9c0ea7e75b2d9fdf5d3d55f30b617f883a63e0463cb7759"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search21/episodes/0008.npz",
+      "trace_sha256": "ddd38ff0fb72aedb3a80aa3e74659b18565350ac6fc5d28f9e433f30155b54c9",
+      "diagnostics_sha256": "1e202329ce35189a9e12aaaeeb2aaccd037900234c16e15d92c0226f1383f45d"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search21/episodes/0009.npz",
+      "trace_sha256": "3e85bcfa99a68916a89b5bd9693b825ce2642d75e605ccdacfc39b62a443707c",
+      "diagnostics_sha256": "d30507f93e2393bf145dec6dd8f9aa23ae013a55e931879ec6288f0f0da7a4ea"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search21/episodes/0010.npz",
+      "trace_sha256": "6402f10ce50ed925b1b8e646a0eacf98b4f52b010d2e9d26a04a12a5f31d994f",
+      "diagnostics_sha256": "070ae82eedcb10d0bea88e1e0377a687502ad3be9a024daef6d2a4d46aadcc50"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search21/episodes/0011.npz",
+      "trace_sha256": "dc7984d2c0f23b6ee99ab81e19a6fd8743d52578b2307e8120200f9a970447c1",
+      "diagnostics_sha256": "d98b617aaef3ff4cab7bcefdfceaec14bb9d7d148f6d8a3b75d162e0359421f2"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search21/episodes/0012.npz",
+      "trace_sha256": "6f68de30c124aa8fe5681d10dcb57f7c3d3eef39a69a1e44676f3876b046f540",
+      "diagnostics_sha256": "779516c708c9a2db8b328fbd57bb19b8f6f36072b273153ccda2b565fefbe61b"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search21/episodes/0013.npz",
+      "trace_sha256": "5db12596753528c144c96598a797b6f86da58e68ce958b2f4d706950b90dba25",
+      "diagnostics_sha256": "7fc6f4d9609acc943784f42781dfb9c2790f6a601b81b1eb65a46e6c802ad1e0"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search21/episodes/0014.npz",
+      "trace_sha256": "104bc8761f1f61e16b03c189360b56a4aa4bebaaa683368f59310309d0c92a70",
+      "diagnostics_sha256": "32eb9940061515ea4d144348d43f83fe8ea3384b0daab6b845c09bdc568341b4"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search21/episodes/0015.npz",
+      "trace_sha256": "3d970658b12e606c8bf2b832abdd5559e56c55d8568d521751e349ef35eed4fd",
+      "diagnostics_sha256": "004a2e287a9c3216372bdf3da495fcdf9f21711af909e0299ae372274e590685"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search21/episodes/0016.npz",
+      "trace_sha256": "71e15a54abfe2a5c6c2ccc38fb2d8b11858c0307b712def9b117247a02083884",
+      "diagnostics_sha256": "732a7838e8a2015bdd7298cbec4e2bbb7fe02a28ea8bfc81473c03bc3b6d9da3"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search21/episodes/0017.npz",
+      "trace_sha256": "b1233a48659ef5df13440918eea38668ab5bffedd900332a19bc87e29abd913b",
+      "diagnostics_sha256": "0886d71ca4a13a27f84ce199529c14da7f19cd83c8746563b62279d6d3c5cd1b"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search21/episodes/0018.npz",
+      "trace_sha256": "ae0c78ac0b20007d29ec256a1fa8dd7c02f38357a2cae3cba670d56cd4e9617a",
+      "diagnostics_sha256": "4f8bb47adb687c4902296d3ea6ad22768d28c600c6ef1a99744dbd8523a0623f"
+    },
+    {
+      "trace": "runs/policy_physics_search/frozen_driver_20261028_search21/episodes/0019.npz",
+      "trace_sha256": "118ace944f926fff5f9ef32a893fefc5eae0440cee7ce0f6259d8f9908f3152e",
+      "diagnostics_sha256": "3405d97b6b4563348d72477d29babb04dd7acb0023153c4680189132e9f25ad9"
+    }
+  ],
+  "decision_author": "assistant under autonomous continuation authorization",
+  "purpose": "test whether a cheap constant action correction accounts for the observed simulation-search gain; a positive random-control comparison alone is insufficient",
+  "fit_rule": "per-episode mean executed action minus same-observation base_action, then equal mean across the20 source episodes; gas21 retains only gas component from21-candidate correction",
+  "fit_data": "ordinary public search actions on the same development panel; no candidate oracle outcomes; adaptive control fitted on this panel, not held-out evidence",
+  "native_frame_cap": 60000,
+  "internal_physics_frame_cap": 0,
+  "new_training_frames": 0,
+  "verification": "zero-bias actor must reproduce the first12 cached direct-policy actions in each of20 episodes, before racing",
+  "verification_native_frames": 0,
+  "verification_actor_forward_examples": 240,
+  "selection": "report all three controls against direct and search21; no more bias fitting or tuning in this campaign",
+  "analysis": "paired-track bootstrap5000 seed0 conditional on the same selected policy and this development fitting; not independent checkpoints or multiplicity-adjusted claims",
+  "concurrency": "sequential evaluations; no project training; ordinary system load uncontrolled",
+  "held_out_evaluation": false,
+  "user_only_oracle_access": false,
+  "report_directory": "reports/fixed_bias_2026-10-28"
+}

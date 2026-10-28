@@ -52,6 +52,8 @@ uv run python -m cars.cli research train-driver --help
 uv run python -m cars.cli research train-driver --config configs/training/recurrent-local-v2-s0.json --stop-at 8192 --run-id demo_configured_driver
 uv run python -m cars.cli research evaluate --method policy-search --model runs/driver_training/demo_configured_driver --candidates 7 --horizon 20 --episodes 4 --run-id demo_policy_search
 uv run python -m cars.cli research evaluate --method policy-random --model runs/driver_training/demo_configured_driver --candidates 7 --planning-seed 0 --episodes 4 --run-id demo_policy_random
+uv run python -m cars.cli research evaluate --method policy-search --model runs/driver_training/demo_configured_driver --candidates 7 --observation-renderer sparse --episodes 4 --run-id demo_sparse_search
+uv run python -m cars.cli research evaluate --method policy-bias --model runs/driver_training/demo_configured_driver --action-bias 0 0.03 0 --episodes 4 --run-id demo_fixed_bias
 ```
 
 `--stop-at` is a cumulative native-frame boundary, rounded up to a completed PPO
@@ -60,12 +62,21 @@ Use `--resume` with an immutable completed run/checkpoint and identical resolved
 configuration. Reward normalization is learning-only; actor observations use
 fixed scales. Intermediate checkpoints include model/optimizer/normalizer/RNG/
 sampler state and the original source snapshot. A resume begins fresh episodes.
+The optional config field `target_kl` enables upstream minibatch early stopping;
+missing/`null` means the earlier behavior. Changing it requires a separately
+declared trial, not a silent resume. Trainer-v3 logs initial parameter fingerprints,
+actual epochs entered and cumulative optimizer steps. The tested 0.02 trial was
+worse and is not a recommended replacement for the original actor.
 
 Policy search freezes the loaded actor and branches its recurrent memory only in
 imagined rollouts. Candidate zero is the original actor; three-knot residuals
 vary its controls. Random selection uses the same proposal rule without physics.
 Neither path supports the private oracle monitor. New cost records distinguish
 actor forward examples, internal physics frames and actual environment frames.
+The optional sparse renderer skips unnecessary occupancy work; reference remains
+the default. Its parity evidence and latency limits are in the latest report.
+`policy-bias` adds a declared constant offset to each real actor action without
+simulation; declare any development fitting of that offset as additional tuning.
 The [execution report](GEOMETRY_AND_DRIVER_2026-10-28.md) indexes declarations,
 completed diagnostics and current campaign status. The first 2M block has stopped
 at its health review; an 8M schedule declaration does not mean 8M frames ran.
@@ -73,6 +84,10 @@ at its health review; an 8M schedule declaration does not mean 8M frames ran.
 automatically builds its public report after all conditions finish. Its status
 file is `runs/campaigns/frozen_driver_20261028/status.json`. Do not rerun the runner
 against an existing campaign ID; inspect status and preserve partial/failed runs.
+That campaign and its subsequent fixed-bias/KL/renderer checks are now complete;
+see [FROZEN_POLICY_RESULTS_2026-10-28.md](FROZEN_POLICY_RESULTS_2026-10-28.md).
+`run_driver_block.py --manifest PATH` supports separately declared fresh campaigns
+with unique training/evaluation IDs. Completed source snapshots remain authoritative.
 
 ```bash
 uv run python -m cars.cli research train-recurrent --frames 2048 --workers 2 --run-id demo_recurrent

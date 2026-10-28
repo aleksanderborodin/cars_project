@@ -1,0 +1,26 @@
+{
+  "id": "renderer_verification_20261028",
+  "partition": "development",
+  "reference_campaign": "runs/campaigns/frozen_driver_20261028",
+  "change": "binary occupancy queries only: avoid unused margins and restrict nearest-path work; original coordinate transform unchanged",
+  "acceptance": "exact same cached-snapshot actions, candidate costs and candidate sequences, plus full first-episode real-action/reward/observation replays for both budgets",
+  "candidate_counts": [
+    7,
+    21
+  ],
+  "horizon": 20,
+  "planning_seed": 0,
+  "cached_train_snapshots": "runs/verification/policy_search_selected_preflight_20261028",
+  "renderers": [
+    "reference",
+    "sparse"
+  ],
+  "snapshot_order": "alternating reference/sparse and sparse/reference across the three snapshots",
+  "full_replay_episodes_per_budget": 1,
+  "native_frame_cap": 2000,
+  "replay_internal_physics_frame_cap": 560000,
+  "snapshot_internal_physics_frame_cap": 13440,
+  "concurrency": "KL training running; snapshot timing is contended and not a racing latency claim",
+  "held_out_evaluation": false,
+  "user_only_oracle_access": false
+}

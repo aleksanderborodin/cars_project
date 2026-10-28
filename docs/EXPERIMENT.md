@@ -5,7 +5,7 @@ scientific paper about modular world models and online control, using Gymnasium 
 only and the current workstation. Physical robots and other simulators are out
 of scope. Restricted local/native interfaces, programmed physics and deterministic
 search now exist; see [STATUS.md](STATUS.md) and the
-[latest development report](GEOMETRY_AND_DRIVER_2026-10-28.md). The broader learned road distributions,
+[latest development report](FROZEN_POLICY_RESULTS_2026-10-28.md). The broader learned road distributions,
 scenario planning, modern comparisons and final campaign below remain proposed.
 
 Read [USER_INTENT.md](USER_INTENT.md) for the user's decisions and paper goal.
@@ -47,6 +47,10 @@ the sole task. Existing perception/proposal models may be reused. An optional st
 predictors normally, freezes them, trains/configures downstream control, and
 selects prediction spaces/hyperparameters/checkpoints by validation driving.
 It does not require driving-loss gradients through the predictor.
+The user's proposed future [information/control study](INFORMATION_AND_CONTROL_STUDY.md)
+crosses local/full-map inputs with learned/search control and separates road,
+vehicle-prediction and decision errors. It remains proposed; current global
+diagnostics do not constitute a full-information learned-policy comparison.
 
 Modularity, world models, and MPC are established ideas; no novelty, SOTA, or
 safety claim is established. Search explores a finite set/parameterization of

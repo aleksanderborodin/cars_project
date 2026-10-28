@@ -23,6 +23,9 @@ def test_native_schedule_does_not_restart_at_chunk_boundary():
     assert schedule(.5) == 0
     with pytest.raises(ValueError, match="Batch size"):
         DriverTrainingConfig(workers=1, n_steps=8, batch_size=16)
+    for value in (0, -1, float("inf"), float("nan")):
+        with pytest.raises(ValueError, match="target_kl"):
+            DriverTrainingConfig(target_kl=value)
 
 
 @pytest.mark.parametrize("size", [9, 15])
@@ -85,3 +88,19 @@ def test_configured_training_checkpoints_and_resume(tmp_path):
     assert before.isdisjoint(after)
     with pytest.raises(ValueError, match="identical"):
         train_driver("incompatible", replace(config, learning_rate=.003), stop_at=512, resume=root, runs_dir=tmp_path)
+    with pytest.raises(ValueError, match="identical"):
+        train_driver("changed_kl", replace(config, target_kl=.02), stop_at=512, resume=root, runs_dir=tmp_path)
+
+
+def test_kl_stop_reduces_optimizer_work_without_changing_initialization(tmp_path):
+    config = DriverTrainingConfig(workers=1, vector_backend="dummy", total_native_frames=1024,
+        checkpoints=(), n_steps=32, batch_size=16, n_epochs=4, learning_rate=.001,
+        lstm_hidden_size=16, features_dim=32)
+    paths = [train_driver("unlimited", config, stop_at=128, runs_dir=tmp_path),
+             train_driver("limited", replace(config, target_kl=1e-8), stop_at=128, runs_dir=tmp_path)]
+    initial = [json.loads((path / "initial_policy.json").read_text()) for path in paths]
+    assert initial[0]["parameters_sha256"] == initial[1]["parameters_sha256"]
+    rows = [json.loads((path / "learning.jsonl").read_text()) for path in paths]
+    assert rows[1]["optimizer_steps_cumulative"] < rows[0]["optimizer_steps_cumulative"]
+    assert rows[1]["epochs_entered_this_rollout"] <= rows[0]["epochs_entered_this_rollout"]
+    assert RecurrentPPO.load(paths[1] / "model.zip").target_kl == 1e-8

@@ -1,0 +1,24 @@
+{
+  "reference_training_root": "runs/driver_training/driver_main_20261028_s0_to2m",
+  "trial_training_root": "runs/driver_training/driver_kl002_20261028_s0_to2m",
+  "reference_config_sha256": "867c4e309f321466da5605ad939a9510e149492c589ee95ed1c32595cf390325",
+  "trial_config_sha256": "eff95650c023932b89f5761a9b1154864b0354c093b470752745ece027059cbf",
+  "reference_optimizer_steps": 39200,
+  "trial_optimizer_steps": 2983,
+  "trial_epochs_entered_distribution": {
+    "1": 205,
+    "2": 26,
+    "3": 7,
+    "10": 3,
+    "6": 2,
+    "7": 1,
+    "4": 1
+  },
+  "trial_rollout_updates": 245,
+  "trial_all_diagnostics_finite": true,
+  "decision": "do not adopt or extend target_kl0.02; preserve original1M proposer; baseline repair still open",
+  "interpretation": "single-factor fresh one-seed development trial; early stopping reduces actor and critic updates together; worse result does not show KL control is universally harmful or establish original regression cause",
+  "next_training_probe": "declare one lower-learning-rate trial retaining10 epochs before further recipe changes; not launched",
+  "held_out_evaluation": false,
+  "user_only_oracle_values_read": false
+}

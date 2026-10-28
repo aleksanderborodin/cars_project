@@ -7,6 +7,7 @@ import numpy as np
 from cars.env.protocol import LocalSensor, Observation, ProtocolConfig
 from cars.models.physics import PhysicsDynamics
 from cars.planning.local import centreline, extend
+from cars.planning.occupancy import binary_road
 from cars.planning.world import LocalRoadWorld
 from cars.research.recurrent import RecurrentDriver
 from cars.training import sha256
@@ -24,16 +25,20 @@ class PolicySearchConfig:
     centre_cost: float = .04
     unknown_cost: float = .2
     half_width_prior: float = 6.67
+    observation_renderer: str = "reference"
 
     def __post_init__(self) -> None:
         if self.candidates < 1 or self.horizon < 1 or self.planning_seed < 0:
             raise ValueError("Positive search sizes and nonnegative seed required")
         if min(self.steer_sigma, self.gas_sigma, self.brake_sigma) < 0:
             raise ValueError("Nonnegative residual scales required")
+        if self.observation_renderer not in ("reference", "sparse"):
+            raise ValueError("Unknown imagined observation renderer")
 
 
 def imagined_observations(world: LocalRoadWorld, sensor: LocalSensor, tree,
-                          pose: np.ndarray, ego: np.ndarray, previous: np.ndarray) -> Observation:
+                          pose: np.ndarray, ego: np.ndarray, previous: np.ndarray,
+                          renderer: str = "reference") -> Observation:
     """Rasterize each branch's current sensor footprint in the same assumed world.
 
     Future observations expose only a moving local footprint. Unknown road comes
@@ -43,9 +48,10 @@ def imagined_observations(world: LocalRoadWorld, sensor: LocalSensor, tree,
     c, s = np.cos(pose[:, 2]), np.sin(pose[:, 2])
     rotation = np.stack((np.stack((c, -s), axis=-1), np.stack((s, c), axis=-1)), axis=1)
     positions = (np.einsum("bij,pj->bpi", rotation, points) + pose[:, None, :2]).reshape(-1, 2)
-    query = world.query(positions, centre_distance=tree.query(positions)[0])
+    occupancy = (binary_road(world, tree, positions) if renderer == "sparse" else
+                 world.query(positions, centre_distance=tree.query(positions)[0]).grip >= .5)
     road = np.zeros((len(pose), *sensor.visible.shape), dtype=np.float32)
-    road[:, sensor.visible] = (query.grip.reshape(len(pose), -1) >= .5).astype(np.float32)
+    road[:, sensor.visible] = occupancy.reshape(len(pose), -1).astype(np.float32)
     return {"road": road, "visible": np.broadcast_to(sensor.visible, road.shape).astype(np.float32),
             "ego": ego.astype(np.float32), "previous_action": previous.astype(np.float32)}
 
@@ -145,7 +151,8 @@ class PolicyPhysicsSearch(FrozenProposals):
             if step == 0:
                 action = first
             else:
-                imagined = imagined_observations(world, self.sensor, self.model.tree, pose, ego, previous)
+                imagined = imagined_observations(world, self.sensor, self.model.tree, pose, ego, previous,
+                                                 self.config.observation_renderer)
                 proposed, memory = self.actor.model.predict(imagined, state=memory,
                     episode_start=np.zeros(count, dtype=bool), deterministic=True)
                 action = self._actions(proposed, residuals[:, step])

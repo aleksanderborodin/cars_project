@@ -1,0 +1,102 @@
+{
+  "declaration_sha256": "d0a494937c0539c4772f9a602cc904836aedb53106381349a24a2070c4c7f742",
+  "snapshots_match_exactly": true,
+  "timings": [
+    {
+      "candidates": 7,
+      "snapshot": 0,
+      "renderer": "reference",
+      "policy_ms": 161.40522000205237
+    },
+    {
+      "candidates": 7,
+      "snapshot": 0,
+      "renderer": "sparse",
+      "policy_ms": 108.18425798788667
+    },
+    {
+      "candidates": 7,
+      "snapshot": 1,
+      "renderer": "sparse",
+      "policy_ms": 109.94746399228461
+    },
+    {
+      "candidates": 7,
+      "snapshot": 1,
+      "renderer": "reference",
+      "policy_ms": 154.40892599872313
+    },
+    {
+      "candidates": 7,
+      "snapshot": 2,
+      "renderer": "reference",
+      "policy_ms": 146.68367699778173
+    },
+    {
+      "candidates": 7,
+      "snapshot": 2,
+      "renderer": "sparse",
+      "policy_ms": 107.50170399842318
+    },
+    {
+      "candidates": 21,
+      "snapshot": 0,
+      "renderer": "reference",
+      "policy_ms": 428.9142699999502
+    },
+    {
+      "candidates": 21,
+      "snapshot": 0,
+      "renderer": "sparse",
+      "policy_ms": 276.7809630022384
+    },
+    {
+      "candidates": 21,
+      "snapshot": 1,
+      "renderer": "sparse",
+      "policy_ms": 296.6889870003797
+    },
+    {
+      "candidates": 21,
+      "snapshot": 1,
+      "renderer": "reference",
+      "policy_ms": 431.6792979952879
+    },
+    {
+      "candidates": 21,
+      "snapshot": 2,
+      "renderer": "reference",
+      "policy_ms": 394.0902860049391
+    },
+    {
+      "candidates": 21,
+      "snapshot": 2,
+      "renderer": "sparse",
+      "policy_ms": 267.86357299715746
+    }
+  ],
+  "full_episode_replays": [
+    {
+      "candidates": 7,
+      "episode": 0,
+      "decisions": 207,
+      "policy_p50_ms": 113.85205300757661,
+      "policy_p95_ms": 132.655404106481,
+      "exact_replay": true
+    },
+    {
+      "candidates": 21,
+      "episode": 0,
+      "decisions": 189,
+      "policy_p50_ms": 301.69610600569285,
+      "policy_p95_ms": 357.93361879186705,
+      "exact_replay": true
+    }
+  ],
+  "native_frames": 1580,
+  "replay_internal_physics_frames": 433440,
+  "snapshot_internal_physics_frames": 13440,
+  "interpretation": "computational refactor with sampled exact parity; two full replayed races, not a new performance campaign; timings overlap KL training",
+  "user_only_oracle_values_read": false,
+  "held_out_evaluation": false
+}

@@ -1,7 +1,7 @@
 # Implementation and evidence status
 
 Updated 2026-10-28. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
-[Roadmap](ROADMAP.md) · [Latest development results](GEOMETRY_AND_DRIVER_2026-10-28.md)
+[Roadmap](ROADMAP.md) · [Latest development results](FROZEN_POLICY_RESULTS_2026-10-28.md)
 
 The first development experiment and control-audit follow-up are complete. The full paper
 campaign has not started. User decisions are in [USER_INTENT.md](USER_INTENT.md);
@@ -14,8 +14,10 @@ not the intended main engine. The coded-physics prototype, bounded/wider campaig
 and seven-candidate follow-up are complete. The full-map diagnostic and trainer
 profiling are also complete. The first configured 2M-frame driver block completed
 and regressed after its selected 1M checkpoint; unchanged training is stopped.
-The six-condition frozen-checkpoint comparison is running.
-See the [latest report](GEOMETRY_AND_DRIVER_2026-10-28.md) for evidence and caveats.
+The six-condition frozen-checkpoint comparison and three fixed-correction controls
+are complete. Search 21 improved this policy instance; a separate KL training
+trial was worse and not adopted. No runs from this batch remain active.
+See the [latest report](FROZEN_POLICY_RESULTS_2026-10-28.md) for evidence and caveats.
 
 ## Implemented
 
@@ -26,12 +28,13 @@ See the [latest report](GEOMETRY_AND_DRIVER_2026-10-28.md) for evidence and cave
 | env/protocol.py | Restricted local road mask plus ego sensors; native RGB without numeric state; sanitized info; action repeat | Local geometry is an ideal sensor; fixed-view local RGB not implemented |
 | models/dynamics.py | Observed-transition ridge dynamics, save/reload and integrated motion | Deterministic low-order model; no tire-state memory, ensemble or learned road belief |
 | models/physics.py, planning/physics_search.py | Upstream vehicle equations and Box2D in independently reconstructed worlds; observation-corrected wheel estimate; simulated candidate selection | Approximate five-point wheel contact and latent-state initialization; no exact evaluation-state cloning |
-| planning/ | Local pursuit, same-family fixed controller, 21-candidate/20-step search, shared road query for grip and margins | Single straight road continuation; no established search advantage, CEM or multi-world planning |
+| planning/ | Local pursuit, same-family fixed controller, 21-candidate/20-step search, shared road query for grip and margins | Single straight road continuation; fixed-controller gains unestablished; no CEM or multi-world planning |
 | research/data.py | Partition-checked collection, model fitting and development diagnostics | No large offline corpus, calibrated predictor or modern pretrained model |
 | research/recurrent.py | Local/native CNN-LSTM PPO adapter; recurrent reload; training-state continuation with fresh episodes | 100k pilot did not learn useful driving; strong reproduction remains open |
 | planning/global_search.py | Explicit full-map geometry diagnostic with unchanged estimated vehicle state | Also changes centerline reconstruction; privileged, not equal-input superiority |
-| research/driver_training.py and driver_* | Configured PPO, deterministic pooling, reward normalization, post-update checkpoints, native-frame schedule, CPU/GPU profiles | Local adaptation; 2M block complete with regression; 1M checkpoint selected, convergence and competitive baseline not established |
-| planning/policy_search.py | Frozen recurrent feedback proposals, smooth residuals, isolated imagined memory, coded simulation selection and random control | Six-condition driving comparison running; substantially higher inference cost; no complete comparison result yet |
+| research/driver_training.py and driver_* | Configured PPO, deterministic pooling, reward normalization, post-update checkpoints, native-frame schedule, CPU/GPU profiles | Local adaptation; original 1M checkpoint retained; KL-stop repair failed to improve it; convergence/competitive baseline not established |
+| planning/policy_search.py | Frozen recurrent feedback proposals, smooth residuals, isolated imagined memory, coded simulation selection and random control | Positive 21-candidate result for one frozen checkpoint on 20 development tracks; high cost, no broad or multi-seed evidence |
+| planning/occupancy.py, policy_controls.py | Equivalent sparse occupancy renderer and frozen-policy fixed offsets | Sampled exact renderer parity; three fitted offset controls do not establish all cheap alternatives are inferior |
 | research/evaluation.py, eval/paired.py | Common development tracks, traces/costs, protocol checks, paired and crossed model/track intervals | Small/adaptive study; no final paper campaign |
 | monitoring/ | One-way online oracle-ranking sidecar, prefix replay, private live report | User-only outputs; no agent/learning/selection/assistant access to real ranking values |
 | Run artifacts | Immutable configs, source/dependency snapshots, hashes, datasets/models/traces | Ignored large runs/private reports need separate backup |
@@ -80,6 +83,16 @@ the realized hidden world also differs from information available at decision ti
 
 ## Measurements
 
+- Frozen learned policy on 20 common development tracks: direct 863.55/40%;
+  search 7 gives 885.70/70%, search 21 gives 905.94/85%. The latter return gain is
+  +42.39 [14.36, 75.60], exploratory track-only interval; no SOTA/general claim.
+- Best-return fixed-correction control: 860.45/60%, about 1.5 ms p95. Search 21
+  remains higher on this panel; better cheap controls have not been excluded.
+- Sparse imagined occupancy preserves two full race replays exactly and reduces
+  median sampled times roughly 30–35%; still above 80 ms, not a real-time result.
+- Fresh target-KL0.02 trial: best 697.04/4% on 50 tracks; not adopted. Cost
+  2,006,884 training frames plus 195,829 evaluation frames and 8 reload-check frames.
+
 - Full-map coded search: 923.15 / 923.60 mean return and 100% completion for
   7 / 21 candidates on 20 common tracks. This changes geometry/reconstruction,
   not vehicle-state access; no equal-information or SOTA claim.
@@ -118,7 +131,7 @@ the realized hidden world also differs from information available at decision ti
   real oracle-ranking values were not read.
 
 Full tables, costs, adaptive choices and uncertainty are in the
-[latest report](GEOMETRY_AND_DRIVER_2026-10-28.md) and linked earlier reports.
+[latest report](FROZEN_POLICY_RESULTS_2026-10-28.md) and linked earlier reports.
 No final-test identities/results or legacy unseen/hard results were inspected.
 
 ## Open work
@@ -126,8 +139,8 @@ No final-test identities/results or legacy unseen/hard results were inspected.
 - The [next-moves plan](NEXT_MOVES.md) gives the active order, capped development
   experiments, stronger-driver training proposal and scientific decision gates.
   Its geometry diagnostic and first training block are complete. The selected
-  checkpoint is frozen for the running search comparison. Baseline repair, broader
-  and final studies remain unstarted.
+  checkpoint search comparison and cheap-control follow-ups are complete. The KL
+  repair trial did not improve the baseline. Broader and final studies remain unstarted.
 - Steps 1–2 of the [next-experiment plan](NEXT_EXPERIMENTS.md) are complete.
   Its 60k-frame pace/full-map proposal is deferred by the coded-simulator priority.
 - Competent learned baseline and faithful upstream reproduction before headline runs.
@@ -142,7 +155,7 @@ No final-test identities/results or legacy unseen/hard results were inspected.
 - Final frozen study, sufficiently powered comparisons, paper and release remain open.
 - Agentic evolution is future work; archived Rust/evolution tooling stays archived.
 
-The full suite now passes **76 tests** (three upstream SWIG deprecation warnings).
+The full suite now passes **79 tests** (three upstream SWIG deprecation warnings).
 The original cleanup had 47 retained tests. New coverage includes partition sealing,
 local isolation, protocol equivalence, fit/reload, continuation, paired statistics
 and synthetic ranking logic. Documentation links, CLI discovery and the dependency

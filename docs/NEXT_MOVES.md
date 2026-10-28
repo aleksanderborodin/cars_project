@@ -11,9 +11,11 @@ writing this plan. Every stage requires its own saved, resolved manifest before 
 
 **Execution update:** stage 1 and the trainer/profiling prerequisites in stage 2
 are complete; the first 2M-frame block completed with regression after 1M. The
-standalone-selected 1M checkpoint is frozen for the running stage-3 comparison.
-No unchanged extension toward 8M is running; baseline repair remains open. See the
-[execution report](GEOMETRY_AND_DRIVER_2026-10-28.md); the original decisions below
+standalone-selected 1M checkpoint now has a completed positive stage-3 development
+comparison. Three cheap fixed-correction controls did not reproduce its full gain.
+A KL-stopping baseline trial was worse; baseline repair remains open. No experiment
+from this batch is running. See the
+[execution report](FROZEN_POLICY_RESULTS_2026-10-28.md); the original decisions below
 remain recorded as the pre-execution plan.
 
 ## Objective and present evidence
@@ -333,19 +335,39 @@ tradeoff. A weak result is evidence to understand, not permission to remove base
 
 ## Immediate work queue and deferred choices
 
-1. Implement and run the capped full-map diagnostic; save its result.
-2. Implement the baseline-audit fixes and throughput/reload checks; the audit can
-   proceed independently of that diagnostic. Declare the first training manifest.
-3. Train the first driver through the 2M milestone, continuing toward the declared
-   8M limit only after the health review. Select its standalone checkpoint.
-4. Implement frozen-policy rollouts and isolation checks, then run the paired
-   20-track pilot before launching multi-seed or broad expensive comparisons.
+1. Broaden the original frozen-checkpoint comparison to all 200 development tracks
+   before further planner tuning. Proposed four conditions: direct, search 7,
+   search 21, and the already fitted mean-7 constant correction. Keep weights,
+   utility, residual scales, horizon, planning seed and offset fixed. Use the
+   explicitly recorded sparse renderer for search, with its parity evidence.
+   Cap: 800k native evaluation frames and 112M internal physics frames. This
+   manifest is not yet created or launched. Report the original 20 and the 50-track
+   selection panel as nested development subsets, not independent holdouts.
+2. Add an audited iCEM-style optimizer using the same coded engine, information,
+   proposer, horizon and utility; match total simulator work across iterations.
+   Profile cost before a capped comparison. No novel-optimizer claim follows
+   from adopting it. Preserve the current random-shooting result as reference.
+3. Repair baseline training separately. The first target-KL0.02 probe reduced
+   optimization sharply and was worse. Proposed next single-factor probe:
+   learning rate 3e-5 instead of 1e-4, no KL stop, ten epochs, fresh seed zero,
+   same 8M global schedule and 2M initial review with four 50-track checks.
+   Its cap would again be 2,008,191 training and 200k evaluation frames; save a
+   declaration before launch. This is a hypothesis, not a guaranteed fix. Keep
+   the original selected checkpoint and completed search table unchanged.
+4. After broader evidence, run independent training seeds and prespecified
+   planning-stream repeats; freeze each proposer by standalone performance.
+   Continue the native-input reproduction audit before claiming comparability
+   with published methods. Final-test data remain sealed.
 
 Do not retrain a learned dynamics network by default. Do not launch all sensor
 ranges, horizons, predictors and optimizers as a Cartesian sweep. Regret-loss
 training, Bayesian allocation, Rust optimization and agentic evolution remain
 documented future options. Rust becomes relevant if profiling identifies Python
 simulation overhead as the obstacle; it must preserve physics and replay behavior.
+The user's further [information/control study](INFORMATION_AND_CONTROL_STUDY.md)
+adds future local/full-map learned/search contrasts and a three-module diagnosis.
+It follows competent local controls; it does not open global training or private
+oracle data now, and it must not replace the established-planner comparison.
 
 The high-confidence decisions are frozen-checkpoint comparisons, information
 separation, accounting and test isolation. PPO suitability, 8M sufficiency, residual

@@ -1,5 +1,6 @@
 """Train a declared block and evaluate each ready post-update checkpoint once."""
 from concurrent.futures import ThreadPoolExecutor
+import argparse
 import json
 import os
 from pathlib import Path
@@ -12,7 +13,10 @@ from cars.training import sha256, write_json
 
 
 def main() -> None:
-    manifest = Path("configs/campaigns/driver-first-block-2026-10-28.json")
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--manifest", type=Path, default=Path("configs/campaigns/driver-first-block-2026-10-28.json"))
+    args = parser.parse_args()
+    manifest = args.manifest
     spec = json.loads(manifest.read_text())
     config = Path(spec["training_config"])
     if sha256(config) != spec["training_config_sha256"] or spec["user_only_oracle_access"] or spec["held_out_evaluation"]:
@@ -32,7 +36,7 @@ def main() -> None:
 
     def evaluate(path: Path) -> dict:
         state = json.loads((path / "training_state.json").read_text())
-        run_id = f"driver_s0_dev_{state['native_frames']:09d}"
+        run_id = f"{spec.get('evaluation_prefix', 'driver_s0_dev')}_{state['native_frames']:09d}"
         arguments = [sys.executable, "-m", "cars.cli", "research", "evaluate", "--method", "recurrent",
                      "--model", str(path), "--episodes", str(spec["development_tracks_per_checkpoint"]), "--run-id", run_id]
         with (root / (run_id + ".log")).open("x") as log:
@@ -90,6 +94,9 @@ def main() -> None:
                 "training_native_frames": cost["native_frames"],
                 "evaluation_native_frames": sum(row["evaluation_native_frames"] for row in rows),
                 "wall_time_s": time.perf_counter() - started})
+            if spec.get("report_directory"):
+                subprocess.run([sys.executable, "scripts/summarize_driver_block.py", "--campaign", str(root),
+                    "--output", spec["report_directory"]], check=True, env=environment)
         except Exception as error:
             if process.poll() is None:
                 process.terminate()

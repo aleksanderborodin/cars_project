@@ -1,0 +1,188 @@
+{
+  "manifest_sha256": "5f698acf30a7ba68e267ba73db35ec360f2d463570805ff168e85378aaf2986b",
+  "checkpoint_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741",
+  "inputs": [
+    {
+      "condition": "direct",
+      "config_sha256": "dcc8bf8a959c00e3409ef91f5ffa3fb690ba142123545bd8363a84a0ede480fc",
+      "metrics_sha256": "9dd9cae93199c5c73c451aad17c1e8512529ec3c3b5c30b16b9f8858af6fba2e",
+      "checkpoint_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741"
+    },
+    {
+      "condition": "random7_s0",
+      "config_sha256": "532b9521f2ba58530c9aaf15b3eafbf336981f7e48c785736171a49cd90308aa",
+      "metrics_sha256": "185a9e23536d0262a68fec9c8352f67a0bef719c4c0b4a9f76ec509e96cae7bf",
+      "checkpoint_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741"
+    },
+    {
+      "condition": "random7_s1",
+      "config_sha256": "ad46e6859d0792af7aebc80bc33cf708fa8e91b97bc1a2c0e3e27931a379ef33",
+      "metrics_sha256": "368440213af5b6c3df8b1ac3e35ea4b8822582dc6140885c832eab4a652107c3",
+      "checkpoint_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741"
+    },
+    {
+      "condition": "random7_s2",
+      "config_sha256": "3a5334cb75221916259cd62de071eba4cf8a5a4775308a69fae88f65dead4c5c",
+      "metrics_sha256": "468a20adff6dde5c6e5f9e02db6ff1dc4f6009efe562fda9e19a3abd6f4f2628",
+      "checkpoint_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741"
+    },
+    {
+      "condition": "search7",
+      "config_sha256": "03b84fe9f8ed9823f4640b20188f81a5e11803142d07701fee9a282c0cf19796",
+      "metrics_sha256": "c372ea8b9e1491ad9b53a323bcf6f49bfe16f622348ced408c87e02cc8f4517d",
+      "checkpoint_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741"
+    },
+    {
+      "condition": "search21",
+      "config_sha256": "9d1100610914505f154065204c92ad0c28c4bd389a0108d63947f2baa17c6c68",
+      "metrics_sha256": "a1bfe78d83bf2f9135addab8d52e4f1aae3c80be08d8b36d17ae9c58fec7ae70",
+      "checkpoint_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741"
+    }
+  ],
+  "paired_differences": [
+    {
+      "candidate": "search7",
+      "reference": "direct",
+      "metric": "return",
+      "mean_difference": 22.153833239692272,
+      "interval_95_percent": [
+        -3.1363827205781276,
+        47.93571398020639
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and fixed planning streams; tracks only"
+    },
+    {
+      "candidate": "search21",
+      "reference": "direct",
+      "metric": "return",
+      "mean_difference": 42.38911674455979,
+      "interval_95_percent": [
+        14.360218128014045,
+        75.60159689099103
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and fixed planning streams; tracks only"
+    },
+    {
+      "candidate": "search21",
+      "reference": "search7",
+      "metric": "return",
+      "mean_difference": 20.23528350486752,
+      "interval_95_percent": [
+        7.625212903415827,
+        37.0781890207176
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and fixed planning streams; tracks only"
+    },
+    {
+      "candidate": "search7",
+      "reference": "random7_mean",
+      "metric": "return",
+      "mean_difference": 672.6120792221149,
+      "interval_95_percent": [
+        646.7289866848384,
+        694.4078930371859
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and fixed planning streams; tracks only"
+    },
+    {
+      "candidate": "search7",
+      "reference": "direct",
+      "metric": "success",
+      "mean_difference": 0.3,
+      "interval_95_percent": [
+        0.1,
+        0.5
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and fixed planning streams; tracks only"
+    },
+    {
+      "candidate": "search21",
+      "reference": "direct",
+      "metric": "success",
+      "mean_difference": 0.45,
+      "interval_95_percent": [
+        0.25,
+        0.65
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and fixed planning streams; tracks only"
+    },
+    {
+      "candidate": "search21",
+      "reference": "search7",
+      "metric": "success",
+      "mean_difference": 0.15,
+      "interval_95_percent": [
+        0.0,
+        0.3
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and fixed planning streams; tracks only"
+    },
+    {
+      "candidate": "search7",
+      "reference": "random7_mean",
+      "metric": "success",
+      "mean_difference": 0.7,
+      "interval_95_percent": [
+        0.5,
+        0.9
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models",
+      "uncertainty_scope": "conditional on one selected checkpoint and fixed planning streams; tracks only"
+    }
+  ],
+  "native_frames": 113726,
+  "internal_physics_frames": 9713200,
+  "actor_forward_examples": 2335331,
+  "training_cost": "reused selected checkpoint; all training and checkpoint screening costs remain in driver-first-block report",
+  "interpretation": "exploratory adaptive development panel; all six conditions retained; no convergence or SOTA claim",
+  "planning_repeat_scope": "three random streams shared across tracks; averaged per track for the random contrast, no planner-seed population interval",
+  "held_out_evaluation": false,
+  "user_only_oracle_values_read": false
+}

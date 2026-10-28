@@ -10,6 +10,10 @@ stopped at its health review. This is not yet a converged strong comparator. See
 [execution report](GEOMETRY_AND_DRIVER_2026-10-28.md). This is still not an original
 pixel-recipe reproduction. The previous 100k-frame local policy remains an
 engineering pilot, not a competitive reference.
+The subsequent fresh `target_kl=0.02` probe also completed: best 697.04/4%, below
+the original selected driver. It is not adopted; baseline repair remains open.
+See the [follow-up report](FROZEN_POLICY_RESULTS_2026-10-28.md) for all checkpoints
+and the substantial reduction in optimizer work caused by early stopping.
 The [next-moves plan](NEXT_MOVES.md) now specifies the proposed implementation,
 profiling and training order. Its first driver is a practical proposer/comparator,
 not an asserted current CarRacing SOTA method.

@@ -77,8 +77,10 @@ advantage is established. The subsequent full-map diagnostic completed all 20
 tracks at both budgets, using the same estimated vehicle state. It also changes
 centerline reconstruction, so the information effect is not fully isolated. The
 configured driver block completed its 2M review with regression; the selected
-1M checkpoint is frozen for the running exploratory paired
-policy/search comparison. See [the execution report](GEOMETRY_AND_DRIVER_2026-10-28.md).
+1M checkpoint now has a completed positive exploratory policy/search comparison.
+Cheap constant corrections did not reproduce the full gain, and a KL-stop training
+trial was not better. Broader tracks, established optimizers and baseline repair
+come next. See [the execution report](FROZEN_POLICY_RESULTS_2026-10-28.md).
 User-only ranking diagnostics cannot supply optimization feedback.
 A geometry information-gap diagnostic informs one component; it is not a
 universal gate for all model-based control.
@@ -87,6 +89,9 @@ universal gate for all model-based control.
 
 - **Known-track expert:** additional privileged reference and possible teacher.
   Keep its information advantage explicit. See USER_INTENT.md for motivation.
+- **Information/control matrix:** future local/full-map learned/search contrasts,
+  including local search versus a full-map learned driver; three-module diagnosis
+  and precise claim limits are in [INFORMATION_AND_CONTROL_STUDY.md](INFORMATION_AND_CONTROL_STUDY.md).
 - **Prediction space/model selection:** after normal training, use validation
   racing to select the predictor plus downstream system. Record all tuning and
   controller-training costs. Special task-loss training is not the default.

@@ -82,6 +82,16 @@ predictor training was an assistant suggestion; it is not the current default.
 
 ## Expert and known-track experiment
 
+**Further user proposal, 2026-10-28 (future work):** compare learned control and
+simulation search under both local and full-map information, including local
+search versus a learned driver trained/deployed with the full map. Decompose
+road understanding, vehicle prediction and action choice to explain possible
+advantages despite imperfect components. The user's ambition is a broader family
+of effective approaches, not a measured universal-superiority result. The
+[information/control study](INFORMATION_AND_CONTROL_STUDY.md) preserves the intent,
+comparison matrix, precise possible conclusions and assistant critiques. It does
+not launch global training or relax the private-oracle boundary.
+
 The user wants to preserve an additional expert experiment, motivated by the
 possibility that knowing the exact track permits substantially better control.
 A hand-engineered expert, a full-map planner, or a high-budget reference may be
@@ -140,7 +150,9 @@ no particular checkpoint has been verified as the current benchmark leader.
 The paper should demonstrate actual improvement in driving, supported by
 component analysis and fair resource/information accounting. A restricted-view
 study can explain mechanisms; native-input experiments are needed for the desired
-standard-CarRacing comparison. No advantage is currently established.
+standard-CarRacing comparison. A one-checkpoint development search gain now
+exists; general advantage, novelty and standard-benchmark superiority remain
+unestablished. See [the measured evidence](FROZEN_POLICY_RESULTS_2026-10-28.md).
 
 Suggested paper framing, paraphrased from the user:
 

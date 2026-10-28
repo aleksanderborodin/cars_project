@@ -10,8 +10,9 @@ costs and the proposed next diagnostic. Neither campaign establishes a return wi
 The [next-moves plan](NEXT_MOVES.md) now gives the detailed execution order and
 budgets for the remaining P1–P3 work, especially stronger frozen-policy comparisons.
 Its full-map diagnostic and first 2M driver block are complete. The selected 1M
-checkpoint is frozen for a running search comparison after later training regressed;
-see the [current execution report](GEOMETRY_AND_DRIVER_2026-10-28.md).
+checkpoint now has a positive 20-track search comparison. Fixed-correction
+controls did not recover its full gain; a KL training repair was unsuccessful.
+See the [current execution report](FROZEN_POLICY_RESULTS_2026-10-28.md).
 
 ## User intent and the central experiment
 

@@ -60,6 +60,11 @@ status for driving evidence. `research/driver_*` implements configured PPO,
 reward normalization, post-update checkpoints and cumulative native-frame schedules.
 The legacy `research/recurrent.py` trainer remains separate. Never feed simulated
 policy history into real recurrent memory or update normalization from evaluation.
+`planning/occupancy.py` provides an explicit sparse imagined-observation renderer;
+`planning/policy_controls.py` provides cheap constant-offset controls. Preserve
+reference behavior and inspect declared parity evidence before changing defaults.
+The future local/full-map learned/search matrix is documented in
+`docs/INFORMATION_AND_CONTROL_STUDY.md`; global training is not implemented or launched.
 
 ## Rules
 

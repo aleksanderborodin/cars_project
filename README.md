@@ -12,20 +12,22 @@ selection; no newly learned behavior scorer is required by the main approach.
 The broad perception–world-model–planning pipeline is established prior work.
 Our goal is competitive actual driving, supported by component-level evidence.
 Hidden-road forecasts are one possible component; predictor-space selection by
-validation driving is an optional study. There is **no demonstrated new-method
-advantage or SOTA result**.
+validation driving is an optional study. A frozen-policy development comparison now shows a promising search gain.
+There is **no established general advantage, novelty or SOTA result**.
 
 ## Documentation index
 
 | Document | Read it for |
 |---|---|
 | [User intent](docs/USER_INTENT.md) | User decisions, main system, paper goal, expert experiment, and future evolution option |
+| [Information and control study](docs/INFORMATION_AND_CONTROL_STUDY.md) | Future local/full-map learned/search matrix, three-module decomposition, user motivation and claim limits |
 | [Research log](docs/RESEARCH_LOG.md) | Attributed ideas/questions, intent, context, probes and the user-only ranking-monitor restriction |
 | [Experiment specification](docs/EXPERIMENT.md) | Authoritative scope, information contracts, fairness, evaluation rules |
 | [Programmed simulator and search](docs/SIMULATOR_SEARCH_PLAN.md) | Active architecture, same-proposer comparisons, execution stages and uncertain choices |
 | [Programmed simulator results](docs/PROGRAMMED_SIMULATOR_RESULTS.md) | Completed physics comparisons, reduced-cost search, verification, limitations and next diagnostic |
 | [Next moves](docs/NEXT_MOVES.md) | Active execution order: bounded diagnostic, competent frozen driver, paired search, broader comparisons and final freeze |
-| [Geometry and stronger driver](docs/GEOMETRY_AND_DRIVER_2026-10-28.md) | Completed full-map diagnostic, 2M training review, selected checkpoint and launched policy-search comparison |
+| [Geometry and stronger driver](docs/GEOMETRY_AND_DRIVER_2026-10-28.md) | Completed full-map diagnostic, 2M training review, selected checkpoint and preceding search implementation |
+| [Frozen-policy search results](docs/FROZEN_POLICY_RESULTS_2026-10-28.md) | Completed search gain, cheap controls, renderer verification, failed KL repair and next decision |
 | [Geometry research](docs/RESEARCH_PLAN.md) | Literature, feasibility, and detailed design for the geometry/uncertainty branch |
 | [Predictor selection research](docs/PREDICTION_SELECTION.md) | Optional prediction spaces, normal training, downstream validation selection, and critiques |
 | [Design decisions](docs/DESIGN_DECISIONS.md) | Concrete starting settings, confidence, alternatives, and decision gates |
@@ -59,8 +61,11 @@ The subsequent full-map diagnostic completed 20/20 races for both search budgets
 at about 923 return; it changes privileged geometry and reconstruction. The first
 configured recurrent-driver block completed 2M training frames. Its selected 1M
 checkpoint scores 858.1 / 30% completion on 50 development tracks; the final 2M
-checkpoint regressed to 779.2 / 2%. Training stopped at that review. A six-condition
-frozen-policy/search comparison is running. See the latest geometry/driver report.
+checkpoint regressed to 779.2 / 2%. Training stopped at that review. The completed 20-track frozen comparison
+scored 863.5/40% directly, 885.7/70% with seven simulated candidates and
+905.9/85% with 21. Cheap fixed corrections did not reproduce the full gain.
+A KL-stopping training trial was worse and was not adopted. See the latest
+frozen-policy report for uncertainty, substantial latency cost and scope.
 Learned road distributions, scenario MPC, CEM, local visual reconstruction and
 modern world-model reproductions remain open.
 
@@ -82,10 +87,11 @@ decision points for the next campaigns. The
 280 completed development episodes, short-term prediction gains, runtime tradeoffs
 and an exact episode replay. The
 [geometry/driver report](docs/GEOMETRY_AND_DRIVER_2026-10-28.md) records the completed
-full-map diagnostic and completed first training block. The active experiment
-is the frozen-checkpoint search comparison; its selected driver has useful but
-incomplete performance. A separate baseline-repair trial remains necessary before
-headline comparisons. Geometry reconstruction remains a measured bottleneck.
+full-map diagnostic and completed first training block. The [frozen-policy report](docs/FROZEN_POLICY_RESULTS_2026-10-28.md) records the
+completed search comparison and follow-ups. Next: broaden the frozen comparison
+to 200 development tracks, then compare an established optimizer at matched work.
+Baseline repair remains open after the unsuccessful KL trial. No experiments
+from this batch are still running. Geometry reconstruction remains a measured bottleneck.
 Bayesian search and evolution remain future options. Privileged candidate-ranking
 values are user-only and excluded from all agent/training/selection feedback.
 

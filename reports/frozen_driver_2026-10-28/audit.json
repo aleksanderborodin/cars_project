@@ -1,0 +1,1828 @@
+{
+  "declaration_sha256": "73cb1df7f2bf2bb84135b79d960b37f39e7cd9b3af5e2c7324878b6250db26ef",
+  "trace_checks_passed": true,
+  "identical_production_sources": true,
+  "sources": [
+    {
+      "condition": "direct",
+      "config_sha256": "dcc8bf8a959c00e3409ef91f5ffa3fb690ba142123545bd8363a84a0ede480fc",
+      "decision_weighted_mean_gas": 0.11211632937192917,
+      "decision_weighted_mean_brake": 0.005568727385252714,
+      "decision_weighted_mean_absolute_steer": 0.07507456094026566,
+      "decision_weighted_mean_forward_speed": 55.87325668334961
+    },
+    {
+      "condition": "random7_s0",
+      "config_sha256": "532b9521f2ba58530c9aaf15b3eafbf336981f7e48c785736171a49cd90308aa",
+      "decision_weighted_mean_gas": 0.12791115045547485,
+      "decision_weighted_mean_brake": 0.06514830142259598,
+      "decision_weighted_mean_absolute_steer": 0.09765630215406418,
+      "decision_weighted_mean_forward_speed": 14.003913879394531
+    },
+    {
+      "condition": "random7_s1",
+      "config_sha256": "ad46e6859d0792af7aebc80bc33cf708fa8e91b97bc1a2c0e3e27931a379ef33",
+      "decision_weighted_mean_gas": 0.1320992261171341,
+      "decision_weighted_mean_brake": 0.06240510940551758,
+      "decision_weighted_mean_absolute_steer": 0.1078704223036766,
+      "decision_weighted_mean_forward_speed": 15.065789222717285
+    },
+    {
+      "condition": "random7_s2",
+      "config_sha256": "3a5334cb75221916259cd62de071eba4cf8a5a4775308a69fae88f65dead4c5c",
+      "decision_weighted_mean_gas": 0.12661203742027283,
+      "decision_weighted_mean_brake": 0.050696659833192825,
+      "decision_weighted_mean_absolute_steer": 0.10559441894292831,
+      "decision_weighted_mean_forward_speed": 17.39583969116211
+    },
+    {
+      "condition": "search7",
+      "config_sha256": "03b84fe9f8ed9823f4640b20188f81a5e11803142d07701fee9a282c0cf19796",
+      "decision_weighted_mean_gas": 0.15077342092990875,
+      "decision_weighted_mean_brake": 0.01113686989992857,
+      "decision_weighted_mean_absolute_steer": 0.11774550378322601,
+      "decision_weighted_mean_forward_speed": 54.3927116394043
+    },
+    {
+      "condition": "search21",
+      "config_sha256": "9d1100610914505f154065204c92ad0c28c4bd389a0108d63947f2baa17c6c68",
+      "decision_weighted_mean_gas": 0.19220773875713348,
+      "decision_weighted_mean_brake": 0.013171982951462269,
+      "decision_weighted_mean_absolute_steer": 0.13358892500400543,
+      "decision_weighted_mean_forward_speed": 58.40976333618164
+    }
+  ],
+  "episode_outcomes": [
+    {
+      "condition": "direct",
+      "episode": 0,
+      "return": 919.6999999999858,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "direct",
+      "episode": 1,
+      "return": 862.7118644067656,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "direct",
+      "episode": 2,
+      "return": 916.2999999999862,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "direct",
+      "episode": 3,
+      "return": 728.1249999999867,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "direct",
+      "episode": 4,
+      "return": 918.5999999999852,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "direct",
+      "episode": 5,
+      "return": 925.1999999999948,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "direct",
+      "episode": 6,
+      "return": 871.1191335739983,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "direct",
+      "episode": 7,
+      "return": 782.530120481916,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "direct",
+      "episode": 8,
+      "return": 839.0681003584089,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "direct",
+      "episode": 9,
+      "return": 913.6999999999878,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "direct",
+      "episode": 10,
+      "return": 880.4560260586125,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "direct",
+      "episode": 11,
+      "return": 639.9380804953445,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "direct",
+      "episode": 12,
+      "return": 844.8275862068804,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "direct",
+      "episode": 13,
+      "return": 896.5517241379143,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "direct",
+      "episode": 14,
+      "return": 861.2403100775099,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "direct",
+      "episode": 15,
+      "return": 847.8827361563331,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "direct",
+      "episode": 16,
+      "return": 917.1999999999864,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "direct",
+      "episode": 17,
+      "return": 921.8999999999916,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "direct",
+      "episode": 18,
+      "return": 870.8029197080115,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "direct",
+      "episode": 19,
+      "return": 913.0999999999884,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s0",
+      "episode": 0,
+      "return": 199.2957746478906,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s0",
+      "episode": 1,
+      "return": 188.13559322034197,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s0",
+      "episode": 2,
+      "return": 181.8791946308752,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s0",
+      "episode": 3,
+      "return": 153.12500000000276,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s0",
+      "episode": 4,
+      "return": 183.27645051194847,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s0",
+      "episode": 5,
+      "return": 232.01581027668303,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s0",
+      "episode": 6,
+      "return": 199.63898916967813,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s0",
+      "episode": 7,
+      "return": 156.02409638554505,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s0",
+      "episode": 8,
+      "return": 72.04301075269143,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s0",
+      "episode": 9,
+      "return": 173.02631578947626,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s0",
+      "episode": 10,
+      "return": 176.87296416938412,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s0",
+      "episode": 11,
+      "return": 160.06191950464668,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s0",
+      "episode": 12,
+      "return": 193.103448275865,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s0",
+      "episode": 13,
+      "return": 193.10344827586476,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s0",
+      "episode": 14,
+      "return": 225.58139534884072,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s0",
+      "episode": 15,
+      "return": 173.6156351791562,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s0",
+      "episode": 16,
+      "return": 181.8791946308752,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s0",
+      "episode": 17,
+      "return": 209.6085409252701,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s0",
+      "episode": 18,
+      "return": 206.5693430656968,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s0",
+      "episode": 19,
+      "return": 203.13588850174492,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s1",
+      "episode": 0,
+      "return": 227.46478873239883,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s1",
+      "episode": 1,
+      "return": 198.3050847457666,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s1",
+      "episode": 2,
+      "return": 208.7248322147689,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s1",
+      "episode": 3,
+      "return": 184.37500000000364,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s1",
+      "episode": 4,
+      "return": 210.5802047781613,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s1",
+      "episode": 5,
+      "return": 263.63636363636715,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s1",
+      "episode": 6,
+      "return": 214.0794223826753,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s1",
+      "episode": 7,
+      "return": 180.12048192771454,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s1",
+      "episode": 8,
+      "return": 72.04301075269228,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s1",
+      "episode": 9,
+      "return": 202.63157894737208,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s1",
+      "episode": 10,
+      "return": 202.93159609120949,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s1",
+      "episode": 11,
+      "return": 184.82972136223285,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s1",
+      "episode": 12,
+      "return": 203.44827586207276,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s1",
+      "episode": 13,
+      "return": 220.6896551724176,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s1",
+      "episode": 14,
+      "return": 229.45736434108943,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s1",
+      "episode": 15,
+      "return": 199.6742671009814,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s1",
+      "episode": 16,
+      "return": 208.72483221476887,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s1",
+      "episode": 17,
+      "return": 234.51957295374103,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s1",
+      "episode": 18,
+      "return": 235.76642335766888,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s1",
+      "episode": 19,
+      "return": 231.01045296167644,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s2",
+      "episode": 0,
+      "return": 266.19718309859525,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s2",
+      "episode": 1,
+      "return": 235.59322033898752,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s2",
+      "episode": 2,
+      "return": 248.99328859060827,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s2",
+      "episode": 3,
+      "return": 218.7500000000045,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s2",
+      "episode": 4,
+      "return": 196.92832764505604,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s2",
+      "episode": 5,
+      "return": 311.06719367588937,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s2",
+      "episode": 6,
+      "return": 250.18050541516675,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s2",
+      "episode": 7,
+      "return": 213.25301204819763,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s2",
+      "episode": 8,
+      "return": 229.74910394265692,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s2",
+      "episode": 9,
+      "return": 248.68421052631996,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s2",
+      "episode": 10,
+      "return": 261.5635179153134,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s2",
+      "episode": 11,
+      "return": 212.6934984520169,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s2",
+      "episode": 12,
+      "return": 244.82758620690072,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s2",
+      "episode": 13,
+      "return": 275.8620689655192,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s2",
+      "episode": 14,
+      "return": 283.7209302325605,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s2",
+      "episode": 15,
+      "return": 215.9609120521222,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s2",
+      "episode": 16,
+      "return": 255.7046979865813,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s2",
+      "episode": 17,
+      "return": 280.78291814946823,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s2",
+      "episode": 18,
+      "return": 290.51094890511183,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "random7_s2",
+      "episode": 19,
+      "return": 269.33797909407934,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": null
+    },
+    {
+      "condition": "search7",
+      "episode": 0,
+      "return": 917.2999999999852,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.003846781120756692,
+        0.03568032297375174,
+        0.06922377835909904
+      ]
+    },
+    {
+      "condition": "search7",
+      "episode": 1,
+      "return": 879.6610169491393,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": [
+        0.011176854239093311,
+        0.018696950963195052,
+        0.011623849922591717
+      ]
+    },
+    {
+      "condition": "search7",
+      "episode": 2,
+      "return": 914.2999999999856,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.013654754599097256,
+        0.007704186667064008,
+        0.020785680875472886
+      ]
+    },
+    {
+      "condition": "search7",
+      "episode": 3,
+      "return": 907.8999999999884,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.02168097431658139,
+        0.12930171481134572,
+        0.08624903034658643
+      ]
+    },
+    {
+      "condition": "search7",
+      "episode": 4,
+      "return": 915.7999999999844,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.01099412552567353,
+        0.036424070775051796,
+        0.049323002821428194
+      ]
+    },
+    {
+      "condition": "search7",
+      "episode": 5,
+      "return": 923.1999999999944,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.004747673639955518,
+        0.005445247985591167,
+        0.0022293972916020872
+      ]
+    },
+    {
+      "condition": "search7",
+      "episode": 6,
+      "return": 896.3898916967427,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": [
+        0.02725632065321132,
+        0.17627518632262265,
+        0.0503051915015438
+      ]
+    },
+    {
+      "condition": "search7",
+      "episode": 7,
+      "return": 791.5662650602293,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": [
+        0.03666360139360999,
+        0.055067438184823556,
+        0.030417967651677875
+      ]
+    },
+    {
+      "condition": "search7",
+      "episode": 8,
+      "return": 878.494623655902,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": [
+        0.035486247808972915,
+        0.03925911510795846,
+        0.020120534635854417
+      ]
+    },
+    {
+      "condition": "search7",
+      "episode": 9,
+      "return": 909.9999999999868,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.006942531543401938,
+        0.011149346081296283,
+        0.025876235624499606
+      ]
+    },
+    {
+      "condition": "search7",
+      "episode": 10,
+      "return": 912.7999999999832,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.004708990324800562,
+        0.004982593863046367,
+        0.0028360564003879853
+      ]
+    },
+    {
+      "condition": "search7",
+      "episode": 11,
+      "return": 763.7770897832706,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": [
+        0.012074499349350369,
+        0.010225493551272242,
+        0.018437766744080642
+      ]
+    },
+    {
+      "condition": "search7",
+      "episode": 12,
+      "return": 717.2413793103302,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": [
+        0.0742998856799972,
+        0.1460385257917574,
+        0.03261151847219054
+      ]
+    },
+    {
+      "condition": "search7",
+      "episode": 13,
+      "return": 913.3999999999862,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.026470676309876148,
+        0.11001089250912816,
+        0.08302016720408535
+      ]
+    },
+    {
+      "condition": "search7",
+      "episode": 14,
+      "return": 911.5999999999945,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.011353789376276655,
+        0.022944920656372728,
+        0.01265039552257018
+      ]
+    },
+    {
+      "condition": "search7",
+      "episode": 15,
+      "return": 901.6999999999806,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.01455645662077789,
+        0.09209933362617845,
+        0.023000202177634252
+      ]
+    },
+    {
+      "condition": "search7",
+      "episode": 16,
+      "return": 914.0999999999856,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.00906279244534925,
+        0.04649123709261046,
+        0.05883427325104435
+      ]
+    },
+    {
+      "condition": "search7",
+      "episode": 17,
+      "return": 913.7999999999898,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.010701076965025246,
+        0.023476624430232445,
+        0.023299177961111205
+      ]
+    },
+    {
+      "condition": "search7",
+      "episode": 18,
+      "return": 919.8999999999864,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.05410811772535889,
+        0.014062185948372746,
+        0.06025218614585146
+      ]
+    },
+    {
+      "condition": "search7",
+      "episode": 19,
+      "return": 911.099999999988,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.020018015068370455,
+        0.06436118760506288,
+        0.1846097132134209
+      ]
+    },
+    {
+      "condition": "search21",
+      "episode": 0,
+      "return": 924.6999999999856,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.01538320699715026,
+        0.09934304620150494,
+        0.1606992194056285
+      ]
+    },
+    {
+      "condition": "search21",
+      "episode": 1,
+      "return": 914.5999999999884,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.013975431214645728,
+        0.100636098189268,
+        0.10962478216708448
+      ]
+    },
+    {
+      "condition": "search21",
+      "episode": 2,
+      "return": 914.8999999999847,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.013224076488776618,
+        0.07914261351006717,
+        0.017266307816285933
+      ]
+    },
+    {
+      "condition": "search21",
+      "episode": 3,
+      "return": 911.8999999999884,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.046615070468516304,
+        0.14056994949951138,
+        0.12008080067953396
+      ]
+    },
+    {
+      "condition": "search21",
+      "episode": 4,
+      "return": 920.6999999999844,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.02278121195729741,
+        0.14828203719332186,
+        0.061096482019023075
+      ]
+    },
+    {
+      "condition": "search21",
+      "episode": 5,
+      "return": 931.2999999999952,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.006360060778125289,
+        0.007567292481527921,
+        0.01880240229263047
+      ]
+    },
+    {
+      "condition": "search21",
+      "episode": 6,
+      "return": 919.6999999999952,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.028569612684681445,
+        0.09906765829595138,
+        0.0171849063365236
+      ]
+    },
+    {
+      "condition": "search21",
+      "episode": 7,
+      "return": 872.8915662650475,
+      "completion": false,
+      "outcome": "timeout_no_offroad_frames",
+      "selected_step_ego_rmse": [
+        0.012693432507406162,
+        0.02792478245909092,
+        0.030221948194870903
+      ]
+    },
+    {
+      "condition": "search21",
+      "episode": 8,
+      "return": 882.0788530465808,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": [
+        0.02351455763605034,
+        0.017187773383378152,
+        0.0118622419551402
+      ]
+    },
+    {
+      "condition": "search21",
+      "episode": 9,
+      "return": 918.4999999999876,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.008439284230526053,
+        0.027616278364202152,
+        0.059092585118102926
+      ]
+    },
+    {
+      "condition": "search21",
+      "episode": 10,
+      "return": 913.5999999999822,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.02092921450004087,
+        0.22265297632855824,
+        0.0447563265037963
+      ]
+    },
+    {
+      "condition": "search21",
+      "episode": 11,
+      "return": 904.89999999999,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.039871147337249245,
+        0.18177942091677107,
+        0.06765916909500712
+      ]
+    },
+    {
+      "condition": "search21",
+      "episode": 12,
+      "return": 768.9655172413636,
+      "completion": false,
+      "outcome": "timeout_with_offroad_frames",
+      "selected_step_ego_rmse": [
+        0.08016320068217023,
+        0.06549696461729533,
+        0.033899224203016685
+      ]
+    },
+    {
+      "condition": "search21",
+      "episode": 13,
+      "return": 913.6999999999852,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.009878999211797228,
+        0.020973395743298043,
+        0.031220872344154476
+      ]
+    },
+    {
+      "condition": "search21",
+      "episode": 14,
+      "return": 914.5999999999937,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.024519739284489837,
+        0.11350971832150836,
+        0.11829996656446465
+      ]
+    },
+    {
+      "condition": "search21",
+      "episode": 15,
+      "return": 907.1999999999808,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.01988492569183392,
+        0.08453227940528368,
+        0.014709530176982299
+      ]
+    },
+    {
+      "condition": "search21",
+      "episode": 16,
+      "return": 921.1999999999862,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.0030648150487950264,
+        0.0014787384352470138,
+        0.0020644161021693415
+      ]
+    },
+    {
+      "condition": "search21",
+      "episode": 17,
+      "return": 920.39999999999,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.010495937178031604,
+        0.10443441292531018,
+        0.023953421516714424
+      ]
+    },
+    {
+      "condition": "search21",
+      "episode": 18,
+      "return": 926.1999999999864,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.00596372656579903,
+        0.013708039040961078,
+        0.05446180677556808
+      ]
+    },
+    {
+      "condition": "search21",
+      "episode": 19,
+      "return": 916.699999999988,
+      "completion": true,
+      "outcome": "completion",
+      "selected_step_ego_rmse": [
+        0.03067511897421582,
+        0.0828934746900243,
+        0.1537866090585959
+      ]
+    }
+  ],
+  "replay_exact": true,
+  "replay_native_frames": 96,
+  "replay_internal_physics_frames": 26880,
+  "profile_internal_physics_frames": 6720,
+  "profile": [
+    {
+      "candidates": 7,
+      "total_seconds": 0.42192248700000007,
+      "top_cumulative": [
+        {
+          "file": "/home/sasha/Desktop/cars_project/src/cars/planning/policy_search.py",
+          "line": 35,
+          "function": "imagined_observations",
+          "primitive_calls": 57,
+          "calls": 57,
+          "self_seconds": 0.175039983,
+          "cumulative_seconds": 0.300611836
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/src/cars/planning/world.py",
+          "line": 38,
+          "function": "query",
+          "primitive_calls": 360,
+          "calls": 360,
+          "self_seconds": 0.011142893000000001,
+          "cumulative_seconds": 0.083307355
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/stable_baselines3/common/base_class.py",
+          "line": 537,
+          "function": "predict",
+          "primitive_calls": 60,
+          "calls": 60,
+          "self_seconds": 0.00021042900000000001,
+          "cumulative_seconds": 0.060881435000000005
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/sb3_contrib/common/recurrent/policies.py",
+          "line": 367,
+          "function": "predict",
+          "primitive_calls": 60,
+          "calls": 60,
+          "self_seconds": 0.0010013580000000002,
+          "cumulative_seconds": 0.060671006000000006
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/numpy/_core/einsumfunc.py",
+          "line": 1242,
+          "function": "einsum",
+          "primitive_calls": 57,
+          "calls": 57,
+          "self_seconds": 3.3388e-05,
+          "cumulative_seconds": 0.058419067000000005
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method numpy._core._multiarray_umath.c_einsum>",
+          "primitive_calls": 57,
+          "calls": 57,
+          "self_seconds": 0.058385679,
+          "cumulative_seconds": 0.058385679
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/scipy/ndimage/_interpolation.py",
+          "line": 374,
+          "function": "map_coordinates",
+          "primitive_calls": 1080,
+          "calls": 1080,
+          "self_seconds": 0.002738771,
+          "cumulative_seconds": 0.055965570000000006
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method scipy.ndimage._nd_image.geometric_transform>",
+          "primitive_calls": 1080,
+          "calls": 1080,
+          "self_seconds": 0.045045525,
+          "cumulative_seconds": 0.045045525
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/sb3_contrib/common/recurrent/policies.py",
+          "line": 347,
+          "function": "_predict",
+          "primitive_calls": 60,
+          "calls": 60,
+          "self_seconds": 9.179e-05,
+          "cumulative_seconds": 0.042078595
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/sb3_contrib/common/recurrent/policies.py",
+          "line": 259,
+          "function": "get_distribution",
+          "primitive_calls": 60,
+          "calls": 60,
+          "self_seconds": 0.00034521300000000003,
+          "cumulative_seconds": 0.04192415
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py",
+          "line": 1779,
+          "function": "_wrapped_call_impl",
+          "primitive_calls": 240,
+          "calls": 1080,
+          "self_seconds": 0.0007960790000000001,
+          "cumulative_seconds": 0.033468586
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py",
+          "line": 1787,
+          "function": "_call_impl",
+          "primitive_calls": 240,
+          "calls": 1080,
+          "self_seconds": 0.00131236,
+          "cumulative_seconds": 0.033258374
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/stable_baselines3/common/policies.py",
+          "line": 122,
+          "function": "extract_features",
+          "primitive_calls": 60,
+          "calls": 60,
+          "self_seconds": 8.311600000000001e-05,
+          "cumulative_seconds": 0.021667411
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/torch/nn/modules/container.py",
+          "line": 254,
+          "function": "forward",
+          "primitive_calls": 180,
+          "calls": 180,
+          "self_seconds": 0.000555673,
+          "cumulative_seconds": 0.020404791000000002
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/src/cars/research/recurrent.py",
+          "line": 32,
+          "function": "forward",
+          "primitive_calls": 60,
+          "calls": 60,
+          "self_seconds": 0.000619478,
+          "cumulative_seconds": 0.020295363
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+          "line": 66,
+          "function": "_wrapreduction",
+          "primitive_calls": 735,
+          "calls": 735,
+          "self_seconds": 0.0009100870000000001,
+          "cumulative_seconds": 0.015251396
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<method 'reduce' of 'numpy.ufunc' objects>",
+          "primitive_calls": 1287,
+          "calls": 1287,
+          "self_seconds": 0.015113425000000002,
+          "cumulative_seconds": 0.015113425000000002
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+          "line": 2342,
+          "function": "sum",
+          "primitive_calls": 426,
+          "calls": 426,
+          "self_seconds": 0.000391186,
+          "cumulative_seconds": 0.014946057
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/sb3_contrib/common/recurrent/policies.py",
+          "line": 161,
+          "function": "_process_sequence",
+          "primitive_calls": 60,
+          "calls": 60,
+          "self_seconds": 0.000990992,
+          "cumulative_seconds": 0.0115031
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/torch/nn/modules/conv.py",
+          "line": 564,
+          "function": "forward",
+          "primitive_calls": 120,
+          "calls": 120,
+          "self_seconds": 0.000129813,
+          "cumulative_seconds": 0.010681294000000001
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/torch/nn/modules/conv.py",
+          "line": 546,
+          "function": "_conv_forward",
+          "primitive_calls": 120,
+          "calls": 120,
+          "self_seconds": 0.00013201100000000002,
+          "cumulative_seconds": 0.010492244000000001
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method torch.conv2d>",
+          "primitive_calls": 120,
+          "calls": 120,
+          "self_seconds": 0.010360233,
+          "cumulative_seconds": 0.010360233
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+          "line": 48,
+          "function": "_wrapfunc",
+          "primitive_calls": 2973,
+          "calls": 2973,
+          "self_seconds": 0.001908411,
+          "cumulative_seconds": 0.009942708
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/gymnasium/envs/box2d/car_dynamics.py",
+          "line": 151,
+          "function": "gas",
+          "primitive_calls": 1680,
+          "calls": 1680,
+          "self_seconds": 0.002066081,
+          "cumulative_seconds": 0.009727661
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/stable_baselines3/common/policies.py",
+          "line": 203,
+          "function": "set_training_mode",
+          "primitive_calls": 60,
+          "calls": 60,
+          "self_seconds": 5.7529000000000004e-05,
+          "cumulative_seconds": 0.009512712000000001
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py",
+          "line": 2894,
+          "function": "train",
+          "primitive_calls": 60,
+          "calls": 1620,
+          "self_seconds": 0.001815757,
+          "cumulative_seconds": 0.009455183
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/torch/nn/modules/rnn.py",
+          "line": 1081,
+          "function": "forward",
+          "primitive_calls": 60,
+          "calls": 60,
+          "self_seconds": 0.000543208,
+          "cumulative_seconds": 0.009191094
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+          "line": 2245,
+          "function": "clip",
+          "primitive_calls": 1800,
+          "calls": 1800,
+          "self_seconds": 0.0011490250000000001,
+          "cumulative_seconds": 0.008451685
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method torch.lstm>",
+          "primitive_calls": 60,
+          "calls": 60,
+          "self_seconds": 0.007556915000000001,
+          "cumulative_seconds": 0.007556915000000001
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/scipy/ndimage/_ni_support.py",
+          "line": 78,
+          "function": "_get_output",
+          "primitive_calls": 1083,
+          "calls": 1083,
+          "self_seconds": 0.001705972,
+          "cumulative_seconds": 0.006785113000000001
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+          "line": 38,
+          "function": "_wrapit",
+          "primitive_calls": 2274,
+          "calls": 2274,
+          "self_seconds": 0.0024282120000000003,
+          "cumulative_seconds": 0.006723918000000001
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py",
+          "line": 1976,
+          "function": "__setattr__",
+          "primitive_calls": 1620,
+          "calls": 1620,
+          "self_seconds": 0.001989458,
+          "cumulative_seconds": 0.0053065610000000004
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/stable_baselines3/common/policies.py",
+          "line": 684,
+          "function": "_get_action_dist_from_latent",
+          "primitive_calls": 60,
+          "calls": 60,
+          "self_seconds": 0.00016644900000000002,
+          "cumulative_seconds": 0.005046501
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/stable_baselines3/common/policies.py",
+          "line": 236,
+          "function": "obs_to_tensor",
+          "primitive_calls": 60,
+          "calls": 60,
+          "self_seconds": 0.0006494560000000001,
+          "cumulative_seconds": 0.004726956
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method numpy.asarray>",
+          "primitive_calls": 2706,
+          "calls": 2706,
+          "self_seconds": 0.004370442,
+          "cumulative_seconds": 0.004370442
+        }
+      ]
+    },
+    {
+      "candidates": 21,
+      "total_seconds": 1.092823173999999,
+      "top_cumulative": [
+        {
+          "file": "/home/sasha/Desktop/cars_project/src/cars/planning/policy_search.py",
+          "line": 35,
+          "function": "imagined_observations",
+          "primitive_calls": 57,
+          "calls": 57,
+          "self_seconds": 0.506124164,
+          "cumulative_seconds": 0.8752499960000001
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/src/cars/planning/world.py",
+          "line": 38,
+          "function": "query",
+          "primitive_calls": 360,
+          "calls": 360,
+          "self_seconds": 0.022865827000000002,
+          "cumulative_seconds": 0.21374594700000002
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/numpy/_core/einsumfunc.py",
+          "line": 1242,
+          "function": "einsum",
+          "primitive_calls": 57,
+          "calls": 57,
+          "self_seconds": 5.5350000000000004e-05,
+          "cumulative_seconds": 0.17647463900000002
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method numpy._core._multiarray_umath.c_einsum>",
+          "primitive_calls": 57,
+          "calls": 57,
+          "self_seconds": 0.176419289,
+          "cumulative_seconds": 0.176419289
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/scipy/ndimage/_interpolation.py",
+          "line": 374,
+          "function": "map_coordinates",
+          "primitive_calls": 1080,
+          "calls": 1080,
+          "self_seconds": 0.003250872,
+          "cumulative_seconds": 0.148207431
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method scipy.ndimage._nd_image.geometric_transform>",
+          "primitive_calls": 1080,
+          "calls": 1080,
+          "self_seconds": 0.134447021,
+          "cumulative_seconds": 0.134447021
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/stable_baselines3/common/base_class.py",
+          "line": 537,
+          "function": "predict",
+          "primitive_calls": 60,
+          "calls": 60,
+          "self_seconds": 0.000337638,
+          "cumulative_seconds": 0.094574802
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/sb3_contrib/common/recurrent/policies.py",
+          "line": 367,
+          "function": "predict",
+          "primitive_calls": 60,
+          "calls": 60,
+          "self_seconds": 0.001373108,
+          "cumulative_seconds": 0.09423716400000001
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/sb3_contrib/common/recurrent/policies.py",
+          "line": 347,
+          "function": "_predict",
+          "primitive_calls": 60,
+          "calls": 60,
+          "self_seconds": 0.000138245,
+          "cumulative_seconds": 0.07004457900000001
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/sb3_contrib/common/recurrent/policies.py",
+          "line": 259,
+          "function": "get_distribution",
+          "primitive_calls": 60,
+          "calls": 60,
+          "self_seconds": 0.0004908600000000001,
+          "cumulative_seconds": 0.069819752
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py",
+          "line": 1779,
+          "function": "_wrapped_call_impl",
+          "primitive_calls": 240,
+          "calls": 1080,
+          "self_seconds": 0.000972387,
+          "cumulative_seconds": 0.058713145
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py",
+          "line": 1787,
+          "function": "_call_impl",
+          "primitive_calls": 240,
+          "calls": 1080,
+          "self_seconds": 0.00174131,
+          "cumulative_seconds": 0.05845430200000001
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/stable_baselines3/common/policies.py",
+          "line": 122,
+          "function": "extract_features",
+          "primitive_calls": 60,
+          "calls": 60,
+          "self_seconds": 0.0001236,
+          "cumulative_seconds": 0.042167468
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<method 'reduce' of 'numpy.ufunc' objects>",
+          "primitive_calls": 1287,
+          "calls": 1287,
+          "self_seconds": 0.041797015,
+          "cumulative_seconds": 0.041797015
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+          "line": 66,
+          "function": "_wrapreduction",
+          "primitive_calls": 735,
+          "calls": 735,
+          "self_seconds": 0.0011001020000000002,
+          "cumulative_seconds": 0.041786735000000005
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+          "line": 2342,
+          "function": "sum",
+          "primitive_calls": 426,
+          "calls": 426,
+          "self_seconds": 0.00047817700000000004,
+          "cumulative_seconds": 0.041434543000000004
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/src/cars/research/recurrent.py",
+          "line": 32,
+          "function": "forward",
+          "primitive_calls": 60,
+          "calls": 60,
+          "self_seconds": 0.0008752460000000001,
+          "cumulative_seconds": 0.040438138000000005
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/torch/nn/modules/container.py",
+          "line": 254,
+          "function": "forward",
+          "primitive_calls": 180,
+          "calls": 180,
+          "self_seconds": 0.000705902,
+          "cumulative_seconds": 0.037836446
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/gymnasium/envs/box2d/car_dynamics.py",
+          "line": 151,
+          "function": "gas",
+          "primitive_calls": 5040,
+          "calls": 5040,
+          "self_seconds": 0.005778471,
+          "cumulative_seconds": 0.027216929
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+          "line": 48,
+          "function": "_wrapfunc",
+          "primitive_calls": 6333,
+          "calls": 6333,
+          "self_seconds": 0.003972225,
+          "cumulative_seconds": 0.022153202
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+          "line": 2245,
+          "function": "clip",
+          "primitive_calls": 5160,
+          "calls": 5160,
+          "self_seconds": 0.0030373320000000002,
+          "cumulative_seconds": 0.022132648
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/torch/nn/modules/conv.py",
+          "line": 564,
+          "function": "forward",
+          "primitive_calls": 120,
+          "calls": 120,
+          "self_seconds": 0.000185588,
+          "cumulative_seconds": 0.021574213000000002
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/torch/nn/modules/conv.py",
+          "line": 546,
+          "function": "_conv_forward",
+          "primitive_calls": 120,
+          "calls": 120,
+          "self_seconds": 0.00022186000000000002,
+          "cumulative_seconds": 0.021311232000000003
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method torch.conv2d>",
+          "primitive_calls": 120,
+          "calls": 120,
+          "self_seconds": 0.021089372000000002,
+          "cumulative_seconds": 0.021089372000000002
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py",
+          "line": 38,
+          "function": "_wrapit",
+          "primitive_calls": 5634,
+          "calls": 5634,
+          "self_seconds": 0.005453262,
+          "cumulative_seconds": 0.016355404
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/sb3_contrib/common/recurrent/policies.py",
+          "line": 161,
+          "function": "_process_sequence",
+          "primitive_calls": 60,
+          "calls": 60,
+          "self_seconds": 0.001343861,
+          "cumulative_seconds": 0.016266305000000002
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/torch/nn/modules/rnn.py",
+          "line": 1081,
+          "function": "forward",
+          "primitive_calls": 60,
+          "calls": 60,
+          "self_seconds": 0.0007468420000000001,
+          "cumulative_seconds": 0.013279833000000001
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method numpy.asarray>",
+          "primitive_calls": 2832,
+          "calls": 2832,
+          "self_seconds": 0.012038561000000001,
+          "cumulative_seconds": 0.012038561000000001
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method torch.lstm>",
+          "primitive_calls": 60,
+          "calls": 60,
+          "self_seconds": 0.011079222000000001,
+          "cumulative_seconds": 0.011079222000000001
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/stable_baselines3/common/policies.py",
+          "line": 203,
+          "function": "set_training_mode",
+          "primitive_calls": 60,
+          "calls": 60,
+          "self_seconds": 8.2415e-05,
+          "cumulative_seconds": 0.010832340000000001
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py",
+          "line": 2894,
+          "function": "train",
+          "primitive_calls": 60,
+          "calls": 1620,
+          "self_seconds": 0.002188226,
+          "cumulative_seconds": 0.010749925
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/Box2D/Box2D.py",
+          "line": 410,
+          "function": "_list_from_linked_list",
+          "primitive_calls": 20160,
+          "calls": 20160,
+          "self_seconds": 0.0075953620000000005,
+          "cumulative_seconds": 0.010389538
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<method 'clip' of 'numpy.ndarray' objects>",
+          "primitive_calls": 5160,
+          "calls": 5160,
+          "self_seconds": 0.001595852,
+          "cumulative_seconds": 0.009182425000000001
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<method 'append' of 'list' objects>",
+          "primitive_calls": 124536,
+          "calls": 124536,
+          "self_seconds": 0.008896572,
+          "cumulative_seconds": 0.008896572
+        },
+        {
+          "file": "/home/sasha/Desktop/cars_project/.venv/lib/python3.12/site-packages/scipy/ndimage/_ni_support.py",
+          "line": 78,
+          "function": "_get_output",
+          "primitive_calls": 1083,
+          "calls": 1083,
+          "self_seconds": 0.002126287,
+          "cumulative_seconds": 0.008840225
+        }
+      ]
+    }
+  ],
+  "profile_context": "three instrumented train-only cached snapshots; KL-training trial running concurrently; attribution only",
+  "user_only_oracle_values_read": false,
+  "held_out_evaluation": false
+}

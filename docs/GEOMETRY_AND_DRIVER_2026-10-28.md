@@ -3,6 +3,11 @@
 2026-10-28. [Index](../README.md) · [Next moves](NEXT_MOVES.md) ·
 [Previous results](PROGRAMMED_SIMULATOR_RESULTS.md)
 
+**Follow-up complete:** the six-condition frozen-policy comparison, fixed-correction
+controls, renderer verification and a negative KL training trial are reported in
+[FROZEN_POLICY_RESULTS_2026-10-28.md](FROZEN_POLICY_RESULTS_2026-10-28.md).
+The sections below preserve the preceding geometry/first-driver evidence.
+
 ## Completed geometry diagnostic
 
 The same programmed-physics search now has an explicitly privileged full-map
@@ -139,7 +144,7 @@ The primary evidence is the [checkpoint table](../reports/driver_first_block_202
 [cost/provenance report](../reports/driver_first_block_2026-10-28/analysis.json), and
 [health review](../reports/driver_first_block_2026-10-28/health_review.json).
 
-## Frozen-policy search integration — implemented, not yet a racing result
+## Frozen-policy search integration — pre-race verification
 
 `planning/policy_search.py` proposes three-knot smooth residuals around a frozen
 recurrent policy's feedback behavior. Candidate zero is the unchanged policy.
@@ -168,7 +173,7 @@ for seven candidates and 401–436 ms for 21, costing another 320 native and 6,7
 internal frames. Ordinary system load is uncontrolled. These few samples are not
 latency quantiles; both budgets already exceed the 80 ms target.
 
-## Frozen-checkpoint racing comparison — launched
+## Frozen-checkpoint racing comparison — completed follow-up
 
 The [six-condition manifest](../configs/campaigns/frozen-driver-2026-10-28.json)
 was saved before racing. It freezes the selected 1M weights, local protocol,
@@ -187,9 +192,11 @@ conditional track uncertainty, not an estimated population of planning seeds.
 
 Run state is `runs/campaigns/frozen_driver_20261028/status.json`; the runner writes
 each condition's immutable artifacts and automatically summarizes all six once
-complete. No complete comparison result is available at this documentation
-checkpoint. This run measures unrestricted offline driving quality, with no
-deadline fallback. It cannot establish a gain over a final strong/SOTA policy.
+complete. It is now complete: direct 863.55/40%, seven-candidate search 885.70/70%,
+and 21-candidate search 905.94/85% on the same 20 tracks. Full controls, uncertainty,
+costs and follow-ups are in the linked report. This run measures unrestricted
+offline driving quality, with no deadline fallback. It cannot establish a gain
+over a final strong/SOTA policy.
 The direct condition exactly reproduced all 20 earlier checkpoint-screening
 traces: actions, rewards, frame counts, endings and all allowed observations
 (180 array checks, no additional environment frames). Verification is recorded

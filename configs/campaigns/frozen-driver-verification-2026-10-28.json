@@ -1,0 +1,20 @@
+{
+  "id": "frozen_driver_verification_20261028",
+  "partition": "development",
+  "campaign": "runs/campaigns/frozen_driver_20261028",
+  "source_check": "identical production source hashes across all six completed conditions",
+  "trace_checks": "all public actions, rewards, frame counts and selection diagnostics; no counterfactual oracle values",
+  "replay_conditions": [
+    "search7",
+    "search21"
+  ],
+  "replay_episode": 0,
+  "replay_decisions": 12,
+  "native_frame_cap": 96,
+  "internal_physics_frame_cap": 26880,
+  "user_only_oracle_access": false,
+  "held_out_evaluation": false,
+  "profile": "reuse three train-partition preflight observations; one7 and one21 candidate call per snapshot under cProfile, no new environment frames",
+  "profile_internal_physics_frame_cap": 6720,
+  "profile_interpretation": "instrumented reset-history snapshots, attribution only; not racing latency quantiles"
+}

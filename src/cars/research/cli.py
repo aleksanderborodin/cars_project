@@ -31,7 +31,7 @@ def main(argv: list[str] | None = None) -> None:
     fitting.add_argument("--ridge", type=float, default=.01)
     fitting.add_argument("--run-id", required=True)
     evaluation = commands.add_parser("evaluate")
-    evaluation.add_argument("--method", choices=("local", "fixed", "search", "physics", "physics-global", "expert", "recurrent", "policy-search", "policy-random"), required=True)
+    evaluation.add_argument("--method", choices=("local", "fixed", "search", "physics", "physics-global", "expert", "recurrent", "policy-search", "policy-random", "policy-bias"), required=True)
     evaluation.add_argument("--model", type=Path)
     evaluation.add_argument("--episodes", type=int, default=20)
     evaluation.add_argument("--horizon", type=int, default=20)
@@ -44,6 +44,8 @@ def main(argv: list[str] | None = None) -> None:
     evaluation.add_argument("--steer-sigma", type=float, default=.10)
     evaluation.add_argument("--gas-sigma", type=float, default=.15)
     evaluation.add_argument("--brake-sigma", type=float, default=.15)
+    evaluation.add_argument("--observation-renderer", choices=("reference", "sparse"), default="reference")
+    evaluation.add_argument("--action-bias", type=float, nargs=3)
     evaluation.add_argument("--user-monitor", action="store_true", help="isolated private oracle-ranking report; never read by training or agents")
     evaluation.add_argument("--run-id", required=True)
     training = commands.add_parser("train-recurrent")
@@ -109,12 +111,18 @@ def main(argv: list[str] | None = None) -> None:
                                             speeds=tuple(args.speed_grid) if args.speed_grid else SearchConfig().speeds,
                                             steering_gains=tuple(args.gain_grid) if args.gain_grid else SearchConfig().steering_gains),
                                         model_artifact=args.model)
+            elif args.method == "policy-bias":
+                from cars.planning.policy_controls import FixedPolicyBias
+                if args.action_bias is None:
+                    parser.error("policy-bias requires --action-bias STEER GAS BRAKE")
+                driver = FixedPolicyBias(args.model, tuple(args.action_bias))
             elif args.method in ("policy-search", "policy-random"):
                 from cars.planning.policy_search import PolicyPhysicsSearch, PolicySearchConfig, RandomPolicyVariation
                 driver_class = PolicyPhysicsSearch if args.method == "policy-search" else RandomPolicyVariation
                 driver = driver_class(args.model, protocol, PolicySearchConfig(candidates=args.candidates,
                     horizon=args.horizon, planning_seed=args.planning_seed, steer_sigma=args.steer_sigma,
-                    gas_sigma=args.gas_sigma, brake_sigma=args.brake_sigma))
+                    gas_sigma=args.gas_sigma, brake_sigma=args.brake_sigma,
+                    observation_renderer=args.observation_renderer))
             else:
                 from cars.research.recurrent import RecurrentDriver
                 driver = RecurrentDriver(args.model)

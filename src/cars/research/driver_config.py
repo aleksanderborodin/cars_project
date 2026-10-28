@@ -1,6 +1,7 @@
 """Resolved recurrent-driver training choices and a native-frame learning schedule."""
 from dataclasses import asdict, dataclass
 import json
+import math
 
 
 @dataclass(frozen=True)
@@ -28,6 +29,7 @@ class DriverTrainingConfig:
     features_dim: int = 128
     log_std_init: float = -2.
     reward_clip: float = 10.
+    target_kl: float | None = None
 
     def __post_init__(self) -> None:
         if min(self.workers, self.torch_threads, self.total_native_frames, self.n_steps, self.batch_size, self.n_epochs) < 1:
@@ -40,6 +42,8 @@ class DriverTrainingConfig:
             raise ValueError("Invalid discount/schedule")
         if any(not 0 < frame <= self.total_native_frames for frame in self.checkpoints):
             raise ValueError("Checkpoint outside declared budget")
+        if self.target_kl is not None and (not math.isfinite(self.target_kl) or self.target_kl <= 0):
+            raise ValueError("target_kl must be finite and positive, or None")
 
     def resolved(self) -> dict:
         return json.loads(json.dumps(asdict(self)))

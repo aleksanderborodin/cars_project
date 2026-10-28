@@ -1,0 +1,72 @@
+{
+  "created_utc": "2026-10-28T20:04:45.808965+00:00",
+  "scope": "User-requested interim preview on common completed prefix; not completed 200-track campaign",
+  "campaign_manifest_sha256": "6b016e231bdd902ac793ba8509621d84bcf800d71bfcd8932f2c553b1061a515",
+  "summary": [
+    {
+      "condition": "direct",
+      "common_completed_tracks": 188,
+      "mean_return": 865.3249976029427,
+      "completion": 0.35638297872340424,
+      "completed_laps": 67,
+      "mean_offroad_frames": 22.99468085106383
+    },
+    {
+      "condition": "mean7",
+      "common_completed_tracks": 188,
+      "mean_return": 869.0033109249348,
+      "completion": 0.39361702127659576,
+      "completed_laps": 74,
+      "mean_offroad_frames": 22.46808510638298
+    },
+    {
+      "condition": "search7",
+      "common_completed_tracks": 188,
+      "mean_return": 873.2428351642277,
+      "completion": 0.5797872340425532,
+      "completed_laps": 109,
+      "mean_offroad_frames": 4.223404255319149
+    },
+    {
+      "condition": "search21",
+      "common_completed_tracks": 188,
+      "mean_return": 884.4651122456503,
+      "completion": 0.723404255319149,
+      "completed_laps": 136,
+      "mean_offroad_frames": 2.8404255319148937
+    }
+  ],
+  "inputs": [
+    {
+      "condition": "direct",
+      "run": "runs/recurrent_ppo/broad_driver_20261028_direct",
+      "config_sha256": "7c37bd8e4f4e4c9df6905a3d6ec30ddc83a21c8e34669eff1aed1349d4f26ec7",
+      "normalized_metrics_prefix_sha256": "ee7341ef0fa68abe8ce704d2130b2fe79ff0050d51ccbc7307dac4608149198e",
+      "prefix_rows": 188
+    },
+    {
+      "condition": "mean7",
+      "run": "runs/policy_bias/broad_driver_20261028_mean7",
+      "config_sha256": "0cb91159f98157ed39f2be38f8c36c52e7296c5c3c3382dd09652c8060252639",
+      "normalized_metrics_prefix_sha256": "5570788098a7b7b4c391ffb9f70d62939d019fbca95c8b6dda92936350fa3d13",
+      "prefix_rows": 188
+    },
+    {
+      "condition": "search7",
+      "run": "runs/policy_physics_search/broad_driver_20261028_search7",
+      "config_sha256": "9e539ac311872a8d6214b8504697a807ddf9c285a808541765da32cac4735967",
+      "normalized_metrics_prefix_sha256": "50d24e9ad2e0ca06765796456eda144296a9358a10dd55e09128df56fac93754",
+      "prefix_rows": 188
+    },
+    {
+      "condition": "search21",
+      "run": "runs/policy_physics_search/broad_driver_20261028_search21",
+      "config_sha256": "96c31dd67dfaa0d1785bb3b11452151eef3d2d3ce05627fd8dd3b3d35625f050",
+      "normalized_metrics_prefix_sha256": "709d4aa93b78f6fd1201c780b7bc737a63d5fccde5b885c96e79a5801a29359f",
+      "prefix_rows": 188
+    }
+  ],
+  "method_changes_from_preview": false,
+  "held_out_evaluation": false,
+  "user_only_oracle_values_read": false
+}

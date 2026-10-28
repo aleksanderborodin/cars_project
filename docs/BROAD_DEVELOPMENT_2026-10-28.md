@@ -133,3 +133,8 @@ See the [completed-condition snapshot](../reports/broad_driver_completed_2026-10
 for the table, all panels, costs, attribution checks and additional descriptive
 contrasts. Search 21 remains excluded until it finishes. This requested interim
 inspection does not change methods, the ongoing run, or the queued baseline probe.
+
+A subsequent user-requested [188-track common-prefix preview](../reports/broad_driver_preview_2026-10-28_2004/README.md)
+includes the still-running search-21 condition: 884.47 return and 72.3% completion
+versus direct 865.32/35.6% on those same 188 tracks. This is explicitly an interim
+descriptive panel, not the completed 200-track result or a trigger for method changes.

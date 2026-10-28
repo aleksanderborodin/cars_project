@@ -130,11 +130,20 @@ class PolicyPhysicsSearch(FrozenProposals):
                 "actor_memory": "independent imagined branches; real memory advances only on actual observations"}
 
     def act(self, observation: Observation) -> np.ndarray:
+        path = extend(centreline(observation, self.protocol))
+        world = LocalRoadWorld(observation, self.protocol, path, self.config.half_width_prior)
+        return self._search(observation, world, path)
+
+    def _search(self, observation: Observation, world: LocalRoadWorld,
+                path: np.ndarray) -> np.ndarray:
+        """Search with separate road and objective-path inputs.
+
+        The local default shares one path. Explicit privileged interventions may
+        replace the objective path without changing the world's road prior.
+        """
         base, residuals = self._propose(observation)
         count, horizon = self.config.candidates, self.config.horizon
         first = self._actions(base, residuals[:, 0])
-        path = extend(centreline(observation, self.protocol))
-        world = LocalRoadWorld(observation, self.protocol, path, self.config.half_width_prior)
         self.model.begin(observation, world, count)
         pose = np.zeros((count, 3))
         ego = np.repeat(observation["ego"][None], count, axis=0)
@@ -162,7 +171,11 @@ class PolicyPhysicsSearch(FrozenProposals):
             distances = np.sum((pose[:, None, :2] - path[None])**2, axis=-1)
             nearest = np.argmin(distances, axis=1)
             centre_distance = np.sqrt(distances[np.arange(count), nearest])
-            road_query = world.query(pose[:, :2], centre_distance=centre_distance)
+            # A scoring-path intervention must not silently change tire contact
+            # or road margins. Distances supplied to the world refer to ITS path.
+            road_distance = (centre_distance if path is world.path
+                             else self.model.tree.query(pose[:, :2])[0])
+            road_query = world.query(pose[:, :2], centre_distance=road_distance)
             total += self.config.departure_cost * np.maximum(1.5 - road_query.margin, 0)**2
             total += self.config.centre_cost * centre_distance**2
             total += self.config.unknown_cost * (~road_query.visible)

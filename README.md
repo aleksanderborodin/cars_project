@@ -29,6 +29,7 @@ register separates user ideas, assistant refinements, prior work and measured ev
 | Document | Read it for |
 |---|---|
 | [Paper blueprint](docs/PAPER_BLUEPRINT.md) | Central three-stage study, all project ideas with origin/status, validity checks, novelty and execution gates |
+| [Controlled intervention study](docs/INTERVENTION_STUDY.md) | Executable four-cell geometry diagnostic, isolation tests, pilot budget and staged V/L/F training design |
 | [Completed broad results](docs/BROAD_RESULTS_2026-10-29.md) | Full 200-track comparison and failed lower-learning-rate probe; both campaigns finished |
 | [User intent](docs/USER_INTENT.md) | User decisions, main system, paper goal, expert experiment, and future evolution option |
 | [Task-useful simulator](docs/DECISION_USEFUL_SIMULATOR.md) | Future independent/approximate simulator, downstream adaptation, GPU and agentic options; realism optional |

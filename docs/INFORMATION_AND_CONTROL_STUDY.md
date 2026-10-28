@@ -13,6 +13,11 @@ The [paper blueprint](PAPER_BLUEPRINT.md) now consolidates the user's expanded
 three-stage formulation, oracle-current/oracle-future training, assistant validity
 refinements and prior art. This document retains the full-map sub-study details.
 
+**2026-10-29 execution update:** the user has asked to proceed. A separate
+[fixed-controller four-cell pilot](INTERVENTION_STUDY.md) is implemented and
+declared. It does not train a global policy or fill the learned local/full-map
+matrix described below; those requirements remain future work.
+
 ## User's idea and purpose
 
 User proposal, paraphrased: compare methods when the road is fully known, so the

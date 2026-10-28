@@ -27,3 +27,7 @@ packages = ["src/cars"]
 
 [dependency-groups]
 dev = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+norecursedirs = ["runs", "private_diagnostics", ".git", ".venv"]

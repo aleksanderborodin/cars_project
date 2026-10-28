@@ -31,7 +31,7 @@ def main(argv: list[str] | None = None) -> None:
     fitting.add_argument("--ridge", type=float, default=.01)
     fitting.add_argument("--run-id", required=True)
     evaluation = commands.add_parser("evaluate")
-    evaluation.add_argument("--method", choices=("local", "fixed", "search", "physics", "physics-global", "expert", "recurrent", "policy-search", "policy-random", "policy-bias"), required=True)
+    evaluation.add_argument("--method", choices=("local", "fixed", "search", "physics", "physics-global", "expert", "recurrent", "policy-search", "policy-random", "policy-bias", "policy-intervention"), required=True)
     evaluation.add_argument("--model", type=Path)
     evaluation.add_argument("--episodes", type=int, default=20)
     evaluation.add_argument("--horizon", type=int, default=20)
@@ -46,6 +46,10 @@ def main(argv: list[str] | None = None) -> None:
     evaluation.add_argument("--brake-sigma", type=float, default=.15)
     evaluation.add_argument("--observation-renderer", choices=("reference", "sparse"), default="reference")
     evaluation.add_argument("--action-bias", type=float, nargs=3)
+    evaluation.add_argument("--reference", choices=("reconstructed", "oracle_visible"), default="reconstructed",
+                            help="privileged module diagnostic only: objective reference")
+    evaluation.add_argument("--continuation", choices=("prior", "oracle"), default="prior",
+                            help="privileged module diagnostic only: road outside sensor footprint")
     evaluation.add_argument("--user-monitor", action="store_true", help="isolated private oracle-ranking report; never read by training or agents")
     evaluation.add_argument("--run-id", required=True)
     training = commands.add_parser("train-recurrent")
@@ -85,6 +89,8 @@ def main(argv: list[str] | None = None) -> None:
         print(train_driver(args.run_id, config, stop_at=args.stop_at,
                            protocol=ProtocolConfig(view=args.view), resume=args.resume))
     elif args.command == "evaluate":
+        if args.method != "policy-intervention" and (args.reference != "reconstructed" or args.continuation != "prior"):
+            parser.error("Geometry interventions require --method policy-intervention")
         protocol = ProtocolConfig()
         if args.method == "local":
             driver = LocalPursuit(protocol)
@@ -116,13 +122,23 @@ def main(argv: list[str] | None = None) -> None:
                 if args.action_bias is None:
                     parser.error("policy-bias requires --action-bias STEER GAS BRAKE")
                 driver = FixedPolicyBias(args.model, tuple(args.action_bias))
-            elif args.method in ("policy-search", "policy-random"):
+            elif args.method in ("policy-search", "policy-random", "policy-intervention"):
                 from cars.planning.policy_search import PolicyPhysicsSearch, PolicySearchConfig, RandomPolicyVariation
-                driver_class = PolicyPhysicsSearch if args.method == "policy-search" else RandomPolicyVariation
-                driver = driver_class(args.model, protocol, PolicySearchConfig(candidates=args.candidates,
+                search = PolicySearchConfig(candidates=args.candidates,
                     horizon=args.horizon, planning_seed=args.planning_seed, steer_sigma=args.steer_sigma,
                     gas_sigma=args.gas_sigma, brake_sigma=args.brake_sigma,
-                    observation_renderer=args.observation_renderer))
+                    observation_renderer=args.observation_renderer)
+                if args.method == "policy-intervention":
+                    from dataclasses import replace
+                    from cars.planning.intervention import InterventionConfig, PolicyGeometryIntervention
+                    if protocol.view != "local":
+                        parser.error("Geometry diagnostic requires a local actor checkpoint")
+                    protocol = replace(protocol, view="global")
+                    driver = PolicyGeometryIntervention(args.model, protocol, search,
+                        InterventionConfig(reference=args.reference, continuation=args.continuation))
+                else:
+                    driver_class = PolicyPhysicsSearch if args.method == "policy-search" else RandomPolicyVariation
+                    driver = driver_class(args.model, protocol, search)
             else:
                 from cars.research.recurrent import RecurrentDriver
                 driver = RecurrentDriver(args.model)

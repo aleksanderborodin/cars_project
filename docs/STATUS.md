@@ -24,6 +24,12 @@ not adopted. The [paper blueprint](PAPER_BLUEPRINT.md) now consolidates the prop
 three-stage intervention study and explicitly attributed ideas. No trained visual/
 full-map diagnostic matrix, GPU backend or agentic evolution has been implemented.
 
+**Current work:** [controlled geometry interventions](INTERVENTION_STUDY.md) are
+implemented: independent visible-reference and hidden-road substitutions around
+the same frozen local actor, with unchanged objective weights/visibility penalty.
+The five-track/four-cell development pilot is declared; its result is pending.
+The actor receives only its original local fields. Global training stays sealed.
+
 ## Implemented
 
 | Component | Actual capability | Remaining limitation |
@@ -37,6 +43,7 @@ full-map diagnostic matrix, GPU backend or agentic evolution has been implemente
 | research/data.py | Partition-checked collection, model fitting and development diagnostics | No large offline corpus, calibrated predictor or modern pretrained model |
 | research/recurrent.py | Local/native CNN-LSTM PPO adapter; recurrent reload; training-state continuation with fresh episodes | 100k pilot did not learn useful driving; strong reproduction remains open |
 | planning/global_search.py | Explicit full-map geometry diagnostic with unchanged estimated vehicle state | Also changes centerline reconstruction; privileged, not equal-input superiority |
+| planning/intervention.py, visible_reference.py | Separate visible objective-reference and hidden-road substitutions; exact local negative control; actor input/memory isolation tests | Privileged fixed-controller geometry diagnostic; not trained V/L/F policies or a visual-perception finding |
 | research/driver_training.py and driver_* | Configured PPO, deterministic pooling, reward normalization, post-update checkpoints, native-frame schedule, CPU/GPU profiles | Local adaptation; original 1M checkpoint retained; KL-stop and lower-LR repairs failed to improve it; convergence/competitive baseline not established |
 | planning/policy_search.py | Frozen recurrent feedback proposals, smooth residuals, isolated imagined memory, coded simulation selection and random control | Search 7/21 gains on 200 development tracks for one frozen checkpoint; high cost, no multi-seed evidence |
 | planning/occupancy.py, policy_controls.py | Equivalent sparse occupancy renderer and frozen-policy fixed offsets | Sampled exact renderer parity; three fitted offset controls do not establish all cheap alternatives are inferior |
@@ -169,7 +176,8 @@ No final-test identities/results or legacy unseen/hard results were inspected.
   implemented. Realism is not an acceptance criterion for that proposed variant.
 - Agentic evolution is future work; archived Rust/evolution tooling stays archived.
 
-The latest completed full suite passed **80 tests** (three upstream SWIG deprecation warnings).
+The latest completed full suite passed **84 tests** (three upstream SWIG deprecation warnings).
+Pytest discovery is now restricted to active `tests/`, excluding saved run snapshots.
 The original cleanup had 47 retained tests. New coverage includes partition sealing,
 local isolation, protocol equivalence, fit/reload, continuation, paired statistics
 and synthetic ranking logic. Documentation links, CLI discovery and the dependency

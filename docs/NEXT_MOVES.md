@@ -20,6 +20,12 @@ diagnostic study, source attribution and validity requirements. See the
 [execution report](BROAD_RESULTS_2026-10-29.md); the original decisions below
 remain recorded as the pre-execution plan.
 
+**Latest user steering:** execute the intervention study. The immediate bounded
+task is the [four-cell fixed-controller geometry pilot](INTERVENTION_STUDY.md),
+separating visible-reference reconstruction from hidden-road access. This brings
+the controlled diagnostic forward; the optimizer audit and baseline competence
+work remain necessary. No new oracle-policy training or test evaluation is enabled.
+
 ## Objective and present evidence
 
 The core question is whether simulation-based selection improves an already

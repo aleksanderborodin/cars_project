@@ -4,7 +4,7 @@ Updated 2026-10-29. [Index](../README.md) · [Experiment contract](EXPERIMENT.md
 [Evidence status](STATUS.md) · [Attributed chronology](RESEARCH_LOG.md)
 
 This is the consolidated home for the paper idea and the ideas recorded in this
-conversation, USER_INTENT and research-log R1–R41. It connects them to one study;
+conversation, USER_INTENT and research-log R1–R42. It connects them to one study;
 it does not activate every extension. The experiment contract still governs
 access and evaluation. Existing numerical defaults are development choices.
 Historical results retain their original protocol, and archived plans stay archived.
@@ -240,6 +240,7 @@ assistant are recorded separately below and in the linked documents.
 | U24 | Work autonomously toward a serious paper on this workstation, entirely in Gym simulation initially | Current authorization/scope; no promise of SOTA, acceptance or real-world transfer |
 | U25 | If target internals are unavailable, construct a useful model elsewhere and validate the resulting driving | Future model-independence motivation; target benchmark remains CarRacing; no second benchmark is silently introduced |
 | U26 | Frame the motivation as testing candidate movements instead of learning every control choice | Retained motivation; current actor training and finite search constrain the eventual title/claims |
+| U27 | Execute the intervention study after reviewing the design | Active; bounded fixed-controller geometry pilot first, followed by the declared staged design |
 
 ## Assistant refinements and implementation choices
 
@@ -261,6 +262,7 @@ recommendations or engineering choices, not retrospectively user requirements.
 | A11 | Keep the core diagnostic paper focused; add one task-useful-model extension only if it supports that core | Recommended scope control; no automatic GPU/evolution expansion |
 | A12 | Judge novelty against privileged-input driving, policy-guided planning and decision-relevant modeling | Updated assessment below; no unsupported originality claim |
 | A13 | Add a predicted-future intermediate P when making explicit forecasting claims | Proposed matched-interface L/P/F comparison; oracle improvement alone does not identify forecasting error |
+| A14 | Independently switch visible objective-reference and hidden-road geometry before new oracle-policy training | Implemented and tested; [five-track pilot](INTERVENTION_STUDY.md) pending; explicit privileged supervision, no visual/RL-causality claim |
 
 ## Prior work and novelty assessment
 
@@ -297,6 +299,11 @@ No numerical acceptance probability is justified.
 ## Execution order and decision gates
 
 **Assistant recommendation, not a new run declaration:**
+
+**Execution update:** following U27, the [controlled intervention pilot](INTERVENTION_STUDY.md)
+brings a bounded part of step 3 forward. Its four-cell geometry substitution is
+now executable; the full V/L/F training interfaces, strong baselines and established
+optimizer remain required. The manifest, not this historical list, declares its run.
 
 1. Preserve the completed broad comparison and failed baseline probe. Review
    baseline implementation, optimization and original-protocol reproduction;

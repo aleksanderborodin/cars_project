@@ -1,6 +1,6 @@
 # Roadmap and decision gates
 
-Updated 2026-10-28. [Index](../README.md) · [User intent](USER_INTENT.md) ·
+Updated 2026-10-29. [Index](../README.md) · [User intent](USER_INTENT.md) ·
 [Status](STATUS.md) · [Proposed numerical settings](DESIGN_DECISIONS.md)
 
 The main project is a working modular prediction → internal simulation/search →
@@ -19,6 +19,12 @@ identities and results sealed until the frozen final campaign.
 Use [RUN_READINESS.md](RUN_READINESS.md) for the two freezes, data/provenance
 requirements, pilot gates and consequences of later protocol changes. No new
 paper collection or expensive training starts before the infrastructure gates.
+
+**Current execution:** the user requested the intervention study. The first
+[four-cell module pilot](INTERVENTION_STUDY.md) now separates visible-reference
+reconstruction and hidden-road information with a fixed actor/model/budget.
+It precedes new oracle-informed policy training and does not satisfy the strong
+baseline, established-optimizer or final-test gates below.
 
 | Order | Deliverable | Evidence / gate |
 |---|---|---|

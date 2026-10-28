@@ -15,6 +15,11 @@ perception/forecasting/action-selection study, attributed ideas, critiques and
 comparison design. It proposes oracle-current and oracle-future training regimes;
 these are not implemented or authorized to bypass existing information boundaries.
 Read [USER_INTENT.md](USER_INTENT.md) for the user's decisions and paper goal.
+The user has now requested execution of the intervention study. The first
+[controlled geometry pilot](INTERVENTION_STUDY.md) separates visible-reference
+reconstruction from hidden-road information around the same frozen local actor.
+It uses the existing privileged development adapter; oracle-informed policy
+training, visual policies and the full V/L/F matrix remain unimplemented.
 [RESEARCH_PLAN.md](RESEARCH_PLAN.md) details the geometry branch;
 [PREDICTION_SELECTION.md](PREDICTION_SELECTION.md) reviews optional predictor
 spaces and downstream model selection. Proposed numerical defaults,

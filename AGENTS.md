@@ -74,6 +74,10 @@ policy history into real recurrent memory or update normalization from evaluatio
 reference behavior and inspect declared parity evidence before changing defaults.
 The future local/full-map learned/search matrix is documented in
 `docs/INFORMATION_AND_CONTROL_STUDY.md`; global training is not implemented or launched.
+`planning/intervention.py` and `visible_reference.py` implement the explicitly
+privileged four-cell fixed-controller geometry study in `docs/INTERVENTION_STUDY.md`.
+Keep objective-path and road-world switches independent, actor inputs local, and
+outside-footprint penalties fixed. This does not enable global-policy training.
 
 ## Rules
 

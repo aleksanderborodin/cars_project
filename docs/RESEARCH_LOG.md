@@ -805,3 +805,34 @@ Earlier project intentions remain in USER_INTENT.md; this log extends that recor
   empirical paper; unestablished algorithmic novelty/SOTA or acceptance probability.
 - **Record:** primary citations and claim-specific distinctions in
   [the blueprint](PAPER_BLUEPRINT.md#prior-work-and-novelty-assessment) and REFERENCES.
+
+## R42 — Execute independent module interventions before new oracle-policy training
+
+- **User origin:** proceed with the best practical intervention design and execute it.
+- **Assistant design:** a fixed-controller 2×2 study independently replaces the
+  objective's visible reference and the road model's hidden continuation. The
+  previous global diagnostic changed both at once, so it could not attribute gains.
+- **Implementation:** the same frozen recurrent actor receives only local inputs;
+  oracle fields terminate at the explicit development adapter. Vehicle observer,
+  candidate generation, horizon, weights and outside-footprint penalty stay fixed.
+  A reference change cannot leak into road contact/margins or its prior.
+- **Interpretation:** true visible directed centreline adds privileged geometric
+  labels; it diagnoses reconstruction/objective sensitivity, not neural visual
+  perception. Oracle-derived hidden road remains rasterized. No complete vehicle
+  state, universal optimality, or exact three-way RL error attribution is claimed.
+- **Sanity checks:** exact negative-control action/cost/memory parity; root
+  observation invariance; separate positive effects of both switches; hidden
+  detour invariance and missing-reference fallback. Full previous-episode replay
+  gates the nonbaseline cells. No private candidate oracle is read or used.
+- **Bounded pilot:** five existing development tracks × four cells, seven
+  candidates × 20 decisions, seed 0, at most 20k native and 2.8M internal physics
+  frames, zero new experiment training. All results reported, no significance or
+  favorable-outcome expansion. Numerical settings/order are assistant choices.
+- **Infrastructure finding:** unrestricted pytest discovery found duplicate tests
+  in saved source snapshots. Discovery now targets only active `tests/` and
+  excludes run/private directories; old artifacts remain unchanged.
+- **Next:** review coverage and complete pilot outcomes, then a separately declared
+  larger comparison and V/L/F training interfaces with competence/distribution
+  controls. Baseline validation and established planning comparisons remain open.
+- **Record:** [intervention design](INTERVENTION_STUDY.md) and
+  [frozen declaration](../configs/campaigns/intervention-pilot-2026-10-29.json).

@@ -282,3 +282,10 @@ and keep iterating toward the data needed for the paper without routine question
 Document assistant decisions, uncertainty, rationale and ideas for later discussion.
 This is ongoing development authorization, not evidence that a SOTA outcome is
 achievable or that final-test/private-oracle restrictions have been lifted.
+
+**User instruction, 2026-10-29 (paraphrase):** carry out the intervention study
+with the strongest practical design and proceed. The assistant's first concrete
+implementation is the [four-cell geometry pilot](INTERVENTION_STUDY.md), separating
+visible-reference and hidden-road substitutions before new V/L/F policy training.
+Those exact switches, sample sizes and execution order are assistant choices,
+not additional user-origin ideas. Idea origin stays distinct from validation status.

@@ -88,3 +88,58 @@ def test_imagined_sensor_has_same_root_footprint_and_only_permitted_fields():
     assert set(imagined) == set(observation)
     for key in observation:
         np.testing.assert_array_equal(imagined[key][0], observation[key])
+
+
+def test_intervention_negative_control_exactly_matches_local_search(actor):
+    from cars.planning.intervention import LOCAL_FIELDS, PolicyGeometryIntervention
+    local_protocol, full_protocol = ProtocolConfig(), ProtocolConfig(view="global")
+    search = PolicySearchConfig(candidates=3, horizon=4, observation_renderer="sparse")
+    reference = PolicyPhysicsSearch(actor, local_protocol, search)
+    diagnostic = PolicyGeometryIntervention(actor, full_protocol, search)
+    env = DrivingEnv(full_protocol, "development")
+    try:
+        obs, _ = env.reset()
+        for _ in range(3):
+            local = {key: obs[key] for key in LOCAL_FIELDS}
+            expected, actual = reference.act(local), diagnostic.act(obs)
+            np.testing.assert_array_equal(actual, expected)
+            np.testing.assert_array_equal(reference.candidate_costs, diagnostic.candidate_costs)
+            np.testing.assert_array_equal(reference.candidate_actions, diagnostic.candidate_actions)
+            for a, b in zip(reference.actor.memory, diagnostic.actor.memory, strict=True):
+                np.testing.assert_array_equal(a, b)
+            obs, _, _, _, _ = env.step(actual)
+        with pytest.raises(ValueError, match="global diagnostic"):
+            PolicyGeometryIntervention(actor, local_protocol, search)
+    finally:
+        reference.reset()
+        diagnostic.reset()
+        env.close()
+
+
+def test_all_interventions_keep_actor_local_and_real_memory_unimagined(actor, monkeypatch):
+    from itertools import product
+    from cars.planning.intervention import InterventionConfig, LOCAL_FIELDS, PolicyGeometryIntervention
+    protocol = ProtocolConfig(view="global")
+    env = DrivingEnv(protocol, "development")
+    try:
+        obs, _ = env.reset()
+        for reference, continuation in product(("reconstructed", "oracle_visible"), ("prior", "oracle")):
+            base = RecurrentDriver(actor)
+            policy = PolicyGeometryIntervention(actor, protocol,
+                PolicySearchConfig(candidates=1, horizon=3), InterventionConfig(reference, continuation))
+            predict = policy.actor.model.predict
+
+            def checked(inputs, *args, **kwargs):
+                assert set(inputs) == LOCAL_FIELDS
+                return predict(inputs, *args, **kwargs)
+
+            monkeypatch.setattr(policy.actor.model, "predict", checked)
+            expected = base.act({key: obs[key] for key in LOCAL_FIELDS})
+            np.testing.assert_array_equal(policy.act(obs), expected)
+            for a, b in zip(base.memory, policy.actor.memory, strict=True):
+                np.testing.assert_array_equal(a, b)
+            assert policy.diagnostics["internal_physics_frames"] == 12
+            assert not policy.configuration()["oracle_vehicle_state_access"]
+            policy.reset()
+    finally:
+        env.close()

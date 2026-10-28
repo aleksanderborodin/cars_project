@@ -214,6 +214,12 @@ matching population size alone is not compute matching. Select resolved optimize
 settings on development, label adaptations, and report return-versus-runtime curves.
 Established optimizer changes are not claimed as our novel algorithm.
 
+If the paper specifically claims that explicit multi-step simulation is better
+than direct candidate scoring, add that scoring control with separately declared
+training data and cost. It is a comparison, not the primary selector; it cannot
+use the user's private rank/regret outputs. Do not make that stronger attribution
+claim from standalone-policy versus search alone.
+
 Maintain two performance views: unrestricted offline score and a declared latency
 budget. An 80 ms target is useful, but p95 alone is not a hard real-time guarantee.
 If claiming deadline-respecting control, define fallback-to-base behavior before
@@ -238,6 +244,13 @@ Measure improvement across fixed earlier training checkpoints as a secondary
 analysis: does search help only weak drivers, or also the best one? Select
 milestones before evaluating search benefits; do not retrospectively rename a
 favorable checkpoint "strong". Reuse saved weights rather than retraining them.
+
+A claim of general improvement across policy families needs a second competent
+actor family, initially SAC as a practical candidate, with a separate profiled
+training manifest. It must learn successfully under the same input contract.
+If only recurrent PPO is studied, limit the claim to that tested family rather
+than implying that improving several checkpoints proves universal applicability.
+The three-seed budget above covers the first family only.
 
 For the same frozen checkpoint with/without search, estimate paired effects by
 resampling checkpoint identities jointly and common tracks jointly. Extend our

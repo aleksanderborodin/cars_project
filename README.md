@@ -25,6 +25,7 @@ advantage or SOTA result**.
 | [Programmed simulator and search](docs/SIMULATOR_SEARCH_PLAN.md) | Active architecture, same-proposer comparisons, execution stages and uncertain choices |
 | [Programmed simulator results](docs/PROGRAMMED_SIMULATOR_RESULTS.md) | Completed physics comparisons, reduced-cost search, verification, limitations and next diagnostic |
 | [Next moves](docs/NEXT_MOVES.md) | Active execution order: bounded diagnostic, competent frozen driver, paired search, broader comparisons and final freeze |
+| [Geometry and stronger driver](docs/GEOMETRY_AND_DRIVER_2026-10-28.md) | Completed full-map diagnostic, 2M training review, selected checkpoint and launched policy-search comparison |
 | [Geometry research](docs/RESEARCH_PLAN.md) | Literature, feasibility, and detailed design for the geometry/uncertainty branch |
 | [Predictor selection research](docs/PREDICTION_SELECTION.md) | Optional prediction spaces, normal training, downstream validation selection, and critiques |
 | [Design decisions](docs/DESIGN_DECISIONS.md) | Concrete starting settings, confidence, alternatives, and decision gates |
@@ -54,6 +55,12 @@ The coded-physics experiments are complete. Wider 21-candidate search achieved
 737.3 return and 45% completion; seven candidates achieved 697.8 and 40% with
 48.9 ms p95 decision latency. The best fixed controller achieved 716.1 and 20%.
 These adaptive 20-track results do not establish a mean-return advantage.
+The subsequent full-map diagnostic completed 20/20 races for both search budgets,
+at about 923 return; it changes privileged geometry and reconstruction. The first
+configured recurrent-driver block completed 2M training frames. Its selected 1M
+checkpoint scores 858.1 / 30% completion on 50 development tracks; the final 2M
+checkpoint regressed to 779.2 / 2%. Training stopped at that review. A six-condition
+frozen-policy/search comparison is running. See the latest geometry/driver report.
 Learned road distributions, scenario MPC, CEM, local visual reconstruction and
 modern world-model reproductions remain open.
 
@@ -73,11 +80,12 @@ The [next-moves plan](docs/NEXT_MOVES.md) specifies budgets, prerequisites and
 decision points for the next campaigns. The
 [programmed-simulator report](docs/PROGRAMMED_SIMULATOR_RESULTS.md) records
 280 completed development episodes, short-term prediction gains, runtime tradeoffs
-and an exact episode replay. The next proposed diagnostic gives the same coded
-planner full-map geometry while retaining estimated vehicle state; it has not
-started. Then improve the component implicated by the evidence. The audited
-learned baseline remains needed as a competent proposer and comparator. The
-present controller family is a diagnostic starting point.
+and an exact episode replay. The
+[geometry/driver report](docs/GEOMETRY_AND_DRIVER_2026-10-28.md) records the completed
+full-map diagnostic and completed first training block. The active experiment
+is the frozen-checkpoint search comparison; its selected driver has useful but
+incomplete performance. A separate baseline-repair trial remains necessary before
+headline comparisons. Geometry reconstruction remains a measured bottleneck.
 Bayesian search and evolution remain future options. Privileged candidate-ranking
 values are user-only and excluded from all agent/training/selection feedback.
 

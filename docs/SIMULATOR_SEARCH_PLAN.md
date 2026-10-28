@@ -9,6 +9,9 @@ P0 and the first P1 follow-up are complete. The
 costs and the proposed next diagnostic. Neither campaign establishes a return win.
 The [next-moves plan](NEXT_MOVES.md) now gives the detailed execution order and
 budgets for the remaining P1–P3 work, especially stronger frozen-policy comparisons.
+Its full-map diagnostic and first 2M driver block are complete. The selected 1M
+checkpoint is frozen for a running search comparison after later training regressed;
+see the [current execution report](GEOMETRY_AND_DRIVER_2026-10-28.md).
 
 ## User intent and the central experiment
 
@@ -158,9 +161,9 @@ full wider fixed-controller comparison. Seven candidates produced 697.8 return,
 40% completion and 48.9 ms p95 decision latency; 21 produced 737.3, 45% and
 128.5 ms. The selected fixed reference produced 716.1 and 20%. These adaptive
 20-track comparisons establish no mean-return advantage. The next proposed
-diagnostic gives the same planners declared full-map geometry while retaining
-estimated vehicle state (two conditions, at most 40k native frames). It has not
-started; its adapter and manifest must be declared before execution.
+diagnostic gave the same planners declared full-map geometry while retaining
+estimated vehicle state (two conditions, at most 40k native frames). It is now complete; the execution report
+records the declared adapter, manifest and results.
 
 Measure one-step prediction errors using permitted observed ego transitions from
 the same evaluated trajectories. These are ordinary state-prediction diagnostics,
@@ -230,7 +233,7 @@ promise SOTA or infer novelty from using coded physics instead of a neural model
 | Straight road continuation initially | Low as forecasting quality; useful controlled first hypothesis |
 | Preserve old score for P0 | High for attribution; low confidence that it is a good final racing objective |
 | Seven candidates as a low-cost reference | Measured latency benefit; driving tradeoff remains uncertain and coverage also changed |
-| Same-planner full-map diagnostic next | Medium; isolates geometry access only if vehicle state and planner are matched; not launched |
+| Same-planner full-map diagnostic | Complete: large geometry/reconstruction effect; does not separate visible reconstruction from unseen-road information |
 | CEM/iCEM-style behavior refinement | Medium as established search tools; benefit and runtime here unmeasured |
 | No learned selector/critic in primary system | Matches user intent; finite-horizon bias may require longer base-policy rollout |
 | Eventual improvement over strong proposers/SOTA | Unknown; empirical target, not a promised outcome |

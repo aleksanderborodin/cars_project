@@ -18,6 +18,7 @@ uv run python -m cars.cli research evaluate --method local --episodes 4 --run-id
 uv run python -m cars.cli research evaluate --method fixed --speed 60 --gain 1.2 --episodes 4 --run-id demo_fixed
 uv run python -m cars.cli research evaluate --method physics --speed-grid 20 25 30 35 40 45 50 --episodes 4 --run-id demo_physics
 uv run python -m cars.cli research evaluate --method physics --speed-grid 30 40 50 60 70 80 90 --gain-grid 1.2 --episodes 4 --run-id demo_physics7
+uv run python -m cars.cli research evaluate --method physics-global --gain-grid 1.2 --episodes 4 --run-id demo_global_physics7
 ```
 
 Each command creates an immutable run with config, source snapshot, dependency
@@ -38,6 +39,40 @@ prototype contact/state approximations are declared in its config. It records
 decision transitions. `--method search --model ...` remains the fitted-dynamics
 baseline. The private candidate monitor currently supports that older fitted
 model path only; do not bypass its restrictions for a new engine.
+
+`physics-global` uses a separate `global` protocol ID. It supplies full ordered
+road geometry with the same ego sensors and estimated wheel state; it changes
+path reconstruction and belongs in a privileged diagnostic table. This protocol
+is restricted to development evaluation and cannot collect training data.
+
+The new configured trainer is separate from the legacy engineering trainer below:
+
+```bash
+uv run python -m cars.cli research train-driver --help
+uv run python -m cars.cli research train-driver --config configs/training/recurrent-local-v2-s0.json --stop-at 8192 --run-id demo_configured_driver
+uv run python -m cars.cli research evaluate --method policy-search --model runs/driver_training/demo_configured_driver --candidates 7 --horizon 20 --episodes 4 --run-id demo_policy_search
+uv run python -m cars.cli research evaluate --method policy-random --model runs/driver_training/demo_configured_driver --candidates 7 --planning-seed 0 --episodes 4 --run-id demo_policy_random
+```
+
+`--stop-at` is a cumulative native-frame boundary, rounded up to a completed PPO
+rollout/update. The config's `total_native_frames` controls the global schedule.
+Use `--resume` with an immutable completed run/checkpoint and identical resolved
+configuration. Reward normalization is learning-only; actor observations use
+fixed scales. Intermediate checkpoints include model/optimizer/normalizer/RNG/
+sampler state and the original source snapshot. A resume begins fresh episodes.
+
+Policy search freezes the loaded actor and branches its recurrent memory only in
+imagined rollouts. Candidate zero is the original actor; three-knot residuals
+vary its controls. Random selection uses the same proposal rule without physics.
+Neither path supports the private oracle monitor. New cost records distinguish
+actor forward examples, internal physics frames and actual environment frames.
+The [execution report](GEOMETRY_AND_DRIVER_2026-10-28.md) indexes declarations,
+completed diagnostics and current campaign status. The first 2M block has stopped
+at its health review; an 8M schedule declaration does not mean 8M frames ran.
+`scripts/run_frozen_driver.py` executes the declared six-condition comparison and
+automatically builds its public report after all conditions finish. Its status
+file is `runs/campaigns/frozen_driver_20261028/status.json`. Do not rerun the runner
+against an existing campaign ID; inspect status and preserve partial/failed runs.
 
 ```bash
 uv run python -m cars.cli research train-recurrent --frames 2048 --workers 2 --run-id demo_recurrent

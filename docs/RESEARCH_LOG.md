@@ -420,3 +420,114 @@ Earlier project intentions remain in USER_INTENT.md; this log extends that recor
   throughput and final calendar cost remain unmeasured.
 - **Status:** plan documented and indexed. No new training/evaluation started.
   Private oracle, calibration and final-test access remain unchanged.
+
+## R22 — Execute the full-map diagnostic without changing vehicle-state access
+
+- **Author/type:** user authorized execution with “lets go”; assistant implementation
+  and measured result, 2026-10-28.
+- **Purpose:** test the geometry/reconstruction bottleneck using the same coded
+  physics, estimated wheels, utility, horizon and candidate controllers. It also
+  addresses the user's known-track/expert idea without substituting a different
+  expert controller and attributing its advantage solely to information.
+- **Intervention:** explicit development-only global protocol with full road
+  boundaries and ordered centerline; same local raster inside the sensor circle.
+  Outside geometry and centerline reconstruction change together. No true wheel
+  state, solver state or user-only oracle is supplied.
+- **Evidence:** both 7- and 21-candidate conditions completed 20/20 tracks, at
+  923.15 and 923.60 mean return; local counterparts completed 40% and 45%. New
+  cost 30,651 native / 8,584,800 internal physics frames, within declaration.
+  The shared-code local replay check matched exactly.
+- **Interpretation:** important geometry/reconstruction bottleneck in this planner;
+  not an isolated unseen-road effect, proof that search is necessary with full-map
+  access, mathematical upper bound or native-input SOTA result.
+- **Decision:** preserve the stronger-proposer comparison. Future local-map work
+  should separate visible reconstruction from unseen-road continuation instead
+  of immediately attributing the entire gap to a learned forecast.
+- **Record:** [geometry/driver report](GEOMETRY_AND_DRIVER_2026-10-28.md); campaign
+  manifest, public summary, uncertainty, outcome records and figure are indexed.
+
+## R23 — Make stronger-driver training reproducible, then choose hardware empirically
+
+- **Author/type:** assistant implementation decisions under the accepted execution
+  plan, 2026-10-28. No claim that this PPO adaptation is current SOTA.
+- **Intent:** obtain a competent frozen proposer with complete training and
+  checkpoint provenance rather than reuse the failed 100k engineering reference.
+- **Implemented:** resolved settings, learning-only reward normalization, native-
+  frame global learning schedule, post-update checkpoint/optimizer/RNG/stream
+  state and recurrent reload/continuation checks. Evaluation cannot update running
+  normalization. The old trainer remains available as historical infrastructure.
+- **Unexpected issue:** deterministic CUDA backward through adaptive-average pooling
+  failed. Preserve all three failed profiles. An equivalent pooling implementation
+  passed CPU/CUDA value-and-gradient checks before corrective profiling.
+- **Choice:** CPU with four subprocess workers and one Torch thread, based on
+  measured successful update throughput. Corrected CPU4 was about 1,457 native
+  frames/s; CUDA4/8 were about 776/766. The single-update profile is approximate.
+  Combined profiling used 90,112 training frames within the original 100k cap.
+- **Execution:** first seed-zero block runs to 2M with an unchanged 8M global
+  schedule; four scheduled checkpoints each receive 50-track standalone development
+  evaluation. User authorization covers this execution; there is no new approval
+  gate at each checkpoint. Review learning health before extending the budget.
+- **Uncertainty:** convergence and competitiveness remain empirical. Early
+  checkpoints show learning but do not establish a strong final baseline.
+
+## R24 — Prepare simulation selection around a frozen recurrent policy
+
+- **Author/type:** assistant implementation of the accepted same-proposer experiment,
+  2026-10-28; user intent is to choose behavior by simulation rather than train a
+  new behavior selector.
+- **Choice:** three smooth residual knots around frozen feedback-policy actions,
+  including a zero-residual base candidate. Initial 7/21 budgets, 1.6 s horizon
+  and existing coded utility remain explicit development settings.
+- **Boundary:** future local observations come from hypothesized worlds; imagined
+  recurrent memories are isolated and never committed to the real policy. The
+  physical wheel observer is separate. Random selection shares the proposal rule
+  with a separate selection random stream and performs no simulation.
+- **Evidence:** candidate-zero action/memory equivalence, branch isolation,
+  action bounds, reset reproducibility and sensor-field checks pass. A train-only
+  preflight used 320 native / 6,720 internal physics frames; contended snapshot
+  timings were roughly 172–189 ms for 7 and 478–523 ms for 21 candidates.
+- **Critique:** repeated neural inference and imagined observations are expensive.
+  These timings overlap training/tests and are not isolated latency quantiles.
+  No racing improvement has been measured for this wrapper; retain that distinction.
+- **Statistics:** add a joint checkpoint/track bootstrap for the same frozen
+  checkpoints with/without search. Independent-model resampling remains for
+  separately trained algorithms; matching numeric training seeds is not pairing.
+- **Status:** wrapper and reporting implemented; actual paired driving campaign
+  awaited the standalone-driver health review/selection at this implementation
+  checkpoint. It has subsequently launched under R25. No private oracle feedback.
+
+## R25 — Preserve the best driver, stop an unhealthy extension, measure search
+
+- **Author/type:** assistant execution and health-review decision under the user's
+  "lets go" authorization, 2026-10-28. The user requested useful results and a
+  record of uncertain choices, rather than an unexamined long training run.
+- **Evidence:** four checkpoints on 50 common development tracks progressed from
+  584.9/2% to 734.6/6%, then 858.1/30%, before regressing to 779.2/2% at 2M.
+  Values are mean official return/completion. All diagnostics remained finite;
+  the later checkpoint had substantially more off-road time. Approximate KL and
+  clipping increased later in training, but these logs do not establish causality.
+- **Decision:** apply the already declared standalone selection rule and freeze
+  the 1,007,379-frame checkpoint. Stop the unchanged recipe at the 2M health review.
+  No additional training is running. The selected policy is useful for a bounded
+  exploratory comparison; it is not our final converged/strong baseline.
+- **Costs:** 2,006,414 training native frames, 196,576 checkpoint-evaluation frames
+  and eight reload-check frames. All four checkpoints and the regression remain
+  reported. Earlier profile costs remain additional and are not hidden.
+- **Next experiment:** execute the planned direct, random-variation (three planning
+  streams) and simulated-selection (7/21 candidates) comparison, without choosing
+  the checkpoint based on search benefit. Six conditions on 20 development tracks,
+  cap 120k native and 11.2M internal frames; same frozen weights and permitted inputs.
+- **Timing:** an additional selected-checkpoint preflight without project training
+  took 148–161 ms for 7 candidates and 401–436 ms for 21; three snapshots, not
+  quantiles. Cost 320 native / 6,720 internal frames. Run offline quality now;
+  do not claim deadline-respecting behavior or add an undeclared fallback.
+- **Statistical caution:** one selected model, repeatedly used development tracks,
+  and fixed planning streams. Those streams reset per episode and are shared
+  across tracks; they are not independent learned models or per-track seeds.
+  Random controls are all retained; intervals are conditional track uncertainty.
+- **Future repair probe:** separately declare a conservative PPO-update trial,
+  possibly a target-KL cap, while retaining configuration/continuation and cost
+  provenance. Do not call the suspected optimization issue a proven explanation.
+- **Records:** [execution report](GEOMETRY_AND_DRIVER_2026-10-28.md),
+  [health review](../reports/driver_first_block_2026-10-28/health_review.json), and
+  [frozen-driver manifest](../configs/campaigns/frozen-driver-2026-10-28.json).

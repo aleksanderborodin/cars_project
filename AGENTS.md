@@ -53,6 +53,14 @@ user-only sidecar. See the development report for measurements. Learned road
 distributions, scenario MPC, CEM, local visual reconstruction and modern world-model
 reproductions remain planned; do not describe them as implemented.
 
+`planning/global_search.py` is a separate privileged development diagnostic:
+full-map geometry, same estimated vehicle state. `planning/policy_search.py`
+implements frozen recurrent proposals and isolated imagined memory; consult
+status for driving evidence. `research/driver_*` implements configured PPO,
+reward normalization, post-update checkpoints and cumulative native-frame schedules.
+The legacy `research/recurrent.py` trainer remains separate. Never feed simulated
+policy history into real recurrent memory or update normalization from evaluation.
+
 ## Rules
 
 - Python 3.12. Run Python with `uv run`; add dependencies with `uv add`.

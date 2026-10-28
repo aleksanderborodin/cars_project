@@ -1,0 +1,44 @@
+{
+  "id": "driver_profile_20261028",
+  "partition": "train",
+  "training_seed": 99001,
+  "training_native_frame_cap": 100000,
+  "conditions": [
+    {
+      "run_id": "driver_profile_20261028_cpu_w2",
+      "device": "cpu",
+      "workers": 2
+    },
+    {
+      "run_id": "driver_profile_20261028_cuda_w2",
+      "device": "cuda",
+      "workers": 2
+    },
+    {
+      "run_id": "driver_profile_20261028_cpu_w4",
+      "device": "cpu",
+      "workers": 4
+    },
+    {
+      "run_id": "driver_profile_20261028_cuda_w4",
+      "device": "cuda",
+      "workers": 4
+    },
+    {
+      "run_id": "driver_profile_20261028_cpu_w8",
+      "device": "cpu",
+      "workers": 8
+    },
+    {
+      "run_id": "driver_profile_20261028_cuda_w8",
+      "device": "cuda",
+      "workers": 8
+    }
+  ],
+  "protocol": "local-v1; radius30; resolution1; repeat4",
+  "work": "one full 512-step rollout and ten-epoch PPO update per case; initial weights; reward normalization; declared eight-million-frame schedule",
+  "selection": "successful execution; measured update throughput, total cost and memory; training return not a device-selection metric",
+  "limitations": "cold-start single-update profile; throughput extrapolation approximate; confirm on the selected first training block",
+  "held_out_evaluation": false,
+  "user_only_oracle_access": false
+}

@@ -1,0 +1,106 @@
+{
+  "manifest_sha256": "894aef2301c4c1309ff08f24bed6ebf770bd81dfd8dc6461c70f6d3a1f459ef5",
+  "inputs": [
+    {
+      "path": "runs/physics_search/physics_budget_20261028_gain12",
+      "config_sha256": "b067e8211cf73ea540b3c9e1f1efcc417d741ed745d7f2debf1b825d31077c57",
+      "metrics_sha256": "c720371d9a5988f3fc1fa2db3921f2e59c79d5927194a7164123fd839a17409d",
+      "cost_sha256": "2aabb58e02fa54a772a7d699d8ba6cbc328945dcf6a0b0cdb55b628885f6fb51"
+    },
+    {
+      "path": "runs/global_physics_search/geometry_20261028_seven",
+      "config_sha256": "78f0e6808163bdb69639691e01789ab368609f1f483eff87a0e1f9453037b467",
+      "metrics_sha256": "a01fe21b7bc8b593d4f415810af8b9770c051ffde40595bd7a011aa50d8b382c",
+      "cost_sha256": "3cfd87b43f379883d70690fb981218016be836f839bc93976e78e2ba309db4e3"
+    },
+    {
+      "path": "runs/physics_search/physics_pilot_20261028_wide",
+      "config_sha256": "a251eb49466f46af1d08dde0706b16f66ab8f2b25e68f82308b0a2a0184ffd0b",
+      "metrics_sha256": "eedf07d755587023fc95b487aff99ca4e4ae3da1a78640336c23fd6a602cdfdb",
+      "cost_sha256": "1c679ac88d9b2d624cbc16742da4899554dd7234affd917678a98b1cecef80b6"
+    },
+    {
+      "path": "runs/global_physics_search/geometry_20261028_twentyone",
+      "config_sha256": "581cf39ce721bbeebc6c379ca0a62bbec8dabbf0c13779c164158e22e45607a6",
+      "metrics_sha256": "34b91136b356f020774792612d128bcc07fcf5432c791b23eb73339c8d5ca362",
+      "cost_sha256": "b02b7c97bbb28277dcd9fabf2a516fe2488b1dbbe200a7b9dcab73aec240246b"
+    }
+  ],
+  "comparisons": [
+    {
+      "candidates": 7,
+      "global_minus_local_return": {
+        "mean_difference": 225.36118964522404,
+        "interval_95_percent": [
+          116.42944387673734,
+          348.62071197613477
+        ],
+        "candidate_models": 1,
+        "reference_models": 1,
+        "common_tracks": 20,
+        "reps": 5000,
+        "seed": 0,
+        "units": "independent model draws; paired track draws shared across models and methods",
+        "selection_adjusted": false
+      },
+      "global_minus_local_completion": {
+        "mean_difference": 0.6,
+        "interval_95_percent": [
+          0.4,
+          0.8
+        ],
+        "candidate_models": 1,
+        "reference_models": 1,
+        "common_tracks": 20,
+        "reps": 5000,
+        "seed": 0,
+        "units": "independent model draws; paired track draws shared across models and methods",
+        "selection_adjusted": false
+      }
+    },
+    {
+      "candidates": 21,
+      "global_minus_local_return": {
+        "mean_difference": 186.27001381828586,
+        "interval_95_percent": [
+          92.76955439832746,
+          288.404618895416
+        ],
+        "candidate_models": 1,
+        "reference_models": 1,
+        "common_tracks": 20,
+        "reps": 5000,
+        "seed": 0,
+        "units": "independent model draws; paired track draws shared across models and methods",
+        "selection_adjusted": false
+      },
+      "global_minus_local_completion": {
+        "mean_difference": 0.55,
+        "interval_95_percent": [
+          0.35,
+          0.75
+        ],
+        "candidate_models": 1,
+        "reference_models": 1,
+        "common_tracks": 20,
+        "reps": 5000,
+        "seed": 0,
+        "units": "independent model draws; paired track draws shared across models and methods",
+        "selection_adjusted": false
+      }
+    }
+  ],
+  "new_cost": {
+    "native_frames": 30651,
+    "internal_physics_frames": 8584800,
+    "training_frames": 0
+  },
+  "replay_check": {
+    "identical": true,
+    "native_frames": 80,
+    "internal_physics_frames": 11200
+  },
+  "interpretation": "privileged geometry plus centreline-reconstruction intervention; same estimated vehicle state; adaptive 20-track diagnostic; no local/SOTA claim",
+  "held_out_evaluation": false,
+  "user_only_oracle_values_read": false
+}

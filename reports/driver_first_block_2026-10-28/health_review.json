@@ -1,0 +1,157 @@
+{
+  "inputs": [
+    {
+      "run": "runs/recurrent_ppo/driver_s0_dev_001007379",
+      "config_sha256": "8e83826bde015ba2973ea191e641959af91a364d7a9d77f0a6dbf73c0537e4b3",
+      "metrics_sha256": "58ddcfc69f073bfb679e6e58ccd33aecb126f031c281ed66704b775cfb9a63be"
+    },
+    {
+      "run": "runs/recurrent_ppo/driver_s0_dev_002006414",
+      "config_sha256": "f41d8e2138330d757ee531a01d38d0a40cf6e623072162a1608545961b414fdb",
+      "metrics_sha256": "fc5e0b8cff17a59aee0a084177295a4d5f53c1e73439f06543584dd8e47217b4"
+    }
+  ],
+  "learning_log_sha256": "b670a89fa6396dadc5b5e5083a4000efa7fdff10da1b8d257b106e283741d034",
+  "phase_diagnostics": [
+    {
+      "after_frames": 0,
+      "through_frames": 500000,
+      "rollout_updates": 61,
+      "diagnostics": {
+        "train/approx_kl": {
+          "median": 0.024503087624907,
+          "max": 0.04868353158235501
+        },
+        "train/clip_fraction": {
+          "median": 0.25283203125,
+          "max": 0.37534179687499997
+        },
+        "train/explained_variance": {
+          "median": 0.579958796501159,
+          "max": 0.7887461781501771
+        },
+        "train/std": {
+          "median": 0.13080406188964802,
+          "max": 0.134859204292297
+        }
+      }
+    },
+    {
+      "after_frames": 500000,
+      "through_frames": 1007379,
+      "rollout_updates": 62,
+      "diagnostics": {
+        "train/approx_kl": {
+          "median": 0.032205594703555,
+          "max": 0.060333020985126
+        },
+        "train/clip_fraction": {
+          "median": 0.2816162109375,
+          "max": 0.35273437500000004
+        },
+        "train/explained_variance": {
+          "median": 0.47405648231506303,
+          "max": 0.8623082637786861
+        },
+        "train/std": {
+          "median": 0.12535919994115752,
+          "max": 0.128496065735816
+        }
+      }
+    },
+    {
+      "after_frames": 1007379,
+      "through_frames": 2006414,
+      "rollout_updates": 122,
+      "diagnostics": {
+        "train/approx_kl": {
+          "median": 0.068130172789096,
+          "max": 0.21269857883453303
+        },
+        "train/clip_fraction": {
+          "median": 0.3968017578125,
+          "max": 0.47958984374999997
+        },
+        "train/explained_variance": {
+          "median": 0.3736052513122555,
+          "max": 0.7311711311340331
+        },
+        "train/std": {
+          "median": 0.1135288886725895,
+          "max": 0.122369833290576
+        }
+      }
+    }
+  ],
+  "driving": {
+    "selected_1m": {
+      "mean_return": 858.1104764405235,
+      "completion": 0.3,
+      "mean_progress": 0.9534424764405375,
+      "mean_offroad_frames": 31.08,
+      "mean_offroad_events": 1.5,
+      "playfield_exits": 0,
+      "decision_weighted_mean_forward_speed": 54.60532760620117,
+      "decision_weighted_mean_absolute_steering": 0.08010300993919373,
+      "decision_weighted_mean_gas": 0.11083913594484329,
+      "decision_weighted_mean_brake": 0.008115340024232864,
+      "decision_fraction_brake_over_0_1": 0.036825769650197133
+    },
+    "final_2m": {
+      "mean_return": 779.224300738291,
+      "completion": 0.02,
+      "mean_progress": 0.8786143007383077,
+      "mean_offroad_frames": 139.28,
+      "mean_offroad_events": 3.56,
+      "playfield_exits": 0,
+      "decision_weighted_mean_forward_speed": 58.70618438720703,
+      "decision_weighted_mean_absolute_steering": 0.12251967191696167,
+      "decision_weighted_mean_gas": 0.18531958758831024,
+      "decision_weighted_mean_brake": 0.01326261181384325,
+      "decision_fraction_brake_over_0_1": 0.0592401802962009
+    }
+  },
+  "final_minus_selected": {
+    "return": {
+      "mean_difference": -78.88617570223245,
+      "interval_95_percent": [
+        -119.30251365240605,
+        -42.902328465447354
+      ],
+      "common_tracks": 50,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false
+    },
+    "success": {
+      "mean_difference": -0.28,
+      "interval_95_percent": [
+        -0.4,
+        -0.16
+      ],
+      "common_tracks": 50,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false
+    },
+    "off_track_steps": {
+      "mean_difference": 108.2,
+      "interval_95_percent": [
+        67.874,
+        151.82049999999998
+      ],
+      "common_tracks": 50,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false
+    }
+  },
+  "uncertainty_scope": "one training run, adaptive development checkpoint selection, track-only unadjusted intervals",
+  "decision_author": "assistant, executing the user's next-moves instruction",
+  "decision": "stop this block at its declared 2M review; preserve standalone-selected 1M checkpoint for the planned exploratory simulation comparison; do not extend unchanged to 8M now",
+  "reason": "later return/completion regression and increased off-road time; larger approximate KL and clipping coincide with deterioration",
+  "causal_limit": "these logs do not establish that large PPO updates caused the regression; controlled repair still required",
+  "future_probe": "separately declare conservative-update trial, such as a target-KL cap, from a recorded checkpoint or fresh seed with all restart costs; no silent training-config change",
+  "held_out_evaluation": false,
+  "user_only_oracle_values_read": false
+}

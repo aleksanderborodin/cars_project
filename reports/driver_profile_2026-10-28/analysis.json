@@ -1,0 +1,20 @@
+{
+  "inputs": [
+    {
+      "campaign": "runs/campaigns/driver_profile_20261028",
+      "config_sha256": "d498840dbed9e01ee1d3ded193ba27419d811d7cbf792597d45af55f32699d23",
+      "results_sha256": "c36d3d974c43f757b4b9a6da7e47db11b9089b3186f122d1fbb28c7f2bc6bdb0"
+    },
+    {
+      "campaign": "runs/campaigns/driver_profile_poolfix_20261028",
+      "config_sha256": "a79541ec3ce3966183458d0c3d6d7ed7be2d7b49c429de859a4dbf40a5160143",
+      "results_sha256": "d7d08196c8144ecd301867ef78e6761761b86ab7304ef1988b9f1a631b89fe6a"
+    }
+  ],
+  "native_frames": 90112,
+  "reload_check_native_frames": 48,
+  "selected_device": "cpu",
+  "selected_workers": 4,
+  "choice": "corrected CPU4 fastest measured successful setup; no clear benefit from older CPU8; preserve deterministic training",
+  "limitations": "single cold update per case; CUDA adaptive pooling failures preserved; corrected pooling verified numerically; main training throughput may differ"
+}

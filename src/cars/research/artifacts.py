@@ -34,7 +34,8 @@ def begin_run(method: str, run_id: str, protocol: ProtocolConfig, settings: dict
               "environment": {"id": "CarRacing-v3", "max_native_frames": 1000,
                               "fps": 50, "lap_complete_percent": .95,
                               "reward_physics_termination": "official_unmodified"},
-              "supervision": "observed_local_geometry_and_ego" if protocol.view == "local" else "native_pixels_only",
+              "supervision": {"local": "observed_local_geometry_and_ego", "native": "native_pixels_only",
+                              "global": "privileged_full_geometry; same_ego_sensors; no_true_wheel_state"}[protocol.view],
               "versions": {name: version(name) for name in ("gymnasium", "Box2D", "numpy", "scipy", "torch", "stable-baselines3", "sb3-contrib")},
               "runtime": {"platform": platform.platform(), "python": platform.python_version()},
               "source_sha256": {str(path.relative_to(snapshot)): sha256(path) for path in sorted(snapshot.rglob("*")) if path.is_file()}}

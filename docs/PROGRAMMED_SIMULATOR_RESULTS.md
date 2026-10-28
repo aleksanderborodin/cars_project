@@ -3,6 +3,11 @@
 2026-10-28. [Index](../README.md) · [Active design](SIMULATOR_SEARCH_PLAN.md) ·
 [Status](STATUS.md) · [Earlier control audit](CONTROL_AUDIT_2026-10-28.md)
 
+Subsequent work: the proposed full-map diagnostic below is now complete and
+stronger-driver preparation has progressed. See the
+[follow-up report](GEOMETRY_AND_DRIVER_2026-10-28.md). This report preserves the
+P0/P1 evidence and decisions as they stood at that checkpoint.
+
 The user's intended architecture now runs: estimate from permitted observations,
 simulate candidate behaviors with programmed vehicle physics, select by simulated
 outcome, execute briefly and replan. No new transition model, critic or selector

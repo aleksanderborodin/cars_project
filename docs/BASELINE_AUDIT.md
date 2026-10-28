@@ -3,9 +3,13 @@
 Updated 2026-10-28. [Next experiments](NEXT_EXPERIMENTS.md) ·
 [References](REFERENCES.md) · [Status](STATUS.md)
 
-Status: source/configuration audit only. No new baseline training is part of the
-control-audit batch. The previous 100k-frame local policy remains an engineering
-pilot, not a competitive reference.
+Status: the listed training-pipeline fixes and CPU/GPU profiling are implemented;
+the first configured local-driver block completed 2M frames with a later
+regression. The predeclared selection rule keeps the 1M checkpoint; training has
+stopped at its health review. This is not yet a converged strong comparator. See the
+[execution report](GEOMETRY_AND_DRIVER_2026-10-28.md). This is still not an original
+pixel-recipe reproduction. The previous 100k-frame local policy remains an
+engineering pilot, not a competitive reference.
 The [next-moves plan](NEXT_MOVES.md) now specifies the proposed implementation,
 profiling and training order. Its first driver is a practical proposer/comparator,
 not an asserted current CarRacing SOTA method.
@@ -21,19 +25,22 @@ stack. Reward normalization is enabled; observation normalization is disabled.
 The budget is four million learner steps. The frame-skip wrapper is commented
 out in that entry; audit the full factory before declaring the native-frame count.
 
-Our current adapter instead uses four environments, 128-step rollouts, five epochs,
+The earlier engineering adapter uses four environments, 128-step rollouts, five epochs,
 a 64-unit LSTM, constant 3e-4 learning rate and default Gaussian exploration. Its
 local encoder consumes road/visibility masks, scaled ego sensors and previous
 action. Its native variant consumes RGB plus previous action. Neither variant
 implements the upstream preprocessing or training configuration. The existing
 100,349-native-frame run therefore does not reproduce the upstream baseline.
+The new `research train-driver` path implements the configurable settings and
+checkpoint changes below. Its local encoder and repeat-four action rate still
+make it an adaptation, not a reproduction of the native pixel recipe.
 
 The [official recurrent-PPO documentation](https://sb3-contrib.readthedocs.io/en/master/modules/ppo_recurrent.html)
 requires maintaining recurrent state and episode-start flags during inference.
 Our adapter implements these and tests initial/recurrent reload equivalence.
 This validates state handling, not sufficient learning or faithful reproduction.
 
-## Required implementation before the next baseline campaign
+## Implemented prerequisites for the first configured baseline campaign
 
 1. Make training settings explicit/configurable rather than hard-coded. Log the
    entire resolved algorithm and encoder configuration, package versions, action

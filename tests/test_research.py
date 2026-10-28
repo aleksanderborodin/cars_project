@@ -212,3 +212,13 @@ def test_crossed_intervals_do_not_treat_tracks_as_independent_training_runs():
     tracks = np.arange(20.)
     result = difference_interval(np.stack([tracks + 3] * 3), tracks[None], reps=1000)
     np.testing.assert_allclose(result["interval_95_percent"], [3, 3])
+
+
+def test_frozen_checkpoint_comparisons_keep_model_pairing():
+    from cars.eval.paired import paired_checkpoint_interval
+    base = np.arange(20.)[None] + np.array([0., 1000., -1000.])[:, None]
+    comparison = paired_checkpoint_interval(base + 7, base, reps=1000)
+    assert comparison["paired_checkpoints"] == 3
+    np.testing.assert_array_equal(comparison["interval_95_percent"], [7, 7])
+    with pytest.raises(ValueError, match="matched"):
+        paired_checkpoint_interval(base[:2], base)

@@ -9,6 +9,13 @@ decision. Numerical settings below are assistant proposals for development,
 not user commitments or a frozen final study. No new campaign was launched while
 writing this plan. Every stage requires its own saved, resolved manifest before runs.
 
+**Execution update:** stage 1 and the trainer/profiling prerequisites in stage 2
+are complete; the first 2M-frame block completed with regression after 1M. The
+standalone-selected 1M checkpoint is frozen for the running stage-3 comparison.
+No unchanged extension toward 8M is running; baseline repair remains open. See the
+[execution report](GEOMETRY_AND_DRIVER_2026-10-28.md); the original decisions below
+remain recorded as the pre-execution plan.
+
 ## Objective and present evidence
 
 The core question is whether simulation-based selection improves an already

@@ -1,0 +1,32 @@
+{
+  "id": "driver_profile_poolfix_20261028",
+  "partition": "train",
+  "training_seed": 99001,
+  "training_native_frame_cap": 42656,
+  "original_profile_native_frames": 57344,
+  "combined_profile_native_frame_cap": 100000,
+  "conditions": [
+    {
+      "run_id": "driver_profile_poolfix_20261028_cpu_w4",
+      "device": "cpu",
+      "workers": 4
+    },
+    {
+      "run_id": "driver_profile_poolfix_20261028_cuda_w4",
+      "device": "cuda",
+      "workers": 4
+    },
+    {
+      "run_id": "driver_profile_poolfix_20261028_cuda_w8",
+      "device": "cuda",
+      "workers": 8
+    }
+  ],
+  "protocol": "local-v1; radius30; resolution1; repeat4",
+  "work": "one full PPO update per case; all configuration unchanged except mathematically equivalent deterministic pooling",
+  "decision_context": "original CUDA cases failed on nondeterministic adaptive-average-pool backward; CPU4 and CPU8 throughput close; compare corrected CUDA with CPU4",
+  "selection": "successful deterministic execution and measured update throughput, total cost, memory; choose before main training",
+  "limitations": "single cold update; confirm throughput during first training block; older profile failures preserved",
+  "held_out_evaluation": false,
+  "user_only_oracle_access": false
+}

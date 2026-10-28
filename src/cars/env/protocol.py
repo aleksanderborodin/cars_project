@@ -17,14 +17,14 @@ Observation = dict[str, np.ndarray]
 
 @dataclass(frozen=True)
 class ProtocolConfig:
-    view: Literal["local", "native"] = "local"
+    view: Literal["local", "native", "global"] = "local"
     radius: float = 30.0
     resolution: float = 1.0
     action_repeat: int = 4
     version: int = 1
 
     def __post_init__(self) -> None:
-        if self.view not in ("local", "native") or self.radius <= 0 or self.resolution <= 0:
+        if self.view not in ("local", "native", "global") or self.radius <= 0 or self.resolution <= 0:
             raise ValueError("Invalid observation protocol")
         if isinstance(self.action_repeat, bool) or not isinstance(self.action_repeat, int) or self.action_repeat < 1 or self.version != 1:
             raise ValueError("Invalid action repeat or protocol version")
@@ -112,6 +112,8 @@ class DrivingEnv(gym.Env):
         super().__init__()
         if partition not in ("train", "development", "calibration"):
             raise ValueError("Final test and legacy held-out environments are sealed")
+        if config.view == "global" and partition != "development":
+            raise ValueError("Full-map protocol is a development-only privileged diagnostic")
         self.config, self.partition = config, partition
         self.partitions = partitions or Partitions()
         self.stream = TrainingStream(seed, worker, workers)
@@ -129,6 +131,9 @@ class DrivingEnv(gym.Env):
                       "visible": gym.spaces.Box(0, 1, (config.size, config.size), np.float32),
                       "ego": gym.spaces.Box(-np.inf, np.inf, (3,), np.float32)}
         fields["previous_action"] = gym.spaces.Box(np.array([-1, 0, 0], np.float32), 1, dtype=np.float32)
+        if config.view == "global":
+            for name in ("map_centre", "map_left", "map_right"):
+                fields[name] = gym.spaces.Sequence(gym.spaces.Box(-np.inf, np.inf, (2,), np.float32), stack=True)
         self.observation_space = gym.spaces.Dict(fields)
         self.action_space = self._sim.action_space
         self.last_metrics: dict = {}
@@ -149,7 +154,13 @@ class DrivingEnv(gym.Env):
             observation = {"image": raw.copy(), "previous_action": self.previous_action.copy()}
             self.sensor_seconds = self._sim.unwrapped.sensor_seconds + time.perf_counter() - started
         else:
-            observation = self.sensor.observe(self._sim.unwrapped.track_info, CarState.from_env(self._sim), self.previous_action)
+            track, state = self._sim.unwrapped.track_info, CarState.from_env(self._sim)
+            observation = self.sensor.observe(track, state, self.previous_action)
+            if self.config.view == "global":
+                c, s = np.cos(state.heading), np.sin(state.heading)
+                rotation = np.array([[c, -s], [s, c]])
+                for name, points in (("map_centre", track.centre), ("map_left", track.left), ("map_right", track.right)):
+                    observation[name] = ((points - [state.x, state.y]) @ rotation).astype(np.float32)
             self.sensor_seconds = time.perf_counter() - started
         return observation
 

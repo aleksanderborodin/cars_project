@@ -7,10 +7,11 @@ from cars.planning.world import LocalRoadWorld
 
 class PhysicsSearch(BehaviorSearch):
     method = "physics_search"
+    allowed_views = ("local",)
 
     def __init__(self, protocol: ProtocolConfig, config: SearchConfig | None = None):
-        if protocol.view != "local":
-            raise ValueError("Programmed physics prototype requires the declared local geometry protocol")
+        if protocol.view not in self.allowed_views:
+            raise ValueError(f"This physics planner requires {self.allowed_views} observations")
         super().__init__(protocol, PhysicsDynamics(protocol.action_repeat), config)
         self.model: PhysicsDynamics
         self.reset()

@@ -15,7 +15,7 @@ from torch import nn
 
 from cars.env.protocol import DrivingEnv, Observation, ProtocolConfig
 from cars.research.artifacts import begin_run, read_config
-from cars.training import seed_everything, write_json
+from cars.training import seed_everything, sha256, write_json
 
 
 class SensorEncoder(BaseFeaturesExtractor):
@@ -64,6 +64,7 @@ class RecurrentDriver:
 
     def __init__(self, root: Path):
         config = read_config(root)
+        self.training_config = config["settings"]
         self.root = root.resolve()
         self.protocol = ProtocolConfig(**config["protocol"])
         self.model = RecurrentPPO.load(root / "model.zip", device="cpu")
@@ -72,7 +73,10 @@ class RecurrentDriver:
 
     def configuration(self) -> dict:
         return {"checkpoint": str(self.root), "deterministic_actions": True,
-                "normalization": "fixed_input_scales; no fitted running statistics"}
+                "checkpoint_sha256": sha256(self.root / "model.zip"),
+                "normalization": "fixed_input_scales; no fitted observation statistics",
+                "training_reward_normalization": self.training_config.get("reward_normalization", False),
+                "evaluation_normalization_updates": False}
 
     def reset(self) -> None:
         self.memory = None
@@ -83,6 +87,7 @@ class RecurrentDriver:
         action, self.memory = self.model.predict(observation, state=self.memory,
             episode_start=self.start, deterministic=True)
         self.start[:] = False
+        self.diagnostics = {"model_transitions": 0, "actor_forward_examples": 1}
         return np.asarray(action, dtype=np.float32)
 
 

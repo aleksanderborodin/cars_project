@@ -73,10 +73,12 @@ and many on-road timeouts. Its 60k-frame pace/full-map proposal is deferred whil
 we prioritize the user's coded-simulator architecture. The coded-physics comparison
 and reduced-cost follow-up are now complete: see
 [PROGRAMMED_SIMULATOR_RESULTS.md](PROGRAMMED_SIMULATOR_RESULTS.md). No mean-return
-advantage is established. Next proposed: a same-planner full-map diagnostic with
-estimated vehicle state, wider 7/21 candidates on 20 development tracks (40k native
-frame cap). It has not started. Baseline preparation remains useful for a competent
-frozen learned proposer and subsequent matched comparisons.
+advantage is established. The subsequent full-map diagnostic completed all 20
+tracks at both budgets, using the same estimated vehicle state. It also changes
+centerline reconstruction, so the information effect is not fully isolated. The
+configured driver block completed its 2M review with regression; the selected
+1M checkpoint is frozen for the running exploratory paired
+policy/search comparison. See [the execution report](GEOMETRY_AND_DRIVER_2026-10-28.md).
 User-only ranking diagnostics cannot supply optimization feedback.
 A geometry information-gap diagnostic informs one component; it is not a
 universal gate for all model-based control.

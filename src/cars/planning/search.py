@@ -61,15 +61,19 @@ class BehaviorSearch:
     def _commit_rollout(self, selected: int) -> None:
         pass
 
-    def act(self, observation: Observation) -> np.ndarray:
+    def _world(self, observation: Observation) -> LocalRoadWorld:
         path = extend(centreline(observation, self.protocol))
+        return LocalRoadWorld(observation, self.protocol, path, self.config.half_width_prior)
+
+    def act(self, observation: Observation) -> np.ndarray:
+        world = self._world(observation)
+        path = world.path
         speeds, gains = np.meshgrid(self.config.speeds, self.config.steering_gains)
         speeds, gains = speeds.ravel(), gains.ravel()
         count = len(speeds)
         pose = np.zeros((count, 3))
         ego = np.repeat(observation["ego"][None], count, axis=0)
         previous = np.repeat(observation["previous_action"][None], count, axis=0)
-        world = LocalRoadWorld(observation, self.protocol, path, self.config.half_width_prior)
         self._begin_rollout(observation, world, count)
         road_query = world.query(pose[:, :2])
         total = np.zeros(count)

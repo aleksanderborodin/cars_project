@@ -31,7 +31,7 @@ def main(argv: list[str] | None = None) -> None:
     fitting.add_argument("--ridge", type=float, default=.01)
     fitting.add_argument("--run-id", required=True)
     evaluation = commands.add_parser("evaluate")
-    evaluation.add_argument("--method", choices=("local", "fixed", "search", "physics", "expert", "recurrent"), required=True)
+    evaluation.add_argument("--method", choices=("local", "fixed", "search", "physics", "physics-global", "expert", "recurrent", "policy-search", "policy-random"), required=True)
     evaluation.add_argument("--model", type=Path)
     evaluation.add_argument("--episodes", type=int, default=20)
     evaluation.add_argument("--horizon", type=int, default=20)
@@ -39,6 +39,11 @@ def main(argv: list[str] | None = None) -> None:
     evaluation.add_argument("--gain", type=float, default=1., help="fixed-controller steering gain")
     evaluation.add_argument("--speed-grid", type=float, nargs="+")
     evaluation.add_argument("--gain-grid", type=float, nargs="+", help="candidate steering gains for search/physics")
+    evaluation.add_argument("--candidates", type=int, default=7)
+    evaluation.add_argument("--planning-seed", type=int, default=0)
+    evaluation.add_argument("--steer-sigma", type=float, default=.10)
+    evaluation.add_argument("--gas-sigma", type=float, default=.15)
+    evaluation.add_argument("--brake-sigma", type=float, default=.15)
     evaluation.add_argument("--user-monitor", action="store_true", help="isolated private oracle-ranking report; never read by training or agents")
     evaluation.add_argument("--run-id", required=True)
     training = commands.add_parser("train-recurrent")
@@ -48,6 +53,12 @@ def main(argv: list[str] | None = None) -> None:
     training.add_argument("--view", choices=("local", "native"), default="local")
     training.add_argument("--run-id", required=True)
     training.add_argument("--resume", type=Path, help="completed research training run; fresh episodes, preserved training state")
+    configured = commands.add_parser("train-driver", help="configured recurrent baseline with native-frame schedule")
+    configured.add_argument("--config", type=Path, required=True)
+    configured.add_argument("--stop-at", type=int, required=True, help="cumulative native-frame milestone")
+    configured.add_argument("--run-id", required=True)
+    configured.add_argument("--resume", type=Path)
+    configured.add_argument("--view", choices=("local", "native"), default="local")
     report = commands.add_parser("report")
     report.add_argument("runs", type=Path, nargs="+")
     report.add_argument("--output", type=Path, required=True)
@@ -64,6 +75,13 @@ def main(argv: list[str] | None = None) -> None:
         from cars.research.recurrent import train
         print(train(args.run_id, frames=args.frames, seed=args.seed, workers=args.workers,
                     protocol=ProtocolConfig(view=args.view), resume=args.resume))
+    elif args.command == "train-driver":
+        import json
+        from cars.research.driver_config import DriverTrainingConfig
+        from cars.research.driver_training import train_driver
+        config = DriverTrainingConfig(**json.loads(args.config.read_text()))
+        print(train_driver(args.run_id, config, stop_at=args.stop_at,
+                           protocol=ProtocolConfig(view=args.view), resume=args.resume))
     elif args.command == "evaluate":
         protocol = ProtocolConfig()
         if args.method == "local":
@@ -72,9 +90,13 @@ def main(argv: list[str] | None = None) -> None:
             driver = FixedBehavior(protocol, speed=args.speed, gain=args.gain)
         elif args.method == "expert":
             driver = BaselinePolicy()
-        elif args.method == "physics":
+        elif args.method in ("physics", "physics-global"):
             from cars.planning.physics_search import PhysicsSearch
-            driver = PhysicsSearch(protocol, SearchConfig(horizon=args.horizon,
+            from cars.planning.global_search import GlobalPhysicsSearch
+            if args.method == "physics-global":
+                protocol = ProtocolConfig(view="global")
+            driver_class = GlobalPhysicsSearch if args.method == "physics-global" else PhysicsSearch
+            driver = driver_class(protocol, SearchConfig(horizon=args.horizon,
                 speeds=tuple(args.speed_grid) if args.speed_grid else SearchConfig().speeds,
                 steering_gains=tuple(args.gain_grid) if args.gain_grid else SearchConfig().steering_gains))
         else:
@@ -87,6 +109,12 @@ def main(argv: list[str] | None = None) -> None:
                                             speeds=tuple(args.speed_grid) if args.speed_grid else SearchConfig().speeds,
                                             steering_gains=tuple(args.gain_grid) if args.gain_grid else SearchConfig().steering_gains),
                                         model_artifact=args.model)
+            elif args.method in ("policy-search", "policy-random"):
+                from cars.planning.policy_search import PolicyPhysicsSearch, PolicySearchConfig, RandomPolicyVariation
+                driver_class = PolicyPhysicsSearch if args.method == "policy-search" else RandomPolicyVariation
+                driver = driver_class(args.model, protocol, PolicySearchConfig(candidates=args.candidates,
+                    horizon=args.horizon, planning_seed=args.planning_seed, steer_sigma=args.steer_sigma,
+                    gas_sigma=args.gas_sigma, brake_sigma=args.brake_sigma))
             else:
                 from cars.research.recurrent import RecurrentDriver
                 driver = RecurrentDriver(args.model)

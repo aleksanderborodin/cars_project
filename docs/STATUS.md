@@ -1,7 +1,7 @@
 # Implementation and evidence status
 
 Updated 2026-10-28. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
-[Roadmap](ROADMAP.md) · [Latest development results](PROGRAMMED_SIMULATOR_RESULTS.md)
+[Roadmap](ROADMAP.md) · [Latest development results](GEOMETRY_AND_DRIVER_2026-10-28.md)
 
 The first development experiment and control-audit follow-up are complete. The full paper
 campaign has not started. User decisions are in [USER_INTENT.md](USER_INTENT.md);
@@ -11,8 +11,11 @@ attributed questions, ideas and probes are in [RESEARCH_LOG.md](RESEARCH_LOG.md)
 the main world model. [SIMULATOR_SEARCH_PLAN.md](SIMULATOR_SEARCH_PLAN.md) is the
 active plan. Ridge dynamics below describe the existing comparison baseline,
 not the intended main engine. The coded-physics prototype, bounded/wider campaign
-and seven-candidate follow-up are complete. All experiment jobs have finished.
-See the [combined report](PROGRAMMED_SIMULATOR_RESULTS.md) for evidence and caveats.
+and seven-candidate follow-up are complete. The full-map diagnostic and trainer
+profiling are also complete. The first configured 2M-frame driver block completed
+and regressed after its selected 1M checkpoint; unchanged training is stopped.
+The six-condition frozen-checkpoint comparison is running.
+See the [latest report](GEOMETRY_AND_DRIVER_2026-10-28.md) for evidence and caveats.
 
 ## Implemented
 
@@ -26,6 +29,9 @@ See the [combined report](PROGRAMMED_SIMULATOR_RESULTS.md) for evidence and cave
 | planning/ | Local pursuit, same-family fixed controller, 21-candidate/20-step search, shared road query for grip and margins | Single straight road continuation; no established search advantage, CEM or multi-world planning |
 | research/data.py | Partition-checked collection, model fitting and development diagnostics | No large offline corpus, calibrated predictor or modern pretrained model |
 | research/recurrent.py | Local/native CNN-LSTM PPO adapter; recurrent reload; training-state continuation with fresh episodes | 100k pilot did not learn useful driving; strong reproduction remains open |
+| planning/global_search.py | Explicit full-map geometry diagnostic with unchanged estimated vehicle state | Also changes centerline reconstruction; privileged, not equal-input superiority |
+| research/driver_training.py and driver_* | Configured PPO, deterministic pooling, reward normalization, post-update checkpoints, native-frame schedule, CPU/GPU profiles | Local adaptation; 2M block complete with regression; 1M checkpoint selected, convergence and competitive baseline not established |
+| planning/policy_search.py | Frozen recurrent feedback proposals, smooth residuals, isolated imagined memory, coded simulation selection and random control | Six-condition driving comparison running; substantially higher inference cost; no complete comparison result yet |
 | research/evaluation.py, eval/paired.py | Common development tracks, traces/costs, protocol checks, paired and crossed model/track intervals | Small/adaptive study; no final paper campaign |
 | monitoring/ | One-way online oracle-ranking sidecar, prefix replay, private live report | User-only outputs; no agent/learning/selection/assistant access to real ranking values |
 | Run artifacts | Immutable configs, source/dependency snapshots, hashes, datasets/models/traces | Ignored large runs/private reports need separate backup |
@@ -74,6 +80,13 @@ the realized hidden world also differs from information available at decision ti
 
 ## Measurements
 
+- Full-map coded search: 923.15 / 923.60 mean return and 100% completion for
+  7 / 21 candidates on 20 common tracks. This changes geometry/reconstruction,
+  not vehicle-state access; no equal-information or SOTA claim.
+- New configured driver checkpoints on 50 common development tracks: 200k gives
+  584.9 return / 2% completion; 500k gives 734.6 / 6%; 1M gives 858.1 / 30%.
+  The 2M checkpoint regressed to 779.2 / 2%; the predeclared rule selected 1M.
+  Training stopped at the review. These are one-seed development results.
 - Programmed physics with wider 21-candidate search: 737.3 mean return, 45%
   completion, 128.5 ms p95 decision latency. The seven-candidate variant: 697.8,
   40%, 48.9 ms. Best fixed controller across the wider family: 716.1 and 20%.
@@ -105,31 +118,31 @@ the realized hidden world also differs from information available at decision ti
   real oracle-ranking values were not read.
 
 Full tables, costs, adaptive choices and uncertainty are in the
-[latest report](PROGRAMMED_SIMULATOR_RESULTS.md) and linked earlier reports.
+[latest report](GEOMETRY_AND_DRIVER_2026-10-28.md) and linked earlier reports.
 No final-test identities/results or legacy unseen/hard results were inspected.
 
 ## Open work
 
 - The [next-moves plan](NEXT_MOVES.md) gives the active order, capped development
   experiments, stronger-driver training proposal and scientific decision gates.
-  It is a plan; no additional training or evaluation has started from it.
+  Its geometry diagnostic and first training block are complete. The selected
+  checkpoint is frozen for the running search comparison. Baseline repair, broader
+  and final studies remain unstarted.
 - Steps 1–2 of the [next-experiment plan](NEXT_EXPERIMENTS.md) are complete.
   Its 60k-frame pace/full-map proposal is deferred by the coded-simulator priority.
 - Competent learned baseline and faithful upstream reproduction before headline runs.
   The [baseline audit](BASELINE_AUDIT.md) records current implementation gaps.
 - Better model/control robustness and recovery, using permitted feedback only;
   the user-only oracle is excluded.
-- Next proposed diagnostic: same coded planner, declared full-map geometry, same
-  estimated vehicle state; wider 7/21 candidates × 20 development tracks, at most
-  40k native frames. Not launched; adapter/manifest still required. The expert
-  alone does not isolate information.
+- Geometry/reconstruction decomposition after the completed full-map diagnostic;
+  it does not isolate visible reconstruction from unseen continuation.
 - Learned road distributions, calibrated uncertainty, scenario MPC, adaptive/Bayesian
   behavior search and local visual perception remain proposals.
 - TD-MPC2, DreamerV3, Valdi and other modern baseline reproductions are not executed.
 - Final frozen study, sufficiently powered comparisons, paper and release remain open.
 - Agentic evolution is future work; archived Rust/evolution tooling stays archived.
 
-The full suite now passes **66 tests** (three upstream SWIG deprecation warnings).
+The full suite now passes **76 tests** (three upstream SWIG deprecation warnings).
 The original cleanup had 47 retained tests. New coverage includes partition sealing,
 local isolation, protocol equivalence, fit/reload, continuation, paired statistics
 and synthetic ranking logic. Documentation links, CLI discovery and the dependency

@@ -1,0 +1,10 @@
+run_id,outcome,episodes
+geometry_20261028_seven,completed,20
+geometry_20261028_twentyone,completed,20
+physics_budget_20261028_gain12,completed,8
+physics_budget_20261028_gain12,playfield_exit,2
+physics_budget_20261028_gain12,timeout_offroad,1
+physics_budget_20261028_gain12,timeout_onroad,9
+physics_pilot_20261028_wide,completed,9
+physics_pilot_20261028_wide,timeout_offroad,5
+physics_pilot_20261028_wide,timeout_onroad,6

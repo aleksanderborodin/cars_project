@@ -34,7 +34,7 @@ def evaluate_driver(driver: Driver | BaselinePolicy, run_id: str, *, episodes: i
     method = "global_expert" if privileged else driver.method
     root = begin_run(method, run_id, protocol,
                      {"partition": "development", "episodes": episodes,
-                      "driver": driver.configuration(), "privileged_reference": privileged,
+                      "driver": driver.configuration(), "privileged_reference": privileged or protocol.view == "global",
                       "user_only_oracle_monitor": user_monitor,
                       "checkpoint_selection": "fixed_before_this_development_pass"}, runs_dir)
     if isinstance(getattr(driver, "model", None), Dynamics):
@@ -46,7 +46,7 @@ def evaluate_driver(driver: Driver | BaselinePolicy, run_id: str, *, episodes: i
     env = DrivingEnv(protocol, "development")
     rows = []
     all_latency = []
-    total_frames = transitions = physics_frames = 0
+    total_frames = transitions = physics_frames = actor_examples = 0
     started = time.perf_counter()
     try:
         for episode in range(episodes):
@@ -70,6 +70,7 @@ def evaluate_driver(driver: Driver | BaselinePolicy, run_id: str, *, episodes: i
                 latency = policy_ms + sensor_ms
                 model_work += getattr(driver, "diagnostics", {}).get("model_transitions", 0)
                 physics_frames += getattr(driver, "diagnostics", {}).get("internal_physics_frames", 0)
+                actor_examples += getattr(driver, "diagnostics", {}).get("actor_forward_examples", 0)
                 decision_diagnostics.append(dict(getattr(driver, "diagnostics", {})))
                 if monitor is not None:
                     monitor.capture(episode, len(records["action"]), track_seed=env.track_seeds[-1],
@@ -90,7 +91,7 @@ def evaluate_driver(driver: Driver | BaselinePolicy, run_id: str, *, episodes: i
             all_latency.extend(latency.tolist())
             transitions += model_work
             row = {"method": method, "run_id": run_id, "protocol_id": protocol.identifier,
-                   "information": "global_privileged" if privileged else protocol.view,
+                   "information": "global_privileged" if privileged else ("global_geometry" if protocol.view == "global" else protocol.view),
                    "partition": "development", "partition_sha256": Partitions().fingerprint,
                    "episode": episode, "track_seed": env.track_seeds[-1],
                    **env.last_metrics, "decisions": len(latency), "model_transitions": model_work,
@@ -119,6 +120,7 @@ def evaluate_driver(driver: Driver | BaselinePolicy, run_id: str, *, episodes: i
             "status": "engineering_development_result_not_confirmatory"})
         write_json(root / "cost.json", {"native_frames": total_frames, "decisions": len(all_latency),
                                       "model_transitions": transitions, "internal_physics_frames": physics_frames,
+                                      "actor_forward_examples": actor_examples,
                                       "wall_time_s": time.perf_counter() - started})
     except Exception as error:
         write_json(root / "failure.json", {"type": type(error).__name__, "message": str(error),

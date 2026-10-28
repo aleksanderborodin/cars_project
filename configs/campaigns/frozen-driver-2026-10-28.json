@@ -1,0 +1,92 @@
+{
+  "id": "frozen_driver_20261028",
+  "checkpoint": "runs/driver_training/driver_main_20261028_s0_to2m/checkpoints/frames_001007379",
+  "checkpoint_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741",
+  "checkpoint_selection_artifact": "runs/campaigns/driver_first_block_20261028/selection.json",
+  "checkpoint_selection_sha256": "ede8061cd9b967418542aea5793fbcc8f2727ab9000f738640c9311e8aeffaf7",
+  "checkpoint_selection": "best standalone mean return across four scheduled checkpoints on 50 development tracks, ties by completion then earlier frame",
+  "checkpoint_interpretation": "1M checkpoint selected after later regression; exploratory competent-but-incomplete driver, not final strong comparator or evidence of convergence",
+  "partition": "development",
+  "partition_sha256": "f89bb2c62cc5e4b021c66597aa05751970514d17731a927fe17f4d5badfe0095",
+  "protocol_id": "local-v1-3efff3317ff2",
+  "tracks_per_condition": 20,
+  "native_frame_cap": 120000,
+  "internal_physics_frame_cap": 11200000,
+  "horizon": 20,
+  "action_repeat": 4,
+  "steer_sigma": 0.1,
+  "gas_sigma": 0.15,
+  "brake_sigma": 0.15,
+  "road_hypotheses": 1,
+  "road_prior": "constant terminal tangent outside local observed region",
+  "utility": "unchanged progress, road clearance, center distance, slip and unknown penalties",
+  "conditions": [
+    {
+      "name": "direct",
+      "method": "recurrent",
+      "directory": "recurrent_ppo",
+      "candidates": 1,
+      "planning_seed": 0,
+      "run_id": "frozen_driver_20261028_direct"
+    },
+    {
+      "name": "random7_s0",
+      "method": "policy-random",
+      "directory": "policy_variation",
+      "candidates": 7,
+      "planning_seed": 0,
+      "run_id": "frozen_driver_20261028_random7_s0"
+    },
+    {
+      "name": "random7_s1",
+      "method": "policy-random",
+      "directory": "policy_variation",
+      "candidates": 7,
+      "planning_seed": 1,
+      "run_id": "frozen_driver_20261028_random7_s1"
+    },
+    {
+      "name": "random7_s2",
+      "method": "policy-random",
+      "directory": "policy_variation",
+      "candidates": 7,
+      "planning_seed": 2,
+      "run_id": "frozen_driver_20261028_random7_s2"
+    },
+    {
+      "name": "search7",
+      "method": "policy-search",
+      "directory": "policy_physics_search",
+      "candidates": 7,
+      "planning_seed": 0,
+      "run_id": "frozen_driver_20261028_search7"
+    },
+    {
+      "name": "search21",
+      "method": "policy-search",
+      "directory": "policy_physics_search",
+      "candidates": 21,
+      "planning_seed": 0,
+      "run_id": "frozen_driver_20261028_search21"
+    }
+  ],
+  "concurrency": "sequential conditions, one torch thread, no project training; ordinary system load not controlled",
+  "primary_contrasts": [
+    "search7 minus direct",
+    "search21 minus direct"
+  ],
+  "secondary_contrasts": [
+    "search7 minus mean of three random7 planning streams",
+    "search21 minus search7"
+  ],
+  "analysis": "paired common-track bootstrap, 5000 draws, seed0; one checkpoint, fixed planning streams; no training-seed or planner-seed uncertainty claim; exploratory unadjusted intervals",
+  "planning_randomness": "reset per episode using decision counter and fixed planning seed; streams shared across tracks, not independent per-track draws",
+  "latency": "unrestricted offline control; no 80ms fallback; report sensor plus policy latency and miss fraction",
+  "preflight": "runs/verification/policy_search_selected_preflight_20261028",
+  "preflight_extra_native_frames": 320,
+  "preflight_extra_internal_physics_frames": 6720,
+  "held_out_evaluation": false,
+  "user_only_oracle_access": false,
+  "training_during_campaign": false,
+  "report_directory": "reports/frozen_driver_2026-10-28"
+}

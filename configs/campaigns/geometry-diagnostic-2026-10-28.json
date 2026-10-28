@@ -1,0 +1,56 @@
+{
+  "id": "geometry_diagnostic_20261028",
+  "stage": "adaptive_development_geometry_diagnostic",
+  "partition": "development",
+  "partition_sha256": "f89bb2c62cc5e4b021c66597aa05751970514d17731a927fe17f4d5badfe0095",
+  "tracks": 20,
+  "protocol": {
+    "view": "global",
+    "radius": 30.0,
+    "resolution": 1.0,
+    "action_repeat": 4,
+    "version": 1
+  },
+  "horizon": 20,
+  "speeds": [
+    30,
+    40,
+    50,
+    60,
+    70,
+    80,
+    90
+  ],
+  "conditions": [
+    {
+      "run_id": "geometry_20261028_seven",
+      "gains": [
+        1.2
+      ],
+      "local_reference": "runs/physics_search/physics_budget_20261028_gain12"
+    },
+    {
+      "run_id": "geometry_20261028_twentyone",
+      "gains": [
+        0.8,
+        1.0,
+        1.2
+      ],
+      "local_reference": "runs/physics_search/physics_pilot_20261028_wide"
+    }
+  ],
+  "native_evaluation_frame_cap": 40000,
+  "internal_physics_frame_cap": 11200000,
+  "new_training_frames": 0,
+  "vehicle_source_sha256": "df9d65d4d32a9d0189ca6672431b67cad84b195ef22c3908affc627bd29c4e56",
+  "information": "full ordered road polygons and same ego sensors; no true wheel/solver state",
+  "intervention": "outside-circle road known instead of tangent prior; full ordered centreline replaces local row reconstruction; unknown penalty zero when geometry known",
+  "unchanged": "official environment; wheel observer and footprint approximation; candidate controller; utility coefficients; horizon; action repeat",
+  "local_replay_check": {
+    "native_frame_cap": 80,
+    "internal_physics_frame_cap": 11200
+  },
+  "uncertainty": "not a pure hidden-road ablation because local reconstruction and route representation also improve; adaptive 20-track evidence",
+  "user_only_oracle_access": false,
+  "held_out_evaluation": false
+}

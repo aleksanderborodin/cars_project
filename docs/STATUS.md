@@ -18,6 +18,8 @@ The six-condition frozen-checkpoint comparison and three fixed-correction contro
 are complete. Search 21 improved this policy instance; a separate KL training
 trial was worse and not adopted. A new [200-track comparison](BROAD_DEVELOPMENT_2026-10-28.md)
 is running from a frozen source snapshot; its full results are pending. The
+[three completed conditions](../reports/broad_driver_completed_2026-10-28_1810/README.md)
+show search-7 completion 58.5% versus direct 35.5%, with uncertain mean-return gain. The
 lower-learning-rate training probe is frozen and queued after its completion;
 training has not started. No new baseline outcome is available.
 See the [latest report](FROZEN_POLICY_RESULTS_2026-10-28.md) for evidence and caveats.
@@ -36,7 +38,7 @@ See the [latest report](FROZEN_POLICY_RESULTS_2026-10-28.md) for evidence and ca
 | research/recurrent.py | Local/native CNN-LSTM PPO adapter; recurrent reload; training-state continuation with fresh episodes | 100k pilot did not learn useful driving; strong reproduction remains open |
 | planning/global_search.py | Explicit full-map geometry diagnostic with unchanged estimated vehicle state | Also changes centerline reconstruction; privileged, not equal-input superiority |
 | research/driver_training.py and driver_* | Configured PPO, deterministic pooling, reward normalization, post-update checkpoints, native-frame schedule, CPU/GPU profiles | Local adaptation; original 1M checkpoint retained; KL-stop repair failed to improve it; convergence/competitive baseline not established |
-| planning/policy_search.py | Frozen recurrent feedback proposals, smooth residuals, isolated imagined memory, coded simulation selection and random control | Positive 21-candidate result for one frozen checkpoint on 20 development tracks; high cost, no broad or multi-seed evidence |
+| planning/policy_search.py | Frozen recurrent feedback proposals, smooth residuals, isolated imagined memory, coded simulation selection and random control | Search-7 completion gain on 200 development tracks; 21-candidate broad run pending; high cost, no multi-seed evidence |
 | planning/occupancy.py, policy_controls.py | Equivalent sparse occupancy renderer and frozen-policy fixed offsets | Sampled exact renderer parity; three fitted offset controls do not establish all cheap alternatives are inferior |
 | research/evaluation.py, eval/paired.py | Common development tracks, traces/costs, protocol checks, paired and crossed model/track intervals | Small/adaptive study; no final paper campaign |
 | monitoring/ | One-way online oracle-ranking sidecar, prefix replay, private live report | User-only outputs; no agent/learning/selection/assistant access to real ranking values |

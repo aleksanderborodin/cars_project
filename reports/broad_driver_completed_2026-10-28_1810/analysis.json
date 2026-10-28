@@ -1,0 +1,624 @@
+{
+  "created_utc": "2026-10-28T18:08:40.840531+00:00",
+  "scope": "completed conditions only; four-condition campaign remains incomplete",
+  "manifest_sha256": "6b016e231bdd902ac793ba8509621d84bcf800d71bfcd8932f2c553b1061a515",
+  "source_checkpoint_protocol_partitions_verified": true,
+  "inputs": [
+    {
+      "condition": "direct",
+      "run": "runs/recurrent_ppo/broad_driver_20261028_direct",
+      "config_sha256": "7c37bd8e4f4e4c9df6905a3d6ec30ddc83a21c8e34669eff1aed1349d4f26ec7",
+      "metrics_sha256": "d6f225d389e8a36b21782e557359c58136d26367c1f0a3596a8d8959df8b27a6",
+      "summary_sha256": "583a0c5ce791830a481c83bccc52f9743145ea14dac9eab7dad957828bb22746",
+      "cost_sha256": "1a3bfa121916b683ea6d83f75caee8c32be69dd4a4689b02b527dd73f04ea5ef"
+    },
+    {
+      "condition": "mean7",
+      "run": "runs/policy_bias/broad_driver_20261028_mean7",
+      "config_sha256": "0cb91159f98157ed39f2be38f8c36c52e7296c5c3c3382dd09652c8060252639",
+      "metrics_sha256": "05adb4b97c950cce9ddc062152a470cba73bf565a0b93a8cc6a5bedb30699ea2",
+      "summary_sha256": "208d6826241b3d9efdfc24e34ea8e196d231d49cc56191d545e402e99b9fa46b",
+      "cost_sha256": "ffa2bcffe854bfa40225f2bc2d187963be871585d68b3f4a92689f2156f87c82"
+    },
+    {
+      "condition": "search7",
+      "run": "runs/policy_physics_search/broad_driver_20261028_search7",
+      "config_sha256": "9e539ac311872a8d6214b8504697a807ddf9c285a808541765da32cac4735967",
+      "metrics_sha256": "1f473d22c70de0cc1b47d38e90fa46449b7daf90a4191d4e2fa75cc8e4bbf64e",
+      "summary_sha256": "5cceacccf661265ff4daed00ee52d805c2aba5df128ecb8e5315da14ac8862b8",
+      "cost_sha256": "f3a62e1ade74e3e8a56d2e726d8e5605cd2afb46bd4d7c2e44003109d8662dbc"
+    }
+  ],
+  "summary": [
+    {
+      "condition": "direct",
+      "episodes": 200,
+      "mean_return": 862.4152395093547,
+      "completion": 0.355,
+      "completed_laps": 71,
+      "mean_progress": 0.957674739509368,
+      "mean_offroad_frames": 25.82,
+      "playfield_exits": 1,
+      "completed_lap_time_mean_s": 17.05464788732395,
+      "pipeline_p95_ms": 1.5018199002952315,
+      "native_frames": 189520,
+      "decisions": 47407,
+      "model_transitions": 0,
+      "internal_physics_frames": 0,
+      "actor_forward_examples": 47407,
+      "wall_time_s": 83.74760839399823
+    },
+    {
+      "condition": "mean7",
+      "episodes": 200,
+      "mean_return": 865.9478208540589,
+      "completion": 0.395,
+      "completed_laps": 79,
+      "mean_progress": 0.9594173208540723,
+      "mean_offroad_frames": 25.86,
+      "playfield_exits": 0,
+      "completed_lap_time_mean_s": 16.693417721518987,
+      "pipeline_p95_ms": 1.52722834245651,
+      "native_frames": 186939,
+      "decisions": 46760,
+      "model_transitions": 0,
+      "internal_physics_frames": 0,
+      "actor_forward_examples": 46760,
+      "wall_time_s": 83.77109189599287
+    },
+    {
+      "condition": "search7",
+      "episodes": 200,
+      "mean_return": 873.0518253757577,
+      "completion": 0.585,
+      "completed_laps": 117,
+      "mean_progress": 0.9651943253757703,
+      "mean_offroad_frames": 4.53,
+      "playfield_exits": 0,
+      "completed_lap_time_mean_s": 17.313675213675214,
+      "pipeline_p95_ms": 136.77230784887797,
+      "native_frames": 184285,
+      "decisions": 46108,
+      "model_transitions": 6455120,
+      "internal_physics_frames": 25820480,
+      "actor_forward_examples": 6178472,
+      "wall_time_s": 5581.879421697013
+    }
+  ],
+  "subsets": [
+    {
+      "panel": "all_200",
+      "condition": "direct",
+      "episodes": 200,
+      "mean_return": 862.4152395093547,
+      "completion": 0.355,
+      "mean_offroad_frames": 25.82
+    },
+    {
+      "panel": "all_200",
+      "condition": "mean7",
+      "episodes": 200,
+      "mean_return": 865.9478208540589,
+      "completion": 0.395,
+      "mean_offroad_frames": 25.86
+    },
+    {
+      "panel": "all_200",
+      "condition": "search7",
+      "episodes": 200,
+      "mean_return": 873.0518253757577,
+      "completion": 0.585,
+      "mean_offroad_frames": 4.53
+    },
+    {
+      "panel": "pilot_20",
+      "condition": "direct",
+      "episodes": 20,
+      "mean_return": 863.5476800830795,
+      "completion": 0.4,
+      "mean_offroad_frames": 23.7
+    },
+    {
+      "panel": "pilot_20",
+      "condition": "mean7",
+      "episodes": 20,
+      "mean_return": 860.4462854898117,
+      "completion": 0.6,
+      "mean_offroad_frames": 41.85
+    },
+    {
+      "panel": "pilot_20",
+      "condition": "search7",
+      "episodes": 20,
+      "mean_return": 885.7015133227717,
+      "completion": 0.7,
+      "mean_offroad_frames": 1.9
+    },
+    {
+      "panel": "selection_50",
+      "condition": "direct",
+      "episodes": 50,
+      "mean_return": 858.1104764405238,
+      "completion": 0.3,
+      "mean_offroad_frames": 31.08
+    },
+    {
+      "panel": "selection_50",
+      "condition": "mean7",
+      "episodes": 50,
+      "mean_return": 862.8488454200689,
+      "completion": 0.4,
+      "mean_offroad_frames": 29.14
+    },
+    {
+      "panel": "selection_50",
+      "condition": "search7",
+      "episodes": 50,
+      "mean_return": 879.5602725954839,
+      "completion": 0.62,
+      "mean_offroad_frames": 5.42
+    },
+    {
+      "panel": "remaining_150",
+      "condition": "direct",
+      "episodes": 150,
+      "mean_return": 863.8501605322982,
+      "completion": 0.37333333333333335,
+      "mean_offroad_frames": 24.066666666666666
+    },
+    {
+      "panel": "remaining_150",
+      "condition": "mean7",
+      "episodes": 150,
+      "mean_return": 866.9808126653888,
+      "completion": 0.3933333333333333,
+      "mean_offroad_frames": 24.766666666666666
+    },
+    {
+      "panel": "remaining_150",
+      "condition": "search7",
+      "episodes": 150,
+      "mean_return": 870.8823429691824,
+      "completion": 0.5733333333333334,
+      "mean_offroad_frames": 4.233333333333333
+    }
+  ],
+  "paired_differences": [
+    {
+      "panel": "all_200",
+      "candidate": "search7",
+      "reference": "direct",
+      "role": "prespecified primary",
+      "metric": "return",
+      "mean_difference": 10.636585866403072,
+      "interval_95_percent": [
+        -2.559401624372803,
+        22.797912593764803
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 200,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models"
+    },
+    {
+      "panel": "all_200",
+      "candidate": "search7",
+      "reference": "direct",
+      "role": "prespecified primary",
+      "metric": "success",
+      "mean_difference": 0.23,
+      "interval_95_percent": [
+        0.16,
+        0.305
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 200,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models"
+    },
+    {
+      "panel": "all_200",
+      "candidate": "mean7",
+      "reference": "direct",
+      "role": "additional descriptive",
+      "metric": "return",
+      "mean_difference": 3.532581344704172,
+      "interval_95_percent": [
+        -5.207573755558291,
+        11.200764878830208
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 200,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models"
+    },
+    {
+      "panel": "all_200",
+      "candidate": "mean7",
+      "reference": "direct",
+      "role": "additional descriptive",
+      "metric": "success",
+      "mean_difference": 0.04,
+      "interval_95_percent": [
+        -0.015,
+        0.095
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 200,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models"
+    },
+    {
+      "panel": "all_200",
+      "candidate": "search7",
+      "reference": "mean7",
+      "role": "additional descriptive",
+      "metric": "return",
+      "mean_difference": 7.1040045216989,
+      "interval_95_percent": [
+        -6.861909252990131,
+        20.475583012101595
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 200,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models"
+    },
+    {
+      "panel": "all_200",
+      "candidate": "search7",
+      "reference": "mean7",
+      "role": "additional descriptive",
+      "metric": "success",
+      "mean_difference": 0.19,
+      "interval_95_percent": [
+        0.125,
+        0.255
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 200,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models"
+    },
+    {
+      "panel": "pilot_20",
+      "candidate": "search7",
+      "reference": "direct",
+      "role": "prespecified primary",
+      "metric": "return",
+      "mean_difference": 22.153833239692272,
+      "interval_95_percent": [
+        -2.161803152555817,
+        48.30095155486035
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models"
+    },
+    {
+      "panel": "pilot_20",
+      "candidate": "search7",
+      "reference": "direct",
+      "role": "prespecified primary",
+      "metric": "success",
+      "mean_difference": 0.3,
+      "interval_95_percent": [
+        0.1,
+        0.5
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models"
+    },
+    {
+      "panel": "pilot_20",
+      "candidate": "mean7",
+      "reference": "direct",
+      "role": "additional descriptive",
+      "metric": "return",
+      "mean_difference": -3.1013945932677416,
+      "interval_95_percent": [
+        -46.97615763699346,
+        26.33579250059806
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models"
+    },
+    {
+      "panel": "pilot_20",
+      "candidate": "mean7",
+      "reference": "direct",
+      "role": "additional descriptive",
+      "metric": "success",
+      "mean_difference": 0.2,
+      "interval_95_percent": [
+        -0.05,
+        0.45
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models"
+    },
+    {
+      "panel": "pilot_20",
+      "candidate": "search7",
+      "reference": "mean7",
+      "role": "additional descriptive",
+      "metric": "return",
+      "mean_difference": 25.255227832960014,
+      "interval_95_percent": [
+        -8.60034572636184,
+        79.62176418276026
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models"
+    },
+    {
+      "panel": "pilot_20",
+      "candidate": "search7",
+      "reference": "mean7",
+      "role": "additional descriptive",
+      "metric": "success",
+      "mean_difference": 0.1,
+      "interval_95_percent": [
+        -0.1,
+        0.3
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 20,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models"
+    },
+    {
+      "panel": "selection_50",
+      "candidate": "search7",
+      "reference": "direct",
+      "role": "prespecified primary",
+      "metric": "return",
+      "mean_difference": 21.449796154960037,
+      "interval_95_percent": [
+        2.7762911081100867,
+        39.45911052961771
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 50,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models"
+    },
+    {
+      "panel": "selection_50",
+      "candidate": "search7",
+      "reference": "direct",
+      "role": "prespecified primary",
+      "metric": "success",
+      "mean_difference": 0.32,
+      "interval_95_percent": [
+        0.2,
+        0.46
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 50,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models"
+    },
+    {
+      "panel": "selection_50",
+      "candidate": "mean7",
+      "reference": "direct",
+      "role": "additional descriptive",
+      "metric": "return",
+      "mean_difference": 4.73836897954523,
+      "interval_95_percent": [
+        -14.988006359405553,
+        21.86139319367103
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 50,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models"
+    },
+    {
+      "panel": "selection_50",
+      "candidate": "mean7",
+      "reference": "direct",
+      "role": "additional descriptive",
+      "metric": "success",
+      "mean_difference": 0.1,
+      "interval_95_percent": [
+        0.0,
+        0.2
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 50,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models"
+    },
+    {
+      "panel": "selection_50",
+      "candidate": "search7",
+      "reference": "mean7",
+      "role": "additional descriptive",
+      "metric": "return",
+      "mean_difference": 16.711427175414805,
+      "interval_95_percent": [
+        -3.8002663092522093,
+        41.22842727777198
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 50,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models"
+    },
+    {
+      "panel": "selection_50",
+      "candidate": "search7",
+      "reference": "mean7",
+      "role": "additional descriptive",
+      "metric": "success",
+      "mean_difference": 0.22,
+      "interval_95_percent": [
+        0.1,
+        0.36
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 50,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models"
+    },
+    {
+      "panel": "remaining_150",
+      "candidate": "search7",
+      "reference": "direct",
+      "role": "prespecified primary",
+      "metric": "return",
+      "mean_difference": 7.032182436884085,
+      "interval_95_percent": [
+        -10.453396003008107,
+        22.44058174682614
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 150,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models"
+    },
+    {
+      "panel": "remaining_150",
+      "candidate": "search7",
+      "reference": "direct",
+      "role": "prespecified primary",
+      "metric": "success",
+      "mean_difference": 0.2,
+      "interval_95_percent": [
+        0.11333333333333333,
+        0.2866666666666667
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 150,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models"
+    },
+    {
+      "panel": "remaining_150",
+      "candidate": "mean7",
+      "reference": "direct",
+      "role": "additional descriptive",
+      "metric": "return",
+      "mean_difference": 3.1306521330904853,
+      "interval_95_percent": [
+        -6.264056943759393,
+        12.025218994583348
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 150,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models"
+    },
+    {
+      "panel": "remaining_150",
+      "candidate": "mean7",
+      "reference": "direct",
+      "role": "additional descriptive",
+      "metric": "success",
+      "mean_difference": 0.02,
+      "interval_95_percent": [
+        -0.04016666666666661,
+        0.08666666666666667
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 150,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models"
+    },
+    {
+      "panel": "remaining_150",
+      "candidate": "search7",
+      "reference": "mean7",
+      "role": "additional descriptive",
+      "metric": "return",
+      "mean_difference": 3.9015303037935998,
+      "interval_95_percent": [
+        -13.771263609220613,
+        20.029281387201355
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 150,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models"
+    },
+    {
+      "panel": "remaining_150",
+      "candidate": "search7",
+      "reference": "mean7",
+      "role": "additional descriptive",
+      "metric": "success",
+      "mean_difference": 0.18,
+      "interval_95_percent": [
+        0.10666666666666667,
+        0.25333333333333335
+      ],
+      "paired_checkpoints": 1,
+      "common_tracks": 150,
+      "reps": 5000,
+      "seed": 0,
+      "selection_adjusted": false,
+      "units": "joint frozen-checkpoint draws and joint track draws; not independent algorithm models"
+    }
+  ],
+  "interpretation": "development; one frozen trained model and fixed planning stream; nominal unadjusted track-bootstrap intervals, not independent training-seed uncertainty",
+  "method_changes_from_this_report": false,
+  "held_out_evaluation": false,
+  "user_only_oracle_values_read": false
+}

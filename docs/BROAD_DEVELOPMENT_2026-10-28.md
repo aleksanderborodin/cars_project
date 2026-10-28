@@ -4,7 +4,7 @@
 
 Declared and launched 2026-10-28. This is a development campaign, not the final
 paper evaluation. Live technical status is in
-`runs/campaigns/broad_driver_20261028/status.json`; the report is generated only
+`runs/campaigns/broad_driver_20261028/status.json`; the full report is generated only
 after all conditions finish and their provenance checks pass.
 
 ## Question and declaration
@@ -119,3 +119,17 @@ This serialization avoids competing training/racing jobs during search timing.
 Tests passed before the broad launch (80 passed); the queued repeat is an
 additional gate. Training and its checkpoint evaluations may overlap each other,
 as in prior blocks; their wall time includes that contention.
+
+## Completed-condition snapshot requested during execution
+
+The user requested a table before the full campaign finished. Direct, fixed
+correction and search 7 each completed all 200 tracks. Their verified mean return
+and completion are 862.42/35.5%, 865.95/39.5% and 873.05/58.5%, respectively.
+Search 7 improves completion by 23 percentage points [16.0, 30.5]; return gain
++10.64 has interval [-2.56, 22.80]. These are paired, nominal development intervals
+for one frozen policy. Search p95 is 136.77 ms, above the 80 ms action interval.
+
+See the [completed-condition snapshot](../reports/broad_driver_completed_2026-10-28_1810/README.md)
+for the table, all panels, costs, attribution checks and additional descriptive
+contrasts. Search 21 remains excluded until it finishes. This requested interim
+inspection does not change methods, the ongoing run, or the queued baseline probe.

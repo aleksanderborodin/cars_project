@@ -684,3 +684,17 @@ Earlier project intentions remain in USER_INTENT.md; this log extends that recor
 - **Status:** pinned source and license audited; no optimizer implementation or
   driving evidence. The 200-track frozen campaign continues unchanged.
 - **Record:** [audit, choices, alternatives and pilot gates](SEARCH_OPTIMIZER_AUDIT.md).
+
+## R35 — User requests completed-condition results during the broad campaign
+
+- **Author/type:** user status/results request; assistant verified interim analysis.
+- **Scope:** three fully completed 200-track conditions, excluding unfinished search 21.
+- **Evidence:** direct 862.42/35.5%, fixed correction 865.95/39.5%, search 7 873.05/58.5%.
+  Search7-minus-direct completion +23 percentage points [16.0, 30.5]; return +10.64
+  [-2.56, 22.80]. Lower off-road exposure but 136.77 ms p95 decision pipeline.
+- **Meaning:** a completion gain for this frozen policy, with uncertain mean-return
+  benefit and substantial runtime cost. No independent-policy or SOTA conclusion.
+- **Integrity:** source/checkpoint/protocol/partition/cost and replay checks passed;
+  all declared nested panels retained. Additional fixed-correction pairwise
+  contrasts are labeled descriptive. No method or queue changes from this view.
+- **Record:** [table, uncertainty and provenance](../reports/broad_driver_completed_2026-10-28_1810/README.md).

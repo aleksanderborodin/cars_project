@@ -15,14 +15,18 @@ uv run python -m cars.cli research collect --partition development --episodes 2 
 uv run python -m cars.cli research fit --training runs/collection/demo_train --development runs/collection/demo_dev --run-id demo_model
 uv run python -m cars.cli research evaluate --method search --model runs/dynamics/demo_model --episodes 4 --run-id demo_search
 uv run python -m cars.cli research evaluate --method local --episodes 4 --run-id demo_local
-uv run python -m cars.cli research evaluate --method fixed --speed 60 --episodes 4 --run-id demo_fixed
+uv run python -m cars.cli research evaluate --method fixed --speed 60 --gain 1.2 --episodes 4 --run-id demo_fixed
 ```
 
 Each command creates an immutable run with config, source snapshot, dependency
 versions/hashes, costs and relevant datasets/checkpoints/traces. Use fresh IDs.
 `collect --collector mixed` cycles local and fixed-speed collection policies.
 `evaluate --speed-grid ...` changes the candidate set; `--horizon` changes its
-decision horizon. These development choices are recorded with each result.
+decision horizon. Fixed controllers accept `--speed` and `--gain`. These
+development choices are recorded with each result. Search configurations now
+record `road_query=shared_road_query_v2`; old query results retain their original
+interpretation. New trajectory files contain post-episode evaluator-only
+`evaluation_offroad_frame_indices`, never an agent observation.
 
 ```bash
 uv run python -m cars.cli research train-recurrent --frames 2048 --workers 2 --run-id demo_recurrent
@@ -44,7 +48,10 @@ The monitor uses extra simulator queries and may contend for CPU; keep its timin
 separate from ordinary inference profiling.
 
 The first campaign and public artifact rebuild command are in
-[PILOT_2026-10-28.md](PILOT_2026-10-28.md). No final-test command is exposed by the
+[PILOT_2026-10-28.md](PILOT_2026-10-28.md). The completed follow-up's manifest,
+runner and public analysis commands are in
+[CONTROL_AUDIT_2026-10-28.md](CONTROL_AUDIT_2026-10-28.md). Campaign runners create
+fresh immutable directories and reject overwrites. No final-test command is exposed by the
 research CLI. The rest of this guide describes the **legacy privileged path**.
 
 ## Environment and checks
@@ -71,9 +78,9 @@ is state-only: neither mode is a pixel or local sensor interface.
 
 `Policy.reset(track: TrackInfo)` receives the full track. `Policy.act(state, obs)`
 receives raw `CarState` plus the vector observation. The expert uses this privileged
-geometry; learned policies use the state vector. Both differ from the proposed
-local-input protocol. Ground-truth extraction remains useful for training labels
-and evaluator diagnostics once a separate agent-facing interface exists.
+geometry; learned policies use the state vector. Both differ from the implemented
+restricted local-input protocol. Ground-truth extraction remains useful for
+declared training labels and evaluator diagnostics behind the separate interface.
 
 The standard factory uses `CarRacing-v3` behavior, `lap_complete_percent=0.95`, a
 1000-frame time limit, and 50 Hz physics. Action-repeat and the optional two-axis
@@ -149,8 +156,8 @@ favor a method that fails on difficult tracks.
 
 The test suite covers environment equivalence, deterministic replay, metrics/log
 round trips, multiprocessing evaluation, seed handling, learning smoke runs, and
-RL action adapters. It does not establish the new method's performance or test
-an unimplemented local interface. Upstream Box2D/SWIG deprecation warnings are
+RL action adapters, restricted local/native interfaces, and shared road-query
+semantics. It does not establish the new method's performance. Upstream Box2D/SWIG deprecation warnings are
 currently expected.
 
 After code changes run the full suite; after documentation/CLI changes check the

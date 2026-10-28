@@ -14,10 +14,15 @@ Read [USER_INTENT.md](USER_INTENT.md) for the user's decisions and paper goal.
 spaces and downstream model selection. Proposed numerical defaults,
 confidence, and alternatives are recorded in [DESIGN_DECISIONS.md](DESIGN_DECISIONS.md);
 they remain development choices until frozen. The previous experiment
-is preserved on the [archive branch](ARCHIVE.md). Existing code and artifacts
-still implement that earlier protocol and retain their original interpretation.
+is preserved on the [archive branch](ARCHIVE.md). Retained legacy code and
+historical artifacts keep their earlier protocol and interpretation; the new
+restricted research path is separate.
 The [run-readiness plan](RUN_READINESS.md) specifies what to freeze before data
 collection, what to select in pilots, and what must pass before expensive runs.
+The [next-experiment plan](NEXT_EXPERIMENTS.md) orders the immediate post-pilot
+corrections and comparisons. Its first batch is complete; the
+[control audit](CONTROL_AUDIT_2026-10-28.md) reports the correction, matched fixed
+controls and failure evidence. Further diagnostics and baseline training remain open.
 
 ## Research question
 

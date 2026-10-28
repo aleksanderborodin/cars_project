@@ -168,6 +168,9 @@ def test_data_fit_and_evaluator_provenance_round_trip(tmp_path):
     with np.load(search / "episodes/0000.npz") as data:
         assert len(data["observation_ego"]) == len(data["action"]) + 1
         assert data["frames"].sum() <= 1000
+        import pandas as pd
+        metrics = pd.read_csv(search / "metrics.csv").iloc[0]
+        assert len(data["evaluation_offroad_frame_indices"]) == metrics.off_track_steps
     with pytest.raises(ValueError, match="separate"):
         fit("bad", development, training, runs_dir=tmp_path)
     with pytest.raises(FileExistsError):

@@ -44,14 +44,29 @@ beliefs, modern reproductions and the final study are not completed.
    Run a small native-input pilot and profile the entire decision pipeline.
 6. Save the working-system report, limitations, and next component priorities.
 
-The [first report](PILOT_2026-10-28.md) supplies that record. The next work is model/
-control robustness and a credible learned comparison. User-only ranking
-diagnostics cannot supply optimization feedback.
+The [first report](PILOT_2026-10-28.md) supplies that record. The original A–B
+sequence above records the implementation order; completed infrastructure should
+not be rebuilt. Remaining work follows the budgeted
+[next-experiment plan](NEXT_EXPERIMENTS.md):
 
-A–B is roughly a one-to-two-week engineering target, not a completion promise.
-Profile actual throughput before fixing the full experimental budget. A geometry
-information-gap diagnostic determines whether hidden-road forecasting is useful;
-it is not a universal gate for all model-based control.
+1. Correct inconsistent unknown-space grip assumptions and rerun the three frozen
+   models on the same 20 development tracks.
+2. Evaluate fixed controllers from the exact 21-candidate grid and diagnose
+   completion failures, including pace and recovery.
+3. Run a controlled same-planner full-map diagnostic if needed; improve the
+   component implicated by ordinary public driving evidence.
+4. Establish a credible recurrent baseline with audited upstream settings and
+   explicit local-adaptation versus original-protocol reproduction.
+5. Broaden to 200 development tracks and independent trained models, then select
+   the focused paper study and required modern comparisons.
+
+Steps 1–2 are complete: 473,737 evaluation frames, no new model training. The
+[control audit](CONTROL_AUDIT_2026-10-28.md) reports no established search advantage
+and many on-road timeouts. It proposes a 60k-frame pace/full-map diagnostic batch
+and records the baseline preparation. Those next runs have not started.
+User-only ranking diagnostics cannot supply optimization feedback.
+A geometry information-gap diagnostic informs one component; it is not a
+universal gate for all model-based control.
 
 ## Optional experiments
 

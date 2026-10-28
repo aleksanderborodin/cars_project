@@ -36,6 +36,7 @@ def main(argv: list[str] | None = None) -> None:
     evaluation.add_argument("--episodes", type=int, default=20)
     evaluation.add_argument("--horizon", type=int, default=20)
     evaluation.add_argument("--speed", type=float, default=60.)
+    evaluation.add_argument("--gain", type=float, default=1., help="fixed-controller steering gain")
     evaluation.add_argument("--speed-grid", type=float, nargs="+")
     evaluation.add_argument("--user-monitor", action="store_true", help="isolated private oracle-ranking report; never read by training or agents")
     evaluation.add_argument("--run-id", required=True)
@@ -67,7 +68,7 @@ def main(argv: list[str] | None = None) -> None:
         if args.method == "local":
             driver = LocalPursuit(protocol)
         elif args.method == "fixed":
-            driver = FixedBehavior(protocol, speed=args.speed)
+            driver = FixedBehavior(protocol, speed=args.speed, gain=args.gain)
         elif args.method == "expert":
             driver = BaselinePolicy()
         else:

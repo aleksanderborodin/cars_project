@@ -101,6 +101,9 @@ def evaluate_driver(driver: Driver | BaselinePolicy, run_id: str, *, episodes: i
             arrays = {key: np.asarray(value) for key, value in records.items()}
             arrays.update({f"observation_{key}": np.asarray(value, dtype=np.uint8 if key in ("road", "visible", "image") else np.float32)
                            for key, value in observations.items()})
+            # Post-episode evaluator metric; never part of the driver's observation.
+            arrays["evaluation_offroad_frame_indices"] = np.asarray(
+                env._sim.get_wrapper_attr("off_track_step_indices"), dtype=np.int32)
             np.savez_compressed(logs / f"{episode:04d}.npz", **arrays)
             write_json(logs / f"{episode:04d}_diagnostics.json", decision_diagnostics)
             pd.DataFrame(rows).to_csv(root / "metrics.csv", index=False)

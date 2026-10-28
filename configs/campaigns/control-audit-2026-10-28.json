@@ -1,0 +1,224 @@
+{
+  "id": "controlaudit_20261028",
+  "stage": "adaptive_development_followup",
+  "registration": "specified before this batch; informed by earlier pilot, not confirmatory preregistration",
+  "partition": "development",
+  "partition_sha256": "f89bb2c62cc5e4b021c66597aa05751970514d17731a927fe17f4d5badfe0095",
+  "tracks": 20,
+  "protocol": {
+    "view": "local",
+    "radius": 30.0,
+    "resolution": 1.0,
+    "action_repeat": 4,
+    "version": 1
+  },
+  "speeds": [
+    20,
+    25,
+    30,
+    35,
+    40,
+    45,
+    50
+  ],
+  "gains": [
+    0.8,
+    1.0,
+    1.2
+  ],
+  "horizon_decisions": 20,
+  "workers": 3,
+  "evaluation_native_frame_cap": 480000,
+  "timing_scope": "three concurrent CPU evaluation processes; latency is diagnostic, not isolated benchmark",
+  "selection": "highest mean official return; exact ties: higher completion, then lower candidate index",
+  "failure_definitions": {
+    "tail_native_frames": 100,
+    "low_speed_mps": 2.0,
+    "low_progress_fraction": 0.5,
+    "offroad": "zero wheel contact, official metric; indices saved only after episode",
+    "interpretation": "descriptive; low tail speed is not proof of a causal stall or recovery defect"
+  },
+  "reference": "runs/fixed_behavior/devpilot_20261028_fixed60",
+  "user_only_oracle_access": false,
+  "new_training_frames": 0,
+  "held_out_evaluation": false,
+  "planned_comparisons": [
+    "paired correction within identical fitted models and tracks",
+    "corrected search versus selected constant from identical candidate family",
+    "corrected search versus previous external fixed-speed-60 reference"
+  ],
+  "uncertainty": "5000 crossed model/paired-track bootstrap draws; correction pairs identical models before resampling; not selection-adjusted",
+  "jobs": [
+    {
+      "kind": "corrected_search",
+      "model": "runs/dynamics/devpilot_20261028_mixed_dynamics",
+      "model_sha256": "7d5a3543b421cd87e6c34e3f9a92ddaa0be1dd176462f3fd2fae92f265f987e6",
+      "run_id": "controlaudit_20261028_search_s0",
+      "training_replication": 0,
+      "before": "runs/model_search/devpilot_20261028_mixed_bounded"
+    },
+    {
+      "kind": "corrected_search",
+      "model": "runs/dynamics/devpilot_20261028_mixed_dynamics_s1",
+      "model_sha256": "5ec53df6a95c9528bd67544a9b23d63535bacd1691885b4b144eb22dbe56dff5",
+      "run_id": "controlaudit_20261028_search_s1",
+      "training_replication": 1,
+      "before": "runs/model_search/devpilot_20261028_mixed_bounded_s1"
+    },
+    {
+      "kind": "corrected_search",
+      "model": "runs/dynamics/devpilot_20261028_mixed_dynamics_s2",
+      "model_sha256": "9150efe54844c65a3ed375017bc58215168d6e56ca647294466906376188182a",
+      "run_id": "controlaudit_20261028_search_s2",
+      "training_replication": 2,
+      "before": "runs/model_search/devpilot_20261028_mixed_bounded_s2"
+    },
+    {
+      "kind": "fixed",
+      "speed": 20,
+      "gain": 0.8,
+      "candidate_index": 0,
+      "run_id": "controlaudit_20261028_fixed_v20_g08"
+    },
+    {
+      "kind": "fixed",
+      "speed": 25,
+      "gain": 0.8,
+      "candidate_index": 1,
+      "run_id": "controlaudit_20261028_fixed_v25_g08"
+    },
+    {
+      "kind": "fixed",
+      "speed": 30,
+      "gain": 0.8,
+      "candidate_index": 2,
+      "run_id": "controlaudit_20261028_fixed_v30_g08"
+    },
+    {
+      "kind": "fixed",
+      "speed": 35,
+      "gain": 0.8,
+      "candidate_index": 3,
+      "run_id": "controlaudit_20261028_fixed_v35_g08"
+    },
+    {
+      "kind": "fixed",
+      "speed": 40,
+      "gain": 0.8,
+      "candidate_index": 4,
+      "run_id": "controlaudit_20261028_fixed_v40_g08"
+    },
+    {
+      "kind": "fixed",
+      "speed": 45,
+      "gain": 0.8,
+      "candidate_index": 5,
+      "run_id": "controlaudit_20261028_fixed_v45_g08"
+    },
+    {
+      "kind": "fixed",
+      "speed": 50,
+      "gain": 0.8,
+      "candidate_index": 6,
+      "run_id": "controlaudit_20261028_fixed_v50_g08"
+    },
+    {
+      "kind": "fixed",
+      "speed": 20,
+      "gain": 1.0,
+      "candidate_index": 7,
+      "run_id": "controlaudit_20261028_fixed_v20_g10"
+    },
+    {
+      "kind": "fixed",
+      "speed": 25,
+      "gain": 1.0,
+      "candidate_index": 8,
+      "run_id": "controlaudit_20261028_fixed_v25_g10"
+    },
+    {
+      "kind": "fixed",
+      "speed": 30,
+      "gain": 1.0,
+      "candidate_index": 9,
+      "run_id": "controlaudit_20261028_fixed_v30_g10"
+    },
+    {
+      "kind": "fixed",
+      "speed": 35,
+      "gain": 1.0,
+      "candidate_index": 10,
+      "run_id": "controlaudit_20261028_fixed_v35_g10"
+    },
+    {
+      "kind": "fixed",
+      "speed": 40,
+      "gain": 1.0,
+      "candidate_index": 11,
+      "run_id": "controlaudit_20261028_fixed_v40_g10"
+    },
+    {
+      "kind": "fixed",
+      "speed": 45,
+      "gain": 1.0,
+      "candidate_index": 12,
+      "run_id": "controlaudit_20261028_fixed_v45_g10"
+    },
+    {
+      "kind": "fixed",
+      "speed": 50,
+      "gain": 1.0,
+      "candidate_index": 13,
+      "run_id": "controlaudit_20261028_fixed_v50_g10"
+    },
+    {
+      "kind": "fixed",
+      "speed": 20,
+      "gain": 1.2,
+      "candidate_index": 14,
+      "run_id": "controlaudit_20261028_fixed_v20_g12"
+    },
+    {
+      "kind": "fixed",
+      "speed": 25,
+      "gain": 1.2,
+      "candidate_index": 15,
+      "run_id": "controlaudit_20261028_fixed_v25_g12"
+    },
+    {
+      "kind": "fixed",
+      "speed": 30,
+      "gain": 1.2,
+      "candidate_index": 16,
+      "run_id": "controlaudit_20261028_fixed_v30_g12"
+    },
+    {
+      "kind": "fixed",
+      "speed": 35,
+      "gain": 1.2,
+      "candidate_index": 17,
+      "run_id": "controlaudit_20261028_fixed_v35_g12"
+    },
+    {
+      "kind": "fixed",
+      "speed": 40,
+      "gain": 1.2,
+      "candidate_index": 18,
+      "run_id": "controlaudit_20261028_fixed_v40_g12"
+    },
+    {
+      "kind": "fixed",
+      "speed": 45,
+      "gain": 1.2,
+      "candidate_index": 19,
+      "run_id": "controlaudit_20261028_fixed_v45_g12"
+    },
+    {
+      "kind": "fixed",
+      "speed": 50,
+      "gain": 1.2,
+      "candidate_index": 20,
+      "run_id": "controlaudit_20261028_fixed_v50_g12"
+    }
+  ]
+}

@@ -23,8 +23,11 @@ advantage or SOTA result**.
 | [References](docs/REFERENCES.md) | Primary papers, official code, comparison roles and reproduction status |
 | [Implementation status](docs/STATUS.md) | What exists, what does not, and evidence boundaries |
 | [Roadmap](docs/ROADMAP.md) | Ordered milestones, deliverables, and proceed/stop gates |
+| [Next experiments](docs/NEXT_EXPERIMENTS.md) | Immediate post-pilot priorities, concrete budgets, confidence and conditional follow-ups |
+| [Recurrent baseline audit](docs/BASELINE_AUDIT.md) | Pinned source, current adapter gaps, and prerequisites for credible longer training |
 | [Before main runs](docs/RUN_READINESS.md) | What to freeze first, partitions and random streams, readiness gates, and rerun consequences |
 | [First development experiment](docs/PILOT_2026-10-28.md) | Implemented system, actual results, limitations and public artifacts |
+| [Control audit](docs/CONTROL_AUDIT_2026-10-28.md) | Corrected world query, all 21 fixed candidates, failure patterns and next decision |
 | [Development guide](docs/DEVELOPMENT.md) | Current executable APIs, safe development commands, artifact semantics |
 | [Archive](docs/ARCHIVE.md) | Previous project snapshot and how to inspect or restore it |
 | [Agent instructions](AGENTS.md) | Repository workflow and research-integrity rules |
@@ -55,12 +58,14 @@ historical infrastructure results, not evidence for the proposed paper.
 
 ## Next milestone
 
-Improve the working loop's robustness and establish a competitive learned
-baseline before the main paper campaign. The initial local/native interfaces,
-expert diagnostic and native-input integration pilot have run. See the pilot
-report for evidence and open gates. Bayesian search and evolution remain future
-options. Privileged candidate-ranking values are user-only and excluded from
-all agent/training/selection feedback.
+The [control audit](docs/CONTROL_AUDIT_2026-10-28.md) is complete: corrected search
+averaged 681.9 return versus 716.1 for a constant selected from the same grid;
+both completed 20%. These are preliminary development results. Next, investigate
+pace and full-map information under controlled comparisons, and implement the
+audited learned baseline. The broader model/search architecture remains revisable;
+the present controller family is a diagnostic starting point.
+Bayesian search and evolution remain future options. Privileged candidate-ranking
+values are user-only and excluded from all agent/training/selection feedback.
 
 The previous project is preserved on
 `archive/pre-belief-research-2026-10-27`. Its obsolete plans and tooling are absent

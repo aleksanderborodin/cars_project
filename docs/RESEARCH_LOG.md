@@ -182,3 +182,87 @@ Earlier project intentions remain in USER_INTENT.md; this log extends that recor
   by development results remain explicit; final test remains sealed.
 - **Status:** required documentation practice. The first pilot report and campaign
   ledger implement it; user-only oracle values remain excluded from public analysis.
+
+## R10 — Next moves should answer specific questions before larger runs
+
+- **Author/type:** user request for the next work plan; assistant proposed ordering,
+  budgets and confidence, 2026-10-28.
+- **Intent:** make the next experiments useful to the paper and avoid spending
+  training compute without knowing what each comparison establishes.
+- **Plan:** [NEXT_EXPERIMENTS.md](NEXT_EXPERIMENTS.md) records the immediate
+  correction, matched fixed controls, failure diagnosis, learned baseline,
+  conditional model improvements and broader development comparison.
+- **Reasoning:** present results do not establish a search advantage, completion
+  is lower, and the recurrent pilot is underdeveloped. More complicated road
+  prediction is not yet justified as the first intervention.
+- **Status:** plan documented; no new training or driving campaign launched in
+  this planning task. Existing partition contracts and private-monitor restrictions
+  remain in force. Confidence in useful experiments is not confidence in SOTA.
+
+## R11 — Unknown-space dynamics must agree with the assumed world
+
+- **Author/type:** assistant implementation finding and proposed correction,
+  2026-10-28.
+- **Evidence:** `planning/search.py` samples grip from the observed road raster
+  with outside-array value 1. Masked unknown cells within the raster contain 0.
+  A synthetic diagonal-road probe gave grip proxies [0,1] at (25,25) and (31,31),
+  both outside the radius-30 sensor circle. No real track or private outputs
+  were used in this probe.
+- **Purpose:** remove an arbitrary difference between unknown regions caused by
+  storage shape. Dynamics and scoring should query the same hypothesized road.
+- **Probe:** test observed and hypothesized road/grass at rotated/boundary
+  locations; rerun frozen models with all other settings unchanged.
+- **Status/limit:** correction and paired reruns now complete; see
+  [the control audit](CONTROL_AUDIT_2026-10-28.md). Mean return changed by −5.1
+  with a wide interval and unchanged completion. No performance improvement established.
+
+## R12 — Compare online choice with constants from the same candidate set
+
+- **Author/type:** assistant experimental-control proposal, 2026-10-28.
+- **Context:** the useful fixed-speed-60 reference is outside the revised search
+  grid of speeds 20–50. This compares complete controllers but does not isolate
+  adaptive choice within a shared set of behaviors.
+- **Purpose/probe:** evaluate all 21 speed/gain constants on development tracks,
+  select a campaign-wide constant, and compare with online search using the same
+  low-level controller, representation and candidate set. Retain fixed60 as an
+  additional reference and account for all tuning.
+- **Interpretation:** selection on these tracks makes this a development study;
+  broad development and eventual frozen test are separate stages. Investigate
+  whether pace limits or recovery explain noncompletion before attributing it to
+  prediction. Better mean return alone is not a completion improvement.
+- **Status:** all 21 constants and failure categorization now evaluated; see
+  [the control audit](CONTROL_AUDIT_2026-10-28.md). No search advantage established.
+
+## R13 — Keep the main goal and architectural alternatives alive
+
+- **Author/type:** user instruction/reaffirmation, 2026-10-28 (paraphrase).
+- **Intent:** execute the next moves while remembering that the project's ideas
+  may substantially change the architecture and research workflow.
+- **Assistant response:** treat the current model and 21-candidate controller as
+  a diagnostic implementation. Preserve the main observe/model/simulate/choose/
+  act loop, existing-model reuse, prediction-space selection, probabilistic roads,
+  continuous/adaptive or Bayesian search, expert experiments and future evolution.
+- **Concrete consequence:** the first batch has a fixed scope and budget. Its
+  report must state what to retain, replace or investigate next, rather than
+  assuming that incremental tuning of the present controller is the paper.
+- **Status:** recorded before launching the batch. Alternatives remain available;
+  user-only oracle feedback and final-test restrictions remain unchanged.
+
+## R14 — Completion failures motivate checking pace before larger predictors
+
+- **Author/type:** assistant interpretation and next-probe proposal after the
+  control-audit batch, 2026-10-28.
+- **Evidence:** corrected search completed 12/60 episodes on 20 shared development
+  tracks. There were 38 on-road timeouts, including 23 episodes with no fully
+  off-road frames. The best constant used the upper speed/gain grid boundary.
+  Correction of grip semantics did not establish a driving improvement.
+- **Intent:** distinguish insufficient pace, candidate/controller limitations and
+  missing information before attributing failure to road prediction or spending
+  more training compute. These outcomes concern the current implementation.
+- **Probe:** fixed60/gain1.2 versus already measured fixed50/gain1.2; separately,
+  the same bounded planner and constant under declared full-map access. Proposed
+  additional budget: at most 60k development frames; no new model training.
+- **Limits:** endpoint road contact and tail speed do not prove the failure's
+  cause. The selected constant is tuned on this panel, and the 60 episodes are
+  not 60 independent tracks. Preserve the user's broader architectural options.
+- **Status:** recorded after the completed batch; follow-up runs not started.

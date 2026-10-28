@@ -1,0 +1,11 @@
+{
+  "identical_actions_rewards_observations_and_end_flags": true,
+  "episodes": 1,
+  "native_frames": 995,
+  "decisions": 249,
+  "model_transitions": 104580,
+  "wall_time_s": 2.2225678429967957,
+  "source_run": "runs/model_search/controlaudit_20261028_search_s0",
+  "trajectory_sha256": "311ee559e4102e434c9a7d0256949316c31de777da57b5e54105ba6572fc76a3",
+  "interpretation": "deterministic replay verification; not an independent statistical replication"
+}

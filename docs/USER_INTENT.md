@@ -160,10 +160,19 @@ a SOTA claim, or immediate restoration of evolution/Rust tooling.
 
 ## Current priority
 
-Implement the common information/data/evaluation foundation and a working modular
-prediction → simulation/search → action loop. Retain expert diagnostics and run an
-early native-input pilot. Then compare complete systems and optionally investigate
-predictor spaces/selection. Agentic evolution remains a later experiment.
+The common foundation and initial modular loop now exist. Execute the controlled
+post-pilot batch in [NEXT_EXPERIMENTS.md](NEXT_EXPERIMENTS.md), then develop credible
+complete-system comparisons and investigate the component supported by evidence.
+Agentic evolution remains a later experiment.
+
+**User reaffirmation, 2026-10-28 (paraphrase):** proceed with the work, while
+preserving the broader goal and ideas because they may substantially change how
+we work. The current ridge model, straight-road prior, pure-pursuit candidates
+and 21-point grid are replaceable engineering instruments, not commitments to a
+final paper architecture. Correcting this implementation should not consume the
+whole research project. Revisit representations, reused predictors, probabilistic
+worlds and behavior search at the next evidence review; record why an idea is
+activated, deferred or retired. No performance or novelty outcome is assumed.
 
 The user additionally proposes future Bayesian/adaptive search over possible roads
 and promising behaviors/controller designs. An immediate candidate-ranking metric

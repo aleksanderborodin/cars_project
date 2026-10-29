@@ -76,6 +76,7 @@ def main(argv: list[str] | None = None) -> None:
     native_eval.add_argument("--model", type=Path, required=True)
     native_eval.add_argument("--episodes", type=int, default=20)
     native_eval.add_argument("--run-id", required=True)
+    native_eval.add_argument("--device", choices=("cpu", "cuda"), default="cpu")
     report = commands.add_parser("report")
     report.add_argument("runs", type=Path, nargs="+")
     report.add_argument("--output", type=Path, required=True)
@@ -107,7 +108,7 @@ def main(argv: list[str] | None = None) -> None:
                            stop_at=args.stop_at, resume=args.resume))
     elif args.command == "evaluate-native":
         from cars.research.native_evaluation import evaluate_native
-        print(evaluate_native(args.model, args.run_id, episodes=args.episodes))
+        print(evaluate_native(args.model, args.run_id, episodes=args.episodes, device=args.device))
     elif args.command == "evaluate":
         if args.method != "policy-intervention" and (args.reference != "reconstructed" or args.continuation != "prior"):
             parser.error("Geometry interventions require --method policy-intervention")

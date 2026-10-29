@@ -1041,3 +1041,27 @@ then fixed first-50-development evaluation. Early training updates are finite.
 This is launch evidence, not a completed native driving result. Runtime remains
 provisional; the source/selection budgets are frozen and technical failures stop
 the runner without an automatic hyperparameter retry.
+
+## R49 — Native baseline regression and bounded deployment control
+
+- **Origin:** user asks to continue rigorous experiments; assistant audits the
+  completed native baseline and proposes the inference-device control.
+- **Measured:** 4,001,792 native training decisions; 200 development episodes;
+  2.42 hours. Selected 1M: 843.82/38%; final 4M: 645.80/4%. All 200 traces and
+  544 source-file hashes, resume parameter hashes and optimizer/normalizer/stream
+  clocks pass. The selected native driver is separate from the local proposer.
+- **Interpretation:** later native regression persists after the full declared
+  budget. It does not prove RL inadequacy, a perception/control decomposition,
+  SOTA, or any native simulation-search improvement. Approximate KL increases and
+  the learned SDE scale falls, but these are associations rather than causes.
+- **Next assistant decision:** same checkpoints, same first ten development tracks,
+  CPU versus CUDA inference; six historical CPU replay episodes, 30 new GPU
+  comparison episodes and six exact GPU replay episodes. Cap 42,000 frames;
+  no training, checkpoint reselection or private/held-out access.
+- **Why:** train-on-GPU/evaluate-on-CPU numerical differences may amplify in
+  closed-loop driving. High confidence in the diagnostic's validity value;
+  effect size unknown. Preserve the frozen CPU-based 1M selection regardless.
+- **References/status:** [baseline results](NATIVE_BASELINE_RESULTS_2026-10-29.md),
+  [device-audit declaration](NATIVE_DEVICE_AUDIT_2026-10-29.md). Independent seeds,
+  uninterrupted-training comparison and a stronger matched-local proposer remain
+  later choices; no automatic hyperparameter sweep.

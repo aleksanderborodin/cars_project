@@ -292,7 +292,7 @@ recommendations or engineering choices, not retrospectively user requirements.
 | A14 | Independently switch visible objective-reference and hidden-road geometry before new oracle-policy training | Implemented/tested; [five-track pilot completed](INTERVENTION_RESULTS_2026-10-29.md) with negative driving effects; no visual/RL-causality claim |
 | A15 | Audit prediction of recorded executed controls after the oracle driving failure, then isolate objective compatibility | Completed 15-window audit and reference-tail follow-up: better motion prediction alone did not ensure good selection |
 | A16 | Preserve the visible reference exactly and change only its future tail, holding extent/sampling fixed | [Reference-continuation pilot](REFERENCE_CONTINUATION_2026-10-29.md) completed; +282.09 return and 0/5→4/5 completion versus tangent, still below local mean; [20-track replication](REFERENCE_REPLICATION_2026-10-29.md) complete: +286.25 versus tangent, −71.86 versus local; one primary counterexample, ten exact replays |
-| A17 | Implement audited native CNN-LSTM interface and profile before larger training | Assistant refinement of user strong-comparator goal; [interface and profile complete](NATIVE_RECIPE_2026-10-29.md); no competence claim |
+| A17 | Align native recipe and audit competence before larger comparison claims | Assistant refinement; [4M campaign complete](NATIVE_BASELINE_RESULTS_2026-10-29.md), selected 1M 843.82/38%, later regression; [inference-device control](NATIVE_DEVICE_AUDIT_2026-10-29.md) declared |
 
 ## Prior work and novelty assessment
 

@@ -1,6 +1,6 @@
 # Next moves: establish useful simulation improvement over strong drivers
 
-**Native implementation update:** The [native interface/profile](NATIVE_RECIPE_2026-10-29.md) and exact evaluator replay are complete. The [declared one-seed 4M native baseline](NATIVE_BASELINE_2026-10-29.md) is now running as `native_baseline_20261029_s0`, initially toward 0.5M decisions and the fixed first-50-development evaluation. Four checkpoints and the global schedule are frozen. Strong-baseline and independent-seed conclusions await data; a stronger matched-local proposer and its original simulation-search comparison remain subsequent work.
+**Native execution update:** the [4M native campaign is complete](NATIVE_BASELINE_RESULTS_2026-10-29.md); select 1M (843.82/38%) under the frozen rule, with later regression retained (4M: 645.80/4%). The 200-trace/resume/source audit passed. Next run the [bounded inference-device control](NATIVE_DEVICE_AUDIT_2026-10-29.md), then declare the stronger matched-local training trial after reviewing the diagnostic. Do not relabel native results as a local/search comparison or begin an unbounded repair sweep.
 
 Updated 2026-10-29. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
 [Architecture](SIMULATOR_SEARCH_PLAN.md) · [Evidence](PROGRAMMED_SIMULATOR_RESULTS.md)

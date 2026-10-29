@@ -1,0 +1,52 @@
+{
+  "id": "native_device_audit_20261029",
+  "origin": "Assistant bounded diagnostic following user request to continue",
+  "partition": "first 10 development tracks, fixed prior to new device results",
+  "comparison_episodes": 10,
+  "replay_episodes": 2,
+  "native_frame_cap": 42000,
+  "reset_physics_tick_cap": 42,
+  "training_frames": 0,
+  "checkpoint_selection": "unchanged; original native 1M selected by original CPU development rule",
+  "conditions": [
+    {
+      "checkpoint": "1m",
+      "model": "runs/native_training/native_main_20261029_s0_to1m",
+      "original_cpu_evaluation": "runs/native_evaluation/native_main_20261029_s0_1m_dev50",
+      "checkpoint_sha256": {
+        "config.json": "961233d42eba6871da01b11e66a86814fe7b2fa8c08042c0e8827a1b3fd3bb53",
+        "model.zip": "87fcad75a419f1d013ba93b05f7eb3bb1776fbddb5c48404b385cec6214096c2",
+        "normalization.pkl": "796f5b535e9b38586e91312f88b90fc777cb554d63374541603596fb76bd8cbf"
+      },
+      "cpu_replay_run_id": "native_device_20261029_1m_cpu_replay",
+      "cuda_run_id": "native_device_20261029_1m_cuda10",
+      "cuda_replay_run_id": "native_device_20261029_1m_cuda_replay"
+    },
+    {
+      "checkpoint": "2m",
+      "model": "runs/native_training/native_main_20261029_s0_to2m",
+      "original_cpu_evaluation": "runs/native_evaluation/native_main_20261029_s0_2m_dev50",
+      "checkpoint_sha256": {
+        "config.json": "909828819b9803217d9517022571040113f5924db3ba24cd8753f433474229a7",
+        "model.zip": "34c49b864c0862cb18fec26b7012ccae8e218013b848b1256507ee50dcb62aad",
+        "normalization.pkl": "c035b614629b73953ca21fa1c822e668f56276479e225e46e92ce9931da07171"
+      },
+      "cpu_replay_run_id": "native_device_20261029_2m_cpu_replay",
+      "cuda_run_id": "native_device_20261029_2m_cuda10",
+      "cuda_replay_run_id": "native_device_20261029_2m_cuda_replay"
+    },
+    {
+      "checkpoint": "4m",
+      "model": "runs/native_training/native_main_20261029_s0_to4m",
+      "original_cpu_evaluation": "runs/native_evaluation/native_main_20261029_s0_4m_dev50",
+      "checkpoint_sha256": {
+        "config.json": "c76a2fb7590e8c7967d7ee62cfe37a090b8415fa9328aee9bc565436175c1099",
+        "model.zip": "b18914c174cd680aad8aaf0f9c028e2f542af13276cd1ab585ae69f51217d991",
+        "normalization.pkl": "20e274d4543b26ac23500f01d9ea6c264e0742591434867a478f5e1a3beefe89"
+      },
+      "cpu_replay_run_id": "native_device_20261029_4m_cpu_replay",
+      "cuda_run_id": "native_device_20261029_4m_cuda10",
+      "cuda_replay_run_id": "native_device_20261029_4m_cuda_replay"
+    }
+  ]
+}

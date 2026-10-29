@@ -1,0 +1,345 @@
+{
+  "campaign": "runs/campaigns/native_baseline_20261029_s0",
+  "selection": {
+    "rule": "highest mean official development return, then completion fraction, then earlier checkpoint",
+    "training_run_id": "native_main_20261029_s0_to1m",
+    "evaluation_run_id": "native_main_20261029_s0_1m_dev50",
+    "native_protocol_only": true,
+    "not_final_test_or_sota_evidence": true
+  },
+  "checkpoints": [
+    {
+      "requested_decisions": 500000,
+      "actual_decisions": 503808,
+      "training_run_id": "native_main_20261029_s0_to500k",
+      "evaluation_run_id": "native_main_20261029_s0_500k_dev50",
+      "mean_return": 821.3970496814217,
+      "return_track_bootstrap95": [
+        784.4499691694101,
+        853.9695934485051
+      ],
+      "completions": 19,
+      "crashes": 0,
+      "mean_progress": 0.9164770496814348,
+      "mean_offroad_steps": 47.36,
+      "learning_segment": {
+        "train/approx_kl": {
+          "min": 0.028404582291841507,
+          "median": 0.07501203566789627,
+          "max": 0.1578153371810913
+        },
+        "train/clip_fraction": {
+          "min": 0.2488037109375,
+          "median": 0.443017578125,
+          "max": 0.5698974609375
+        },
+        "train/std": {
+          "min": 0.10641930997371674,
+          "median": 0.12333756685256958,
+          "max": 0.13558915257453918
+        },
+        "train/explained_variance": {
+          "min": -0.00010180473327636719,
+          "median": 0.8416088819503784,
+          "max": 0.9584687352180481
+        }
+      },
+      "learning_last": {
+        "decisions": 503808.0,
+        "rollout_seconds": 5.305562588007888,
+        "learn_seconds": 8.436767930994392,
+        "outside_rollout_seconds": 3.1312053429865045,
+        "optimizer_steps_cumulative": 39360.0,
+        "train/learning_rate": 8.74048e-05,
+        "train/entropy_loss": 4.4735194452106954,
+        "train/policy_gradient_loss": -0.05774398175708484,
+        "train/value_loss": 0.02238120660185814,
+        "train/approx_kl": 0.12738455832004547,
+        "train/clip_fraction": 0.5294677734375,
+        "train/loss": -0.0808599442243576,
+        "train/explained_variance": 0.7518081665039062,
+        "train/std": 0.10641930997371674,
+        "train/n_updates": 1230.0,
+        "train/clip_range": 0.2
+      },
+      "training_state": {
+        "native_frames": 503808,
+        "decisions": 503808,
+        "updates": 1230,
+        "learning_rate": 8.74048e-05,
+        "global_schedule_native_frames": 4000000,
+        "completed_milestones": [
+          500000
+        ],
+        "saved_after_optimizer_update": true,
+        "reward_normalization_count": 503808.0001,
+        "normalization_mean": 68.34480409601444,
+        "normalization_var": 2029.162853905802,
+        "resume": "fresh episodes; recurrent/environment state and discounted return accumulators reset"
+      }
+    },
+    {
+      "requested_decisions": 1000000,
+      "actual_decisions": 1003520,
+      "training_run_id": "native_main_20261029_s0_to1m",
+      "evaluation_run_id": "native_main_20261029_s0_1m_dev50",
+      "mean_return": 843.8166671843064,
+      "return_track_bootstrap95": [
+        813.3883963998107,
+        869.8592950175661
+      ],
+      "completions": 19,
+      "crashes": 0,
+      "mean_progress": 0.9401026671843203,
+      "mean_offroad_steps": 17.3,
+      "learning_segment": {
+        "train/approx_kl": {
+          "min": 0.1044926792383194,
+          "median": 0.22722537070512772,
+          "max": 0.41607996821403503
+        },
+        "train/clip_fraction": {
+          "min": 0.523046875,
+          "median": 0.60908203125,
+          "max": 0.658544921875
+        },
+        "train/std": {
+          "min": 0.06485562771558762,
+          "median": 0.08291297033429146,
+          "max": 0.10608845949172974
+        },
+        "train/explained_variance": {
+          "min": 0.06595563888549805,
+          "median": 0.7520257234573364,
+          "max": 0.911994218826294
+        }
+      },
+      "learning_last": {
+        "decisions": 1003520.0,
+        "rollout_seconds": 5.249913713007118,
+        "learn_seconds": 7.7309392360039055,
+        "outside_rollout_seconds": 2.481025522996788,
+        "optimizer_steps_cumulative": 78400.0,
+        "train/learning_rate": 7.4912e-05,
+        "train/entropy_loss": 5.048370963335037,
+        "train/policy_gradient_loss": -0.08287625585508067,
+        "train/value_loss": 0.021460009341535625,
+        "train/approx_kl": 0.2864950895309448,
+        "train/clip_fraction": 0.6435546875,
+        "train/loss": -0.12915946543216705,
+        "train/explained_variance": 0.8430944085121155,
+        "train/std": 0.06485562771558762,
+        "train/n_updates": 2450.0,
+        "train/clip_range": 0.2
+      },
+      "training_state": {
+        "native_frames": 1003520,
+        "decisions": 1003520,
+        "updates": 2450,
+        "learning_rate": 7.4912e-05,
+        "global_schedule_native_frames": 4000000,
+        "completed_milestones": [
+          500000,
+          1000000
+        ],
+        "saved_after_optimizer_update": true,
+        "reward_normalization_count": 1003520.0001000001,
+        "normalization_mean": 72.22561853991448,
+        "normalization_var": 1825.8367226438656,
+        "resume": "fresh episodes; recurrent/environment state and discounted return accumulators reset"
+      }
+    },
+    {
+      "requested_decisions": 2000000,
+      "actual_decisions": 2002944,
+      "training_run_id": "native_main_20261029_s0_to2m",
+      "evaluation_run_id": "native_main_20261029_s0_2m_dev50",
+      "mean_return": 510.8517084532607,
+      "return_track_bootstrap95": [
+        448.3747425855122,
+        572.019729988679
+      ],
+      "completions": 0,
+      "crashes": 18,
+      "mean_progress": 0.6360737084532727,
+      "mean_offroad_steps": 259.62,
+      "learning_segment": {
+        "train/approx_kl": {
+          "min": 0.26460975408554077,
+          "median": 0.3839844912290573,
+          "max": 1.89386785030365
+        },
+        "train/clip_fraction": {
+          "min": 0.6218505859375,
+          "median": 0.658935546875,
+          "max": 0.6938720703125
+        },
+        "train/std": {
+          "min": 0.029349416494369507,
+          "median": 0.04117020033299923,
+          "max": 0.06464958190917969
+        },
+        "train/explained_variance": {
+          "min": 0.5514504909515381,
+          "median": 0.8879332542419434,
+          "max": 0.9583214521408081
+        }
+      },
+      "learning_last": {
+        "decisions": 2002944.0,
+        "rollout_seconds": 5.217890679996344,
+        "learn_seconds": 7.631654227006948,
+        "outside_rollout_seconds": 2.4137635470106034,
+        "optimizer_steps_cumulative": 156480.0,
+        "train/learning_rate": 4.9926400000000004e-05,
+        "train/entropy_loss": 7.267131079733372,
+        "train/policy_gradient_loss": -0.08054670948768035,
+        "train/value_loss": 0.07131404675747036,
+        "train/approx_kl": 0.48435264825820923,
+        "train/clip_fraction": 0.6676513671875,
+        "train/loss": -0.09942858666181564,
+        "train/explained_variance": 0.931616485118866,
+        "train/std": 0.029349416494369507,
+        "train/n_updates": 4890.0,
+        "train/clip_range": 0.2
+      },
+      "training_state": {
+        "native_frames": 2002944,
+        "decisions": 2002944,
+        "updates": 4890,
+        "learning_rate": 4.9926400000000004e-05,
+        "global_schedule_native_frames": 4000000,
+        "completed_milestones": [
+          500000,
+          1000000,
+          2000000
+        ],
+        "saved_after_optimizer_update": true,
+        "reward_normalization_count": 2002944.0001,
+        "normalization_mean": 72.80823286663713,
+        "normalization_var": 1885.5919707247463,
+        "resume": "fresh episodes; recurrent/environment state and discounted return accumulators reset"
+      }
+    },
+    {
+      "requested_decisions": 4000000,
+      "actual_decisions": 4001792,
+      "training_run_id": "native_main_20261029_s0_to4m",
+      "evaluation_run_id": "native_main_20261029_s0_4m_dev50",
+      "mean_return": 645.8034660737587,
+      "return_track_bootstrap95": [
+        591.9938137887527,
+        696.6286258132794
+      ],
+      "completions": 2,
+      "crashes": 0,
+      "mean_progress": 0.7452674660737741,
+      "mean_offroad_steps": 256.62,
+      "learning_segment": {
+        "train/approx_kl": {
+          "min": 0.00029990760958753526,
+          "median": 0.2812928706407547,
+          "max": 1.139129877090454
+        },
+        "train/clip_fraction": {
+          "min": 2.44140625e-05,
+          "median": 0.60389404296875,
+          "max": 0.694775390625
+        },
+        "train/std": {
+          "min": 0.016603529453277588,
+          "median": 0.019119403325021267,
+          "max": 0.029274892061948776
+        },
+        "train/explained_variance": {
+          "min": 0.7549749612808228,
+          "median": 0.9345071613788605,
+          "max": 0.9755128026008606
+        }
+      },
+      "learning_last": {
+        "decisions": 4001792.0,
+        "rollout_seconds": 5.364318588995957,
+        "learn_seconds": 6.759119217997068,
+        "outside_rollout_seconds": 1.3948006290011108,
+        "optimizer_steps_cumulative": 312640.0,
+        "train/learning_rate": 0.0,
+        "train/entropy_loss": 8.00045323818922,
+        "train/policy_gradient_loss": 0.00012928399810334666,
+        "train/value_loss": 0.04199313457575045,
+        "train/approx_kl": 0.00029990760958753526,
+        "train/clip_fraction": 2.44140625e-05,
+        "train/loss": 0.02419961802661419,
+        "train/explained_variance": 0.9642195701599121,
+        "train/std": 0.016603529453277588,
+        "train/n_updates": 9770.0,
+        "train/clip_range": 0.2
+      },
+      "training_state": {
+        "native_frames": 4001792,
+        "decisions": 4001792,
+        "updates": 9770,
+        "learning_rate": 0.0,
+        "global_schedule_native_frames": 4000000,
+        "completed_milestones": [
+          500000,
+          1000000,
+          2000000,
+          4000000
+        ],
+        "saved_after_optimizer_update": true,
+        "reward_normalization_count": 4001792.0001,
+        "normalization_mean": 67.61016273707062,
+        "normalization_var": 2206.912115913349,
+        "resume": "fresh episodes; recurrent/environment state and discounted return accumulators reset"
+      }
+    }
+  ],
+  "sequential_contrasts": [
+    {
+      "contrast": "1000000-500000",
+      "paired_mean_return_change": 22.419617502885103,
+      "track_bootstrap95": [
+        -11.476663290819783,
+        59.6046814003833
+      ]
+    },
+    {
+      "contrast": "2000000-1000000",
+      "paired_mean_return_change": -332.9649587310459,
+      "track_bootstrap95": [
+        -394.461409443927,
+        -272.74602715274244
+      ]
+    },
+    {
+      "contrast": "4000000-2000000",
+      "paired_mean_return_change": 134.95175762049797,
+      "track_bootstrap95": [
+        71.34559069690172,
+        199.01467186390585
+      ]
+    }
+  ],
+  "uncertainty": "10,000 paired track bootstrap draws, seed 20261029; descriptive development-only intervals, not training-seed uncertainty; selection bias not corrected",
+  "audit": {
+    "source_files_verified": 544,
+    "all_source_snapshots_identical": true,
+    "trace_episodes_checked": 200,
+    "max_float32_trace_return_error": 3.227952890938468e-05,
+    "resume_parameter_hashes_match": true,
+    "optimizer_clock_normalizer_stream_checks_pass": true,
+    "unique_training_tracks": 4168,
+    "train_dev_disjoint": true
+  },
+  "cost": {
+    "training_native_frames": 4001792,
+    "evaluation_native_frames": 190044,
+    "reload_native_frames": 8,
+    "reset_physics_ticks": 4372,
+    "rollout_updates": 977,
+    "wall_seconds": 8712.035803489998,
+    "internal_search_physics_steps": 0,
+    "note": "Profile, readiness, unit tests and later diagnostics are additional costs"
+  }
+}

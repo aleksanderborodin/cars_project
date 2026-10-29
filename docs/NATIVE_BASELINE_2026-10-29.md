@@ -1,5 +1,7 @@
 # Native baseline campaign: one seed, fixed schedule and selection
 
+**Complete:** all four stages and 200 development episodes finished. The frozen rule selects 1M (843.82 return, 38% completion); final 4M scored 645.80/4%. See the [results and integrity audit](NATIVE_BASELINE_RESULTS_2026-10-29.md). No jobs from this campaign remain active. The declaration and launch record below are retained as history.
+
 [Profile and interface](NATIVE_RECIPE_2026-10-29.md) · [Baseline audit](BASELINE_AUDIT.md)
 
 **Origin:** the user's strong-comparator goal; the assistant's next bounded
@@ -60,7 +62,7 @@ using the cadence/budget audit, retain independent-seed requirements, and freeze
 proposers before direct-versus-original-simulation-search comparison. The trained
 V/L/F decomposition and modern world-model comparators remain later gates.
 
-## Execution status
+## Pre-launch timing estimate and readiness record
 
 The completed profile selects CUDA with eight subprocess environments. Measured
 projection is 2.05 training hours; allow provisionally 2–3 hours including the

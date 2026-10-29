@@ -1,6 +1,6 @@
 # Roadmap and decision gates
 
-**Current baseline gate:** The [native interface/profile](NATIVE_RECIPE_2026-10-29.md) and exact evaluator replay are complete. The [declared one-seed 4M native baseline](NATIVE_BASELINE_2026-10-29.md) is now running as `native_baseline_20261029_s0`, initially toward 0.5M decisions and the fixed first-50-development evaluation. Four checkpoints and the global schedule are frozen. Strong-baseline and independent-seed conclusions await data; a stronger matched-local proposer and its original simulation-search comparison remain subsequent work.
+**Current baseline gate:** the [native campaign completed](NATIVE_BASELINE_RESULTS_2026-10-29.md) 4M decisions, but the selected early checkpoint (843.82/38%) and later regression leave competence/convergence open. Source, all 200 traces and resume clocks pass; 107 tests pass. A [bounded CPU/CUDA inference control](NATIVE_DEVICE_AUDIT_2026-10-29.md) precedes the next training decision. No training remains active from the completed campaign.
 
 Updated 2026-10-29. [Index](../README.md) · [User intent](USER_INTENT.md) ·
 [Status](STATUS.md) · [Proposed numerical settings](DESIGN_DECISIONS.md)

@@ -109,10 +109,41 @@ def test_native_training_checkpoint_resume_and_frozen_eval(tmp_path, monkeypatch
     assert cost["native_frames"] == 8 and cost["reload_check"]["native_frames"] == 2
     assert cost["reload_check"]["same_device_exact"]
     assert cost["reload_check"]["cpu_repeated_reload_exact"]
+    # Exercise the full evaluator (including terminal metadata and the next
+    # episode's recurrent/frame reset) on a declared test-only shortened episode.
+    from cars.research import native_evaluation
+    original_vector = native_evaluation.native_vector
+
+    def short_vector(*args, **kwargs):
+        raw, normalizer, vector = original_vector(*args, **kwargs)
+        raw.envs[0].unwrapped._sim.env._max_episode_steps = 3
+        return raw, normalizer, vector
+
+    monkeypatch.setattr(native_evaluation, "native_vector", short_vector)
+    result = native_evaluation.evaluate_native(second, "evaluation", episodes=2,
+                                               runs_dir=tmp_path, device=device)
+    evaluated = json.loads((result / "config.json").read_text())
+    assert evaluated["settings"]["inference_device"] == device
+    assert json.loads((result / "runtime.json").read_text())["device"].startswith(device)
+    assert json.loads((result / "cost.json").read_text())["native_frames"] == 6
+    assert json.loads((result / "cost.json").read_text())["reset_physics_ticks"] == 2
+    assert json.loads((result / "summary.json").read_text())["normalization_frozen"]
+    for i in range(2):
+        with np.load(result / f"episodes/{i:04d}.npz") as trace:
+            assert trace["observation"].shape == (3, 2, 64, 64)
+            assert not trace["observation"][0, 0].any()
     with pytest.raises(FileExistsError):
         train_native("first", config, stop_at=8, runs_dir=tmp_path)
     with pytest.raises(ValueError, match="identical"):
         train_native("wrong", replace(config, gamma=.9), stop_at=24, resume=second, runs_dir=tmp_path)
+
+
+def test_native_evaluation_device_and_partition_guards(tmp_path):
+    from cars.research.native_evaluation import evaluate_native
+    with pytest.raises(ValueError, match="device"):
+        evaluate_native(tmp_path, "bad", device="auto")
+    with pytest.raises(ValueError, match="episode count"):
+        evaluate_native(tmp_path, "bad", episodes=201)
 
 
 def test_native_evaluation_stops_without_consuming_an_extra_track(monkeypatch):

@@ -1,6 +1,6 @@
 # Experiment design: modular prediction and control by search
 
-The separate [native recipe interface/profile](NATIVE_RECIPE_2026-10-29.md) passes audited pixel/action parity and deterministic evaluator replay. Its completed workstation profile selects CUDA/subprocess; the [one-seed 4M native baseline](NATIVE_BASELINE_2026-10-29.md) is now running under a fixed checkpoint/development-selection declaration. It stays separate from the local programmed-simulator comparison.
+The separate [native recipe/interface](NATIVE_RECIPE_2026-10-29.md) now has a [completed one-seed 4M campaign](NATIVE_BASELINE_RESULTS_2026-10-29.md): selected 1M 843.82/38%, final 4M 645.80/4%. Source/trace/resume checks passed; the [bounded inference-device diagnostic](NATIVE_DEVICE_AUDIT_2026-10-29.md) is the next technical control. Native results stay separate from the local programmed-simulator comparison.
 
 Updated 2026-10-29 following the research discussion. The project now targets a
 scientific paper about modular world models and online control, using Gymnasium CarRacing
@@ -21,7 +21,7 @@ The user has now requested execution of the intervention study. The first
 [controlled geometry pilot](INTERVENTION_STUDY.md) separates visible-reference
 reconstruction from hidden-road information around the same frozen local actor.
 It uses the existing privileged development adapter; oracle-informed policy
-training, visual policies and the full V/L/F matrix remain unimplemented.
+training, fixed-view local visual policies and the full V/L/F matrix remain unimplemented.
 The completed [reference-continuation control](REFERENCE_CONTINUATION_2026-10-29.md)
 preserves the visible reference and replaces only its tangent tail with true road,
 while keeping oracle road physics and all other planner settings fixed. This is

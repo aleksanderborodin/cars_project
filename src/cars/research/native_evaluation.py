@@ -1,6 +1,7 @@
 """Development-only native evaluation with frozen statistics and episode memory."""
 from dataclasses import replace
 from pathlib import Path
+import os
 import time
 
 import numpy as np
@@ -17,20 +18,30 @@ from cars.training import sha256, write_json
 
 
 def evaluate_native(checkpoint: Path, run_id: str, *, episodes: int = 20,
-                    runs_dir: Path = Path("runs")) -> Path:
+                    runs_dir: Path = Path("runs"), device: str = "cpu") -> Path:
     if not 0 < episodes <= Partitions().development_count:
         raise ValueError("Development episode count outside reserved manifest")
+    if device not in ("cpu", "cuda"):
+        raise ValueError("Explicit cpu or cuda inference device required")
+    if device == "cuda":
+        if not torch.cuda.is_available():
+            raise ValueError("CUDA inference requested but unavailable")
+        os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":4096:8")
+        torch.use_deterministic_algorithms(True)
     parent = read_config(checkpoint)
     protocol = NativeRecipeProtocol(**parent["protocol"])
     config = replace(NativeTrainingConfig(**parent["settings"]["training"]),
-                     workers=1, vector_backend="dummy", device="cpu")
+                     workers=1, vector_backend="dummy", device=device)
     torch.set_num_threads(config.torch_threads)
-    model = RecurrentPPO.load(checkpoint / "model.zip", device="cpu")
+    model = RecurrentPPO.load(checkpoint / "model.zip", device=device)
     root = begin_run("native_evaluation", run_id, protocol, {"partition": "development",
         "episodes": episodes, "checkpoint": str(checkpoint.resolve()),
         "artifact_sha256": {name: sha256(checkpoint / name) for name in
                             ("config.json", "model.zip", "normalization.pkl")},
-        "deterministic_actions": True, "reward_normalization": False,
+        "deterministic_actions": True, "reward_normalization": False, "inference_device": device,
+        "deterministic_algorithms": torch.are_deterministic_algorithms_enabled(),
+        "cuda_matmul_allow_tf32": torch.backends.cuda.matmul.allow_tf32,
+        "cudnn_allow_tf32": torch.backends.cudnn.allow_tf32,
         "history": "frame stack and recurrent memory reset on each episode"}, runs_dir)
     raw, normalizer, env = native_vector(config, partition="development",
         normalization=checkpoint / "normalization.pkl", training=False, evaluation_episodes=episodes)
@@ -39,6 +50,9 @@ def evaluate_native(checkpoint: Path, run_id: str, *, episodes: int = 20,
     rows, records = [], []
     frames = 0
     try:
+        write_json(root / "runtime.json", {"pid": os.getpid(), "device": str(model.device),
+            "gpu": torch.cuda.get_device_name() if device == "cuda" else None,
+            "torch_threads": torch.get_num_threads()})
         obs, memory, episode_start = env.reset(), None, np.ones(1, dtype=bool)
         while len(rows) < episodes:
             tick = time.perf_counter()
@@ -78,6 +92,7 @@ def evaluate_native(checkpoint: Path, run_id: str, *, episodes: int = 20,
         return root
     except Exception as error:
         write_json(root / "failure.json", {"error": str(error), "native_frames": frames, "episodes": len(rows)})
+        write_json(root / "status.json", {"status": "failed", "native_frames": frames, "episodes": len(rows)})
         raise
     finally:
         env.close()

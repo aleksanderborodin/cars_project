@@ -1,0 +1,71 @@
+{
+  "id": "native_baseline_20261029_s0",
+  "origin": "Assistant next experiment supporting user strong-comparator goal",
+  "protocol": "native_recipe v1; official pixels resize64 gray stack2 repeat1; separate from local search",
+  "training": {
+    "seed": 0,
+    "workers": 8,
+    "vector_backend": "subproc",
+    "device": "cuda",
+    "torch_threads": 1,
+    "total_decisions": 4000000,
+    "checkpoints": [
+      500000,
+      1000000,
+      2000000,
+      4000000
+    ],
+    "n_steps": 512,
+    "batch_size": 128,
+    "n_epochs": 10,
+    "learning_rate": 0.0001,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "ent_coef": 0.0,
+    "vf_coef": 0.5,
+    "max_grad_norm": 0.5,
+    "clip_range": 0.2,
+    "use_sde": true,
+    "sde_sample_freq": 4,
+    "lstm_hidden_size": 128,
+    "log_std_init": -2.0,
+    "reward_clip": 10.0
+  },
+  "selected_profile": "native_profile_20261029_cuda_subproc_reloadfix",
+  "profile_summary_sha256": "a5d428368379d8a562d14020374a15c211bf96acb9e83d624a4d689abdb8d71e",
+  "evaluation_episodes_per_checkpoint": 50,
+  "evaluation_partition": "first 50 development entries; same panel each checkpoint; CPU deterministic actions",
+  "checkpoint_selection": "highest mean official development return, then completion fraction, then earlier checkpoint",
+  "training_native_frame_cap": 4001792,
+  "reload_native_frame_cap": 8,
+  "development_native_frame_cap": 200000,
+  "reset_physics_ticks": "additional, logged per stage",
+  "minimum_free_disk_bytes": 1073741824,
+  "initial_free_disk_requirement_bytes": 3221225472,
+  "failure_rule": "stop and preserve on nonfinite updates, runtime/reload/interface failure or disk floor; no score-dependent early stop or automatic retry",
+  "segmented_training": "fresh episode/history at each resume, optimizer/RNG/normalizer/stream restored; not uninterrupted bitwise replication",
+  "stages": [
+    {
+      "stop_at": 500000,
+      "training_run_id": "native_main_20261029_s0_to500k",
+      "evaluation_run_id": "native_main_20261029_s0_500k_dev50"
+    },
+    {
+      "stop_at": 1000000,
+      "training_run_id": "native_main_20261029_s0_to1m",
+      "evaluation_run_id": "native_main_20261029_s0_1m_dev50"
+    },
+    {
+      "stop_at": 2000000,
+      "training_run_id": "native_main_20261029_s0_to2m",
+      "evaluation_run_id": "native_main_20261029_s0_2m_dev50"
+    },
+    {
+      "stop_at": 4000000,
+      "training_run_id": "native_main_20261029_s0_to4m",
+      "evaluation_run_id": "native_main_20261029_s0_4m_dev50"
+    }
+  ],
+  "partition_sha256": "f89bb2c62cc5e4b021c66597aa05751970514d17731a927fe17f4d5badfe0095",
+  "profile_summary": "reports/native_profile_2026-10-29/summary.json"
+}

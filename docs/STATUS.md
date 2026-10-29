@@ -1,6 +1,6 @@
 # Implementation and evidence status
 
-**Newest implementation:** the separate [native recipe interface/profile](NATIVE_RECIPE_2026-10-29.md) now implements official pixel preprocessing, two-frame history, repeat one, standard CNN-LSTM, partition-enforced training, saved normalization and post-update resume. Official pixel/reward parity, frame-stack reset, subprocess and reload checks pass; the full suite has 105 passing tests. The four-case, 49,152-frame CPU/GPU profile is declared and ready to run. Native driving competence and full-budget reproduction remain unestablished.
+**Newest implementation:** the [native recipe interface/profile](NATIVE_RECIPE_2026-10-29.md) is complete. Official pixel/reward parity, frame history, checkpoint/resume and CPU/GPU same-device reload checks pass; 106 tests pass. CUDA with eight subprocess environments is selected by execution cost (543 frames/s, about 2.05 projected training hours for 4M). Original cross-device verification failures and retry costs are retained. The [fixed-budget one-seed native campaign](NATIVE_BASELINE_2026-10-29.md) is prepared; launch follows full-episode evaluator replay. Native driving competence remains unestablished.
 
 Updated 2026-10-29. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
 [Roadmap](ROADMAP.md) · [Latest development results](SEQUENCE_SEARCH_2026-10-29.md)

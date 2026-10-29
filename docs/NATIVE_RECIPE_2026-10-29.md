@@ -73,8 +73,9 @@ separate future studies. User-only ranking diagnostics remain unread.
 
 ## Execution status
 
-Declared; implementation and correctness checks in progress. Measurements will
-be appended with immutable run references when complete.
+Implemented and profiled. All 106 tests pass. Original CPU cases and corrected
+GPU cases completed; original GPU verification failures remain preserved.
+See the measured results below.
 
 ## Technical follow-up declared after original profile
 
@@ -96,3 +97,35 @@ records this technical correction before execution. CPU/GPU validation changes a
 not return-based method tuning. Retain original failed training costs and report
 that their interrupted reload checks consumed between zero and one step each;
 the original failure logger did not save that exact counter.
+
+## Completed profile and next decision
+
+The [public results and provenance](../reports/native_profile_2026-10-29/summary.md)
+verify 408 frozen source-file hashes across all six attempts and identical initial
+policy parameters. Only native_training.py changed between original and retry
+snapshots: verification, failure-cost persistence and metadata; no learning-rule,
+architecture, preprocessing or budget change. No development score was used.
+
+| Setup | Later update mean | Training frames/s | Projected 4M training |
+|---|---:|---:|---:|
+| CPU, serial vector | 28.19 s | 145.3 | 7.65 h |
+| CPU, subprocess | 17.25 s | 237.5 | 4.68 h |
+| CUDA, serial vector, corrected reload check | 18.09 s | 226.5 | 4.91 h |
+| CUDA, subprocess, corrected reload check | 7.54 s | 543.4 | 2.05 h |
+
+**Decision:** CUDA/subprocess, eight environments. Peak PyTorch GPU allocation
+was about 0.13 GiB; this excludes driver/other-process memory. Host RSS is measured
+only for the parent process, not an aggregate worker-memory claim. The two-hour
+projection excludes validation/checkpoint overhead and later rollout-length changes.
+All attempts cost 73,728 training frames, 8–10 reload-check frames, 102 reset physics
+ticks and 18 full optimizer rollouts; campaign wall time 5.41 minutes. Correctness
+unit/integration work is separate. The range is an explicit logging limit in the
+original failed reload checks, not an estimated exact count.
+
+The [next one-seed native campaign](NATIVE_BASELINE_2026-10-29.md) freezes 4M
+aggregate decisions, four scheduled checkpoints and the first 50 development tracks.
+Before launching, run two full development episodes twice with the selected
+profile checkpoint, solely to validate evaluation/replay. This separate
+[readiness declaration](../configs/campaigns/native-evaluation-readiness-2026-10-29.json)
+caps new development work at 4,000 frames plus four resets; it cannot select the
+checkpoint or alter training parameters. It is not a competence result.

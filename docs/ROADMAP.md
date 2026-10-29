@@ -1,6 +1,6 @@
 # Roadmap and decision gates
 
-**Current baseline gate:** the [native recipe interface/profile](NATIVE_RECIPE_2026-10-29.md) is implemented and tested (105 tests). Four serial CPU/GPU/backend cases are declared. This addresses interface and feasibility gates; it does not establish baseline competence or a matched local search improvement.
+**Current baseline gate:** the [native interface/profile](NATIVE_RECIPE_2026-10-29.md) is complete (106 tests). CUDA/eight subprocess environments is the selected execution setup; original failed verification attempts are retained. The [one-seed native baseline](NATIVE_BASELINE_2026-10-29.md) is declared next. Strong-baseline, independent-seed and matched-local-search gates remain open.
 
 Updated 2026-10-29. [Index](../README.md) · [User intent](USER_INTENT.md) ·
 [Status](STATUS.md) · [Proposed numerical settings](DESIGN_DECISIONS.md)

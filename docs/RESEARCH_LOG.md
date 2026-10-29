@@ -1012,3 +1012,24 @@ Earlier project intentions remain in USER_INTENT.md; this log extends that recor
 - **Uncertainty:** high confidence in accounting/interface correction, medium in
   short-profile throughput transfer, unknown driving competence. Full-budget and
   independent-seed runs, stronger local proposer and trained V/L/F remain open.
+
+### R48 execution update: profile complete, fixed native campaign declared
+
+The assistant implemented the separate native interface and ran all four declared
+profiles. Both GPU cases completed training but failed GPU-versus-CPU numerical
+assertions at reload. The correction separates exact same-device serialization
+and independent CPU-load repeatability from reported cross-device drift. The two
+GPU cases alone were rerun under new IDs; no learning-rule change or score-based
+selection occurred. All 106 tests pass. CUDA/eight subprocess environments is the
+cost-selected setup: 543 frames/s, provisional 2.05 training hours for 4M decisions.
+All six attempts, costs, failure artifacts and source checks are retained in the
+[profile report](NATIVE_RECIPE_2026-10-29.md).
+
+The assistant now declares the [one-seed native baseline](NATIVE_BASELINE_2026-10-29.md):
+4M aggregate decisions, global linear schedule, four scheduled checkpoints and
+fixed first-50-development selection by official return/completion/earlier step.
+Full-episode evaluator replay precedes launch. This supports the user's comparison
+goal but does not establish policy competence, generality or SOTA. Native pixels
+and local repeat-four search remain separate protocols. No private rankings or
+final-test data are accessed. Main uncertainty: whether the full recipe learns
+competent driving and how well short-profile runtime predicts a longer curve.

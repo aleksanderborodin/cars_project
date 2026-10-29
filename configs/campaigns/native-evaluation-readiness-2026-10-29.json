@@ -1,0 +1,15 @@
+{
+  "id": "native_evaluation_readiness_20261029",
+  "checkpoint": "runs/native_training/native_profile_20261029_cuda_subproc_reloadfix",
+  "purpose": "Evaluator full-episode integration and deterministic replay only; no checkpoint or method selection",
+  "partition": "first two development tracks",
+  "passes": 2,
+  "episodes_per_pass": 2,
+  "native_frame_cap": 4000,
+  "reset_physics_ticks": 4,
+  "comparison": "actions, rewards, images and terminal observations exact; timing excluded",
+  "run_ids": [
+    "native_readiness_20261029_a",
+    "native_readiness_20261029_b"
+  ]
+}

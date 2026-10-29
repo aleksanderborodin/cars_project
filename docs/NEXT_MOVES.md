@@ -1,6 +1,6 @@
 # Next moves: establish useful simulation improvement over strong drivers
 
-**Native implementation update:** the separate [recipe interface/profile](NATIVE_RECIPE_2026-10-29.md) passes pixel/reward parity, vector-history and checkpoint/resume checks (105 total tests). The next action is its four-case execution profile: 49,152 training frames, eight reload-check frames, additional counted resets and no performance-selection evaluation. Costs determine the next bounded native campaign; stronger local training remains a separate decision.
+**Native implementation update:** the [interface/profile](NATIVE_RECIPE_2026-10-29.md) is complete, including the documented cross-device verification correction. Select CUDA/eight subprocess environments by cost. The [next native campaign](NATIVE_BASELINE_2026-10-29.md) declares one seed, 4M aggregate decisions, 0.5/1/2/4M checkpoints and first-50 development selection. It precedes a separate stronger matched-local trial; it does not replace the original local simulator/search study.
 
 Updated 2026-10-29. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
 [Architecture](SIMULATOR_SEARCH_PLAN.md) · [Evidence](PROGRAMMED_SIMULATOR_RESULTS.md)

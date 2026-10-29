@@ -1,6 +1,6 @@
 # Recurrent baseline audit before longer training
 
-**New implementation:** the [native recipe interface/profile](NATIVE_RECIPE_2026-10-29.md) implements the audited resize/grayscale/stack/repeat-one path and standard CNN-LSTM. Official pixel/reward parity, history, subprocess and checkpoint tests pass. Throughput profiling is declared; successful full-budget driving remains outstanding. The local-driver history below retains its original interpretation.
+**New implementation:** the [native interface/profile](NATIVE_RECIPE_2026-10-29.md) now passes audited pixel/reward, history and checkpoint checks. Six execution attempts, including two preserved verification failures, consumed 73,728 training frames. CUDA/subprocess is selected by cost. The [one-seed 4M native campaign](NATIVE_BASELINE_2026-10-29.md) is declared; successful full-budget driving remains outstanding. The local-driver history below retains its original interpretation.
 
 Updated 2026-10-29. [Next experiments](NEXT_EXPERIMENTS.md) ·
 [References](REFERENCES.md) · [Status](STATUS.md)

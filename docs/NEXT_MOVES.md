@@ -20,30 +20,45 @@ diagnostic study, source attribution and validity requirements. See the
 [execution report](BROAD_RESULTS_2026-10-29.md); the original decisions below
 remain recorded as the pre-execution plan.
 
-**Latest user steering:** execute the intervention study. The completed bounded
-task began with the [four-cell fixed-controller geometry pilot](INTERVENTION_STUDY.md),
-separating visible-reference reconstruction from hidden-road access. This brings
-the controlled diagnostic forward; the optimizer audit and baseline competence
-work remain necessary. No new oracle-policy training or test evaluation is enabled.
-That [pilot and executed-action audit](INTERVENTION_RESULTS_2026-10-29.md) are complete.
-Oracle road improved recorded-action prediction but reduced driving score. The
-[five-track reference-tail follow-up](REFERENCE_CONTINUATION_2026-10-29.md) recovered
-594.21/0%→876.29/80% while preserving the visible prefix. Its [20-track paired
-replication](REFERENCE_REPLICATION_2026-10-29.md) is now complete: true tail
-813.85/60%, tangent 527.60/0%, historical local 885.70/70%. Additional15 retain
-+287.64 versus tangent, but −85.57 versus local, with one primary counterexample.
-All ten replay checks passed; no jobs remain. Close this bounded diagnostic with
-both findings preserved. Keep the original local method; do not promote the oracle
-variant or automatically expand/tune it. The next implementation priority is the
-[audited equal-work optimizer comparison](SEARCH_OPTIMIZER_AUDIT.md), gated by
-synthetic isolation/budget tests and a new smoke/campaign declaration. Baseline
-competence and trained V/L/F work remain required. No new optimizer/global-training
-runs are launched, and these oracle interventions are not performance ceilings.
+**Latest user steering:** continue the needed experiments autonomously and document
+choices/findings. The [geometry intervention](INTERVENTION_RESULTS_2026-10-29.md)
+and [20-track reference-tail replication](REFERENCE_REPLICATION_2026-10-29.md)
+are complete. Correcting the scoring tail helped its oracle-road condition but did
+not beat original local search; the diagnostic is closed without promotion.
 
-**Execution update:** the [resolved sequence-search comparison](SEQUENCE_SEARCH_2026-10-29.md)
-is implemented and under validation. Both primary arms use the same full-sequence
-residual space, noise convention, bounds and 13+8 batches. A historical episode
-replay and two-track smoke runs gate the fixed 20-track comparison; no scores exist yet.
+The [matched sequence-search comparison](SEQUENCE_SEARCH_2026-10-29.md) is also
+complete: colored shooting 884.86/70%, iCEM adaptation 634.13/15%, historical knot
+search 905.94/85%. Primary iCEM-minus-colored difference −250.72 [−359.57, −147.31];
+the additional eighteen tracks retain the deficit. Five exact replays, all cost
+checks and 100 tests passed. Keep the original local search; no larger sweep or
+individual-track repair follows this negative result. No campaign jobs remain.
+
+**Next bounded work, assistant decision:** establish baseline competence before
+more search tuning. The [factory audit](BASELINE_AUDIT.md) finds that the selected
+local actor used 251,904 learner decisions, only 6.30% of the reference recipe's
+nominal 4M, with different encoder, action cadence and physical discount. The
+[Valdi audit](VALDI_AUDIT.md) also identifies incompatible evaluation and compute
+contracts. Neither external method has been reproduced here.
+
+1. Implement and verify a separate native PPO recipe interface: audited pixel
+   preprocessing/history, action cadence, normalization and partition-enforced
+   streams. Current native RGB-plus-previous-action smoke is not that interface.
+2. Profile its actual throughput/memory, then declare its full decision budget,
+   versions, checkpoint selection and costs before starting training. Do not infer
+   native runtime from state-only local training.
+3. Declare a stronger matched local training trial using the audit's budget and
+   discount/exploration-cadence findings. A changed recipe is a new trial, not a
+   silent resume of the regressed actor. Extra training or cadence repairs helping
+   is uncertain; report full curves and failed trials.
+4. Once competence is demonstrated, freeze independently trained proposers for
+   direct-versus-original-search comparisons. Trained V/L/F rows and modern
+   learned-model reproductions remain separately gated; no final test is opened.
+
+High confidence that these controls are needed, unknown which training repair will
+succeed. CEM over the original knots, different noise, larger populations and
+scenario forecasts remain possible later probes; the current experiment does not
+identify which iCEM feature failed. Original staged budget proposals below are
+retained as planning history; each new campaign still needs a resolved manifest.
 
 ## Objective and present evidence
 

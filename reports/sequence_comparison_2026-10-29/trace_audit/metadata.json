@@ -1,0 +1,13 @@
+{
+  "primary_analysis_sha256": "561b8b456a756957e8b85799047dae9bf8fd48b6dabb48188fb605fa0199164a",
+  "plan_sha256": "c9c572dfa5d193d0e20fe58b71213de4b57b2cd47d761d88ed397ec3a5d29108",
+  "script_sha256": "6403b824cb40e37753d8394527bc959539f1b846ddb23ea33d176cad3c5de6ad",
+  "checked_trajectories": 80,
+  "checked_diagnostic_files": 80,
+  "new_environment_frames": 0,
+  "new_model_steps": 0,
+  "aggregation": "equal-weight mean of per-track statistics; counts shown are mean counts per track",
+  "scope": "post-hoc descriptive executed behavior; different on-policy state distributions; no causal attribution",
+  "not_measured": "counterfactual candidate outcomes, ranks, regrets, long-horizon accuracy",
+  "private_diagnostics_accessed": false
+}

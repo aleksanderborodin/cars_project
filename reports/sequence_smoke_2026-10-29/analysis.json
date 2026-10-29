@@ -1,0 +1,622 @@
+{
+  "manifest_sha256": "def709dfbdca894fe131763d229269b815a1268dcac59bf576c56a20fd4549fb",
+  "inputs": [
+    {
+      "condition": "knots",
+      "run": "runs/policy_physics_search/broad_driver_20261028_search21",
+      "config_sha256": "96c31dd67dfaa0d1785bb3b11452151eef3d2d3ce05627fd8dd3b3d35625f050",
+      "metrics_sha256": "e5e81c1ec0c897bacc5a4e85d5fa9f09b8496effb2118cdac40a9b447ea5f828",
+      "cost_sha256": "7a8eb6fb4c19fe6d4be49cce8461ba7d8daf269e15ae8deda3137cfafcb688b5",
+      "source_sha256": {
+        "pyproject.toml": "06293eced9da2db196271a1a7e16a0a224afc5c1c9960ac5eb7143cae274c2f4",
+        "src/cars/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/cli.py": "1d47c2f0e87dc476d2137145043789af94159f55c6a2655ceb99280f55653515",
+        "src/cars/env/__init__.py": "a0bd5973f4d5bc6e962cd4dcc1de24a582f118b5cd0c558983bd65404de84737",
+        "src/cars/env/carracing.py": "4495b00bc0eec5e7efcdac4f595d4dfeb41e833d8a62cbf6f6e1eea60de9325c",
+        "src/cars/env/make.py": "80d2830ca7cad3ce40f407b7cfa4e168232ca431067afbe8a473806cb664c589",
+        "src/cars/env/metrics.py": "e7b69bb03dada359e3b4c8c9f4a1ee474a6378bed1f883e77dd0740950d011d3",
+        "src/cars/env/partitions.py": "7d1dbd8cb2ab59bb320f5bdd9180292dbaebf06b5739c01e48a9bc3b738bed50",
+        "src/cars/env/protocol.py": "3c0e0a5e992d4fe3aeb1f62b73847d5f48f37fff6bd74dfbf06a34acf549b81c",
+        "src/cars/env/splits.py": "c897a697e67705fbe1717087b379e34cdd1112211162c5b636cff48cdc7febf8",
+        "src/cars/env/state.py": "15cee0801c7f39ad335ce92783f7cacdee2c7c9242336318c40d6747e8161447",
+        "src/cars/eval/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/eval/episode_log.py": "0766d8adad2d31b06b898d0f35f900b39abd027148d1d8c1a48ca0e78d659214",
+        "src/cars/eval/paired.py": "319c04004b9d07260cb70597d323556ec1d235cc685396850ca803de0f3fb314",
+        "src/cars/eval/report.py": "0d8d45fc3a96ebdf5ede65d7c10e9833b063c813f45142b681a56829f95ab308",
+        "src/cars/eval/runner.py": "aa047cca59988d57dc349b2f4d4348d4cedd297a2d77392676e655af66240082",
+        "src/cars/il/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/il/bc.py": "ed0567ff451a62eaabc52d4b5f1464f562f1a067836402c80c2ba8a9746ccf89",
+        "src/cars/il/dagger.py": "2f0ba1f118da493fd627f8d89f4a15be06dfd4b8d6e8503d808b4d44f8e6fbaa",
+        "src/cars/il/data.py": "0a95ca9c7742e14cfdaa923908f1161a9f675776d2e025f5d79585e6751c7cf9",
+        "src/cars/models/__init__.py": "0dc1d7a41d4f95e48c447fde9102802f9c65e24e60973e2603582f8a0c4c627a",
+        "src/cars/models/dynamics.py": "e9301bff433f1fc5f149ecc976e0cb98f6d2cf7dcbfb21a1de4e2e74c766e077",
+        "src/cars/models/physics.py": "2cd6155dc00c9edffe62ab8cd45e4bdb72353d2cedddbedfdc671738dd1c4300",
+        "src/cars/monitoring/__init__.py": "47df79f279b968fda79d8feda44605972a92390fe861e18465253ebc7ae30517",
+        "src/cars/monitoring/bridge.py": "9125c9b4937a121f6eb686e313eeba290805779ad95f61ab9b0863ff3f990fd8",
+        "src/cars/monitoring/oracle.py": "5d4542f1f97fd85349c22f00b07c936b7bc4b959559cfa325db1c73ffa6e2650",
+        "src/cars/planning/__init__.py": "618bfd1a0570a9bc2e7437a294a9965cd8456ac0e9f7ca0dd012c218b6dea9bb",
+        "src/cars/planning/global_search.py": "dfead287b62c65bb19d394830f0e544bb0a514af49a4bb4dd2727f12474bc89a",
+        "src/cars/planning/local.py": "2aa5ed81452198713b79757e64fae03cb66eea725444e78cc878f8aa9c56176d",
+        "src/cars/planning/occupancy.py": "154d7f5c5a69da60ffce7a223c0b225d5acf4344fb3ab0a1927877ef3d902f9f",
+        "src/cars/planning/physics_search.py": "e66d8ce92599e0dda1ac01b67a46d44a13615b12e8c2b97345bbc25ff1fc8f2f",
+        "src/cars/planning/policy_controls.py": "14684d0e30a6e8b105c234074b0b7d4322f988be979ab9b34a605419cba14130",
+        "src/cars/planning/policy_search.py": "94932427a4e0a7c5aac96e9928f2b3d94d527834ff9c5485053c32b49b6f7048",
+        "src/cars/planning/search.py": "ca91f182cb5a280db9058323e236d92b428464158e3918a6ef50fadcc77d6509",
+        "src/cars/planning/world.py": "19c660841358f6203b9f1379b0e3c34d0b5e8ef2e7b3c5c21a63569ee1a0c28a",
+        "src/cars/policies/__init__.py": "7969a425c859d7986a67fed00ca0fe21dc9d6397d7ee3b7fffe5eb59066ae78b",
+        "src/cars/policies/base.py": "714a6a14352155c0a7d70c2ac589f148e20c8e6a32ed399c23bf6172b8561cd3",
+        "src/cars/policies/baseline.py": "22bbeeeeeb959ece1463100445ba05072d84f22884ef9d201304f5326ff90f1c",
+        "src/cars/policies/sb3.py": "437a8e922d1f0fc3fa88935e333649b214fe270569b85a6f8b2a2c96df4f1d5d",
+        "src/cars/policies/torch_mlp.py": "1e638dbeaadf470aa547082af577d1ce3c0da755cb963be109a223896afc46d1",
+        "src/cars/research/__init__.py": "3f8f2a9dc600f87fb123c76a1dadb554dc6c7619b912e08e5254a66664d72429",
+        "src/cars/research/artifacts.py": "37506a22cfb64f08c9a6343388165f20a55669c35ed58f72b14d53aa795f3581",
+        "src/cars/research/cli.py": "ec0545d3fe29eaf64f83d94115beb4772b16a7c0a7a4189cadf45eeeeb2a1370",
+        "src/cars/research/data.py": "31f210d8fac0285c5ae19fdc9b1ad1eecf368adb26853d969ee74635aacaaa7e",
+        "src/cars/research/driver_checkpoint.py": "e5f6b38857234bf50a6d549fd5cd334c7a92e7fbe843c2c52eff3058f1e1d561",
+        "src/cars/research/driver_config.py": "3c069a8af2d758f9099fb9e4deb71de0a806138f27878cd6b4fe3c09f71dd959",
+        "src/cars/research/driver_encoder.py": "bb56a44c0e1d467d598a839e6c618de3f4f5dd9299c15887d6b517a448fdfbb9",
+        "src/cars/research/driver_training.py": "1e7ad02b409d69cd9e75fffcb3b018c6b8237eaec4031d9c10bb6d3dccd50d23",
+        "src/cars/research/evaluation.py": "8b2fb1395309acc2647a59d920393ea2e1aa7aee01a03c17b9d6e1c2763aa204",
+        "src/cars/research/failures.py": "8688daa911a18525c62b0a3339df5b0b10ac67cb54b6327756dbe6c14e40bd35",
+        "src/cars/research/frozen_code.py": "64a1042bf145cc29e326828e433307fdb27ee48393a2895eb574a15a34d0e8b7",
+        "src/cars/research/recurrent.py": "50bc115cae12d82558fbc432047f6df5e2d32172d21879de1623256a5929cbee",
+        "src/cars/rl/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/rl/interface.py": "449ff33147cd3e7e7f7248a8061f369466d33c112bb89f4fd12119f9fbdf77ad",
+        "src/cars/rl/train.py": "174795d6ef03e7433911f1154214b7a4070715f429cd72bd02809c3067a97915",
+        "src/cars/training.py": "0931b232ab3a40a17ea4406bc120e70c107989d562b9f199a5dc46bc1bc9518b",
+        "uv.lock": "1883c6b19e5fa96474dd8539865121633b20533bde9785ac59d8b5ea8ff96a51"
+      },
+      "trajectories": [
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0000.npz",
+          "sha256": "6aacc9ab8efd576deba5f294ba5d09b039088e4ee06413a7e0b2df84dfdc6702",
+          "diagnostics_sha256": "98e9ab476f303a3e6e3063f3efdbc764189713d48d49473c6ae94c674b7d3be7"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0001.npz",
+          "sha256": "3922d36e03f3f69fe6a791acb402640411bcf6d6405e3c8ca1f07315d0609f96",
+          "diagnostics_sha256": "6b2aac402c2dea6098517db51156f3c2095338a806cc73d007fd51b557b003d0"
+        }
+      ]
+    },
+    {
+      "condition": "direct",
+      "run": "runs/recurrent_ppo/broad_driver_20261028_direct",
+      "config_sha256": "7c37bd8e4f4e4c9df6905a3d6ec30ddc83a21c8e34669eff1aed1349d4f26ec7",
+      "metrics_sha256": "d6f225d389e8a36b21782e557359c58136d26367c1f0a3596a8d8959df8b27a6",
+      "cost_sha256": "1a3bfa121916b683ea6d83f75caee8c32be69dd4a4689b02b527dd73f04ea5ef",
+      "source_sha256": {
+        "pyproject.toml": "06293eced9da2db196271a1a7e16a0a224afc5c1c9960ac5eb7143cae274c2f4",
+        "src/cars/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/cli.py": "1d47c2f0e87dc476d2137145043789af94159f55c6a2655ceb99280f55653515",
+        "src/cars/env/__init__.py": "a0bd5973f4d5bc6e962cd4dcc1de24a582f118b5cd0c558983bd65404de84737",
+        "src/cars/env/carracing.py": "4495b00bc0eec5e7efcdac4f595d4dfeb41e833d8a62cbf6f6e1eea60de9325c",
+        "src/cars/env/make.py": "80d2830ca7cad3ce40f407b7cfa4e168232ca431067afbe8a473806cb664c589",
+        "src/cars/env/metrics.py": "e7b69bb03dada359e3b4c8c9f4a1ee474a6378bed1f883e77dd0740950d011d3",
+        "src/cars/env/partitions.py": "7d1dbd8cb2ab59bb320f5bdd9180292dbaebf06b5739c01e48a9bc3b738bed50",
+        "src/cars/env/protocol.py": "3c0e0a5e992d4fe3aeb1f62b73847d5f48f37fff6bd74dfbf06a34acf549b81c",
+        "src/cars/env/splits.py": "c897a697e67705fbe1717087b379e34cdd1112211162c5b636cff48cdc7febf8",
+        "src/cars/env/state.py": "15cee0801c7f39ad335ce92783f7cacdee2c7c9242336318c40d6747e8161447",
+        "src/cars/eval/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/eval/episode_log.py": "0766d8adad2d31b06b898d0f35f900b39abd027148d1d8c1a48ca0e78d659214",
+        "src/cars/eval/paired.py": "319c04004b9d07260cb70597d323556ec1d235cc685396850ca803de0f3fb314",
+        "src/cars/eval/report.py": "0d8d45fc3a96ebdf5ede65d7c10e9833b063c813f45142b681a56829f95ab308",
+        "src/cars/eval/runner.py": "aa047cca59988d57dc349b2f4d4348d4cedd297a2d77392676e655af66240082",
+        "src/cars/il/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/il/bc.py": "ed0567ff451a62eaabc52d4b5f1464f562f1a067836402c80c2ba8a9746ccf89",
+        "src/cars/il/dagger.py": "2f0ba1f118da493fd627f8d89f4a15be06dfd4b8d6e8503d808b4d44f8e6fbaa",
+        "src/cars/il/data.py": "0a95ca9c7742e14cfdaa923908f1161a9f675776d2e025f5d79585e6751c7cf9",
+        "src/cars/models/__init__.py": "0dc1d7a41d4f95e48c447fde9102802f9c65e24e60973e2603582f8a0c4c627a",
+        "src/cars/models/dynamics.py": "e9301bff433f1fc5f149ecc976e0cb98f6d2cf7dcbfb21a1de4e2e74c766e077",
+        "src/cars/models/physics.py": "2cd6155dc00c9edffe62ab8cd45e4bdb72353d2cedddbedfdc671738dd1c4300",
+        "src/cars/monitoring/__init__.py": "47df79f279b968fda79d8feda44605972a92390fe861e18465253ebc7ae30517",
+        "src/cars/monitoring/bridge.py": "9125c9b4937a121f6eb686e313eeba290805779ad95f61ab9b0863ff3f990fd8",
+        "src/cars/monitoring/oracle.py": "5d4542f1f97fd85349c22f00b07c936b7bc4b959559cfa325db1c73ffa6e2650",
+        "src/cars/planning/__init__.py": "618bfd1a0570a9bc2e7437a294a9965cd8456ac0e9f7ca0dd012c218b6dea9bb",
+        "src/cars/planning/global_search.py": "dfead287b62c65bb19d394830f0e544bb0a514af49a4bb4dd2727f12474bc89a",
+        "src/cars/planning/local.py": "2aa5ed81452198713b79757e64fae03cb66eea725444e78cc878f8aa9c56176d",
+        "src/cars/planning/occupancy.py": "154d7f5c5a69da60ffce7a223c0b225d5acf4344fb3ab0a1927877ef3d902f9f",
+        "src/cars/planning/physics_search.py": "e66d8ce92599e0dda1ac01b67a46d44a13615b12e8c2b97345bbc25ff1fc8f2f",
+        "src/cars/planning/policy_controls.py": "14684d0e30a6e8b105c234074b0b7d4322f988be979ab9b34a605419cba14130",
+        "src/cars/planning/policy_search.py": "94932427a4e0a7c5aac96e9928f2b3d94d527834ff9c5485053c32b49b6f7048",
+        "src/cars/planning/search.py": "ca91f182cb5a280db9058323e236d92b428464158e3918a6ef50fadcc77d6509",
+        "src/cars/planning/world.py": "19c660841358f6203b9f1379b0e3c34d0b5e8ef2e7b3c5c21a63569ee1a0c28a",
+        "src/cars/policies/__init__.py": "7969a425c859d7986a67fed00ca0fe21dc9d6397d7ee3b7fffe5eb59066ae78b",
+        "src/cars/policies/base.py": "714a6a14352155c0a7d70c2ac589f148e20c8e6a32ed399c23bf6172b8561cd3",
+        "src/cars/policies/baseline.py": "22bbeeeeeb959ece1463100445ba05072d84f22884ef9d201304f5326ff90f1c",
+        "src/cars/policies/sb3.py": "437a8e922d1f0fc3fa88935e333649b214fe270569b85a6f8b2a2c96df4f1d5d",
+        "src/cars/policies/torch_mlp.py": "1e638dbeaadf470aa547082af577d1ce3c0da755cb963be109a223896afc46d1",
+        "src/cars/research/__init__.py": "3f8f2a9dc600f87fb123c76a1dadb554dc6c7619b912e08e5254a66664d72429",
+        "src/cars/research/artifacts.py": "37506a22cfb64f08c9a6343388165f20a55669c35ed58f72b14d53aa795f3581",
+        "src/cars/research/cli.py": "ec0545d3fe29eaf64f83d94115beb4772b16a7c0a7a4189cadf45eeeeb2a1370",
+        "src/cars/research/data.py": "31f210d8fac0285c5ae19fdc9b1ad1eecf368adb26853d969ee74635aacaaa7e",
+        "src/cars/research/driver_checkpoint.py": "e5f6b38857234bf50a6d549fd5cd334c7a92e7fbe843c2c52eff3058f1e1d561",
+        "src/cars/research/driver_config.py": "3c069a8af2d758f9099fb9e4deb71de0a806138f27878cd6b4fe3c09f71dd959",
+        "src/cars/research/driver_encoder.py": "bb56a44c0e1d467d598a839e6c618de3f4f5dd9299c15887d6b517a448fdfbb9",
+        "src/cars/research/driver_training.py": "1e7ad02b409d69cd9e75fffcb3b018c6b8237eaec4031d9c10bb6d3dccd50d23",
+        "src/cars/research/evaluation.py": "8b2fb1395309acc2647a59d920393ea2e1aa7aee01a03c17b9d6e1c2763aa204",
+        "src/cars/research/failures.py": "8688daa911a18525c62b0a3339df5b0b10ac67cb54b6327756dbe6c14e40bd35",
+        "src/cars/research/frozen_code.py": "64a1042bf145cc29e326828e433307fdb27ee48393a2895eb574a15a34d0e8b7",
+        "src/cars/research/recurrent.py": "50bc115cae12d82558fbc432047f6df5e2d32172d21879de1623256a5929cbee",
+        "src/cars/rl/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/rl/interface.py": "449ff33147cd3e7e7f7248a8061f369466d33c112bb89f4fd12119f9fbdf77ad",
+        "src/cars/rl/train.py": "174795d6ef03e7433911f1154214b7a4070715f429cd72bd02809c3067a97915",
+        "src/cars/training.py": "0931b232ab3a40a17ea4406bc120e70c107989d562b9f199a5dc46bc1bc9518b",
+        "uv.lock": "1883c6b19e5fa96474dd8539865121633b20533bde9785ac59d8b5ea8ff96a51"
+      },
+      "trajectories": [
+        {
+          "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0000.npz",
+          "sha256": "5fc9e267ce28d5a7e2ad21a80190ac3bc7a4c025a829ecf01b8aafc5de140e37",
+          "diagnostics_sha256": "0f49bb59e1ee2951b7f63757724f84dda525e856e4c8af9944edffe7770bbeb0"
+        },
+        {
+          "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0001.npz",
+          "sha256": "157f2393dfd357cfd0ac01d20a017884c49a19d1f764a3de31b9a82e4b20fa0d",
+          "diagnostics_sha256": "26d26f26a32faf8ac23154b3aeeccabafa9ba3179625cb0805aae754ebb52508"
+        }
+      ]
+    },
+    {
+      "condition": "colored",
+      "run": "runs/policy_colored_shooting/sequence_smoke_20261029_colored",
+      "config_sha256": "c35295f55cd54d2fcd23a064fda79e9e7fc352b79fbb7a7d43a4c05e70a28518",
+      "metrics_sha256": "e11c85c814880d801d7f1deff12b0f3b06b6729a1b1f04ba3b85fcb29eabf545",
+      "cost_sha256": "c2150a2ed735a1ae1ef23bf6b401e742e65f94b7e993fe7b736a65718e2fcebe",
+      "source_sha256": {
+        "pyproject.toml": "ec68c9fb0b529c430e437b7e4ca2ffe554687b22ca9aff48db4505dc7d13ca87",
+        "src/cars/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/cli.py": "1d47c2f0e87dc476d2137145043789af94159f55c6a2655ceb99280f55653515",
+        "src/cars/env/__init__.py": "a0bd5973f4d5bc6e962cd4dcc1de24a582f118b5cd0c558983bd65404de84737",
+        "src/cars/env/carracing.py": "4495b00bc0eec5e7efcdac4f595d4dfeb41e833d8a62cbf6f6e1eea60de9325c",
+        "src/cars/env/make.py": "80d2830ca7cad3ce40f407b7cfa4e168232ca431067afbe8a473806cb664c589",
+        "src/cars/env/metrics.py": "e7b69bb03dada359e3b4c8c9f4a1ee474a6378bed1f883e77dd0740950d011d3",
+        "src/cars/env/partitions.py": "7d1dbd8cb2ab59bb320f5bdd9180292dbaebf06b5739c01e48a9bc3b738bed50",
+        "src/cars/env/protocol.py": "3c0e0a5e992d4fe3aeb1f62b73847d5f48f37fff6bd74dfbf06a34acf549b81c",
+        "src/cars/env/splits.py": "c897a697e67705fbe1717087b379e34cdd1112211162c5b636cff48cdc7febf8",
+        "src/cars/env/state.py": "15cee0801c7f39ad335ce92783f7cacdee2c7c9242336318c40d6747e8161447",
+        "src/cars/eval/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/eval/episode_log.py": "0766d8adad2d31b06b898d0f35f900b39abd027148d1d8c1a48ca0e78d659214",
+        "src/cars/eval/paired.py": "319c04004b9d07260cb70597d323556ec1d235cc685396850ca803de0f3fb314",
+        "src/cars/eval/report.py": "0d8d45fc3a96ebdf5ede65d7c10e9833b063c813f45142b681a56829f95ab308",
+        "src/cars/eval/runner.py": "aa047cca59988d57dc349b2f4d4348d4cedd297a2d77392676e655af66240082",
+        "src/cars/il/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/il/bc.py": "ed0567ff451a62eaabc52d4b5f1464f562f1a067836402c80c2ba8a9746ccf89",
+        "src/cars/il/dagger.py": "2f0ba1f118da493fd627f8d89f4a15be06dfd4b8d6e8503d808b4d44f8e6fbaa",
+        "src/cars/il/data.py": "0a95ca9c7742e14cfdaa923908f1161a9f675776d2e025f5d79585e6751c7cf9",
+        "src/cars/models/__init__.py": "0dc1d7a41d4f95e48c447fde9102802f9c65e24e60973e2603582f8a0c4c627a",
+        "src/cars/models/dynamics.py": "e9301bff433f1fc5f149ecc976e0cb98f6d2cf7dcbfb21a1de4e2e74c766e077",
+        "src/cars/models/physics.py": "384f8db2729915681cd83ecc38f5d51c84185e3df265d8b6358eb9027f05df0b",
+        "src/cars/monitoring/__init__.py": "47df79f279b968fda79d8feda44605972a92390fe861e18465253ebc7ae30517",
+        "src/cars/monitoring/bridge.py": "9125c9b4937a121f6eb686e313eeba290805779ad95f61ab9b0863ff3f990fd8",
+        "src/cars/monitoring/oracle.py": "5d4542f1f97fd85349c22f00b07c936b7bc4b959559cfa325db1c73ffa6e2650",
+        "src/cars/planning/__init__.py": "618bfd1a0570a9bc2e7437a294a9965cd8456ac0e9f7ca0dd012c218b6dea9bb",
+        "src/cars/planning/global_search.py": "dfead287b62c65bb19d394830f0e544bb0a514af49a4bb4dd2727f12474bc89a",
+        "src/cars/planning/intervention.py": "d7d07bcf52c9f441b99145706921a71cf28bb9a56476016058edbba747ae8954",
+        "src/cars/planning/local.py": "2aa5ed81452198713b79757e64fae03cb66eea725444e78cc878f8aa9c56176d",
+        "src/cars/planning/occupancy.py": "154d7f5c5a69da60ffce7a223c0b225d5acf4344fb3ab0a1927877ef3d902f9f",
+        "src/cars/planning/physics_search.py": "e66d8ce92599e0dda1ac01b67a46d44a13615b12e8c2b97345bbc25ff1fc8f2f",
+        "src/cars/planning/policy_controls.py": "14684d0e30a6e8b105c234074b0b7d4322f988be979ab9b34a605419cba14130",
+        "src/cars/planning/policy_rollouts.py": "8dfbfc60e8c74f62dafb2e8e607712003fc958f5b7ffe0180c74c881a170025d",
+        "src/cars/planning/policy_search.py": "47097a0ce327728d15cdaa4c7f0e36ecb9b633b190647b109c3bb13576795e67",
+        "src/cars/planning/policy_sequence_search.py": "6a67d4fd5ea5daac70d52fc1c3cd5b3e5f87f37b3dd194ee48f01560a9b2d710",
+        "src/cars/planning/reference_extension.py": "f368293193bcf175d37576809fdddc8a6be9acf569b47b1c134bd013d83243e6",
+        "src/cars/planning/search.py": "ca91f182cb5a280db9058323e236d92b428464158e3918a6ef50fadcc77d6509",
+        "src/cars/planning/sequence_optimizer.py": "49c4cbf0568803a58bd5bdfe6516512b3e0f7ae2319edb9b1cc907b751883b9b",
+        "src/cars/planning/visible_reference.py": "38e6d8f671741e8ba536bf02de6722de10029e7bd1a9e69ab8705f1d8bfbb919",
+        "src/cars/planning/world.py": "19c660841358f6203b9f1379b0e3c34d0b5e8ef2e7b3c5c21a63569ee1a0c28a",
+        "src/cars/policies/__init__.py": "7969a425c859d7986a67fed00ca0fe21dc9d6397d7ee3b7fffe5eb59066ae78b",
+        "src/cars/policies/base.py": "714a6a14352155c0a7d70c2ac589f148e20c8e6a32ed399c23bf6172b8561cd3",
+        "src/cars/policies/baseline.py": "22bbeeeeeb959ece1463100445ba05072d84f22884ef9d201304f5326ff90f1c",
+        "src/cars/policies/sb3.py": "437a8e922d1f0fc3fa88935e333649b214fe270569b85a6f8b2a2c96df4f1d5d",
+        "src/cars/policies/torch_mlp.py": "1e638dbeaadf470aa547082af577d1ce3c0da755cb963be109a223896afc46d1",
+        "src/cars/research/__init__.py": "3f8f2a9dc600f87fb123c76a1dadb554dc6c7619b912e08e5254a66664d72429",
+        "src/cars/research/artifacts.py": "37506a22cfb64f08c9a6343388165f20a55669c35ed58f72b14d53aa795f3581",
+        "src/cars/research/cli.py": "29b8aab61dedc9bbdcd540cdfb55678dc24d33e4d505dfef8c622658ffa98225",
+        "src/cars/research/data.py": "31f210d8fac0285c5ae19fdc9b1ad1eecf368adb26853d969ee74635aacaaa7e",
+        "src/cars/research/driver_checkpoint.py": "e5f6b38857234bf50a6d549fd5cd334c7a92e7fbe843c2c52eff3058f1e1d561",
+        "src/cars/research/driver_config.py": "3c069a8af2d758f9099fb9e4deb71de0a806138f27878cd6b4fe3c09f71dd959",
+        "src/cars/research/driver_encoder.py": "bb56a44c0e1d467d598a839e6c618de3f4f5dd9299c15887d6b517a448fdfbb9",
+        "src/cars/research/driver_training.py": "1e7ad02b409d69cd9e75fffcb3b018c6b8237eaec4031d9c10bb6d3dccd50d23",
+        "src/cars/research/evaluation.py": "8b2fb1395309acc2647a59d920393ea2e1aa7aee01a03c17b9d6e1c2763aa204",
+        "src/cars/research/failures.py": "8688daa911a18525c62b0a3339df5b0b10ac67cb54b6327756dbe6c14e40bd35",
+        "src/cars/research/frozen_code.py": "64a1042bf145cc29e326828e433307fdb27ee48393a2895eb574a15a34d0e8b7",
+        "src/cars/research/recurrent.py": "50bc115cae12d82558fbc432047f6df5e2d32172d21879de1623256a5929cbee",
+        "src/cars/rl/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/rl/interface.py": "449ff33147cd3e7e7f7248a8061f369466d33c112bb89f4fd12119f9fbdf77ad",
+        "src/cars/rl/train.py": "174795d6ef03e7433911f1154214b7a4070715f429cd72bd02809c3067a97915",
+        "src/cars/training.py": "0931b232ab3a40a17ea4406bc120e70c107989d562b9f199a5dc46bc1bc9518b",
+        "uv.lock": "1883c6b19e5fa96474dd8539865121633b20533bde9785ac59d8b5ea8ff96a51"
+      },
+      "trajectories": [
+        {
+          "path": "runs/policy_colored_shooting/sequence_smoke_20261029_colored/episodes/0000.npz",
+          "sha256": "6f090a3e376d6fb3331f4f45d00e859739872791cb6275b476138e7b069ec282",
+          "diagnostics_sha256": "9efd80079deb34f08838e03ce4b586468ea1b896862a45d0fafa8ad6995b6cf9"
+        },
+        {
+          "path": "runs/policy_colored_shooting/sequence_smoke_20261029_colored/episodes/0001.npz",
+          "sha256": "1a274e4fe9e96fa7507843a8e68f6117cc32adb37b4b68127a08d97c615e5cb0",
+          "diagnostics_sha256": "66896e117506e9f9c9e14800bd01e706c13fca7500b95ba9ac2eb2522a07e4f1"
+        }
+      ]
+    },
+    {
+      "condition": "icem",
+      "run": "runs/policy_icem/sequence_smoke_20261029_icem",
+      "config_sha256": "f144ea2307707118ab8aeb5891c5de5fdf55dafaa4f0463b7500c050b4d37400",
+      "metrics_sha256": "f2dbaef835bb0daf4c1702e07def1a0f0c4ddf7c29fac0dbc0bc7e32f3ade70f",
+      "cost_sha256": "2f0a7be61b41d88e587bd7dc1baaa6e9fd4a8c1dbaa911152b48809a641051bd",
+      "source_sha256": {
+        "pyproject.toml": "ec68c9fb0b529c430e437b7e4ca2ffe554687b22ca9aff48db4505dc7d13ca87",
+        "src/cars/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/cli.py": "1d47c2f0e87dc476d2137145043789af94159f55c6a2655ceb99280f55653515",
+        "src/cars/env/__init__.py": "a0bd5973f4d5bc6e962cd4dcc1de24a582f118b5cd0c558983bd65404de84737",
+        "src/cars/env/carracing.py": "4495b00bc0eec5e7efcdac4f595d4dfeb41e833d8a62cbf6f6e1eea60de9325c",
+        "src/cars/env/make.py": "80d2830ca7cad3ce40f407b7cfa4e168232ca431067afbe8a473806cb664c589",
+        "src/cars/env/metrics.py": "e7b69bb03dada359e3b4c8c9f4a1ee474a6378bed1f883e77dd0740950d011d3",
+        "src/cars/env/partitions.py": "7d1dbd8cb2ab59bb320f5bdd9180292dbaebf06b5739c01e48a9bc3b738bed50",
+        "src/cars/env/protocol.py": "3c0e0a5e992d4fe3aeb1f62b73847d5f48f37fff6bd74dfbf06a34acf549b81c",
+        "src/cars/env/splits.py": "c897a697e67705fbe1717087b379e34cdd1112211162c5b636cff48cdc7febf8",
+        "src/cars/env/state.py": "15cee0801c7f39ad335ce92783f7cacdee2c7c9242336318c40d6747e8161447",
+        "src/cars/eval/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/eval/episode_log.py": "0766d8adad2d31b06b898d0f35f900b39abd027148d1d8c1a48ca0e78d659214",
+        "src/cars/eval/paired.py": "319c04004b9d07260cb70597d323556ec1d235cc685396850ca803de0f3fb314",
+        "src/cars/eval/report.py": "0d8d45fc3a96ebdf5ede65d7c10e9833b063c813f45142b681a56829f95ab308",
+        "src/cars/eval/runner.py": "aa047cca59988d57dc349b2f4d4348d4cedd297a2d77392676e655af66240082",
+        "src/cars/il/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/il/bc.py": "ed0567ff451a62eaabc52d4b5f1464f562f1a067836402c80c2ba8a9746ccf89",
+        "src/cars/il/dagger.py": "2f0ba1f118da493fd627f8d89f4a15be06dfd4b8d6e8503d808b4d44f8e6fbaa",
+        "src/cars/il/data.py": "0a95ca9c7742e14cfdaa923908f1161a9f675776d2e025f5d79585e6751c7cf9",
+        "src/cars/models/__init__.py": "0dc1d7a41d4f95e48c447fde9102802f9c65e24e60973e2603582f8a0c4c627a",
+        "src/cars/models/dynamics.py": "e9301bff433f1fc5f149ecc976e0cb98f6d2cf7dcbfb21a1de4e2e74c766e077",
+        "src/cars/models/physics.py": "384f8db2729915681cd83ecc38f5d51c84185e3df265d8b6358eb9027f05df0b",
+        "src/cars/monitoring/__init__.py": "47df79f279b968fda79d8feda44605972a92390fe861e18465253ebc7ae30517",
+        "src/cars/monitoring/bridge.py": "9125c9b4937a121f6eb686e313eeba290805779ad95f61ab9b0863ff3f990fd8",
+        "src/cars/monitoring/oracle.py": "5d4542f1f97fd85349c22f00b07c936b7bc4b959559cfa325db1c73ffa6e2650",
+        "src/cars/planning/__init__.py": "618bfd1a0570a9bc2e7437a294a9965cd8456ac0e9f7ca0dd012c218b6dea9bb",
+        "src/cars/planning/global_search.py": "dfead287b62c65bb19d394830f0e544bb0a514af49a4bb4dd2727f12474bc89a",
+        "src/cars/planning/intervention.py": "d7d07bcf52c9f441b99145706921a71cf28bb9a56476016058edbba747ae8954",
+        "src/cars/planning/local.py": "2aa5ed81452198713b79757e64fae03cb66eea725444e78cc878f8aa9c56176d",
+        "src/cars/planning/occupancy.py": "154d7f5c5a69da60ffce7a223c0b225d5acf4344fb3ab0a1927877ef3d902f9f",
+        "src/cars/planning/physics_search.py": "e66d8ce92599e0dda1ac01b67a46d44a13615b12e8c2b97345bbc25ff1fc8f2f",
+        "src/cars/planning/policy_controls.py": "14684d0e30a6e8b105c234074b0b7d4322f988be979ab9b34a605419cba14130",
+        "src/cars/planning/policy_rollouts.py": "8dfbfc60e8c74f62dafb2e8e607712003fc958f5b7ffe0180c74c881a170025d",
+        "src/cars/planning/policy_search.py": "47097a0ce327728d15cdaa4c7f0e36ecb9b633b190647b109c3bb13576795e67",
+        "src/cars/planning/policy_sequence_search.py": "6a67d4fd5ea5daac70d52fc1c3cd5b3e5f87f37b3dd194ee48f01560a9b2d710",
+        "src/cars/planning/reference_extension.py": "f368293193bcf175d37576809fdddc8a6be9acf569b47b1c134bd013d83243e6",
+        "src/cars/planning/search.py": "ca91f182cb5a280db9058323e236d92b428464158e3918a6ef50fadcc77d6509",
+        "src/cars/planning/sequence_optimizer.py": "49c4cbf0568803a58bd5bdfe6516512b3e0f7ae2319edb9b1cc907b751883b9b",
+        "src/cars/planning/visible_reference.py": "38e6d8f671741e8ba536bf02de6722de10029e7bd1a9e69ab8705f1d8bfbb919",
+        "src/cars/planning/world.py": "19c660841358f6203b9f1379b0e3c34d0b5e8ef2e7b3c5c21a63569ee1a0c28a",
+        "src/cars/policies/__init__.py": "7969a425c859d7986a67fed00ca0fe21dc9d6397d7ee3b7fffe5eb59066ae78b",
+        "src/cars/policies/base.py": "714a6a14352155c0a7d70c2ac589f148e20c8e6a32ed399c23bf6172b8561cd3",
+        "src/cars/policies/baseline.py": "22bbeeeeeb959ece1463100445ba05072d84f22884ef9d201304f5326ff90f1c",
+        "src/cars/policies/sb3.py": "437a8e922d1f0fc3fa88935e333649b214fe270569b85a6f8b2a2c96df4f1d5d",
+        "src/cars/policies/torch_mlp.py": "1e638dbeaadf470aa547082af577d1ce3c0da755cb963be109a223896afc46d1",
+        "src/cars/research/__init__.py": "3f8f2a9dc600f87fb123c76a1dadb554dc6c7619b912e08e5254a66664d72429",
+        "src/cars/research/artifacts.py": "37506a22cfb64f08c9a6343388165f20a55669c35ed58f72b14d53aa795f3581",
+        "src/cars/research/cli.py": "29b8aab61dedc9bbdcd540cdfb55678dc24d33e4d505dfef8c622658ffa98225",
+        "src/cars/research/data.py": "31f210d8fac0285c5ae19fdc9b1ad1eecf368adb26853d969ee74635aacaaa7e",
+        "src/cars/research/driver_checkpoint.py": "e5f6b38857234bf50a6d549fd5cd334c7a92e7fbe843c2c52eff3058f1e1d561",
+        "src/cars/research/driver_config.py": "3c069a8af2d758f9099fb9e4deb71de0a806138f27878cd6b4fe3c09f71dd959",
+        "src/cars/research/driver_encoder.py": "bb56a44c0e1d467d598a839e6c618de3f4f5dd9299c15887d6b517a448fdfbb9",
+        "src/cars/research/driver_training.py": "1e7ad02b409d69cd9e75fffcb3b018c6b8237eaec4031d9c10bb6d3dccd50d23",
+        "src/cars/research/evaluation.py": "8b2fb1395309acc2647a59d920393ea2e1aa7aee01a03c17b9d6e1c2763aa204",
+        "src/cars/research/failures.py": "8688daa911a18525c62b0a3339df5b0b10ac67cb54b6327756dbe6c14e40bd35",
+        "src/cars/research/frozen_code.py": "64a1042bf145cc29e326828e433307fdb27ee48393a2895eb574a15a34d0e8b7",
+        "src/cars/research/recurrent.py": "50bc115cae12d82558fbc432047f6df5e2d32172d21879de1623256a5929cbee",
+        "src/cars/rl/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/rl/interface.py": "449ff33147cd3e7e7f7248a8061f369466d33c112bb89f4fd12119f9fbdf77ad",
+        "src/cars/rl/train.py": "174795d6ef03e7433911f1154214b7a4070715f429cd72bd02809c3067a97915",
+        "src/cars/training.py": "0931b232ab3a40a17ea4406bc120e70c107989d562b9f199a5dc46bc1bc9518b",
+        "uv.lock": "1883c6b19e5fa96474dd8539865121633b20533bde9785ac59d8b5ea8ff96a51"
+      },
+      "trajectories": [
+        {
+          "path": "runs/policy_icem/sequence_smoke_20261029_icem/episodes/0000.npz",
+          "sha256": "93874482f8fc32d41be7be5f6563bc746d2d8d6fa42daf21ce6fc7606705885d",
+          "diagnostics_sha256": "1e7c17744c6f651e1de6bc5a1c59be8ccbb4a2244baf1a836acde3a5d007c540"
+        },
+        {
+          "path": "runs/policy_icem/sequence_smoke_20261029_icem/episodes/0001.npz",
+          "sha256": "19ddf3a04a2f5089b9b8b5b8fe64f8b821ee4403d0bbe6c9f61618c28e1bac1c",
+          "diagnostics_sha256": "791642ab7f708594a05b48463ebde8bb677f04f2990912c757df06297e77ce0f"
+        }
+      ]
+    }
+  ],
+  "paired_contrasts": [
+    {
+      "candidate": "icem",
+      "reference": "colored",
+      "role": "primary_matched_optimizer",
+      "panel": "smoke2",
+      "metric": "return",
+      "mean_difference": -338.28874433039124,
+      "per_track": [
+        -46.06901408451381,
+        -630.5084745762687
+      ],
+      "positive": 0,
+      "negative": 2,
+      "ties": 0
+    },
+    {
+      "candidate": "icem",
+      "reference": "colored",
+      "role": "primary_matched_optimizer",
+      "panel": "smoke2",
+      "metric": "success",
+      "mean_difference": -0.5,
+      "per_track": [
+        -1.0,
+        0.0
+      ],
+      "positive": 0,
+      "negative": 1,
+      "ties": 1
+    },
+    {
+      "candidate": "icem",
+      "reference": "colored",
+      "role": "primary_matched_optimizer",
+      "panel": "smoke2",
+      "metric": "off_track_steps",
+      "mean_difference": 69.5,
+      "per_track": [
+        25.0,
+        114.0
+      ],
+      "positive": 2,
+      "negative": 0,
+      "ties": 0
+    },
+    {
+      "candidate": "colored",
+      "reference": "knots",
+      "role": "representation_and_batching_context",
+      "panel": "smoke2",
+      "metric": "return",
+      "mean_difference": -12.394915254237446,
+      "per_track": [
+        -6.800000000000182,
+        -17.98983050847471
+      ],
+      "positive": 0,
+      "negative": 2,
+      "ties": 0
+    },
+    {
+      "candidate": "colored",
+      "reference": "knots",
+      "role": "representation_and_batching_context",
+      "panel": "smoke2",
+      "metric": "success",
+      "mean_difference": -0.5,
+      "per_track": [
+        0.0,
+        -1.0
+      ],
+      "positive": 0,
+      "negative": 1,
+      "ties": 1
+    },
+    {
+      "candidate": "colored",
+      "reference": "knots",
+      "role": "representation_and_batching_context",
+      "panel": "smoke2",
+      "metric": "off_track_steps",
+      "mean_difference": 0.0,
+      "per_track": [
+        0.0,
+        0.0
+      ],
+      "positive": 0,
+      "negative": 0,
+      "ties": 2
+    },
+    {
+      "candidate": "icem",
+      "reference": "knots",
+      "role": "representation_and_optimizer_context",
+      "panel": "smoke2",
+      "metric": "return",
+      "mean_difference": -350.6836595846287,
+      "per_track": [
+        -52.86901408451399,
+        -648.4983050847434
+      ],
+      "positive": 0,
+      "negative": 2,
+      "ties": 0
+    },
+    {
+      "candidate": "icem",
+      "reference": "knots",
+      "role": "representation_and_optimizer_context",
+      "panel": "smoke2",
+      "metric": "success",
+      "mean_difference": -1.0,
+      "per_track": [
+        -1.0,
+        -1.0
+      ],
+      "positive": 0,
+      "negative": 2,
+      "ties": 0
+    },
+    {
+      "candidate": "icem",
+      "reference": "knots",
+      "role": "representation_and_optimizer_context",
+      "panel": "smoke2",
+      "metric": "off_track_steps",
+      "mean_difference": 69.5,
+      "per_track": [
+        25.0,
+        114.0
+      ],
+      "positive": 2,
+      "negative": 0,
+      "ties": 0
+    },
+    {
+      "candidate": "colored",
+      "reference": "direct",
+      "role": "frozen_actor_augmentation",
+      "panel": "smoke2",
+      "metric": "return",
+      "mean_difference": 16.04915254237386,
+      "per_track": [
+        -1.8000000000004093,
+        33.89830508474813
+      ],
+      "positive": 1,
+      "negative": 1,
+      "ties": 0
+    },
+    {
+      "candidate": "colored",
+      "reference": "direct",
+      "role": "frozen_actor_augmentation",
+      "panel": "smoke2",
+      "metric": "success",
+      "mean_difference": 0.0,
+      "per_track": [
+        0.0,
+        0.0
+      ],
+      "positive": 0,
+      "negative": 0,
+      "ties": 2
+    },
+    {
+      "candidate": "colored",
+      "reference": "direct",
+      "role": "frozen_actor_augmentation",
+      "panel": "smoke2",
+      "metric": "off_track_steps",
+      "mean_difference": -13.5,
+      "per_track": [
+        0.0,
+        -27.0
+      ],
+      "positive": 0,
+      "negative": 1,
+      "ties": 1
+    },
+    {
+      "candidate": "icem",
+      "reference": "direct",
+      "role": "frozen_actor_augmentation",
+      "panel": "smoke2",
+      "metric": "return",
+      "mean_difference": -322.2395917880174,
+      "per_track": [
+        -47.86901408451422,
+        -596.6101694915205
+      ],
+      "positive": 0,
+      "negative": 2,
+      "ties": 0
+    },
+    {
+      "candidate": "icem",
+      "reference": "direct",
+      "role": "frozen_actor_augmentation",
+      "panel": "smoke2",
+      "metric": "success",
+      "mean_difference": -0.5,
+      "per_track": [
+        -1.0,
+        0.0
+      ],
+      "positive": 0,
+      "negative": 1,
+      "ties": 1
+    },
+    {
+      "candidate": "icem",
+      "reference": "direct",
+      "role": "frozen_actor_augmentation",
+      "panel": "smoke2",
+      "metric": "off_track_steps",
+      "mean_difference": 56.0,
+      "per_track": [
+        25.0,
+        87.0
+      ],
+      "positive": 2,
+      "negative": 0,
+      "ties": 0
+    }
+  ],
+  "new_condition_costs": {
+    "legacy_replay": {
+      "native_frames": 753,
+      "decisions": 189,
+      "model_transitions": 79380,
+      "internal_physics_frames": 317520,
+      "actor_forward_examples": 75600,
+      "wall_time_s": 60.489780171003076
+    },
+    "colored": {
+      "native_frames": 1821,
+      "decisions": 456,
+      "model_transitions": 191520,
+      "internal_physics_frames": 766080,
+      "actor_forward_examples": 182400,
+      "wall_time_s": 152.11977625598956
+    },
+    "icem": {
+      "native_frames": 2000,
+      "decisions": 500,
+      "model_transitions": 210000,
+      "internal_physics_frames": 840000,
+      "actor_forward_examples": 200000,
+      "wall_time_s": 167.8255408850091
+    }
+  },
+  "checks": {
+    "legacy_replay": {
+      "replayed_episodes": 1,
+      "checked_decisions": 189,
+      "cached_rollouts_reused": 0,
+      "shifted_elites_reevaluated": 0,
+      "first_batch_winners": 0
+    },
+    "colored": {
+      "replayed_episodes": 0,
+      "checked_decisions": 456,
+      "cached_rollouts_reused": 0,
+      "shifted_elites_reevaluated": 0,
+      "first_batch_winners": 397
+    },
+    "icem": {
+      "replayed_episodes": 0,
+      "checked_decisions": 500,
+      "cached_rollouts_reused": 500,
+      "shifted_elites_reevaluated": 498,
+      "first_batch_winners": 219
+    }
+  },
+  "new_native_frames": 4574,
+  "new_internal_physics_frames": 1923600,
+  "new_training_frames": 0,
+  "preceding_smoke_native_frames": 0,
+  "preceding_smoke_internal_physics_frames": 0,
+  "historical_context_is_not_new_work": true,
+  "bootstrap": {
+    "reps": 5000,
+    "seed": 0
+  },
+  "uncertainty": "one frozen actor/stream; nominal paired development-track intervals only; no selection adjustment or training-seed uncertainty",
+  "comparison_scope": "primary same full-sequence representation, bounds, local inputs, batch sizes and actual rollout work; optimizer package includes fit/mean injection/cache/shift",
+  "context_scope": "knots differ in representation and batching; direct has no simulator work; both historical with historical timings",
+  "speed_definition": "decision-end observed speed weighted by native action duration, then equal episode means",
+  "latency": "environment waits synchronously; no deadline fallback; serial noninterleaved conditions",
+  "held_out_evaluation": false,
+  "private_oracle_outputs_read": false
+}

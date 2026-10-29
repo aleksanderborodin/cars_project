@@ -1,0 +1,40 @@
+{
+  "checks": {
+    "pinned_manifests": 2,
+    "pinned_artifacts": 186,
+    "current_source_files": 63,
+    "input_configs": 4,
+    "frozen_source_files": 240,
+    "trajectories": 80,
+    "diagnostic_files": 80,
+    "exact_replays": 5
+  },
+  "total_new_cost_including_smoke": {
+    "new_episodes": 45,
+    "main_episodes": 40,
+    "smoke_episodes": 5,
+    "native_frames": 40972,
+    "internal_physics_frames": 17220000,
+    "new_training_frames": 0,
+    "campaign_wall_time_s": 3500.769787477984
+  },
+  "held_out_data_accessed": false,
+  "private_diagnostics_accessed": false,
+  "active_campaign_jobs": 0,
+  "final_test_suite": {
+    "command": "uv run pytest -q",
+    "passed": 100,
+    "warnings": 3,
+    "seconds": 36.55,
+    "warning_scope": "upstream SWIG deprecation warnings"
+  },
+  "trace_analysis_synthetic_checks": "passed duration exclusion, units, direct-policy and adjacent-change checks",
+  "documentation_files_checked": 36,
+  "missing_local_document_targets": [],
+  "cli_help_checked": "uv run python -m cars.cli research evaluate --help; policy-colored/policy-icem present",
+  "figure_visual_review": "paired_returns.png inspected; labels legible; caption clarifies direct actor uses zero model rollouts",
+  "terminated_child_pids_checked": [
+    2360749,
+    2454856
+  ]
+}

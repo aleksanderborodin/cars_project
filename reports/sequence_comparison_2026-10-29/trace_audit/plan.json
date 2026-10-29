@@ -1,0 +1,22 @@
+{
+  "status": "planned descriptive post-hoc analysis; designed after smoke results while main colored arm runs",
+  "created_utc": "2026-10-29T09:46:06.081818+00:00",
+  "origin": "assistant: inspect executed behavior and short-step model error without privileged counterfactual data",
+  "inputs": "the four conditions and all twenty tracks already in the frozen primary report",
+  "metrics": [
+    "per-track action changes between consecutive real decisions, separately by control channel",
+    "per-track absolute chosen-minus-base correction and override rate, where logged",
+    "one-step body-velocity vector RMSE and yaw-rate RMSE only for full four-frame executed actions, where logged"
+  ],
+  "aggregation": "equal-weight track means; descriptive only; no new significance testing",
+  "limits": [
+    "closed-loop state distributions differ; no causal attribution of failure",
+    "one-step error is not horizon prediction accuracy or candidate rank/regret",
+    "no unexecuted candidate outcomes, extra simulator calls or changed primary endpoints",
+    "design followed smoke outcomes and is not preregistered confirmatory analysis"
+  ],
+  "new_environment_frames": 0,
+  "new_internal_physics_frames": 0,
+  "private_diagnostics_accessed": false,
+  "timestamp_source": "filesystem creation-write mtime captured before metadata correction"
+}

@@ -40,10 +40,13 @@ to the audited equal-work optimizer comparison and baseline competence gates.
 No automatic 200-track expansion, targeted failure tuning or global training.
 The visible prefix, physics and all other planner settings stayed fixed.
 
-The [sequence-search adaptation](SEQUENCE_SEARCH_2026-10-29.md) is now implemented
-with matched colored shooting and synthetic isolation/work tests. Driving evidence
-awaits the frozen replay/smoke and main comparison; this does not complete the
-strong-baseline or independent-seed gates.
+The [sequence-search adaptation](SEQUENCE_SEARCH_2026-10-29.md) completed its
+matched twenty-track comparison: colored shooting 884.86/70%, iCEM 634.13/15%,
+historical knot search 905.94/85%. Five replays and 100 tests passed. Keep the
+original search; no automatic larger sweep follows. The next priority is baseline
+competence, with [factory/budget](BASELINE_AUDIT.md) and [Valdi source](VALDI_AUDIT.md)
+audits now completed. Strong-baseline, independent-seed and trained V/L/F gates
+remain open; no experiment jobs remain active.
 
 | Order | Deliverable | Evidence / gate |
 |---|---|---|

@@ -20,7 +20,7 @@ The search is substantial but not proof that the candidate mechanism is novel.
 | Monninger et al., *MapDiffusion*, IROS 2025 | Multimodal probabilistic vector maps from vision | [Paper](https://arxiv.org/abs/2507.21423) | [Author code](https://github.com/tmonnin/mapdiffusion); related work / mechanism comparator |
 | Wang et al., *CogniPlan*, CoRL 2025 | Completed unseen layouts and uncertainty-aware navigation | [Proceedings](https://proceedings.mlr.press/v305/wang25d.html) | [Author code](https://github.com/marmotlab/CogniPlan); related work / mechanism comparator |
 | Manchingal et al., *Uncertainty-Aware Autonomous Vehicles: Predicting the Road Ahead*, 2025 preprint / ICRA 2026 | Uncertain future-turn prediction affects speed | [Paper](https://arxiv.org/html/2510.22680v1), [publication record](https://jkooij.github.io/publications/2026_uroadpred/) | Related work; no integration |
-| Lindenberg & Chitta, *Valdi: Value Diffusion World Models*, July 2026 preprint | Stochastic latent diffusion MPC directly in CarRacing | [Paper](https://arxiv.org/html/2607.00917v1) | [Author code](https://github.com/Kit115/ValueDiffusionWorldModels); priority audit and reproduction attempt |
+| Lindenberg & Chitta, *Valdi: Value Diffusion World Models*, July 2026 preprint | Stochastic latent diffusion MPC directly in CarRacing | [Paper](https://arxiv.org/html/2607.00917v1) | [Author code](https://github.com/Kit115/ValueDiffusionWorldModels); [source audit complete](VALDI_AUDIT.md), reproduction pending |
 | Jia et al., *DriveAdapter*, ICCV 2023 | Privileged planning/perception separation and predicted-versus-ground-truth interface mismatch | [Paper](https://arxiv.org/abs/2308.00398) | Related work for intervention validity; not reproduced here |
 | Seyam et al., *Model-Aware Generation of Safety-Critical Scenes for Robust End-to-End Driving via Distilled Planner Surrogates*, October 26, 2026 preprint | Explicit planning-versus-perception failure diagnosis and targeted planner improvement | [Version 1, especially IV-B](https://arxiv.org/html/2610.35448v1) | Paper states release is planned; no implementation/reproduction verified here |
 
@@ -31,8 +31,11 @@ Important distinctions from those sources:
 - Trisovic et al. share a control sequence across scenarios and constrain predicted
   positions to the perceived road. Learning truly unseen continuations and
   respecting future revelation is a possible distinction, not established novelty.
-- Valdi uses modified observations, including proprioception, and a 600-frame
-  episode limit. Its reported scores cannot be copied into our 1000-frame table.
+- Valdi's supplied wrapper extracts numeric proprioceptive channels from HUD
+  pixels, rather than hidden simulator state. Its evaluation script runs a fixed
+  600-step loop and ignores termination flags. This is a source finding, not proof
+  of the script used for the paper's scores; those scores cannot be copied into
+  our terminating 1000-frame table. See the [pinned source audit](VALDI_AUDIT.md).
 - MapDiffusion and CogniPlan prevent claiming that multimodal map completion or
   planning over imagined maps is itself new. Their full systems solve different
   tasks; transplanting them is not automatically a fair racing comparison.
@@ -46,7 +49,7 @@ Important distinctions from those sources:
 | Hafner et al., DreamerV3, Nature 2025 | [Published paper](https://www.nature.com/articles/s41586-025-08744-2) | [Author code](https://github.com/danijar/dreamerv3) | Recurrent visual world-model comparator; profile a small configuration first |
 | Fujimoto et al., MR.Q, 2025 | [Paper](https://arxiv.org/abs/2501.16142) | [Official code](https://github.com/facebookresearch/MRQ) | Additional modern model-free comparator; CarRacing adapter needed |
 | Recurrent PPO implementation | [SB3-Contrib documentation](https://sb3-contrib.readthedocs.io/en/master/modules/ppo_recurrent.html) | [Official repository](https://github.com/Stable-Baselines-Team/stable-baselines3-contrib) | First practical memory baseline; match observations, labels, and frame budgets |
-| RL Zoo recurrent CarRacing recipe | [Pinned configuration](https://github.com/DLR-RM/rl-baselines3-zoo/blob/61956d90d9f8ac126043ed4024efa12a462d97e1/hyperparams/ppo_lstm.yml) | Upstream commit pinned 2026-10-28 | Configuration audit only; our 100k-frame engineering adapter is not its reproduction |
+| RL Zoo recurrent CarRacing recipe | [Pinned configuration](https://github.com/DLR-RM/rl-baselines3-zoo/blob/61956d90d9f8ac126043ed4024efa12a462d97e1/hyperparams/ppo_lstm.yml) | Upstream commit pinned 2026-10-28 | [Factory/budget audit complete](BASELINE_AUDIT.md); neither local trainer reproduces its native pixel recipe |
 | Wang & Ba, POPLIN, ICLR 2020 | [Paper](https://arxiv.org/abs/1906.08649) | Paper's linked implementation; not installed here | Closely related policy-guided planning; prevents claiming proposer improvement by simulation is itself new |
 | Pinneri et al., iCEM, CoRL 2020 / PMLR 2021 | [Proceedings](https://proceedings.mlr.press/v155/pinneri21a.html) | [Pinned official code](https://github.com/martius-lab/iCEM/tree/98c1c1fe2bfc94a87e4658b6c793f4e81bc30203); source audited, not reproduced | [Adaptation audit](SEARCH_OPTIMIZER_AUDIT.md), memory/correlated proposals and matched total-work comparison |
 | Sikchi et al., LOOP, CoRL 2021 / PMLR 2022 | [Proceedings](https://proceedings.mlr.press/v164/sikchi22a.html) | [Author project](https://hari-sikchi.github.io/loop/) | Learned-dynamics/terminal-value contrast; not the default coded-simulator architecture |

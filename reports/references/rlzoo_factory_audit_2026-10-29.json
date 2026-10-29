@@ -1,0 +1,165 @@
+{
+  "date": "2026-10-29",
+  "kind": "static source and existing training-artifact audit; no new environment steps",
+  "origin": {
+    "question": "user: improve a strong frozen proposer and compare honestly",
+    "audit_and_recommendations": "assistant",
+    "reference_recipe": "RL Baselines3 Zoo authors"
+  },
+  "upstream_revision": "61956d90d9f8ac126043ed4024efa12a462d97e1",
+  "download_cache": "runs/references/rlzoo_factory_61956d90d9f8ac126043ed4024efa12a462d97e1_20261029",
+  "upstream_files": [
+    {
+      "path": "hyperparams/ppo_lstm.yml",
+      "sha256": "7573ef21fa8a0b1dff1826e22441afedf96dae838bf5745004dd6a621e448b62",
+      "source": "https://raw.githubusercontent.com/DLR-RM/rl-baselines3-zoo/61956d90d9f8ac126043ed4024efa12a462d97e1/hyperparams/ppo_lstm.yml",
+      "bytes": 11723
+    },
+    {
+      "path": "rl_zoo3/exp_manager.py",
+      "sha256": "4a46b9b53adb3a1ba215a8401b67f1f9a28b97217bd846e82c44e45b92bc0769",
+      "source": "https://raw.githubusercontent.com/DLR-RM/rl-baselines3-zoo/61956d90d9f8ac126043ed4024efa12a462d97e1/rl_zoo3/exp_manager.py",
+      "bytes": 40515
+    },
+    {
+      "path": "rl_zoo3/utils.py",
+      "sha256": "986bb247285beaa534a4b546230d712b9883d22877c158e11395ef80aa42bd23",
+      "source": "https://raw.githubusercontent.com/DLR-RM/rl-baselines3-zoo/61956d90d9f8ac126043ed4024efa12a462d97e1/rl_zoo3/utils.py",
+      "bytes": 18171
+    },
+    {
+      "path": "rl_zoo3/wrappers.py",
+      "sha256": "bbef0d83bc3fcaf77ce410807fd8a9d3d78a09f0bf7d6d6c705243f7cb4d0415",
+      "source": "https://raw.githubusercontent.com/DLR-RM/rl-baselines3-zoo/61956d90d9f8ac126043ed4024efa12a462d97e1/rl_zoo3/wrappers.py",
+      "bytes": 12526
+    },
+    {
+      "path": "rl_zoo3/import_envs.py",
+      "sha256": "56a2f8acbcffc1e034307297fe8a437a6e56d7688d3df0bdffa8b4661a0f9b05",
+      "source": "https://raw.githubusercontent.com/DLR-RM/rl-baselines3-zoo/61956d90d9f8ac126043ed4024efa12a462d97e1/rl_zoo3/import_envs.py",
+      "bytes": 1359
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "1bbe2a963174a5e2d7e9b0f0c22347f84e9c564496c8280df001b7ec4b517aae",
+      "source": "https://raw.githubusercontent.com/DLR-RM/rl-baselines3-zoo/61956d90d9f8ac126043ed4024efa12a462d97e1/LICENSE",
+      "bytes": 1071
+    }
+  ],
+  "local_library_files": [
+    {
+      "path": ".venv/lib/python3.12/site-packages/stable_baselines3/common/env_util.py",
+      "sha256": "aea5a270db0068bca2d139ecf693775cb85330c79e07b0d837c5711285e72b33"
+    },
+    {
+      "path": ".venv/lib/python3.12/site-packages/sb3_contrib/ppo_recurrent/ppo_recurrent.py",
+      "sha256": "940f5c1748ddba53e533da27f093414edda0ee88a73c122dcbef149c922e49ed"
+    },
+    {
+      "path": ".venv/lib/python3.12/site-packages/stable_baselines3/common/on_policy_algorithm.py",
+      "sha256": "ce1984ea8e8a2d969443a484ab159194b9d70ff92a7ef1bc25fcc183e391e35c"
+    },
+    {
+      "path": ".venv/lib/python3.12/site-packages/gymnasium/envs/box2d/car_racing.py",
+      "sha256": "f5be6dad0c570688846250185a201352fc7f0cdff37867c07b5ee6fada8469d1"
+    }
+  ],
+  "local_versions": {
+    "gymnasium": "1.4.0",
+    "stable-baselines3": "2.9.2",
+    "sb3-contrib": "2.9.2",
+    "torch": "2.14.1"
+  },
+  "training_artifacts": [
+    {
+      "path": "runs/driver_training/driver_main_20261028_s0_to2m/checkpoints/frames_001007379/training_state.json",
+      "sha256": "7f46ed0dc7628e43d5c9ba1294e4faa4bb9f93b2c93fa369b9198e57dc827050"
+    },
+    {
+      "path": "runs/driver_training/driver_main_20261028_s0_to2m/cost.json",
+      "sha256": "60934f9d6164c6c8c4820568d527cb0d4a79b0f807c1df25564a59dbb1bda8f7"
+    },
+    {
+      "path": "runs/driver_training/driver_main_20261028_s0_to2m/config.json",
+      "sha256": "867c4e309f321466da5605ad939a9510e149492c589ee95ed1c32595cf390325"
+    },
+    {
+      "path": "runs/driver_training/driver_main_20261028_s0_to2m/learning.jsonl",
+      "sha256": "b670a89fa6396dadc5b5e5083a4000efa7fdff10da1b8d257b106e283741d034"
+    },
+    {
+      "path": "runs/driver_training/driver_main_20261028_s0_to2m/checkpoints/frames_001007379/training_tracks.json",
+      "sha256": "b771e189f387b66933f6a8f90aa6b5bca36987abec1cf4e3aed6a9e82b89fbc6"
+    },
+    {
+      "path": "runs/driver_training/driver_main_20261028_s0_to2m/checkpoints/frames_001007379/training_episodes.json",
+      "sha256": "38292cac23371ac8be64bbea51aeace8f65deaef6495ada545144ff5ee70e5a1"
+    },
+    {
+      "path": "runs/driver_training/driver_main_20261028_s0_to2m/training_tracks.json",
+      "sha256": "aa2b3e3acca7919eda7f9edff824fafcff689976337c70ce4e1c64e7f536de0d"
+    },
+    {
+      "path": "runs/driver_training/driver_main_20261028_s0_to2m/training_episodes.json",
+      "sha256": "1709b15705374f3e80e8fcba41de53d012dcc948b520eb0f75c7bfacf654f931"
+    }
+  ],
+  "observations": {
+    "upstream_configured_action_repeat": 1,
+    "upstream_factory_audit": "configured observation wrappers and frame stacking; no CarRacing action-repeat wrapper in the audited default path; optional external registry overrides excluded",
+    "upstream_learner_timesteps_aggregate": 4000000,
+    "upstream_workers": 8,
+    "upstream_steps_per_worker_per_rollout": 512,
+    "upstream_nominal_full_rollouts": 977,
+    "upstream_nominal_external_steps_with_rollout_rounding": 4001792,
+    "upstream_count_scope": "inferred full uninterrupted run, no callback early stopping; excludes evaluation and reset-internal physics; not an executed reproduction",
+    "local_action_repeat": 4,
+    "selected_native_frames": 1007379,
+    "selected_decisions": 251904,
+    "selected_decision_fraction_of_nominal_upstream_budget": 0.062976,
+    "stopped_native_frames": 2006414,
+    "stopped_decisions": 501760,
+    "stopped_decision_fraction_of_nominal_upstream_budget": 0.12544,
+    "selected_completed_rollouts": 123,
+    "stopped_completed_rollouts": 245,
+    "upstream_gamma_per_native_action": 0.99,
+    "local_gamma_per_repeated_decision": 0.99,
+    "four_frame_discount_correspondence_only": 0.96059601,
+    "sde_resample_period_in_native_frames": {
+      "upstream": 4,
+      "local_up_to": 16
+    },
+    "selected_schedule_progress": 0.125922375,
+    "stopped_schedule_progress": 0.25080175,
+    "training_updates_counter": "epochs entered, not independent rollout updates or minibatch optimizer steps"
+  },
+  "inferences": [
+    "Current local training is an adaptation and early-stopped development trial, not a full-budget pixel-recipe reproduction or a converged baseline.",
+    "Changing gamma alone would not match repeated reward aggregation, GAE, noise cadence, representation or training budget.",
+    "Regression and failed repairs do not establish that model-free RL cannot learn control.",
+    "Complete factory parity and an execution profile are required before declaring a separate native-recipe reproduction; it must retain partition exclusions."
+  ],
+  "actions": {
+    "production_training_settings_changed": false,
+    "new_training_launched": false,
+    "final_test_accessed": false,
+    "private_rankings_accessed": false
+  },
+  "recorded_training_namespace_check": {
+    "selected": {
+      "tracks_started": 1029,
+      "distinct_tracks": 1029,
+      "all_in_train_namespace": true,
+      "completed_episodes": 1025,
+      "workers": 4
+    },
+    "stopped": {
+      "tracks_started": 2060,
+      "distinct_tracks": 2060,
+      "all_in_train_namespace": true,
+      "completed_episodes": 2056,
+      "workers": 4
+    }
+  },
+  "recorded_training_namespace_check_scope": "Existing training artifacts only; no test/legacy held-out identities generated or inspected"
+}

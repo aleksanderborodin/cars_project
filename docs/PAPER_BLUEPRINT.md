@@ -4,7 +4,7 @@ Updated 2026-10-29. [Index](../README.md) · [Experiment contract](EXPERIMENT.md
 [Evidence status](STATUS.md) · [Attributed chronology](RESEARCH_LOG.md)
 
 This is the consolidated home for the paper idea and the ideas recorded in this
-conversation, USER_INTENT and research-log R1–R44. It connects them to one study;
+conversation, USER_INTENT and research-log R1–R47. It connects them to one study;
 it does not activate every extension. The experiment contract still governs
 access and evaluation. Existing numerical defaults are development choices.
 Historical results retain their original protocol, and archived plans stay archived.
@@ -202,6 +202,12 @@ The lower-learning-rate probe completed and was not better: best 50-track
 checkpoint 692.18/8%, final 624.51/0%. The original selected driver stays the
 reference. Two unsuccessful optimization repairs strengthen the need for a
 baseline audit; they do not prove learned control is inherently difficult.
+The [completed factory/budget audit](BASELINE_AUDIT.md#factory-and-budget-audit-2026-10-29)
+finds that the selected local actor used 251,904 learner decisions, 6.30% of the
+reference recipe's nominal 4M decisions. Its repeat, encoder and schedule differ;
+neither convergence nor an original native-recipe reproduction is established.
+The [Valdi source audit](VALDI_AUDIT.md) likewise distinguishes pixel-derived
+dashboard inputs, a different planning budget and evaluation termination behavior.
 
 The [controlled geometry pilot](INTERVENTION_RESULTS_2026-10-29.md) subsequently
 found worse driving with oracle-derived road despite more accurate predictions
@@ -215,6 +221,14 @@ local. One track is worse even than tangent; eight true-tail episodes time out.
 Ten exact pilot replays passed. This supports reference mismatch as a limitation
 of this configuration, not perception/forecasting adequacy or a general control
 advantage. The oracle variant is not promoted over the local method.
+
+The [matched sequence-search study](SEQUENCE_SEARCH_2026-10-29.md) is complete:
+colored shooting 884.86/70%, iCEM adaptation 634.13/15%, historical knot search
+905.94/85% on twenty tracks. Adaptive-minus-colored return is −250.72
+[−359.57, −147.31], with −240.99 on additional18. Neither new method is promoted.
+The trace audit finds stronger interventions and more departures with iCEM, but
+does not identify their cause. This is a negative result for a particular small-budget
+adaptation, not a rejection of iCEM or of the user's core simulation-selection idea.
 
 This evidence supports investigating selection. It does not yet establish the
 three-stage explanation, a perception result, a calibrated forecast, a strong
@@ -267,7 +281,7 @@ recommendations or engineering choices, not retrospectively user requirements.
 | A03 | Use positive/negative controls, equivalence margins and interaction contrasts | Proposed decomposition-validation plan |
 | A04 | Distill search improvements into a direct controller; compare a learned scorer if needed | Proposed stronger explanatory control; related methods have prior art |
 | A05 | Keep cheap fixed corrections and random variation controls | Implemented; broad fixed correction complete, random variation initially measured on 20 tracks |
-| A06 | Compare iCEM adaptation at equal total simulated work and separately equal latency | Source audited; [resolved local adaptation and matched shooting](SEQUENCE_SEARCH_2026-10-29.md) implemented, validation/racing gates pending |
+| A06 | Compare iCEM adaptation at equal total simulated work and separately equal latency | Source audited; [equal-work comparison complete](SEQUENCE_SEARCH_2026-10-29.md), negative adaptation result retained; hard latency-budget control remains open |
 | A07 | Use five training seeds for headline learned conditions, track-paired intervals, frozen selection and full cost ledger | Existing methodological plan, pending headline campaign |
 | A08 | Current seven/21 candidates, three residual knots, horizon 20, repeat 4, radius 30, observer/contact approximation | Engineering defaults with explicit uncertainty; not user's final architecture commitments |
 | A09 | Sparse observation rendering, immutable executable snapshots, replay gates and sequential timing | Implemented/tested; not an algorithmic novelty claim |

@@ -949,5 +949,49 @@ Earlier project intentions remain in USER_INTENT.md; this log extends that recor
 - **Staging:** one old episode replay plus two episodes per new method, then twenty
   per method under unchanged settings if technical checks pass, irrespective of
   performance. Cap 45k native / 18.9M internal frames across both stages, no training.
-- **Status/record:** implementation and focused tests pass; full gates and driving
-  evidence pending in [the resolved experiment](SEQUENCE_SEARCH_2026-10-29.md).
+- **Status/record:** all 100 tests, historical replay, smoke gates and the fixed
+  twenty-track comparison passed their technical checks under unchanged settings in
+  [the resolved experiment](SEQUENCE_SEARCH_2026-10-29.md). The two-track smoke
+  favored colored shooting over the adaptive variant (907.26 versus 568.97 mean
+  return); this descriptive negative result did not trigger outcome-based tuning.
+
+- **Completed outcome:** colored 884.86/70%, iCEM 634.13/15%, historical knots
+  905.94/85%. Primary −250.72 [−359.57, −147.31]; additional18 −240.99. Colored
+  also loses 21.08 versus knots. No outcome-driven setting changes occurred.
+- **Failures and diagnostic:** iCEM has fifteen timeouts and two playfield exits;
+  its three fast completed laps do not offset those failures. A clearly post-hoc
+  executed-trace audit finds larger corrections, more departures and larger
+  short-step prediction error on different visited states; cause remains unidentified.
+  This audit uses no private ranks/regrets or unexecuted candidate outcomes.
+- **Final verification/cost:** 100 tests, five exact replays, 80 reported trajectories
+  and all pinned/frozen inputs verified. Including smoke: 45 new episodes, 40,972
+  native frames / 17,220,000 internal physics steps, zero training, 58.35 minutes.
+- **Assistant decision:** keep original knot search; close this bounded optimizer
+  trial and preserve its negative result. No automatic 200-track expansion or
+  targeted tuning. Prioritize competent baselines using R47's audits. No active
+  jobs remain; strong-baseline, independent-seed, V/L/F and final-paper gates stay open.
+
+## R47 — Audit baseline competence and comparator protocols while races run
+
+- **User origin/purpose:** improve credible frozen proposers, compare fairly with
+  existing work, and document choices and findings honestly.
+- **Assistant action:** read pinned RL Zoo factory source and existing local
+  training artifacts; audit the closest CarRacing learned-planning comparator,
+  Valdi. These are source/artifact reviews, not new training or reproduced scores.
+- **RL Zoo finding:** the default reference has no action repetition and requests
+  4M aggregate learner decisions. Our selected checkpoint has 251,904 decisions
+  (6.30%); the stopped trial has 501,760 (12.54%). Repeat four also changes the
+  physical discount/noise cadence. Source hashes, counter meanings and caveats are
+  in [the baseline audit](BASELINE_AUDIT.md). More training helping is unproven.
+- **Valdi finding:** numeric sensors are extracted from HUD pixels; they are not
+  hidden-state access. Its supplied evaluation ignores done/truncated flags over
+  600 steps. Planning uses 5,120 candidates per replan and a learned terminal value.
+  Source revision, action mapping, seed/resume differences, memory requirements
+  and paper-version uncertainty are in [the source audit](VALDI_AUDIT.md).
+- **Assistant decision/reason:** keep current search as a mechanism study and
+  retain Valdi as relevant prior work. Verify a competent local proposer and the
+  native PPO recipe before an expensive new learned-model reproduction. No SOTA,
+  convergence or general limitation of RL follows from the current training trials.
+  High confidence in source/accounting observations; performance and repair
+  usefulness remain uncertain. No production settings, ongoing race conditions,
+  final-test access or user-only rank/regret restrictions changed.

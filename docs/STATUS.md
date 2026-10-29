@@ -1,7 +1,7 @@
 # Implementation and evidence status
 
 Updated 2026-10-29. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
-[Roadmap](ROADMAP.md) · [Latest development results](REFERENCE_REPLICATION_2026-10-29.md)
+[Roadmap](ROADMAP.md) · [Latest development results](SEQUENCE_SEARCH_2026-10-29.md)
 
 The first development experiment and control-audit follow-up are complete. The full paper
 campaign has not started. User decisions are in [USER_INTENT.md](USER_INTENT.md);
@@ -46,14 +46,19 @@ is also complete: true tail **813.85/60%**, tangent **527.60/0%**, historical lo
 search **885.70/70%**. The additional fifteen retain a +287.64 mean-return gain
 versus tangent, with one counterexample, but −85.57 versus local search. Ten exact
 replays passed. No jobs remain active; true tail remains a privileged diagnostic.
-Next return to the already audited equal-work optimizer comparison and baseline
-competence work, with separate run declarations; no large sweep is activated.
+The subsequent equal-work optimizer comparison is reported below. Baseline
+competence remains open; no larger sweep is activated.
 The actor receives only its original local fields. Global training stays sealed.
 
-**Next active experiment:** [matched sequence shooting/iCEM](SEQUENCE_SEARCH_2026-10-29.md)
-is implemented and under prelaunch validation. Both methods evaluate 21 trajectories
-in identical 13+8 batches, with the same local actor/model/utility. No new driving
-result yet; historical parity and two-track smoke gates precede the 20-track comparison.
+**Latest completed experiment:** [matched sequence shooting/iCEM](SEQUENCE_SEARCH_2026-10-29.md)
+finished all twenty tracks per new method. Colored shooting: **884.86/70%**;
+iCEM adaptation: **634.13/15%**; historical knot search: **905.94/85%**. Primary
+paired return difference −250.72 [−359.57, −147.31], with −240.99 on additional18.
+Retain original knot search; neither new variant is promoted. All five replays and
+100 tests passed. Total including smoke: 40,972 native / 17,220,000 internal steps,
+zero new training. No jobs remain active. Baseline competence is the next priority;
+the [factory audit](BASELINE_AUDIT.md) and [Valdi audit](VALDI_AUDIT.md) record the
+remaining budget and protocol gaps. These are development findings, not SOTA.
 
 ## Implemented
 
@@ -72,7 +77,7 @@ result yet; historical parity and two-track smoke gates precede the 20-track com
 | planning/reference_extension.py | Privileged true-road tail appended to the unchanged visible reference; fixed 100 m/1 m extent and sampling | Reference-continuation diagnostic; utility/other planner limitations remain |
 | research/driver_training.py and driver_* | Configured PPO, deterministic pooling, reward normalization, post-update checkpoints, native-frame schedule, CPU/GPU profiles | Local adaptation; original 1M checkpoint retained; KL-stop and lower-LR repairs failed to improve it; convergence/competitive baseline not established |
 | planning/policy_search.py | Frozen recurrent feedback proposals, smooth residuals, isolated imagined memory, coded simulation selection and random control | Search 7/21 gains on 200 development tracks for one frozen checkpoint; high cost, no multi-seed evidence |
-| planning/policy_rollouts.py, sequence_optimizer.py, policy_sequence_search.py | Shared feedback rollouts, matched colored shooting and two-batch policy-guided iCEM; owned first-state commits | Tested mechanics, driving evidence pending; adaptation, not an original-protocol reproduction |
+| planning/policy_rollouts.py, sequence_optimizer.py, policy_sequence_search.py | Shared feedback rollouts, matched colored shooting and two-batch policy-guided iCEM; owned first-state commits | Complete 20-track negative result; neither new variant promoted; adaptation, not original-protocol reproduction |
 | planning/occupancy.py, policy_controls.py | Equivalent sparse occupancy renderer and frozen-policy fixed offsets | Sampled exact renderer parity; three fitted offset controls do not establish all cheap alternatives are inferior |
 | research/evaluation.py, eval/paired.py | Common development tracks, traces/costs, protocol checks, paired and crossed model/track intervals | Small/adaptive study; no final paper campaign |
 | monitoring/ | One-way online oracle-ranking sidecar, prefix replay, private live report | User-only outputs; no agent/learning/selection/assistant access to real ranking values |
@@ -87,30 +92,32 @@ seen-inf collection as the new protocol.
 For the new primary coded-physics variant, vehicle dynamics are **not trained**.
 The observer carries simulated wheel state from executed history and corrects
 the next hull velocity/yaw from observations. Decisions come from rolling out
-the candidates, not a learned behavior-value head. The following table records
-the earlier ridge baseline and the common initial controller/road assumptions.
+the candidates, not a learned behavior-value head.
 
-| Part | Current implementation | Objective or selection rule |
+| Part | Active implementation | Training or selection rule |
 |---|---|---|
-| Car dynamics | Ridge regression with 22 designed features and three outputs: changes in forward velocity, lateral velocity and yaw rate | Squared error of scaled one-step changes on train-track transitions, plus coefficient regularization; ridge 0.01 in the current runs |
-| Imagined position/heading | Mathematical integration of the predicted velocities and yaw rate | No fitted position model or separate training objective |
-| Visible road | Exact restricted simulator road mask and heuristic path reconstruction | No learned perception module in this local-geometry study |
-| Unseen road | Constant terminal tangent and width prior | No learned road forecast, probability distribution or calibration |
-| Online decision | Simulate 21 speed/gain feedback candidates for 20 decisions (1.6 seconds); execute the first action for four native frames (0.08 seconds), then replan | Minimize hand-designed cost: departure/clearance, center distance, lateral velocity and unknown-space penalties minus predicted path progress |
-| Predictor configuration selection | Current feature design and ridge setting are engineering choices; variants were examined through development diagnostics/driving | No automated downstream predictor-selection study or regret objective implemented |
+| Vehicle dynamics | Locked upstream vehicle mechanics in reconstructed independent worlds; approximate wheel/contact observer | No fitted dynamics in the primary method; no true wheel/solver-state access |
+| Behavior proposer | Frozen selected recurrent PPO checkpoint with local mask, ego and previous-action/history inputs | Ordinary PPO training and standalone development checkpoint selection; weights stay fixed during search |
+| Visible road | Exact restricted road mask and heuristic reference reconstruction | This study bypasses RGB perception; no learned visual module |
+| Unseen road | Terminal tangent and fixed-width prior | One deterministic hypothesis, not a learned or calibrated distribution |
+| Baseline search | 7 or 21 smooth three-knot residual behaviors around imagined feedback actions; 20 decisions per rollout | Select minimum programmed model cost; retain the base policy among evaluated candidates |
+| Sequence comparison | 21 full residual sequences in 13+8 batches; colored shooting versus a policy-guided iCEM adaptation | iCEM fits the online control-proposal distribution; actor/dynamics weights remain frozen |
+| Execution | Execute the selected first control for at most four native frames, then observe and replan | Commit its first physical-state estimate; update real recurrent memory only from real observations |
+| Predictor/configuration selection | Current engineered settings and explicitly recorded development trials | Future normally trained predictors may be selected by downstream driving; no private regret/rank feedback |
 
-The dynamics fit uses 66 coefficients, including intercepts, and predicts the
-next 0.08-second ego transition. It is learned from actual simulator transitions;
-the designed features and integration are mathematical components. Training loss
-does not optimize candidate ranking, race return or hindsight regret. The planner
-cost is not the official reward. Good one-step error therefore does not establish
-good candidate selection or race completion.
+The search utility is not official reward: it combines predicted path progress,
+road departure/clearance, centre distance, lateral velocity and unknown-space costs.
+A better internal objective value need not improve real racing. The 20-decision
+rollout covers 1.6 s; the real action interval is 0.08 s. The environment currently
+waits synchronously, so latency above that interval is not a real-time control result.
 
-The three dynamics models are independent development replications; deployment
-currently uses one at a time. They are not combined into a probabilistic ensemble.
-The optional future model-selection study trains predictors normally and selects
-representations/configurations through downstream validation driving. It remains
-distinct from explicitly training a predictor with a decision/regret loss.
+The earlier ridge baseline remains available as a separate comparison. It fits
+66 coefficients from 22 designed features to scaled one-step ego changes, with
+ridge regularization 0.01 in its recorded runs. Its three development fits are
+independent instances, not a probabilistic ensemble. They do not replace the
+programmed engine or train on race return, candidate ranking or hindsight regret.
+The optional predictor-selection study remains separate from special decision-loss
+training, as the user requested.
 
 Hindsight regret compares the chosen behavior's measured utility with the best
 utility among the same candidate set, under a specified horizon and utility.
@@ -121,6 +128,13 @@ and unavailable for agent analysis, training or selection. Hindsight knowledge o
 the realized hidden world also differs from information available at decision time.
 
 ## Measurements
+
+- [Matched sequence-search comparison](SEQUENCE_SEARCH_2026-10-29.md): iCEM minus
+  colored shooting −250.72 [−359.57, −147.31], 3/20 versus 14/20 completions.
+  Colored also loses 21.08 versus historical knot search (17/20). Additional18
+  retain the negative primary effect. iCEM has fifteen timeouts/two playfield
+  exits; all failures retained. Both new p95 latencies exceed 380 ms. The trace
+  audit is descriptive and uses only executed public trajectories, not oracle ranks.
 
 - [20-track reference replication](REFERENCE_REPLICATION_2026-10-29.md): true tail
   +286.25 mean return versus tangent, nominal track interval [231.59, 343.19],
@@ -193,7 +207,8 @@ the realized hidden world also differs from information available at decision ti
   real oracle-ranking values were not read.
 
 Full tables, costs, adaptive choices and uncertainty are in the
-[latest report](FROZEN_POLICY_RESULTS_2026-10-28.md) and linked earlier reports.
+[200-track report](BROAD_RESULTS_2026-10-29.md), the
+[sequence-search report](SEQUENCE_SEARCH_2026-10-29.md) and linked earlier reports.
 No final-test identities/results or legacy unseen/hard results were inspected.
 
 ## Open work
@@ -209,10 +224,11 @@ No final-test identities/results or legacy unseen/hard results were inspected.
   The [baseline audit](BASELINE_AUDIT.md) records current implementation gaps.
 - Better model/control robustness and recovery, using permitted feedback only;
   the user-only oracle is excluded.
-- Geometry/reconstruction decomposition after the completed full-map diagnostic;
-  it does not isolate visible reconstruction from unseen continuation.
-- Learned road distributions, calibrated uncertainty, scenario MPC, adaptive/Bayesian
-  behavior search and local visual perception remain proposals.
+- Trained visual/local/full-map decomposition remains open. Completed fixed-controller
+  substitutions and the reference-tail diagnostic do not replace those trained rows.
+- Learned road distributions, calibrated uncertainty, scenario MPC, Bayesian
+  behavior search and local visual perception remain proposals. The bounded iCEM
+  adaptation completed its bounded development comparison and was not adopted.
 - TD-MPC2, DreamerV3, Valdi and other modern baseline reproductions are not executed.
 - Final frozen study, sufficiently powered comparisons, paper and release remain open.
 - A [task-useful independent simulator](DECISION_USEFUL_SIMULATOR.md), GPU backend
@@ -220,7 +236,7 @@ No final-test identities/results or legacy unseen/hard results were inspected.
   implemented. Realism is not an acceptance criterion for that proposed variant.
 - Agentic evolution is future work; archived Rust/evolution tooling stays archived.
 
-The latest completed full suite passed **88 tests** (three upstream SWIG deprecation warnings).
+The latest completed full suite passed **100 tests** (three upstream SWIG deprecation warnings).
 Pytest discovery is now restricted to active `tests/`, excluding saved run snapshots.
 The original cleanup had 47 retained tests. New coverage includes partition sealing,
 local isolation, protocol equivalence, fit/reload, continuation, paired statistics

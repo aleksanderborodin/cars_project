@@ -29,9 +29,11 @@ With both conditions frozen, the reference change gained +286.25 mean return
 versus tangent but remained −71.86 below historical local search. Original-five
 and additional-fifteen panels are separate; this is a diagnostic, not a promoted
 local method or a component-adequacy/SOTA claim.
-The next [sequence-search comparison](SEQUENCE_SEARCH_2026-10-29.md) implements
+The completed [sequence-search comparison](SEQUENCE_SEARCH_2026-10-29.md) tests
 representation- and budget-matched colored shooting versus a policy-guided iCEM
-adaptation under the original local protocol. It has staged technical gates and
+adaptation under the original local protocol. iCEM loses 250.72 mean return;
+colored shooting also remains below historical knot search. Keep the original
+local method and prioritize competent baselines. This negative development result
 does not replace the programmed simulator or activate privileged policy training.
 [RESEARCH_PLAN.md](RESEARCH_PLAN.md) details the geometry branch;
 [PREDICTION_SELECTION.md](PREDICTION_SELECTION.md) reviews optional predictor

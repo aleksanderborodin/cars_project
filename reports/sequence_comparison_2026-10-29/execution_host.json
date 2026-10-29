@@ -1,0 +1,21 @@
+{
+  "recorded_utc": "2026-10-29T09:22:51.795165+00:00",
+  "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+  "python": "3.12.3",
+  "cpu": {
+    "Architecture": "x86_64",
+    "CPU(s)": "12",
+    "Model name": "AMD Ryzen 5 7500F 6-Core Processor",
+    "Core(s) per socket": "6",
+    "Thread(s) per core": "2"
+  },
+  "load_average": [
+    2.11279296875,
+    1.45654296875,
+    1.07470703125
+  ],
+  "thread_environment": "OMP_NUM_THREADS=OPENBLAS_NUM_THREADS=MKL_NUM_THREADS=1 in frozen child",
+  "timing_caveat": "serial noninterleaved conditions; ordinary workstation load/frequencies uncontrolled; read-only source/documentation review during execution",
+  "record_scope": "same workstation and thread contract as smoke; hardware snapshot timestamp retained",
+  "concurrent_work": "read-only source/baseline audits, ordinary documentation edits, and lightweight public-artifact analysis; no competing project training or racing"
+}

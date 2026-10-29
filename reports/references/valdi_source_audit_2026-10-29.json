@@ -1,0 +1,260 @@
+{
+  "date": "2026-10-29",
+  "status": "static source audit only; no installation, import, training, evaluation or reproduction",
+  "origin": {
+    "motivation": "user: compare with credible published methods and separate understanding from deciding",
+    "source": "Valdi authors",
+    "audit_and_interpretation": "assistant"
+  },
+  "paper": "https://arxiv.org/html/2607.00917v1",
+  "repository": "https://github.com/Kit115/ValueDiffusionWorldModels",
+  "revision": "c5a203d933166dd55fb012323f928fb11b66e789",
+  "commit_date": "2026-08-06T10:28:22Z",
+  "cache": "runs/references/valdi_c5a203d933166dd55fb012323f928fb11b66e789",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "cf8eb08b159719908f5e8c50a03845177df4c1a7e0bbf45ee0b208b2b27a2676",
+      "bytes": 1054,
+      "source": "https://raw.githubusercontent.com/Kit115/ValueDiffusionWorldModels/c5a203d933166dd55fb012323f928fb11b66e789/README.md"
+    },
+    {
+      "path": "environment.py",
+      "sha256": "95854246273b9bceb9261cd5cf278a3cd08dbc35ca3ab207a188ff9ec877dea0",
+      "bytes": 1571,
+      "source": "https://raw.githubusercontent.com/Kit115/ValueDiffusionWorldModels/c5a203d933166dd55fb012323f928fb11b66e789/environment.py"
+    },
+    {
+      "path": "experiment.py",
+      "sha256": "df1ae2dbe597acbd70dae2c79ec84647e66cc02e0fc16bcc305a136b104282b4",
+      "bytes": 2710,
+      "source": "https://raw.githubusercontent.com/Kit115/ValueDiffusionWorldModels/c5a203d933166dd55fb012323f928fb11b66e789/experiment.py"
+    },
+    {
+      "path": "train.py",
+      "sha256": "c6bae9ed686ec51fbb53091f216d3ef7adfe088e9238c529689c57ad7a655e2b",
+      "bytes": 15248,
+      "source": "https://raw.githubusercontent.com/Kit115/ValueDiffusionWorldModels/c5a203d933166dd55fb012323f928fb11b66e789/train.py"
+    },
+    {
+      "path": "configs/default_diffusion.yaml",
+      "sha256": "650b6b33f35fe20d9336b9540a21c2feda3206e241f97dcdb3bc18399c6908ab",
+      "bytes": 893,
+      "source": "https://raw.githubusercontent.com/Kit115/ValueDiffusionWorldModels/c5a203d933166dd55fb012323f928fb11b66e789/configs/default_diffusion.yaml"
+    },
+    {
+      "path": "configs/default_mlp.yaml",
+      "sha256": "12777f39d7da038d121391c40c17546c1d508ef19bb6e7de9bc5e103296aa7dd",
+      "bytes": 845,
+      "source": "https://raw.githubusercontent.com/Kit115/ValueDiffusionWorldModels/c5a203d933166dd55fb012323f928fb11b66e789/configs/default_mlp.yaml"
+    },
+    {
+      "path": "told_diffusion.py",
+      "sha256": "046f707ab5d465e044f09a6f80c9f0cf777461e5d43006305794628d39d1c33a",
+      "bytes": 4089,
+      "source": "https://raw.githubusercontent.com/Kit115/ValueDiffusionWorldModels/c5a203d933166dd55fb012323f928fb11b66e789/told_diffusion.py"
+    },
+    {
+      "path": "told_mlp.py",
+      "sha256": "9234539f7e3ec0fb0dd0b1d465ec1cbbce7ede7a282900e9730c30ea52751a7d",
+      "bytes": 2911,
+      "source": "https://raw.githubusercontent.com/Kit115/ValueDiffusionWorldModels/c5a203d933166dd55fb012323f928fb11b66e789/told_mlp.py"
+    },
+    {
+      "path": "buffer.py",
+      "sha256": "efa170afbcbc4f25a4efd0934f94db332bcef0bfa11dd767c3458bc179089677",
+      "bytes": 6749,
+      "source": "https://raw.githubusercontent.com/Kit115/ValueDiffusionWorldModels/c5a203d933166dd55fb012323f928fb11b66e789/buffer.py"
+    },
+    {
+      "path": "models/common.py",
+      "sha256": "0e8a9c50be2ab7ac9fde2a72e789c5472e67981f0db841f72ec519914f825000",
+      "bytes": 3378,
+      "source": "https://raw.githubusercontent.com/Kit115/ValueDiffusionWorldModels/c5a203d933166dd55fb012323f928fb11b66e789/models/common.py"
+    },
+    {
+      "path": "models/encoders.py",
+      "sha256": "6531c6aa70f7e2c26412fa691cf987891412c217c4150ae89a1379637204a4fb",
+      "bytes": 3733,
+      "source": "https://raw.githubusercontent.com/Kit115/ValueDiffusionWorldModels/c5a203d933166dd55fb012323f928fb11b66e789/models/encoders.py"
+    },
+    {
+      "path": "models/reward_models.py",
+      "sha256": "13322ef94cfdb61260ad45c1229106d3bc7d9eef45cb035bdc8335b7a92379ff",
+      "bytes": 1119,
+      "source": "https://raw.githubusercontent.com/Kit115/ValueDiffusionWorldModels/c5a203d933166dd55fb012323f928fb11b66e789/models/reward_models.py"
+    },
+    {
+      "path": "models/value_function.py",
+      "sha256": "22d430ef7f2adeed3af343bfaa29d62d11221762c53f1d27e0d8b32ad570cfbc",
+      "bytes": 1277,
+      "source": "https://raw.githubusercontent.com/Kit115/ValueDiffusionWorldModels/c5a203d933166dd55fb012323f928fb11b66e789/models/value_function.py"
+    },
+    {
+      "path": "evals/performance_evaluation.py",
+      "sha256": "22be0beedb75b9f3942fe6dde599db0c7dbb68f3a909e1c55139f0989561bd56",
+      "bytes": 2102,
+      "source": "https://raw.githubusercontent.com/Kit115/ValueDiffusionWorldModels/c5a203d933166dd55fb012323f928fb11b66e789/evals/performance_evaluation.py"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "ac413bd8a225422f7f2a3b16b6a1573d2da9729cd3101bcd955780dd8fcefbc7",
+      "bytes": 592,
+      "source": "https://raw.githubusercontent.com/Kit115/ValueDiffusionWorldModels/c5a203d933166dd55fb012323f928fb11b66e789/pyproject.toml"
+    },
+    {
+      "path": ".python-version",
+      "sha256": "7b55f8e67b5623c4bef3fa691288da9437d79d3aba156de48d481db32ac7d16d",
+      "bytes": 5,
+      "source": "https://raw.githubusercontent.com/Kit115/ValueDiffusionWorldModels/c5a203d933166dd55fb012323f928fb11b66e789/.python-version"
+    },
+    {
+      "path": "uv.lock",
+      "sha256": "f1d6a55ca77bf1ed71c208077879051806e047d23304d2abedead17668b139e1",
+      "bytes": 353121,
+      "source": "https://raw.githubusercontent.com/Kit115/ValueDiffusionWorldModels/c5a203d933166dd55fb012323f928fb11b66e789/uv.lock"
+    }
+  ],
+  "locked_versions": [
+    {
+      "name": "box2d",
+      "version": "2.3.10",
+      "source": {
+        "registry": "https://pypi.org/simple"
+      }
+    },
+    {
+      "name": "gymnasium",
+      "version": "1.2.3",
+      "source": {
+        "registry": "https://pypi.org/simple"
+      }
+    },
+    {
+      "name": "lejepa",
+      "version": "0.0.1",
+      "source": {
+        "git": "https://github.com/rbalestr-lab/lejepa#70c2552c1e88523720ab5ea66ebdcf8092775aa9"
+      }
+    },
+    {
+      "name": "numpy",
+      "version": "2.3.5",
+      "source": {
+        "registry": "https://pypi.org/simple"
+      }
+    },
+    {
+      "name": "tensordict",
+      "version": "0.12.3",
+      "source": {
+        "registry": "https://pypi.org/simple"
+      }
+    },
+    {
+      "name": "torch",
+      "version": "2.9.1",
+      "source": {
+        "registry": "https://pypi.org/simple"
+      }
+    },
+    {
+      "name": "torchvision",
+      "version": "0.24.1",
+      "source": {
+        "registry": "https://pypi.org/simple"
+      }
+    }
+  ],
+  "source_findings": [
+    {
+      "id": "observations",
+      "file": "environment.py",
+      "lines": [
+        6,
+        23,
+        41,
+        46
+      ],
+      "finding": "Seven numeric channels are extracted from HUD pixels; lower RGB strip is zeroed. No hidden vehicle-state read in this wrapper."
+    },
+    {
+      "id": "control",
+      "file": "train.py",
+      "lines": [
+        115,
+        142,
+        171,
+        312,
+        341
+      ],
+      "finding": "512 candidates x 10 CEM iterations, horizon five chunks of three distinct native actions; execute first three actions, then replan. Outputs tanh for all action channels; action-bound mapping must be audited."
+    },
+    {
+      "id": "score",
+      "file": "train.py",
+      "lines": [
+        110,
+        125,
+        251
+      ],
+      "finding": "Discounted learned chunk reward plus minimum of two learned terminal state values; no policy prior. TD target as written does not consume terminal masks."
+    },
+    {
+      "id": "evaluation",
+      "file": "evals/performance_evaluation.py",
+      "lines": [
+        25,
+        38,
+        42,
+        45,
+        48
+      ],
+      "finding": "100 fixed generated evaluation seeds, human rendering, three-action replans, fixed 600-step loop, done/truncated flags ignored. This is a source finding, not proof of the script used for published numbers."
+    },
+    {
+      "id": "collection",
+      "file": "train.py",
+      "lines": [
+        312,
+        318,
+        341,
+        393,
+        406
+      ],
+      "finding": "Training collection stops on termination or truncation, creates unseeded fresh environments, defaults to ten initial and 5000 trained trajectories with 60 updates each. No project partition exclusions or recorded model/planning streams."
+    },
+    {
+      "id": "resume",
+      "file": "buffer.py",
+      "lines": [
+        17,
+        91,
+        107
+      ],
+      "finding": "Dones allocated/used in batches but omitted from buffer save/load; model checkpoint does not preserve complete RNG state. Exact resumed-run identity unestablished."
+    }
+  ],
+  "derived_default_costs": {
+    "native_frames_cap_including_initial_trajectories": 3006000,
+    "gradient_updates": 300000,
+    "candidate_trajectories_per_replan": 5120,
+    "latent_chunk_positions_per_replan": 25600,
+    "horizon_native_actions": 15,
+    "replan_native_actions": 3,
+    "buffer_array_bytes": 16645280000,
+    "scope": "static dimensions, not measured runtime; diffusion joint horizon generation is not equivalent to native physics stepping"
+  },
+  "license_file_found_in_pinned_tree": false,
+  "decision": "Retain as closely related actor-free learned-model planning comparator; source audit is a prerequisite, not launch authorization for an unbounded reproduction. Original-protocol diagnostic and corrected/matched adaptation must be separate.",
+  "next_gates": [
+    "Resolve source reuse terms before copying code into this repository",
+    "Separate locked environment and pinned source; do not change active project dependencies",
+    "Declare action mapping, termination handling, seed namespaces and checkpoint selection",
+    "Profile inference/training memory and cost before a full budget",
+    "Record each compatibility repair instead of calling it an unchanged reproduction"
+  ],
+  "private_diagnostics_accessed": false,
+  "project_final_test_accessed": false,
+  "third_party_code_executed": false
+}

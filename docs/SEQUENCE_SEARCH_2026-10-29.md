@@ -11,7 +11,11 @@ elite fitting, cached within-decision elites and shifted cross-decision plans.
 **Assistant design:** a budgeted policy-residual adaptation and a representation-
 matched shooting control, keeping the existing local method as a separate reference.
 
-**Validated and ready to execute the frozen stages; no driving result yet.** The preceding
+**Complete.** Both stages finished under the frozen settings after commit `73baef7`.
+All five exact replays passed. Colored shooting scored 884.86 / 70% completion;
+the iCEM adaptation scored 634.13 / 15%. The primary paired difference is −250.72
+return. Neither new method replaces historical three-knot search (905.94 / 85%).
+No campaign jobs remain active. The preceding
 [reference-tail replication](REFERENCE_REPLICATION_2026-10-29.md) supported objective
 compatibility as a limitation but did not beat original local search. This experiment
 returns to local information and addresses a missing established-optimizer comparison.
@@ -144,7 +148,16 @@ initial draws, correct mean injection, bounds, exact evaluation counts, previous
 cost invalidation, shifted-plan reevaluation, repeatability/reset, local-only actor
 inputs, unmodified real memory, identical batch roots and correct first-batch state
 commit. Existing local/intervention tests passed after extracting the shared rollout
-routine. Full-episode historical replay remains a launch gate, not an assumed result.
+routine. The full-episode historical replay passed exactly before new-method racing.
+
+The smoke stage completed in 397.06 s, using 4,574 external native frames and
+1,923,600 internal physics steps. The two new methods used 152.12 s and 167.83 s
+for two tracks each, implying roughly 53 minutes for the 40 main races at those
+rates; this is an estimate, not a guaranteed completion time. Their smoke returns
+were 907.26/50% completion (colored) and 568.97/0% (iCEM), versus historical
+919.65/100% (knots) and 891.21/50% (direct). Two tracks are descriptive only.
+The negative smoke result did not change the declared main settings or budget.
+See [smoke artifacts](../reports/sequence_smoke_2026-10-29/analysis.json).
 
 The prior source and audit are pinned to revision
 `98c1c1fe2bfc94a87e4658b6c793f4e81bc30203`; [attribution and MIT notice](../third_party/icem/README.md)
@@ -160,3 +173,103 @@ driving. If only the sequence representation differs from knots, attribute it to
 that change and its associated implementation, not solely adaptive fitting.
 Review all tracks and compute before choosing the next experiment. The stronger-policy,
 independent-seed and trained V/L/F studies remain open whatever this result is.
+
+An additional **post-hoc descriptive** trace audit was designed after the smoke
+results, while the colored main arm was running. It used all twenty existing
+tracks in each reported condition: adjacent action changes, chosen-minus-base
+corrections/override rate, and logged one-step velocity/yaw error for fully executed
+four-frame actions. Partial final actions are excluded from that prediction metric.
+The completed audit makes no new simulator calls, tests no new significance claim and does
+not alter the primary comparison. Different closed-loop states prevent causal
+attribution from these summaries; one-step error is neither horizon accuracy nor
+counterfactual rank/regret. Private monitor outputs remain excluded.
+
+## Completed results and interpretation
+
+All methods use the same selected actor and twenty development tracks. Historical
+controls are reused, not new races or newly matched timing measurements. The search
+methods evaluate 21 trajectories per decision; the direct policy performs no search.
+
+| Method | Mean return | Completions | Mean progress | Off-road frames, total | Pipeline p95 |
+|---|---:|---:|---:|---:|---:|
+| Direct actor, historical | 863.55 | 8/20 | 95.63% | 474 | 1.50 ms |
+| Three-knot shooting, historical | 905.94 | 17/20 | 99.12% | 8 | 367.48 ms |
+| Colored sequence shooting | 884.86 | 14/20 | 97.54% | 52 | 392.76 ms |
+| Policy-guided iCEM adaptation | 634.13 | 3/20 | 73.55% | 1,309 | 387.12 ms |
+
+**Primary:** iCEM minus colored shooting is **−250.72**, nominal paired-track 95%
+interval **[−359.57, −147.31]**; 16/20 returns are lower. Completion falls by 55
+percentage points [−75, −30], with eleven lost finishes and none gained. The
+additional18 panel retains −240.99 [−354.46, −127.94], with fourteen lower returns.
+The two replayed smoke tracks therefore do not account for the overall failure.
+These are development intervals for one frozen actor/planning stream, with no
+training-seed, selection or multiple-comparison adjustment.
+
+**Secondary context:** colored shooting loses 21.08 [−37.95, −8.11] versus old knot
+search, with 19/20 lower returns and three lost finishes. Its +21.31 versus direct
+has interval [−0.64, 44.60]; the nominal mean-return interval includes zero even
+though completion rises from eight to fourteen. iCEM is also below direct by
+229.42 [−333.99, −127.80]. Representation, noise/bounds and batching differ from
+knots, so that contrast does not identify adaptive fitting alone.
+
+Track numbers here are one-based manifest positions. Colored timeouts occur on
+2, 4, 8, 9, 12 and 13; it loses the original search's finishes on 2, 4 and 12.
+iCEM finishes only 5, 6 and 17, exits the playfield on 8 and 14, and times out on
+the other fifteen. Its 14.12 s conditional mean lap time has denominator **three**,
+versus colored 17.31 s / fourteen, knots 16.53 s / seventeen and direct 16.36 s /
+eight. This is not evidence that iCEM is a better racer. Every search decision in
+this panel misses the 80 ms interval; the environment waits, with no fallback.
+
+The [post-hoc executed-trace audit](../reports/sequence_comparison_2026-10-29/trace_audit/metadata.json)
+finds equal-track mean override fractions of 28.03% for colored and 98.13% for
+iCEM, versus 93.13% for knots. Mean absolute steering corrections are 0.0222,
+0.1189 and 0.0652 respectively. One-step body-velocity vector RMSE is 0.0633,
+0.1667 and 0.0710 m/s; yaw-rate RMSE is 0.0218, 0.0441 and 0.0201 rad/s.
+The adaptive controller visits different states, including much more off-road
+driving. These associations do not establish whether proposal persistence, limited
+elite fitting, long-horizon model error, the utility, or their interaction caused
+the failure. We did not measure real candidate ranks/regrets or prove that the
+optimizer improved the true action objective.
+
+**Assistant decision:** retain the original three-knot local search and both failed
+new variants as documented development results. Do not expand these settings to
+200 tracks or tune against the worst individual cases. This rejects the proposed
+default for this actor/model/budget, not iCEM generally; our residual-space,
+21-evaluation, two-batch adaptation is not the original paper's full configuration.
+The next priority is competent baseline reproduction/adaptation, informed by the
+[factory/budget audit](BASELINE_AUDIT.md), before more optimizer refinements or
+trained V/L/F comparisons. CEM over the original lower-dimensional knots, a different
+noise spectrum or a larger population are future alternatives, not launched fixes.
+
+## Final checks, costs and artifacts
+
+The main stage used 36,398 external native frames, 15,296,400 internal physics
+steps and 3,103.71 s (51.73 minutes). Including smoke and parity: **45 new episodes,
+40,972 external frames, 17,220,000 internal steps, zero new training frames, and
+3,500.77 s (58.35 minutes)**. Costs stay below both frozen caps. Historical controls
+are excluded from these new-work totals. The descriptive trace audit adds no
+environment or model steps.
+
+Final verification: **100 tests passed in 36.55 s**, with three upstream SWIG
+warnings. Synthetic trace-analysis checks cover units, partial-action exclusion
+and direct-policy handling. Both manifests and their pinned inputs, all 63 current
+production files, 240 frozen input-source files, 80 reported trajectories and 80
+public diagnostic files were checked. All five full episode replays passed.
+No final-test/legacy holdout data or private monitor outputs were accessed.
+
+- [Summary table](../reports/sequence_comparison_2026-10-29/summary.csv),
+  [all episodes](../reports/sequence_comparison_2026-10-29/episodes.csv),
+  [paired contrasts and provenance](../reports/sequence_comparison_2026-10-29/analysis.json).
+- [Paired-return figure](../reports/sequence_comparison_2026-10-29/paired_returns.png)
+  and [PDF](../reports/sequence_comparison_2026-10-29/paired_returns.pdf).
+- [Trace audit table](../reports/sequence_comparison_2026-10-29/trace_audit/summary.csv),
+  [recorded plan](../reports/sequence_comparison_2026-10-29/trace_audit/plan.json),
+  [reproducible script](../reports/sequence_comparison_2026-10-29/trace_audit/audit_executed_traces.py).
+- [Verification and total costs](../reports/sequence_comparison_2026-10-29/verification.json),
+  [host/timing context](../reports/sequence_comparison_2026-10-29/execution_host.json).
+
+The figure's 21-trajectory budget applies to the three search methods, not the
+direct actor. Timing comes from serial, noninterleaved conditions on the recorded
+workstation with ordinary source/documentation work; it is not a randomized runtime
+benchmark. This completed development study supplies a negative optimizer result,
+not a SOTA, real-time, independent-policy-seed or full-decomposition result.

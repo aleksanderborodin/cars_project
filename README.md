@@ -55,6 +55,7 @@ register separates user ideas, assistant refinements, prior work and measured ev
 | [Roadmap](docs/ROADMAP.md) | Ordered milestones, deliverables, and proceed/stop gates |
 | [Earlier next-experiment plan](docs/NEXT_EXPERIMENTS.md) | Completed control-audit plan and historical conditional follow-ups; architecture priority superseded |
 | [Recurrent baseline audit](docs/BASELINE_AUDIT.md) | Pinned source, current adapter gaps, and prerequisites for credible longer training |
+| [Valdi source audit](docs/VALDI_AUDIT.md) | Pinned actor-free planning comparator, pixel-derived sensors, evaluation differences and reproduction prerequisites |
 | [Before main runs](docs/RUN_READINESS.md) | What to freeze first, partitions and random streams, readiness gates, and rerun consequences |
 | [First development experiment](docs/PILOT_2026-10-28.md) | Implemented system, actual results, limitations and public artifacts |
 | [Control audit](docs/CONTROL_AUDIT_2026-10-28.md) | Corrected world query, all 21 fixed candidates, failure patterns and next decision |
@@ -67,27 +68,25 @@ the roadmap orders proposed work. All three must agree before a paper run starts
 
 ## What runs today
 
-The research path now implements disjoint seed namespaces, restricted local
-geometry and native RGB protocols, programmed vehicle physics, fitted ego dynamics,
-finite behavior search,
-local references, recurrent PPO, reproducible artifacts and development reporting.
-The original privileged expert/BC/DAgger/PPO/SAC path remains separate.
-The coded-physics experiments are complete. Wider 21-candidate search achieved
-737.3 return and 45% completion; seven candidates achieved 697.8 and 40% with
-48.9 ms p95 decision latency. The best fixed controller achieved 716.1 and 20%.
-These adaptive 20-track results do not establish a mean-return advantage.
-The subsequent full-map diagnostic completed 20/20 races for both search budgets,
-at about 923 return; it changes privileged geometry and reconstruction. The first
-configured recurrent-driver block completed 2M training frames. Its selected 1M
-checkpoint scores 858.1 / 30% completion on 50 development tracks; the final 2M
-checkpoint regressed to 779.2 / 2%. Training stopped at that review. The completed 20-track frozen comparison
-scored 863.5/40% directly, 885.7/70% with seven simulated candidates and
-905.9/85% with 21. Cheap fixed corrections did not reproduce the full gain.
-A KL-stopping training trial was worse and was not adopted. See the latest
-frozen-policy report for uncertainty, substantial latency cost and scope.
-Matched colored sequence shooting and a policy-guided iCEM adaptation are implemented
-and under validation. Learned road distributions, scenario MPC, local visual reconstruction and
-modern world-model reproductions remain open.
+The research path implements disjoint seed namespaces, restricted local geometry
+and native RGB interfaces, observation-initialized programmed vehicle physics,
+recurrent PPO, frozen-policy behavior search and reproducible development reports.
+Local search sees a 30 m road mask, ego sensors and permitted history. Hidden road
+uses a tangent prior; learned road distributions and visual reconstruction remain
+unimplemented. Current evaluation pauses the environment while planning.
+
+The completed 200-track comparison scored **884.48 return / 72% completion** with
+21-candidate search versus **862.42 / 35.5%** for the same direct policy. Its p95
+latency was 362.11 ms, above the 80 ms action interval. This is one selected actor
+on development tracks. The [baseline audit](docs/BASELINE_AUDIT.md) confirms that
+its training is an early-stopped local adaptation, not a converged reference or
+an original native-pixel reproduction.
+
+The [matched sequence-search experiment](docs/SEQUENCE_SEARCH_2026-10-29.md) is
+complete. On twenty development tracks, colored shooting scored **884.86 / 70%**
+and the policy-guided iCEM adaptation **634.13 / 15%**, versus historical three-knot
+search **905.94 / 85%**. The adaptive-minus-shooting difference is −250.72. Neither
+new variant is promoted. All five exact replays and 100 tests passed; no jobs remain.
 
 ```bash
 uv sync --locked
@@ -101,33 +100,24 @@ exploratory development evidence; legacy runs retain their historical protocol.
 
 ## Next milestone
 
-The [next-moves plan](docs/NEXT_MOVES.md) specifies budgets, prerequisites and
-decision points for the next campaigns. The
-[programmed-simulator report](docs/PROGRAMMED_SIMULATOR_RESULTS.md) records
-280 completed development episodes, short-term prediction gains, runtime tradeoffs
-and an exact episode replay. The
-[geometry/driver report](docs/GEOMETRY_AND_DRIVER_2026-10-28.md) records the completed
-full-map diagnostic and completed first training block. The [frozen-policy report](docs/FROZEN_POLICY_RESULTS_2026-10-28.md) records the
-completed search comparison and follow-ups. The [200-track comparison and training probe](docs/BROAD_RESULTS_2026-10-29.md)
-are complete: search 21 scored 884.48/72% versus direct 862.42/35.5%, at substantial
-latency cost. The lower-learning-rate probe did not improve the original driver.
-No jobs from this batch remain active. The [paper blueprint](docs/PAPER_BLUEPRINT.md)
-consolidates the three-stage diagnostic study, stronger baseline requirements and
-established-optimizer comparison. Geometry reconstruction remains a measured bottleneck.
-Bayesian search and evolution remain future options. Privileged candidate-ranking
-values are user-only and excluded from all agent/training/selection feedback.
+Keep the original local three-knot search; the bounded optimizer comparison is
+closed with its negative results retained. The next priority is competent baseline
+reproduction/adaptation, following the [next-moves plan](docs/NEXT_MOVES.md).
+The [paper blueprint](docs/PAPER_BLUEPRINT.md) keeps the user's three-stage
+perception/forecasting/action-selection study distinct from what has been measured.
+Competent baselines, independent training seeds, trained visual/full-map policies
+and final held-out evaluation remain necessary.
 
-The subsequent [controlled intervention pilot](docs/INTERVENTION_RESULTS_2026-10-29.md)
-is also complete. On five common development tracks, baseline search completed
-4/5; each oracle-intervention condition completed 0/5 with on-road timeouts.
-Oracle road greatly improved predictions of recorded controls while driving
-worsened. This motivated a focused reference/objective control before scaling
-the three-stage training study. The subsequent
-[reference-continuation control](docs/REFERENCE_CONTINUATION_2026-10-29.md) is now
-complete: changing only the scoring tail raised the oracle configuration from
-594.21/0% to 876.29/80%. The original local-search mean remains higher at 906.99/80%
-on these five tracks. This supports a reference mismatch, with broader replication
-still needed. No jobs from this batch remain active.
+The [20-track reference-tail diagnostic](docs/REFERENCE_REPLICATION_2026-10-29.md)
+is complete: correcting the scoring continuation improved the oracle-road variant
+by 286.25 mean return versus its tangent control, but it remained 71.86 below
+historical local search. The original local method remains the working reference.
+The [Valdi audit](docs/VALDI_AUDIT.md) records external protocol differences before
+reproduction. No modern external baseline has yet been reproduced here.
+
+Bayesian search, independent/GPU simulators and agentic evolution remain future
+options. Privileged candidate-ranking values are user-only and excluded from all
+agent, training and selection feedback. Final-test data remains unopened.
 
 The previous project is preserved on
 `archive/pre-belief-research-2026-10-27`. Its obsolete plans and tooling are absent

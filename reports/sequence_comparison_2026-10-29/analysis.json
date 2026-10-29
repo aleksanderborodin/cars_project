@@ -1,0 +1,2047 @@
+{
+  "manifest_sha256": "69a629e324cf6931daf13dd6203ec720f233d0c22b989dcf117e07e215ee0018",
+  "inputs": [
+    {
+      "condition": "knots",
+      "run": "runs/policy_physics_search/broad_driver_20261028_search21",
+      "config_sha256": "96c31dd67dfaa0d1785bb3b11452151eef3d2d3ce05627fd8dd3b3d35625f050",
+      "metrics_sha256": "e5e81c1ec0c897bacc5a4e85d5fa9f09b8496effb2118cdac40a9b447ea5f828",
+      "cost_sha256": "7a8eb6fb4c19fe6d4be49cce8461ba7d8daf269e15ae8deda3137cfafcb688b5",
+      "source_sha256": {
+        "pyproject.toml": "06293eced9da2db196271a1a7e16a0a224afc5c1c9960ac5eb7143cae274c2f4",
+        "src/cars/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/cli.py": "1d47c2f0e87dc476d2137145043789af94159f55c6a2655ceb99280f55653515",
+        "src/cars/env/__init__.py": "a0bd5973f4d5bc6e962cd4dcc1de24a582f118b5cd0c558983bd65404de84737",
+        "src/cars/env/carracing.py": "4495b00bc0eec5e7efcdac4f595d4dfeb41e833d8a62cbf6f6e1eea60de9325c",
+        "src/cars/env/make.py": "80d2830ca7cad3ce40f407b7cfa4e168232ca431067afbe8a473806cb664c589",
+        "src/cars/env/metrics.py": "e7b69bb03dada359e3b4c8c9f4a1ee474a6378bed1f883e77dd0740950d011d3",
+        "src/cars/env/partitions.py": "7d1dbd8cb2ab59bb320f5bdd9180292dbaebf06b5739c01e48a9bc3b738bed50",
+        "src/cars/env/protocol.py": "3c0e0a5e992d4fe3aeb1f62b73847d5f48f37fff6bd74dfbf06a34acf549b81c",
+        "src/cars/env/splits.py": "c897a697e67705fbe1717087b379e34cdd1112211162c5b636cff48cdc7febf8",
+        "src/cars/env/state.py": "15cee0801c7f39ad335ce92783f7cacdee2c7c9242336318c40d6747e8161447",
+        "src/cars/eval/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/eval/episode_log.py": "0766d8adad2d31b06b898d0f35f900b39abd027148d1d8c1a48ca0e78d659214",
+        "src/cars/eval/paired.py": "319c04004b9d07260cb70597d323556ec1d235cc685396850ca803de0f3fb314",
+        "src/cars/eval/report.py": "0d8d45fc3a96ebdf5ede65d7c10e9833b063c813f45142b681a56829f95ab308",
+        "src/cars/eval/runner.py": "aa047cca59988d57dc349b2f4d4348d4cedd297a2d77392676e655af66240082",
+        "src/cars/il/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/il/bc.py": "ed0567ff451a62eaabc52d4b5f1464f562f1a067836402c80c2ba8a9746ccf89",
+        "src/cars/il/dagger.py": "2f0ba1f118da493fd627f8d89f4a15be06dfd4b8d6e8503d808b4d44f8e6fbaa",
+        "src/cars/il/data.py": "0a95ca9c7742e14cfdaa923908f1161a9f675776d2e025f5d79585e6751c7cf9",
+        "src/cars/models/__init__.py": "0dc1d7a41d4f95e48c447fde9102802f9c65e24e60973e2603582f8a0c4c627a",
+        "src/cars/models/dynamics.py": "e9301bff433f1fc5f149ecc976e0cb98f6d2cf7dcbfb21a1de4e2e74c766e077",
+        "src/cars/models/physics.py": "2cd6155dc00c9edffe62ab8cd45e4bdb72353d2cedddbedfdc671738dd1c4300",
+        "src/cars/monitoring/__init__.py": "47df79f279b968fda79d8feda44605972a92390fe861e18465253ebc7ae30517",
+        "src/cars/monitoring/bridge.py": "9125c9b4937a121f6eb686e313eeba290805779ad95f61ab9b0863ff3f990fd8",
+        "src/cars/monitoring/oracle.py": "5d4542f1f97fd85349c22f00b07c936b7bc4b959559cfa325db1c73ffa6e2650",
+        "src/cars/planning/__init__.py": "618bfd1a0570a9bc2e7437a294a9965cd8456ac0e9f7ca0dd012c218b6dea9bb",
+        "src/cars/planning/global_search.py": "dfead287b62c65bb19d394830f0e544bb0a514af49a4bb4dd2727f12474bc89a",
+        "src/cars/planning/local.py": "2aa5ed81452198713b79757e64fae03cb66eea725444e78cc878f8aa9c56176d",
+        "src/cars/planning/occupancy.py": "154d7f5c5a69da60ffce7a223c0b225d5acf4344fb3ab0a1927877ef3d902f9f",
+        "src/cars/planning/physics_search.py": "e66d8ce92599e0dda1ac01b67a46d44a13615b12e8c2b97345bbc25ff1fc8f2f",
+        "src/cars/planning/policy_controls.py": "14684d0e30a6e8b105c234074b0b7d4322f988be979ab9b34a605419cba14130",
+        "src/cars/planning/policy_search.py": "94932427a4e0a7c5aac96e9928f2b3d94d527834ff9c5485053c32b49b6f7048",
+        "src/cars/planning/search.py": "ca91f182cb5a280db9058323e236d92b428464158e3918a6ef50fadcc77d6509",
+        "src/cars/planning/world.py": "19c660841358f6203b9f1379b0e3c34d0b5e8ef2e7b3c5c21a63569ee1a0c28a",
+        "src/cars/policies/__init__.py": "7969a425c859d7986a67fed00ca0fe21dc9d6397d7ee3b7fffe5eb59066ae78b",
+        "src/cars/policies/base.py": "714a6a14352155c0a7d70c2ac589f148e20c8e6a32ed399c23bf6172b8561cd3",
+        "src/cars/policies/baseline.py": "22bbeeeeeb959ece1463100445ba05072d84f22884ef9d201304f5326ff90f1c",
+        "src/cars/policies/sb3.py": "437a8e922d1f0fc3fa88935e333649b214fe270569b85a6f8b2a2c96df4f1d5d",
+        "src/cars/policies/torch_mlp.py": "1e638dbeaadf470aa547082af577d1ce3c0da755cb963be109a223896afc46d1",
+        "src/cars/research/__init__.py": "3f8f2a9dc600f87fb123c76a1dadb554dc6c7619b912e08e5254a66664d72429",
+        "src/cars/research/artifacts.py": "37506a22cfb64f08c9a6343388165f20a55669c35ed58f72b14d53aa795f3581",
+        "src/cars/research/cli.py": "ec0545d3fe29eaf64f83d94115beb4772b16a7c0a7a4189cadf45eeeeb2a1370",
+        "src/cars/research/data.py": "31f210d8fac0285c5ae19fdc9b1ad1eecf368adb26853d969ee74635aacaaa7e",
+        "src/cars/research/driver_checkpoint.py": "e5f6b38857234bf50a6d549fd5cd334c7a92e7fbe843c2c52eff3058f1e1d561",
+        "src/cars/research/driver_config.py": "3c069a8af2d758f9099fb9e4deb71de0a806138f27878cd6b4fe3c09f71dd959",
+        "src/cars/research/driver_encoder.py": "bb56a44c0e1d467d598a839e6c618de3f4f5dd9299c15887d6b517a448fdfbb9",
+        "src/cars/research/driver_training.py": "1e7ad02b409d69cd9e75fffcb3b018c6b8237eaec4031d9c10bb6d3dccd50d23",
+        "src/cars/research/evaluation.py": "8b2fb1395309acc2647a59d920393ea2e1aa7aee01a03c17b9d6e1c2763aa204",
+        "src/cars/research/failures.py": "8688daa911a18525c62b0a3339df5b0b10ac67cb54b6327756dbe6c14e40bd35",
+        "src/cars/research/frozen_code.py": "64a1042bf145cc29e326828e433307fdb27ee48393a2895eb574a15a34d0e8b7",
+        "src/cars/research/recurrent.py": "50bc115cae12d82558fbc432047f6df5e2d32172d21879de1623256a5929cbee",
+        "src/cars/rl/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/rl/interface.py": "449ff33147cd3e7e7f7248a8061f369466d33c112bb89f4fd12119f9fbdf77ad",
+        "src/cars/rl/train.py": "174795d6ef03e7433911f1154214b7a4070715f429cd72bd02809c3067a97915",
+        "src/cars/training.py": "0931b232ab3a40a17ea4406bc120e70c107989d562b9f199a5dc46bc1bc9518b",
+        "uv.lock": "1883c6b19e5fa96474dd8539865121633b20533bde9785ac59d8b5ea8ff96a51"
+      },
+      "trajectories": [
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0000.npz",
+          "sha256": "6aacc9ab8efd576deba5f294ba5d09b039088e4ee06413a7e0b2df84dfdc6702",
+          "diagnostics_sha256": "98e9ab476f303a3e6e3063f3efdbc764189713d48d49473c6ae94c674b7d3be7"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0001.npz",
+          "sha256": "3922d36e03f3f69fe6a791acb402640411bcf6d6405e3c8ca1f07315d0609f96",
+          "diagnostics_sha256": "6b2aac402c2dea6098517db51156f3c2095338a806cc73d007fd51b557b003d0"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0002.npz",
+          "sha256": "cb17dba2366cbf08528feb0422f7f0099a625d0de5cccd470fdaeae96f36aa70",
+          "diagnostics_sha256": "6b3513f67d1506c2d3e32759faa8848669540eccebacb693e74104e47e88c124"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0003.npz",
+          "sha256": "1929566b83b32edc6bccbbdc877820930bb054c2a5fdcd3896f7cc02545db798",
+          "diagnostics_sha256": "54dc4714805d4f1d91d78bf5b07682274fd8746f458d33e6f38f7f446d5be96b"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0004.npz",
+          "sha256": "b7f8c27020618cc306ba0da9c3c02c681ca487d7f6b2d208a0b281ff2a7a94b8",
+          "diagnostics_sha256": "100f5eb9c155247dfc776e3275ab2a6411ee8d07d1ad2152738fdca55abc90ae"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0005.npz",
+          "sha256": "cc694bddc111bd2ac901ca4dd832a7bea1aa5be95c18049315a0bfa8d36bdbec",
+          "diagnostics_sha256": "eebb2fa0f59bdfd80ed5fb39091f0dfa486d0949e39f63456340bb420fb3e434"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0006.npz",
+          "sha256": "4c950380aca46b2b765e33c635be6fd5a3040a8b124f77133d7f8bb8954ec2c3",
+          "diagnostics_sha256": "c6d5b667e4ec36dbee43a7ff9c618c3ef92a4a575b0ebda47846084278084600"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0007.npz",
+          "sha256": "38ecb3dd3a7aaad3d0de0a9d89e9ac48fca4e4c876c533814f1e346541277f29",
+          "diagnostics_sha256": "2cd56c7dfa9da98ab9c0ea7e75b2d9fdf5d3d55f30b617f883a63e0463cb7759"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0008.npz",
+          "sha256": "d90d6c1d8323bcc5caca4fe386ddd7489b44355724bdcbef823aa18ae1b43bd0",
+          "diagnostics_sha256": "1e202329ce35189a9e12aaaeeb2aaccd037900234c16e15d92c0226f1383f45d"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0009.npz",
+          "sha256": "0e9bb912f28488e7498eebe062eb4de691a0327958b3391b12cdb3a022b95cc1",
+          "diagnostics_sha256": "d30507f93e2393bf145dec6dd8f9aa23ae013a55e931879ec6288f0f0da7a4ea"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0010.npz",
+          "sha256": "a4a9b41a43ee9153ed9f00bf9605b2894a24701679b1d6c11874c21680e591af",
+          "diagnostics_sha256": "070ae82eedcb10d0bea88e1e0377a687502ad3be9a024daef6d2a4d46aadcc50"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0011.npz",
+          "sha256": "4009cf8a15b3353051bac79c7b3011af8225a1bef363aaedf28908d3da2f0f31",
+          "diagnostics_sha256": "d98b617aaef3ff4cab7bcefdfceaec14bb9d7d148f6d8a3b75d162e0359421f2"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0012.npz",
+          "sha256": "dcd9e1f97dc2f8d0f500dff848d31f787b423bf5089518fc07d7f3e28cec9e69",
+          "diagnostics_sha256": "779516c708c9a2db8b328fbd57bb19b8f6f36072b273153ccda2b565fefbe61b"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0013.npz",
+          "sha256": "b403c12fd9ef8c6ef7b101314e27efac6e8563017ddf00adc77660c55f4905e5",
+          "diagnostics_sha256": "7fc6f4d9609acc943784f42781dfb9c2790f6a601b81b1eb65a46e6c802ad1e0"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0014.npz",
+          "sha256": "9b7aa0d1a49f9f333f446c3a06234b1745634975a8a3c1972ba4eaceaadae608",
+          "diagnostics_sha256": "32eb9940061515ea4d144348d43f83fe8ea3384b0daab6b845c09bdc568341b4"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0015.npz",
+          "sha256": "796e804b6c03adc61856e1315f5510743d7c982d39ced4681dc2d465b10fb642",
+          "diagnostics_sha256": "004a2e287a9c3216372bdf3da495fcdf9f21711af909e0299ae372274e590685"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0016.npz",
+          "sha256": "b45e870e56441d5e9f6cbc3f381df6049f3899190d31a68d78c1c89a67e8b8fa",
+          "diagnostics_sha256": "732a7838e8a2015bdd7298cbec4e2bbb7fe02a28ea8bfc81473c03bc3b6d9da3"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0017.npz",
+          "sha256": "cb2ff45789bf10da33757d575121e053f317acecd9ec7cbf644cf943d1d095dd",
+          "diagnostics_sha256": "0886d71ca4a13a27f84ce199529c14da7f19cd83c8746563b62279d6d3c5cd1b"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0018.npz",
+          "sha256": "d077f1b0e21ae6983e055a70862cc15a1f878c3be57025f48ed6c5dbe12df22b",
+          "diagnostics_sha256": "4f8bb47adb687c4902296d3ea6ad22768d28c600c6ef1a99744dbd8523a0623f"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0019.npz",
+          "sha256": "524f58190d1d608e18869fddb826d642a250e291d4f86350cc171f5c555a9a17",
+          "diagnostics_sha256": "3405d97b6b4563348d72477d29babb04dd7acb0023153c4680189132e9f25ad9"
+        }
+      ]
+    },
+    {
+      "condition": "direct",
+      "run": "runs/recurrent_ppo/broad_driver_20261028_direct",
+      "config_sha256": "7c37bd8e4f4e4c9df6905a3d6ec30ddc83a21c8e34669eff1aed1349d4f26ec7",
+      "metrics_sha256": "d6f225d389e8a36b21782e557359c58136d26367c1f0a3596a8d8959df8b27a6",
+      "cost_sha256": "1a3bfa121916b683ea6d83f75caee8c32be69dd4a4689b02b527dd73f04ea5ef",
+      "source_sha256": {
+        "pyproject.toml": "06293eced9da2db196271a1a7e16a0a224afc5c1c9960ac5eb7143cae274c2f4",
+        "src/cars/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/cli.py": "1d47c2f0e87dc476d2137145043789af94159f55c6a2655ceb99280f55653515",
+        "src/cars/env/__init__.py": "a0bd5973f4d5bc6e962cd4dcc1de24a582f118b5cd0c558983bd65404de84737",
+        "src/cars/env/carracing.py": "4495b00bc0eec5e7efcdac4f595d4dfeb41e833d8a62cbf6f6e1eea60de9325c",
+        "src/cars/env/make.py": "80d2830ca7cad3ce40f407b7cfa4e168232ca431067afbe8a473806cb664c589",
+        "src/cars/env/metrics.py": "e7b69bb03dada359e3b4c8c9f4a1ee474a6378bed1f883e77dd0740950d011d3",
+        "src/cars/env/partitions.py": "7d1dbd8cb2ab59bb320f5bdd9180292dbaebf06b5739c01e48a9bc3b738bed50",
+        "src/cars/env/protocol.py": "3c0e0a5e992d4fe3aeb1f62b73847d5f48f37fff6bd74dfbf06a34acf549b81c",
+        "src/cars/env/splits.py": "c897a697e67705fbe1717087b379e34cdd1112211162c5b636cff48cdc7febf8",
+        "src/cars/env/state.py": "15cee0801c7f39ad335ce92783f7cacdee2c7c9242336318c40d6747e8161447",
+        "src/cars/eval/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/eval/episode_log.py": "0766d8adad2d31b06b898d0f35f900b39abd027148d1d8c1a48ca0e78d659214",
+        "src/cars/eval/paired.py": "319c04004b9d07260cb70597d323556ec1d235cc685396850ca803de0f3fb314",
+        "src/cars/eval/report.py": "0d8d45fc3a96ebdf5ede65d7c10e9833b063c813f45142b681a56829f95ab308",
+        "src/cars/eval/runner.py": "aa047cca59988d57dc349b2f4d4348d4cedd297a2d77392676e655af66240082",
+        "src/cars/il/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/il/bc.py": "ed0567ff451a62eaabc52d4b5f1464f562f1a067836402c80c2ba8a9746ccf89",
+        "src/cars/il/dagger.py": "2f0ba1f118da493fd627f8d89f4a15be06dfd4b8d6e8503d808b4d44f8e6fbaa",
+        "src/cars/il/data.py": "0a95ca9c7742e14cfdaa923908f1161a9f675776d2e025f5d79585e6751c7cf9",
+        "src/cars/models/__init__.py": "0dc1d7a41d4f95e48c447fde9102802f9c65e24e60973e2603582f8a0c4c627a",
+        "src/cars/models/dynamics.py": "e9301bff433f1fc5f149ecc976e0cb98f6d2cf7dcbfb21a1de4e2e74c766e077",
+        "src/cars/models/physics.py": "2cd6155dc00c9edffe62ab8cd45e4bdb72353d2cedddbedfdc671738dd1c4300",
+        "src/cars/monitoring/__init__.py": "47df79f279b968fda79d8feda44605972a92390fe861e18465253ebc7ae30517",
+        "src/cars/monitoring/bridge.py": "9125c9b4937a121f6eb686e313eeba290805779ad95f61ab9b0863ff3f990fd8",
+        "src/cars/monitoring/oracle.py": "5d4542f1f97fd85349c22f00b07c936b7bc4b959559cfa325db1c73ffa6e2650",
+        "src/cars/planning/__init__.py": "618bfd1a0570a9bc2e7437a294a9965cd8456ac0e9f7ca0dd012c218b6dea9bb",
+        "src/cars/planning/global_search.py": "dfead287b62c65bb19d394830f0e544bb0a514af49a4bb4dd2727f12474bc89a",
+        "src/cars/planning/local.py": "2aa5ed81452198713b79757e64fae03cb66eea725444e78cc878f8aa9c56176d",
+        "src/cars/planning/occupancy.py": "154d7f5c5a69da60ffce7a223c0b225d5acf4344fb3ab0a1927877ef3d902f9f",
+        "src/cars/planning/physics_search.py": "e66d8ce92599e0dda1ac01b67a46d44a13615b12e8c2b97345bbc25ff1fc8f2f",
+        "src/cars/planning/policy_controls.py": "14684d0e30a6e8b105c234074b0b7d4322f988be979ab9b34a605419cba14130",
+        "src/cars/planning/policy_search.py": "94932427a4e0a7c5aac96e9928f2b3d94d527834ff9c5485053c32b49b6f7048",
+        "src/cars/planning/search.py": "ca91f182cb5a280db9058323e236d92b428464158e3918a6ef50fadcc77d6509",
+        "src/cars/planning/world.py": "19c660841358f6203b9f1379b0e3c34d0b5e8ef2e7b3c5c21a63569ee1a0c28a",
+        "src/cars/policies/__init__.py": "7969a425c859d7986a67fed00ca0fe21dc9d6397d7ee3b7fffe5eb59066ae78b",
+        "src/cars/policies/base.py": "714a6a14352155c0a7d70c2ac589f148e20c8e6a32ed399c23bf6172b8561cd3",
+        "src/cars/policies/baseline.py": "22bbeeeeeb959ece1463100445ba05072d84f22884ef9d201304f5326ff90f1c",
+        "src/cars/policies/sb3.py": "437a8e922d1f0fc3fa88935e333649b214fe270569b85a6f8b2a2c96df4f1d5d",
+        "src/cars/policies/torch_mlp.py": "1e638dbeaadf470aa547082af577d1ce3c0da755cb963be109a223896afc46d1",
+        "src/cars/research/__init__.py": "3f8f2a9dc600f87fb123c76a1dadb554dc6c7619b912e08e5254a66664d72429",
+        "src/cars/research/artifacts.py": "37506a22cfb64f08c9a6343388165f20a55669c35ed58f72b14d53aa795f3581",
+        "src/cars/research/cli.py": "ec0545d3fe29eaf64f83d94115beb4772b16a7c0a7a4189cadf45eeeeb2a1370",
+        "src/cars/research/data.py": "31f210d8fac0285c5ae19fdc9b1ad1eecf368adb26853d969ee74635aacaaa7e",
+        "src/cars/research/driver_checkpoint.py": "e5f6b38857234bf50a6d549fd5cd334c7a92e7fbe843c2c52eff3058f1e1d561",
+        "src/cars/research/driver_config.py": "3c069a8af2d758f9099fb9e4deb71de0a806138f27878cd6b4fe3c09f71dd959",
+        "src/cars/research/driver_encoder.py": "bb56a44c0e1d467d598a839e6c618de3f4f5dd9299c15887d6b517a448fdfbb9",
+        "src/cars/research/driver_training.py": "1e7ad02b409d69cd9e75fffcb3b018c6b8237eaec4031d9c10bb6d3dccd50d23",
+        "src/cars/research/evaluation.py": "8b2fb1395309acc2647a59d920393ea2e1aa7aee01a03c17b9d6e1c2763aa204",
+        "src/cars/research/failures.py": "8688daa911a18525c62b0a3339df5b0b10ac67cb54b6327756dbe6c14e40bd35",
+        "src/cars/research/frozen_code.py": "64a1042bf145cc29e326828e433307fdb27ee48393a2895eb574a15a34d0e8b7",
+        "src/cars/research/recurrent.py": "50bc115cae12d82558fbc432047f6df5e2d32172d21879de1623256a5929cbee",
+        "src/cars/rl/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/rl/interface.py": "449ff33147cd3e7e7f7248a8061f369466d33c112bb89f4fd12119f9fbdf77ad",
+        "src/cars/rl/train.py": "174795d6ef03e7433911f1154214b7a4070715f429cd72bd02809c3067a97915",
+        "src/cars/training.py": "0931b232ab3a40a17ea4406bc120e70c107989d562b9f199a5dc46bc1bc9518b",
+        "uv.lock": "1883c6b19e5fa96474dd8539865121633b20533bde9785ac59d8b5ea8ff96a51"
+      },
+      "trajectories": [
+        {
+          "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0000.npz",
+          "sha256": "5fc9e267ce28d5a7e2ad21a80190ac3bc7a4c025a829ecf01b8aafc5de140e37",
+          "diagnostics_sha256": "0f49bb59e1ee2951b7f63757724f84dda525e856e4c8af9944edffe7770bbeb0"
+        },
+        {
+          "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0001.npz",
+          "sha256": "157f2393dfd357cfd0ac01d20a017884c49a19d1f764a3de31b9a82e4b20fa0d",
+          "diagnostics_sha256": "26d26f26a32faf8ac23154b3aeeccabafa9ba3179625cb0805aae754ebb52508"
+        },
+        {
+          "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0002.npz",
+          "sha256": "12f3b581789a13a2755218312ce904ed5218e39d425e16b75fec15debadce7e8",
+          "diagnostics_sha256": "4fe9ef6575eb4900b84e90572594fe79cd7654d8e2cb494318444bb1b955b4f0"
+        },
+        {
+          "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0003.npz",
+          "sha256": "94f55329e7cd5ccbed611b9946a264fe1096117d7521710cc953b646f9278c4d",
+          "diagnostics_sha256": "26d26f26a32faf8ac23154b3aeeccabafa9ba3179625cb0805aae754ebb52508"
+        },
+        {
+          "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0004.npz",
+          "sha256": "7f72c40ab3fe09012dcaa1af48a83d6653cbe9178fd9b15caf9f69c543d35835",
+          "diagnostics_sha256": "e840928163396f3a5022b3405edbeb7062a087c3b5542c541fd7172508b03ad9"
+        },
+        {
+          "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0005.npz",
+          "sha256": "bb771a5e228a21093d34d9814da4441d520b8414472b85ecff9ab66474b53df6",
+          "diagnostics_sha256": "6adb115063315d91af98452b1954d10329c475cbca16d7e2e59a5ebce7219d4f"
+        },
+        {
+          "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0006.npz",
+          "sha256": "7bbd12a648708518efe638e184cb4e4fa399fbe4b500317fc369e41b161066cb",
+          "diagnostics_sha256": "26d26f26a32faf8ac23154b3aeeccabafa9ba3179625cb0805aae754ebb52508"
+        },
+        {
+          "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0007.npz",
+          "sha256": "5eb44b53de1c475ecc0cdb9a050b6138801dea052d06452e7c2e23064680d7a0",
+          "diagnostics_sha256": "26d26f26a32faf8ac23154b3aeeccabafa9ba3179625cb0805aae754ebb52508"
+        },
+        {
+          "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0008.npz",
+          "sha256": "b2db32106b09c803295bcc12c18958bcb01606c1c413e18c459aa7f0f7b30387",
+          "diagnostics_sha256": "26d26f26a32faf8ac23154b3aeeccabafa9ba3179625cb0805aae754ebb52508"
+        },
+        {
+          "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0009.npz",
+          "sha256": "edb8203fa90f831a1c4109049ef0f4beae5801c0d2cef9c52ae810a0c8239ddf",
+          "diagnostics_sha256": "d67f2534a8de1f9d20c15b01fc3473fed3f25052475abbd8d4537c33ec485e12"
+        },
+        {
+          "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0010.npz",
+          "sha256": "4dc6fbc15e42bc2ee7d48258840e3c4f82986edaa456af912327f886dfac3495",
+          "diagnostics_sha256": "26d26f26a32faf8ac23154b3aeeccabafa9ba3179625cb0805aae754ebb52508"
+        },
+        {
+          "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0011.npz",
+          "sha256": "6d426a33dbd66e60564ba6f287f9adf96e1b161ed18a6cc871cd78286efd3d2a",
+          "diagnostics_sha256": "26d26f26a32faf8ac23154b3aeeccabafa9ba3179625cb0805aae754ebb52508"
+        },
+        {
+          "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0012.npz",
+          "sha256": "5b0b2024a303b22e3e35dda589cd4de51b72019ca053a9f47aa27e0ea5f689ee",
+          "diagnostics_sha256": "26d26f26a32faf8ac23154b3aeeccabafa9ba3179625cb0805aae754ebb52508"
+        },
+        {
+          "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0013.npz",
+          "sha256": "02bd03684284760219055003e3c313bb5c4f1798928cadfa6ca7fe8c0b703b56",
+          "diagnostics_sha256": "26d26f26a32faf8ac23154b3aeeccabafa9ba3179625cb0805aae754ebb52508"
+        },
+        {
+          "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0014.npz",
+          "sha256": "4503e839e7c87f4cefdb756bb0c53ac526e10e641e163adca66d2b876cb8ee3f",
+          "diagnostics_sha256": "26d26f26a32faf8ac23154b3aeeccabafa9ba3179625cb0805aae754ebb52508"
+        },
+        {
+          "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0015.npz",
+          "sha256": "36ec9246135bc110077cd10b56f51785663728febefac390ce1603ca0ae0428f",
+          "diagnostics_sha256": "26d26f26a32faf8ac23154b3aeeccabafa9ba3179625cb0805aae754ebb52508"
+        },
+        {
+          "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0016.npz",
+          "sha256": "22bdecc1c75279c1e62950bd0c02fd4511e8b480a78f96b5b45ed36e4c47bb37",
+          "diagnostics_sha256": "2a6d22bd7ba13cc52a432c0dbad8cbfcd0f4f33d3c0c208150b9b59a442a7c6f"
+        },
+        {
+          "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0017.npz",
+          "sha256": "20e6223b11f257f5b286e79484a0f78b5b483dd16162d14404b7d4279ee6cde1",
+          "diagnostics_sha256": "d21d773d8bd87f3f64df5f976a82b3d808fc3c6c29976f4a74f5d4345bc1a491"
+        },
+        {
+          "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0018.npz",
+          "sha256": "33f9d65a496b01d9025dfa42e3f41acf5527733ba23baa09fd6edd6e9f3220a6",
+          "diagnostics_sha256": "26d26f26a32faf8ac23154b3aeeccabafa9ba3179625cb0805aae754ebb52508"
+        },
+        {
+          "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0019.npz",
+          "sha256": "17ebb4153a0a0010368691889c58565e2a08b1b9173b2cf66d3bbe93206c5024",
+          "diagnostics_sha256": "ee7cae69d1364771382ee8a1b59d93076704b7f707c047b58694689cc0cc41a7"
+        }
+      ]
+    },
+    {
+      "condition": "colored",
+      "run": "runs/policy_colored_shooting/sequence_comparison_20261029_colored",
+      "config_sha256": "4a6558fb667c094b2093a53a5c6a03d0ffd844a8e7d37889f09b096c8cb1079a",
+      "metrics_sha256": "873152d8a8f8ed6cdfdc75a81e5984ce94da629394a9ffa9dce0eaabf2225f68",
+      "cost_sha256": "16b9229ca48a9bdf39aeca37097e9092d419dfb7ae78ce19ee5abe22022b0ee5",
+      "source_sha256": {
+        "pyproject.toml": "ec68c9fb0b529c430e437b7e4ca2ffe554687b22ca9aff48db4505dc7d13ca87",
+        "src/cars/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/cli.py": "1d47c2f0e87dc476d2137145043789af94159f55c6a2655ceb99280f55653515",
+        "src/cars/env/__init__.py": "a0bd5973f4d5bc6e962cd4dcc1de24a582f118b5cd0c558983bd65404de84737",
+        "src/cars/env/carracing.py": "4495b00bc0eec5e7efcdac4f595d4dfeb41e833d8a62cbf6f6e1eea60de9325c",
+        "src/cars/env/make.py": "80d2830ca7cad3ce40f407b7cfa4e168232ca431067afbe8a473806cb664c589",
+        "src/cars/env/metrics.py": "e7b69bb03dada359e3b4c8c9f4a1ee474a6378bed1f883e77dd0740950d011d3",
+        "src/cars/env/partitions.py": "7d1dbd8cb2ab59bb320f5bdd9180292dbaebf06b5739c01e48a9bc3b738bed50",
+        "src/cars/env/protocol.py": "3c0e0a5e992d4fe3aeb1f62b73847d5f48f37fff6bd74dfbf06a34acf549b81c",
+        "src/cars/env/splits.py": "c897a697e67705fbe1717087b379e34cdd1112211162c5b636cff48cdc7febf8",
+        "src/cars/env/state.py": "15cee0801c7f39ad335ce92783f7cacdee2c7c9242336318c40d6747e8161447",
+        "src/cars/eval/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/eval/episode_log.py": "0766d8adad2d31b06b898d0f35f900b39abd027148d1d8c1a48ca0e78d659214",
+        "src/cars/eval/paired.py": "319c04004b9d07260cb70597d323556ec1d235cc685396850ca803de0f3fb314",
+        "src/cars/eval/report.py": "0d8d45fc3a96ebdf5ede65d7c10e9833b063c813f45142b681a56829f95ab308",
+        "src/cars/eval/runner.py": "aa047cca59988d57dc349b2f4d4348d4cedd297a2d77392676e655af66240082",
+        "src/cars/il/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/il/bc.py": "ed0567ff451a62eaabc52d4b5f1464f562f1a067836402c80c2ba8a9746ccf89",
+        "src/cars/il/dagger.py": "2f0ba1f118da493fd627f8d89f4a15be06dfd4b8d6e8503d808b4d44f8e6fbaa",
+        "src/cars/il/data.py": "0a95ca9c7742e14cfdaa923908f1161a9f675776d2e025f5d79585e6751c7cf9",
+        "src/cars/models/__init__.py": "0dc1d7a41d4f95e48c447fde9102802f9c65e24e60973e2603582f8a0c4c627a",
+        "src/cars/models/dynamics.py": "e9301bff433f1fc5f149ecc976e0cb98f6d2cf7dcbfb21a1de4e2e74c766e077",
+        "src/cars/models/physics.py": "384f8db2729915681cd83ecc38f5d51c84185e3df265d8b6358eb9027f05df0b",
+        "src/cars/monitoring/__init__.py": "47df79f279b968fda79d8feda44605972a92390fe861e18465253ebc7ae30517",
+        "src/cars/monitoring/bridge.py": "9125c9b4937a121f6eb686e313eeba290805779ad95f61ab9b0863ff3f990fd8",
+        "src/cars/monitoring/oracle.py": "5d4542f1f97fd85349c22f00b07c936b7bc4b959559cfa325db1c73ffa6e2650",
+        "src/cars/planning/__init__.py": "618bfd1a0570a9bc2e7437a294a9965cd8456ac0e9f7ca0dd012c218b6dea9bb",
+        "src/cars/planning/global_search.py": "dfead287b62c65bb19d394830f0e544bb0a514af49a4bb4dd2727f12474bc89a",
+        "src/cars/planning/intervention.py": "d7d07bcf52c9f441b99145706921a71cf28bb9a56476016058edbba747ae8954",
+        "src/cars/planning/local.py": "2aa5ed81452198713b79757e64fae03cb66eea725444e78cc878f8aa9c56176d",
+        "src/cars/planning/occupancy.py": "154d7f5c5a69da60ffce7a223c0b225d5acf4344fb3ab0a1927877ef3d902f9f",
+        "src/cars/planning/physics_search.py": "e66d8ce92599e0dda1ac01b67a46d44a13615b12e8c2b97345bbc25ff1fc8f2f",
+        "src/cars/planning/policy_controls.py": "14684d0e30a6e8b105c234074b0b7d4322f988be979ab9b34a605419cba14130",
+        "src/cars/planning/policy_rollouts.py": "8dfbfc60e8c74f62dafb2e8e607712003fc958f5b7ffe0180c74c881a170025d",
+        "src/cars/planning/policy_search.py": "47097a0ce327728d15cdaa4c7f0e36ecb9b633b190647b109c3bb13576795e67",
+        "src/cars/planning/policy_sequence_search.py": "6a67d4fd5ea5daac70d52fc1c3cd5b3e5f87f37b3dd194ee48f01560a9b2d710",
+        "src/cars/planning/reference_extension.py": "f368293193bcf175d37576809fdddc8a6be9acf569b47b1c134bd013d83243e6",
+        "src/cars/planning/search.py": "ca91f182cb5a280db9058323e236d92b428464158e3918a6ef50fadcc77d6509",
+        "src/cars/planning/sequence_optimizer.py": "49c4cbf0568803a58bd5bdfe6516512b3e0f7ae2319edb9b1cc907b751883b9b",
+        "src/cars/planning/visible_reference.py": "38e6d8f671741e8ba536bf02de6722de10029e7bd1a9e69ab8705f1d8bfbb919",
+        "src/cars/planning/world.py": "19c660841358f6203b9f1379b0e3c34d0b5e8ef2e7b3c5c21a63569ee1a0c28a",
+        "src/cars/policies/__init__.py": "7969a425c859d7986a67fed00ca0fe21dc9d6397d7ee3b7fffe5eb59066ae78b",
+        "src/cars/policies/base.py": "714a6a14352155c0a7d70c2ac589f148e20c8e6a32ed399c23bf6172b8561cd3",
+        "src/cars/policies/baseline.py": "22bbeeeeeb959ece1463100445ba05072d84f22884ef9d201304f5326ff90f1c",
+        "src/cars/policies/sb3.py": "437a8e922d1f0fc3fa88935e333649b214fe270569b85a6f8b2a2c96df4f1d5d",
+        "src/cars/policies/torch_mlp.py": "1e638dbeaadf470aa547082af577d1ce3c0da755cb963be109a223896afc46d1",
+        "src/cars/research/__init__.py": "3f8f2a9dc600f87fb123c76a1dadb554dc6c7619b912e08e5254a66664d72429",
+        "src/cars/research/artifacts.py": "37506a22cfb64f08c9a6343388165f20a55669c35ed58f72b14d53aa795f3581",
+        "src/cars/research/cli.py": "29b8aab61dedc9bbdcd540cdfb55678dc24d33e4d505dfef8c622658ffa98225",
+        "src/cars/research/data.py": "31f210d8fac0285c5ae19fdc9b1ad1eecf368adb26853d969ee74635aacaaa7e",
+        "src/cars/research/driver_checkpoint.py": "e5f6b38857234bf50a6d549fd5cd334c7a92e7fbe843c2c52eff3058f1e1d561",
+        "src/cars/research/driver_config.py": "3c069a8af2d758f9099fb9e4deb71de0a806138f27878cd6b4fe3c09f71dd959",
+        "src/cars/research/driver_encoder.py": "bb56a44c0e1d467d598a839e6c618de3f4f5dd9299c15887d6b517a448fdfbb9",
+        "src/cars/research/driver_training.py": "1e7ad02b409d69cd9e75fffcb3b018c6b8237eaec4031d9c10bb6d3dccd50d23",
+        "src/cars/research/evaluation.py": "8b2fb1395309acc2647a59d920393ea2e1aa7aee01a03c17b9d6e1c2763aa204",
+        "src/cars/research/failures.py": "8688daa911a18525c62b0a3339df5b0b10ac67cb54b6327756dbe6c14e40bd35",
+        "src/cars/research/frozen_code.py": "64a1042bf145cc29e326828e433307fdb27ee48393a2895eb574a15a34d0e8b7",
+        "src/cars/research/recurrent.py": "50bc115cae12d82558fbc432047f6df5e2d32172d21879de1623256a5929cbee",
+        "src/cars/rl/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/rl/interface.py": "449ff33147cd3e7e7f7248a8061f369466d33c112bb89f4fd12119f9fbdf77ad",
+        "src/cars/rl/train.py": "174795d6ef03e7433911f1154214b7a4070715f429cd72bd02809c3067a97915",
+        "src/cars/training.py": "0931b232ab3a40a17ea4406bc120e70c107989d562b9f199a5dc46bc1bc9518b",
+        "uv.lock": "1883c6b19e5fa96474dd8539865121633b20533bde9785ac59d8b5ea8ff96a51"
+      },
+      "trajectories": [
+        {
+          "path": "runs/policy_colored_shooting/sequence_comparison_20261029_colored/episodes/0000.npz",
+          "sha256": "b0baa0d05542977832a1712e569d8df544f357da61c9aa74a421aef94ccebc5b",
+          "diagnostics_sha256": "9efd80079deb34f08838e03ce4b586468ea1b896862a45d0fafa8ad6995b6cf9"
+        },
+        {
+          "path": "runs/policy_colored_shooting/sequence_comparison_20261029_colored/episodes/0001.npz",
+          "sha256": "8e4d50bf7763b518e9ba47985cca8fe961d3455803f1810d73dd1962badf49fe",
+          "diagnostics_sha256": "66896e117506e9f9c9e14800bd01e706c13fca7500b95ba9ac2eb2522a07e4f1"
+        },
+        {
+          "path": "runs/policy_colored_shooting/sequence_comparison_20261029_colored/episodes/0002.npz",
+          "sha256": "464b1379f3055eec6e66db4668e11104c176652fd8f70419b5fe44cbf7fde071",
+          "diagnostics_sha256": "92bb5bc651859b662bb7cdd73177c1e1763b0721f3833942a6c43159096d17ed"
+        },
+        {
+          "path": "runs/policy_colored_shooting/sequence_comparison_20261029_colored/episodes/0003.npz",
+          "sha256": "f595a7cfbdc778df3a009dc391425d4faa4ffc27b80e902f27f3a2842f042286",
+          "diagnostics_sha256": "a0f556199cc0bd7a5b4ae341411936f24f15f60308ba4dc65da28b219e839aa1"
+        },
+        {
+          "path": "runs/policy_colored_shooting/sequence_comparison_20261029_colored/episodes/0004.npz",
+          "sha256": "93f817d70d002380199900743c3157dc57333e3296b88f608b1753ba69a5e8aa",
+          "diagnostics_sha256": "1d951c01751746eb788c0da0543c49deaae840293345b809c65acaa91be972ce"
+        },
+        {
+          "path": "runs/policy_colored_shooting/sequence_comparison_20261029_colored/episodes/0005.npz",
+          "sha256": "8f0ce9229922f691d771aa5ad8ffbe4ae387d8c1da5f6efe1bf92e11ccfa6ecc",
+          "diagnostics_sha256": "f19cd35347b238c9b0542dd4c7a69e38da734f8c32524eb52370cd1389013e81"
+        },
+        {
+          "path": "runs/policy_colored_shooting/sequence_comparison_20261029_colored/episodes/0006.npz",
+          "sha256": "e6c58040478f55cedd424c1f17c145f68eac187fe713f761d29759a0c1ac3e62",
+          "diagnostics_sha256": "c3db7936bec1bf5a7e958076b32685b4ad8f51d32c15123f200e65a7d6c1e1c3"
+        },
+        {
+          "path": "runs/policy_colored_shooting/sequence_comparison_20261029_colored/episodes/0007.npz",
+          "sha256": "a56d5194e58e524032173e457cbfe7faeaf792d5e7c49f312bdeaaf8dfb90e75",
+          "diagnostics_sha256": "b353dcb7868ac9a5e6d484f85613f3e9c7bdcff8d0f92c90b5939c4ee983fa04"
+        },
+        {
+          "path": "runs/policy_colored_shooting/sequence_comparison_20261029_colored/episodes/0008.npz",
+          "sha256": "5930136ca4d8cb4dd2d7fc162b4302bca6a115e14b7ba8b0ca079cc5faa5064e",
+          "diagnostics_sha256": "84b54a584f74e6082bad55707bdefea75da6642a3da8b157510bec8e7df73a13"
+        },
+        {
+          "path": "runs/policy_colored_shooting/sequence_comparison_20261029_colored/episodes/0009.npz",
+          "sha256": "2c4636c4742b9f3a0e047e0c681d8ffd108c9782731580c381749f8af3243bef",
+          "diagnostics_sha256": "4d13a157dc864fd6da57982d152d27dbaba0d6993a2eddd95e21f83d82cb7a71"
+        },
+        {
+          "path": "runs/policy_colored_shooting/sequence_comparison_20261029_colored/episodes/0010.npz",
+          "sha256": "247eadced9af41ab449e25a4511327e64b672b0556b2ce0566f42fba319c9c25",
+          "diagnostics_sha256": "7ea5c238fac99228ff39710a1f98d6b13210860670c4df980b109528ded3f7f0"
+        },
+        {
+          "path": "runs/policy_colored_shooting/sequence_comparison_20261029_colored/episodes/0011.npz",
+          "sha256": "4108cc406dcdbd0e2e17958dcaf3d009e9e3faffe0655146dcab687b2466560b",
+          "diagnostics_sha256": "29009c0c78635b758ae6fa0b470811fa9be768022cc01dace4a18dd5f46deb19"
+        },
+        {
+          "path": "runs/policy_colored_shooting/sequence_comparison_20261029_colored/episodes/0012.npz",
+          "sha256": "0ebf2fb151f36c0ab32758a39cfc2992415726d15be30088e93b51498133efbf",
+          "diagnostics_sha256": "95ffea899039267178a9610b45a32dc149047f6f3cb2f21b45ddf2d961e16fe6"
+        },
+        {
+          "path": "runs/policy_colored_shooting/sequence_comparison_20261029_colored/episodes/0013.npz",
+          "sha256": "7d8edaed7fadd024251d18acee2c05d14b9456311158445a377a7268ac074ccc",
+          "diagnostics_sha256": "4e43c43f3a272fbd133a8d235d0d2d06fc7c72b0f20a37c387c8ffe505ba1094"
+        },
+        {
+          "path": "runs/policy_colored_shooting/sequence_comparison_20261029_colored/episodes/0014.npz",
+          "sha256": "67c6cc91b750d00892c5f4d0ab6078ff27bbd8c9827648a2ce204a79fb6c04a7",
+          "diagnostics_sha256": "18325d7290cddc4652c3cbddbf7f5a10402233a5ebb1fee127ba4fc77c1cc347"
+        },
+        {
+          "path": "runs/policy_colored_shooting/sequence_comparison_20261029_colored/episodes/0015.npz",
+          "sha256": "7d96cfd03433f8e0ed497b1240562ec640cb1cb81201d5bf25073f2cb2fa79aa",
+          "diagnostics_sha256": "9d048407fe1d63ed1f53cb3d1ea614a2f9b9c94ae83b67f7353e90ef8e98447f"
+        },
+        {
+          "path": "runs/policy_colored_shooting/sequence_comparison_20261029_colored/episodes/0016.npz",
+          "sha256": "95d139f1ab98adb82a85b253864203a75eb51ac09131d7744c38349c74606461",
+          "diagnostics_sha256": "de0d8728220a1fdad88af83842bba8914c483d8e25ff0210ec24a11a4e894c8d"
+        },
+        {
+          "path": "runs/policy_colored_shooting/sequence_comparison_20261029_colored/episodes/0017.npz",
+          "sha256": "42af9d5740904851c1939b7828af01e3940159edd3519adb3d0fb72f5a39eeab",
+          "diagnostics_sha256": "096338cc42fbb8057cd9a1ca9e5bcb7df0af14085ce5b4612e965b30cbe5dbab"
+        },
+        {
+          "path": "runs/policy_colored_shooting/sequence_comparison_20261029_colored/episodes/0018.npz",
+          "sha256": "86b984af4fac8727c650d946ff156dbb7ddfa868ff22e8661b3db807501af361",
+          "diagnostics_sha256": "c2086ba9ad660cf78532fcd7c356593114732e93ffd6d7727622d8b1b61ba27e"
+        },
+        {
+          "path": "runs/policy_colored_shooting/sequence_comparison_20261029_colored/episodes/0019.npz",
+          "sha256": "73fa57e7040bd5ddae33c10355b947f7e0d9c6bb6fe497885c0d1441946f4578",
+          "diagnostics_sha256": "a115d4484a5bd4b88cb7e6af572aaed2a62f3bdbb86149a603ae4745b9d6d105"
+        }
+      ]
+    },
+    {
+      "condition": "icem",
+      "run": "runs/policy_icem/sequence_comparison_20261029_icem",
+      "config_sha256": "c9e82be9bd7bf32c26b850e00d15c84dc7454fb8d1194a708c00040c87d8c4f3",
+      "metrics_sha256": "c0bc4636cf1c18173deb44a3f8089b3ea9f9011960d71a474aeefa2926fe2ac9",
+      "cost_sha256": "657465904ed21299d15fc469c8ff26e4bb865ce3df91c6f1f15ff1ad211dc8fb",
+      "source_sha256": {
+        "pyproject.toml": "ec68c9fb0b529c430e437b7e4ca2ffe554687b22ca9aff48db4505dc7d13ca87",
+        "src/cars/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/cli.py": "1d47c2f0e87dc476d2137145043789af94159f55c6a2655ceb99280f55653515",
+        "src/cars/env/__init__.py": "a0bd5973f4d5bc6e962cd4dcc1de24a582f118b5cd0c558983bd65404de84737",
+        "src/cars/env/carracing.py": "4495b00bc0eec5e7efcdac4f595d4dfeb41e833d8a62cbf6f6e1eea60de9325c",
+        "src/cars/env/make.py": "80d2830ca7cad3ce40f407b7cfa4e168232ca431067afbe8a473806cb664c589",
+        "src/cars/env/metrics.py": "e7b69bb03dada359e3b4c8c9f4a1ee474a6378bed1f883e77dd0740950d011d3",
+        "src/cars/env/partitions.py": "7d1dbd8cb2ab59bb320f5bdd9180292dbaebf06b5739c01e48a9bc3b738bed50",
+        "src/cars/env/protocol.py": "3c0e0a5e992d4fe3aeb1f62b73847d5f48f37fff6bd74dfbf06a34acf549b81c",
+        "src/cars/env/splits.py": "c897a697e67705fbe1717087b379e34cdd1112211162c5b636cff48cdc7febf8",
+        "src/cars/env/state.py": "15cee0801c7f39ad335ce92783f7cacdee2c7c9242336318c40d6747e8161447",
+        "src/cars/eval/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/eval/episode_log.py": "0766d8adad2d31b06b898d0f35f900b39abd027148d1d8c1a48ca0e78d659214",
+        "src/cars/eval/paired.py": "319c04004b9d07260cb70597d323556ec1d235cc685396850ca803de0f3fb314",
+        "src/cars/eval/report.py": "0d8d45fc3a96ebdf5ede65d7c10e9833b063c813f45142b681a56829f95ab308",
+        "src/cars/eval/runner.py": "aa047cca59988d57dc349b2f4d4348d4cedd297a2d77392676e655af66240082",
+        "src/cars/il/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/il/bc.py": "ed0567ff451a62eaabc52d4b5f1464f562f1a067836402c80c2ba8a9746ccf89",
+        "src/cars/il/dagger.py": "2f0ba1f118da493fd627f8d89f4a15be06dfd4b8d6e8503d808b4d44f8e6fbaa",
+        "src/cars/il/data.py": "0a95ca9c7742e14cfdaa923908f1161a9f675776d2e025f5d79585e6751c7cf9",
+        "src/cars/models/__init__.py": "0dc1d7a41d4f95e48c447fde9102802f9c65e24e60973e2603582f8a0c4c627a",
+        "src/cars/models/dynamics.py": "e9301bff433f1fc5f149ecc976e0cb98f6d2cf7dcbfb21a1de4e2e74c766e077",
+        "src/cars/models/physics.py": "384f8db2729915681cd83ecc38f5d51c84185e3df265d8b6358eb9027f05df0b",
+        "src/cars/monitoring/__init__.py": "47df79f279b968fda79d8feda44605972a92390fe861e18465253ebc7ae30517",
+        "src/cars/monitoring/bridge.py": "9125c9b4937a121f6eb686e313eeba290805779ad95f61ab9b0863ff3f990fd8",
+        "src/cars/monitoring/oracle.py": "5d4542f1f97fd85349c22f00b07c936b7bc4b959559cfa325db1c73ffa6e2650",
+        "src/cars/planning/__init__.py": "618bfd1a0570a9bc2e7437a294a9965cd8456ac0e9f7ca0dd012c218b6dea9bb",
+        "src/cars/planning/global_search.py": "dfead287b62c65bb19d394830f0e544bb0a514af49a4bb4dd2727f12474bc89a",
+        "src/cars/planning/intervention.py": "d7d07bcf52c9f441b99145706921a71cf28bb9a56476016058edbba747ae8954",
+        "src/cars/planning/local.py": "2aa5ed81452198713b79757e64fae03cb66eea725444e78cc878f8aa9c56176d",
+        "src/cars/planning/occupancy.py": "154d7f5c5a69da60ffce7a223c0b225d5acf4344fb3ab0a1927877ef3d902f9f",
+        "src/cars/planning/physics_search.py": "e66d8ce92599e0dda1ac01b67a46d44a13615b12e8c2b97345bbc25ff1fc8f2f",
+        "src/cars/planning/policy_controls.py": "14684d0e30a6e8b105c234074b0b7d4322f988be979ab9b34a605419cba14130",
+        "src/cars/planning/policy_rollouts.py": "8dfbfc60e8c74f62dafb2e8e607712003fc958f5b7ffe0180c74c881a170025d",
+        "src/cars/planning/policy_search.py": "47097a0ce327728d15cdaa4c7f0e36ecb9b633b190647b109c3bb13576795e67",
+        "src/cars/planning/policy_sequence_search.py": "6a67d4fd5ea5daac70d52fc1c3cd5b3e5f87f37b3dd194ee48f01560a9b2d710",
+        "src/cars/planning/reference_extension.py": "f368293193bcf175d37576809fdddc8a6be9acf569b47b1c134bd013d83243e6",
+        "src/cars/planning/search.py": "ca91f182cb5a280db9058323e236d92b428464158e3918a6ef50fadcc77d6509",
+        "src/cars/planning/sequence_optimizer.py": "49c4cbf0568803a58bd5bdfe6516512b3e0f7ae2319edb9b1cc907b751883b9b",
+        "src/cars/planning/visible_reference.py": "38e6d8f671741e8ba536bf02de6722de10029e7bd1a9e69ab8705f1d8bfbb919",
+        "src/cars/planning/world.py": "19c660841358f6203b9f1379b0e3c34d0b5e8ef2e7b3c5c21a63569ee1a0c28a",
+        "src/cars/policies/__init__.py": "7969a425c859d7986a67fed00ca0fe21dc9d6397d7ee3b7fffe5eb59066ae78b",
+        "src/cars/policies/base.py": "714a6a14352155c0a7d70c2ac589f148e20c8e6a32ed399c23bf6172b8561cd3",
+        "src/cars/policies/baseline.py": "22bbeeeeeb959ece1463100445ba05072d84f22884ef9d201304f5326ff90f1c",
+        "src/cars/policies/sb3.py": "437a8e922d1f0fc3fa88935e333649b214fe270569b85a6f8b2a2c96df4f1d5d",
+        "src/cars/policies/torch_mlp.py": "1e638dbeaadf470aa547082af577d1ce3c0da755cb963be109a223896afc46d1",
+        "src/cars/research/__init__.py": "3f8f2a9dc600f87fb123c76a1dadb554dc6c7619b912e08e5254a66664d72429",
+        "src/cars/research/artifacts.py": "37506a22cfb64f08c9a6343388165f20a55669c35ed58f72b14d53aa795f3581",
+        "src/cars/research/cli.py": "29b8aab61dedc9bbdcd540cdfb55678dc24d33e4d505dfef8c622658ffa98225",
+        "src/cars/research/data.py": "31f210d8fac0285c5ae19fdc9b1ad1eecf368adb26853d969ee74635aacaaa7e",
+        "src/cars/research/driver_checkpoint.py": "e5f6b38857234bf50a6d549fd5cd334c7a92e7fbe843c2c52eff3058f1e1d561",
+        "src/cars/research/driver_config.py": "3c069a8af2d758f9099fb9e4deb71de0a806138f27878cd6b4fe3c09f71dd959",
+        "src/cars/research/driver_encoder.py": "bb56a44c0e1d467d598a839e6c618de3f4f5dd9299c15887d6b517a448fdfbb9",
+        "src/cars/research/driver_training.py": "1e7ad02b409d69cd9e75fffcb3b018c6b8237eaec4031d9c10bb6d3dccd50d23",
+        "src/cars/research/evaluation.py": "8b2fb1395309acc2647a59d920393ea2e1aa7aee01a03c17b9d6e1c2763aa204",
+        "src/cars/research/failures.py": "8688daa911a18525c62b0a3339df5b0b10ac67cb54b6327756dbe6c14e40bd35",
+        "src/cars/research/frozen_code.py": "64a1042bf145cc29e326828e433307fdb27ee48393a2895eb574a15a34d0e8b7",
+        "src/cars/research/recurrent.py": "50bc115cae12d82558fbc432047f6df5e2d32172d21879de1623256a5929cbee",
+        "src/cars/rl/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/rl/interface.py": "449ff33147cd3e7e7f7248a8061f369466d33c112bb89f4fd12119f9fbdf77ad",
+        "src/cars/rl/train.py": "174795d6ef03e7433911f1154214b7a4070715f429cd72bd02809c3067a97915",
+        "src/cars/training.py": "0931b232ab3a40a17ea4406bc120e70c107989d562b9f199a5dc46bc1bc9518b",
+        "uv.lock": "1883c6b19e5fa96474dd8539865121633b20533bde9785ac59d8b5ea8ff96a51"
+      },
+      "trajectories": [
+        {
+          "path": "runs/policy_icem/sequence_comparison_20261029_icem/episodes/0000.npz",
+          "sha256": "45fd945b124ea1e69cb51aba591521a6cd5d2c146d41ca9434d4490e1b84206a",
+          "diagnostics_sha256": "1e7c17744c6f651e1de6bc5a1c59be8ccbb4a2244baf1a836acde3a5d007c540"
+        },
+        {
+          "path": "runs/policy_icem/sequence_comparison_20261029_icem/episodes/0001.npz",
+          "sha256": "2da5706a0a4b6e9e626245bb10f159f9501c1530bf4199cdb9deaa40058e0a2a",
+          "diagnostics_sha256": "791642ab7f708594a05b48463ebde8bb677f04f2990912c757df06297e77ce0f"
+        },
+        {
+          "path": "runs/policy_icem/sequence_comparison_20261029_icem/episodes/0002.npz",
+          "sha256": "a4977a9fd74239ce8c70b6bd2de3535cb8bc458f6dc43dc564d7564cf3d740c5",
+          "diagnostics_sha256": "f60d93fb9c15a6eef6a97099891ce69ae036ef0dbe909f1451d98c4b2cb4bbe7"
+        },
+        {
+          "path": "runs/policy_icem/sequence_comparison_20261029_icem/episodes/0003.npz",
+          "sha256": "0adc8392ef8d1dcc313175f0c85c029783e7127c689eadef726f0e9c90fe7918",
+          "diagnostics_sha256": "37840d9679e86e3924eec9b3f1b40e36853d63ed57065b74a4c9161210d0caee"
+        },
+        {
+          "path": "runs/policy_icem/sequence_comparison_20261029_icem/episodes/0004.npz",
+          "sha256": "40501fe4e9f9a12dd362bd3fc73db1e1d22769aff833ea7f971b503a555286c1",
+          "diagnostics_sha256": "2efb75c8bfaa674c016cece439435299c5f6046b2fed36a1911a07f138b0db03"
+        },
+        {
+          "path": "runs/policy_icem/sequence_comparison_20261029_icem/episodes/0005.npz",
+          "sha256": "ed053a87ec3d42795177f24bedbcfe631a119e7120cf8497d1229a39b1285697",
+          "diagnostics_sha256": "e1691d941d5a76311094dd1dc555dea5efaf401a9159f850b2d7600cb061e0e9"
+        },
+        {
+          "path": "runs/policy_icem/sequence_comparison_20261029_icem/episodes/0006.npz",
+          "sha256": "7cc13947b157111608a427cfaf64d5b2c8ff876010f8ec507aeceeddb7f7aafc",
+          "diagnostics_sha256": "b7a0f3014cc20c50b9545d7822a306f30d08c3520b832764b18ce080e6b0d9c6"
+        },
+        {
+          "path": "runs/policy_icem/sequence_comparison_20261029_icem/episodes/0007.npz",
+          "sha256": "5c9e28ebee047522158976d9715db60839f2d77336b3706175194aeba79b9791",
+          "diagnostics_sha256": "d7ca0f5214321029621e0f22222cb45d43a0edd1aceb35854262e873089c93c7"
+        },
+        {
+          "path": "runs/policy_icem/sequence_comparison_20261029_icem/episodes/0008.npz",
+          "sha256": "cd73265e72508a9f745b5f4eee025fa4a2768af34aa28beb375934ce04f2f227",
+          "diagnostics_sha256": "202142384defc8759aed2db3d99bef2384cfcb2c2cc4e56b0ac81dcfb78edcf4"
+        },
+        {
+          "path": "runs/policy_icem/sequence_comparison_20261029_icem/episodes/0009.npz",
+          "sha256": "1973e84a24c023ad31f41acd6db2803beba7568f2264246a2e2b8825b900dd1a",
+          "diagnostics_sha256": "facece4462520072c0dc1cbb4e3f59bca2af8836bf0425f72501807164565e8b"
+        },
+        {
+          "path": "runs/policy_icem/sequence_comparison_20261029_icem/episodes/0010.npz",
+          "sha256": "6993ead4074baf6d827a7e28a12f78713983e44a5998a4db5bda7178f9bf5815",
+          "diagnostics_sha256": "c5b0019ee534e352ce234a1dc46b053360b108c6cd7402833f1d8effd87c5cf3"
+        },
+        {
+          "path": "runs/policy_icem/sequence_comparison_20261029_icem/episodes/0011.npz",
+          "sha256": "a77e842cb36224211667031fce98256e60a313d4ad96bc4be3a1a364930ee868",
+          "diagnostics_sha256": "815562211494ded5687c75b02b1a48ce2c2bdaf7ee2b1201b9d7ac19774144e2"
+        },
+        {
+          "path": "runs/policy_icem/sequence_comparison_20261029_icem/episodes/0012.npz",
+          "sha256": "f3328eee08eb6a33876a9d50cc427328b851171554474f56287c8ec56de58a42",
+          "diagnostics_sha256": "19a4685eafdd5d1dd224c5d3061c6cad483075fe030765903a70bb0011176f73"
+        },
+        {
+          "path": "runs/policy_icem/sequence_comparison_20261029_icem/episodes/0013.npz",
+          "sha256": "d07a72295a00cb73dafb081b1e21f366f8bc666c7e925a8499c76d59197b80f2",
+          "diagnostics_sha256": "5cb345713f9784ed675d7c5f8f9652ae22f903d888890cf77408a87cca978eaf"
+        },
+        {
+          "path": "runs/policy_icem/sequence_comparison_20261029_icem/episodes/0014.npz",
+          "sha256": "1e013bd91a3033b4b93a921256c895fad7a78f54df429a5d9c9cbdc477dcdf7a",
+          "diagnostics_sha256": "a4f27c9e48e35d702768d9f91038cdc345ecb6ab83e38437df55693e01a0e81e"
+        },
+        {
+          "path": "runs/policy_icem/sequence_comparison_20261029_icem/episodes/0015.npz",
+          "sha256": "1d73eef0cfe4b4c1d7a3de10e3055fec4d266b8092ce57c1155416355bf12df3",
+          "diagnostics_sha256": "2b98c9cd386c88a2f70317f137c09d8cb217f91b4fe18785bc5318c7dd63833b"
+        },
+        {
+          "path": "runs/policy_icem/sequence_comparison_20261029_icem/episodes/0016.npz",
+          "sha256": "c80ea1129fcb59c0f5fcc76d11c69656f70dcb7aa40db9ac3076301447885102",
+          "diagnostics_sha256": "23c03d6af31603097a105bb554a1fb3d4f2c860e08a403251410f0e6996260a8"
+        },
+        {
+          "path": "runs/policy_icem/sequence_comparison_20261029_icem/episodes/0017.npz",
+          "sha256": "b6a1626fe5459cae60b0502ee227afbe673c45ce2bba3290f03239498db39af9",
+          "diagnostics_sha256": "4eac95ec4c1742a2c691720fe2807daa42672c18d12fbf7877f6ab6dcbb20efc"
+        },
+        {
+          "path": "runs/policy_icem/sequence_comparison_20261029_icem/episodes/0018.npz",
+          "sha256": "0297ef07fb278d096d42c517ea0d238d5a13db74db3a9ce376ae3ac0f6be24fc",
+          "diagnostics_sha256": "6afeaf2ec14c2b55769311933c4662bd7ea01e52bfb1a956a0c7195db4360819"
+        },
+        {
+          "path": "runs/policy_icem/sequence_comparison_20261029_icem/episodes/0019.npz",
+          "sha256": "746a72c65af892da957531106a172a123987258e689fc740486be237affe8fe6",
+          "diagnostics_sha256": "333ab6ee9ce4c98e3ac475e3d799253ad0d7d45d28e2693af2f957b9066daea1"
+        }
+      ]
+    }
+  ],
+  "paired_contrasts": [
+    {
+      "candidate": "icem",
+      "reference": "colored",
+      "role": "primary_matched_optimizer",
+      "panel": "all20",
+      "metric": "return",
+      "mean_difference": -250.7242600882252,
+      "per_track": [
+        -46.06901408451381,
+        -630.5084745762687,
+        -314.7577181208086,
+        106.24999999999704,
+        9.299999999999159,
+        5.79999999999859,
+        -494.2444043321416,
+        -516.6433734939698,
+        -483.8709677419191,
+        -399.05789473684706,
+        -650.2364820846892,
+        -374.61300309597885,
+        -62.068965517237984,
+        -460.05517241378794,
+        -37.53178294574161,
+        -561.1605863192144,
+        23.700000000002206,
+        -41.01103202847605,
+        -47.54744525548199,
+        -40.1588850174262
+      ],
+      "positive": 4,
+      "negative": 16,
+      "ties": 0,
+      "nominal_track_bootstrap_95_percent": [
+        -359.56517291453616,
+        -147.30566711396995
+      ]
+    },
+    {
+      "candidate": "icem",
+      "reference": "colored",
+      "role": "primary_matched_optimizer",
+      "panel": "all20",
+      "metric": "success",
+      "mean_difference": -0.55,
+      "per_track": [
+        -1.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "positive": 0,
+      "negative": 11,
+      "ties": 9,
+      "nominal_track_bootstrap_95_percent": [
+        -0.75,
+        -0.3
+      ]
+    },
+    {
+      "candidate": "icem",
+      "reference": "colored",
+      "role": "primary_matched_optimizer",
+      "panel": "all20",
+      "metric": "off_track_steps",
+      "mean_difference": 62.85,
+      "per_track": [
+        25.0,
+        114.0,
+        49.0,
+        -8.0,
+        0.0,
+        0.0,
+        71.0,
+        163.0,
+        212.0,
+        43.0,
+        58.0,
+        79.0,
+        12.0,
+        170.0,
+        78.0,
+        64.0,
+        0.0,
+        33.0,
+        62.0,
+        32.0
+      ],
+      "positive": 16,
+      "negative": 1,
+      "ties": 3,
+      "nominal_track_bootstrap_95_percent": [
+        39.05,
+        90.90124999999999
+      ]
+    },
+    {
+      "candidate": "colored",
+      "reference": "knots",
+      "role": "representation_and_batching_context",
+      "panel": "all20",
+      "metric": "return",
+      "mean_difference": -21.08055254054954,
+      "per_track": [
+        -6.800000000000182,
+        -17.98983050847471,
+        1.2000000000014097,
+        -140.02500000000168,
+        -3.0999999999993406,
+        -7.300000000000409,
+        -5.599999999999568,
+        -51.204819277107276,
+        -7.168458781361437,
+        -7.600000000000364,
+        -1.799999999999386,
+        -85.39535603715251,
+        -44.82758620689458,
+        -3.6999999999995907,
+        -4.19999999999925,
+        -6.300000000000409,
+        -13.400000000001796,
+        -4.2999999999996135,
+        -4.199999999999591,
+        -7.900000000000546
+      ],
+      "positive": 1,
+      "negative": 19,
+      "ties": 0,
+      "nominal_track_bootstrap_95_percent": [
+        -37.94596355594331,
+        -8.109286006736697
+      ]
+    },
+    {
+      "candidate": "colored",
+      "reference": "knots",
+      "role": "representation_and_batching_context",
+      "panel": "all20",
+      "metric": "success",
+      "mean_difference": -0.15,
+      "per_track": [
+        0.0,
+        -1.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "positive": 0,
+      "negative": 3,
+      "ties": 17,
+      "nominal_track_bootstrap_95_percent": [
+        -0.3,
+        0.0
+      ]
+    },
+    {
+      "candidate": "colored",
+      "reference": "knots",
+      "role": "representation_and_batching_context",
+      "panel": "all20",
+      "metric": "off_track_steps",
+      "mean_difference": 2.2,
+      "per_track": [
+        0.0,
+        0.0,
+        0.0,
+        37.0,
+        0.0,
+        0.0,
+        0.0,
+        4.0,
+        3.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "positive": 3,
+      "negative": 0,
+      "ties": 17,
+      "nominal_track_bootstrap_95_percent": [
+        0.0,
+        6.1
+      ]
+    },
+    {
+      "candidate": "icem",
+      "reference": "knots",
+      "role": "representation_and_optimizer_context",
+      "panel": "all20",
+      "metric": "return",
+      "mean_difference": -271.8048126287749,
+      "per_track": [
+        -52.86901408451399,
+        -648.4983050847434,
+        -313.5577181208072,
+        -33.77500000000464,
+        6.199999999999818,
+        -1.500000000001819,
+        -499.84440433214115,
+        -567.848192771077,
+        -491.03942652328055,
+        -406.6578947368474,
+        -652.0364820846887,
+        -460.00835913313136,
+        -106.89655172413256,
+        -463.75517241378753,
+        -41.73178294574086,
+        -567.4605863192148,
+        10.30000000000041,
+        -45.311032028475665,
+        -51.74744525548158,
+        -48.058885017426746
+      ],
+      "positive": 2,
+      "negative": 18,
+      "ties": 0,
+      "nominal_track_bootstrap_95_percent": [
+        -379.8453222969895,
+        -169.17886885162636
+      ]
+    },
+    {
+      "candidate": "icem",
+      "reference": "knots",
+      "role": "representation_and_optimizer_context",
+      "panel": "all20",
+      "metric": "success",
+      "mean_difference": -0.7,
+      "per_track": [
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "positive": 0,
+      "negative": 14,
+      "ties": 6,
+      "nominal_track_bootstrap_95_percent": [
+        -0.9,
+        -0.5
+      ]
+    },
+    {
+      "candidate": "icem",
+      "reference": "knots",
+      "role": "representation_and_optimizer_context",
+      "panel": "all20",
+      "metric": "off_track_steps",
+      "mean_difference": 65.05,
+      "per_track": [
+        25.0,
+        114.0,
+        49.0,
+        29.0,
+        0.0,
+        0.0,
+        71.0,
+        167.0,
+        215.0,
+        43.0,
+        58.0,
+        79.0,
+        12.0,
+        170.0,
+        78.0,
+        64.0,
+        0.0,
+        33.0,
+        62.0,
+        32.0
+      ],
+      "positive": 17,
+      "negative": 0,
+      "ties": 3,
+      "nominal_track_bootstrap_95_percent": [
+        42.198750000000004,
+        92.80249999999997
+      ]
+    },
+    {
+      "candidate": "colored",
+      "reference": "direct",
+      "role": "frozen_actor_augmentation",
+      "panel": "all20",
+      "metric": "return",
+      "mean_difference": 21.308564204010253,
+      "per_track": [
+        -1.8000000000004093,
+        33.89830508474813,
+        -0.20000000000004547,
+        43.75,
+        -1.0000000000002274,
+        -1.2000000000000455,
+        42.980866425997306,
+        39.15662650602417,
+        35.84229390681048,
+        -2.800000000000523,
+        31.343973941370336,
+        179.56656346749298,
+        -120.68965517241134,
+        13.448275862071227,
+        49.15968992248452,
+        53.017263843647356,
+        -9.400000000002024,
+        -5.800000000001205,
+        51.19708029197534,
+        -4.300000000000978
+      ],
+      "positive": 11,
+      "negative": 9,
+      "ties": 0,
+      "nominal_track_bootstrap_95_percent": [
+        -0.6400344268339587,
+        44.599485965564874
+      ]
+    },
+    {
+      "candidate": "colored",
+      "reference": "direct",
+      "role": "frozen_actor_augmentation",
+      "panel": "all20",
+      "metric": "success",
+      "mean_difference": 0.3,
+      "per_track": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "positive": 6,
+      "negative": 0,
+      "ties": 14,
+      "nominal_track_bootstrap_95_percent": [
+        0.1,
+        0.5
+      ]
+    },
+    {
+      "candidate": "colored",
+      "reference": "direct",
+      "role": "frozen_actor_augmentation",
+      "panel": "all20",
+      "metric": "off_track_steps",
+      "mean_difference": -21.1,
+      "per_track": [
+        0.0,
+        -27.0,
+        0.0,
+        -64.0,
+        0.0,
+        0.0,
+        -30.0,
+        -22.0,
+        -51.0,
+        0.0,
+        -32.0,
+        -72.0,
+        -13.0,
+        -4.0,
+        -46.0,
+        -36.0,
+        0.0,
+        0.0,
+        -25.0,
+        0.0
+      ],
+      "positive": 0,
+      "negative": 12,
+      "ties": 8,
+      "nominal_track_bootstrap_95_percent": [
+        -31.6,
+        -11.95
+      ]
+    },
+    {
+      "candidate": "icem",
+      "reference": "direct",
+      "role": "frozen_actor_augmentation",
+      "panel": "all20",
+      "metric": "return",
+      "mean_difference": -229.41569588421498,
+      "per_track": [
+        -47.86901408451422,
+        -596.6101694915205,
+        -314.95771812080864,
+        149.99999999999704,
+        8.299999999998931,
+        4.599999999998545,
+        -451.2635379061443,
+        -477.4867469879456,
+        -448.02867383510863,
+        -401.8578947368476,
+        -618.892508143319,
+        -195.04643962848587,
+        -182.75862068964932,
+        -446.6068965517167,
+        11.627906976742906,
+        -508.14332247556706,
+        14.300000000000182,
+        -46.81103202847726,
+        3.6496350364933505,
+        -44.45888501742718
+      ],
+      "positive": 6,
+      "negative": 14,
+      "ties": 0,
+      "nominal_track_bootstrap_95_percent": [
+        -333.9919426273286,
+        -127.79545553628742
+      ]
+    },
+    {
+      "candidate": "icem",
+      "reference": "direct",
+      "role": "frozen_actor_augmentation",
+      "panel": "all20",
+      "metric": "success",
+      "mean_difference": -0.25,
+      "per_track": [
+        -1.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        -1.0
+      ],
+      "positive": 0,
+      "negative": 5,
+      "ties": 15,
+      "nominal_track_bootstrap_95_percent": [
+        -0.45,
+        -0.1
+      ]
+    },
+    {
+      "candidate": "icem",
+      "reference": "direct",
+      "role": "frozen_actor_augmentation",
+      "panel": "all20",
+      "metric": "off_track_steps",
+      "mean_difference": 41.75,
+      "per_track": [
+        25.0,
+        87.0,
+        49.0,
+        -72.0,
+        0.0,
+        0.0,
+        41.0,
+        141.0,
+        161.0,
+        43.0,
+        26.0,
+        7.0,
+        -1.0,
+        166.0,
+        32.0,
+        28.0,
+        0.0,
+        33.0,
+        37.0,
+        32.0
+      ],
+      "positive": 15,
+      "negative": 2,
+      "ties": 3,
+      "nominal_track_bootstrap_95_percent": [
+        18.598750000000003,
+        68.20124999999999
+      ]
+    },
+    {
+      "candidate": "icem",
+      "reference": "colored",
+      "role": "primary_matched_optimizer",
+      "panel": "smoke2",
+      "metric": "return",
+      "mean_difference": -338.28874433039124,
+      "per_track": [
+        -46.06901408451381,
+        -630.5084745762687
+      ],
+      "positive": 0,
+      "negative": 2,
+      "ties": 0
+    },
+    {
+      "candidate": "icem",
+      "reference": "colored",
+      "role": "primary_matched_optimizer",
+      "panel": "smoke2",
+      "metric": "success",
+      "mean_difference": -0.5,
+      "per_track": [
+        -1.0,
+        0.0
+      ],
+      "positive": 0,
+      "negative": 1,
+      "ties": 1
+    },
+    {
+      "candidate": "icem",
+      "reference": "colored",
+      "role": "primary_matched_optimizer",
+      "panel": "smoke2",
+      "metric": "off_track_steps",
+      "mean_difference": 69.5,
+      "per_track": [
+        25.0,
+        114.0
+      ],
+      "positive": 2,
+      "negative": 0,
+      "ties": 0
+    },
+    {
+      "candidate": "colored",
+      "reference": "knots",
+      "role": "representation_and_batching_context",
+      "panel": "smoke2",
+      "metric": "return",
+      "mean_difference": -12.394915254237446,
+      "per_track": [
+        -6.800000000000182,
+        -17.98983050847471
+      ],
+      "positive": 0,
+      "negative": 2,
+      "ties": 0
+    },
+    {
+      "candidate": "colored",
+      "reference": "knots",
+      "role": "representation_and_batching_context",
+      "panel": "smoke2",
+      "metric": "success",
+      "mean_difference": -0.5,
+      "per_track": [
+        0.0,
+        -1.0
+      ],
+      "positive": 0,
+      "negative": 1,
+      "ties": 1
+    },
+    {
+      "candidate": "colored",
+      "reference": "knots",
+      "role": "representation_and_batching_context",
+      "panel": "smoke2",
+      "metric": "off_track_steps",
+      "mean_difference": 0.0,
+      "per_track": [
+        0.0,
+        0.0
+      ],
+      "positive": 0,
+      "negative": 0,
+      "ties": 2
+    },
+    {
+      "candidate": "icem",
+      "reference": "knots",
+      "role": "representation_and_optimizer_context",
+      "panel": "smoke2",
+      "metric": "return",
+      "mean_difference": -350.6836595846287,
+      "per_track": [
+        -52.86901408451399,
+        -648.4983050847434
+      ],
+      "positive": 0,
+      "negative": 2,
+      "ties": 0
+    },
+    {
+      "candidate": "icem",
+      "reference": "knots",
+      "role": "representation_and_optimizer_context",
+      "panel": "smoke2",
+      "metric": "success",
+      "mean_difference": -1.0,
+      "per_track": [
+        -1.0,
+        -1.0
+      ],
+      "positive": 0,
+      "negative": 2,
+      "ties": 0
+    },
+    {
+      "candidate": "icem",
+      "reference": "knots",
+      "role": "representation_and_optimizer_context",
+      "panel": "smoke2",
+      "metric": "off_track_steps",
+      "mean_difference": 69.5,
+      "per_track": [
+        25.0,
+        114.0
+      ],
+      "positive": 2,
+      "negative": 0,
+      "ties": 0
+    },
+    {
+      "candidate": "colored",
+      "reference": "direct",
+      "role": "frozen_actor_augmentation",
+      "panel": "smoke2",
+      "metric": "return",
+      "mean_difference": 16.04915254237386,
+      "per_track": [
+        -1.8000000000004093,
+        33.89830508474813
+      ],
+      "positive": 1,
+      "negative": 1,
+      "ties": 0
+    },
+    {
+      "candidate": "colored",
+      "reference": "direct",
+      "role": "frozen_actor_augmentation",
+      "panel": "smoke2",
+      "metric": "success",
+      "mean_difference": 0.0,
+      "per_track": [
+        0.0,
+        0.0
+      ],
+      "positive": 0,
+      "negative": 0,
+      "ties": 2
+    },
+    {
+      "candidate": "colored",
+      "reference": "direct",
+      "role": "frozen_actor_augmentation",
+      "panel": "smoke2",
+      "metric": "off_track_steps",
+      "mean_difference": -13.5,
+      "per_track": [
+        0.0,
+        -27.0
+      ],
+      "positive": 0,
+      "negative": 1,
+      "ties": 1
+    },
+    {
+      "candidate": "icem",
+      "reference": "direct",
+      "role": "frozen_actor_augmentation",
+      "panel": "smoke2",
+      "metric": "return",
+      "mean_difference": -322.2395917880174,
+      "per_track": [
+        -47.86901408451422,
+        -596.6101694915205
+      ],
+      "positive": 0,
+      "negative": 2,
+      "ties": 0
+    },
+    {
+      "candidate": "icem",
+      "reference": "direct",
+      "role": "frozen_actor_augmentation",
+      "panel": "smoke2",
+      "metric": "success",
+      "mean_difference": -0.5,
+      "per_track": [
+        -1.0,
+        0.0
+      ],
+      "positive": 0,
+      "negative": 1,
+      "ties": 1
+    },
+    {
+      "candidate": "icem",
+      "reference": "direct",
+      "role": "frozen_actor_augmentation",
+      "panel": "smoke2",
+      "metric": "off_track_steps",
+      "mean_difference": 56.0,
+      "per_track": [
+        25.0,
+        87.0
+      ],
+      "positive": 2,
+      "negative": 0,
+      "ties": 0
+    },
+    {
+      "candidate": "icem",
+      "reference": "colored",
+      "role": "primary_matched_optimizer",
+      "panel": "additional18",
+      "metric": "return",
+      "mean_difference": -240.99487295020683,
+      "per_track": [
+        -314.7577181208086,
+        106.24999999999704,
+        9.299999999999159,
+        5.79999999999859,
+        -494.2444043321416,
+        -516.6433734939698,
+        -483.8709677419191,
+        -399.05789473684706,
+        -650.2364820846892,
+        -374.61300309597885,
+        -62.068965517237984,
+        -460.05517241378794,
+        -37.53178294574161,
+        -561.1605863192144,
+        23.700000000002206,
+        -41.01103202847605,
+        -47.54744525548199,
+        -40.1588850174262
+      ],
+      "positive": 4,
+      "negative": 14,
+      "ties": 0,
+      "nominal_track_bootstrap_95_percent": [
+        -354.45989577713675,
+        -127.9407745016989
+      ]
+    },
+    {
+      "candidate": "icem",
+      "reference": "colored",
+      "role": "primary_matched_optimizer",
+      "panel": "additional18",
+      "metric": "success",
+      "mean_difference": -0.5555555555555556,
+      "per_track": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "positive": 0,
+      "negative": 10,
+      "ties": 8,
+      "nominal_track_bootstrap_95_percent": [
+        -0.7777777777777778,
+        -0.3333333333333333
+      ]
+    },
+    {
+      "candidate": "icem",
+      "reference": "colored",
+      "role": "primary_matched_optimizer",
+      "panel": "additional18",
+      "metric": "off_track_steps",
+      "mean_difference": 62.111111111111114,
+      "per_track": [
+        49.0,
+        -8.0,
+        0.0,
+        0.0,
+        71.0,
+        163.0,
+        212.0,
+        43.0,
+        58.0,
+        79.0,
+        12.0,
+        170.0,
+        78.0,
+        64.0,
+        0.0,
+        33.0,
+        62.0,
+        32.0
+      ],
+      "positive": 14,
+      "negative": 1,
+      "ties": 3,
+      "nominal_track_bootstrap_95_percent": [
+        36.165277777777774,
+        91.16666666666667
+      ]
+    },
+    {
+      "candidate": "colored",
+      "reference": "knots",
+      "role": "representation_and_batching_context",
+      "panel": "additional18",
+      "metric": "return",
+      "mean_difference": -22.045623350139774,
+      "per_track": [
+        1.2000000000014097,
+        -140.02500000000168,
+        -3.0999999999993406,
+        -7.300000000000409,
+        -5.599999999999568,
+        -51.204819277107276,
+        -7.168458781361437,
+        -7.600000000000364,
+        -1.799999999999386,
+        -85.39535603715251,
+        -44.82758620689458,
+        -3.6999999999995907,
+        -4.19999999999925,
+        -6.300000000000409,
+        -13.400000000001796,
+        -4.2999999999996135,
+        -4.199999999999591,
+        -7.900000000000546
+      ],
+      "positive": 1,
+      "negative": 17,
+      "ties": 0,
+      "nominal_track_bootstrap_95_percent": [
+        -39.76814738190572,
+        -7.712764387173912
+      ]
+    },
+    {
+      "candidate": "colored",
+      "reference": "knots",
+      "role": "representation_and_batching_context",
+      "panel": "additional18",
+      "metric": "success",
+      "mean_difference": -0.1111111111111111,
+      "per_track": [
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "positive": 0,
+      "negative": 2,
+      "ties": 16,
+      "nominal_track_bootstrap_95_percent": [
+        -0.2777777777777778,
+        0.0
+      ]
+    },
+    {
+      "candidate": "colored",
+      "reference": "knots",
+      "role": "representation_and_batching_context",
+      "panel": "additional18",
+      "metric": "off_track_steps",
+      "mean_difference": 2.4444444444444446,
+      "per_track": [
+        0.0,
+        37.0,
+        0.0,
+        0.0,
+        0.0,
+        4.0,
+        3.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "positive": 3,
+      "negative": 0,
+      "ties": 15,
+      "nominal_track_bootstrap_95_percent": [
+        0.0,
+        6.722222222222222
+      ]
+    },
+    {
+      "candidate": "icem",
+      "reference": "knots",
+      "role": "representation_and_optimizer_context",
+      "panel": "additional18",
+      "metric": "return",
+      "mean_difference": -263.0404963003466,
+      "per_track": [
+        -313.5577181208072,
+        -33.77500000000464,
+        6.199999999999818,
+        -1.500000000001819,
+        -499.84440433214115,
+        -567.848192771077,
+        -491.03942652328055,
+        -406.6578947368474,
+        -652.0364820846887,
+        -460.00835913313136,
+        -106.89655172413256,
+        -463.75517241378753,
+        -41.73178294574086,
+        -567.4605863192148,
+        10.30000000000041,
+        -45.311032028475665,
+        -51.74744525548158,
+        -48.058885017426746
+      ],
+      "positive": 2,
+      "negative": 16,
+      "ties": 0,
+      "nominal_track_bootstrap_95_percent": [
+        -375.3101033736431,
+        -153.73217956126547
+      ]
+    },
+    {
+      "candidate": "icem",
+      "reference": "knots",
+      "role": "representation_and_optimizer_context",
+      "panel": "additional18",
+      "metric": "success",
+      "mean_difference": -0.6666666666666666,
+      "per_track": [
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "positive": 0,
+      "negative": 12,
+      "ties": 6,
+      "nominal_track_bootstrap_95_percent": [
+        -0.8888888888888888,
+        -0.4444444444444444
+      ]
+    },
+    {
+      "candidate": "icem",
+      "reference": "knots",
+      "role": "representation_and_optimizer_context",
+      "panel": "additional18",
+      "metric": "off_track_steps",
+      "mean_difference": 64.55555555555556,
+      "per_track": [
+        49.0,
+        29.0,
+        0.0,
+        0.0,
+        71.0,
+        167.0,
+        215.0,
+        43.0,
+        58.0,
+        79.0,
+        12.0,
+        170.0,
+        78.0,
+        64.0,
+        0.0,
+        33.0,
+        62.0,
+        32.0
+      ],
+      "positive": 15,
+      "negative": 0,
+      "ties": 3,
+      "nominal_track_bootstrap_95_percent": [
+        39.72222222222222,
+        93.55555555555556
+      ]
+    },
+    {
+      "candidate": "colored",
+      "reference": "direct",
+      "role": "frozen_actor_augmentation",
+      "panel": "additional18",
+      "metric": "return",
+      "mean_difference": 21.892943277525408,
+      "per_track": [
+        -0.20000000000004547,
+        43.75,
+        -1.0000000000002274,
+        -1.2000000000000455,
+        42.980866425997306,
+        39.15662650602417,
+        35.84229390681048,
+        -2.800000000000523,
+        31.343973941370336,
+        179.56656346749298,
+        -120.68965517241134,
+        13.448275862071227,
+        49.15968992248452,
+        53.017263843647356,
+        -9.400000000002024,
+        -5.800000000001205,
+        51.19708029197534,
+        -4.300000000000978
+      ],
+      "positive": 10,
+      "negative": 8,
+      "ties": 0,
+      "nominal_track_bootstrap_95_percent": [
+        -3.8201570717291395,
+        47.01308761570888
+      ]
+    },
+    {
+      "candidate": "colored",
+      "reference": "direct",
+      "role": "frozen_actor_augmentation",
+      "panel": "additional18",
+      "metric": "success",
+      "mean_difference": 0.3333333333333333,
+      "per_track": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "positive": 6,
+      "negative": 0,
+      "ties": 12,
+      "nominal_track_bootstrap_95_percent": [
+        0.1111111111111111,
+        0.5555555555555556
+      ]
+    },
+    {
+      "candidate": "colored",
+      "reference": "direct",
+      "role": "frozen_actor_augmentation",
+      "panel": "additional18",
+      "metric": "off_track_steps",
+      "mean_difference": -21.944444444444443,
+      "per_track": [
+        0.0,
+        -64.0,
+        0.0,
+        0.0,
+        -30.0,
+        -22.0,
+        -51.0,
+        0.0,
+        -32.0,
+        -72.0,
+        -13.0,
+        -4.0,
+        -46.0,
+        -36.0,
+        0.0,
+        0.0,
+        -25.0,
+        0.0
+      ],
+      "positive": 0,
+      "negative": 11,
+      "ties": 7,
+      "nominal_track_bootstrap_95_percent": [
+        -32.888888888888886,
+        -11.720833333333353
+      ]
+    },
+    {
+      "candidate": "icem",
+      "reference": "direct",
+      "role": "frozen_actor_augmentation",
+      "panel": "additional18",
+      "metric": "return",
+      "mean_difference": -219.10192967268145,
+      "per_track": [
+        -314.95771812080864,
+        149.99999999999704,
+        8.299999999998931,
+        4.599999999998545,
+        -451.2635379061443,
+        -477.4867469879456,
+        -448.02867383510863,
+        -401.8578947368476,
+        -618.892508143319,
+        -195.04643962848587,
+        -182.75862068964932,
+        -446.6068965517167,
+        11.627906976742906,
+        -508.14332247556706,
+        14.300000000000182,
+        -46.81103202847726,
+        3.6496350364933505,
+        -44.45888501742718
+      ],
+      "positive": 6,
+      "negative": 12,
+      "ties": 0,
+      "nominal_track_bootstrap_95_percent": [
+        -327.15716754663396,
+        -112.915758626789
+      ]
+    },
+    {
+      "candidate": "icem",
+      "reference": "direct",
+      "role": "frozen_actor_augmentation",
+      "panel": "additional18",
+      "metric": "success",
+      "mean_difference": -0.2222222222222222,
+      "per_track": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        -1.0
+      ],
+      "positive": 0,
+      "negative": 4,
+      "ties": 14,
+      "nominal_track_bootstrap_95_percent": [
+        -0.4444444444444444,
+        -0.05555555555555555
+      ]
+    },
+    {
+      "candidate": "icem",
+      "reference": "direct",
+      "role": "frozen_actor_augmentation",
+      "panel": "additional18",
+      "metric": "off_track_steps",
+      "mean_difference": 40.166666666666664,
+      "per_track": [
+        49.0,
+        -72.0,
+        0.0,
+        0.0,
+        41.0,
+        141.0,
+        161.0,
+        43.0,
+        26.0,
+        7.0,
+        -1.0,
+        166.0,
+        32.0,
+        28.0,
+        0.0,
+        33.0,
+        37.0,
+        32.0
+      ],
+      "positive": 13,
+      "negative": 2,
+      "ties": 3,
+      "nominal_track_bootstrap_95_percent": [
+        14.77638888888889,
+        68.22638888888883
+      ]
+    }
+  ],
+  "new_condition_costs": {
+    "colored": {
+      "native_frames": 18116,
+      "decisions": 4532,
+      "model_transitions": 1903440,
+      "internal_physics_frames": 7613760,
+      "actor_forward_examples": 1812800,
+      "wall_time_s": 1544.3846329499938
+    },
+    "icem": {
+      "native_frames": 18282,
+      "decisions": 4573,
+      "model_transitions": 1920660,
+      "internal_physics_frames": 7682640,
+      "actor_forward_examples": 1829200,
+      "wall_time_s": 1545.9702031339984
+    }
+  },
+  "checks": {
+    "colored": {
+      "replayed_episodes": 2,
+      "checked_decisions": 4532,
+      "cached_rollouts_reused": 0,
+      "shifted_elites_reevaluated": 0,
+      "first_batch_winners": 3968
+    },
+    "icem": {
+      "replayed_episodes": 2,
+      "checked_decisions": 4573,
+      "cached_rollouts_reused": 4573,
+      "shifted_elites_reevaluated": 4553,
+      "first_batch_winners": 1900
+    }
+  },
+  "new_native_frames": 36398,
+  "new_internal_physics_frames": 15296400,
+  "new_training_frames": 0,
+  "preceding_smoke_native_frames": 4574,
+  "preceding_smoke_internal_physics_frames": 1923600,
+  "historical_context_is_not_new_work": true,
+  "bootstrap": {
+    "reps": 5000,
+    "seed": 0
+  },
+  "uncertainty": "one frozen actor/stream; nominal paired development-track intervals only; no selection adjustment or training-seed uncertainty",
+  "comparison_scope": "primary same full-sequence representation, bounds, local inputs, batch sizes and actual rollout work; optimizer package includes fit/mean injection/cache/shift",
+  "context_scope": "knots differ in representation and batching; direct has no simulator work; both historical with historical timings",
+  "speed_definition": "decision-end observed speed weighted by native action duration, then equal episode means",
+  "latency": "environment waits synchronously; no deadline fallback; serial noninterleaved conditions",
+  "held_out_evaluation": false,
+  "private_oracle_outputs_read": false
+}

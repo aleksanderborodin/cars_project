@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "original": "runs/recurrent_ppo/driver_s0_dev_001007379",
+  "replay": "runs/recurrent_ppo/local_discount_20261029_control_replay",
+  "episodes": 2,
+  "exact_fields": [
+    "action",
+    "reward",
+    "frames",
+    "terminated",
+    "truncated",
+    "observation_road",
+    "observation_visible",
+    "observation_ego",
+    "observation_previous_action",
+    "evaluation_offroad_frame_indices"
+  ],
+  "metrics_exact": [
+    "track_seed",
+    "success",
+    "lap_time_s",
+    "off_track_events",
+    "off_track_steps",
+    "crash",
+    "return",
+    "progress",
+    "steps",
+    "decisions"
+  ],
+  "cost": {
+    "native_frames": 1803,
+    "decisions": 451,
+    "model_transitions": 0,
+    "internal_physics_frames": 0,
+    "actor_forward_examples": 451,
+    "wall_time_s": 0.7923576389875961
+  },
+  "reset_physics_ticks": 2,
+  "note": "Technical historical replay; not a new independent performance estimate",
+  "config_sha256": "72715cc01856c99fdd9188716a43ba3b5405a013dc19b740a6d275555f111073",
+  "metrics_sha256": "59928fbb28d1b50b59bac6cbe822936bca461794538896031dae69a8a34b1265"
+}

@@ -74,3 +74,9 @@ original simulation search and matched cheap/random controls. This serves the
 user's understanding-versus-deciding question without presupposing its answer.
 
 Status: declared; test and historical replay gates precede launch.
+
+Launch gates passed: all **108 tests** pass. The first two original local episodes
+replay exactly in actions, permitted observations, rewards, termination and metrics
+(timing excluded). Cost: 1,803 native frames and two resets; [audit artifact](../reports/local_discount_readiness_2026-10-29/summary.json).
+Resolved-config comparison confirms that PPO gamma is the only changed effective
+training setting; normalization remains0.99. No trained checkpoint is modified.

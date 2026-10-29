@@ -1033,3 +1033,11 @@ goal but does not establish policy competence, generality or SOTA. Native pixels
 and local repeat-four search remain separate protocols. No private rankings or
 final-test data are accessed. Main uncertainty: whether the full recipe learns
 competent driving and how well short-profile runtime predicts a longer curve.
+
+R48 launch update: exact two-track/full-episode replay passed (two passes; 4,000
+additional development frames, four resets). The fixed `native_baseline_20261029_s0`
+campaign is now running on CUDA/eight subprocess environments; first target 0.5M,
+then fixed first-50-development evaluation. Early training updates are finite.
+This is launch evidence, not a completed native driving result. Runtime remains
+provisional; the source/selection budgets are frozen and technical failures stop
+the runner without an automatic hyperparameter retry.

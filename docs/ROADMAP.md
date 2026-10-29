@@ -1,6 +1,6 @@
 # Roadmap and decision gates
 
-**Current baseline gate:** the [native interface/profile](NATIVE_RECIPE_2026-10-29.md) is complete (106 tests). CUDA/eight subprocess environments is the selected execution setup; original failed verification attempts are retained. The [one-seed native baseline](NATIVE_BASELINE_2026-10-29.md) is declared next. Strong-baseline, independent-seed and matched-local-search gates remain open.
+**Current baseline gate:** The [native interface/profile](NATIVE_RECIPE_2026-10-29.md) and exact evaluator replay are complete. The [declared one-seed 4M native baseline](NATIVE_BASELINE_2026-10-29.md) is now running as `native_baseline_20261029_s0`, initially toward 0.5M decisions and the fixed first-50-development evaluation. Four checkpoints and the global schedule are frozen. Strong-baseline and independent-seed conclusions await data; a stronger matched-local proposer and its original simulation-search comparison remain subsequent work.
 
 Updated 2026-10-29. [Index](../README.md) · [User intent](USER_INTENT.md) ·
 [Status](STATUS.md) · [Proposed numerical settings](DESIGN_DECISIONS.md)
@@ -48,7 +48,7 @@ historical knot search 905.94/85%. Five replays and 100 tests passed. Keep the
 original search; no automatic larger sweep follows. The next priority is baseline
 competence, with [factory/budget](BASELINE_AUDIT.md) and [Valdi source](VALDI_AUDIT.md)
 audits now completed. Strong-baseline, independent-seed and trained V/L/F gates
-remain open; no experiment jobs remain active.
+remain open; no experiment jobs remain active from that completed batch.
 
 | Order | Deliverable | Evidence / gate |
 |---|---|---|

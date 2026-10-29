@@ -1,6 +1,6 @@
 # Implementation and evidence status
 
-**Newest implementation:** the [native recipe interface/profile](NATIVE_RECIPE_2026-10-29.md) is complete. Official pixel/reward parity, frame history, checkpoint/resume and CPU/GPU same-device reload checks pass; 106 tests pass. CUDA with eight subprocess environments is selected by execution cost (543 frames/s, about 2.05 projected training hours for 4M). Original cross-device verification failures and retry costs are retained. The [fixed-budget one-seed native campaign](NATIVE_BASELINE_2026-10-29.md) is prepared; launch follows full-episode evaluator replay. Native driving competence remains unestablished.
+**Running now:** the [one-seed native baseline](NATIVE_BASELINE_2026-10-29.md), campaign `native_baseline_20261029_s0`, is training on CUDA with eight subprocess environments. First target: 0.5M decisions, then its fixed 50-track development evaluation; overall schedule/cap: 4M, with four declared checkpoint evaluations. Early updates are finite. The [interface/profile](NATIVE_RECIPE_2026-10-29.md), all 106 tests and exact full-episode evaluator replay passed. No full-baseline driving result is available yet. Provisional ETA: 15–25 minutes to first checkpoint/evaluation and 2–3 hours for the campaign from launch; consult run status for live progress.
 
 Updated 2026-10-29. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
 [Roadmap](ROADMAP.md) · [Latest development results](SEQUENCE_SEARCH_2026-10-29.md)
@@ -58,7 +58,7 @@ iCEM adaptation: **634.13/15%**; historical knot search: **905.94/85%**. Primary
 paired return difference −250.72 [−359.57, −147.31], with −240.99 on additional18.
 Retain original knot search; neither new variant is promoted. All five replays and
 100 tests passed. Total including smoke: 40,972 native / 17,220,000 internal steps,
-zero new training. No jobs remain active. Baseline competence is the next priority;
+zero new training. No jobs remain active from that completed batch. Baseline competence is the next priority;
 the [factory audit](BASELINE_AUDIT.md) and [Valdi audit](VALDI_AUDIT.md) record the
 remaining budget and protocol gaps. These are development findings, not SOTA.
 
@@ -78,6 +78,7 @@ remaining budget and protocol gaps. These are development findings, not SOTA.
 | planning/intervention.py, visible_reference.py | Separate visible objective-reference and hidden-road substitutions; exact local negative control; actor input/memory isolation tests | Privileged fixed-controller geometry diagnostic; not trained V/L/F policies or a visual-perception finding |
 | planning/reference_extension.py | Privileged true-road tail appended to the unchanged visible reference; fixed 100 m/1 m extent and sampling | Reference-continuation diagnostic; utility/other planner limitations remain |
 | research/driver_training.py and driver_* | Configured PPO, deterministic pooling, reward normalization, post-update checkpoints, native-frame schedule, CPU/GPU profiles | Local adaptation; original 1M checkpoint retained; KL-stop and lower-LR repairs failed to improve it; convergence/competitive baseline not established |
+| env/native_recipe.py, research/native_* | Audited native resize64/grayscale/stack2/repeat1 CNN-LSTM; immutable train/checkpoint/evaluate path; CPU/GPU profiling and full-episode replay | One-seed 4M native campaign running; native competence not yet established; separate from local repeat-four search |
 | planning/policy_search.py | Frozen recurrent feedback proposals, smooth residuals, isolated imagined memory, coded simulation selection and random control | Search 7/21 gains on 200 development tracks for one frozen checkpoint; high cost, no multi-seed evidence |
 | planning/policy_rollouts.py, sequence_optimizer.py, policy_sequence_search.py | Shared feedback rollouts, matched colored shooting and two-batch policy-guided iCEM; owned first-state commits | Complete 20-track negative result; neither new variant promoted; adaptation, not original-protocol reproduction |
 | planning/occupancy.py, policy_controls.py | Equivalent sparse occupancy renderer and frozen-policy fixed offsets | Sampled exact renderer parity; three fitted offset controls do not establish all cheap alternatives are inferior |

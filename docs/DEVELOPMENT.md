@@ -8,6 +8,7 @@ from the older `--view native` RGB/previous-action dictionary adapter.
 
 ```bash
 uv run python scripts/profile_native_training.py --manifest configs/campaigns/native-profile-2026-10-29.json
+uv run python scripts/run_native_baseline.py --manifest configs/campaigns/native-baseline-2026-10-29.json
 uv run python -m cars.cli research train-native --help
 uv run python -m cars.cli research evaluate-native --help
 ```

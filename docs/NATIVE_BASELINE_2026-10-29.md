@@ -77,3 +77,12 @@ VecEnv reset. Cost: 4,000 development frames and four reset ticks, separate from
 the main campaign cap. The [verification artifact](../reports/native_profile_2026-10-29/evaluation_readiness.json)
 records exact compared fields and immutable artifact hashes. No training setting
 or checkpoint choice was changed from these smoke outcomes.
+
+### Launch record
+
+Observed running at `2026-10-29T11:06:08.023930+00:00`. Campaign: `runs/campaigns/native_baseline_20261029_s0`; runner PID 2720951. Training source/launch commit: `925a4be`. First stage:
+`runs/native_training/native_main_20261029_s0_to500k`; early optimizer updates are
+finite. The runner proceeds serially through the four declared training/evaluation
+stages unless a technical failure or disk floor stops it. This document records
+launch, not completion. Read `status.json` and the active training `learning.jsonl`
+for live progress; later status must not be inferred from this launch snapshot.

@@ -1,6 +1,6 @@
 # Next moves: establish useful simulation improvement over strong drivers
 
-**Native implementation update:** the [interface/profile](NATIVE_RECIPE_2026-10-29.md) is complete, including the documented cross-device verification correction. Select CUDA/eight subprocess environments by cost. The [next native campaign](NATIVE_BASELINE_2026-10-29.md) declares one seed, 4M aggregate decisions, 0.5/1/2/4M checkpoints and first-50 development selection. It precedes a separate stronger matched-local trial; it does not replace the original local simulator/search study.
+**Native implementation update:** The [native interface/profile](NATIVE_RECIPE_2026-10-29.md) and exact evaluator replay are complete. The [declared one-seed 4M native baseline](NATIVE_BASELINE_2026-10-29.md) is now running as `native_baseline_20261029_s0`, initially toward 0.5M decisions and the fixed first-50-development evaluation. Four checkpoints and the global schedule are frozen. Strong-baseline and independent-seed conclusions await data; a stronger matched-local proposer and its original simulation-search comparison remain subsequent work.
 
 Updated 2026-10-29. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
 [Architecture](SIMULATOR_SEARCH_PLAN.md) · [Evidence](PROGRAMMED_SIMULATOR_RESULTS.md)

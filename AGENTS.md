@@ -59,8 +59,14 @@ finite behavior search and a recurrent-PPO adapter. The new `models/physics.py`
 and `planning/physics_search.py` use upstream vehicle code in reconstructed worlds,
 with an explicit approximate contact/state estimator. `monitoring/` is a separate
 user-only sidecar. See the development report for measurements. Learned road
-distributions, scenario MPC, CEM, local visual reconstruction and modern world-model
-reproductions remain planned; do not describe them as implemented.
+distributions, scenario MPC, local visual reconstruction and modern world-model
+reproductions remain planned; do not describe them as implemented. The local
+`sequence_optimizer.py` / `policy_sequence_search.py` implementation adds matched
+colored shooting and a policy-guided iCEM adaptation; see
+`docs/SEQUENCE_SEARCH_2026-10-29.md` for validation and driving evidence. Never
+reuse a previous real root's costs or commit a last-batch state for an earlier
+winning rollout. `policy_rollouts.py` is the shared feedback rollout routine;
+legacy behavior remains subject to full-episode parity gates.
 
 `planning/global_search.py` is a separate privileged development diagnostic:
 full-map geometry, same estimated vehicle state. `planning/policy_search.py`

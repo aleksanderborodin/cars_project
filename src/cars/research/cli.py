@@ -31,7 +31,7 @@ def main(argv: list[str] | None = None) -> None:
     fitting.add_argument("--ridge", type=float, default=.01)
     fitting.add_argument("--run-id", required=True)
     evaluation = commands.add_parser("evaluate")
-    evaluation.add_argument("--method", choices=("local", "fixed", "search", "physics", "physics-global", "expert", "recurrent", "policy-search", "policy-random", "policy-bias", "policy-intervention"), required=True)
+    evaluation.add_argument("--method", choices=("local", "fixed", "search", "physics", "physics-global", "expert", "recurrent", "policy-search", "policy-random", "policy-bias", "policy-intervention", "policy-colored", "policy-icem"), required=True)
     evaluation.add_argument("--model", type=Path)
     evaluation.add_argument("--episodes", type=int, default=20)
     evaluation.add_argument("--horizon", type=int, default=20)
@@ -45,6 +45,8 @@ def main(argv: list[str] | None = None) -> None:
     evaluation.add_argument("--gas-sigma", type=float, default=.15)
     evaluation.add_argument("--brake-sigma", type=float, default=.15)
     evaluation.add_argument("--observation-renderer", choices=("reference", "sparse"), default="reference")
+    evaluation.add_argument("--optimizer-noise-beta", type=float, default=1., help="full-sequence colored residual methods only")
+    evaluation.add_argument("--residual-bound-sigma", type=float, default=3., help="full-sequence residual clipping; actual action bounds unchanged")
     evaluation.add_argument("--action-bias", type=float, nargs=3)
     evaluation.add_argument("--reference", choices=("reconstructed", "oracle_visible", "oracle_continued"), default="reconstructed",
                             help="privileged module diagnostic only: objective reference")
@@ -122,7 +124,7 @@ def main(argv: list[str] | None = None) -> None:
                 if args.action_bias is None:
                     parser.error("policy-bias requires --action-bias STEER GAS BRAKE")
                 driver = FixedPolicyBias(args.model, tuple(args.action_bias))
-            elif args.method in ("policy-search", "policy-random", "policy-intervention"):
+            elif args.method in ("policy-search", "policy-random", "policy-intervention", "policy-colored", "policy-icem"):
                 from cars.planning.policy_search import PolicyPhysicsSearch, PolicySearchConfig, RandomPolicyVariation
                 search = PolicySearchConfig(candidates=args.candidates,
                     horizon=args.horizon, planning_seed=args.planning_seed, steer_sigma=args.steer_sigma,
@@ -136,6 +138,14 @@ def main(argv: list[str] | None = None) -> None:
                     protocol = replace(protocol, view="global")
                     driver = PolicyGeometryIntervention(args.model, protocol, search,
                         InterventionConfig(reference=args.reference, continuation=args.continuation))
+                elif args.method in ("policy-colored", "policy-icem"):
+                    from cars.planning.policy_sequence_search import PolicySequenceSearch
+                    from cars.planning.sequence_optimizer import SequenceOptimizerConfig
+                    optimizer = SequenceOptimizerConfig(mode="shooting" if args.method == "policy-colored" else "icem",
+                        noise_beta=args.optimizer_noise_beta, residual_bound_sigma=args.residual_bound_sigma)
+                    if search.candidates != optimizer.evaluations:
+                        parser.error(f"Sequence search requires --candidates {optimizer.evaluations} for its fixed batch budget")
+                    driver = PolicySequenceSearch(args.model, protocol, search, optimizer)
                 else:
                     driver_class = PolicyPhysicsSearch if args.method == "policy-search" else RandomPolicyVariation
                     driver = driver_class(args.model, protocol, search)

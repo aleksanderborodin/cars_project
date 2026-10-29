@@ -29,6 +29,10 @@ With both conditions frozen, the reference change gained +286.25 mean return
 versus tangent but remained −71.86 below historical local search. Original-five
 and additional-fifteen panels are separate; this is a diagnostic, not a promoted
 local method or a component-adequacy/SOTA claim.
+The next [sequence-search comparison](SEQUENCE_SEARCH_2026-10-29.md) implements
+representation- and budget-matched colored shooting versus a policy-guided iCEM
+adaptation under the original local protocol. It has staged technical gates and
+does not replace the programmed simulator or activate privileged policy training.
 [RESEARCH_PLAN.md](RESEARCH_PLAN.md) details the geometry branch;
 [PREDICTION_SELECTION.md](PREDICTION_SELECTION.md) reviews optional predictor
 spaces and downstream model selection. Proposed numerical defaults,

@@ -40,6 +40,11 @@ to the audited equal-work optimizer comparison and baseline competence gates.
 No automatic 200-track expansion, targeted failure tuning or global training.
 The visible prefix, physics and all other planner settings stayed fixed.
 
+The [sequence-search adaptation](SEQUENCE_SEARCH_2026-10-29.md) is now implemented
+with matched colored shooting and synthetic isolation/work tests. Driving evidence
+awaits the frozen replay/smoke and main comparison; this does not complete the
+strong-baseline or independent-seed gates.
+
 | Order | Deliverable | Evidence / gate |
 |---|---|---|
 | A1 | Declared global/local/native information interfaces | Agent receives only permitted inputs; no hidden-state or seed leakage |

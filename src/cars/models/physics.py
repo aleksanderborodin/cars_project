@@ -123,4 +123,10 @@ class PhysicsDynamics:
 
     def commit(self, selected: int) -> None:
         assert self.first_estimates is not None
-        self.estimate = self.first_estimates[selected].copy()
+        self.commit_estimate(self.first_estimates[selected])
+
+    def commit_estimate(self, estimate: np.ndarray) -> None:
+        """Commit an owned first-transition estimate, possibly from an earlier batch."""
+        if estimate.shape != (4, 4) or not np.isfinite(estimate).all():
+            raise ValueError("Finite four-wheel observation-based estimate required")
+        self.estimate = estimate.copy()

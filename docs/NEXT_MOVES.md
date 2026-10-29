@@ -40,6 +40,11 @@ synthetic isolation/budget tests and a new smoke/campaign declaration. Baseline
 competence and trained V/L/F work remain required. No new optimizer/global-training
 runs are launched, and these oracle interventions are not performance ceilings.
 
+**Execution update:** the [resolved sequence-search comparison](SEQUENCE_SEARCH_2026-10-29.md)
+is implemented and under validation. Both primary arms use the same full-sequence
+residual space, noise convention, bounds and 13+8 batches. A historical episode
+replay and two-track smoke runs gate the fixed 20-track comparison; no scores exist yet.
+
 ## Objective and present evidence
 
 The core question is whether simulation-based selection improves an already

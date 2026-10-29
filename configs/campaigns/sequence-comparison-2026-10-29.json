@@ -1,0 +1,644 @@
+{
+  "date": "2026-10-29",
+  "partition": "development",
+  "held_out_evaluation": false,
+  "private_oracle_access": false,
+  "training_frames": 0,
+  "partition_sha256": "f89bb2c62cc5e4b021c66597aa05751970514d17731a927fe17f4d5badfe0095",
+  "checkpoint": "runs/driver_training/driver_main_20261028_s0_to2m/checkpoints/frames_001007379",
+  "checkpoint_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741",
+  "vehicle_source_sha256": "df9d65d4d32a9d0189ca6672431b67cad84b195ef22c3908affc627bd29c4e56",
+  "versions": {
+    "gymnasium": "1.4.0",
+    "Box2D": "2.3.10",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "torch": "2.14.1",
+    "stable-baselines3": "2.9.2",
+    "sb3-contrib": "2.9.2"
+  },
+  "protocol": {
+    "view": "local",
+    "radius": 30.0,
+    "resolution": 1.0,
+    "action_repeat": 4,
+    "version": 1
+  },
+  "search": {
+    "candidates": 21,
+    "horizon": 20,
+    "planning_seed": 0,
+    "steer_sigma": 0.1,
+    "gas_sigma": 0.15,
+    "brake_sigma": 0.15,
+    "departure_cost": 8.0,
+    "centre_cost": 0.04,
+    "unknown_cost": 0.2,
+    "half_width_prior": 6.67,
+    "observation_renderer": "sparse"
+  },
+  "optimizers": {
+    "colored": {
+      "mode": "shooting",
+      "batches": [
+        12,
+        8
+      ],
+      "noise_beta": 1.0,
+      "residual_bound_sigma": 3.0,
+      "elites": 4,
+      "smoothing": 0.1,
+      "reuse_fraction": 0.3,
+      "version": 1,
+      "evaluations": 21,
+      "noise": "gaussian_dft; cutoff_1/H; unit_marginal_variance_including_DC",
+      "bounds": "residuals clipped at +/- bound_sigma * original channel sigma; final actions clipped separately",
+      "mean_tail": "hold_last_fitted_mean",
+      "shifted_elite_tail": "fresh_colored_sequence_last_step; separate_rng_stream",
+      "standard_deviation": "reset_original_scales_each_real_decision; no_floor",
+      "selection": "best_evaluated_across_all_batches; earliest_index_breaks_ties",
+      "distribution_fit": "4_elites; new_batch_plus_best_cached_prior; base_eligible_in_first_fit",
+      "adaptation": "feedback_policy_residuals; two_fixed_batches; within_budget_shift_and_mean_slots; global_incumbent"
+    },
+    "icem": {
+      "mode": "icem",
+      "batches": [
+        12,
+        8
+      ],
+      "noise_beta": 1.0,
+      "residual_bound_sigma": 3.0,
+      "elites": 4,
+      "smoothing": 0.1,
+      "reuse_fraction": 0.3,
+      "version": 1,
+      "evaluations": 21,
+      "noise": "gaussian_dft; cutoff_1/H; unit_marginal_variance_including_DC",
+      "bounds": "residuals clipped at +/- bound_sigma * original channel sigma; final actions clipped separately",
+      "mean_tail": "hold_last_fitted_mean",
+      "shifted_elite_tail": "fresh_colored_sequence_last_step; separate_rng_stream",
+      "standard_deviation": "reset_original_scales_each_real_decision; no_floor",
+      "selection": "best_evaluated_across_all_batches; earliest_index_breaks_ties",
+      "distribution_fit": "4_elites; new_batch_plus_best_cached_prior; base_eligible_in_first_fit",
+      "adaptation": "feedback_policy_residuals; two_fixed_batches; within_budget_shift_and_mean_slots; global_incumbent"
+    }
+  },
+  "source_sha256": {
+    "pyproject.toml": "ec68c9fb0b529c430e437b7e4ca2ffe554687b22ca9aff48db4505dc7d13ca87",
+    "src/cars/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/cars/cli.py": "1d47c2f0e87dc476d2137145043789af94159f55c6a2655ceb99280f55653515",
+    "src/cars/env/__init__.py": "a0bd5973f4d5bc6e962cd4dcc1de24a582f118b5cd0c558983bd65404de84737",
+    "src/cars/env/carracing.py": "4495b00bc0eec5e7efcdac4f595d4dfeb41e833d8a62cbf6f6e1eea60de9325c",
+    "src/cars/env/make.py": "80d2830ca7cad3ce40f407b7cfa4e168232ca431067afbe8a473806cb664c589",
+    "src/cars/env/metrics.py": "e7b69bb03dada359e3b4c8c9f4a1ee474a6378bed1f883e77dd0740950d011d3",
+    "src/cars/env/partitions.py": "7d1dbd8cb2ab59bb320f5bdd9180292dbaebf06b5739c01e48a9bc3b738bed50",
+    "src/cars/env/protocol.py": "3c0e0a5e992d4fe3aeb1f62b73847d5f48f37fff6bd74dfbf06a34acf549b81c",
+    "src/cars/env/splits.py": "c897a697e67705fbe1717087b379e34cdd1112211162c5b636cff48cdc7febf8",
+    "src/cars/env/state.py": "15cee0801c7f39ad335ce92783f7cacdee2c7c9242336318c40d6747e8161447",
+    "src/cars/eval/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/cars/eval/episode_log.py": "0766d8adad2d31b06b898d0f35f900b39abd027148d1d8c1a48ca0e78d659214",
+    "src/cars/eval/paired.py": "319c04004b9d07260cb70597d323556ec1d235cc685396850ca803de0f3fb314",
+    "src/cars/eval/report.py": "0d8d45fc3a96ebdf5ede65d7c10e9833b063c813f45142b681a56829f95ab308",
+    "src/cars/eval/runner.py": "aa047cca59988d57dc349b2f4d4348d4cedd297a2d77392676e655af66240082",
+    "src/cars/il/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/cars/il/bc.py": "ed0567ff451a62eaabc52d4b5f1464f562f1a067836402c80c2ba8a9746ccf89",
+    "src/cars/il/dagger.py": "2f0ba1f118da493fd627f8d89f4a15be06dfd4b8d6e8503d808b4d44f8e6fbaa",
+    "src/cars/il/data.py": "0a95ca9c7742e14cfdaa923908f1161a9f675776d2e025f5d79585e6751c7cf9",
+    "src/cars/models/__init__.py": "0dc1d7a41d4f95e48c447fde9102802f9c65e24e60973e2603582f8a0c4c627a",
+    "src/cars/models/dynamics.py": "e9301bff433f1fc5f149ecc976e0cb98f6d2cf7dcbfb21a1de4e2e74c766e077",
+    "src/cars/models/physics.py": "384f8db2729915681cd83ecc38f5d51c84185e3df265d8b6358eb9027f05df0b",
+    "src/cars/monitoring/__init__.py": "47df79f279b968fda79d8feda44605972a92390fe861e18465253ebc7ae30517",
+    "src/cars/monitoring/bridge.py": "9125c9b4937a121f6eb686e313eeba290805779ad95f61ab9b0863ff3f990fd8",
+    "src/cars/monitoring/oracle.py": "5d4542f1f97fd85349c22f00b07c936b7bc4b959559cfa325db1c73ffa6e2650",
+    "src/cars/planning/__init__.py": "618bfd1a0570a9bc2e7437a294a9965cd8456ac0e9f7ca0dd012c218b6dea9bb",
+    "src/cars/planning/global_search.py": "dfead287b62c65bb19d394830f0e544bb0a514af49a4bb4dd2727f12474bc89a",
+    "src/cars/planning/intervention.py": "d7d07bcf52c9f441b99145706921a71cf28bb9a56476016058edbba747ae8954",
+    "src/cars/planning/local.py": "2aa5ed81452198713b79757e64fae03cb66eea725444e78cc878f8aa9c56176d",
+    "src/cars/planning/occupancy.py": "154d7f5c5a69da60ffce7a223c0b225d5acf4344fb3ab0a1927877ef3d902f9f",
+    "src/cars/planning/physics_search.py": "e66d8ce92599e0dda1ac01b67a46d44a13615b12e8c2b97345bbc25ff1fc8f2f",
+    "src/cars/planning/policy_controls.py": "14684d0e30a6e8b105c234074b0b7d4322f988be979ab9b34a605419cba14130",
+    "src/cars/planning/policy_rollouts.py": "8dfbfc60e8c74f62dafb2e8e607712003fc958f5b7ffe0180c74c881a170025d",
+    "src/cars/planning/policy_search.py": "47097a0ce327728d15cdaa4c7f0e36ecb9b633b190647b109c3bb13576795e67",
+    "src/cars/planning/policy_sequence_search.py": "6a67d4fd5ea5daac70d52fc1c3cd5b3e5f87f37b3dd194ee48f01560a9b2d710",
+    "src/cars/planning/reference_extension.py": "f368293193bcf175d37576809fdddc8a6be9acf569b47b1c134bd013d83243e6",
+    "src/cars/planning/search.py": "ca91f182cb5a280db9058323e236d92b428464158e3918a6ef50fadcc77d6509",
+    "src/cars/planning/sequence_optimizer.py": "49c4cbf0568803a58bd5bdfe6516512b3e0f7ae2319edb9b1cc907b751883b9b",
+    "src/cars/planning/visible_reference.py": "38e6d8f671741e8ba536bf02de6722de10029e7bd1a9e69ab8705f1d8bfbb919",
+    "src/cars/planning/world.py": "19c660841358f6203b9f1379b0e3c34d0b5e8ef2e7b3c5c21a63569ee1a0c28a",
+    "src/cars/policies/__init__.py": "7969a425c859d7986a67fed00ca0fe21dc9d6397d7ee3b7fffe5eb59066ae78b",
+    "src/cars/policies/base.py": "714a6a14352155c0a7d70c2ac589f148e20c8e6a32ed399c23bf6172b8561cd3",
+    "src/cars/policies/baseline.py": "22bbeeeeeb959ece1463100445ba05072d84f22884ef9d201304f5326ff90f1c",
+    "src/cars/policies/sb3.py": "437a8e922d1f0fc3fa88935e333649b214fe270569b85a6f8b2a2c96df4f1d5d",
+    "src/cars/policies/torch_mlp.py": "1e638dbeaadf470aa547082af577d1ce3c0da755cb963be109a223896afc46d1",
+    "src/cars/research/__init__.py": "3f8f2a9dc600f87fb123c76a1dadb554dc6c7619b912e08e5254a66664d72429",
+    "src/cars/research/artifacts.py": "37506a22cfb64f08c9a6343388165f20a55669c35ed58f72b14d53aa795f3581",
+    "src/cars/research/cli.py": "29b8aab61dedc9bbdcd540cdfb55678dc24d33e4d505dfef8c622658ffa98225",
+    "src/cars/research/data.py": "31f210d8fac0285c5ae19fdc9b1ad1eecf368adb26853d969ee74635aacaaa7e",
+    "src/cars/research/driver_checkpoint.py": "e5f6b38857234bf50a6d549fd5cd334c7a92e7fbe843c2c52eff3058f1e1d561",
+    "src/cars/research/driver_config.py": "3c069a8af2d758f9099fb9e4deb71de0a806138f27878cd6b4fe3c09f71dd959",
+    "src/cars/research/driver_encoder.py": "bb56a44c0e1d467d598a839e6c618de3f4f5dd9299c15887d6b517a448fdfbb9",
+    "src/cars/research/driver_training.py": "1e7ad02b409d69cd9e75fffcb3b018c6b8237eaec4031d9c10bb6d3dccd50d23",
+    "src/cars/research/evaluation.py": "8b2fb1395309acc2647a59d920393ea2e1aa7aee01a03c17b9d6e1c2763aa204",
+    "src/cars/research/failures.py": "8688daa911a18525c62b0a3339df5b0b10ac67cb54b6327756dbe6c14e40bd35",
+    "src/cars/research/frozen_code.py": "64a1042bf145cc29e326828e433307fdb27ee48393a2895eb574a15a34d0e8b7",
+    "src/cars/research/recurrent.py": "50bc115cae12d82558fbc432047f6df5e2d32172d21879de1623256a5929cbee",
+    "src/cars/rl/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/cars/rl/interface.py": "449ff33147cd3e7e7f7248a8061f369466d33c112bb89f4fd12119f9fbdf77ad",
+    "src/cars/rl/train.py": "174795d6ef03e7433911f1154214b7a4070715f429cd72bd02809c3067a97915",
+    "src/cars/training.py": "0931b232ab3a40a17ea4406bc120e70c107989d562b9f199a5dc46bc1bc9518b",
+    "uv.lock": "1883c6b19e5fa96474dd8539865121633b20533bde9785ac59d8b5ea8ff96a51"
+  },
+  "historical_context": {
+    "knots": "runs/policy_physics_search/broad_driver_20261028_search21",
+    "direct": "runs/recurrent_ppo/broad_driver_20261028_direct"
+  },
+  "bootstrap": {
+    "reps": 5000,
+    "seed": 0
+  },
+  "contrasts": [
+    {
+      "candidate": "icem",
+      "reference": "colored",
+      "role": "primary_matched_optimizer"
+    },
+    {
+      "candidate": "colored",
+      "reference": "knots",
+      "role": "representation_and_batching_context"
+    },
+    {
+      "candidate": "icem",
+      "reference": "knots",
+      "role": "representation_and_optimizer_context"
+    },
+    {
+      "candidate": "colored",
+      "reference": "direct",
+      "role": "frozen_actor_augmentation"
+    },
+    {
+      "candidate": "icem",
+      "reference": "direct",
+      "role": "frozen_actor_augmentation"
+    }
+  ],
+  "origin": {
+    "user": "continue the experiments and document decisions/findings without routine permission stops",
+    "prior_work": "iCEM; official pinned source audit; not an original-task reproduction",
+    "assistant": "residual-space and small-budget adaptation; matched colored shooting and batching; bounded staged evaluation"
+  },
+  "execution": "serial, frozen source, one CPU thread, no competing project training/racing; no outcome-dependent main launch",
+  "analysis": "All planned tracks retained; smoke2 descriptive; main all20/additional18 nominal paired-track intervals, one frozen actor/planning stream, no selection adjustment or final-test/SOTA claim",
+  "required_artifacts": [
+    {
+      "path": "scripts/run_sequence_search.py",
+      "sha256": "8942abb9d5902bf52feb3bcd69c572d88e7d6361c41f508dc3593d73fc883945"
+    },
+    {
+      "path": "scripts/summarize_sequence_search.py",
+      "sha256": "0b8fa9c67272c5fd82c22c23f710bdb65a53683fbc2ea754d24f34ceab002aab"
+    },
+    {
+      "path": "scripts/sequence_campaign_common.py",
+      "sha256": "4642ec8373a8065024634bd8d764fdbcaed3d72187753c3aa7617c974ab01bf7"
+    },
+    {
+      "path": "runs/driver_training/driver_main_20261028_s0_to2m/checkpoints/frames_001007379/model.zip",
+      "sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741"
+    },
+    {
+      "path": "runs/driver_training/driver_main_20261028_s0_to2m/checkpoints/frames_001007379/config.json",
+      "sha256": "f109577d594a42ffbc9b100d975cc6a563bdca9b11ff32fb804e419b894d0bba"
+    },
+    {
+      "path": "reports/references/icem_source_audit_2026-10-28.json",
+      "sha256": "fc756dd808348efda584ecc329111f2ec426e329f6bd452f56862e66b3d7244e"
+    },
+    {
+      "path": "third_party/icem/LICENSE",
+      "sha256": "56ff5e2640960db9ebd89e3b202b612a3949f657e68be672e168a1e0aa7c1d80"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/config.json",
+      "sha256": "96c31dd67dfaa0d1785bb3b11452151eef3d2d3ce05627fd8dd3b3d35625f050"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/metrics.csv",
+      "sha256": "e5e81c1ec0c897bacc5a4e85d5fa9f09b8496effb2118cdac40a9b447ea5f828"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/cost.json",
+      "sha256": "7a8eb6fb4c19fe6d4be49cce8461ba7d8daf269e15ae8deda3137cfafcb688b5"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0000.npz",
+      "sha256": "6aacc9ab8efd576deba5f294ba5d09b039088e4ee06413a7e0b2df84dfdc6702"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0000_diagnostics.json",
+      "sha256": "98e9ab476f303a3e6e3063f3efdbc764189713d48d49473c6ae94c674b7d3be7"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0001.npz",
+      "sha256": "3922d36e03f3f69fe6a791acb402640411bcf6d6405e3c8ca1f07315d0609f96"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0001_diagnostics.json",
+      "sha256": "6b2aac402c2dea6098517db51156f3c2095338a806cc73d007fd51b557b003d0"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0002.npz",
+      "sha256": "cb17dba2366cbf08528feb0422f7f0099a625d0de5cccd470fdaeae96f36aa70"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0002_diagnostics.json",
+      "sha256": "6b3513f67d1506c2d3e32759faa8848669540eccebacb693e74104e47e88c124"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0003.npz",
+      "sha256": "1929566b83b32edc6bccbbdc877820930bb054c2a5fdcd3896f7cc02545db798"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0003_diagnostics.json",
+      "sha256": "54dc4714805d4f1d91d78bf5b07682274fd8746f458d33e6f38f7f446d5be96b"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0004.npz",
+      "sha256": "b7f8c27020618cc306ba0da9c3c02c681ca487d7f6b2d208a0b281ff2a7a94b8"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0004_diagnostics.json",
+      "sha256": "100f5eb9c155247dfc776e3275ab2a6411ee8d07d1ad2152738fdca55abc90ae"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0005.npz",
+      "sha256": "cc694bddc111bd2ac901ca4dd832a7bea1aa5be95c18049315a0bfa8d36bdbec"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0005_diagnostics.json",
+      "sha256": "eebb2fa0f59bdfd80ed5fb39091f0dfa486d0949e39f63456340bb420fb3e434"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0006.npz",
+      "sha256": "4c950380aca46b2b765e33c635be6fd5a3040a8b124f77133d7f8bb8954ec2c3"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0006_diagnostics.json",
+      "sha256": "c6d5b667e4ec36dbee43a7ff9c618c3ef92a4a575b0ebda47846084278084600"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0007.npz",
+      "sha256": "38ecb3dd3a7aaad3d0de0a9d89e9ac48fca4e4c876c533814f1e346541277f29"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0007_diagnostics.json",
+      "sha256": "2cd56c7dfa9da98ab9c0ea7e75b2d9fdf5d3d55f30b617f883a63e0463cb7759"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0008.npz",
+      "sha256": "d90d6c1d8323bcc5caca4fe386ddd7489b44355724bdcbef823aa18ae1b43bd0"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0008_diagnostics.json",
+      "sha256": "1e202329ce35189a9e12aaaeeb2aaccd037900234c16e15d92c0226f1383f45d"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0009.npz",
+      "sha256": "0e9bb912f28488e7498eebe062eb4de691a0327958b3391b12cdb3a022b95cc1"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0009_diagnostics.json",
+      "sha256": "d30507f93e2393bf145dec6dd8f9aa23ae013a55e931879ec6288f0f0da7a4ea"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0010.npz",
+      "sha256": "a4a9b41a43ee9153ed9f00bf9605b2894a24701679b1d6c11874c21680e591af"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0010_diagnostics.json",
+      "sha256": "070ae82eedcb10d0bea88e1e0377a687502ad3be9a024daef6d2a4d46aadcc50"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0011.npz",
+      "sha256": "4009cf8a15b3353051bac79c7b3011af8225a1bef363aaedf28908d3da2f0f31"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0011_diagnostics.json",
+      "sha256": "d98b617aaef3ff4cab7bcefdfceaec14bb9d7d148f6d8a3b75d162e0359421f2"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0012.npz",
+      "sha256": "dcd9e1f97dc2f8d0f500dff848d31f787b423bf5089518fc07d7f3e28cec9e69"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0012_diagnostics.json",
+      "sha256": "779516c708c9a2db8b328fbd57bb19b8f6f36072b273153ccda2b565fefbe61b"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0013.npz",
+      "sha256": "b403c12fd9ef8c6ef7b101314e27efac6e8563017ddf00adc77660c55f4905e5"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0013_diagnostics.json",
+      "sha256": "7fc6f4d9609acc943784f42781dfb9c2790f6a601b81b1eb65a46e6c802ad1e0"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0014.npz",
+      "sha256": "9b7aa0d1a49f9f333f446c3a06234b1745634975a8a3c1972ba4eaceaadae608"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0014_diagnostics.json",
+      "sha256": "32eb9940061515ea4d144348d43f83fe8ea3384b0daab6b845c09bdc568341b4"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0015.npz",
+      "sha256": "796e804b6c03adc61856e1315f5510743d7c982d39ced4681dc2d465b10fb642"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0015_diagnostics.json",
+      "sha256": "004a2e287a9c3216372bdf3da495fcdf9f21711af909e0299ae372274e590685"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0016.npz",
+      "sha256": "b45e870e56441d5e9f6cbc3f381df6049f3899190d31a68d78c1c89a67e8b8fa"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0016_diagnostics.json",
+      "sha256": "732a7838e8a2015bdd7298cbec4e2bbb7fe02a28ea8bfc81473c03bc3b6d9da3"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0017.npz",
+      "sha256": "cb2ff45789bf10da33757d575121e053f317acecd9ec7cbf644cf943d1d095dd"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0017_diagnostics.json",
+      "sha256": "0886d71ca4a13a27f84ce199529c14da7f19cd83c8746563b62279d6d3c5cd1b"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0018.npz",
+      "sha256": "d077f1b0e21ae6983e055a70862cc15a1f878c3be57025f48ed6c5dbe12df22b"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0018_diagnostics.json",
+      "sha256": "4f8bb47adb687c4902296d3ea6ad22768d28c600c6ef1a99744dbd8523a0623f"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0019.npz",
+      "sha256": "524f58190d1d608e18869fddb826d642a250e291d4f86350cc171f5c555a9a17"
+    },
+    {
+      "path": "runs/policy_physics_search/broad_driver_20261028_search21/episodes/0019_diagnostics.json",
+      "sha256": "3405d97b6b4563348d72477d29babb04dd7acb0023153c4680189132e9f25ad9"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/config.json",
+      "sha256": "7c37bd8e4f4e4c9df6905a3d6ec30ddc83a21c8e34669eff1aed1349d4f26ec7"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/metrics.csv",
+      "sha256": "d6f225d389e8a36b21782e557359c58136d26367c1f0a3596a8d8959df8b27a6"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/cost.json",
+      "sha256": "1a3bfa121916b683ea6d83f75caee8c32be69dd4a4689b02b527dd73f04ea5ef"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0000.npz",
+      "sha256": "5fc9e267ce28d5a7e2ad21a80190ac3bc7a4c025a829ecf01b8aafc5de140e37"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0000_diagnostics.json",
+      "sha256": "0f49bb59e1ee2951b7f63757724f84dda525e856e4c8af9944edffe7770bbeb0"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0001.npz",
+      "sha256": "157f2393dfd357cfd0ac01d20a017884c49a19d1f764a3de31b9a82e4b20fa0d"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0001_diagnostics.json",
+      "sha256": "26d26f26a32faf8ac23154b3aeeccabafa9ba3179625cb0805aae754ebb52508"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0002.npz",
+      "sha256": "12f3b581789a13a2755218312ce904ed5218e39d425e16b75fec15debadce7e8"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0002_diagnostics.json",
+      "sha256": "4fe9ef6575eb4900b84e90572594fe79cd7654d8e2cb494318444bb1b955b4f0"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0003.npz",
+      "sha256": "94f55329e7cd5ccbed611b9946a264fe1096117d7521710cc953b646f9278c4d"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0003_diagnostics.json",
+      "sha256": "26d26f26a32faf8ac23154b3aeeccabafa9ba3179625cb0805aae754ebb52508"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0004.npz",
+      "sha256": "7f72c40ab3fe09012dcaa1af48a83d6653cbe9178fd9b15caf9f69c543d35835"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0004_diagnostics.json",
+      "sha256": "e840928163396f3a5022b3405edbeb7062a087c3b5542c541fd7172508b03ad9"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0005.npz",
+      "sha256": "bb771a5e228a21093d34d9814da4441d520b8414472b85ecff9ab66474b53df6"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0005_diagnostics.json",
+      "sha256": "6adb115063315d91af98452b1954d10329c475cbca16d7e2e59a5ebce7219d4f"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0006.npz",
+      "sha256": "7bbd12a648708518efe638e184cb4e4fa399fbe4b500317fc369e41b161066cb"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0006_diagnostics.json",
+      "sha256": "26d26f26a32faf8ac23154b3aeeccabafa9ba3179625cb0805aae754ebb52508"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0007.npz",
+      "sha256": "5eb44b53de1c475ecc0cdb9a050b6138801dea052d06452e7c2e23064680d7a0"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0007_diagnostics.json",
+      "sha256": "26d26f26a32faf8ac23154b3aeeccabafa9ba3179625cb0805aae754ebb52508"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0008.npz",
+      "sha256": "b2db32106b09c803295bcc12c18958bcb01606c1c413e18c459aa7f0f7b30387"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0008_diagnostics.json",
+      "sha256": "26d26f26a32faf8ac23154b3aeeccabafa9ba3179625cb0805aae754ebb52508"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0009.npz",
+      "sha256": "edb8203fa90f831a1c4109049ef0f4beae5801c0d2cef9c52ae810a0c8239ddf"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0009_diagnostics.json",
+      "sha256": "d67f2534a8de1f9d20c15b01fc3473fed3f25052475abbd8d4537c33ec485e12"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0010.npz",
+      "sha256": "4dc6fbc15e42bc2ee7d48258840e3c4f82986edaa456af912327f886dfac3495"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0010_diagnostics.json",
+      "sha256": "26d26f26a32faf8ac23154b3aeeccabafa9ba3179625cb0805aae754ebb52508"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0011.npz",
+      "sha256": "6d426a33dbd66e60564ba6f287f9adf96e1b161ed18a6cc871cd78286efd3d2a"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0011_diagnostics.json",
+      "sha256": "26d26f26a32faf8ac23154b3aeeccabafa9ba3179625cb0805aae754ebb52508"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0012.npz",
+      "sha256": "5b0b2024a303b22e3e35dda589cd4de51b72019ca053a9f47aa27e0ea5f689ee"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0012_diagnostics.json",
+      "sha256": "26d26f26a32faf8ac23154b3aeeccabafa9ba3179625cb0805aae754ebb52508"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0013.npz",
+      "sha256": "02bd03684284760219055003e3c313bb5c4f1798928cadfa6ca7fe8c0b703b56"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0013_diagnostics.json",
+      "sha256": "26d26f26a32faf8ac23154b3aeeccabafa9ba3179625cb0805aae754ebb52508"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0014.npz",
+      "sha256": "4503e839e7c87f4cefdb756bb0c53ac526e10e641e163adca66d2b876cb8ee3f"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0014_diagnostics.json",
+      "sha256": "26d26f26a32faf8ac23154b3aeeccabafa9ba3179625cb0805aae754ebb52508"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0015.npz",
+      "sha256": "36ec9246135bc110077cd10b56f51785663728febefac390ce1603ca0ae0428f"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0015_diagnostics.json",
+      "sha256": "26d26f26a32faf8ac23154b3aeeccabafa9ba3179625cb0805aae754ebb52508"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0016.npz",
+      "sha256": "22bdecc1c75279c1e62950bd0c02fd4511e8b480a78f96b5b45ed36e4c47bb37"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0016_diagnostics.json",
+      "sha256": "2a6d22bd7ba13cc52a432c0dbad8cbfcd0f4f33d3c0c208150b9b59a442a7c6f"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0017.npz",
+      "sha256": "20e6223b11f257f5b286e79484a0f78b5b483dd16162d14404b7d4279ee6cde1"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0017_diagnostics.json",
+      "sha256": "d21d773d8bd87f3f64df5f976a82b3d808fc3c6c29976f4a74f5d4345bc1a491"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0018.npz",
+      "sha256": "33f9d65a496b01d9025dfa42e3f41acf5527733ba23baa09fd6edd6e9f3220a6"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0018_diagnostics.json",
+      "sha256": "26d26f26a32faf8ac23154b3aeeccabafa9ba3179625cb0805aae754ebb52508"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0019.npz",
+      "sha256": "17ebb4153a0a0010368691889c58565e2a08b1b9173b2cf66d3bbe93206c5024"
+    },
+    {
+      "path": "runs/recurrent_ppo/broad_driver_20261028_direct/episodes/0019_diagnostics.json",
+      "sha256": "ee7cae69d1364771382ee8a1b59d93076704b7f707c047b58694689cc0cc41a7"
+    }
+  ],
+  "id": "sequence_comparison_20261029",
+  "stage": "comparison",
+  "seeds": [
+    2745465782366,
+    2804618303437,
+    3013609786798,
+    2949297771346,
+    3238690504061,
+    2925330046374,
+    2228190749608,
+    2676712254155,
+    3110829604243,
+    2224118761382,
+    2334294035465,
+    3200840020234,
+    2994499821101,
+    3292437544173,
+    2992727184831,
+    2644056293336,
+    2367081842550,
+    2464511294378,
+    3018298248787,
+    2873505731629
+  ],
+  "native_frame_cap": 40000,
+  "internal_physics_frame_cap": 16800000,
+  "analysis_panels": [
+    {
+      "name": "all20",
+      "episode_slice": [
+        0,
+        20
+      ],
+      "intervals": true
+    },
+    {
+      "name": "smoke2",
+      "episode_slice": [
+        0,
+        2
+      ],
+      "intervals": false
+    },
+    {
+      "name": "additional18",
+      "episode_slice": [
+        2,
+        20
+      ],
+      "intervals": true
+    }
+  ],
+  "report_directory": "reports/sequence_comparison_2026-10-29",
+  "prerequisite_campaign": "runs/campaigns/sequence_smoke_20261029",
+  "prerequisite_manifest_sha256": "def709dfbdca894fe131763d229269b815a1268dcac59bf576c56a20fd4549fb",
+  "conditions": [
+    {
+      "name": "colored",
+      "mode": "colored",
+      "method": "policy-colored",
+      "directory": "policy_colored_shooting",
+      "run_id": "sequence_comparison_20261029_colored",
+      "episodes": 20,
+      "replay_episodes": 2,
+      "replay_reference": "runs/policy_colored_shooting/sequence_smoke_20261029_colored"
+    },
+    {
+      "name": "icem",
+      "mode": "icem",
+      "method": "policy-icem",
+      "directory": "policy_icem",
+      "run_id": "sequence_comparison_20261029_icem",
+      "episodes": 20,
+      "replay_episodes": 2,
+      "replay_reference": "runs/policy_icem/sequence_smoke_20261029_icem"
+    }
+  ]
+}

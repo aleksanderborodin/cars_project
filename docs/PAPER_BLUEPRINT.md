@@ -267,7 +267,7 @@ recommendations or engineering choices, not retrospectively user requirements.
 | A03 | Use positive/negative controls, equivalence margins and interaction contrasts | Proposed decomposition-validation plan |
 | A04 | Distill search improvements into a direct controller; compare a learned scorer if needed | Proposed stronger explanatory control; related methods have prior art |
 | A05 | Keep cheap fixed corrections and random variation controls | Implemented; broad fixed correction complete, random variation initially measured on 20 tracks |
-| A06 | Compare iCEM adaptation at equal total simulated work and separately equal latency | Source audited; [optimizer design](SEARCH_OPTIMIZER_AUDIT.md), implementation pending |
+| A06 | Compare iCEM adaptation at equal total simulated work and separately equal latency | Source audited; [resolved local adaptation and matched shooting](SEQUENCE_SEARCH_2026-10-29.md) implemented, validation/racing gates pending |
 | A07 | Use five training seeds for headline learned conditions, track-paired intervals, frozen selection and full cost ledger | Existing methodological plan, pending headline campaign |
 | A08 | Current seven/21 candidates, three residual knots, horizon 20, repeat 4, radius 30, observer/contact approximation | Engineering defaults with explicit uncertainty; not user's final architecture commitments |
 | A09 | Sparse observation rendering, immutable executable snapshots, replay gates and sequential timing | Implemented/tested; not an algorithmic novelty claim |

@@ -50,6 +50,11 @@ Next return to the already audited equal-work optimizer comparison and baseline
 competence work, with separate run declarations; no large sweep is activated.
 The actor receives only its original local fields. Global training stays sealed.
 
+**Next active experiment:** [matched sequence shooting/iCEM](SEQUENCE_SEARCH_2026-10-29.md)
+is implemented and under prelaunch validation. Both methods evaluate 21 trajectories
+in identical 13+8 batches, with the same local actor/model/utility. No new driving
+result yet; historical parity and two-track smoke gates precede the 20-track comparison.
+
 ## Implemented
 
 | Component | Actual capability | Remaining limitation |
@@ -59,7 +64,7 @@ The actor receives only its original local fields. Global training stays sealed.
 | env/protocol.py | Restricted local road mask plus ego sensors; native RGB without numeric state; sanitized info; action repeat | Local geometry is an ideal sensor; fixed-view local RGB not implemented |
 | models/dynamics.py | Observed-transition ridge dynamics, save/reload and integrated motion | Deterministic low-order model; no tire-state memory, ensemble or learned road belief |
 | models/physics.py, planning/physics_search.py | Upstream vehicle equations and Box2D in independently reconstructed worlds; observation-corrected wheel estimate; simulated candidate selection | Approximate five-point wheel contact and latent-state initialization; no exact evaluation-state cloning |
-| planning/ | Local pursuit, same-family fixed controller, 21-candidate/20-step search, shared road query for grip and margins | Single straight road continuation; fixed-controller gains unestablished; no CEM or multi-world planning |
+| planning/ | Local pursuit, same-family fixed controller, 21-candidate/20-step search, shared road query for grip and margins | Single straight road continuation; fixed-controller gains unestablished; adaptive sequence search is separate; no multi-world planning |
 | research/data.py | Partition-checked collection, model fitting and development diagnostics | No large offline corpus, calibrated predictor or modern pretrained model |
 | research/recurrent.py | Local/native CNN-LSTM PPO adapter; recurrent reload; training-state continuation with fresh episodes | 100k pilot did not learn useful driving; strong reproduction remains open |
 | planning/global_search.py | Explicit full-map geometry diagnostic with unchanged estimated vehicle state | Also changes centerline reconstruction; privileged, not equal-input superiority |
@@ -67,6 +72,7 @@ The actor receives only its original local fields. Global training stays sealed.
 | planning/reference_extension.py | Privileged true-road tail appended to the unchanged visible reference; fixed 100 m/1 m extent and sampling | Reference-continuation diagnostic; utility/other planner limitations remain |
 | research/driver_training.py and driver_* | Configured PPO, deterministic pooling, reward normalization, post-update checkpoints, native-frame schedule, CPU/GPU profiles | Local adaptation; original 1M checkpoint retained; KL-stop and lower-LR repairs failed to improve it; convergence/competitive baseline not established |
 | planning/policy_search.py | Frozen recurrent feedback proposals, smooth residuals, isolated imagined memory, coded simulation selection and random control | Search 7/21 gains on 200 development tracks for one frozen checkpoint; high cost, no multi-seed evidence |
+| planning/policy_rollouts.py, sequence_optimizer.py, policy_sequence_search.py | Shared feedback rollouts, matched colored shooting and two-batch policy-guided iCEM; owned first-state commits | Tested mechanics, driving evidence pending; adaptation, not an original-protocol reproduction |
 | planning/occupancy.py, policy_controls.py | Equivalent sparse occupancy renderer and frozen-policy fixed offsets | Sampled exact renderer parity; three fitted offset controls do not establish all cheap alternatives are inferior |
 | research/evaluation.py, eval/paired.py | Common development tracks, traces/costs, protocol checks, paired and crossed model/track intervals | Small/adaptive study; no final paper campaign |
 | monitoring/ | One-way online oracle-ranking sidecar, prefix replay, private live report | User-only outputs; no agent/learning/selection/assistant access to real ranking values |

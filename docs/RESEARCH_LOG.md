@@ -926,3 +926,28 @@ Earlier project intentions remain in USER_INTENT.md; this log extends that recor
   equal-work established-optimizer comparison. Its gain is uncertain; competence,
   independent seeds and V/L/F training still matter. No new run/200-track expansion,
   targeted failure tuning, private-ranking access or global training is launched.
+
+## R46 — Compare adaptive search without conflating proposal representation
+
+- **User origin:** continue the needed experiments without routine permission stops;
+  document choices and findings. The main aim remains programmed simulation for
+  selecting behavior from a frozen proposer.
+- **Prior-work origin:** iCEM colored proposals, elite fitting/reuse and shifted plans;
+  pinned official source and MIT attribution are retained.
+- **Assistant decisions:** full 20-step residuals, matched 13+8 batches, 21 total
+  evaluated trajectories including the unchanged base, β=1, ±3 channel-σ bounds,
+  four elites, smoothing 0.1, one cached and one shifted elite. These are economical
+  starting choices, not known-optimal settings. The finite-DFT noise convention,
+  residual-space adaptation and global incumbent differ from upstream defaults.
+- **Why:** the primary shooting control shares representation, bounds, batching,
+  actual physics work and actor examples; comparison with old three-knot search
+  otherwise confounds representation and optimization. No new value scorer is trained.
+- **Critical checks:** real recurrent memory/root state cannot advance through
+  imagined batches; execute the best evaluated candidate and commit its own first
+  physics estimate even if it came from an earlier batch. Re-simulate shifted plans;
+  never reuse previous-root costs. Synthetic tests cover these failure modes.
+- **Staging:** one old episode replay plus two episodes per new method, then twenty
+  per method under unchanged settings if technical checks pass, irrespective of
+  performance. Cap 45k native / 18.9M internal frames across both stages, no training.
+- **Status/record:** implementation and focused tests pass; full gates and driving
+  evidence pending in [the resolved experiment](SEQUENCE_SEARCH_2026-10-29.md).

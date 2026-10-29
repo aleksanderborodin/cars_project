@@ -48,7 +48,8 @@ register separates user ideas, assistant refinements, prior work and measured ev
 | [Geometry research](docs/RESEARCH_PLAN.md) | Literature, feasibility, and detailed design for the geometry/uncertainty branch |
 | [Predictor selection research](docs/PREDICTION_SELECTION.md) | Optional prediction spaces, normal training, downstream validation selection, and critiques |
 | [Design decisions](docs/DESIGN_DECISIONS.md) | Concrete starting settings, confidence, alternatives, and decision gates |
-| [Search optimizer audit](docs/SEARCH_OPTIMIZER_AUDIT.md) | Pinned iCEM source, adaptation choices, budget accounting and attribution controls; implementation pending |
+| [Sequence-search comparison](docs/SEQUENCE_SEARCH_2026-10-29.md) | Matched colored shooting/iCEM implementation, declared choices, replay gates, budgets and measurements |
+| [Search optimizer audit](docs/SEARCH_OPTIMIZER_AUDIT.md) | Pinned iCEM source, adaptation choices, budget accounting and attribution controls; resolved adaptation linked |
 | [References](docs/REFERENCES.md) | Primary papers, official code, comparison roles and reproduction status |
 | [Implementation status](docs/STATUS.md) | What exists, what does not, and evidence boundaries |
 | [Roadmap](docs/ROADMAP.md) | Ordered milestones, deliverables, and proceed/stop gates |
@@ -84,7 +85,8 @@ scored 863.5/40% directly, 885.7/70% with seven simulated candidates and
 905.9/85% with 21. Cheap fixed corrections did not reproduce the full gain.
 A KL-stopping training trial was worse and was not adopted. See the latest
 frozen-policy report for uncertainty, substantial latency cost and scope.
-Learned road distributions, scenario MPC, CEM, local visual reconstruction and
+Matched colored sequence shooting and a policy-guided iCEM adaptation are implemented
+and under validation. Learned road distributions, scenario MPC, local visual reconstruction and
 modern world-model reproductions remain open.
 
 ```bash

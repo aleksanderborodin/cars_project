@@ -1,7 +1,7 @@
 # Implementation and evidence status
 
 Updated 2026-10-29. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
-[Roadmap](ROADMAP.md) · [Latest development results](BROAD_RESULTS_2026-10-29.md)
+[Roadmap](ROADMAP.md) · [Latest development results](REFERENCE_REPLICATION_2026-10-29.md)
 
 The first development experiment and control-audit follow-up are complete. The full paper
 campaign has not started. User decisions are in [USER_INTENT.md](USER_INTENT.md);
@@ -42,8 +42,12 @@ local search remains higher at **906.99/80%**; one on-road timeout accounts for
 the new condition's mean deficit. This isolates a reference-tail limitation for
 this controller, not a general information/SOTA advantage. All jobs in this batch
 are complete. The [20-track paired replication](REFERENCE_REPLICATION_2026-10-29.md)
-is now declared with both conditions frozen and ten integrated episode replay checks;
-it has not launched yet.
+is also complete: true tail **813.85/60%**, tangent **527.60/0%**, historical local
+search **885.70/70%**. The additional fifteen retain a +287.64 mean-return gain
+versus tangent, with one counterexample, but −85.57 versus local search. Ten exact
+replays passed. No jobs remain active; true tail remains a privileged diagnostic.
+Next return to the already audited equal-work optimizer comparison and baseline
+competence work, with separate run declarations; no large sweep is activated.
 The actor receives only its original local fields. Global training stays sealed.
 
 ## Implemented
@@ -111,6 +115,13 @@ and unavailable for agent analysis, training or selection. Hindsight knowledge o
 the realized hidden world also differs from information available at decision time.
 
 ## Measurements
+
+- [20-track reference replication](REFERENCE_REPLICATION_2026-10-29.md): true tail
+  +286.25 mean return versus tangent, nominal track interval [231.59, 343.19],
+  12/20 versus 0/20 completions; gains on 19/20 tracks. Still −71.86 versus local
+  search and two fewer finishes. Additional15 analyzed separately; one frozen
+  actor/stream, development only. Total 38,031 native / 5,326,720 internal frames,
+  zero new training, ten exact episode replays, 90 tests, 32.71 minutes.
 
 - [Reference-continuation pilot](REFERENCE_CONTINUATION_2026-10-29.md): +282.09
   return versus tangent control, 0/5 to 4/5 completions. Mean −30.70 versus original

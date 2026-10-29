@@ -1,0 +1,87 @@
+{
+  "frozen_and_live_sources_match": true,
+  "required_artifacts_match": true,
+  "exact_replayed_episodes": 10,
+  "report_trajectories_verified": 60,
+  "paired_return_contrasts_verified": true,
+  "extra_native_frames": 0,
+  "extra_internal_physics_frames": 0,
+  "private_oracle_access": false,
+  "declaration_commit": "9815c84",
+  "manifest_sha256": "ed70036b319e18531023e9ce8545deb87df90114dd0dbcccfbea7718aa135f2e",
+  "completed_utc": "2026-10-29T08:38:20.642691+00:00",
+  "unit_tests": {
+    "command": "uv run pytest -q",
+    "passed": 90,
+    "warnings": 3,
+    "elapsed_seconds": 35.89,
+    "scope": "infrastructure fixtures; no new paper training"
+  },
+  "documentation_files_checked": 32,
+  "cli_discovery_passed": true,
+  "figure_png_visually_inspected": true,
+  "host": {
+    "recorded_utc": "2026-10-29T08:07:29.036780+00:00",
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "cpu": {
+      "Architecture": "x86_64",
+      "CPU(s)": "12",
+      "On-line CPU(s) list": "0-11",
+      "Model name": "AMD Ryzen 5 7500F 6-Core Processor",
+      "Thread(s) per core": "2",
+      "Core(s) per socket": "6",
+      "Socket(s)": "1",
+      "CPU max MHz": "5077.4048",
+      "CPU min MHz": "428.2150"
+    },
+    "cpu_affinity": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "load_average": [
+      1.56640625,
+      0.91845703125,
+      0.6875
+    ],
+    "disk_free_bytes": 5700993024,
+    "thread_environment": "OMP_NUM_THREADS=OPENBLAS_NUM_THREADS=MKL_NUM_THREADS=1 in frozen child environment",
+    "timing_caveat": "ordinary workstation load and clock frequencies are uncontrolled; conditions are serial, not interleaved"
+  },
+  "report_artifacts": [
+    {
+      "path": "reports/reference_replication_2026-10-29/analysis.json",
+      "sha256": "2f95c3cfb76c62b6c0c9a6ea2cca70e2c3372712ace6e7b874363a219a167442"
+    },
+    {
+      "path": "reports/reference_replication_2026-10-29/episodes.csv",
+      "sha256": "e33daf3e3dd03e41ea1a61d9e2adf9efe61966a07594f6cc586acd4d174741ee"
+    },
+    {
+      "path": "reports/reference_replication_2026-10-29/executed_behavior.csv",
+      "sha256": "d39ad9d1f982d2396658f515aca6adbb4ba89ae9afe07ed789642982e239b3a6"
+    },
+    {
+      "path": "reports/reference_replication_2026-10-29/paired_returns.pdf",
+      "sha256": "efcb41a5cccbaa0ebe5c81a19f9e19ccbe61a1843151a5bb64bbfa6e33534521"
+    },
+    {
+      "path": "reports/reference_replication_2026-10-29/paired_returns.png",
+      "sha256": "c6cdfb024205fd319024b500cdfc9deecff23f5e7f155cb7cb42a553c9162fc6"
+    },
+    {
+      "path": "reports/reference_replication_2026-10-29/summary.csv",
+      "sha256": "e5163bcdec7b52aecb9c39961cc511231e4e40c34e81aafcb1979d546acf0b35"
+    }
+  ]
+}

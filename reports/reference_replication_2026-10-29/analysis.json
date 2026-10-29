@@ -1,0 +1,1234 @@
+{
+  "manifest_sha256": "ed70036b319e18531023e9ce8545deb87df90114dd0dbcccfbea7718aa135f2e",
+  "inputs": [
+    {
+      "condition": "tangent",
+      "run": "runs/policy_geometry_intervention/reference_replication_20261029_tangent",
+      "config_sha256": "5585e64f650ee072c3439e69ff50c8156426b5b7b8fb28682e734a2a35186d8e",
+      "metrics_sha256": "7d9f86e27a302420dc3aed36c3c09e960a8975a5c99de661404afb322cc303d6",
+      "cost_sha256": "ba688952ef0dd267b234804b2e7985064ffdba8fe270ef903441cab26c42446d",
+      "source_sha256": {
+        "pyproject.toml": "ec68c9fb0b529c430e437b7e4ca2ffe554687b22ca9aff48db4505dc7d13ca87",
+        "src/cars/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/cli.py": "1d47c2f0e87dc476d2137145043789af94159f55c6a2655ceb99280f55653515",
+        "src/cars/env/__init__.py": "a0bd5973f4d5bc6e962cd4dcc1de24a582f118b5cd0c558983bd65404de84737",
+        "src/cars/env/carracing.py": "4495b00bc0eec5e7efcdac4f595d4dfeb41e833d8a62cbf6f6e1eea60de9325c",
+        "src/cars/env/make.py": "80d2830ca7cad3ce40f407b7cfa4e168232ca431067afbe8a473806cb664c589",
+        "src/cars/env/metrics.py": "e7b69bb03dada359e3b4c8c9f4a1ee474a6378bed1f883e77dd0740950d011d3",
+        "src/cars/env/partitions.py": "7d1dbd8cb2ab59bb320f5bdd9180292dbaebf06b5739c01e48a9bc3b738bed50",
+        "src/cars/env/protocol.py": "3c0e0a5e992d4fe3aeb1f62b73847d5f48f37fff6bd74dfbf06a34acf549b81c",
+        "src/cars/env/splits.py": "c897a697e67705fbe1717087b379e34cdd1112211162c5b636cff48cdc7febf8",
+        "src/cars/env/state.py": "15cee0801c7f39ad335ce92783f7cacdee2c7c9242336318c40d6747e8161447",
+        "src/cars/eval/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/eval/episode_log.py": "0766d8adad2d31b06b898d0f35f900b39abd027148d1d8c1a48ca0e78d659214",
+        "src/cars/eval/paired.py": "319c04004b9d07260cb70597d323556ec1d235cc685396850ca803de0f3fb314",
+        "src/cars/eval/report.py": "0d8d45fc3a96ebdf5ede65d7c10e9833b063c813f45142b681a56829f95ab308",
+        "src/cars/eval/runner.py": "aa047cca59988d57dc349b2f4d4348d4cedd297a2d77392676e655af66240082",
+        "src/cars/il/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/il/bc.py": "ed0567ff451a62eaabc52d4b5f1464f562f1a067836402c80c2ba8a9746ccf89",
+        "src/cars/il/dagger.py": "2f0ba1f118da493fd627f8d89f4a15be06dfd4b8d6e8503d808b4d44f8e6fbaa",
+        "src/cars/il/data.py": "0a95ca9c7742e14cfdaa923908f1161a9f675776d2e025f5d79585e6751c7cf9",
+        "src/cars/models/__init__.py": "0dc1d7a41d4f95e48c447fde9102802f9c65e24e60973e2603582f8a0c4c627a",
+        "src/cars/models/dynamics.py": "e9301bff433f1fc5f149ecc976e0cb98f6d2cf7dcbfb21a1de4e2e74c766e077",
+        "src/cars/models/physics.py": "2cd6155dc00c9edffe62ab8cd45e4bdb72353d2cedddbedfdc671738dd1c4300",
+        "src/cars/monitoring/__init__.py": "47df79f279b968fda79d8feda44605972a92390fe861e18465253ebc7ae30517",
+        "src/cars/monitoring/bridge.py": "9125c9b4937a121f6eb686e313eeba290805779ad95f61ab9b0863ff3f990fd8",
+        "src/cars/monitoring/oracle.py": "5d4542f1f97fd85349c22f00b07c936b7bc4b959559cfa325db1c73ffa6e2650",
+        "src/cars/planning/__init__.py": "618bfd1a0570a9bc2e7437a294a9965cd8456ac0e9f7ca0dd012c218b6dea9bb",
+        "src/cars/planning/global_search.py": "dfead287b62c65bb19d394830f0e544bb0a514af49a4bb4dd2727f12474bc89a",
+        "src/cars/planning/intervention.py": "d7d07bcf52c9f441b99145706921a71cf28bb9a56476016058edbba747ae8954",
+        "src/cars/planning/local.py": "2aa5ed81452198713b79757e64fae03cb66eea725444e78cc878f8aa9c56176d",
+        "src/cars/planning/occupancy.py": "154d7f5c5a69da60ffce7a223c0b225d5acf4344fb3ab0a1927877ef3d902f9f",
+        "src/cars/planning/physics_search.py": "e66d8ce92599e0dda1ac01b67a46d44a13615b12e8c2b97345bbc25ff1fc8f2f",
+        "src/cars/planning/policy_controls.py": "14684d0e30a6e8b105c234074b0b7d4322f988be979ab9b34a605419cba14130",
+        "src/cars/planning/policy_search.py": "06032cbfbf5f4d3db25c27df7c6cfb957a131e1ba138561a6332c19294de6da9",
+        "src/cars/planning/reference_extension.py": "f368293193bcf175d37576809fdddc8a6be9acf569b47b1c134bd013d83243e6",
+        "src/cars/planning/search.py": "ca91f182cb5a280db9058323e236d92b428464158e3918a6ef50fadcc77d6509",
+        "src/cars/planning/visible_reference.py": "38e6d8f671741e8ba536bf02de6722de10029e7bd1a9e69ab8705f1d8bfbb919",
+        "src/cars/planning/world.py": "19c660841358f6203b9f1379b0e3c34d0b5e8ef2e7b3c5c21a63569ee1a0c28a",
+        "src/cars/policies/__init__.py": "7969a425c859d7986a67fed00ca0fe21dc9d6397d7ee3b7fffe5eb59066ae78b",
+        "src/cars/policies/base.py": "714a6a14352155c0a7d70c2ac589f148e20c8e6a32ed399c23bf6172b8561cd3",
+        "src/cars/policies/baseline.py": "22bbeeeeeb959ece1463100445ba05072d84f22884ef9d201304f5326ff90f1c",
+        "src/cars/policies/sb3.py": "437a8e922d1f0fc3fa88935e333649b214fe270569b85a6f8b2a2c96df4f1d5d",
+        "src/cars/policies/torch_mlp.py": "1e638dbeaadf470aa547082af577d1ce3c0da755cb963be109a223896afc46d1",
+        "src/cars/research/__init__.py": "3f8f2a9dc600f87fb123c76a1dadb554dc6c7619b912e08e5254a66664d72429",
+        "src/cars/research/artifacts.py": "37506a22cfb64f08c9a6343388165f20a55669c35ed58f72b14d53aa795f3581",
+        "src/cars/research/cli.py": "da02479de87873a5d22037075bd6eb1ce8c10dbd8fd5df0360a8997f0881f0a7",
+        "src/cars/research/data.py": "31f210d8fac0285c5ae19fdc9b1ad1eecf368adb26853d969ee74635aacaaa7e",
+        "src/cars/research/driver_checkpoint.py": "e5f6b38857234bf50a6d549fd5cd334c7a92e7fbe843c2c52eff3058f1e1d561",
+        "src/cars/research/driver_config.py": "3c069a8af2d758f9099fb9e4deb71de0a806138f27878cd6b4fe3c09f71dd959",
+        "src/cars/research/driver_encoder.py": "bb56a44c0e1d467d598a839e6c618de3f4f5dd9299c15887d6b517a448fdfbb9",
+        "src/cars/research/driver_training.py": "1e7ad02b409d69cd9e75fffcb3b018c6b8237eaec4031d9c10bb6d3dccd50d23",
+        "src/cars/research/evaluation.py": "8b2fb1395309acc2647a59d920393ea2e1aa7aee01a03c17b9d6e1c2763aa204",
+        "src/cars/research/failures.py": "8688daa911a18525c62b0a3339df5b0b10ac67cb54b6327756dbe6c14e40bd35",
+        "src/cars/research/frozen_code.py": "64a1042bf145cc29e326828e433307fdb27ee48393a2895eb574a15a34d0e8b7",
+        "src/cars/research/recurrent.py": "50bc115cae12d82558fbc432047f6df5e2d32172d21879de1623256a5929cbee",
+        "src/cars/rl/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/rl/interface.py": "449ff33147cd3e7e7f7248a8061f369466d33c112bb89f4fd12119f9fbdf77ad",
+        "src/cars/rl/train.py": "174795d6ef03e7433911f1154214b7a4070715f429cd72bd02809c3067a97915",
+        "src/cars/training.py": "0931b232ab3a40a17ea4406bc120e70c107989d562b9f199a5dc46bc1bc9518b",
+        "uv.lock": "1883c6b19e5fa96474dd8539865121633b20533bde9785ac59d8b5ea8ff96a51"
+      },
+      "trajectories": [
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_tangent/episodes/0000.npz",
+          "sha256": "b0e2764424e1ae02b760dee4f099c766156c8f1dca206fcf3395314a2e80b3e9",
+          "diagnostics_sha256": "19da3d29df3f4fb4fb35f35a3f6a4dbe5a70cad2a7dd85d6153de0bd3c5f2c83"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_tangent/episodes/0001.npz",
+          "sha256": "00a23135810e3dfc65796eecec614a95598081fe6630d5ba5e729ccf0725ea10",
+          "diagnostics_sha256": "41aa96dcaa1546d76074c43a5acb0e29325f472e528e32b6e13ef1f885d088bd"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_tangent/episodes/0002.npz",
+          "sha256": "ed7d7218df7d752d2fbc1d0ed602bbefff4b4c5677171064ca6ec2197caece54",
+          "diagnostics_sha256": "50741e90f11098293049a5c2c18918748bb0b672af5aedea040fffd00f34a2be"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_tangent/episodes/0003.npz",
+          "sha256": "e385d778067103b26183b7c46b12d15bb72317b1c2c9b3288a7964727e791176",
+          "diagnostics_sha256": "f72f015fd7c93f79b8c9d7e15cd2cb7e4f71d713562c7132dbf841bf7996b103"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_tangent/episodes/0004.npz",
+          "sha256": "c2e6d617bf27e49717e0ecbace50a3759d9b3c8985302e1089257bbdc8f72001",
+          "diagnostics_sha256": "69c59445bd0afa4b10bdaef8307e5711b76bf144cd2542945a0259610f82af90"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_tangent/episodes/0005.npz",
+          "sha256": "097f3090f820bac9f2be820cd9ba0af466859da2608c441dd6bfb8ff56559efe",
+          "diagnostics_sha256": "1843239bce46f75c2c2e7a11a0fdabed3a25cddcdfef57e5c7f8bb23520b623b"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_tangent/episodes/0006.npz",
+          "sha256": "980e313c7d0c563c66391b49332c1a399b4a47c062c9b76bd2db7037e9a5ce9f",
+          "diagnostics_sha256": "65b8812b144e6361c39d47dd728b839e1b264b4fcc10596727cff74996eadffb"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_tangent/episodes/0007.npz",
+          "sha256": "cfdbfe03a753a178f37b9e348cb771a557a2be66835946de1372c4f06c5a530f",
+          "diagnostics_sha256": "925631429c57b2883d34250e7e3624705bebbed9d06d05d9fe064f585f7dac5a"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_tangent/episodes/0008.npz",
+          "sha256": "30d5e402da2b1d12a056588507cbd0b97f31dce17965be5f3c500e788f9542bb",
+          "diagnostics_sha256": "740e005a2f4e424ed1b68a1e49bc4ecc9bc8b84c9e2aafc6189dd43ca6e57d53"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_tangent/episodes/0009.npz",
+          "sha256": "963485616db50a96ffdb92d006421c1236e7038318ca5fa395a41afcfed41cb5",
+          "diagnostics_sha256": "7477d640323c7ad1864667ee99d38ae84ecd5f61aa305743bc765e2e601663a1"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_tangent/episodes/0010.npz",
+          "sha256": "f3ad08ae1b9062c786f85e8b4f815f0979cb223825f40f7ad50f9995f875f509",
+          "diagnostics_sha256": "591b792e1918d97023437e8da94dafb39ebc60b86ebd4c912241037b7546ee23"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_tangent/episodes/0011.npz",
+          "sha256": "103d164cb6e8f6e8bcb647892207190ee874ad60ac73e0d42a0c8d6ccfdd2653",
+          "diagnostics_sha256": "996c723db595c0fda5d78570230843b03cfac4e260e419a213f2baf7d4de9e2a"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_tangent/episodes/0012.npz",
+          "sha256": "82d6876d3c5e38f3beadc92d75ec34106947d8d1c413f6a7989efd6f65054284",
+          "diagnostics_sha256": "449210c1840ccb2fc95c6cbbe5323d058a491513eb879b7d2719755cad63ee6a"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_tangent/episodes/0013.npz",
+          "sha256": "613492eeb3271a28a4c9337b0c21344b124ece163963cf622a63b33fc2b786de",
+          "diagnostics_sha256": "9088868842cbf5b799ec06696257bf324cb389adda8a666aed3e775ea290398b"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_tangent/episodes/0014.npz",
+          "sha256": "38c303485d8cf5b82fad0824529cf6e2519697fa61aec4b9ce26da71d2e5a7c2",
+          "diagnostics_sha256": "291128211f72c19b591f80f5fb38afd2e69faeb23f54851f7a92cea5d665cb54"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_tangent/episodes/0015.npz",
+          "sha256": "c11ae4a9c658d5cf159e1ec1f8b4ca841e178a37e984ebb8b73b41e85a9b2722",
+          "diagnostics_sha256": "a05afaa60ba9f80f8814642f4f1e144c964bf1855480e73ba6bde4927453b480"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_tangent/episodes/0016.npz",
+          "sha256": "4015c169c2d1a5582a179680a5c7cd6a4298a93eabd515bc9814add276173377",
+          "diagnostics_sha256": "3f17e831fd8e0d4315c870edc296b03a2ee0da247c23b72224a1ada402385fbb"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_tangent/episodes/0017.npz",
+          "sha256": "14a58d0c00066d81020cb3bc48c6310a56ef7339d5257f958275d57dd0ac98da",
+          "diagnostics_sha256": "7b3a9d22aced9440806152d1ca06dd01b2d59b527874b3513ffc03eac385a6c9"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_tangent/episodes/0018.npz",
+          "sha256": "b933c3b016d272444d1a411fc9c351894b6f7509a5497cb475934e9f86d3de1a",
+          "diagnostics_sha256": "536551e8b3bac4a1e8b7b5d55ca719471b6e5acb9e5dfe1dc547a6848215dbd0"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_tangent/episodes/0019.npz",
+          "sha256": "ea8afd322cee4da8811b4375208f1e375403945b05d8a1ece016545b8d285ff5",
+          "diagnostics_sha256": "1653d7d8de14486c2dabc0614d8de6eea49f3071389567b5ed59f5c3ac8a1a39"
+        }
+      ]
+    },
+    {
+      "condition": "true_tail",
+      "run": "runs/policy_geometry_intervention/reference_replication_20261029_true",
+      "config_sha256": "f97521e75addd735636ac38a12bdfbeccd9883efd3bee202a889df5e5a365a9f",
+      "metrics_sha256": "a6727f360331f8326a2d30038ed4f76c491e668b112480edbc2ce5e99edca147",
+      "cost_sha256": "f6b686e97f1fbe549dbe8ec3d89304d53b55f5b7cf3461d620a4325a2b3714a5",
+      "source_sha256": {
+        "pyproject.toml": "ec68c9fb0b529c430e437b7e4ca2ffe554687b22ca9aff48db4505dc7d13ca87",
+        "src/cars/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/cli.py": "1d47c2f0e87dc476d2137145043789af94159f55c6a2655ceb99280f55653515",
+        "src/cars/env/__init__.py": "a0bd5973f4d5bc6e962cd4dcc1de24a582f118b5cd0c558983bd65404de84737",
+        "src/cars/env/carracing.py": "4495b00bc0eec5e7efcdac4f595d4dfeb41e833d8a62cbf6f6e1eea60de9325c",
+        "src/cars/env/make.py": "80d2830ca7cad3ce40f407b7cfa4e168232ca431067afbe8a473806cb664c589",
+        "src/cars/env/metrics.py": "e7b69bb03dada359e3b4c8c9f4a1ee474a6378bed1f883e77dd0740950d011d3",
+        "src/cars/env/partitions.py": "7d1dbd8cb2ab59bb320f5bdd9180292dbaebf06b5739c01e48a9bc3b738bed50",
+        "src/cars/env/protocol.py": "3c0e0a5e992d4fe3aeb1f62b73847d5f48f37fff6bd74dfbf06a34acf549b81c",
+        "src/cars/env/splits.py": "c897a697e67705fbe1717087b379e34cdd1112211162c5b636cff48cdc7febf8",
+        "src/cars/env/state.py": "15cee0801c7f39ad335ce92783f7cacdee2c7c9242336318c40d6747e8161447",
+        "src/cars/eval/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/eval/episode_log.py": "0766d8adad2d31b06b898d0f35f900b39abd027148d1d8c1a48ca0e78d659214",
+        "src/cars/eval/paired.py": "319c04004b9d07260cb70597d323556ec1d235cc685396850ca803de0f3fb314",
+        "src/cars/eval/report.py": "0d8d45fc3a96ebdf5ede65d7c10e9833b063c813f45142b681a56829f95ab308",
+        "src/cars/eval/runner.py": "aa047cca59988d57dc349b2f4d4348d4cedd297a2d77392676e655af66240082",
+        "src/cars/il/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/il/bc.py": "ed0567ff451a62eaabc52d4b5f1464f562f1a067836402c80c2ba8a9746ccf89",
+        "src/cars/il/dagger.py": "2f0ba1f118da493fd627f8d89f4a15be06dfd4b8d6e8503d808b4d44f8e6fbaa",
+        "src/cars/il/data.py": "0a95ca9c7742e14cfdaa923908f1161a9f675776d2e025f5d79585e6751c7cf9",
+        "src/cars/models/__init__.py": "0dc1d7a41d4f95e48c447fde9102802f9c65e24e60973e2603582f8a0c4c627a",
+        "src/cars/models/dynamics.py": "e9301bff433f1fc5f149ecc976e0cb98f6d2cf7dcbfb21a1de4e2e74c766e077",
+        "src/cars/models/physics.py": "2cd6155dc00c9edffe62ab8cd45e4bdb72353d2cedddbedfdc671738dd1c4300",
+        "src/cars/monitoring/__init__.py": "47df79f279b968fda79d8feda44605972a92390fe861e18465253ebc7ae30517",
+        "src/cars/monitoring/bridge.py": "9125c9b4937a121f6eb686e313eeba290805779ad95f61ab9b0863ff3f990fd8",
+        "src/cars/monitoring/oracle.py": "5d4542f1f97fd85349c22f00b07c936b7bc4b959559cfa325db1c73ffa6e2650",
+        "src/cars/planning/__init__.py": "618bfd1a0570a9bc2e7437a294a9965cd8456ac0e9f7ca0dd012c218b6dea9bb",
+        "src/cars/planning/global_search.py": "dfead287b62c65bb19d394830f0e544bb0a514af49a4bb4dd2727f12474bc89a",
+        "src/cars/planning/intervention.py": "d7d07bcf52c9f441b99145706921a71cf28bb9a56476016058edbba747ae8954",
+        "src/cars/planning/local.py": "2aa5ed81452198713b79757e64fae03cb66eea725444e78cc878f8aa9c56176d",
+        "src/cars/planning/occupancy.py": "154d7f5c5a69da60ffce7a223c0b225d5acf4344fb3ab0a1927877ef3d902f9f",
+        "src/cars/planning/physics_search.py": "e66d8ce92599e0dda1ac01b67a46d44a13615b12e8c2b97345bbc25ff1fc8f2f",
+        "src/cars/planning/policy_controls.py": "14684d0e30a6e8b105c234074b0b7d4322f988be979ab9b34a605419cba14130",
+        "src/cars/planning/policy_search.py": "06032cbfbf5f4d3db25c27df7c6cfb957a131e1ba138561a6332c19294de6da9",
+        "src/cars/planning/reference_extension.py": "f368293193bcf175d37576809fdddc8a6be9acf569b47b1c134bd013d83243e6",
+        "src/cars/planning/search.py": "ca91f182cb5a280db9058323e236d92b428464158e3918a6ef50fadcc77d6509",
+        "src/cars/planning/visible_reference.py": "38e6d8f671741e8ba536bf02de6722de10029e7bd1a9e69ab8705f1d8bfbb919",
+        "src/cars/planning/world.py": "19c660841358f6203b9f1379b0e3c34d0b5e8ef2e7b3c5c21a63569ee1a0c28a",
+        "src/cars/policies/__init__.py": "7969a425c859d7986a67fed00ca0fe21dc9d6397d7ee3b7fffe5eb59066ae78b",
+        "src/cars/policies/base.py": "714a6a14352155c0a7d70c2ac589f148e20c8e6a32ed399c23bf6172b8561cd3",
+        "src/cars/policies/baseline.py": "22bbeeeeeb959ece1463100445ba05072d84f22884ef9d201304f5326ff90f1c",
+        "src/cars/policies/sb3.py": "437a8e922d1f0fc3fa88935e333649b214fe270569b85a6f8b2a2c96df4f1d5d",
+        "src/cars/policies/torch_mlp.py": "1e638dbeaadf470aa547082af577d1ce3c0da755cb963be109a223896afc46d1",
+        "src/cars/research/__init__.py": "3f8f2a9dc600f87fb123c76a1dadb554dc6c7619b912e08e5254a66664d72429",
+        "src/cars/research/artifacts.py": "37506a22cfb64f08c9a6343388165f20a55669c35ed58f72b14d53aa795f3581",
+        "src/cars/research/cli.py": "da02479de87873a5d22037075bd6eb1ce8c10dbd8fd5df0360a8997f0881f0a7",
+        "src/cars/research/data.py": "31f210d8fac0285c5ae19fdc9b1ad1eecf368adb26853d969ee74635aacaaa7e",
+        "src/cars/research/driver_checkpoint.py": "e5f6b38857234bf50a6d549fd5cd334c7a92e7fbe843c2c52eff3058f1e1d561",
+        "src/cars/research/driver_config.py": "3c069a8af2d758f9099fb9e4deb71de0a806138f27878cd6b4fe3c09f71dd959",
+        "src/cars/research/driver_encoder.py": "bb56a44c0e1d467d598a839e6c618de3f4f5dd9299c15887d6b517a448fdfbb9",
+        "src/cars/research/driver_training.py": "1e7ad02b409d69cd9e75fffcb3b018c6b8237eaec4031d9c10bb6d3dccd50d23",
+        "src/cars/research/evaluation.py": "8b2fb1395309acc2647a59d920393ea2e1aa7aee01a03c17b9d6e1c2763aa204",
+        "src/cars/research/failures.py": "8688daa911a18525c62b0a3339df5b0b10ac67cb54b6327756dbe6c14e40bd35",
+        "src/cars/research/frozen_code.py": "64a1042bf145cc29e326828e433307fdb27ee48393a2895eb574a15a34d0e8b7",
+        "src/cars/research/recurrent.py": "50bc115cae12d82558fbc432047f6df5e2d32172d21879de1623256a5929cbee",
+        "src/cars/rl/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/rl/interface.py": "449ff33147cd3e7e7f7248a8061f369466d33c112bb89f4fd12119f9fbdf77ad",
+        "src/cars/rl/train.py": "174795d6ef03e7433911f1154214b7a4070715f429cd72bd02809c3067a97915",
+        "src/cars/training.py": "0931b232ab3a40a17ea4406bc120e70c107989d562b9f199a5dc46bc1bc9518b",
+        "uv.lock": "1883c6b19e5fa96474dd8539865121633b20533bde9785ac59d8b5ea8ff96a51"
+      },
+      "trajectories": [
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_true/episodes/0000.npz",
+          "sha256": "d7a5671bdb764e793d2e7d3a610230f4bf881ef7eb5963416b34c83c1f79640a",
+          "diagnostics_sha256": "69f70b8d1a9f304c0cb42a104ca384bdf7fd962d0a3d09f7747cc13b36962370"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_true/episodes/0001.npz",
+          "sha256": "4764b0cf607a88f7e876881201b4cc784b34ccff1c9a0870e585e5efcbffc303",
+          "diagnostics_sha256": "db6e2025daca7c2506eeebc3a9ceeaab2ef84e445f3e9be1b44e700be2150eaa"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_true/episodes/0002.npz",
+          "sha256": "bbbccc5a350210428d22b518a054640a43dc1fdf31bce8f3044c5872fea452f9",
+          "diagnostics_sha256": "7285884e237f23d6a194b573c5809593f17b5046aa13ee758909872533d7a7d1"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_true/episodes/0003.npz",
+          "sha256": "bdc2fe15f59650fbff10e3f086a625498608c452ec1953821bcd881a38299dbb",
+          "diagnostics_sha256": "71b876b8a1f5c2cd57cb58f4e6924fc94ec4f335162820dcd8091c8427227267"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_true/episodes/0004.npz",
+          "sha256": "1cc82e14c54bc91196ff59a1fddcab8255b083b71a8fa08e209a4105a0c0946a",
+          "diagnostics_sha256": "15a5d3ec73769427f256ab49b84ca4eaa483ad2f850342c2ab4186ab61323bae"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_true/episodes/0005.npz",
+          "sha256": "de68ecbc38186650a0c4bcb38afc761f0dbdc7b0cb9fc787350da841aee812c8",
+          "diagnostics_sha256": "a4beb7c396d66929e265a1326c7f04e3bd58c99674a6c6c8c58f90131b07519f"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_true/episodes/0006.npz",
+          "sha256": "c6d85f22258a3c678c7ea46cc030e76bc940e4076fa427afeee5b933e7aa6e32",
+          "diagnostics_sha256": "3c14eace7ba0821f1bd49630a2480ca83b23a0239bf626b3cb192774ade02f36"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_true/episodes/0007.npz",
+          "sha256": "f7df2e2a30ab7d6e89b194dde2c8cc69e3a3f7ebef5855d9fb592c8b6a8b3913",
+          "diagnostics_sha256": "b1de9500def819f7db6fd4bdaabb0b1439fe428a5132e2d253bbfd28ec8032ea"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_true/episodes/0008.npz",
+          "sha256": "8c542fbbaca62c2742c8fe54afc09d0a6fa5634192f9c3374fd4c171e4ff0c35",
+          "diagnostics_sha256": "703f5d6e601dc1ffad270dcc8ababe45c0b7884dc9cfbf23299c083b6f5653cf"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_true/episodes/0009.npz",
+          "sha256": "5812f51945fb30f17f77591d7467bf06d967e777bd39b93e579982406d71115c",
+          "diagnostics_sha256": "28e90eef7705b7c62b2b3bf94e6dfdf1485532079fcfbc19eccb0f4c3aea3144"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_true/episodes/0010.npz",
+          "sha256": "fbeaaa003c01946f78cac488c7c668b048f10171c53c153884b1b30978d3a690",
+          "diagnostics_sha256": "27c5532868e7e11b51f20462a95b39adce3c91b63cfdaa4d1c27a3272fec03cc"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_true/episodes/0011.npz",
+          "sha256": "d591d908bf33ed96a25de4eb7181b2e5645e5c7f7b90ff077ff9dc846721fe3c",
+          "diagnostics_sha256": "9a14cb62d2786e6e1a3b19673ed644322b8d8a12b13782a701820dc67e47fb65"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_true/episodes/0012.npz",
+          "sha256": "11bd46230a74bb48fd8cc0c278b06a797f0a7f2c78218b3342c32cd8e64dc48c",
+          "diagnostics_sha256": "1bdee3e61a0521aa8e4a5853c3b22c1452724d786481cf0d6cc870784815e846"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_true/episodes/0013.npz",
+          "sha256": "16c02b519a126db593a019298b593a194d92b1412d5356ae74e4bfe80bb89217",
+          "diagnostics_sha256": "814466c690759209922ce9e8f2d28279e4f461f00b36c9f67af8856812928fb8"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_true/episodes/0014.npz",
+          "sha256": "95ae8a9c6055998c30d477d074a53e581ccedc336073ccaece2cc1fa17ab117b",
+          "diagnostics_sha256": "1bd5476c98d038a544208d471f1af1ff7801227d6285278baa399e8cf328acdb"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_true/episodes/0015.npz",
+          "sha256": "d49b137cd722f3d2fbac9b8d5d4cc290455c3ee59cbd82575855a7a50bf36108",
+          "diagnostics_sha256": "e5001502f752ff6ccbe7a7d1caebf23e55237868eaf99f06cff534ef502868fc"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_true/episodes/0016.npz",
+          "sha256": "080b5148db62e212958c45fc859ea2d340a1c7fa5fc202b1b3919a00459482e3",
+          "diagnostics_sha256": "ff4e2c0e191ac368e744775dce1421ffe4b701cf6ffc68deea083b60c1054649"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_true/episodes/0017.npz",
+          "sha256": "18aba4e3d7090d346400ec48780a41f79fcf567c35aa89a18a177859c930f0de",
+          "diagnostics_sha256": "cbf804648537baa7a5e5e9aefd3706b2b6693dd1b10aa5b9a830adcd2228f01a"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_true/episodes/0018.npz",
+          "sha256": "0edfcbb8e534227c90e29dfc57714eb9e633013d14892de83d3e0ca1955eadc8",
+          "diagnostics_sha256": "446d530cdef59e45821a2c68e761f2313a4f94e8385d13e1e971f2e552e8d36d"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_replication_20261029_true/episodes/0019.npz",
+          "sha256": "6b43b4de9bd1d57d296ac6459d7ab97d932f7e897e4d57fb26640e95406de27d",
+          "diagnostics_sha256": "a9b14fe31050953ecfdae61d2d96765bcfe54ef462eec4eb2096aea3ab1ffdea"
+        }
+      ]
+    },
+    {
+      "condition": "local_context",
+      "run": "runs/policy_physics_search/broad_driver_20261028_search7",
+      "config_sha256": "9e539ac311872a8d6214b8504697a807ddf9c285a808541765da32cac4735967",
+      "metrics_sha256": "1f473d22c70de0cc1b47d38e90fa46449b7daf90a4191d4e2fa75cc8e4bbf64e",
+      "cost_sha256": "f3a62e1ade74e3e8a56d2e726d8e5605cd2afb46bd4d7c2e44003109d8662dbc",
+      "source_sha256": {
+        "pyproject.toml": "06293eced9da2db196271a1a7e16a0a224afc5c1c9960ac5eb7143cae274c2f4",
+        "src/cars/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/cli.py": "1d47c2f0e87dc476d2137145043789af94159f55c6a2655ceb99280f55653515",
+        "src/cars/env/__init__.py": "a0bd5973f4d5bc6e962cd4dcc1de24a582f118b5cd0c558983bd65404de84737",
+        "src/cars/env/carracing.py": "4495b00bc0eec5e7efcdac4f595d4dfeb41e833d8a62cbf6f6e1eea60de9325c",
+        "src/cars/env/make.py": "80d2830ca7cad3ce40f407b7cfa4e168232ca431067afbe8a473806cb664c589",
+        "src/cars/env/metrics.py": "e7b69bb03dada359e3b4c8c9f4a1ee474a6378bed1f883e77dd0740950d011d3",
+        "src/cars/env/partitions.py": "7d1dbd8cb2ab59bb320f5bdd9180292dbaebf06b5739c01e48a9bc3b738bed50",
+        "src/cars/env/protocol.py": "3c0e0a5e992d4fe3aeb1f62b73847d5f48f37fff6bd74dfbf06a34acf549b81c",
+        "src/cars/env/splits.py": "c897a697e67705fbe1717087b379e34cdd1112211162c5b636cff48cdc7febf8",
+        "src/cars/env/state.py": "15cee0801c7f39ad335ce92783f7cacdee2c7c9242336318c40d6747e8161447",
+        "src/cars/eval/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/eval/episode_log.py": "0766d8adad2d31b06b898d0f35f900b39abd027148d1d8c1a48ca0e78d659214",
+        "src/cars/eval/paired.py": "319c04004b9d07260cb70597d323556ec1d235cc685396850ca803de0f3fb314",
+        "src/cars/eval/report.py": "0d8d45fc3a96ebdf5ede65d7c10e9833b063c813f45142b681a56829f95ab308",
+        "src/cars/eval/runner.py": "aa047cca59988d57dc349b2f4d4348d4cedd297a2d77392676e655af66240082",
+        "src/cars/il/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/il/bc.py": "ed0567ff451a62eaabc52d4b5f1464f562f1a067836402c80c2ba8a9746ccf89",
+        "src/cars/il/dagger.py": "2f0ba1f118da493fd627f8d89f4a15be06dfd4b8d6e8503d808b4d44f8e6fbaa",
+        "src/cars/il/data.py": "0a95ca9c7742e14cfdaa923908f1161a9f675776d2e025f5d79585e6751c7cf9",
+        "src/cars/models/__init__.py": "0dc1d7a41d4f95e48c447fde9102802f9c65e24e60973e2603582f8a0c4c627a",
+        "src/cars/models/dynamics.py": "e9301bff433f1fc5f149ecc976e0cb98f6d2cf7dcbfb21a1de4e2e74c766e077",
+        "src/cars/models/physics.py": "2cd6155dc00c9edffe62ab8cd45e4bdb72353d2cedddbedfdc671738dd1c4300",
+        "src/cars/monitoring/__init__.py": "47df79f279b968fda79d8feda44605972a92390fe861e18465253ebc7ae30517",
+        "src/cars/monitoring/bridge.py": "9125c9b4937a121f6eb686e313eeba290805779ad95f61ab9b0863ff3f990fd8",
+        "src/cars/monitoring/oracle.py": "5d4542f1f97fd85349c22f00b07c936b7bc4b959559cfa325db1c73ffa6e2650",
+        "src/cars/planning/__init__.py": "618bfd1a0570a9bc2e7437a294a9965cd8456ac0e9f7ca0dd012c218b6dea9bb",
+        "src/cars/planning/global_search.py": "dfead287b62c65bb19d394830f0e544bb0a514af49a4bb4dd2727f12474bc89a",
+        "src/cars/planning/local.py": "2aa5ed81452198713b79757e64fae03cb66eea725444e78cc878f8aa9c56176d",
+        "src/cars/planning/occupancy.py": "154d7f5c5a69da60ffce7a223c0b225d5acf4344fb3ab0a1927877ef3d902f9f",
+        "src/cars/planning/physics_search.py": "e66d8ce92599e0dda1ac01b67a46d44a13615b12e8c2b97345bbc25ff1fc8f2f",
+        "src/cars/planning/policy_controls.py": "14684d0e30a6e8b105c234074b0b7d4322f988be979ab9b34a605419cba14130",
+        "src/cars/planning/policy_search.py": "94932427a4e0a7c5aac96e9928f2b3d94d527834ff9c5485053c32b49b6f7048",
+        "src/cars/planning/search.py": "ca91f182cb5a280db9058323e236d92b428464158e3918a6ef50fadcc77d6509",
+        "src/cars/planning/world.py": "19c660841358f6203b9f1379b0e3c34d0b5e8ef2e7b3c5c21a63569ee1a0c28a",
+        "src/cars/policies/__init__.py": "7969a425c859d7986a67fed00ca0fe21dc9d6397d7ee3b7fffe5eb59066ae78b",
+        "src/cars/policies/base.py": "714a6a14352155c0a7d70c2ac589f148e20c8e6a32ed399c23bf6172b8561cd3",
+        "src/cars/policies/baseline.py": "22bbeeeeeb959ece1463100445ba05072d84f22884ef9d201304f5326ff90f1c",
+        "src/cars/policies/sb3.py": "437a8e922d1f0fc3fa88935e333649b214fe270569b85a6f8b2a2c96df4f1d5d",
+        "src/cars/policies/torch_mlp.py": "1e638dbeaadf470aa547082af577d1ce3c0da755cb963be109a223896afc46d1",
+        "src/cars/research/__init__.py": "3f8f2a9dc600f87fb123c76a1dadb554dc6c7619b912e08e5254a66664d72429",
+        "src/cars/research/artifacts.py": "37506a22cfb64f08c9a6343388165f20a55669c35ed58f72b14d53aa795f3581",
+        "src/cars/research/cli.py": "ec0545d3fe29eaf64f83d94115beb4772b16a7c0a7a4189cadf45eeeeb2a1370",
+        "src/cars/research/data.py": "31f210d8fac0285c5ae19fdc9b1ad1eecf368adb26853d969ee74635aacaaa7e",
+        "src/cars/research/driver_checkpoint.py": "e5f6b38857234bf50a6d549fd5cd334c7a92e7fbe843c2c52eff3058f1e1d561",
+        "src/cars/research/driver_config.py": "3c069a8af2d758f9099fb9e4deb71de0a806138f27878cd6b4fe3c09f71dd959",
+        "src/cars/research/driver_encoder.py": "bb56a44c0e1d467d598a839e6c618de3f4f5dd9299c15887d6b517a448fdfbb9",
+        "src/cars/research/driver_training.py": "1e7ad02b409d69cd9e75fffcb3b018c6b8237eaec4031d9c10bb6d3dccd50d23",
+        "src/cars/research/evaluation.py": "8b2fb1395309acc2647a59d920393ea2e1aa7aee01a03c17b9d6e1c2763aa204",
+        "src/cars/research/failures.py": "8688daa911a18525c62b0a3339df5b0b10ac67cb54b6327756dbe6c14e40bd35",
+        "src/cars/research/frozen_code.py": "64a1042bf145cc29e326828e433307fdb27ee48393a2895eb574a15a34d0e8b7",
+        "src/cars/research/recurrent.py": "50bc115cae12d82558fbc432047f6df5e2d32172d21879de1623256a5929cbee",
+        "src/cars/rl/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/cars/rl/interface.py": "449ff33147cd3e7e7f7248a8061f369466d33c112bb89f4fd12119f9fbdf77ad",
+        "src/cars/rl/train.py": "174795d6ef03e7433911f1154214b7a4070715f429cd72bd02809c3067a97915",
+        "src/cars/training.py": "0931b232ab3a40a17ea4406bc120e70c107989d562b9f199a5dc46bc1bc9518b",
+        "uv.lock": "1883c6b19e5fa96474dd8539865121633b20533bde9785ac59d8b5ea8ff96a51"
+      },
+      "trajectories": [
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search7/episodes/0000.npz",
+          "sha256": "d74534b045358c28e88a6230aea826c6d17ec7567e77cad52289a33048a7600c",
+          "diagnostics_sha256": "aeee517aa353bc0564661d5a3f72392174bf8aaf80ae28a90f9e55866892c291"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search7/episodes/0001.npz",
+          "sha256": "2e2e86211e4a90333c0afd6929f900576af761d8c99514cc9123e75f0e8c86db",
+          "diagnostics_sha256": "95b39f08ee781cee9405e078abd098cdacf9c64e022cadda95899d29ce19d921"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search7/episodes/0002.npz",
+          "sha256": "f5c65b85d0cf46d625d13e290e9ac2e0306c7199901f1eea0e85914abd59c847",
+          "diagnostics_sha256": "b7c2c9d87be0bf051e68bbc97d2753de5c5cd7042f408d761320c2860fb24b07"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search7/episodes/0003.npz",
+          "sha256": "51bfcf975feeef5c5a1365806e044fe75df137cbded4ea67de8452d31a7b6aeb",
+          "diagnostics_sha256": "669d73e95dc708002bef9a3f3ed2dd69fd93455970bef063de82ddfca52c85f8"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search7/episodes/0004.npz",
+          "sha256": "f6cd73ceced7470c20c691fd55116bbd2840a5a36c05a8695037a140277713f9",
+          "diagnostics_sha256": "3b1a5fc24bc0dd40bfff9054a4ff0c8877837028d81a55d1cab87a899c7cbae9"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search7/episodes/0005.npz",
+          "sha256": "a2e2b213a2adc75289cdbaf56980f0c4e607626644f79f770503c94228427977",
+          "diagnostics_sha256": "c59d52ae059937047904a5c9bd78203e89c7dfec1f28186ce3ac4285593b5902"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search7/episodes/0006.npz",
+          "sha256": "5e80435f968206df2ef8c89ea9d6b1019c293327113fe2139f764beed785c157",
+          "diagnostics_sha256": "e3c0f62f21959bc466ba9651f4114f2b0bcc70cca0003bdc43591f24bd9dd9f4"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search7/episodes/0007.npz",
+          "sha256": "75688f05f1d9ed36efb40b7de7ace82cd315a739e79b2a8661df1d2b83111be9",
+          "diagnostics_sha256": "4dd9bc5242d318e44f79c94a2371855a31026cba5994765e53e533704055ab54"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search7/episodes/0008.npz",
+          "sha256": "e9c65ffa79d85cdc7f7473d825cbf603dd8f37662b0c13acabf7ce21daba2a97",
+          "diagnostics_sha256": "fdc087716af2c0e9e521c98aef695096b8c84a6037d9937724d05b2c565de7ce"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search7/episodes/0009.npz",
+          "sha256": "b58d8d09207c2e1fa433dcabdcee991d2122b013417722b7dbd07f51b789262e",
+          "diagnostics_sha256": "72f44c79bc2626490a1334e0f5ff7a888a44dacaa8b8c192a28b4fc785e89cb6"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search7/episodes/0010.npz",
+          "sha256": "937671fa674ee55286dcab6a7249ec5935a286407c621bd4ac534e48b617028c",
+          "diagnostics_sha256": "e147bd2d6916fe89014d49ce9392e9fcd4ba95babe58ef907a9efef1363ea0c7"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search7/episodes/0011.npz",
+          "sha256": "b8471031d51e0d376df7149cdbffc10aa1c1c6cc6424b70a0572fad213cd53c3",
+          "diagnostics_sha256": "98eb82a716770ff7a282f49b130053660b4d24aadfa4bb62042f656173b01ec7"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search7/episodes/0012.npz",
+          "sha256": "396462e0d9d806c7137d7259d4ecf93329ee89dade386d7f6e95d7ad64e912d0",
+          "diagnostics_sha256": "15b008264ecad12abbc5b856dfc439144a7017e90ddcc9eb462fbe2cb3a7bfe7"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search7/episodes/0013.npz",
+          "sha256": "d5e72154f845417071ccfa5198e9792a5be41e37d2217ad084c1c8efc8b88de6",
+          "diagnostics_sha256": "ed0e30af93f6a10711ec11f45ae3eb101f98cde3b7169781ab181e5b1406dd58"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search7/episodes/0014.npz",
+          "sha256": "892c249228f5283e2291abfefc3368e04370d8ab8146f522c3bcc5b32de2e7fd",
+          "diagnostics_sha256": "2e4c6f57e90e297c6ab7a14bc2c20bacfa763658d0bbf50d7abb07130bd83364"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search7/episodes/0015.npz",
+          "sha256": "2a73782d1cd2836effe70abab9f28654420bd9b45de873bff3e4f752f6ae91f7",
+          "diagnostics_sha256": "d6a525dda5b6558c8feb5360409f6cb0d67f4ee6e9a390c0695d366e0f7831d3"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search7/episodes/0016.npz",
+          "sha256": "7b3189a03669cf89968b36b58a1d60eee0fb865dc9a82ac29a4a6374d0df6775",
+          "diagnostics_sha256": "5a8a3a4049648d6a49d42356f6d659eee003c7042502508aac4887f852a9dd8a"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search7/episodes/0017.npz",
+          "sha256": "65874b1253910e2c32d694718c7b92a6cedf4fd523eaef27dfbd6cfa53a15471",
+          "diagnostics_sha256": "8cf3fe2f403b53b879b36ce032eff663a91035627b5f306918c5053608678159"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search7/episodes/0018.npz",
+          "sha256": "324cfe370e983a54dbebe0250ebfb4295d70b51d823d104b118b62a1702c3615",
+          "diagnostics_sha256": "7dbf4adf546a48248999c72f4967024b04824ef930f60f800e3faf8f45bb0f76"
+        },
+        {
+          "path": "runs/policy_physics_search/broad_driver_20261028_search7/episodes/0019.npz",
+          "sha256": "04bf89949d3cbe1d4053ee9c73025947054e0fc89fa6f1066ac8c7be59de9a4f",
+          "diagnostics_sha256": "f20393d5bdc93a2f06f77dd7235e644f3686d0e94ebdfd13bff1b7482f931858"
+        }
+      ]
+    }
+  ],
+  "paired_contrasts": [
+    {
+      "panel": "all20",
+      "reference": "tangent",
+      "metric": "return",
+      "role": "primary",
+      "mean_difference": 286.2484032377214,
+      "per_track": [
+        253.3943661971831,
+        196.61016949152622,
+        311.30201342281805,
+        337.3250000000005,
+        311.8023890784989,
+        125.21422924901799,
+        317.6895306859251,
+        183.73493975903432,
+        283.1541218637981,
+        420.29473684209967,
+        342.44755700325163,
+        269.3498452012342,
+        -10.344827586205668,
+        374.7689655172409,
+        275.19379844961395,
+        630.9071661237709,
+        183.12953020134398,
+        315.17366548042753,
+        224.029927007301,
+        379.7909407665484
+      ],
+      "positive": 19,
+      "negative": 1,
+      "ties": 0,
+      "nominal_track_bootstrap_95_percent": [
+        231.58572553571034,
+        343.19047409692655
+      ]
+    },
+    {
+      "panel": "all20",
+      "reference": "tangent",
+      "metric": "success",
+      "role": "primary",
+      "mean_difference": 0.6,
+      "per_track": [
+        1.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ],
+      "positive": 12,
+      "negative": 0,
+      "ties": 8,
+      "nominal_track_bootstrap_95_percent": [
+        0.4,
+        0.8
+      ]
+    },
+    {
+      "panel": "all20",
+      "reference": "tangent",
+      "metric": "progress",
+      "role": "primary",
+      "mean_difference": 0.27640340323772195,
+      "per_track": [
+        0.23239436619718312,
+        0.19661016949152543,
+        0.2953020134228188,
+        0.328125,
+        0.2901023890784983,
+        0.09881422924901184,
+        0.31768953068592065,
+        0.18373493975903615,
+        0.2831541218637992,
+        0.4078947368421053,
+        0.33224755700325737,
+        0.26934984520123845,
+        -0.010344827586206917,
+        0.3620689655172413,
+        0.27519379844961234,
+        0.6254071661237786,
+        0.16442953020134232,
+        0.2953736654804271,
+        0.2007299270072993,
+        0.3797909407665505
+      ],
+      "positive": 19,
+      "negative": 1,
+      "ties": 0,
+      "nominal_track_bootstrap_95_percent": [
+        0.222084666203772,
+        0.33324769367902135
+      ]
+    },
+    {
+      "panel": "all20",
+      "reference": "tangent",
+      "metric": "off_track_steps",
+      "role": "primary",
+      "mean_difference": 0.1,
+      "per_track": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "positive": 1,
+      "negative": 0,
+      "ties": 19,
+      "nominal_track_bootstrap_95_percent": [
+        0.0,
+        0.3
+      ]
+    },
+    {
+      "panel": "all20",
+      "reference": "local_context",
+      "metric": "return",
+      "role": "different_information_context",
+      "mean_difference": -71.85593793660755,
+      "per_track": [
+        3.7000000000003865,
+        -166.10169491524744,
+        1.7000000000001592,
+        1.3000000000000682,
+        5.9000000000010004,
+        3.2000000000003865,
+        -90.25270758122349,
+        -265.06024096385636,
+        -75.26881720429753,
+        2.400000000000432,
+        -2.6000000000008185,
+        -247.67801857585278,
+        -351.7241379310234,
+        -0.7000000000006139,
+        -151.1348837209291,
+        3.800000000000182,
+        4.6000000000008185,
+        6.0000000000009095,
+        3.4000000000003183,
+        -122.59825783972417
+      ],
+      "positive": 10,
+      "negative": 10,
+      "ties": 0,
+      "nominal_track_bootstrap_95_percent": [
+        -122.60117864458786,
+        -28.95235178579063
+      ]
+    },
+    {
+      "panel": "all20",
+      "reference": "local_context",
+      "metric": "success",
+      "role": "different_information_context",
+      "mean_difference": -0.1,
+      "per_track": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "positive": 0,
+      "negative": 2,
+      "ties": 18,
+      "nominal_track_bootstrap_95_percent": [
+        -0.25,
+        0.0
+      ]
+    },
+    {
+      "panel": "all20",
+      "reference": "local_context",
+      "metric": "progress",
+      "role": "different_information_context",
+      "mean_difference": -0.07235593793660877,
+      "per_track": [
+        0.0,
+        -0.16610169491525406,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.09025270758122728,
+        -0.2650602409638554,
+        -0.07526881720430123,
+        0.0,
+        0.0,
+        -0.24767801857585137,
+        -0.3517241379310345,
+        0.0,
+        -0.13953488372093026,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.11149825783972123
+      ],
+      "positive": 0,
+      "negative": 8,
+      "ties": 12,
+      "nominal_track_bootstrap_95_percent": [
+        -0.12221654032459314,
+        -0.0301950955759964
+      ]
+    },
+    {
+      "panel": "all20",
+      "reference": "local_context",
+      "metric": "off_track_steps",
+      "role": "different_information_context",
+      "mean_difference": -1.8,
+      "per_track": [
+        0.0,
+        -4.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -2.0,
+        -4.0,
+        -5.0,
+        0.0,
+        0.0,
+        2.0,
+        -23.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "positive": 1,
+      "negative": 5,
+      "ties": 14,
+      "nominal_track_bootstrap_95_percent": [
+        -4.45,
+        -0.15
+      ]
+    },
+    {
+      "panel": "original5",
+      "reference": "tangent",
+      "metric": "return",
+      "role": "primary",
+      "mean_difference": 282.0867876380054,
+      "per_track": [
+        253.3943661971831,
+        196.61016949152622,
+        311.30201342281805,
+        337.3250000000005,
+        311.8023890784989
+      ],
+      "positive": 5,
+      "negative": 0,
+      "ties": 0
+    },
+    {
+      "panel": "original5",
+      "reference": "tangent",
+      "metric": "success",
+      "role": "primary",
+      "mean_difference": 0.8,
+      "per_track": [
+        1.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "positive": 4,
+      "negative": 0,
+      "ties": 1
+    },
+    {
+      "panel": "original5",
+      "reference": "tangent",
+      "metric": "progress",
+      "role": "primary",
+      "mean_difference": 0.2685067876380051,
+      "per_track": [
+        0.23239436619718312,
+        0.19661016949152543,
+        0.2953020134228188,
+        0.328125,
+        0.2901023890784983
+      ],
+      "positive": 5,
+      "negative": 0,
+      "ties": 0
+    },
+    {
+      "panel": "original5",
+      "reference": "tangent",
+      "metric": "off_track_steps",
+      "role": "primary",
+      "mean_difference": 0.0,
+      "per_track": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "positive": 0,
+      "negative": 0,
+      "ties": 5
+    },
+    {
+      "panel": "original5",
+      "reference": "local_context",
+      "metric": "return",
+      "role": "different_information_context",
+      "mean_difference": -30.700338983049164,
+      "per_track": [
+        3.7000000000003865,
+        -166.10169491524744,
+        1.7000000000001592,
+        1.3000000000000682,
+        5.9000000000010004
+      ],
+      "positive": 4,
+      "negative": 1,
+      "ties": 0
+    },
+    {
+      "panel": "original5",
+      "reference": "local_context",
+      "metric": "success",
+      "role": "different_information_context",
+      "mean_difference": 0.0,
+      "per_track": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "positive": 0,
+      "negative": 0,
+      "ties": 5
+    },
+    {
+      "panel": "original5",
+      "reference": "local_context",
+      "metric": "progress",
+      "role": "different_information_context",
+      "mean_difference": -0.03322033898305081,
+      "per_track": [
+        0.0,
+        -0.16610169491525406,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "positive": 0,
+      "negative": 1,
+      "ties": 4
+    },
+    {
+      "panel": "original5",
+      "reference": "local_context",
+      "metric": "off_track_steps",
+      "role": "different_information_context",
+      "mean_difference": -0.8,
+      "per_track": [
+        0.0,
+        -4.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "positive": 0,
+      "negative": 1,
+      "ties": 4
+    },
+    {
+      "panel": "additional15",
+      "reference": "tangent",
+      "metric": "return",
+      "role": "primary",
+      "mean_difference": 287.6356084376268,
+      "per_track": [
+        125.21422924901799,
+        317.6895306859251,
+        183.73493975903432,
+        283.1541218637981,
+        420.29473684209967,
+        342.44755700325163,
+        269.3498452012342,
+        -10.344827586205668,
+        374.7689655172409,
+        275.19379844961395,
+        630.9071661237709,
+        183.12953020134398,
+        315.17366548042753,
+        224.029927007301,
+        379.7909407665484
+      ],
+      "positive": 14,
+      "negative": 1,
+      "ties": 0,
+      "nominal_track_bootstrap_95_percent": [
+        216.8310042149275,
+        362.18051662119893
+      ]
+    },
+    {
+      "panel": "additional15",
+      "reference": "tangent",
+      "metric": "success",
+      "role": "primary",
+      "mean_difference": 0.5333333333333333,
+      "per_track": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ],
+      "positive": 8,
+      "negative": 0,
+      "ties": 7,
+      "nominal_track_bootstrap_95_percent": [
+        0.26666666666666666,
+        0.8
+      ]
+    },
+    {
+      "panel": "additional15",
+      "reference": "tangent",
+      "metric": "progress",
+      "role": "primary",
+      "mean_difference": 0.2790356084376276,
+      "per_track": [
+        0.09881422924901184,
+        0.31768953068592065,
+        0.18373493975903615,
+        0.2831541218637992,
+        0.4078947368421053,
+        0.33224755700325737,
+        0.26934984520123845,
+        -0.010344827586206917,
+        0.3620689655172413,
+        0.27519379844961234,
+        0.6254071661237786,
+        0.16442953020134232,
+        0.2953736654804271,
+        0.2007299270072993,
+        0.3797909407665505
+      ],
+      "positive": 14,
+      "negative": 1,
+      "ties": 0,
+      "nominal_track_bootstrap_95_percent": [
+        0.2074711335707974,
+        0.3540241222607224
+      ]
+    },
+    {
+      "panel": "additional15",
+      "reference": "tangent",
+      "metric": "off_track_steps",
+      "role": "primary",
+      "mean_difference": 0.13333333333333333,
+      "per_track": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "positive": 1,
+      "negative": 0,
+      "ties": 14,
+      "nominal_track_bootstrap_95_percent": [
+        0.0,
+        0.4
+      ]
+    },
+    {
+      "panel": "additional15",
+      "reference": "local_context",
+      "metric": "return",
+      "role": "different_information_context",
+      "mean_difference": -85.57447092112703,
+      "per_track": [
+        3.2000000000003865,
+        -90.25270758122349,
+        -265.06024096385636,
+        -75.26881720429753,
+        2.400000000000432,
+        -2.6000000000008185,
+        -247.67801857585278,
+        -351.7241379310234,
+        -0.7000000000006139,
+        -151.1348837209291,
+        3.800000000000182,
+        4.6000000000008185,
+        6.0000000000009095,
+        3.4000000000003183,
+        -122.59825783972417
+      ],
+      "positive": 6,
+      "negative": 9,
+      "ties": 0,
+      "nominal_track_bootstrap_95_percent": [
+        -146.70151989751074,
+        -33.52218488172128
+      ]
+    },
+    {
+      "panel": "additional15",
+      "reference": "local_context",
+      "metric": "success",
+      "role": "different_information_context",
+      "mean_difference": -0.13333333333333333,
+      "per_track": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "positive": 0,
+      "negative": 2,
+      "ties": 13,
+      "nominal_track_bootstrap_95_percent": [
+        -0.3333333333333333,
+        0.0
+      ]
+    },
+    {
+      "panel": "additional15",
+      "reference": "local_context",
+      "metric": "progress",
+      "role": "different_information_context",
+      "mean_difference": -0.08540113758779475,
+      "per_track": [
+        0.0,
+        -0.09025270758122728,
+        -0.2650602409638554,
+        -0.07526881720430123,
+        0.0,
+        0.0,
+        -0.24767801857585137,
+        -0.3517241379310345,
+        0.0,
+        -0.13953488372093026,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.11149825783972123
+      ],
+      "positive": 0,
+      "negative": 7,
+      "ties": 8,
+      "nominal_track_bootstrap_95_percent": [
+        -0.14614350623865596,
+        -0.03440118492044131
+      ]
+    },
+    {
+      "panel": "additional15",
+      "reference": "local_context",
+      "metric": "off_track_steps",
+      "role": "different_information_context",
+      "mean_difference": -2.1333333333333333,
+      "per_track": [
+        0.0,
+        -2.0,
+        -4.0,
+        -5.0,
+        0.0,
+        0.0,
+        2.0,
+        -23.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "positive": 1,
+      "negative": 4,
+      "ties": 10,
+      "nominal_track_bootstrap_95_percent": [
+        -5.533333333333333,
+        0.0
+      ]
+    }
+  ],
+  "new_native_frames": 38031,
+  "new_internal_physics_frames": 5326720,
+  "new_training_frames": 0,
+  "new_condition_costs": {
+    "tangent": {
+      "native_frames": 20000,
+      "decisions": 5000,
+      "model_transitions": 700000,
+      "internal_physics_frames": 2800000,
+      "actor_forward_examples": 670000,
+      "wall_time_s": 1029.502831403006
+    },
+    "true_tail": {
+      "native_frames": 18031,
+      "decisions": 4512,
+      "model_transitions": 631680,
+      "internal_physics_frames": 2526720,
+      "actor_forward_examples": 604608,
+      "wall_time_s": 918.1829077069997
+    }
+  },
+  "replay_check": {
+    "conditions": {
+      "tangent": 5,
+      "true_tail": 5
+    },
+    "exact_replay": true,
+    "extra_environment_frames": 0,
+    "excluded_fields": [
+      "latency_ms",
+      "sensor_ms",
+      "policy_ms"
+    ]
+  },
+  "historical_context_cost_not_new_work": true,
+  "bootstrap": {
+    "reps": 5000,
+    "seed": 0
+  },
+  "uncertainty": "nominal paired-track intervals only, one frozen actor/stream, no selection adjustment or training-seed uncertainty; original5 descriptive only",
+  "panels": "original5 informed this intervention; additional15 also development, previously used by the local context; all20 is not independent confirmation",
+  "speed_definition": "decision-end observed speed weighted by action duration, then equal episode means",
+  "latency": "pooled measured decisions per panel; historical local timings not paired; synchronous environment, no deadline fallback",
+  "held_out_evaluation": false,
+  "private_oracle_outputs_read": false
+}

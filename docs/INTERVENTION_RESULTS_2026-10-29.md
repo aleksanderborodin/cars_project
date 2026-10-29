@@ -122,12 +122,14 @@ The result is compatible with the user's emphasis on driving usefulness rather
 than fidelity alone; that principle has established prior art and is not a new
 novelty claim arising from five tracks.
 
-**Next priority:** an explicitly declared full-road objective-reference control
+**Historical next priority, subsequently executed:** an explicitly declared full-road objective-reference control
 with the same oracle road model, followed by objective/horizon and imagined-input
 checks if needed. That control adds future reference/topology information and
 must be labeled as such; it cannot be silently folded into the current two-factor
 results. It was not run in this original batch; the separately declared
-[follow-up](REFERENCE_CONTINUATION_2026-10-29.md) has now completed. The eventual
+[follow-up](REFERENCE_CONTINUATION_2026-10-29.md) and [20-track replication](REFERENCE_REPLICATION_2026-10-29.md)
+have now completed. The primary gain repeats but the local-search deficit remains.
+The eventual
 oracle-input policies must be trained for their interfaces, with strong-baseline
 and distribution-shift checks, before interpreting a learned V/L/F matrix.
 Do not automatically expand the current failed configuration to 200 tracks or

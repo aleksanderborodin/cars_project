@@ -17,8 +17,10 @@ in all oracle cells despite improved oracle-road prediction on recorded actions.
 This motivated a reference/objective compatibility check before a large training launch.
 The [subsequent reference-tail control](REFERENCE_CONTINUATION_2026-10-29.md) is now
 complete and supports that mismatch explanation in this pilot, with performance
-still below the local-search mean. Broader replication and competence controls
-remain necessary before a large training matrix.
+still below the local-search mean. The [20-track replication](REFERENCE_REPLICATION_2026-10-29.md)
+retains the primary mean gain but also the local-search deficit and one primary
+counterexample. Independent-stream/seed and competence controls remain necessary
+before a large training matrix.
 
 ## First intervention: two independent geometry switches
 

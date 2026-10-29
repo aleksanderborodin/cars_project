@@ -32,10 +32,13 @@ V/L/F policies; do not interpret these substitutions as component adequacy.
 The immediate [reference-continuation pilot](REFERENCE_CONTINUATION_2026-10-29.md)
 is complete: after exact control replay, changing only the tail raised return
 594.21→876.29 and completion 0/5→4/5. The original local mean is still 906.99.
-Next recommend a separately declared 20-track paired replication before tuning
-to the remaining timeout; this [replication is now declared](REFERENCE_REPLICATION_2026-10-29.md)
-and awaiting validation/launch. The visible prefix, physics and
-all other planner settings were held fixed in this pilot.
+The [20-track paired replication](REFERENCE_REPLICATION_2026-10-29.md) is complete:
+true tail 813.85/60%, tangent 527.60/0%, historical local 885.70/70%. The additional15
+retain +287.64 versus tangent but one counterexample and a −85.57 local deficit.
+Ten exact replays passed; no jobs remain. Close this bounded diagnostic and return
+to the audited equal-work optimizer comparison and baseline competence gates.
+No automatic 200-track expansion, targeted failure tuning or global training.
+The visible prefix, physics and all other planner settings stayed fixed.
 
 | Order | Deliverable | Evidence / gate |
 |---|---|---|

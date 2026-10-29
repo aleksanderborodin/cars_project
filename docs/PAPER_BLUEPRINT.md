@@ -208,8 +208,13 @@ found worse driving with oracle-derived road despite more accurate predictions
 of recorded controls. The [reference-tail follow-up](REFERENCE_CONTINUATION_2026-10-29.md)
 changed only the scoring continuation and recovered 594.21/0%→876.29/80% on five
 tracks. Original local search remains 906.99/80%; a remaining timeout prevents
-an overall mean advantage. This is conditional evidence of reference mismatch,
-not proof that perception/forecasting or learned control is generally solved.
+an overall mean advantage. The [20-track replication](REFERENCE_REPLICATION_2026-10-29.md)
+retains the conditional gain: true tail 813.85/60%, tangent 527.60/0%, historical
+local 885.70/70%. Additional15 gain +287.64 versus tangent but lose 85.57 versus
+local. One track is worse even than tangent; eight true-tail episodes time out.
+Ten exact pilot replays passed. This supports reference mismatch as a limitation
+of this configuration, not perception/forecasting adequacy or a general control
+advantage. The oracle variant is not promoted over the local method.
 
 This evidence supports investigating selection. It does not yet establish the
 three-stage explanation, a perception result, a calibrated forecast, a strong
@@ -272,7 +277,7 @@ recommendations or engineering choices, not retrospectively user requirements.
 | A13 | Add a predicted-future intermediate P when making explicit forecasting claims | Proposed matched-interface L/P/F comparison; oracle improvement alone does not identify forecasting error |
 | A14 | Independently switch visible objective-reference and hidden-road geometry before new oracle-policy training | Implemented/tested; [five-track pilot completed](INTERVENTION_RESULTS_2026-10-29.md) with negative driving effects; no visual/RL-causality claim |
 | A15 | Audit prediction of recorded executed controls after the oracle driving failure, then isolate objective compatibility | Completed 15-window audit and reference-tail follow-up: better motion prediction alone did not ensure good selection |
-| A16 | Preserve the visible reference exactly and change only its future tail, holding extent/sampling fixed | [Reference-continuation pilot](REFERENCE_CONTINUATION_2026-10-29.md) completed; +282.09 return and 0/5→4/5 completion versus tangent, still below local mean; [20-track replication](REFERENCE_REPLICATION_2026-10-29.md) declared with unchanged settings |
+| A16 | Preserve the visible reference exactly and change only its future tail, holding extent/sampling fixed | [Reference-continuation pilot](REFERENCE_CONTINUATION_2026-10-29.md) completed; +282.09 return and 0/5→4/5 completion versus tangent, still below local mean; [20-track replication](REFERENCE_REPLICATION_2026-10-29.md) complete: +286.25 versus tangent, −71.86 versus local; one primary counterexample, ten exact replays |
 
 ## Prior work and novelty assessment
 

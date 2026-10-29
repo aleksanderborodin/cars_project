@@ -7,6 +7,8 @@
 the scoring-reference tail raised mean return from 594.21 to 876.29 and completion
 from 0/5 to 4/5. The original local-search mean remains higher at 906.99. All five
 tracks, the remaining failure and costs are reported below; no new training ran.
+The subsequent [20-track replication](REFERENCE_REPLICATION_2026-10-29.md) is complete:
++286.25 versus tangent, but −71.86 versus local search, with one primary counterexample.
 
 **User instruction:** plan the next experiments and run them. The broader user
 idea is to separate understanding/prediction from deciding through interventions.
@@ -146,7 +148,7 @@ changing that road model. This does not rule out remaining objective, proposal,
 observer or training limitations. The user's understanding-versus-deciding study
 benefits from the control; it is not yet a validated three-way attribution of RL error.
 
-**Assistant next recommendation, not launched:** replicate the frozen tangent-versus-
+**Historical next recommendation, now completed in the [separate replication](REFERENCE_REPLICATION_2026-10-29.md):** replicate the frozen tangent-versus-
 true-tail comparison on the first 20 development tracks before tuning to track 2.
 Declare both full conditions and a larger budget separately, retain the original
 five as an explicit subset, and report the additional 15 separately as development

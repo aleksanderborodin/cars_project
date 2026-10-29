@@ -2,7 +2,10 @@
 
 Reviewed 2026-10-28. [Index](../README.md) · [Next moves](NEXT_MOVES.md) ·
 [References](REFERENCES.md). **Status: source audited; adaptation and driving runs
-not implemented or launched.** The frozen broad campaign takes priority.
+not implemented or launched.** The broad campaign and subsequent geometry diagnostics
+are complete. Following the [20-track reference replication](REFERENCE_REPLICATION_2026-10-29.md),
+this comparison is again the next implementation priority; it requires its own
+bounded declaration and tests before new racing.
 
 ## Why this comparison
 

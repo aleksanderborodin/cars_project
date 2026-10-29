@@ -31,7 +31,7 @@ register separates user ideas, assistant refinements, prior work and measured ev
 | [Paper blueprint](docs/PAPER_BLUEPRINT.md) | Central three-stage study, all project ideas with origin/status, validity checks, novelty and execution gates |
 | [Controlled intervention study](docs/INTERVENTION_STUDY.md) | Executable four-cell geometry diagnostic, isolation tests, pilot budget and staged V/L/F training design |
 | [Intervention results](docs/INTERVENTION_RESULTS_2026-10-29.md) | Completed negative driving pilot, executed-trajectory audit, better prediction with oracle road, and next validity gate |
-| [20-track reference replication](docs/REFERENCE_REPLICATION_2026-10-29.md) | Frozen two-condition replication, original-five/additional-fifteen panels and replay gates |
+| [20-track reference replication](docs/REFERENCE_REPLICATION_2026-10-29.md) | Completed 20-track paired result: +286.25 versus tangent but −71.86 versus local search; failures, costs and replay evidence |
 | [Reference continuation](docs/REFERENCE_CONTINUATION_2026-10-29.md) | Frozen follow-up: preserve the visible reference and change only its future continuation; execution and results |
 | [Completed broad results](docs/BROAD_RESULTS_2026-10-29.md) | Full 200-track comparison and failed lower-learning-rate probe; both campaigns finished |
 | [User intent](docs/USER_INTENT.md) | User decisions, main system, paper goal, expert experiment, and future evolution option |

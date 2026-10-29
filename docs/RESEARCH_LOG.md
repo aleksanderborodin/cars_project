@@ -910,4 +910,19 @@ Earlier project intentions remain in USER_INTENT.md; this log extends that recor
   original5 are selected development evidence, additional15 are not final test.
   No new global-policy training, held-out evaluation or private-ranking access.
 - **Record/status:** [replication declaration](REFERENCE_REPLICATION_2026-10-29.md);
-  validation and execution pending.
+  90 tests and artifact/CLI/link checks passed; serial campaign is complete.
+- **All20 measured outcome:** true tail 813.85/60%, tangent 527.60/0%, historical
+  local 885.70/70%. Primary +286.25 [231.59, 343.19]; local context −71.86
+  [−122.60, −28.95]. Intervals are nominal paired-track development intervals only.
+- **Additional15:** +287.64 versus tangent [216.83, 362.18], gains on 14/15 tracks;
+  −85.57 versus local. Track 13 is a counterexample (365.52 versus tangent 375.86).
+  Eight corrected-tail timeouts remain, including two tracks completed by local.
+- **Checks/cost:** ten complete exact replays; frozen/live source and artifact
+  hashes and all 60 reported trajectories checked; 38,031 native / 5,326,720
+  internal physics frames, zero new experiment training, 1,962.86 s total.
+- **Assistant interpretation/next choice:** reference compatibility matters in this
+  configuration, but corrected oracle search is still worse than local. Close this
+  bounded diagnostic; retain local as the working method and return to the audited
+  equal-work established-optimizer comparison. Its gain is uncertain; competence,
+  independent seeds and V/L/F training still matter. No new run/200-track expansion,
+  targeted failure tuning, private-ranking access or global training is launched.

@@ -20,12 +20,15 @@ The user has now requested execution of the intervention study. The first
 reconstruction from hidden-road information around the same frozen local actor.
 It uses the existing privileged development adapter; oracle-informed policy
 training, visual policies and the full V/L/F matrix remain unimplemented.
-The next [reference-continuation control](REFERENCE_CONTINUATION_2026-10-29.md)
+The completed [reference-continuation control](REFERENCE_CONTINUATION_2026-10-29.md)
 preserves the visible reference and replaces only its tangent tail with true road,
 while keeping oracle road physics and all other planner settings fixed. This is
 a separately declared development diagnostic, not a local-information method.
-The pilot is complete; the [20-track replication](REFERENCE_REPLICATION_2026-10-29.md)
-freezes both conditions and reports original-five/additional-fifteen panels separately.
+The pilot and [20-track replication](REFERENCE_REPLICATION_2026-10-29.md) are complete.
+With both conditions frozen, the reference change gained +286.25 mean return
+versus tangent but remained −71.86 below historical local search. Original-five
+and additional-fifteen panels are separate; this is a diagnostic, not a promoted
+local method or a component-adequacy/SOTA claim.
 [RESEARCH_PLAN.md](RESEARCH_PLAN.md) details the geometry branch;
 [PREDICTION_SELECTION.md](PREDICTION_SELECTION.md) reviews optional predictor
 spaces and downstream model selection. Proposed numerical defaults,

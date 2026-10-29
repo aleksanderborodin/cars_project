@@ -20,25 +20,25 @@ diagnostic study, source attribution and validity requirements. See the
 [execution report](BROAD_RESULTS_2026-10-29.md); the original decisions below
 remain recorded as the pre-execution plan.
 
-**Latest user steering:** execute the intervention study. The immediate bounded
-task is the [four-cell fixed-controller geometry pilot](INTERVENTION_STUDY.md),
+**Latest user steering:** execute the intervention study. The completed bounded
+task began with the [four-cell fixed-controller geometry pilot](INTERVENTION_STUDY.md),
 separating visible-reference reconstruction from hidden-road access. This brings
 the controlled diagnostic forward; the optimizer audit and baseline competence
 work remain necessary. No new oracle-policy training or test evaluation is enabled.
-That [pilot and executed-action audit](INTERVENTION_RESULTS_2026-10-29.md) are now
-complete. Oracle road improved recorded-action prediction but reduced driving
-score. The immediate next control is a separately declared full-road objective
-reference with oracle road; this [bounded follow-up](REFERENCE_CONTINUATION_2026-10-29.md)
-is complete, preserving the current visible reference exactly. Return rose from
-594.21 to 876.29 and completion from 0/5 to 4/5, still below the original local
-mean of 906.99. The next recommended run is a separately declared 20-track paired
-replication of the frozen tangent/true-tail conditions, with the original five
-and added 15 reported separately. It is now [declared](REFERENCE_REPLICATION_2026-10-29.md),
-with both frozen conditions rerun and the first five per condition checked exactly;
-execution is pending validation. Avoid tuning specifically
-to the one remaining failed track before this broader check; strong-baseline and
-established-planner work remain open. These oracle interventions are not validated
-performance ceilings or the trained V/L/F study.
+That [pilot and executed-action audit](INTERVENTION_RESULTS_2026-10-29.md) are complete.
+Oracle road improved recorded-action prediction but reduced driving score. The
+[five-track reference-tail follow-up](REFERENCE_CONTINUATION_2026-10-29.md) recovered
+594.21/0%→876.29/80% while preserving the visible prefix. Its [20-track paired
+replication](REFERENCE_REPLICATION_2026-10-29.md) is now complete: true tail
+813.85/60%, tangent 527.60/0%, historical local 885.70/70%. Additional15 retain
++287.64 versus tangent, but −85.57 versus local, with one primary counterexample.
+All ten replay checks passed; no jobs remain. Close this bounded diagnostic with
+both findings preserved. Keep the original local method; do not promote the oracle
+variant or automatically expand/tune it. The next implementation priority is the
+[audited equal-work optimizer comparison](SEARCH_OPTIMIZER_AUDIT.md), gated by
+synthetic isolation/budget tests and a new smoke/campaign declaration. Baseline
+competence and trained V/L/F work remain required. No new optimizer/global-training
+runs are launched, and these oracle interventions are not performance ceilings.
 
 ## Objective and present evidence
 

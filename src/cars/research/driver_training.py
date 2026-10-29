@@ -68,6 +68,7 @@ def train_driver(run_id: str, config: DriverTrainingConfig, *, stop_at: int,
         parent = read_config(resume)
         parent_training = dict(parent["settings"].get("training", {}))
         parent_training.setdefault("target_kl", None)  # older v2 runs had no KL stopping
+        parent_training.setdefault("normalization_gamma", None)  # legacy normalization follows PPO gamma
         if (parent_training != config.resolved() or parent["protocol"] != protocol.__dict__
                 or parent["settings"].get("encoder") != ENCODER):
             raise ValueError("Continuation requires identical resolved config and protocol")
@@ -77,14 +78,15 @@ def train_driver(run_id: str, config: DriverTrainingConfig, *, stop_at: int,
         if stop_at <= schedule.frames:
             raise ValueError("Continuation must advance past the saved native frame")
     initial_frames = schedule.frames
-    settings = {"partition": "train", "trainer_version": 3, "training": config.resolved(),
+    settings = {"partition": "train", "trainer_version": 4, "training": config.resolved(),
         "stop_at_native_frames": stop_at, "parent_run": str(resume.resolve()) if resume else None,
         "algorithm": "RecurrentPPO", "policy": "MultiInputLstmPolicy",
         "encoder": ENCODER,
         "policy_architecture": {"net_arch": {"pi": [64, 64], "vf": [64, 64]}, "activation": "GELU",
                                 "ortho_init": False, "enable_critic_lstm": False},
         "reward_normalization": "VecNormalize norm_obs=False norm_reward=True; training only",
-        "discount_units": "gamma per repeated decision; not matched to upstream native-frame discount",
+        "reward_normalization_gamma": config.resolved_normalization_gamma,
+        "discount_units": "gamma per repeated decision; undiscounted within-repeat reward sum; no native-recipe equivalence claim",
         "selection": "scheduled checkpoints; choose standalone mean development return, then completion, then earlier",
         "schedule": "linear in cumulative actual native frames over declared global budget",
         "deterministic_algorithms": True, "cublas_workspace_config": os.environ["CUBLAS_WORKSPACE_CONFIG"],
@@ -103,13 +105,16 @@ def train_driver(run_id: str, config: DriverTrainingConfig, *, stop_at: int,
             normalizer.training = True
             if normalizer.norm_obs or not normalizer.norm_reward:
                 raise ValueError("Unexpected normalization contract")
+            if normalizer.gamma != config.resolved_normalization_gamma:
+                raise ValueError("Reward-normalization discount differs from resolved config")
             model = RecurrentPPO.load(resume / "model.zip", env=normalizer, device=config.device,
                                       custom_objects={"learning_rate": schedule, "lr_schedule": schedule})
             for i, state in enumerate(json.loads((resume / "streams.json").read_text())):
                 raw.env_method("restore_training_stream", state, indices=i)
             restore_rng(resume)
         else:
-            normalizer = VecNormalize(raw, norm_obs=False, norm_reward=True, clip_reward=config.reward_clip, gamma=config.gamma)
+            normalizer = VecNormalize(raw, norm_obs=False, norm_reward=True,
+                                      clip_reward=config.reward_clip, gamma=config.resolved_normalization_gamma)
             model = RecurrentPPO("MultiInputLstmPolicy", normalizer, n_steps=config.n_steps,
                 batch_size=config.batch_size, n_epochs=config.n_epochs, learning_rate=schedule,
                 gamma=config.gamma, gae_lambda=config.gae_lambda, ent_coef=config.ent_coef,

@@ -44,5 +44,31 @@ and a falling learned SDE scale are correlates, not proven causes. A stronger
 matched-local proposer is still the main comparison prerequisite; native results
 must not be pooled with local repeat-four/search scores.
 
-Status: declared; implementation checks precede execution. All prior native runs
-and the original 1M checkpoint-selection decision remain immutable.
+Status: complete. All prior native runs and the original 1M checkpoint-selection
+decision remain immutable.
+
+## Completed results
+
+All six historical CPU replay episodes and six same-GPU replay episodes match
+exactly, excluding timings. The [public summary](../reports/native_device_audit_2026-10-29/summary.json)
+verifies 612 frozen source-file hashes; all normalization checks pass.
+
+| Checkpoint | CPU mean, first 10 tracks | CUDA mean, same 10 | CUDA minus CPU | CPU completed | CUDA completed |
+|---|---:|---:|---:|---:|---:|
+| 1M | 836.51 | 818.25 | −18.26 | 6/10 | 4/10 |
+| 2M | 480.55 | 479.76 | −0.79 | 0/10 | 0/10 |
+| 4M | 549.89 | 616.92 | +67.03 | 0/10 | 0/10 |
+
+The 2M-minus-1M contrast is −355.96 on CPU and −338.49 on CUDA; 4M-minus-1M
+is −286.62 on CPU and −201.33 on CUDA. Later regression therefore persists on
+both devices in this panel. Device differences can still matter (particularly
+4M's +67.03), so do not claim device equivalence or dismiss precision sensitivity.
+These ten-track diagnostics do not replace the original 50-track selection table.
+Descriptive paired bootstrap intervals and provenance are included in the public
+report; they are not confirmatory tests or training-seed uncertainty.
+
+Cost: **39,214 new native evaluation frames, 42 reset physics ticks, 203.59 seconds**,
+zero training/search steps. All nine runs completed; no jobs from this batch remain.
+The next [bounded local-policy discount trial](LOCAL_DISCOUNT_TRIAL_2026-10-29.md)
+returns to the matched local proposer. Keep native CPU evaluation and the selected
+1M policy as frozen evidence; no score-driven device reselection or native sweep.

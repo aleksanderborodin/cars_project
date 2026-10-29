@@ -94,4 +94,4 @@ for the main search comparison must retain the local information and action rate
 changing its training recipe must be a newly declared experiment.
 
 Status: this baseline campaign is complete; no training from it remains active.
-The separate device diagnostic is declared next. Final-test evaluation stays sealed.
+The separate [device diagnostic is complete](NATIVE_DEVICE_AUDIT_2026-10-29.md): regression persists on both devices, though some device effects are material. The [local discount trial](LOCAL_DISCOUNT_TRIAL_2026-10-29.md) is declared next. Final-test evaluation stays sealed.

@@ -1,0 +1,220 @@
+{
+  "comparisons": [
+    {
+      "checkpoint": "1m",
+      "cpu_mean_return": 836.5093862468887,
+      "cuda_mean_return": 818.2502617406527,
+      "cpu_completions": 6,
+      "cuda_completions": 4,
+      "episodes": 10,
+      "paired_return_change": -18.259124506236056,
+      "replays": [
+        {
+          "passed": true,
+          "episodes": 2,
+          "all_trace_fields_exact_except_timing": true,
+          "original": "runs/native_evaluation/native_main_20261029_s0_1m_dev50",
+          "replay": "runs/native_evaluation/native_device_20261029_1m_cpu_replay"
+        },
+        {
+          "passed": true,
+          "episodes": 2,
+          "all_trace_fields_exact_except_timing": true,
+          "original": "runs/native_evaluation/native_device_20261029_1m_cuda10",
+          "replay": "runs/native_evaluation/native_device_20261029_1m_cuda_replay"
+        }
+      ],
+      "paired_track_bootstrap95": [
+        -36.44645071529553,
+        -2.722631355932399
+      ]
+    },
+    {
+      "checkpoint": "2m",
+      "cpu_mean_return": 480.55010487958725,
+      "cuda_mean_return": 479.76216806468574,
+      "cpu_completions": 0,
+      "cuda_completions": 0,
+      "episodes": 10,
+      "paired_return_change": -0.7879368149015817,
+      "replays": [
+        {
+          "passed": true,
+          "episodes": 2,
+          "all_trace_fields_exact_except_timing": true,
+          "original": "runs/native_evaluation/native_main_20261029_s0_2m_dev50",
+          "replay": "runs/native_evaluation/native_device_20261029_2m_cpu_replay"
+        },
+        {
+          "passed": true,
+          "episodes": 2,
+          "all_trace_fields_exact_except_timing": true,
+          "original": "runs/native_evaluation/native_device_20261029_2m_cuda10",
+          "replay": "runs/native_evaluation/native_device_20261029_2m_cuda_replay"
+        }
+      ],
+      "paired_track_bootstrap95": [
+        -59.15491947976923,
+        59.895335160718815
+      ]
+    },
+    {
+      "checkpoint": "4m",
+      "cpu_mean_return": 549.8908862367762,
+      "cuda_mean_return": 616.9206976620214,
+      "cpu_completions": 0,
+      "cuda_completions": 0,
+      "episodes": 10,
+      "paired_return_change": 67.02981142524524,
+      "replays": [
+        {
+          "passed": true,
+          "episodes": 2,
+          "all_trace_fields_exact_except_timing": true,
+          "original": "runs/native_evaluation/native_main_20261029_s0_4m_dev50",
+          "replay": "runs/native_evaluation/native_device_20261029_4m_cpu_replay"
+        },
+        {
+          "passed": true,
+          "episodes": 2,
+          "all_trace_fields_exact_except_timing": true,
+          "original": "runs/native_evaluation/native_device_20261029_4m_cuda10",
+          "replay": "runs/native_evaluation/native_device_20261029_4m_cuda_replay"
+        }
+      ],
+      "paired_track_bootstrap95": [
+        -7.968891111165732,
+        166.26847131837837
+      ]
+    }
+  ],
+  "costs": [
+    {
+      "run_id": "native_device_20261029_1m_cpu_replay",
+      "native_frames": 1832,
+      "decisions": 1832,
+      "reset_physics_ticks": 2,
+      "reset_note": "Final VecEnv autoreset returns an unused terminal placeholder; no extra track consumed",
+      "internal_physics_steps": 0,
+      "wall_seconds": 8.203720891993726
+    },
+    {
+      "run_id": "native_device_20261029_1m_cuda10",
+      "native_frames": 9388,
+      "decisions": 9388,
+      "reset_physics_ticks": 10,
+      "reset_note": "Final VecEnv autoreset returns an unused terminal placeholder; no extra track consumed",
+      "internal_physics_steps": 0,
+      "wall_seconds": 42.909849601011956
+    },
+    {
+      "run_id": "native_device_20261029_1m_cuda_replay",
+      "native_frames": 1851,
+      "decisions": 1851,
+      "reset_physics_ticks": 2,
+      "reset_note": "Final VecEnv autoreset returns an unused terminal placeholder; no extra track consumed",
+      "internal_physics_steps": 0,
+      "wall_seconds": 8.735897899008705
+    },
+    {
+      "run_id": "native_device_20261029_2m_cpu_replay",
+      "native_frames": 2000,
+      "decisions": 2000,
+      "reset_physics_ticks": 2,
+      "reset_note": "Final VecEnv autoreset returns an unused terminal placeholder; no extra track consumed",
+      "internal_physics_steps": 0,
+      "wall_seconds": 8.81281778900302
+    },
+    {
+      "run_id": "native_device_20261029_2m_cuda10",
+      "native_frames": 8331,
+      "decisions": 8331,
+      "reset_physics_ticks": 10,
+      "reset_note": "Final VecEnv autoreset returns an unused terminal placeholder; no extra track consumed",
+      "internal_physics_steps": 0,
+      "wall_seconds": 38.82721932200366
+    },
+    {
+      "run_id": "native_device_20261029_2m_cuda_replay",
+      "native_frames": 1812,
+      "decisions": 1812,
+      "reset_physics_ticks": 2,
+      "reset_note": "Final VecEnv autoreset returns an unused terminal placeholder; no extra track consumed",
+      "internal_physics_steps": 0,
+      "wall_seconds": 8.25730787399516
+    },
+    {
+      "run_id": "native_device_20261029_4m_cpu_replay",
+      "native_frames": 2000,
+      "decisions": 2000,
+      "reset_physics_ticks": 2,
+      "reset_note": "Final VecEnv autoreset returns an unused terminal placeholder; no extra track consumed",
+      "internal_physics_steps": 0,
+      "wall_seconds": 8.970387035995373
+    },
+    {
+      "run_id": "native_device_20261029_4m_cuda10",
+      "native_frames": 10000,
+      "decisions": 10000,
+      "reset_physics_ticks": 10,
+      "reset_note": "Final VecEnv autoreset returns an unused terminal placeholder; no extra track consumed",
+      "internal_physics_steps": 0,
+      "wall_seconds": 46.36825611299719
+    },
+    {
+      "run_id": "native_device_20261029_4m_cuda_replay",
+      "native_frames": 2000,
+      "decisions": 2000,
+      "reset_physics_ticks": 2,
+      "reset_note": "Final VecEnv autoreset returns an unused terminal placeholder; no extra track consumed",
+      "internal_physics_steps": 0,
+      "wall_seconds": 9.23618305301352
+    }
+  ],
+  "checkpoint_contrasts": {
+    "cpu": {
+      "2m_minus_1m": {
+        "mean_change": -355.95928136730134,
+        "paired_track_bootstrap95": [
+          -480.4228836102966,
+          -250.60134570076949
+        ]
+      },
+      "4m_minus_1m": {
+        "mean_change": -286.6185000101126,
+        "paired_track_bootstrap95": [
+          -412.88060993393,
+          -169.66148800773965
+        ]
+      }
+    },
+    "cuda": {
+      "2m_minus_1m": {
+        "mean_change": -338.48809367596687,
+        "paired_track_bootstrap95": [
+          -454.2157346095209,
+          -231.28794693978986
+        ]
+      },
+      "4m_minus_1m": {
+        "mean_change": -201.3295640786313,
+        "paired_track_bootstrap95": [
+          -335.031031787472,
+          -81.5881003268101
+        ]
+      }
+    }
+  },
+  "cost_summary": {
+    "native_frames": 39214,
+    "reset_physics_ticks": 42,
+    "wall_seconds": 203.5872023779957
+  },
+  "source_files_verified": 612,
+  "historical_cpu_replay_episodes": 6,
+  "cuda_replay_episodes": 6,
+  "original_checkpoint_selection_unchanged": true,
+  "training_native_frames": 0,
+  "interpretation": "Later regression persists on both devices; precision/device can still materially affect individual trajectories; ten-track development diagnostic only",
+  "uncertainty": "10000 paired track bootstrap draws seed20261029; no independent training seeds, equivalence claim or confirmatory test"
+}

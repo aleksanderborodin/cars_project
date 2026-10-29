@@ -26,6 +26,25 @@ def test_native_schedule_does_not_restart_at_chunk_boundary():
     for value in (0, -1, float("inf"), float("nan")):
         with pytest.raises(ValueError, match="target_kl"):
             DriverTrainingConfig(target_kl=value)
+    for value in (0, -1, 1.1, float("inf"), float("nan")):
+        with pytest.raises(ValueError, match="normalization_gamma"):
+            DriverTrainingConfig(normalization_gamma=value)
+    assert DriverTrainingConfig(gamma=.8).resolved_normalization_gamma == .8
+
+
+def test_policy_discount_can_change_without_normalization_discount(tmp_path):
+    config = DriverTrainingConfig(workers=1, vector_backend="dummy", total_native_frames=128,
+        checkpoints=(), n_steps=8, batch_size=8, n_epochs=1, lstm_hidden_size=16, features_dim=32,
+        gamma=.99**4, normalization_gamma=.99)
+    root = train_driver("separate_discounts", config, stop_at=32, runs_dir=tmp_path)
+    model = RecurrentPPO.load(root / "model.zip", device="cpu")
+    assert model.gamma == .99**4
+    with (root / "normalization.pkl").open("rb") as file:
+        normalizer = pickle.load(file)
+    assert normalizer.gamma == .99
+    assert not normalizer.norm_obs and normalizer.norm_reward
+    resumed = train_driver("continued_discounts", config, stop_at=64, resume=root, runs_dir=tmp_path)
+    assert json.loads((resumed / "training_state.json").read_text())["decisions"] == 16
 
 
 @pytest.mark.parametrize("size", [9, 15])

@@ -1065,3 +1065,31 @@ the runner without an automatic hyperparameter retry.
   [device-audit declaration](NATIVE_DEVICE_AUDIT_2026-10-29.md). Independent seeds,
   uninterrupted-training comparison and a stronger matched-local proposer remain
   later choices; no automatic hyperparameter sweep.
+
+R49 completed: six historical CPU and six same-CUDA episode replays match exactly.
+On the first ten tracks, CPU/CUDA means are 836.51/818.25 at 1M, 480.55/479.76 at
+2M, and 549.89/616.92 at 4M. Later regression persists on both devices; device
+sensitivity is not negligible. Cost 39,214 native frames, 42 resets, 203.59 s;
+no new training. Retain original CPU-based selection; no native sweep is activated.
+
+## R50 — Isolate PPO discount under the existing local action cadence
+
+- **Author:** assistant experiment choice supporting the user's stronger matched
+  proposer and simulation-selection goal; not a user-mandated hyperparameter.
+- **Rationale:** the factory audit identifies different physical discount under
+  repeat four. Test gamma=0.99^4=0.96059601 per decision, while explicitly holding
+  reward-normalization gamma at the existing 0.99. Existing defaults remain intact.
+- **Design:** same local information, repeat four, encoder, seed0, CPU4, GAE/SDE,
+  optimizer and 8M-native-frame LR schedule; stop at the bounded 2M review. Four
+  checkpoints on the same first50 development tracks; historical original local
+  checkpoint is the reference. Exact two-episode historical replay precedes launch.
+- **Confidence/limits:** high confidence in discount arithmetic and isolation of
+  the configured normalization timescale, low confidence in driving improvement.
+  Within-repeat rewards, GAE/exploration cadence and native interface still differ
+  from upstream. This is not full recipe parity or causal component adequacy.
+- **Alternatives not bundled:** larger decision budget, independent training seeds,
+  encoder changes, GAE/SDE changes, uninterrupted-training controls. No automatic
+  extension beyond2M or parameter sweep. A better checkpoint still needs frozen
+  direct-versus-original-search tests, independent seeds and stronger comparisons.
+- **Status:** [declaration](LOCAL_DISCOUNT_TRIAL_2026-10-29.md); implementation and
+  108 tests pass; historical replay is the remaining launch gate.

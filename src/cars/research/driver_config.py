@@ -29,6 +29,7 @@ class DriverTrainingConfig:
     features_dim: int = 128
     log_std_init: float = -2.
     reward_clip: float = 10.
+    normalization_gamma: float | None = None
     target_kl: float | None = None
 
     def __post_init__(self) -> None:
@@ -44,6 +45,12 @@ class DriverTrainingConfig:
             raise ValueError("Checkpoint outside declared budget")
         if self.target_kl is not None and (not math.isfinite(self.target_kl) or self.target_kl <= 0):
             raise ValueError("target_kl must be finite and positive, or None")
+        if self.normalization_gamma is not None and not 0 < self.normalization_gamma <= 1:
+            raise ValueError("normalization_gamma must be in (0, 1], or None")
+
+    @property
+    def resolved_normalization_gamma(self) -> float:
+        return self.gamma if self.normalization_gamma is None else self.normalization_gamma
 
     def resolved(self) -> dict:
         return json.loads(json.dumps(asdict(self)))

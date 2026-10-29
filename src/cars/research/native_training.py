@@ -55,30 +55,54 @@ class RecipeClock(BaseCallback):
 def verify_reload(root: Path, model: RecurrentPPO, config: NativeTrainingConfig) -> dict:
     check_config = NativeTrainingConfig(seed=config.seed + 100000, workers=1)
     raw, normalizer, env = native_vector(check_config, normalization=root / "normalization.pkl", training=False)
+    frames = 0
     try:
-        loaded = RecurrentPPO.load(root / "model.zip", device="cpu")
+        # Check serialization on the same device. CPU/CUDA numerical agreement
+        # is a separate diagnostic, not evidence that a checkpoint was corrupted.
+        loaded = RecurrentPPO.load(root / "model.zip", device=model.device)
+        cpu_loaded = RecurrentPPO.load(root / "model.zip", device="cpu")
+        cpu_reference = RecurrentPPO.load(root / "model.zip", device="cpu")
         obs = env.reset()
-        expected_memory = actual_memory = None
+        expected_memory = actual_memory = cpu_memory = cpu_reference_memory = None
         before = float(normalizer.ret_rms.count)
-        error = 0.
+        error = cross_action_error = cross_state_error = 0.
         for i in range(2):
             episode_start = np.array([i == 0])
             expected, expected_memory = model.predict(obs, state=expected_memory,
                 episode_start=episode_start, deterministic=True)
             actual, actual_memory = loaded.predict(obs, state=actual_memory,
                 episode_start=episode_start, deterministic=True)
-            np.testing.assert_allclose(actual, expected, rtol=1e-5, atol=1e-6)
+            np.testing.assert_array_equal(actual, expected)
             for value, reference in zip(actual_memory, expected_memory, strict=True):
-                np.testing.assert_allclose(value, reference, rtol=1e-4, atol=1e-5)
+                np.testing.assert_array_equal(value, reference)
+            cpu_action, cpu_memory = cpu_loaded.predict(obs, state=cpu_memory,
+                episode_start=episode_start, deterministic=True)
+            reference_action, cpu_reference_memory = cpu_reference.predict(obs, state=cpu_reference_memory,
+                episode_start=episode_start, deterministic=True)
+            np.testing.assert_array_equal(cpu_action, reference_action)
+            for value, reference in zip(cpu_memory, cpu_reference_memory, strict=True):
+                np.testing.assert_array_equal(value, reference)
+            cross_action_error = max(cross_action_error, float(np.max(np.abs(cpu_action - expected))))
+            cross_state_error = max(cross_state_error, max(float(np.max(np.abs(value - reference)))
+                for value, reference in zip(cpu_memory, expected_memory, strict=True)))
             error = max(error, float(np.max(np.abs(actual - expected))))
             obs, _, done, _ = env.step(actual)
+            frames += 1
             if done.any():
                 raise RuntimeError("Unexpected terminal during two-step reload check")
         if float(normalizer.ret_rms.count) != before:
             raise RuntimeError("Evaluation mutated normalization")
         return {"passed": True, "action_max_absolute_error": error, "native_frames": 2,
                 "reset_physics_ticks": sum(map(len, raw.get_attr("track_seeds"))),
-                "partition": "train", "normalization_frozen": True}
+                "partition": "train", "normalization_frozen": True,
+                "same_device_exact": True, "cpu_repeated_reload_exact": True,
+                "cpu_vs_training_device_action_max_absolute_error": cross_action_error,
+                "cpu_vs_training_device_memory_max_absolute_error": cross_state_error,
+                "cross_device_note": "diagnostic only; no cross-device bitwise equivalence claim"}
+    except Exception as error:
+        write_json(root / "reload_check.json", {"passed": False, "error": str(error),
+            "native_frames": frames, "reset_physics_ticks": sum(map(len, raw.get_attr("track_seeds")))})
+        raise
     finally:
         env.close()
 
@@ -118,7 +142,7 @@ def train_native(run_id: str, config: NativeTrainingConfig, *, stop_at: int,
         "upstream_recipe_commit": RECIPE_COMMIT,
         "adaptations": "partition-enforced streams, recorded dependencies, deterministic kernels, post-update checkpoints",
         "continuation": "optimizer/RNG/normalizer/streams restored; fresh episodes and memory",
-        "selection": "profile execution cost only; no development driving selection",
+        "selection": "external declared campaign; trainer does not evaluate or select checkpoints",
         "deterministic_algorithms": True, "cublas_workspace_config": os.environ["CUBLAS_WORKSPACE_CONFIG"]}
     root = begin_run("native_training", run_id, protocol, settings, runs_dir)
     started = time.perf_counter()
@@ -151,7 +175,9 @@ def train_native(run_id: str, config: NativeTrainingConfig, *, stop_at: int,
             torch.cuda.reset_peak_memory_stats()
         write_json(root / "runtime.json", {"device": str(model.device), "pid": os.getpid(),
             "gpu": torch.cuda.get_device_name() if config.device == "cuda" else None,
-            "torch_threads": torch.get_num_threads(), "cpu_count": os.cpu_count()})
+            "torch_threads": torch.get_num_threads(), "cpu_count": os.cpu_count(),
+            "cuda_matmul_allow_tf32": torch.backends.cuda.matmul.allow_tf32,
+            "cudnn_allow_tf32": torch.backends.cudnn.allow_tf32})
         model.set_logger(configure(str(root / "logs"), ["csv", "json"]))
         callback = RecipeClock(schedule)
         initial_updates = model._n_updates
@@ -185,18 +211,21 @@ def train_native(run_id: str, config: NativeTrainingConfig, *, stop_at: int,
                 save_checkpoint(root / "checkpoints" / f"frames_{schedule.frames:09d}", root,
                     model, normalizer, raw, schedule, completed, checkpoint_method="native_checkpoint")
         save_checkpoint(root, root, model, normalizer, raw, schedule, completed)
-        reload_check = verify_reload(root, model, config)
-        write_json(root / "reload_check.json", reload_check)
         wall = time.perf_counter() - started
-        write_json(root / "cost.json", {"native_frames": schedule.frames - initial_frames,
+        cost = {"native_frames": schedule.frames - initial_frames,
             "learner_decisions": schedule.frames - initial_frames, "rollout_updates": rollouts,
             "epochs_entered": model._n_updates - initial_updates, "wall_seconds": wall,
             "training_reset_physics_ticks": sum(map(len, raw.get_attr("track_seeds"))),
-            "reload_check": reload_check, "internal_physics_steps": 0,
+            "reload_check": None, "internal_physics_steps": 0,
             "parent_peak_rss_kib": resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
             "child_peak_rss_kib": "not measured; parent RSS is not aggregate subprocess memory",
             "cuda_peak_allocated_bytes": torch.cuda.max_memory_allocated() if config.device == "cuda" else 0,
-            "cuda_peak_reserved_bytes": torch.cuda.max_memory_reserved() if config.device == "cuda" else 0})
+            "cuda_peak_reserved_bytes": torch.cuda.max_memory_reserved() if config.device == "cuda" else 0}
+        write_json(root / "cost.json", cost)  # retain training costs even if verification fails
+        reload_check = verify_reload(root, model, config)
+        write_json(root / "reload_check.json", reload_check)
+        cost.update(reload_check=reload_check, wall_seconds=time.perf_counter() - started)
+        write_json(root / "cost.json", cost)
         write_json(root / "status.json", {"status": "complete", "native_frames": schedule.frames,
             "stop_at_decisions": stop_at, "decisions": model.num_timesteps})
         return root

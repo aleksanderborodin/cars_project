@@ -70,10 +70,12 @@ def test_native_vector_preserves_frames_workers_and_autoreset(backend, monkeypat
         vector.close()
 
 
-def test_native_training_checkpoint_resume_and_frozen_eval(tmp_path, monkeypatch):
+@pytest.mark.parametrize("device", ["cpu", pytest.param("cuda", marks=pytest.mark.skipif(
+    not __import__("torch").cuda.is_available(), reason="CUDA unavailable"))])
+def test_native_training_checkpoint_resume_and_frozen_eval(tmp_path, monkeypatch, device):
     monkeypatch.setenv("SDL_VIDEODRIVER", "dummy")
     config = NativeTrainingConfig(workers=1, total_decisions=32, checkpoints=(8, 16),
-        n_steps=8, batch_size=8, n_epochs=1, lstm_hidden_size=16)
+        n_steps=8, batch_size=8, n_epochs=1, lstm_hidden_size=16, device=device)
     first = train_native("first", config, stop_at=8, runs_dir=tmp_path)
     model = RecurrentPPO.load(first / "model.zip", device="cpu")
     assert model.policy.net_arch == [] and model.policy.features_dim == 512
@@ -105,6 +107,8 @@ def test_native_training_checkpoint_resume_and_frozen_eval(tmp_path, monkeypatch
         vector.close()
     cost = json.loads((second / "cost.json").read_text())
     assert cost["native_frames"] == 8 and cost["reload_check"]["native_frames"] == 2
+    assert cost["reload_check"]["same_device_exact"]
+    assert cost["reload_check"]["cpu_repeated_reload_exact"]
     with pytest.raises(FileExistsError):
         train_native("first", config, stop_at=8, runs_dir=tmp_path)
     with pytest.raises(ValueError, match="identical"):

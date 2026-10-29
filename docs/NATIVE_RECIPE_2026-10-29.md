@@ -75,3 +75,24 @@ separate future studies. User-only ranking diagnostics remain unread.
 
 Declared; implementation and correctness checks in progress. Measurements will
 be appended with immutable run references when complete.
+
+## Technical follow-up declared after original profile
+
+All four original cases completed 12,288 training frames. Both CPU runs passed;
+both CUDA runs failed only their post-training GPU-versus-CPU numerical assertions:
+reported action difference 3.92e-6 in the dummy case; recurrent-state difference
+2.21e-5 among violating coordinates in the subprocess case. These are failed
+original runs, retained unchanged. They do not demonstrate corrupted checkpoints.
+
+**Assistant correction:** require exact saved/reloaded action and recurrent-state
+agreement on the training device, and exact repeatability of two independent CPU
+loads. Report CPU/GPU numerical differences separately, without implying identical
+cross-device driving. Training settings and all wrapper semantics stay unchanged.
+Add a CUDA integration test. Then rerun only the two CUDA profile cases, three
+rollouts each, under new immutable IDs: additional 24,576 training frames and four
+reload-check frames plus resets. Do not rerun valid CPU cases merely for a cleaner
+report. The [follow-up manifest](../configs/campaigns/native-profile-reload-fix-2026-10-29.json)
+records this technical correction before execution. CPU/GPU validation changes are
+not return-based method tuning. Retain original failed training costs and report
+that their interrupted reload checks consumed between zero and one step each;
+the original failure logger did not save that exact counter.

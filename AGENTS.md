@@ -73,6 +73,11 @@ full-map geometry, same estimated vehicle state. `planning/policy_search.py`
 implements frozen recurrent proposals and isolated imagined memory; consult
 status for driving evidence. `research/driver_*` implements configured PPO,
 reward normalization, post-update checkpoints and cumulative native-frame schedules.
+`env/native_recipe.py` and `research/native_*` provide the separate audited native
+pixel recipe (resize64/grayscale/stack2/repeat1, standard CNN-LSTM). Its declared
+profile and technical follow-up are in `docs/NATIVE_RECIPE_2026-10-29.md`. Native
+pixel results must not be pooled with the local repeat-four/search table. Check
+same-device reload exactly; record cross-device numerical differences separately.
 The legacy `research/recurrent.py` trainer remains separate. Never feed simulated
 policy history into real recurrent memory or update normalization from evaluation.
 `planning/occupancy.py` provides an explicit sparse imagined-observation renderer;

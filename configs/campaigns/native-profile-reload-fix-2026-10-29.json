@@ -1,0 +1,31 @@
+{
+  "id": "native_recipe_profile_reload_fix_20261029",
+  "purpose": "Technical correction: same-device serialization parity and CPU repeatability; cross-device drift reported separately",
+  "origin": "Assistant correction after original GPU runs finished training but failed overly strict cross-device numerical assertions; preserve original failures",
+  "recipe_commit": "61956d90d9f8ac126043ed4024efa12a462d97e1",
+  "partition_sha256": "f89bb2c62cc5e4b021c66597aa05751970514d17731a927fe17f4d5badfe0095",
+  "training_seed": 0,
+  "workers_per_case": 8,
+  "rollouts_per_case": 3,
+  "transitions_per_rollout": 4096,
+  "global_schedule_decisions": 4000000,
+  "training_native_frame_cap": 24576,
+  "reload_native_frame_cap": 4,
+  "reset_physics_ticks": "Additional; counted per run",
+  "evaluation_episodes": 0,
+  "internal_search_physics_steps": 0,
+  "execution": "Serial cases, one Torch/OpenMP/OpenBLAS/MKL/OpenCV thread per process",
+  "selection": "Together with original successful CPU profiles: exact same-device reload and finite updates, then smallest mean learn time of rollouts 2 and 3; no return selection",
+  "conditions": [
+    {
+      "run_id": "native_profile_20261029_cuda_dummy_reloadfix",
+      "device": "cuda",
+      "vector_backend": "dummy"
+    },
+    {
+      "run_id": "native_profile_20261029_cuda_subproc_reloadfix",
+      "device": "cuda",
+      "vector_backend": "subproc"
+    }
+  ]
+}

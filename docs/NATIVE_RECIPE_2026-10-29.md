@@ -129,3 +129,8 @@ profile checkpoint, solely to validate evaluation/replay. This separate
 [readiness declaration](../configs/campaigns/native-evaluation-readiness-2026-10-29.json)
 caps new development work at 4,000 frames plus four resets; it cannot select the
 checkpoint or alter training parameters. It is not a competence result.
+
+The declared evaluator readiness pass is complete: all two-episode replay fields
+and episode metrics match exactly, normalization is frozen, and the pass consumes
+exactly two tracks each time. Added cost: 4,000 development frames and four resets.
+See the [verification record](../reports/native_profile_2026-10-29/evaluation_readiness.json).

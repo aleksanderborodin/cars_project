@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "scope": "technical evaluator integration/replay; no performance selection",
+  "manifest_sha256": "5e3e9fcd6a576d74b242721089b292330b4ac8c127bdaa77e93d712dcfa984a7",
+  "runs": [
+    "runs/native_evaluation/native_readiness_20261029_a",
+    "runs/native_evaluation/native_readiness_20261029_b"
+  ],
+  "episodes_compared": [
+    {
+      "episode": 0,
+      "native_frames": 1000,
+      "exact_fields": [
+        "observation",
+        "action",
+        "reward",
+        "terminal_observation"
+      ]
+    },
+    {
+      "episode": 1,
+      "native_frames": 1000,
+      "exact_fields": [
+        "observation",
+        "action",
+        "reward",
+        "terminal_observation"
+      ]
+    }
+  ],
+  "native_frames": 4000,
+  "reset_physics_ticks": 4,
+  "model_selected_before_readiness": true,
+  "artifact_sha256": {
+    "runs/native_evaluation/native_readiness_20261029_a/config.json": "255f9907621b99a124859165b12304ecb3589c94d3bf68d626f5330e4fc0792a",
+    "runs/native_evaluation/native_readiness_20261029_a/cost.json": "10229e87343de97f020ca71591fbaab3ed8a061b0c33843c44445f2ce084525f",
+    "runs/native_evaluation/native_readiness_20261029_a/episodes/0000.npz": "a0ee9357495484d11c4b7e42ce22ef1115e36215f54c0a04ba6ddf1432dcb199",
+    "runs/native_evaluation/native_readiness_20261029_a/episodes/0001.npz": "b1bfee90b9e1fc97dc4e6b1fcbcc8384f652ebf7a07f5d309cf64050f5a6fd00",
+    "runs/native_evaluation/native_readiness_20261029_a/episodes.csv": "d6f84f4b6485980c807114535cb75f72fc9ab4b7563b32c2f30b56927824a7c5",
+    "runs/native_evaluation/native_readiness_20261029_a/status.json": "0686cead60b530c52ace1e153542077f1395abecef5017e512a5620066dbfae6",
+    "runs/native_evaluation/native_readiness_20261029_a/summary.json": "0aba07e5dafe5a90d480bd442f363e7178af1b958eb2ebea6b1d32556a5eb0b4",
+    "runs/native_evaluation/native_readiness_20261029_b/config.json": "46fe4ad8b00b9fccd38387c6e6426ec16294343b28429aaf064b1b2d4fe569bc",
+    "runs/native_evaluation/native_readiness_20261029_b/cost.json": "108373a4282ff2778085d20a535ba55ad0b960e33a0bc28fa4599ec25110ab46",
+    "runs/native_evaluation/native_readiness_20261029_b/episodes/0000.npz": "0b059ae93a810e94f4600fe369ac02cf5a2e8124efa7b926e73dd30b0f682468",
+    "runs/native_evaluation/native_readiness_20261029_b/episodes/0001.npz": "de7a9e76dcbdcd20384a452049e856bf7b7b3473891f911c46795c72ae4a65a8",
+    "runs/native_evaluation/native_readiness_20261029_b/episodes.csv": "d6f84f4b6485980c807114535cb75f72fc9ab4b7563b32c2f30b56927824a7c5",
+    "runs/native_evaluation/native_readiness_20261029_b/status.json": "0686cead60b530c52ace1e153542077f1395abecef5017e512a5620066dbfae6",
+    "runs/native_evaluation/native_readiness_20261029_b/summary.json": "0aba07e5dafe5a90d480bd442f363e7178af1b958eb2ebea6b1d32556a5eb0b4"
+  }
+}

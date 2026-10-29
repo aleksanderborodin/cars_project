@@ -69,3 +69,11 @@ milestone is approximately 15–25 minutes after launch. These are short-profile
 estimates, not guarantees. The [frozen manifest](../configs/campaigns/native-baseline-2026-10-29.json)
 records all settings and selection provenance. Launch follows the full-episode
 evaluator/replay readiness check.
+
+Readiness passed before launch: both complete two-track evaluation passes produced
+identical actions, rewards, stacked images, terminal observations and episode
+metrics. Normalization remained frozen; no extra track was consumed at final
+VecEnv reset. Cost: 4,000 development frames and four reset ticks, separate from
+the main campaign cap. The [verification artifact](../reports/native_profile_2026-10-29/evaluation_readiness.json)
+records exact compared fields and immutable artifact hashes. No training setting
+or checkpoint choice was changed from these smoke outcomes.

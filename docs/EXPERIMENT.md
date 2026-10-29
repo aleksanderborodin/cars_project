@@ -24,6 +24,8 @@ The next [reference-continuation control](REFERENCE_CONTINUATION_2026-10-29.md)
 preserves the visible reference and replaces only its tangent tail with true road,
 while keeping oracle road physics and all other planner settings fixed. This is
 a separately declared development diagnostic, not a local-information method.
+The pilot is complete; the [20-track replication](REFERENCE_REPLICATION_2026-10-29.md)
+freezes both conditions and reports original-five/additional-fifteen panels separately.
 [RESEARCH_PLAN.md](RESEARCH_PLAN.md) details the geometry branch;
 [PREDICTION_SELECTION.md](PREDICTION_SELECTION.md) reviews optional predictor
 spaces and downstream model selection. Proposed numerical defaults,

@@ -33,7 +33,8 @@ The immediate [reference-continuation pilot](REFERENCE_CONTINUATION_2026-10-29.m
 is complete: after exact control replay, changing only the tail raised return
 594.21→876.29 and completion 0/5→4/5. The original local mean is still 906.99.
 Next recommend a separately declared 20-track paired replication before tuning
-to the remaining timeout; it is not launched. The visible prefix, physics and
+to the remaining timeout; this [replication is now declared](REFERENCE_REPLICATION_2026-10-29.md)
+and awaiting validation/launch. The visible prefix, physics and
 all other planner settings were held fixed in this pilot.
 
 | Order | Deliverable | Evidence / gate |

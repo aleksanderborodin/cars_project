@@ -41,7 +41,9 @@ versus the tangent control's **594.21/0%**, improving all five returns. Original
 local search remains higher at **906.99/80%**; one on-road timeout accounts for
 the new condition's mean deficit. This isolates a reference-tail limitation for
 this controller, not a general information/SOTA advantage. All jobs in this batch
-are complete; the recommended 20-track paired replication has not launched.
+are complete. The [20-track paired replication](REFERENCE_REPLICATION_2026-10-29.md)
+is now declared with both conditions frozen and ten integrated episode replay checks;
+it has not launched yet.
 The actor receives only its original local fields. Global training stays sealed.
 
 ## Implemented

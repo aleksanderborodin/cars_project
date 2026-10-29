@@ -892,3 +892,22 @@ Earlier project intentions remain in USER_INTENT.md; this log extends that recor
 - **Next assistant recommendation:** a separately declared 20-track paired
   replication before tuning to the remaining case; retain original-five/additional-
   fifteen development subsets. No automatic expansion or new training has launched.
+
+## R45 — Replicate the frozen reference-tail contrast before tuning
+
+- **User origin:** continue the intervention work autonomously and preserve idea attribution.
+- **Assistant choice/purpose:** twenty fixed development tracks, both unchanged
+  oracle-road reference conditions, to check whether the five-track recovery
+  extends beyond the cases that motivated the correction. No tuning to track 2.
+- **Declared analysis:** all20/original5/additional15 panels; official return and
+  completion plus failures, executed speed/braking and costs. Nominal paired-track
+  intervals for all20/additional15 only, one frozen actor/planning stream, no
+  selection adjustment. Local search is historical different-information context.
+- **Budget/checks:** 40k native / 5.6M internal physics frames, zero training;
+  exact first-five replays in each condition included in that budget. Hash-pinned
+  sources, checkpoint, input trajectories and runner; stop on integrity failure.
+- **Uncertainty:** twenty is a bounded development budget, not a power calculation;
+  original5 are selected development evidence, additional15 are not final test.
+  No new global-policy training, held-out evaluation or private-ranking access.
+- **Record/status:** [replication declaration](REFERENCE_REPLICATION_2026-10-29.md);
+  validation and execution pending.

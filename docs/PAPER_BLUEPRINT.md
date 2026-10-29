@@ -272,7 +272,7 @@ recommendations or engineering choices, not retrospectively user requirements.
 | A13 | Add a predicted-future intermediate P when making explicit forecasting claims | Proposed matched-interface L/P/F comparison; oracle improvement alone does not identify forecasting error |
 | A14 | Independently switch visible objective-reference and hidden-road geometry before new oracle-policy training | Implemented/tested; [five-track pilot completed](INTERVENTION_RESULTS_2026-10-29.md) with negative driving effects; no visual/RL-causality claim |
 | A15 | Audit prediction of recorded executed controls after the oracle driving failure, then isolate objective compatibility | Completed 15-window audit and reference-tail follow-up: better motion prediction alone did not ensure good selection |
-| A16 | Preserve the visible reference exactly and change only its future tail, holding extent/sampling fixed | [Reference-continuation pilot](REFERENCE_CONTINUATION_2026-10-29.md) completed; +282.09 return and 0/5→4/5 completion versus tangent, still below local mean; 20-track replication proposed |
+| A16 | Preserve the visible reference exactly and change only its future tail, holding extent/sampling fixed | [Reference-continuation pilot](REFERENCE_CONTINUATION_2026-10-29.md) completed; +282.09 return and 0/5→4/5 completion versus tangent, still below local mean; [20-track replication](REFERENCE_REPLICATION_2026-10-29.md) declared with unchanged settings |
 
 ## Prior work and novelty assessment
 

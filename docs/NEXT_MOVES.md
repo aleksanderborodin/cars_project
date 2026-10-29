@@ -33,7 +33,9 @@ is complete, preserving the current visible reference exactly. Return rose from
 594.21 to 876.29 and completion from 0/5 to 4/5, still below the original local
 mean of 906.99. The next recommended run is a separately declared 20-track paired
 replication of the frozen tangent/true-tail conditions, with the original five
-and added 15 reported separately. It has not launched. Avoid tuning specifically
+and added 15 reported separately. It is now [declared](REFERENCE_REPLICATION_2026-10-29.md),
+with both frozen conditions rerun and the first five per condition checked exactly;
+execution is pending validation. Avoid tuning specifically
 to the one remaining failed track before this broader check; strong-baseline and
 established-planner work remain open. These oracle interventions are not validated
 performance ceilings or the trained V/L/F study.

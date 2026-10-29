@@ -13,6 +13,7 @@ from cars.env.protocol import Observation, ProtocolConfig
 from cars.planning.global_search import FullRoadWorld
 from cars.planning.local import centreline, extend
 from cars.planning.policy_search import PolicyPhysicsSearch, PolicySearchConfig
+from cars.planning.reference_extension import extend_true_reference
 from cars.planning.visible_reference import visible_reference
 from cars.planning.world import LocalRoadWorld, RoadQuery
 
@@ -27,7 +28,7 @@ class InterventionConfig:
     version: int = 1
 
     def __post_init__(self) -> None:
-        if (self.reference not in ("reconstructed", "oracle_visible")
+        if (self.reference not in ("reconstructed", "oracle_visible", "oracle_continued")
                 or self.continuation not in ("prior", "oracle") or self.version != 1):
             raise ValueError("Unknown intervention")
 
@@ -66,10 +67,12 @@ def intervention_worlds(observation: Observation, protocol: ProtocolConfig,
     world = (LocalRoadWorld(local, protocol, local_path, half_width) if config.continuation == "prior"
              else OracleContinuationWorld(observation, protocol, local_path, half_width))
     path, fallback = local_path, False
-    if config.reference == "oracle_visible":
+    if config.reference in ("oracle_visible", "oracle_continued"):
         visible = visible_reference(observation["map_centre"], protocol.radius, protocol.resolution)
         fallback = visible is None
-        path = local_path if fallback else extend(visible)
+        if not fallback:
+            path = (extend_true_reference(visible, observation["map_centre"])
+                    if config.reference == "oracle_continued" else extend(visible))
     return local, world, path, fallback
 
 
@@ -104,7 +107,9 @@ class PolicyGeometryIntervention(PolicyPhysicsSearch):
             "road_query": (LocalRoadWorld.version if self.intervention.continuation == "prior"
                            else OracleContinuationWorld.version),
             "objective_reference": self.intervention.reference,
-            "reference_extension": "same_100m_terminal_tangent; never_hidden_centreline",
+            "reference_extension": ("identical_visible_prefix; 100m_true_directed_arc; 1m_samples"
+                if self.intervention.reference == "oracle_continued"
+                else "same_100m_terminal_tangent; never_hidden_centreline"),
             "unknown_space_penalty": "original_root_visibility_mask_in_all_conditions",
             "world_path": "unchanged_local_reconstruction_independent_of_objective_reference",
             "private_candidate_oracle_access": False,

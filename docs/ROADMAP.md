@@ -29,6 +29,9 @@ The [completed pilot](INTERVENTION_RESULTS_2026-10-29.md) found worse oracle-cel
 driving despite better oracle-road prediction on recorded controls. Next isolate
 the objective/reference compatibility before expanding the diagnostic or training
 V/L/F policies; do not interpret these substitutions as component adequacy.
+The immediate [reference-continuation pilot](REFERENCE_CONTINUATION_2026-10-29.md)
+is implemented and declared: one five-track condition after exact control replay,
+with the visible prefix, physics and all other planner settings held fixed.
 
 | Order | Deliverable | Evidence / gate |
 |---|---|---|

@@ -4,7 +4,7 @@ Updated 2026-10-29. [Index](../README.md) · [Experiment contract](EXPERIMENT.md
 [Evidence status](STATUS.md) · [Attributed chronology](RESEARCH_LOG.md)
 
 This is the consolidated home for the paper idea and the ideas recorded in this
-conversation, USER_INTENT and research-log R1–R43. It connects them to one study;
+conversation, USER_INTENT and research-log R1–R44. It connects them to one study;
 it does not activate every extension. The experiment contract still governs
 access and evaluation. Existing numerical defaults are development choices.
 Historical results retain their original protocol, and archived plans stay archived.
@@ -263,7 +263,8 @@ recommendations or engineering choices, not retrospectively user requirements.
 | A12 | Judge novelty against privileged-input driving, policy-guided planning and decision-relevant modeling | Updated assessment below; no unsupported originality claim |
 | A13 | Add a predicted-future intermediate P when making explicit forecasting claims | Proposed matched-interface L/P/F comparison; oracle improvement alone does not identify forecasting error |
 | A14 | Independently switch visible objective-reference and hidden-road geometry before new oracle-policy training | Implemented/tested; [five-track pilot completed](INTERVENTION_RESULTS_2026-10-29.md) with negative driving effects; no visual/RL-causality claim |
-| A15 | Audit prediction of recorded executed controls after the oracle driving failure, then isolate objective compatibility | Completed 15-window audit: oracle road improved motion prediction; full-road objective-reference control remains proposed |
+| A15 | Audit prediction of recorded executed controls after the oracle driving failure, then isolate objective compatibility | Completed 15-window audit: oracle road improved motion prediction; the reference-tail follow-up is now implemented/declared |
+| A16 | Preserve the visible reference exactly and change only its future tail, holding extent/sampling fixed | [Reference-continuation pilot](REFERENCE_CONTINUATION_2026-10-29.md) implemented/declared; user authorized planning and execution; result pending |
 
 ## Prior work and novelty assessment
 

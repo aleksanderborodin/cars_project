@@ -861,3 +861,23 @@ Earlier project intentions remain in USER_INTENT.md; this log extends that recor
 - **Cost:** 19,447 native evaluation and 2,729,240 internal physics frames including
   the 5,400-step prediction audit; zero new experiment training. All jobs complete.
 - **Record:** [full results, provenance and caveats](INTERVENTION_RESULTS_2026-10-29.md).
+
+## R44 — Execute the reference-continuation control
+
+- **User instruction:** plan the next run and execute it, following the preceding
+  discussion of reference/progress scoring.
+- **Assistant refinement:** keep every true visible-reference sample unchanged;
+  replace only its 100 m tangent tail with the directed true-road continuation,
+  at the same one-metre arc sampling. Replacing the whole path would also change
+  its visible parameterization and weaken attribution.
+- **Fixed:** oracle road/vehicle model, actor/local inputs and memory, seven
+  candidates, 20 decisions, repeat four, random stream, residuals and score weights.
+  The path still affects both progress and centre distance; neither is isolated alone.
+- **Checks:** synthetic straight/curved/wrap/duplicate cases; unchanged world,
+  imagined inputs and candidate trajectories at a shared root; every recorded
+  control prefix/extension length; exact one-episode control replay before racing.
+- **Budget:** five new development races, at most 5k native/700k internal frames;
+  replay separately capped at 1k/140k. No new training or held-out/private data.
+- **Interpretation:** paired descriptive contrast against five saved controls,
+  with local search as context; no outcome-based sweep or panel expansion.
+- **Record:** [protocol and execution](REFERENCE_CONTINUATION_2026-10-29.md).

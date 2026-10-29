@@ -82,6 +82,10 @@ map fields before any real or imagined actor call. The outside-footprint penalty
 and observation-based vehicle observer stay fixed. See the
 [controlled intervention protocol](INTERVENTION_STUDY.md) for the declared
 four-cell pilot, costs, caveats and staged V/L/F policy study.
+`--reference oracle_continued` adds the separately declared true-road reference
+tail, preserving the visible samples and the same 100 m/one-metre extension.
+It remains a privileged development method; see the
+[follow-up protocol](REFERENCE_CONTINUATION_2026-10-29.md).
 The optional sparse renderer skips unnecessary occupancy work; reference remains
 the default. Its parity evidence and latency limits are in the latest report.
 `policy-bias` adds a declared constant offset to each real actor action without

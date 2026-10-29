@@ -123,7 +123,7 @@ def test_all_interventions_keep_actor_local_and_real_memory_unimagined(actor, mo
     env = DrivingEnv(protocol, "development")
     try:
         obs, _ = env.reset()
-        for reference, continuation in product(("reconstructed", "oracle_visible"), ("prior", "oracle")):
+        for reference, continuation in product(("reconstructed", "oracle_visible", "oracle_continued"), ("prior", "oracle")):
             base = RecurrentDriver(actor)
             policy = PolicyGeometryIntervention(actor, protocol,
                 PolicySearchConfig(candidates=1, horizon=3), InterventionConfig(reference, continuation))
@@ -142,4 +142,28 @@ def test_all_interventions_keep_actor_local_and_real_memory_unimagined(actor, mo
             assert not policy.configuration()["oracle_vehicle_state_access"]
             policy.reset()
     finally:
+        env.close()
+
+
+def test_reference_tail_changes_scoring_without_changing_candidate_rollouts(actor):
+    from cars.planning.intervention import InterventionConfig, PolicyGeometryIntervention
+    protocol = ProtocolConfig(view="global")
+    env = DrivingEnv(protocol, "development")
+    search = PolicySearchConfig(candidates=3, horizon=12, observation_renderer="sparse")
+    old = PolicyGeometryIntervention(actor, protocol, search, InterventionConfig("oracle_visible", "oracle"))
+    new = PolicyGeometryIntervention(actor, protocol, search, InterventionConfig("oracle_continued", "oracle"))
+    try:
+        obs, _ = env.reset()
+        # Constructed high-speed root exercises the part beyond the visible circle.
+        obs["ego"] = np.array([70., 0., 0.], np.float32)
+        old.act(obs)
+        new.act(obs)
+        np.testing.assert_array_equal(old.candidate_actions, new.candidate_actions)
+        np.testing.assert_array_equal(old.model.first_ego, new.model.first_ego)
+        for a, b in zip(old.actor.memory, new.actor.memory, strict=True):
+            np.testing.assert_array_equal(a, b)
+        assert not np.array_equal(old.candidate_costs, new.candidate_costs)
+    finally:
+        old.reset()
+        new.reset()
         env.close()

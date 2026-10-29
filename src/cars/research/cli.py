@@ -46,7 +46,7 @@ def main(argv: list[str] | None = None) -> None:
     evaluation.add_argument("--brake-sigma", type=float, default=.15)
     evaluation.add_argument("--observation-renderer", choices=("reference", "sparse"), default="reference")
     evaluation.add_argument("--action-bias", type=float, nargs=3)
-    evaluation.add_argument("--reference", choices=("reconstructed", "oracle_visible"), default="reconstructed",
+    evaluation.add_argument("--reference", choices=("reconstructed", "oracle_visible", "oracle_continued"), default="reconstructed",
                             help="privileged module diagnostic only: objective reference")
     evaluation.add_argument("--continuation", choices=("prior", "oracle"), default="prior",
                             help="privileged module diagnostic only: road outside sensor footprint")

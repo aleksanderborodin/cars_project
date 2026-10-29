@@ -78,6 +78,9 @@ The future local/full-map learned/search matrix is documented in
 privileged four-cell fixed-controller geometry study in `docs/INTERVENTION_STUDY.md`.
 Keep objective-path and road-world switches independent, actor inputs local, and
 outside-footprint penalties fixed. This does not enable global-policy training.
+`planning/reference_extension.py` adds `reference=oracle_continued`: unchanged
+visible prefix plus true directed-road tail at the original extent/sampling.
+See `docs/REFERENCE_CONTINUATION_2026-10-29.md`; it remains privileged/development-only.
 
 ## Rules
 

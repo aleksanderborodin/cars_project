@@ -1,5 +1,7 @@
 # Recurrent baseline audit before longer training
 
+**New implementation:** the [native recipe interface/profile](NATIVE_RECIPE_2026-10-29.md) implements the audited resize/grayscale/stack/repeat-one path and standard CNN-LSTM. Official pixel/reward parity, history, subprocess and checkpoint tests pass. Throughput profiling is declared; successful full-budget driving remains outstanding. The local-driver history below retains its original interpretation.
+
 Updated 2026-10-29. [Next experiments](NEXT_EXPERIMENTS.md) ·
 [References](REFERENCES.md) · [Status](STATUS.md)
 

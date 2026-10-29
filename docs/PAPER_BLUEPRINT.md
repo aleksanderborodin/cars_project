@@ -286,6 +286,7 @@ recommendations or engineering choices, not retrospectively user requirements.
 | A08 | Current seven/21 candidates, three residual knots, horizon 20, repeat 4, radius 30, observer/contact approximation | Engineering defaults with explicit uncertainty; not user's final architecture commitments |
 | A09 | Sparse observation rendering, immutable executable snapshots, replay gates and sequential timing | Implemented/tested; not an algorithmic novelty claim |
 | A10 | Audit and repair baseline training before arguing that RL cannot choose actions | Ongoing; KL and lower-LR probes failed, all costs retained |
+| A17 | Implement audited native CNN-LSTM interface and profile before larger training | Assistant refinement of user strong-comparator goal; [interface tests pass, profile declared](NATIVE_RECIPE_2026-10-29.md); no competence claim |
 | A11 | Keep the core diagnostic paper focused; add one task-useful-model extension only if it supports that core | Recommended scope control; no automatic GPU/evolution expansion |
 | A12 | Judge novelty against privileged-input driving, policy-guided planning and decision-relevant modeling | Updated assessment below; no unsupported originality claim |
 | A13 | Add a predicted-future intermediate P when making explicit forecasting claims | Proposed matched-interface L/P/F comparison; oracle improvement alone does not identify forecasting error |

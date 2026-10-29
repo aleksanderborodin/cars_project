@@ -995,3 +995,20 @@ Earlier project intentions remain in USER_INTENT.md; this log extends that recor
   High confidence in source/accounting observations; performance and repair
   usefulness remain uncertain. No production settings, ongoing race conditions,
   final-test access or user-only rank/regret restrictions changed.
+
+## R48 — Align native recipe and measure cost before larger baseline training
+
+- **Origin:** user asks to continue experiments and establish strong comparators;
+  assistant chooses the audited native interface and a bounded execution profile.
+- **Purpose:** distinguish interface/budget shortcomings from learned-control
+  limitations before interpreting the paper's component interventions.
+- **Choice:** native pixels only, resize64/grayscale/stack2, repeat one, standard
+  NatureCNN512 and actor LSTM128. Existing local repeat-four experiments stay intact.
+- **Evidence:** official pixel/reward parity, vector history/reset, CPU/subprocess,
+  post-update checkpoint/resume and frozen normalization checks pass; 105 tests.
+- **Declared next measurement:** four serial CPU/CUDA × dummy/subprocess cases,
+  eight workers, seed 0, three 4096-step updates each. Select execution cost only,
+  never short-run return. See [declaration](NATIVE_RECIPE_2026-10-29.md).
+- **Uncertainty:** high confidence in accounting/interface correction, medium in
+  short-profile throughput transfer, unknown driving competence. Full-budget and
+  independent-seed runs, stronger local proposer and trained V/L/F remain open.

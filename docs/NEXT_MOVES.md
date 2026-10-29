@@ -1,5 +1,7 @@
 # Next moves: establish useful simulation improvement over strong drivers
 
+**Native implementation update:** the separate [recipe interface/profile](NATIVE_RECIPE_2026-10-29.md) passes pixel/reward parity, vector-history and checkpoint/resume checks (105 total tests). The next action is its four-case execution profile: 49,152 training frames, eight reload-check frames, additional counted resets and no performance-selection evaluation. Costs determine the next bounded native campaign; stronger local training remains a separate decision.
+
 Updated 2026-10-29. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
 [Architecture](SIMULATOR_SEARCH_PLAN.md) · [Evidence](PROGRAMMED_SIMULATOR_RESULTS.md)
 

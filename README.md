@@ -29,6 +29,7 @@ register separates user ideas, assistant refinements, prior work and measured ev
 | Document | Read it for |
 |---|---|
 | [Paper blueprint](docs/PAPER_BLUEPRINT.md) | Central three-stage study, all project ideas with origin/status, validity checks, novelty and execution gates |
+| [Native recipe interface and profile](docs/NATIVE_RECIPE_2026-10-29.md) | Separate audited pixel CNN-LSTM interface, parity checks, bounded CPU/GPU profile and training gate |
 | [Controlled intervention study](docs/INTERVENTION_STUDY.md) | Executable four-cell geometry diagnostic, isolation tests, pilot budget and staged V/L/F training design |
 | [Intervention results](docs/INTERVENTION_RESULTS_2026-10-29.md) | Completed negative driving pilot, executed-trajectory audit, better prediction with oracle road, and next validity gate |
 | [20-track reference replication](docs/REFERENCE_REPLICATION_2026-10-29.md) | Completed 20-track paired result: +286.25 versus tangent but −71.86 versus local search; failures, costs and replay evidence |

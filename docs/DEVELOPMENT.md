@@ -1,5 +1,25 @@
 # Development guide: research and legacy execution paths
 
+## Separate native recipe commands
+
+The [native interface/profile](NATIVE_RECIPE_2026-10-29.md) uses official images,
+resize64/grayscale/stack2, repeat one and standard CnnLstmPolicy. This is distinct
+from the older `--view native` RGB/previous-action dictionary adapter.
+
+```bash
+uv run python scripts/profile_native_training.py --manifest configs/campaigns/native-profile-2026-10-29.json
+uv run python -m cars.cli research train-native --help
+uv run python -m cars.cli research evaluate-native --help
+```
+
+`train-native --config CONFIG --stop-at N --run-id ID [--resume CHECKPOINT]`
+uses aggregate one-frame decisions and completes the last PPO update. Full resolved
+configuration, source snapshot, optimizer, RNG, stream and normalization state are
+saved. `evaluate-native --model CHECKPOINT --episodes N --run-id ID` uses only the
+ordered development manifest, original reward and frozen normalization. The final
+VecEnv autoreset is a non-actionable placeholder so no extra reserved track is
+consumed. Neither command opens final-test data. Never overwrite run IDs.
+
 [Index](../README.md) · [Specification](EXPERIMENT.md) · [Status](STATUS.md)
 
 The restricted research path is now implemented. The original privileged path

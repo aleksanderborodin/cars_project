@@ -1,5 +1,7 @@
 # Roadmap and decision gates
 
+**Current baseline gate:** the [native recipe interface/profile](NATIVE_RECIPE_2026-10-29.md) is implemented and tested (105 tests). Four serial CPU/GPU/backend cases are declared. This addresses interface and feasibility gates; it does not establish baseline competence or a matched local search improvement.
+
 Updated 2026-10-29. [Index](../README.md) · [User intent](USER_INTENT.md) ·
 [Status](STATUS.md) · [Proposed numerical settings](DESIGN_DECISIONS.md)
 

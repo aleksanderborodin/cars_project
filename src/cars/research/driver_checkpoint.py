@@ -24,11 +24,12 @@ def restore_rng(path: Path) -> None:
 
 
 def save_checkpoint(path: Path, root: Path, model: RecurrentPPO, normalizer: VecNormalize,
-                    raw: VecEnv, schedule: NativeSchedule, milestones: list[int]) -> None:
+                    raw: VecEnv, schedule: NativeSchedule, milestones: list[int], *,
+                    checkpoint_method: str = "recurrent_checkpoint") -> None:
     if path != root:
         path.mkdir(parents=True, exist_ok=False)
         configuration = copy.deepcopy(json.loads((root / "config.json").read_text()))
-        configuration["method"] = "recurrent_checkpoint"
+        configuration["method"] = checkpoint_method
         configuration["run_id"] = path.name
         configuration["settings"]["parent_training_run"] = str(root)
         configuration["settings"]["checkpoint_native_frames"] = schedule.frames

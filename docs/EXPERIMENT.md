@@ -1,5 +1,7 @@
 # Experiment design: modular prediction and control by search
 
+The separate [native recipe interface/profile](NATIVE_RECIPE_2026-10-29.md) now implements and tests the audited pixel preprocessing and one-frame action timing. Its bounded workstation profile precedes any full native training declaration and stays separate from the local programmed-simulator comparison.
+
 Updated 2026-10-29 following the research discussion. The project now targets a
 scientific paper about modular world models and online control, using Gymnasium CarRacing
 only and the current workstation. Physical robots and other simulators are out

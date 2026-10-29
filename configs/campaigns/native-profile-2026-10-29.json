@@ -1,0 +1,25 @@
+{
+  "id": "native_recipe_profile_20261029",
+  "purpose": "Interface-correctness-gated execution profile; no driving-performance selection",
+  "origin": "Assistant implementation decision supporting user's strong-baseline comparison goal",
+  "recipe_commit": "61956d90d9f8ac126043ed4024efa12a462d97e1",
+  "partition_sha256": "f89bb2c62cc5e4b021c66597aa05751970514d17731a927fe17f4d5badfe0095",
+  "training_seed": 0,
+  "workers_per_case": 8,
+  "rollouts_per_case": 3,
+  "transitions_per_rollout": 4096,
+  "global_schedule_decisions": 4000000,
+  "training_native_frame_cap": 49152,
+  "reload_native_frame_cap": 8,
+  "reset_physics_ticks": "Additional; counted per run",
+  "evaluation_episodes": 0,
+  "internal_search_physics_steps": 0,
+  "execution": "Serial cases, one Torch/OpenMP/OpenBLAS/MKL/OpenCV thread per process",
+  "selection": "Successful finite updates and reload, then lowest mean learn wall time of rollouts 2 and 3; no return-based selection",
+  "conditions": [
+    {"run_id": "native_profile_20261029_cpu_dummy", "device": "cpu", "vector_backend": "dummy"},
+    {"run_id": "native_profile_20261029_cpu_subproc", "device": "cpu", "vector_backend": "subproc"},
+    {"run_id": "native_profile_20261029_cuda_dummy", "device": "cuda", "vector_backend": "dummy"},
+    {"run_id": "native_profile_20261029_cuda_subproc", "device": "cuda", "vector_backend": "subproc"}
+  ]
+}

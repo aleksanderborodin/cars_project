@@ -1,5 +1,7 @@
 # Implementation and evidence status
 
+**Newest implementation:** the separate [native recipe interface/profile](NATIVE_RECIPE_2026-10-29.md) now implements official pixel preprocessing, two-frame history, repeat one, standard CNN-LSTM, partition-enforced training, saved normalization and post-update resume. Official pixel/reward parity, frame-stack reset, subprocess and reload checks pass; the full suite has 105 passing tests. The four-case, 49,152-frame CPU/GPU profile is declared and ready to run. Native driving competence and full-budget reproduction remain unestablished.
+
 Updated 2026-10-29. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
 [Roadmap](ROADMAP.md) · [Latest development results](SEQUENCE_SEARCH_2026-10-29.md)
 

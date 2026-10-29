@@ -1,0 +1,19 @@
+{
+  "all_four_checkpoint_configs_and_normalizers_verified": true,
+  "ppo_gamma": 0.96059601,
+  "normalization_gamma": 0.99,
+  "source_files_verified": 544,
+  "historical_reference": "runs/recurrent_ppo/driver_s0_dev_001007379",
+  "trial_selected_evaluation": "runs/recurrent_ppo/local_discount_s0_dev_000507891",
+  "paired_mean_return_change": -166.36806923440992,
+  "paired_track_bootstrap95": [
+    -205.63478637443,
+    -129.31759774169848
+  ],
+  "tracks_trial_better": 2,
+  "tracks_trial_worse": 48,
+  "completion_change": -0.27999999999999997,
+  "interpretation": "development-selected checkpoints, one training seed and historical control; descriptive track bootstrap does not correct selection bias or represent training-seed uncertainty",
+  "reference_metrics_sha256": "58ddcfc69f073bfb679e6e58ccd33aecb126f031c281ed66704b775cfb9a63be",
+  "selected_metrics_sha256": "817a3bd062e264a11e5a99413ea7e5b4b10b3caa06d67b6f0573c4bbb71bedcb"
+}

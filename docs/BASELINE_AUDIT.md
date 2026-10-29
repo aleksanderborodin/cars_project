@@ -1,6 +1,6 @@
 # Recurrent baseline audit before longer training
 
-**Completed native execution:** the [4M campaign](NATIVE_BASELINE_RESULTS_2026-10-29.md) selects 1M: 843.82/38%, with 4M: 645.80/4%. Source/trace/resume audits pass. The [device control](NATIVE_DEVICE_AUDIT_2026-10-29.md) confirms later regression on both CPU and CUDA but also measurable device sensitivity. A [bounded local discount trial](LOCAL_DISCOUNT_TRIAL_2026-10-29.md) is now running, changing PPO gamma while holding normalization gamma and other local settings fixed. Neither a converged strong baseline nor SOTA has been established.
+**Completed baseline work:** native 4M and device diagnostics are complete; the native 1M checkpoint remains selected. The [local discount trial](LOCAL_DISCOUNT_TRIAL_2026-10-29.md) also completed: best 691.74/2%, below original local 858.11/30%, and is not adopted. PPO gamma and fixed normalization gamma were verified in all four saved checkpoints. No training is active; action-distribution/update auditing is the next proposed diagnostic. Competence, independent-seed robustness and SOTA remain unestablished.
 
 Updated 2026-10-29. [Next experiments](NEXT_EXPERIMENTS.md) ·
 [References](REFERENCES.md) · [Status](STATUS.md)

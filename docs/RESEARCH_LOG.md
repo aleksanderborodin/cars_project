@@ -1100,3 +1100,12 @@ only effective PPO gamma changes; normalization stays 0.99. Campaign
 `local_discount_20261029_s0` is running on CPU/four workers under the declared 2M
 review cap; early updates are finite. No new local driving improvement is yet
 established, and the original frozen proposer/search remains the retained method.
+
+R50 completed: the discount trial finished 2,007,013 native training frames and all
+200 development episodes in 24.75 minutes. Trial-selected 0.5M: 691.74/2%; original
+selected local: 858.11/30%. Paired selected-policy change −166.37, worse on 48/50
+tracks. Saved PPO/normalization gammas and 544 source hashes verify correctly.
+The variant is not adopted and no extension is launched. Original local
+proposer/search remains retained. Next assistant proposal is a read-only audit
+of effective action distributions, saturation and update behavior before another
+independent-seed baseline or alternate comparator; it is not yet running.

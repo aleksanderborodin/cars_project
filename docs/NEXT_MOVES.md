@@ -1,6 +1,6 @@
 # Next moves: establish useful simulation improvement over strong drivers
 
-**Execution update:** the [native 4M campaign](NATIVE_BASELINE_RESULTS_2026-10-29.md) and [CPU/CUDA control](NATIVE_DEVICE_AUDIT_2026-10-29.md) are complete; preserve the original CPU-selected 1M checkpoint. The [bounded local discount trial](LOCAL_DISCOUNT_TRIAL_2026-10-29.md) is now running: PPO gamma 0.99^4, normalization gamma 0.99, otherwise the same local training settings, four checkpoint evaluations and no automatic extension beyond 2M native frames. Review its full curve before freezing a candidate for direct-versus-original-simulation-search comparisons.
+**Execution update:** the native baseline, CPU/CUDA control and [local discount trial](LOCAL_DISCOUNT_TRIAL_2026-10-29.md) are complete. The discount trial’s best 691.74/2% is below original local 858.11/30%, so retain the original proposer and search. No jobs are running. Next: inspect effective action distributions, action-bound saturation and update behavior on existing public observations; then declare an independent-seed baseline replication or a justified alternate comparator. No further hyperparameter run or extension is active.
 
 Updated 2026-10-29. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
 [Architecture](SIMULATOR_SEARCH_PLAN.md) · [Evidence](PROGRAMMED_SIMULATOR_RESULTS.md)

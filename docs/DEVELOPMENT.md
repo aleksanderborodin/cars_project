@@ -312,5 +312,5 @@ normalization 0.99. Launch its immutable declaration with:
 uv run python scripts/run_driver_block.py --manifest configs/campaigns/local-discount-2026-10-29.json
 ```
 
-Run IDs must be new; the existing campaign is already running. Its status and
+Run IDs must be new; the existing campaign is complete and must not be overwritten. Its status and
 checkpoint results live in `runs/campaigns/local_discount_20261029_s0/`.

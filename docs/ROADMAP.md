@@ -1,6 +1,6 @@
 # Roadmap and decision gates
 
-**Current baseline gate:** native 4M and inference-device audits are complete; later regression persists on CPU and GPU, leaving competence open. The [local discount trial](LOCAL_DISCOUNT_TRIAL_2026-10-29.md) is running after 108 passing tests and exact historical local replay. Its 2M-native-frame review precedes any extension or new frozen-proposer/search comparison. Independent seeds, stronger comparators and trained V/L/F gates remain open.
+**Current baseline gate:** the [local discount trial](LOCAL_DISCOUNT_TRIAL_2026-10-29.md) is complete and not adopted: best 691.74/2% versus original local 858.11/30%. Native and device diagnostics are complete too. No experiment jobs remain active. A read-only action-distribution/update audit is proposed before another separately declared baseline run. Strong-baseline, independent-seed and trained V/L/F gates remain open.
 
 Updated 2026-10-29. [Index](../README.md) · [User intent](USER_INTENT.md) ·
 [Status](STATUS.md) · [Proposed numerical settings](DESIGN_DECISIONS.md)

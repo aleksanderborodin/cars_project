@@ -1,6 +1,6 @@
 # Implementation and evidence status
 
-**Current execution:** the [local-policy discount trial](LOCAL_DISCOUNT_TRIAL_2026-10-29.md) is running as `local_discount_20261029_s0`, capped at the 2M-native-frame review with four fixed development evaluations. Only PPO gamma changes to 0.96059601; normalization gamma stays 0.99. All 108 tests and historical local replay pass. The [native 4M baseline](NATIVE_BASELINE_RESULTS_2026-10-29.md) and [device diagnostic](NATIVE_DEVICE_AUDIT_2026-10-29.md) are complete: selected 1M: 843.82/38%; later regression persists on both devices. Strong-baseline/SOTA conclusions remain open.
+**Latest completed trial:** the [local discount probe](LOCAL_DISCOUNT_TRIAL_2026-10-29.md) finished all four checkpoints and 200 development episodes. Best trial checkpoint: 691.74 return/2% completion, below the original local policy’s 858.11/30%; the variant is not adopted. The original proposer/search remains retained. Native and device campaigns are also complete. No experiment is running. Next proposed work is an offline action-distribution/update audit before another independently declared baseline run; 108 tests passed at the last code change.
 
 Updated 2026-10-29. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
 [Roadmap](ROADMAP.md) · [Latest development results](SEQUENCE_SEARCH_2026-10-29.md)

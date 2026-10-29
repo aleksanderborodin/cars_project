@@ -293,7 +293,7 @@ recommendations or engineering choices, not retrospectively user requirements.
 | A15 | Audit prediction of recorded executed controls after the oracle driving failure, then isolate objective compatibility | Completed 15-window audit and reference-tail follow-up: better motion prediction alone did not ensure good selection |
 | A16 | Preserve the visible reference exactly and change only its future tail, holding extent/sampling fixed | [Reference-continuation pilot](REFERENCE_CONTINUATION_2026-10-29.md) completed; +282.09 return and 0/5→4/5 completion versus tangent, still below local mean; [20-track replication](REFERENCE_REPLICATION_2026-10-29.md) complete: +286.25 versus tangent, −71.86 versus local; one primary counterexample, ten exact replays |
 | A17 | Align native recipe and audit competence before larger comparison claims | Assistant refinement; [4M campaign complete](NATIVE_BASELINE_RESULTS_2026-10-29.md), selected 1M 843.82/38%, later regression; [inference-device control](NATIVE_DEVICE_AUDIT_2026-10-29.md) complete |
-| A18 | Test the local physical-discount mismatch without changing normalization timescale | Assistant bounded trial; [PPO gamma 0.99^4, fixed normalization gamma 0.99](LOCAL_DISCOUNT_TRIAL_2026-10-29.md); running to 2M native frames, benefit unknown |
+| A18 | Test local PPO discount while holding normalization timescale fixed | Assistant probe [completed and not adopted](LOCAL_DISCOUNT_TRIAL_2026-10-29.md): best 691.74/2% versus original local 858.11/30%; no general discount/convergence claim |
 
 ## Prior work and novelty assessment
 

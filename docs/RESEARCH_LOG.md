@@ -881,3 +881,14 @@ Earlier project intentions remain in USER_INTENT.md; this log extends that recor
 - **Interpretation:** paired descriptive contrast against five saved controls,
   with local search as context; no outcome-based sweep or panel expansion.
 - **Record:** [protocol and execution](REFERENCE_CONTINUATION_2026-10-29.md).
+- **Completed outcome:** new true-tail condition 876.29/80%, tangent control
+  594.21/0%; +282.09 return with gains on all five tracks. Original local search
+  remains higher at 906.99/80%, with one new on-road timeout substantially worse.
+  Speed recovered from 35.21 to 57.60 m/s; braking decreased. The path affects
+  progress and centre distance together, so neither term is individually identified.
+- **Verification/cost:** 88 tests; all 1,255 recorded geometry states passed;
+  one full exact control replay. Total 5,321 native and 745,360 internal physics
+  frames including replay, zero new training, 277.38 s campaign wall time.
+- **Next assistant recommendation:** a separately declared 20-track paired
+  replication before tuning to the remaining case; retain original-five/additional-
+  fifteen development subsets. No automatic expansion or new training has launched.

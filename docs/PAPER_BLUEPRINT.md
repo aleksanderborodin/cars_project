@@ -203,6 +203,14 @@ checkpoint 692.18/8%, final 624.51/0%. The original selected driver stays the
 reference. Two unsuccessful optimization repairs strengthen the need for a
 baseline audit; they do not prove learned control is inherently difficult.
 
+The [controlled geometry pilot](INTERVENTION_RESULTS_2026-10-29.md) subsequently
+found worse driving with oracle-derived road despite more accurate predictions
+of recorded controls. The [reference-tail follow-up](REFERENCE_CONTINUATION_2026-10-29.md)
+changed only the scoring continuation and recovered 594.21/0%→876.29/80% on five
+tracks. Original local search remains 906.99/80%; a remaining timeout prevents
+an overall mean advantage. This is conditional evidence of reference mismatch,
+not proof that perception/forecasting or learned control is generally solved.
+
 This evidence supports investigating selection. It does not yet establish the
 three-stage explanation, a perception result, a calibrated forecast, a strong
 full-information learned comparator, or a standard-input SOTA result.
@@ -263,8 +271,8 @@ recommendations or engineering choices, not retrospectively user requirements.
 | A12 | Judge novelty against privileged-input driving, policy-guided planning and decision-relevant modeling | Updated assessment below; no unsupported originality claim |
 | A13 | Add a predicted-future intermediate P when making explicit forecasting claims | Proposed matched-interface L/P/F comparison; oracle improvement alone does not identify forecasting error |
 | A14 | Independently switch visible objective-reference and hidden-road geometry before new oracle-policy training | Implemented/tested; [five-track pilot completed](INTERVENTION_RESULTS_2026-10-29.md) with negative driving effects; no visual/RL-causality claim |
-| A15 | Audit prediction of recorded executed controls after the oracle driving failure, then isolate objective compatibility | Completed 15-window audit: oracle road improved motion prediction; the reference-tail follow-up is now implemented/declared |
-| A16 | Preserve the visible reference exactly and change only its future tail, holding extent/sampling fixed | [Reference-continuation pilot](REFERENCE_CONTINUATION_2026-10-29.md) implemented/declared; user authorized planning and execution; result pending |
+| A15 | Audit prediction of recorded executed controls after the oracle driving failure, then isolate objective compatibility | Completed 15-window audit and reference-tail follow-up: better motion prediction alone did not ensure good selection |
+| A16 | Preserve the visible reference exactly and change only its future tail, holding extent/sampling fixed | [Reference-continuation pilot](REFERENCE_CONTINUATION_2026-10-29.md) completed; +282.09 return and 0/5→4/5 completion versus tangent, still below local mean; 20-track replication proposed |
 
 ## Prior work and novelty assessment
 

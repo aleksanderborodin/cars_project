@@ -1,0 +1,197 @@
+{
+  "manifest_sha256": "b741feda673bc799f8e48ad8ba0931c70ca0a641d977a8797a6118fbd1d446f3",
+  "inputs": [
+    {
+      "condition": "local_search_context",
+      "run": "runs/policy_geometry_intervention/intervention_pilot_20261029_baseline",
+      "config_sha256": "697543240a194ac4f6335b946954781d225574cb9dab8660bdd03fa0e8d8feed",
+      "metrics_sha256": "99eb2e9f704e0a091fd0e22f4bf4ca0844894a2d3a18b9f4f42fecbd4864e060",
+      "cost_sha256": "da6604a27074256f56a216db6a65777aa49c665785d28dbe328366492222a0bb",
+      "trajectories": [
+        {
+          "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_baseline/episodes/0000.npz",
+          "sha256": "a1a0796d70d431054f96704720ed84003be6105c80af580b326f6635afd606f8"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_baseline/episodes/0001.npz",
+          "sha256": "4bea5a19606cc0c4cb02f383f17460898144639d8dd0fa1b1ac41f1d9994eab8"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_baseline/episodes/0002.npz",
+          "sha256": "94239b083a9f6863c611b81d6bb2880005ca40b49eb4441a1fd8e52000f32be9"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_baseline/episodes/0003.npz",
+          "sha256": "65ee763d0adc8830571e0f76d2769e1c44a2389a8bdf87497b67af0078f0a4f4"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_baseline/episodes/0004.npz",
+          "sha256": "b962e7a3d220075cc2182a2403a33e37f0d3ef2bbc88b51f8a8ec5992b3db632"
+        }
+      ]
+    },
+    {
+      "condition": "oracle_tangent_control",
+      "run": "runs/policy_geometry_intervention/intervention_pilot_20261029_both",
+      "config_sha256": "e127b51838bd604f34e2dec325009c05dfdfe2a5bafbe351e5bd9c47ec8b6b3e",
+      "metrics_sha256": "5783edde5c531c51ea4ec739da030c697c673507ab24d883dd775d5fdff331bd",
+      "cost_sha256": "4a818a2e62e33f8248848ff2c29cde4ff02d20f25fe0a511e62125056f187d95",
+      "trajectories": [
+        {
+          "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_both/episodes/0000.npz",
+          "sha256": "1d4e92e8f115826ef8af8e9f33760f55c95cfdc637131b98678df29733d6f6de"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_both/episodes/0001.npz",
+          "sha256": "1c38a32820ddc1d4708b67adf3d515b8a550a2bc6ed31ed742b6d106cd485785"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_both/episodes/0002.npz",
+          "sha256": "7d1824ac0d03559d90045e10e2f95224cb9d530c4659e6bfedab66c3b5504a29"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_both/episodes/0003.npz",
+          "sha256": "564db9076f2c25ead5728170f270b2fa8a967b31fa68bbf4ce48e80ba0d9c2ad"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/intervention_pilot_20261029_both/episodes/0004.npz",
+          "sha256": "a6b127450d62ebb8b0349f9fae82d1a60409d257a915a6f731c3cd3dcda4c166"
+        }
+      ]
+    },
+    {
+      "condition": "oracle_true_continuation",
+      "run": "runs/policy_geometry_intervention/reference_continuation_20261029_true",
+      "config_sha256": "56c76a5fb616dcdb315aff47b635cadaddb576ba3746521ed69b7a0337f3bae7",
+      "metrics_sha256": "12a27bce2fbfddf52356e2b3683ac33e30afd7fa0b60f02726e386a32d7e6545",
+      "cost_sha256": "fa3cc2ec4f979a38cf6ff363fd5074110a4bd57ecd9be7bfb4d614d48af4670a",
+      "trajectories": [
+        {
+          "path": "runs/policy_geometry_intervention/reference_continuation_20261029_true/episodes/0000.npz",
+          "sha256": "486c6f49caa54cbf084ba2a8caed22045708f53e02c32e338ea736c1d4d765b6"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_continuation_20261029_true/episodes/0001.npz",
+          "sha256": "a63766b35e0c6d5823dcaef93e80edf5d288177d64765e48372c0a912fa21ca0"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_continuation_20261029_true/episodes/0002.npz",
+          "sha256": "d7e87db996940d746e35917c1161afd9668e5d22f57290bebd678144dc8758e2"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_continuation_20261029_true/episodes/0003.npz",
+          "sha256": "66dc68ebe046db56f52f0329f011e7b9fc499ef9e5024f05f663313b1c23b1ae"
+        },
+        {
+          "path": "runs/policy_geometry_intervention/reference_continuation_20261029_true/episodes/0004.npz",
+          "sha256": "52de4d58453dc85d9716de3e7da4f5eeb7b00310af332b1bcbc853f9b675ae7e"
+        }
+      ]
+    }
+  ],
+  "paired_descriptive_contrasts": [
+    {
+      "reference": "oracle_tangent_control",
+      "metric": "return",
+      "mean_difference": 282.0867876380054,
+      "per_track": [
+        253.3943661971831,
+        196.61016949152622,
+        311.30201342281805,
+        337.3250000000005,
+        311.8023890784989
+      ],
+      "role": "primary"
+    },
+    {
+      "reference": "oracle_tangent_control",
+      "metric": "success",
+      "mean_difference": 0.8,
+      "per_track": [
+        1.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "role": "primary"
+    },
+    {
+      "reference": "oracle_tangent_control",
+      "metric": "off_track_steps",
+      "mean_difference": 0.0,
+      "per_track": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "role": "primary"
+    },
+    {
+      "reference": "local_search_context",
+      "metric": "return",
+      "mean_difference": -30.700338983049164,
+      "per_track": [
+        3.7000000000003865,
+        -166.10169491524744,
+        1.7000000000001592,
+        1.3000000000000682,
+        5.9000000000010004
+      ],
+      "role": "context"
+    },
+    {
+      "reference": "local_search_context",
+      "metric": "success",
+      "mean_difference": 0.0,
+      "per_track": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "role": "context"
+    },
+    {
+      "reference": "local_search_context",
+      "metric": "off_track_steps",
+      "mean_difference": -0.8,
+      "per_track": [
+        0.0,
+        -4.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "role": "context"
+    }
+  ],
+  "new_native_frames_including_replay": 5321,
+  "new_internal_physics_frames_including_replay": 745360,
+  "new_condition_cost": {
+    "native_frames": 4321,
+    "decisions": 1081,
+    "model_transitions": 151340,
+    "internal_physics_frames": 605360,
+    "actor_forward_examples": 144854,
+    "wall_time_s": 215.56296595200547
+  },
+  "verification_cost": {
+    "native_frames": 1000,
+    "decisions": 250,
+    "model_transitions": 35000,
+    "internal_physics_frames": 140000,
+    "actor_forward_examples": 33500,
+    "wall_time_s": 48.619462048998685
+  },
+  "new_training_frames": 0,
+  "historical_costs_are_not_new_work": true,
+  "speed_definition": "decision-end observed speed weighted by action duration, then equal episode means",
+  "latency_limit": "historical controls measured in previous campaign; no paired timing superiority claim",
+  "interpretation": "five previously inspected development tracks, one frozen actor/planning stream; no significance, adequacy or SOTA claim",
+  "held_out_evaluation": false,
+  "private_oracle_outputs_read": false
+}

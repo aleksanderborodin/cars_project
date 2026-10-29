@@ -1,7 +1,12 @@
-# Reference continuation: planned contrast and execution record
+# Reference continuation: completed controlled pilot
 
 2026-10-29. [Index](../README.md) · [Intervention design](INTERVENTION_STUDY.md) ·
 [Preceding results](INTERVENTION_RESULTS_2026-10-29.md) · [Status](STATUS.md)
+
+**Status: complete.** The exact replay and geometry checks passed. Replacing only
+the scoring-reference tail raised mean return from 594.21 to 876.29 and completion
+from 0/5 to 4/5. The original local-search mean remains higher at 906.99. All five
+tracks, the remaining failure and costs are reported below; no new training ran.
 
 **User instruction:** plan the next experiments and run them. The broader user
 idea is to separate understanding/prediction from deciding through interventions.
@@ -86,5 +91,89 @@ uv run python scripts/run_reference_continuation.py --manifest configs/campaigns
 ```
 
 Original IDs refuse overwriting. The technical status path is
-`runs/campaigns/reference_continuation_20261029/status.json`. Completion/result
-interpretation will be recorded below after all checks and five races finish.
+`runs/campaigns/reference_continuation_20261029/status.json`. The campaign finished
+at 2026-10-29 07:37:18 UTC (10:37 Moscow). All jobs in this batch are complete.
+
+## Completed results
+
+| Condition | Mean return | Completed | Mean progress | Sampled mean speed | Mean brake | Pipeline p95 |
+|---|---:|---:|---:|---:|---:|---:|
+| Original local search, historical context | 906.99 | 4/5 | 99.59% | 58.80 m/s | 0.0083 | 135.59 ms |
+| Oracle road + tangent reference, historical primary control | 594.21 | 0/5 | 69.42% | 35.21 m/s | 0.0294 | 209.13 ms |
+| Same oracle road + true reference continuation, new | 876.29 | 4/5 | 96.27% | 57.60 m/s | 0.0097 | 215.70 ms |
+
+Primary paired return difference: **+282.09**, positive on every track.
+Completion increased by four races; zero off-road frames and no playfield exits
+occurred in either oracle condition. The new run still missed the 80 ms decision
+interval on every decision; it is not a real-time result. Timing differences from
+historical controls are descriptive, not a paired timing comparison.
+
+| Development track, manifest order | Local search | Oracle + tangent | Oracle + true tail | New minus tangent | New minus local |
+|---|---:|---:|---:|---:|---:|
+| 1 | 917.30 | 667.61 | 921.00 | +253.39 | +3.70 |
+| 2 | 879.66 | 516.95 | 713.56 | +196.61 | −166.10 |
+| 3 | 914.30 | 604.70 | 916.00 | +311.30 | +1.70 |
+| 4 | 907.90 | 571.87 | 909.20 | +337.33 | +1.30 |
+| 5 | 915.80 | 609.90 | 921.70 | +311.80 | +5.90 |
+
+The average difference from local search is **−30.70**, with the same four tracks
+completing in both conditions. Track 2 remains an on-road timeout: progress 81.36%
+versus local search's 97.97%, sampled speed 40.77 versus 55.48 m/s and mean brake
+0.0282 versus 0.0119. There is no justification for excluding this case or reporting
+only the four successful tracks as overall superiority. No fallback occurred.
+
+## What this establishes and what remains open
+
+**Measured conditional effect:** with the same oracle-derived road model, changing
+only the reference continuation substantially improves this frozen controller on
+these five development tracks. The visible reference, candidate rollout mechanism,
+weights and model were fixed; the decline in braking and recovered speed accompany
+the return gain. This supports reference-continuation mismatch as a real limitation
+of the preceding oracle configuration.
+
+**Limit:** the path affects both progress and centre-distance costs, so this does
+not identify either cost term alone. It does not prove the objective predicts true
+reward, the vehicle model is accurate for all candidates, or the policy uses perfect
+perception. The score remains a hand-designed finite-horizon utility. These are
+previously inspected tracks, one actor and one planning stream. The new privileged
+method has not beaten the original local-search mean here, much less established
+SOTA or a full-information learned-policy comparison.
+
+The preceding audit's accurate oracle-road motion predictions for recorded actions
+and poor oracle driving can now be understood more specifically: a substantial
+part of the poor driving was recoverable by changing the scoring reference without
+changing that road model. This does not rule out remaining objective, proposal,
+observer or training limitations. The user's understanding-versus-deciding study
+benefits from the control; it is not yet a validated three-way attribution of RL error.
+
+**Assistant next recommendation, not launched:** replicate the frozen tangent-versus-
+true-tail comparison on the first 20 development tracks before tuning to track 2.
+Declare both full conditions and a larger budget separately, retain the original
+five as an explicit subset, and report the additional 15 separately as development
+data. They are not a final holdout. A 40-episode comparison caps new evaluation at
+40k native and 5.6M internal steps before any separately declared checks. Independent
+planning streams/training seeds, strong baseline work and the established-optimizer
+comparison still remain. Do not automatically activate all of these extensions.
+
+## Verification, costs and artifacts
+
+- **88 tests passed**, three upstream SWIG warnings. CLI discovery and local
+  documentation links passed. Source, checkpoint, dependency and input hashes match.
+- All **1,255** recorded primary-control observation states passed exact visible-
+  prefix preservation, 100-sample tail length, finite geometry and anchoring checks;
+  no visible-reference fallback. This was a data check, not new simulator work.
+- One complete primary-control episode replayed exactly before new racing.
+- New condition: **4,321 native frames**, **605,360 internal native physics steps**,
+  **144,854 actor-forward examples**, 215.56 s evaluation wall time.
+- Replay verification: **1,000 native frames**, **140,000 internal steps**,
+  **33,500 actor-forward examples**, 48.62 s wall time.
+- Total new campaign: **5,321 native / 745,360 internal frames**, **178,354 actor
+  examples**, **277.38 s** including geometry checks/reporting; zero new training.
+  Both total caps passed. Historical controls' compute is not counted again.
+
+Public artifacts: [summary](../reports/reference_continuation_2026-10-29/summary.csv),
+[all episodes](../reports/reference_continuation_2026-10-29/episodes.csv),
+[executed behavior](../reports/reference_continuation_2026-10-29/executed_behavior.csv),
+[paired differences, costs and provenance](../reports/reference_continuation_2026-10-29/analysis.json).
+The frozen executable source and replay evidence remain in the campaign directory.
+Final-test identities/results and private candidate-ranking data remain untouched.

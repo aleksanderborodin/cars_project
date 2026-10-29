@@ -8,6 +8,11 @@ pilot around one frozen recurrent policy, not the full V/L/F training study.
 The user's decomposition question motivated the work. The assistant chose the
 independent switches, pilot budget and subsequent executed-action audit.
 
+**Subsequent completed control:** changing only the reference's future tail
+recovered oracle driving to 876.29/80%, versus 594.21/0% for the `both` condition
+here. See the [follow-up report](REFERENCE_CONTINUATION_2026-10-29.md). The original
+pilot and audit results below remain unchanged; the local baseline mean is still higher.
+
 ## What changed and what stayed fixed
 
 The first switch supplies the true directed centreline inside the visible circle
@@ -121,7 +126,8 @@ novelty claim arising from five tracks.
 with the same oracle road model, followed by objective/horizon and imagined-input
 checks if needed. That control adds future reference/topology information and
 must be labeled as such; it cannot be silently folded into the current two-factor
-results. It is proposed, not implemented or run in this batch. The eventual
+results. It was not run in this original batch; the separately declared
+[follow-up](REFERENCE_CONTINUATION_2026-10-29.md) has now completed. The eventual
 oracle-input policies must be trained for their interfaces, with strong-baseline
 and distribution-shift checks, before interpreting a learned V/L/F matrix.
 Do not automatically expand the current failed configuration to 200 tracks or

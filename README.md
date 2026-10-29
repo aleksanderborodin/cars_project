@@ -118,8 +118,13 @@ The subsequent [controlled intervention pilot](docs/INTERVENTION_RESULTS_2026-10
 is also complete. On five common development tracks, baseline search completed
 4/5; each oracle-intervention condition completed 0/5 with on-road timeouts.
 Oracle road greatly improved predictions of recorded controls while driving
-worsened. Reference/objective compatibility now needs a focused control before
-scaling the three-stage training study; no new jobs are active from this batch.
+worsened. This motivated a focused reference/objective control before scaling
+the three-stage training study. The subsequent
+[reference-continuation control](docs/REFERENCE_CONTINUATION_2026-10-29.md) is now
+complete: changing only the scoring tail raised the oracle configuration from
+594.21/0% to 876.29/80%. The original local-search mean remains higher at 906.99/80%
+on these five tracks. This supports a reference mismatch, with broader replication
+still needed. No jobs from this batch remain active.
 
 The previous project is preserved on
 `archive/pre-belief-research-2026-10-27`. Its obsolete plans and tooling are absent

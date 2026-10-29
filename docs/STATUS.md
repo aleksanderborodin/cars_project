@@ -36,7 +36,12 @@ an objective/interface audit, not component-adequacy or SOTA claims. See the
 [complete intervention report](INTERVENTION_RESULTS_2026-10-29.md). No jobs remain
 active from that completed batch. The [reference-continuation control](REFERENCE_CONTINUATION_2026-10-29.md)
 is now implemented with exact visible-prefix preservation, a declared replay gate
-and five-track budget. Its execution result is pending.
+and five-track budget. It is complete: true continuation scored **876.29/80%**
+versus the tangent control's **594.21/0%**, improving all five returns. Original
+local search remains higher at **906.99/80%**; one on-road timeout accounts for
+the new condition's mean deficit. This isolates a reference-tail limitation for
+this controller, not a general information/SOTA advantage. All jobs in this batch
+are complete; the recommended 20-track paired replication has not launched.
 The actor receives only its original local fields. Global training stays sealed.
 
 ## Implemented
@@ -104,6 +109,11 @@ and unavailable for agent analysis, training or selection. Hindsight knowledge o
 the realized hidden world also differs from information available at decision time.
 
 ## Measurements
+
+- [Reference-continuation pilot](REFERENCE_CONTINUATION_2026-10-29.md): +282.09
+  return versus tangent control, 0/5 to 4/5 completions. Mean −30.70 versus original
+  local search; no overall local-search win. New cost including replay: 5,321 native
+  frames and 745,360 internal native physics steps; zero training.
 
 - Four-cell/five-track geometry pilot and executed-action prediction audit complete;
   see the [new report](INTERVENTION_RESULTS_2026-10-29.md). Better oracle-road

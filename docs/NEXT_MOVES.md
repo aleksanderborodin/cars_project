@@ -29,9 +29,14 @@ That [pilot and executed-action audit](INTERVENTION_RESULTS_2026-10-29.md) are n
 complete. Oracle road improved recorded-action prediction but reduced driving
 score. The immediate next control is a separately declared full-road objective
 reference with oracle road; this [bounded follow-up](REFERENCE_CONTINUATION_2026-10-29.md)
-is now implemented and declared, preserving the current visible reference exactly.
-Do not expand the failed cells
-automatically or call the oracle-input interventions validated performance ceilings.
+is complete, preserving the current visible reference exactly. Return rose from
+594.21 to 876.29 and completion from 0/5 to 4/5, still below the original local
+mean of 906.99. The next recommended run is a separately declared 20-track paired
+replication of the frozen tangent/true-tail conditions, with the original five
+and added 15 reported separately. It has not launched. Avoid tuning specifically
+to the one remaining failed track before this broader check; strong-baseline and
+established-planner work remain open. These oracle interventions are not validated
+performance ceilings or the trained V/L/F study.
 
 ## Objective and present evidence
 

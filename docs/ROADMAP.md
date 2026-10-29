@@ -26,12 +26,15 @@ reconstruction and hidden-road information with a fixed actor/model/budget.
 It precedes new oracle-informed policy training and does not satisfy the strong
 baseline, established-optimizer or final-test gates below.
 The [completed pilot](INTERVENTION_RESULTS_2026-10-29.md) found worse oracle-cell
-driving despite better oracle-road prediction on recorded controls. Next isolate
-the objective/reference compatibility before expanding the diagnostic or training
+driving despite better oracle-road prediction on recorded controls. This motivated
+an objective/reference compatibility check before expanding the diagnostic or training
 V/L/F policies; do not interpret these substitutions as component adequacy.
 The immediate [reference-continuation pilot](REFERENCE_CONTINUATION_2026-10-29.md)
-is implemented and declared: one five-track condition after exact control replay,
-with the visible prefix, physics and all other planner settings held fixed.
+is complete: after exact control replay, changing only the tail raised return
+594.21→876.29 and completion 0/5→4/5. The original local mean is still 906.99.
+Next recommend a separately declared 20-track paired replication before tuning
+to the remaining timeout; it is not launched. The visible prefix, physics and
+all other planner settings were held fixed in this pilot.
 
 | Order | Deliverable | Evidence / gate |
 |---|---|---|

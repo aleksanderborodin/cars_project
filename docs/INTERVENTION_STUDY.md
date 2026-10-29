@@ -14,7 +14,11 @@ full study or establish that a learned policy perceives correctly.
 **Execution:** the pilot and a separately declared executed-action prediction
 audit are complete. [Results](INTERVENTION_RESULTS_2026-10-29.md) show worse driving
 in all oracle cells despite improved oracle-road prediction on recorded actions.
-The next gate is reference/objective compatibility, not a large training launch.
+This motivated a reference/objective compatibility check before a large training launch.
+The [subsequent reference-tail control](REFERENCE_CONTINUATION_2026-10-29.md) is now
+complete and supports that mismatch explanation in this pilot, with performance
+still below the local-search mean. Broader replication and competence controls
+remain necessary before a large training matrix.
 
 ## First intervention: two independent geometry switches
 

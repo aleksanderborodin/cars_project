@@ -80,7 +80,7 @@ pixel results must not be pooled with the local repeat-four/search table. Check
 same-device reload exactly; record cross-device numerical differences separately.
 The local trainer optionally separates `normalization_gamma` from PPO `gamma`;
 `None` preserves the legacy coupling. The bounded discount trial in
-`docs/LOCAL_DISCOUNT_TRIAL_2026-10-29.md` holds normalization at0.99 and changes
+`docs/LOCAL_DISCOUNT_TRIAL_2026-10-29.md` holds normalization at 0.99 and changes
 PPO gamma only. It does not change existing local policies or native training.
 The legacy `research/recurrent.py` trainer remains separate. Never feed simulated
 policy history into real recurrent memory or update normalization from evaluation.

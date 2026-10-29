@@ -1,6 +1,6 @@
 # Experiment design: modular prediction and control by search
 
-The separate [native recipe/interface](NATIVE_RECIPE_2026-10-29.md) now has a [completed one-seed 4M campaign](NATIVE_BASELINE_RESULTS_2026-10-29.md): selected 1M 843.82/38%, final 4M 645.80/4%. Source/trace/resume checks passed; the [bounded inference-device diagnostic](NATIVE_DEVICE_AUDIT_2026-10-29.md) is the next technical control. Native results stay separate from the local programmed-simulator comparison.
+The [native 4M baseline](NATIVE_BASELINE_RESULTS_2026-10-29.md) and [inference-device control](NATIVE_DEVICE_AUDIT_2026-10-29.md) are complete: selected 1M: 843.82/38%; later regression persists on both devices. The next [local discount trial](LOCAL_DISCOUNT_TRIAL_2026-10-29.md) is running under a 2M-native-frame review cap. It retains the local interface/repeat four and isolates PPO gamma while holding normalization gamma fixed. Native and local result tables remain separate.
 
 Updated 2026-10-29 following the research discussion. The project now targets a
 scientific paper about modular world models and online control, using Gymnasium CarRacing

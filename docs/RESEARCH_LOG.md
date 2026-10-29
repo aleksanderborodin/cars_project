@@ -1081,7 +1081,7 @@ no new training. Retain original CPU-based selection; no native sweep is activat
   reward-normalization gamma at the existing 0.99. Existing defaults remain intact.
 - **Design:** same local information, repeat four, encoder, seed0, CPU4, GAE/SDE,
   optimizer and 8M-native-frame LR schedule; stop at the bounded 2M review. Four
-  checkpoints on the same first50 development tracks; historical original local
+  checkpoints on the same first 50 development tracks; historical original local
   checkpoint is the reference. Exact two-episode historical replay precedes launch.
 - **Confidence/limits:** high confidence in discount arithmetic and isolation of
   the configured normalization timescale, low confidence in driving improvement.
@@ -1089,7 +1089,14 @@ no new training. Retain original CPU-based selection; no native sweep is activat
   from upstream. This is not full recipe parity or causal component adequacy.
 - **Alternatives not bundled:** larger decision budget, independent training seeds,
   encoder changes, GAE/SDE changes, uninterrupted-training controls. No automatic
-  extension beyond2M or parameter sweep. A better checkpoint still needs frozen
+  extension beyond 2M or parameter sweep. A better checkpoint still needs frozen
   direct-versus-original-search tests, independent seeds and stronger comparisons.
 - **Status:** [declaration](LOCAL_DISCOUNT_TRIAL_2026-10-29.md); implementation and
   108 tests pass; historical replay is the remaining launch gate.
+
+R50 launch update: the historical two-episode local replay passed exactly (1,803
+native frames, two reset ticks), and 108 tests pass. Resolved-config audit confirms
+only effective PPO gamma changes; normalization stays 0.99. Campaign
+`local_discount_20261029_s0` is running on CPU/four workers under the declared 2M
+review cap; early updates are finite. No new local driving improvement is yet
+established, and the original frozen proposer/search remains the retained method.

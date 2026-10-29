@@ -1,6 +1,6 @@
 # Next moves: establish useful simulation improvement over strong drivers
 
-**Native execution update:** the [4M native campaign is complete](NATIVE_BASELINE_RESULTS_2026-10-29.md); select 1M (843.82/38%) under the frozen rule, with later regression retained (4M: 645.80/4%). The 200-trace/resume/source audit passed. Next run the [bounded inference-device control](NATIVE_DEVICE_AUDIT_2026-10-29.md), then declare the stronger matched-local training trial after reviewing the diagnostic. Do not relabel native results as a local/search comparison or begin an unbounded repair sweep.
+**Execution update:** the [native 4M campaign](NATIVE_BASELINE_RESULTS_2026-10-29.md) and [CPU/CUDA control](NATIVE_DEVICE_AUDIT_2026-10-29.md) are complete; preserve the original CPU-selected 1M checkpoint. The [bounded local discount trial](LOCAL_DISCOUNT_TRIAL_2026-10-29.md) is now running: PPO gamma 0.99^4, normalization gamma 0.99, otherwise the same local training settings, four checkpoint evaluations and no automatic extension beyond 2M native frames. Review its full curve before freezing a candidate for direct-versus-original-simulation-search comparisons.
 
 Updated 2026-10-29. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
 [Architecture](SIMULATOR_SEARCH_PLAN.md) · [Evidence](PROGRAMMED_SIMULATOR_RESULTS.md)

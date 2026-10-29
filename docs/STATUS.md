@@ -1,6 +1,6 @@
 # Implementation and evidence status
 
-**Latest baseline evidence:** the [one-seed native campaign completed](NATIVE_BASELINE_RESULTS_2026-10-29.md) all 4,001,792 training decisions and 200 scheduled development episodes in 2.42 hours. The declared rule selects 1M: 843.82 return, 38% completion; final 4M: 645.80, 4%. All 200 traces, source snapshots and resume clocks pass audit. No baseline-training jobs remain. The next [CPU/CUDA inference diagnostic](NATIVE_DEVICE_AUDIT_2026-10-29.md) is declared; 107 tests pass. Strong-baseline and general/SOTA conclusions remain open.
+**Current execution:** the [local-policy discount trial](LOCAL_DISCOUNT_TRIAL_2026-10-29.md) is running as `local_discount_20261029_s0`, capped at the 2M-native-frame review with four fixed development evaluations. Only PPO gamma changes to 0.96059601; normalization gamma stays 0.99. All 108 tests and historical local replay pass. The [native 4M baseline](NATIVE_BASELINE_RESULTS_2026-10-29.md) and [device diagnostic](NATIVE_DEVICE_AUDIT_2026-10-29.md) are complete: selected 1M: 843.82/38%; later regression persists on both devices. Strong-baseline/SOTA conclusions remain open.
 
 Updated 2026-10-29. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
 [Roadmap](ROADMAP.md) · [Latest development results](SEQUENCE_SEARCH_2026-10-29.md)
@@ -24,7 +24,7 @@ Search 21 achieved 884.48/72% versus direct 862.42/35.5%, with 362.11 ms p95 lat
 The lower-learning-rate trial's best checkpoint was 692.18/8% on 50 tracks and was
 not adopted. The [paper blueprint](PAPER_BLUEPRINT.md) now consolidates the proposed
 three-stage intervention study and explicitly attributed ideas. No trained visual/
-full-map diagnostic matrix, GPU backend or agentic evolution has been implemented.
+full-map diagnostic matrix, GPU simulator backend or agentic evolution has been implemented.
 
 **Current work:** [controlled geometry interventions](INTERVENTION_STUDY.md) are
 implemented: independent visible-reference and hidden-road substitutions around

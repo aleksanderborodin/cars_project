@@ -294,3 +294,23 @@ broad campaign. It serializes regression tests and training after that campaign.
 Public queue status is `runs/queues/driver_lr3e5_block_20261028/status.json`.
 `run_driver_block.py --reporter PATH` supports a copied reporter; its default
 behavior is unchanged. A failed/stale predecessor stops the queue for review.
+
+## Local discount probe and explicit inference device
+
+`research evaluate-native --device cpu|cuda` records the execution device and
+precision/determinism settings. Default CPU inference remains unchanged. Hardware
+comparisons use the [declared diagnostic](NATIVE_DEVICE_AUDIT_2026-10-29.md), not
+score-based device selection.
+
+`DriverTrainingConfig.normalization_gamma=None` preserves the existing rule that
+reward-normalization gamma follows PPO gamma. Set it explicitly to keep that
+normalization timescale fixed while testing another policy discount. The
+[local probe](LOCAL_DISCOUNT_TRIAL_2026-10-29.md) uses PPO 0.96059601 and
+normalization 0.99. Launch its immutable declaration with:
+
+```bash
+uv run python scripts/run_driver_block.py --manifest configs/campaigns/local-discount-2026-10-29.json
+```
+
+Run IDs must be new; the existing campaign is already running. Its status and
+checkpoint results live in `runs/campaigns/local_discount_20261029_s0/`.

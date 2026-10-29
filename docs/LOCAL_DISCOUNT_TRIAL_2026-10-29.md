@@ -80,3 +80,9 @@ replay exactly in actions, permitted observations, rewards, termination and metr
 (timing excluded). Cost: 1,803 native frames and two resets; [audit artifact](../reports/local_discount_readiness_2026-10-29/summary.json).
 Resolved-config comparison confirms that PPO gamma is the only changed effective
 training setting; normalization remains0.99. No trained checkpoint is modified.
+
+Launch observed at `2026-10-29T14:39:11.288083+00:00`: campaign
+`runs/campaigns/local_discount_20261029_s0`, training
+`runs/driver_training/local_discount_20261029_s0_to2m`, source commit `330487b`.
+Early optimizer updates are finite. This is launch evidence; consult the campaign
+status/learning log for completion and do not infer it from this snapshot.

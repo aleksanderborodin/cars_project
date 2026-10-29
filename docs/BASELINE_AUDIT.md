@@ -1,6 +1,6 @@
 # Recurrent baseline audit before longer training
 
-**Completed native execution:** the [4M one-seed campaign](NATIVE_BASELINE_RESULTS_2026-10-29.md) selects 1M (843.82 return, 38% completion), while final 4M regresses to 645.80/4%. All 200 evaluation traces and source/resume accounting pass. The strong-baseline gate remains open. The next [inference-device diagnostic](NATIVE_DEVICE_AUDIT_2026-10-29.md) checks GPU training versus CPU deployment without changing the original selection. Earlier local-driver findings below retain their original interpretation.
+**Completed native execution:** the [4M campaign](NATIVE_BASELINE_RESULTS_2026-10-29.md) selects 1M: 843.82/38%, with 4M: 645.80/4%. Source/trace/resume audits pass. The [device control](NATIVE_DEVICE_AUDIT_2026-10-29.md) confirms later regression on both CPU and CUDA but also measurable device sensitivity. A [bounded local discount trial](LOCAL_DISCOUNT_TRIAL_2026-10-29.md) is now running, changing PPO gamma while holding normalization gamma and other local settings fixed. Neither a converged strong baseline nor SOTA has been established.
 
 Updated 2026-10-29. [Next experiments](NEXT_EXPERIMENTS.md) ·
 [References](REFERENCES.md) · [Status](STATUS.md)

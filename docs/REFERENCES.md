@@ -7,14 +7,18 @@ Sources below are primary papers, proceedings, author project pages, official
 repositories, or official documentation. Availability was checked during the
 review. **SB3 recurrent PPO recipe adaptations have run, including the separate native 4M campaign; modern author-code MR.Q/MRS.Q, TD-MPC2, DreamerV3 and Valdi have not been reproduced here.** Code availability is not a verified installation, correct adaptation or matched published score. See the [current comparator/novelty gap review](COMPARATOR_REVIEW_2026-10-30.md).
 The search is substantial but not proof that the candidate mechanism is novel.
+Subsequent [MR.Q/MRS.Q](MRQ_MRSQ_AUDIT_2026-10-30.md) and
+[MPPI](MPPI_READINESS_2026-10-30.md) readiness audits pin selected official source
+files and hashes. They establish source provenance and adaptation constraints,
+not an installation, runtime check or performance reproduction.
 
 ## Closest work: read before claiming novelty
 
 | Reference | What overlaps | Paper / author source | Official code and our status |
 |---|---|---|---|
-| Chang et al., *The Surprising Difficulty of Search in Model-Based RL*, ICML 2026 | Direct prior work on accurate-model/search failures and value overestimation; raises the novelty/comparator bar | [Publisher paper](https://proceedings.mlr.press/v306/chang26a.html) | [Official MRS.Q code](https://github.com/facebookresearch/MRSQ); paper/selected source review only; no reproduction |
+| Chang et al., *The Surprising Difficulty of Search in Model-Based RL*, ICML 2026 | Direct prior work on accurate-model/search failures and value overestimation; raises the novelty/comparator bar | [Publisher paper](https://proceedings.mlr.press/v306/chang26a.html) | [Official MRS.Q code](https://github.com/facebookresearch/MRSQ); selected sources pinned/audited; no reproduction |
 | Rietz et al., *APC-RL*, ICLR 2026 | CarRacing behavior-prior composition; fixed track, symbolic simulator inputs and demonstrations require matching | [Proceedings](https://proceedings.iclr.cc/paper_files/paper/2026/hash/cb22704ebc9bc4e0ef875d1959651012-Abstract-Conference.html) | [Author code](https://github.com/frietz58/apc-rl); protocol review only; no reproduction |
-| Pezzato et al., *Sampling-based MPC Leveraging Parallelizable Physics Simulations*, RA-L 2025 | Simulator-driven MPPI is established prior work for our coded-model proposal | [Paper](https://arxiv.org/abs/2307.09105) | Prior-art review; no adaptation executed |
+| Pezzato et al., *Sampling-based MPC Leveraging Parallelizable Physics Simulations*, RA-L 2025 | Simulator-driven MPPI is established prior work for our coded-model proposal | [Paper](https://arxiv.org/abs/2307.09105) | Author MPPI source and credited MIT implementation pinned/inspected; no adaptation executed |
 | Ha & Schmidhuber, *World Models*, 2018 | Vision, predictive memory, control; direct CarRacing experiment | [Project/paper and implementation links](https://worldmodels.github.io/) | Historical context; no reproduction selected |
 | Freeman, Metz & Ha, *Learning to Predict Without Looking Ahead*, 2019 | Observational dropout and useful world models, including CarRacing | [Author project](https://learningtopredict.github.io/), [paper](https://arxiv.org/abs/1910.13038) | Context; no integration |
 | Evans, Jordaan & Engelbrecht, *High-performance Racing on Unmapped Tracks using Local Maps*, 2024 | Local sensing → geometry → racing control | [Paper](https://arxiv.org/abs/2401.17732) | Paper-based mechanism comparison; no exact implementation verified here |

@@ -2,7 +2,12 @@
 
 The local replications have completed; one seed learned useful driving and another failed competence at the declared review. The frozen [paper queue](PAPER_CAMPAIGN_2026-10-30.md) evaluates every actor on the full control/search matrix. The [refreshed comparator/novelty review](COMPARATOR_REVIEW_2026-10-30.md) identifies missing strong external comparisons and close prior art. Current mechanism evidence is not a SOTA result; stronger baselines, controlled component studies and final-test freeze remain open.
 
-Updated 2026-10-29 following the research discussion. The project now targets a
+The subsequent [MR.Q/MRS.Q source audit](MRQ_MRSQ_AUDIT_2026-10-30.md) and
+[MPPI readiness audit](MPPI_READINESS_2026-10-30.md) pin official references and
+record concrete adaptation/cost constraints. No external execution or change to
+the current frozen queue is implied.
+
+Updated 2026-10-30 following the research discussion. The project now targets a
 scientific paper about modular world models and online control, using Gymnasium CarRacing
 only and the current workstation. Physical robots and other simulators are out
 of scope. Restricted local/native interfaces, programmed physics and deterministic

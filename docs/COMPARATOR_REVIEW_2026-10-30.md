@@ -126,6 +126,14 @@ are therefore not claimed pinned or fully audited. The author APC PDF was cached
 and text-extracted locally; its SHA256 is recorded. No third-party code, dependency
 installation, benchmark episode, private rank or held-out data was used in this review.
 
+**Subsequent readiness work:** the fetch problem is resolved in the separate
+[MR.Q/MRS.Q pinned audit](MRQ_MRSQ_AUDIT_2026-10-30.md) and
+[MPPI source/readiness audit](MPPI_READINESS_2026-10-30.md). Those records include
+immutable revisions, cached hashes and concrete adaptation constraints. The original
+review record above preserves its earlier unsuccessful fetch honestly. Source
+inspection is now complete for the selected files; external integration, runtime
+validation and driving reproduction remain open.
+
 ### Replication evidence observed during this review
 
 Both fresh local training seeds completed with finite diagnostics and all scheduled

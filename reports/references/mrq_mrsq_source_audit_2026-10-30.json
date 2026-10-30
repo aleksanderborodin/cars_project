@@ -1,0 +1,366 @@
+{
+  "audit_date": "2026-10-30",
+  "origin": {
+    "user": "Continue toward a serious paper with strongest relevant baselines.",
+    "assistant": "Pin official code, inspect adaptation hazards and prepare a restricted-protocol implementation before launching new training.",
+    "prior_work": [
+      "MR.Q",
+      "MRS.Q"
+    ]
+  },
+  "scope": "Selected official source inspection and AST/arithmetic checks only; no algorithm import or execution.",
+  "repositories": {
+    "MRQ": {
+      "commit": "073adcd6b30f84694c241e00bd684db50242a215",
+      "origin": "https://github.com/facebookresearch/MRQ"
+    },
+    "MRSQ": {
+      "commit": "b12abaf309833f28619dfd87f4251074abed3ae3",
+      "origin": "https://github.com/facebookresearch/MRSQ"
+    }
+  },
+  "files": [
+    {
+      "repo": "MRQ",
+      "commit": "073adcd6b30f84694c241e00bd684db50242a215",
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/facebookresearch/MRQ/073adcd6b30f84694c241e00bd684db50242a215/README.md",
+      "local_path": "runs/references/mrq_mrsq_audit_20261030/MRQ/README.md",
+      "bytes": 1446,
+      "sha256": "c9083affa4526c6559352deb4d249dde18a65cb4d14cae9a638397994ef56412"
+    },
+    {
+      "repo": "MRQ",
+      "commit": "073adcd6b30f84694c241e00bd684db50242a215",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/facebookresearch/MRQ/073adcd6b30f84694c241e00bd684db50242a215/LICENSE",
+      "local_path": "runs/references/mrq_mrsq_audit_20261030/MRQ/LICENSE",
+      "bytes": 19334,
+      "sha256": "7c6858d0e71dc8b858255270ad4b5004e80b5b058bf5bbc408a28430d6ddbf4b"
+    },
+    {
+      "repo": "MRQ",
+      "commit": "073adcd6b30f84694c241e00bd684db50242a215",
+      "path": "requirements.txt",
+      "url": "https://raw.githubusercontent.com/facebookresearch/MRQ/073adcd6b30f84694c241e00bd684db50242a215/requirements.txt",
+      "local_path": "runs/references/mrq_mrsq_audit_20261030/MRQ/requirements.txt",
+      "bytes": 116,
+      "sha256": "0e60dc0d346246ba5b4b0870fae752ffa97b5c0d5c0ae388990406932407a61b"
+    },
+    {
+      "repo": "MRQ",
+      "commit": "073adcd6b30f84694c241e00bd684db50242a215",
+      "path": "MRQ/MRQ.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/MRQ/073adcd6b30f84694c241e00bd684db50242a215/MRQ/MRQ.py",
+      "local_path": "runs/references/mrq_mrsq_audit_20261030/MRQ/MRQ/MRQ.py",
+      "bytes": 13950,
+      "sha256": "15a7f171b7b81619933428f5ebe596f70f961c92912b5008a32d90c4ec316534"
+    },
+    {
+      "repo": "MRQ",
+      "commit": "073adcd6b30f84694c241e00bd684db50242a215",
+      "path": "MRQ/buffer.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/MRQ/073adcd6b30f84694c241e00bd684db50242a215/MRQ/buffer.py",
+      "local_path": "runs/references/mrq_mrsq_audit_20261030/MRQ/MRQ/buffer.py",
+      "bytes": 10022,
+      "sha256": "dd526acf596272cc2c6864804991866ae4a5d3cff325727015eca58b00e61804"
+    },
+    {
+      "repo": "MRQ",
+      "commit": "073adcd6b30f84694c241e00bd684db50242a215",
+      "path": "MRQ/env_preprocessing.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/MRQ/073adcd6b30f84694c241e00bd684db50242a215/MRQ/env_preprocessing.py",
+      "local_path": "runs/references/mrq_mrsq_audit_20261030/MRQ/MRQ/env_preprocessing.py",
+      "bytes": 9113,
+      "sha256": "f284339e9cb9b4a3c836f0498b7e19898356de8f95a7fa156262b58ea0631d77"
+    },
+    {
+      "repo": "MRQ",
+      "commit": "073adcd6b30f84694c241e00bd684db50242a215",
+      "path": "MRQ/main.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/MRQ/073adcd6b30f84694c241e00bd684db50242a215/MRQ/main.py",
+      "local_path": "runs/references/mrq_mrsq_audit_20261030/MRQ/MRQ/main.py",
+      "bytes": 10093,
+      "sha256": "a494e496312134f34be187d37f941a422ec7558e8c48a95a11f6b7b14725e968"
+    },
+    {
+      "repo": "MRQ",
+      "commit": "073adcd6b30f84694c241e00bd684db50242a215",
+      "path": "MRQ/utils.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/MRQ/073adcd6b30f84694c241e00bd684db50242a215/MRQ/utils.py",
+      "local_path": "runs/references/mrq_mrsq_audit_20261030/MRQ/MRQ/utils.py",
+      "bytes": 5027,
+      "sha256": "880dd68e374abde98a56c674974006278fd089c126c679b36e2b7a80717ab655"
+    },
+    {
+      "repo": "MRSQ",
+      "commit": "b12abaf309833f28619dfd87f4251074abed3ae3",
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/facebookresearch/MRSQ/b12abaf309833f28619dfd87f4251074abed3ae3/README.md",
+      "local_path": "runs/references/mrq_mrsq_audit_20261030/MRSQ/README.md",
+      "bytes": 1155,
+      "sha256": "386e6c47788bc9e750428c7d753d5c9a2d2be2502980adcdebe7b94a1d168b86"
+    },
+    {
+      "repo": "MRSQ",
+      "commit": "b12abaf309833f28619dfd87f4251074abed3ae3",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/facebookresearch/MRSQ/b12abaf309833f28619dfd87f4251074abed3ae3/LICENSE",
+      "local_path": "runs/references/mrq_mrsq_audit_20261030/MRSQ/LICENSE",
+      "bytes": 19333,
+      "sha256": "bc8f60ee50544b2dd70b4bc90e22de503aa23b317d284046a479811f2e06f396"
+    },
+    {
+      "repo": "MRSQ",
+      "commit": "b12abaf309833f28619dfd87f4251074abed3ae3",
+      "path": "MRSQ/MRSQ.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/MRSQ/b12abaf309833f28619dfd87f4251074abed3ae3/MRSQ/MRSQ.py",
+      "local_path": "runs/references/mrq_mrsq_audit_20261030/MRSQ/MRSQ/MRSQ.py",
+      "bytes": 23118,
+      "sha256": "dcb63a375c24c2a8da129fa00c7be86fb758f245db518f5d57850d84080b98e6"
+    },
+    {
+      "repo": "MRSQ",
+      "commit": "b12abaf309833f28619dfd87f4251074abed3ae3",
+      "path": "MRSQ/buffer.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/MRSQ/b12abaf309833f28619dfd87f4251074abed3ae3/MRSQ/buffer.py",
+      "local_path": "runs/references/mrq_mrsq_audit_20261030/MRSQ/MRSQ/buffer.py",
+      "bytes": 11515,
+      "sha256": "2bb718c4dc8d592278e206c5a62e7a05d866e3dcb6dd41c185850a634fa0d578"
+    },
+    {
+      "repo": "MRSQ",
+      "commit": "b12abaf309833f28619dfd87f4251074abed3ae3",
+      "path": "MRSQ/env_preprocessing.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/MRSQ/b12abaf309833f28619dfd87f4251074abed3ae3/MRSQ/env_preprocessing.py",
+      "local_path": "runs/references/mrq_mrsq_audit_20261030/MRSQ/MRSQ/env_preprocessing.py",
+      "bytes": 15915,
+      "sha256": "f334b334cfa92270c08fa995139f432723256b994c95042a032acadbc4279d91"
+    },
+    {
+      "repo": "MRSQ",
+      "commit": "b12abaf309833f28619dfd87f4251074abed3ae3",
+      "path": "MRSQ/main.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/MRSQ/b12abaf309833f28619dfd87f4251074abed3ae3/MRSQ/main.py",
+      "local_path": "runs/references/mrq_mrsq_audit_20261030/MRSQ/MRSQ/main.py",
+      "bytes": 12106,
+      "sha256": "a5f9586265a84ee12588e0c03e420fb9a01e20b3a5d964a3f6b8c66a40de8dd8"
+    },
+    {
+      "repo": "MRSQ",
+      "commit": "b12abaf309833f28619dfd87f4251074abed3ae3",
+      "path": "MRSQ/utils.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/MRSQ/b12abaf309833f28619dfd87f4251074abed3ae3/MRSQ/utils.py",
+      "local_path": "runs/references/mrq_mrsq_audit_20261030/MRSQ/MRSQ/utils.py",
+      "bytes": 6466,
+      "sha256": "de391b8e96ad2a5010b2b0127471ccae690872c489f54b81b4cff9b60a1760bc"
+    },
+    {
+      "repo": "MRQ",
+      "commit": "073adcd6b30f84694c241e00bd684db50242a215",
+      "path": "MRQ/models.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/MRQ/073adcd6b30f84694c241e00bd684db50242a215/MRQ/models.py",
+      "local_path": "runs/references/mrq_mrsq_audit_20261030/MRQ/MRQ/models.py",
+      "bytes": 4488,
+      "sha256": "c42ff5d2b9a3210477a49d412584008da5fa58d1ed2089e3abb4fc49980b0c5a"
+    }
+  ],
+  "licenses": {
+    "MRQ": "CC-BY-NC-4.0",
+    "MRSQ": "CC-BY-NC-4.0"
+  },
+  "upstream_hyperparameters": {
+    "MRQ": {
+      "batch_size": 256,
+      "buffer_size": 1000000.0,
+      "discount": 0.99,
+      "target_update_freq": 250,
+      "buffer_size_before_training": 10000.0,
+      "exploration_noise": 0.2,
+      "target_policy_noise": 0.2,
+      "noise_clip": 0.3,
+      "dyn_weight": 1,
+      "reward_weight": 0.1,
+      "done_weight": 0.1,
+      "prioritized": true,
+      "alpha": 0.4,
+      "min_priority": 1,
+      "enc_horizon": 5,
+      "Q_horizon": 3,
+      "zs_dim": 512,
+      "zsa_dim": 512,
+      "za_dim": 256,
+      "enc_hdim": 512,
+      "enc_activ": "elu",
+      "enc_lr": 0.0001,
+      "enc_wd": 0.0001,
+      "pixel_augs": true,
+      "value_hdim": 512,
+      "value_activ": "elu",
+      "value_lr": 0.0003,
+      "value_wd": 0.0001,
+      "value_grad_clip": 20,
+      "policy_hdim": 512,
+      "policy_activ": "relu",
+      "policy_lr": 0.0003,
+      "policy_wd": 0.0001,
+      "gumbel_tau": 10,
+      "pre_activ_weight": 1e-05,
+      "num_bins": 65,
+      "lower": -10,
+      "upper": 10
+    },
+    "MRSQ": {
+      "batch_size": 256,
+      "buffer_size": 1000000.0,
+      "discount": 0.99,
+      "target_update_freq": 250,
+      "buffer_size_before_training": 10000.0,
+      "exploration_noise": 0,
+      "target_policy_noise": 0.2,
+      "noise_clip": 0.3,
+      "dyn_weight": 20,
+      "reward_weight": 0.1,
+      "done_weight": 1,
+      "prioritized": true,
+      "alpha": 0.4,
+      "min_priority": 1,
+      "enc_horizon": 5,
+      "q_horizon": 3,
+      "zs_dim": 512,
+      "zsa_dim": 512,
+      "za_dim": 256,
+      "enc_hdim": 512,
+      "enc_activ": "elu",
+      "enc_lr": 0.0001,
+      "enc_wd": 0.0001,
+      "pixel_augs": true,
+      "sem_groups": 8,
+      "value_hdim": 512,
+      "value_activ": "elu",
+      "value_lr": 0.0003,
+      "value_wd": 0.0001,
+      "value_grad_clip": 20,
+      "policy_hdim": 512,
+      "policy_activ": "relu",
+      "policy_lr": 0.0003,
+      "policy_wd": 0.0001,
+      "gumbel_tau": 10,
+      "pre_activ_weight": 1e-05,
+      "num_bins": 65,
+      "lower": -10,
+      "upper": 10,
+      "mpc_horizon": 3,
+      "num_samples": 512,
+      "num_pi_trajs": 24,
+      "num_elites": 64,
+      "mpc_iterations": 6,
+      "temperature": 0.5,
+      "min_std": 0.05,
+      "max_std": 2,
+      "pi_std": 0.1
+    }
+  },
+  "upstream_gym_default_decisions": 1000000,
+  "local_representation_option": {
+    "road_shape": [
+      61,
+      61
+    ],
+    "numeric": [
+      "body_forward_velocity",
+      "body_left_velocity",
+      "yaw_rate",
+      "previous_steer",
+      "previous_gas",
+      "previous_brake"
+    ],
+    "vector_dimension": 3727,
+    "visible_mask": "fixed from protocol; reconstruct exactly rather than store per observation",
+    "status": "assistant proposed preflight; not selected or implemented"
+  },
+  "analytic_replay_storage": {
+    "capacity_slots": 1000000,
+    "flattened_road_plus_6_float32_obs_bytes": 14908000000,
+    "flattened_both_masks_plus_6_float32_obs_bytes": 29792000000,
+    "uint8_road_float32_numeric_obs_bytes": 3745000000,
+    "bitpacked_road_float32_numeric_obs_bytes": 490000000,
+    "counts_current_obs_once_not_separate_next_array": true,
+    "excludes": "indices, priority/masks, actions/rewards, models/optimizers, staging, allocator, checkpoint serialization and operating-system use",
+    "measured_peak": false
+  },
+  "analytic_mrsq_work_per_default_plan": {
+    "explicit_horizon_decisions": 3,
+    "population_transition_examples": 9216,
+    "policy_proposal_transition_examples": 48,
+    "total_latent_transition_examples": 9264,
+    "terminal_zsa_examples": 3072,
+    "policy_examples": 3144,
+    "terminal_value_heads": 10,
+    "cost_units_match_physics_ticks": false,
+    "measured_latency": false
+  },
+  "source_findings": [
+    {
+      "id": "partitions",
+      "finding": "Both upstream Gym wrappers construct a generic Gym environment; they do not enforce our train/development namespace. A repository-owned restricted environment harness is required."
+    },
+    {
+      "id": "action_mapping",
+      "finding": "Continuous agents output symmetric normalized actions times one scalar max_action; use a bijective outer affine mapping for CarRacing gas/brake and store the normalized action in replay."
+    },
+    {
+      "id": "history",
+      "finding": "Gym wrappers declare history=1. Neither algorithm supplies a recurrent local encoder; bounded history versus recurrent PPO must be disclosed and controlled."
+    },
+    {
+      "id": "mrq_gpu_storage_estimate",
+      "finding": "In MRQ buffer.py the conditional expression obs_space=product*1 if pixel_obs else 4 yields scalar 4 in the nonpixel branch. Require explicit corrected storage budgeting before allocation."
+    },
+    {
+      "id": "mrsq_cpu_cuda_query",
+      "finding": "MRSQ buffer.py check_memory calls torch.cuda.mem_get_info unconditionally, including CPU configurations; isolate/correct the storage helper and test CPU behavior before use."
+    },
+    {
+      "id": "mrsq_pixel_path",
+      "finding": "MRSQ Encoder initializes ln_zsa only in the nonpixel branch but model_all accesses it in both branches; pixel planning/training path requires a synthetic execution check and explicitly recorded resolution."
+    },
+    {
+      "id": "spatial_shape",
+      "finding": "Both upstream pixel CNNs hard-code a 1568-dimensional flattened input. The 61x61 local grid produces 512 dimensions; 84x84 produces 1568. No direct drop-in local pixel adapter is established."
+    },
+    {
+      "id": "stochastic_evaluation",
+      "finding": "MRSQ evaluation invokes planning with Gaussian proposals and Gumbel elite selection. Disabling exploration noise does not make the planner deterministic; isolate/reset/checkpoint planning RNG and warm starts."
+    },
+    {
+      "id": "effective_q_horizon",
+      "finding": "MRSQ declares q_horizon=3 but train() samples enc_horizon=5 for its RL target. Preserve actual pinned behavior in the primary adaptation or label a correction separately."
+    },
+    {
+      "id": "validation_rng",
+      "finding": "Upstream evaluation uses global Torch/NumPy RNG state. Preserve/restore learner RNG around development evaluation and use separate planning streams."
+    },
+    {
+      "id": "replay_boundary",
+      "finding": "Terminal/timeout paths are nontrivial and buffers store final observations in additional slots. Native frame and decision counters must not use replay size; synthetic terminal, truncation, history and ring-wrap parity checks precede training."
+    },
+    {
+      "id": "training_compute",
+      "finding": "MRQ/MRSQ train() performs bursts of 250 encoder updates at target synchronization, plus per-call RL updates. Profile the first warm-up crossing and complete later burst; model runtime cannot be inferred from PPO."
+    }
+  ],
+  "execution": {
+    "third_party_code_imported": false,
+    "third_party_code_executed": false,
+    "dependencies_installed": false,
+    "new_environment_frames": 0,
+    "training_launched": false,
+    "private_or_heldout_read": false
+  },
+  "checks": {
+    "cached_file_hashes": 16,
+    "python_ast_parses": 11,
+    "status": "passed; source checks do not establish runtime correctness or driving competence"
+  }
+}

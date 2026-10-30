@@ -10,12 +10,15 @@ queued work, required unresolved studies and optional extensions.
 
 ## What is executing now
 
-The [seed 1/2 replications](LOCAL_REPLICATIONS_2026-10-30.md) run serially, each to
-its declared 2M-native-frame review. Both recipes/source snapshots were frozen
-before launch. Their standalone scores select each policy checkpoint before any
-search result exists. Prior seed 0 remains historical exploratory evidence.
+The [seed 1/2 replications](LOCAL_REPLICATIONS_2026-10-30.md) completed serially,
+each to its declared 2M-native-frame review. Both recipes/source snapshots were
+frozen before launch. Standalone scores selected each policy checkpoint before
+search evaluation: seed 1 869.23/32%, seed 2 −17.89/0% on 50 development tracks.
+The unsuccessful actor is retained. Prior seed 0 remains historical exploratory
+evidence. The corrected full-development queue is now evaluating the fixed matrix;
+live progress is in its status JSON, not the historical launch snapshot below.
 
-The next [queue declaration](../configs/campaigns/paper-search-sparse-queue-2026-10-30.json)
+The frozen [queue declaration](../configs/campaigns/paper-search-sparse-queue-2026-10-30.json)
 freezes **three policy seeds × 200 development tracks × ten conditions**:
 
 | Condition | Purpose |
@@ -71,8 +74,8 @@ Do not choose a checkpoint because its search gain is favorable.
 
 | Work | Evidence/execution status | Required next step |
 |---|---|---|
-| Partitions, immutable configs, checkpoint/memory/parity tests | Implemented; 113 tests passing | Preserve at every new protocol |
-| Original local search gain and cheap controls | Seed0 measured on 200 tracks | Seed1/2 plus count-matched random controls queued |
+| Partitions, immutable configs, checkpoint/memory/parity tests | Implemented; 114 tests at last code change | Preserve at every new protocol |
+| Original local search gain and cheap controls | Seed0 measured on 200 tracks; frozen queue evaluating | Complete seed1/2 and count-matched random controls |
 | Native recipe comparability | One full 4M-decision run, selected early checkpoint; late regression | Competence and training-seed robustness still unresolved |
 | Strong learned/actor-free competitors | PPO adaptations measured; Valdi/iCEM sources audited; iCEM adaptation negative | Reproduce justified stronger competitors under explicit information/compute contracts |
 | Current perception/future road/control decomposition | Fixed-controller geometry interventions and reference-tail study measured | Train/validate proposed V/L/F or narrower matched module study before those claims |
@@ -103,7 +106,7 @@ changes to current information boundaries.
   are unresolved. This is a resource-planning estimate, not a promised completion
   date or a claim that SOTA/novelty will be established by then.
 
-Status: declared. Queue preparation/checks precede waiting/execution. Remaining
+Status: evaluating after completed training dependencies. Remaining
 unimplemented studies need explicit protocols, tests and frozen budgets before
 their data can support paper claims; they are not reported as running.
 
@@ -116,9 +119,10 @@ and stop reason are preserved; no failed or completed result was overwritten.
 
 Corrected queue launch observed at `2026-10-30T13:29:11.279191+00:00`,
 source/launch commit `5c0a2c6`. Live status:
-`runs/queues/paper_search_sparse_20261030/status.json`. It is waiting for
-`local_replications_20261030` and will execute/report automatically after both
-training blocks complete. All 114 tests and manifest checks passed before launch.
+`runs/queues/paper_search_sparse_20261030/status.json`. At launch it waited for
+`local_replications_20261030`; that dependency is now complete and the queue is
+evaluating. Its reporter runs automatically after the fixed matrix completes.
+All 114 tests and manifest checks passed before launch.
 Project training and evaluation measurements are serialized as declared; do not
 launch additional training while this evaluation queue is active.
 
@@ -132,3 +136,9 @@ same-engine MPPI/CEM planner, and a modern MR.Q/MRS.Q comparison; visual
 DreamerV3/Valdi feasibility remains separate. The current frozen queue continues
 unchanged and cannot, by itself, establish SOTA. The 2–4 week planning allowance is
 uncertain while these comparator implementations/profile budgets remain open.
+
+Follow-up preparation has now [pinned MR.Q/MRS.Q](MRQ_MRSQ_AUDIT_2026-10-30.md)
+and [MPPI reference sources](MPPI_READINESS_2026-10-30.md). The audits identify
+specific harness/storage/history/RNG and synthesized-control accounting gates;
+none of those external algorithms has been executed. No competing training or
+profiling is launched during the current evaluation measurements.

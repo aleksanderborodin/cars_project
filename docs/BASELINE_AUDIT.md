@@ -1,6 +1,6 @@
 # Recurrent baseline audit before longer training
 
-**Current baseline work:** native, device and local-discount studies are complete. The [offline actor audit](ACTION_DISTRIBUTION_AUDIT_2026-10-30.md) finds no actor-replay discrepancy and shows that falling gSDE parameter scale can accompany rising effective local variation. [Independent seed 1/2 replications](LOCAL_REPLICATIONS_2026-10-30.md) of the retained local recipe are now running, capped at 2M native frames each under the original 8M schedule. No new training-parameter repair is bundled into these runs.
+**Current baseline work:** native, device and local-discount studies are complete. The [offline actor audit](ACTION_DISTRIBUTION_AUDIT_2026-10-30.md) finds no actor-replay discrepancy and shows that falling gSDE parameter scale can accompany rising effective local variation. [Independent seed 1/2 replications](LOCAL_REPLICATIONS_2026-10-30.md) completed their 2M reviews under the original 8M schedule: selected scores 869.23/32% and −17.89/0%. Both remain in the frozen search comparison; baseline competence is unresolved. [MR.Q/MRS.Q readiness](MRQ_MRSQ_AUDIT_2026-10-30.md) now records pinned external sources and required adapter gates, without claiming execution.
 
 Updated 2026-10-30. [Next experiments](NEXT_EXPERIMENTS.md) ·
 [References](REFERENCES.md) · [Status](STATUS.md)

@@ -2,6 +2,13 @@
 
 **Execution update:** the local replications completed (selected seed 1 869.23/32%, seed 2 −17.89/0%); keep both, including the failed learner, in the active full-development search queue. The [updated comparator review](COMPARATOR_REVIEW_2026-10-30.md) identifies modern MR.Q/MRS.Q, independent competent actors and same-engine MPPI/CEM as priority gaps. Prepare source/protocol work while evaluation runs, then profile/declare external runs serially. Current PPO-only replication does not close strong-comparator or novelty gates.
 
+**Readiness work completed:** official [MR.Q/MRS.Q sources](MRQ_MRSQ_AUDIT_2026-10-30.md)
+and [MPPI references](MPPI_READINESS_2026-10-30.md) are pinned, cached and inspected.
+Implement the restricted harness and synthetic action/replay/RNG checks next;
+resolve explicit storage and history before a serial readiness profile. MPPI must
+charge simulation of its synthesized executed action and preserve algorithm
+identity. These gates do not launch training during the active measurement queue.
+
 Updated 2026-10-30. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
 [Architecture](SIMULATOR_SEARCH_PLAN.md) · [Evidence](PROGRAMMED_SIMULATOR_RESULTS.md)
 

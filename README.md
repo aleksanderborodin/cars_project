@@ -38,6 +38,8 @@ register separates user ideas, assistant refinements, prior work and measured ev
 | [Local independent-seed replications](docs/LOCAL_REPLICATIONS_2026-10-30.md) | Fixed retained recipe, seeds 1/2, serial frozen execution, 2M review per seed and all checkpoint curves |
 | [Paper execution ledger](docs/PAPER_CAMPAIGN_2026-10-30.md) | Required versus optional studies, fixed 3-policy/200-track queue, costs, remaining claim gates and realistic timeline |
 | [Comparator and novelty gap review](docs/COMPARATOR_REVIEW_2026-10-30.md) | Candid current baseline coverage, newly identified MRS.Q/APC-RL prior art, prioritized missing competitors and publication gates |
+| [MR.Q/MRS.Q source readiness](docs/MRQ_MRSQ_AUDIT_2026-10-30.md) | Pinned official sources, action/history/replay and stochastic-evaluation constraints; no external execution yet |
+| [MPPI comparison readiness](docs/MPPI_READINESS_2026-10-30.md) | Pinned reference, algorithm identity, synthesized-action state commit and full work accounting before integration |
 | [Controlled intervention study](docs/INTERVENTION_STUDY.md) | Executable four-cell geometry diagnostic, isolation tests, pilot budget and staged V/L/F training design |
 | [Intervention results](docs/INTERVENTION_RESULTS_2026-10-29.md) | Completed negative driving pilot, executed-trajectory audit, better prediction with oracle road, and next validity gate |
 | [20-track reference replication](docs/REFERENCE_REPLICATION_2026-10-29.md) | Completed 20-track paired result: +286.25 versus tangent but −71.86 versus local search; failures, costs and replay evidence |
@@ -95,7 +97,7 @@ The [matched sequence-search experiment](docs/SEQUENCE_SEARCH_2026-10-29.md) is
 complete. On twenty development tracks, colored shooting scored **884.86 / 70%**
 and the policy-guided iCEM adaptation **634.13 / 15%**, versus historical three-knot
 search **905.94 / 85%**. The adaptive-minus-shooting difference is −250.72. Neither
-new variant is promoted. All five exact replays and 100 tests passed; no jobs remain.
+new variant is promoted. All five exact replays and 100 tests passed for that completed batch.
 
 ```bash
 uv sync --locked

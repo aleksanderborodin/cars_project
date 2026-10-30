@@ -1,0 +1,147 @@
+{
+  "audit_date": "2026-10-30",
+  "origin": {
+    "user": "Strong scientific comparisons for programmed-simulator behavior selection.",
+    "assistant": "Pin sources, distinguish MPPI reference/adaptation, and account for synthesized-action state estimation.",
+    "prior_work": [
+      "Williams et al. MPPI",
+      "Pezzato et al. physics simulation MPC",
+      "UM-ARM-Lab/pytorch_mppi",
+      "tud-amr/mppi_torch"
+    ]
+  },
+  "sources": [
+    {
+      "observed_utc": "2026-10-30T14:21:07.636628+00:00",
+      "repository": "https://github.com/tud-amr/mppi_torch",
+      "commit": "75e17e87fd42a803d3227258d14c4231cbcbc0ec",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/tud-amr/mppi_torch/75e17e87fd42a803d3227258d14c4231cbcbc0ec/README.md",
+          "local_path": "runs/references/mppi_audit_20261030/README.md",
+          "bytes": 2873,
+          "sha256": "c4d82d1826ddfe058dd6aea593e5c9bf608276e7568188cf25adbaebd50551e2"
+        },
+        {
+          "path": "pyproject.toml",
+          "url": "https://raw.githubusercontent.com/tud-amr/mppi_torch/75e17e87fd42a803d3227258d14c4231cbcbc0ec/pyproject.toml",
+          "local_path": "runs/references/mppi_audit_20261030/pyproject.toml",
+          "bytes": 372,
+          "sha256": "9144b4d62ccb72609baceb3e7b575bd7433062a599a86aa1052a2421e5fda897"
+        },
+        {
+          "path": "mppi_torch/mppi.py",
+          "url": "https://raw.githubusercontent.com/tud-amr/mppi_torch/75e17e87fd42a803d3227258d14c4231cbcbc0ec/mppi_torch/mppi.py",
+          "local_path": "runs/references/mppi_audit_20261030/mppi_torch/mppi.py",
+          "bytes": 22989,
+          "sha256": "8b9859bd8c7b8982025959d3dffbba903a268a6a9877e17fec708e85c2cf3883"
+        },
+        {
+          "path": "mppi_torch/mppi_utils.py",
+          "url": "https://raw.githubusercontent.com/tud-amr/mppi_torch/75e17e87fd42a803d3227258d14c4231cbcbc0ec/mppi_torch/mppi_utils.py",
+          "local_path": "runs/references/mppi_audit_20261030/mppi_torch/mppi_utils.py",
+          "bytes": 4650,
+          "sha256": "3c2b6c8ac636dc0cf6a80ccc5de5846c07da67c8a1ee25310d3685268a2cafee"
+        },
+        {
+          "path": "examples/point_robot/config.yaml",
+          "url": "https://raw.githubusercontent.com/tud-amr/mppi_torch/75e17e87fd42a803d3227258d14c4231cbcbc0ec/examples/point_robot/config.yaml",
+          "local_path": "runs/references/mppi_audit_20261030/examples/point_robot/config.yaml",
+          "bytes": 567,
+          "sha256": "260240ec4b069392edcf11ff50f4d5573a2472cf9e5dcf961145e4f0af83cda2"
+        }
+      ],
+      "root_tree_paths": [
+        ".gitignore",
+        "MppiTorch.png",
+        "README.md",
+        "examples",
+        "examples/point_robot",
+        "examples/point_robot/config.yaml",
+        "examples/point_robot/dynamics.py",
+        "examples/point_robot/objective.py",
+        "examples/point_robot/run.py",
+        "examples/point_robot/simulator.py",
+        "mppi_torch",
+        "mppi_torch/mppi.py",
+        "mppi_torch/mppi_utils.py",
+        "poetry.lock",
+        "pyproject.toml"
+      ],
+      "license_file_in_tree": false,
+      "third_party_code_executed": false,
+      "new_environment_frames": 0,
+      "dependency_installations": 0
+    },
+    {
+      "observed_utc": "2026-10-30T14:23:56.021583+00:00",
+      "repository": "https://github.com/UM-ARM-Lab/pytorch_mppi",
+      "commit": "e04a569cd4215e705f9013145c496fc59cb25ed6",
+      "license": "MIT",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/UM-ARM-Lab/pytorch_mppi/e04a569cd4215e705f9013145c496fc59cb25ed6/README.md",
+          "local_path": "runs/references/pytorch_mppi_audit_20261030/README.md",
+          "bytes": 14030,
+          "sha256": "f5416e21011f06c4ac3904c32221a0dc3d17fb1b44ac1bad09b7febe1183c56e"
+        },
+        {
+          "path": "LICENSE.txt",
+          "url": "https://raw.githubusercontent.com/UM-ARM-Lab/pytorch_mppi/e04a569cd4215e705f9013145c496fc59cb25ed6/LICENSE.txt",
+          "local_path": "runs/references/pytorch_mppi_audit_20261030/LICENSE.txt",
+          "bytes": 1075,
+          "sha256": "79a84548f4a0ca444ac2877f1e56f0846344bf03fdd741352d76fa8ef37681e8"
+        },
+        {
+          "path": "pyproject.toml",
+          "url": "https://raw.githubusercontent.com/UM-ARM-Lab/pytorch_mppi/e04a569cd4215e705f9013145c496fc59cb25ed6/pyproject.toml",
+          "local_path": "runs/references/pytorch_mppi_audit_20261030/pyproject.toml",
+          "bytes": 4354,
+          "sha256": "e31cb1ee5ef2ed564a36fca9ab04d9fb7205c7f6b96eec580caa7e3b96781184"
+        },
+        {
+          "path": "src/pytorch_mppi/mppi.py",
+          "url": "https://raw.githubusercontent.com/UM-ARM-Lab/pytorch_mppi/e04a569cd4215e705f9013145c496fc59cb25ed6/src/pytorch_mppi/mppi.py",
+          "local_path": "runs/references/pytorch_mppi_audit_20261030/src/pytorch_mppi/mppi.py",
+          "bytes": 38951,
+          "sha256": "c9160a7e3b5bed9818c72c64581a8beb898c4627aa0651a8ec534826044df89a"
+        }
+      ],
+      "third_party_code_executed": false,
+      "new_environment_frames": 0,
+      "dependency_installations": 0
+    }
+  ],
+  "inspection_findings": [
+    {
+      "id": "license",
+      "finding": "No LICENSE path in the pinned tud-amr/mppi_torch Git tree and no license declaration in inspected pyproject. It is retained as an inspected reference; prefer the separately pinned MIT pytorch_mppi source as the implementation reference."
+    },
+    {
+      "id": "mean_execution",
+      "finding": "Both inspected command paths produce an updated weighted control sequence. It need not be an evaluated trajectory. Our observation-initialized wheel estimator must commit the first-transition state for the actual executed action, requiring counted simulation of the synthesized control."
+    },
+    {
+      "id": "algorithm_identity",
+      "finding": "The tud-amr source has different simple and Halton-spline paths, temperature adaptation, prior slots and optional filtering. A policy-residual adaptation is not an unchanged standalone MPPI reproduction."
+    },
+    {
+      "id": "bounds",
+      "finding": "The MIT reference bounds perturbed actions and recomputes effective noise, includes an action/noise cost and shifts the nominal sequence. Preserve these choices explicitly; do not reduce the algorithm to softmax weights over arbitrary costs while keeping an unchanged-MPPI label."
+    }
+  ],
+  "execution": {
+    "third_party_code_imported": false,
+    "third_party_code_executed": false,
+    "dependencies_installed": false,
+    "new_environment_frames": 0,
+    "private_or_heldout_read": false
+  },
+  "checks": {
+    "cached_file_hashes": 9,
+    "python_ast_parses": 3,
+    "status": "passed; no runtime or driving validation"
+  }
+}

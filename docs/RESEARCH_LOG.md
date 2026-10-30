@@ -1235,3 +1235,37 @@ ongoing paper comparison. The baseline gap is therefore empirical, not just a
 missing algorithm name. Tests and implementation audits cannot substitute for
 a competent independently credible actor. All external-comparator priorities
 remain separate from the current immutable mechanism queue.
+
+## R55 — Pin modern comparisons and resolve concrete adapter constraints
+
+- **User steering:** continue the serious-paper work after the candid comparator
+  review; no new algorithm or result is prescribed by this instruction.
+- **Assistant execution:** resolve the earlier fetch failure, pin official MR.Q
+  and MRS.Q revisions, and cache sixteen selected source/license files without
+  importing their code. Pin two MPPI references and cache nine selected files.
+  All 25 hashes and fourteen Python AST parses pass; no new simulator frames,
+  dependencies, model execution or training are involved in this preparation.
+- **Source findings:** symmetric external actions need an explicit gas/brake
+  mapping; upstream Gym construction does not enforce our partitions; history
+  differs from recurrent PPO. Source storage helpers and the MRS.Q pixel path need
+  explicit resolutions. MRS.Q retains stochastic planning during evaluation and
+  its effective RL target horizon differs from its named configuration field.
+  These are source-derived constraints, not measured runtime failures here.
+- **Resource intent:** default vector replay could consume 14.908 GB for the road
+  plus ego/action observation alone. Compression and alternate encoders remain
+  proposed. Default MRS.Q makes 9,264 latent transition examples per plan; those
+  cannot be equated to Box2D ticks. Profile real update bursts before promising
+  budgets or classifying a baseline as competent.
+- **Planner choice and rationale:** use the separately pinned MIT MPPI reference
+  for implementation readiness; the inspected author repository lacks an explicit
+  license. Keep canonical action-space MPPI distinct from a feedback-policy
+  residual adaptation. A weighted synthesized action needs its own simulated
+  transition before committing our vehicle estimator, and that work is charged.
+- **Uncertainty:** high confidence in provenance/accounting needs; unknown encoder,
+  planning settings, performance and runtime. No external score, reproducibility
+  claim or strongest-baseline gate is closed by this audit.
+- **Execution boundary:** the frozen three-policy queue remains active and
+  unchanged. Implementation/runtime profiles follow its measurements serially;
+  no competing training or profiling, private ranks or held-out access is added.
+- **Records:** [MR.Q/MRS.Q source readiness](MRQ_MRSQ_AUDIT_2026-10-30.md),
+  [MPPI readiness](MPPI_READINESS_2026-10-30.md) and their public hash records.

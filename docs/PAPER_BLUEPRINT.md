@@ -1,10 +1,10 @@
 # Paper blueprint: what limits a learned driver?
 
-Updated 2026-10-29. [Index](../README.md) · [Experiment contract](EXPERIMENT.md) ·
+Updated 2026-10-30. [Index](../README.md) · [Experiment contract](EXPERIMENT.md) ·
 [Evidence status](STATUS.md) · [Attributed chronology](RESEARCH_LOG.md)
 
 This is the consolidated home for the paper idea and the ideas recorded in this
-conversation, USER_INTENT and research-log R1–R47. It connects them to one study;
+conversation, USER_INTENT and research-log R1–R55. It connects them to one study;
 it does not activate every extension. The experiment contract still governs
 access and evaluation. Existing numerical defaults are development choices.
 Historical results retain their original protocol, and archived plans stay archived.
@@ -385,3 +385,9 @@ The full origin/history remains in [USER_INTENT](USER_INTENT.md) and
 [RESEARCH_LOG](RESEARCH_LOG.md); access rules are in [EXPERIMENT](EXPERIMENT.md).
 This blueprint is the single starting point for assembling the paper, not a
 replacement for those source records or an unsupported declaration of novelty.
+
+The [MR.Q/MRS.Q](MRQ_MRSQ_AUDIT_2026-10-30.md) and
+[MPPI readiness](MPPI_READINESS_2026-10-30.md) audits now pin selected official
+sources and identify concrete adapter and compute constraints. These are assistant
+implementation preparations for prior-work comparisons, not new user ideas or
+completed external runs. Preserve the frozen current queue while preparing them.

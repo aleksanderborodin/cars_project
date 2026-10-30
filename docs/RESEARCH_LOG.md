@@ -1333,3 +1333,27 @@ remain separate from the current immutable mechanism queue.
 - **Record:** [recovery declaration, storage, checks and limits](CAMPAIGN_RECOVERY_2026-10-30.md).
   The original status JSON is historical; use the new live status path. No private
   diagnostic, final-test access or new training method is involved.
+
+## R58 — Why can simulated selection worsen official return?
+
+- **User question:** explain the negative search7 return on the newly trained actor
+  and how search can damage behavior despite retaining the base candidate.
+- **Assistant analysis:** paired completed 200-track direct/search7 outcomes,
+  official reward code and allowed executed observations; no new environment work
+  or private candidate outcomes. This is post-result descriptive analysis.
+- **Measured accounting:** return change −22.5561 = −22.4391 from fewer distinct
+  tiles plus −0.1170 from extra native steps. Zero playfield exits in both panels;
+  the identity holds on every episode. Wall-clock planning is not charged here.
+- **Failure heterogeneity:** 29 gained and 13 lost completions, but much poorer
+  coverage in unfinished runs. One illustrated timeout stalls on-road for about
+  half its episode; another keeps moving off-road. No single mechanism follows
+  from a completion percentage or an aggregate braking/speed association.
+- **Structural explanation:** the base candidate protects modeled short-horizon
+  proxy cost, not actual full-episode return. The score, terminal treatment,
+  estimated contact/state, tangent road and imagined-policy responses can misrank
+  behavior. Reusing mechanics code is not exact-state/world cloning.
+- **Limits/next gate:** causes remain hypotheses until controlled substitutions.
+  A uniform time penalty cancels across equal-length rollouts; more candidates
+  are not guaranteed to fix model/score errors. Preserve all current settings and
+  finish the frozen matrix before another declared development intervention.
+- **Record:** [diagnosis and public paired artifacts](SEED1_SEARCH7_DIAGNOSIS_2026-10-30.md).

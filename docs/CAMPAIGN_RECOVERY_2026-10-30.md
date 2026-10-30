@@ -63,8 +63,10 @@ The full CPU suite passed 133 tests with one CUDA-only skip. Recovery launched a
 **2026-10-30 15:15:55 UTC (18:15:55 Moscow)** after those checks. The full software
 suite completed before driving restarted. Earlier software-overlap caveats remain attached to
 the interrupted attempt, which is not substituted for a complete scored panel.
-The first three recovered episodes already match the originals exactly; the full
-58-episode gate remains pending and is enforced after the full rerun.
+The full 200-track seed1 search7 rerun is complete, and **all 58 saved prefixes
+matched exactly**. Search21 then started as declared. The
+[completed search7 diagnosis](SEED1_SEARCH7_DIAGNOSIS_2026-10-30.md) reports its
+negative primary-return result without changing the remaining queue.
 
 ## ETA and interpretation
 

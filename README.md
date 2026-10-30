@@ -38,6 +38,7 @@ register separates user ideas, assistant refinements, prior work and measured ev
 | [Local independent-seed replications](docs/LOCAL_REPLICATIONS_2026-10-30.md) | Fixed retained recipe, seeds 1/2, serial frozen execution, 2M review per seed and all checkpoint curves |
 | [Paper execution ledger](docs/PAPER_CAMPAIGN_2026-10-30.md) | Required versus optional studies, fixed 3-policy/200-track queue, costs, remaining claim gates and realistic timeline |
 | [Storage recovery and revised ETA](docs/CAMPAIGN_RECOVERY_2026-10-30.md) | Disk-full interruption, verified retained panels, unchanged-method restart on the secondary volume and recovery cost accounting |
+| [Seed1 search7 loss diagnosis](docs/SEED1_SEARCH7_DIAGNOSIS_2026-10-30.md) | Exact reward accounting, poorer unfinished runs and observed stalls; separates measured effects from unproven causes |
 | [Comparator and novelty gap review](docs/COMPARATOR_REVIEW_2026-10-30.md) | Candid current baseline coverage, newly identified MRS.Q/APC-RL prior art, prioritized missing competitors and publication gates |
 | [MR.Q/MRS.Q source readiness](docs/MRQ_MRSQ_AUDIT_2026-10-30.md) | Pinned official sources, action/history/replay and stochastic-evaluation constraints; subsequent synthetic checks linked below |
 | [External interface and synthetic checks](docs/EXTERNAL_INTERFACE_2026-10-30.md) | Implemented local-array boundary, staged source patches, preserved MR.Q replay failure and passing CPU learner/reload checks; no driving result |

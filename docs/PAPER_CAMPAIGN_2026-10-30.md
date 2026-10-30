@@ -18,6 +18,12 @@ reporter. Recovery started 2026-10-30 15:15 UTC. The original heartbeat is stale
 read the recovery `queue/status.json`. Its remaining execution allowance is about
 12–15 hours after restart. Failed-attempt costs are conservatively charged.
 
+Seed1 search7 has now completed and passed all 58 prefix checks: **842.87/38.5%**
+versus direct **865.42/30.5%**. The [post-result diagnosis](SEED1_SEARCH7_DIAGNOSIS_2026-10-30.md)
+explains reward accounting and observed failure behavior, with causal limits.
+Search21 and remaining seed2 conditions continue unchanged. No partial search21
+result is used for tuning or conclusions.
+
 The [seed 1/2 replications](LOCAL_REPLICATIONS_2026-10-30.md) completed serially,
 each to its declared 2M-native-frame review. Both recipes/source snapshots were
 frozen before launch. Standalone scores selected each policy checkpoint before

@@ -8,6 +8,13 @@ methods/source/analysis are unchanged. Use the recovery workspace's live status,
 not the stale original status JSON. Remaining fixed batch ETA: about 12–15 hours
 after restart; this does not complete all paper experiments.
 
+**Completed seed1 search7:** 842.87 return/38.5% completion versus direct
+865.42/30.5%. The full 58-episode recovery prefix matched exactly; search21 is
+evaluating. [Descriptive diagnosis](SEED1_SEARCH7_DIAGNOSIS_2026-10-30.md) attributes
+−22.439 reward points to less tile coverage and −0.117 to extra native steps.
+Some unfinished runs stall or fail badly despite more total completions. The
+specific model/utility/proposal cause remains unisolated; current methods stay frozen.
+
 **Current execution:** fresh local replications are complete: selected seed 1 869.23/32%, seed 2 −17.89/0%. The latter failed task competence at the declared review and remains in the active [paper comparison queue](PAPER_CAMPAIGN_2026-10-30.md). No policy-training campaign is active. The [comparator/novelty review](COMPARATOR_REVIEW_2026-10-30.md) corrects missing MRS.Q/APC-RL prior art and makes strong external comparisons explicit blocking gates. The ongoing dataset is exploratory mechanism evidence, not a SOTA result. Latest full CPU suite: 133 passed, one CUDA-only skip; the frozen queue's launch suite remains its historical 114-test record.
 
 **External comparison preparation:** [MR.Q/MRS.Q](MRQ_MRSQ_AUDIT_2026-10-30.md)

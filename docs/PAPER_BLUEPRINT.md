@@ -4,7 +4,7 @@ Updated 2026-10-30. [Index](../README.md) · [Experiment contract](EXPERIMENT.md
 [Evidence status](STATUS.md) · [Attributed chronology](RESEARCH_LOG.md)
 
 This is the consolidated home for the paper idea and the ideas recorded in this
-conversation, USER_INTENT and research-log R1–R57. It connects them to one study;
+conversation, USER_INTENT and research-log R1–R58. It connects them to one study;
 it does not activate every extension. The experiment contract still governs
 access and evaluation. Existing numerical defaults are development choices.
 Historical results retain their original protocol, and archived plans stay archived.

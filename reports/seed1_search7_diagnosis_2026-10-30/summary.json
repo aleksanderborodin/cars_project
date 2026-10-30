@@ -1,0 +1,165 @@
+{
+  "purpose": "Post-result descriptive explanation of completed seed1 search7 loss; not a causal intervention or method selection. Current queue remains frozen.",
+  "inputs": {
+    "direct": {
+      "path": "/home/sasha/Desktop/cars_project/runs/recurrent_ppo/paper_search_20261030_s1_direct",
+      "config.json_sha256": "d29817cf854f44bc8bac9ed9c4eadfc4416fd70c64593bf86f79e57e948a3073",
+      "metrics.csv_sha256": "410e16e72a7f42f7630d9434205e7d63c250ceabf43942733c89d0f4cd41d35c",
+      "cost.json_sha256": "f2f3542614d56357724385134a9d1733521921b886810a6876bd1220f175a318",
+      "summary.json_sha256": "29266ad6f2df2e9842ff1c7382e175cc679fc8d8d2e83792f653f8bfb4f0bd47"
+    },
+    "search7": {
+      "path": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_physics_search/paper_search_20261030_s1_search7_recovery1",
+      "config.json_sha256": "558aaace2f82a777d8da30cc8718f3ae808086edc202610ef2af02d036fb7e7a",
+      "metrics.csv_sha256": "8247df25fdb272956446139ac97055b6ad4594215d987853796f5fea82ba6dbc",
+      "cost.json_sha256": "a633feceb2b6a8875d133925005fa1c9bb7ee1942e978998529952444df668ad",
+      "summary.json_sha256": "7ae75e1faac1446ab83a69bc7c9e8d533383fd04c33835423f9c70a433eda778"
+    }
+  },
+  "metrics": {
+    "direct": {
+      "return": 865.4215546490381,
+      "success": 0.305,
+      "progress": 0.960478054649052,
+      "steps": 950.565,
+      "off_track_events": 1.44,
+      "off_track_steps": 15.455,
+      "crash": 0.0,
+      "max_reward_identity_error": 2.05773176276125e-11
+    },
+    "search7": {
+      "return": 842.865433078625,
+      "success": 0.385,
+      "progress": 0.9380389330786381,
+      "steps": 951.735,
+      "off_track_events": 0.81,
+      "off_track_steps": 10.77,
+      "crash": 0.0,
+      "max_reward_identity_error": 2.034994395216927e-11
+    }
+  },
+  "paired": {
+    "mean_return_change": -22.55612157041317,
+    "track_bootstrap95": [
+      -33.367604044939405,
+      -12.686337683704808
+    ],
+    "bootstrap_repetitions": 5000,
+    "bootstrap_seed": 20261030,
+    "uncertainty_scope": "one frozen policy, paired development tracks; not training-seed or final-test uncertainty",
+    "wins": 75,
+    "losses": 118,
+    "ties": 7,
+    "median_change": -3.394915254237276
+  },
+  "reward_accounting": {
+    "formula_verified_for_all_400_episodes": "return=1000*visited_tile_fraction-0.1*native_steps; no playfield exits in either panel",
+    "coverage_contribution": -22.439121570413896,
+    "time_penalty_contribution": -0.11699999999999999
+  },
+  "outcome_groups": {
+    "both_complete": {
+      "episodes": 48,
+      "mean_return_change": -3.377083333333514,
+      "contribution_to_full_mean": -0.8105000000000433
+    },
+    "direct_only": {
+      "episodes": 13,
+      "mean_return_change": -58.391951688702086,
+      "contribution_to_full_mean": -3.795476859765636
+    },
+    "search_only": {
+      "episodes": 29,
+      "mean_return_change": 42.72453371188072,
+      "contribution_to_full_mean": 6.195057388222704
+    },
+    "neither_complete": {
+      "episodes": 110,
+      "mean_return_change": -43.90036745249127,
+      "contribution_to_full_mean": -24.145202098870197
+    }
+  },
+  "ordinary_observed_trace_summaries": {
+    "direct": {
+      "frame_weighted_speed_mps": 54.955698468198776,
+      "frame_weighted_brake": 0.00785062304162479,
+      "selected_failure_examples": {
+        "82": {
+          "mean_speed_mps": 52.359531063079835,
+          "fraction_speed_under2mps": 0.004,
+          "last_new_tile_frame": 908,
+          "offroad_frames_after500": 5,
+          "progress": 0.9491525423728814,
+          "return": 849.1525423728666
+        },
+        "138": {
+          "mean_speed_mps": 55.31483929434488,
+          "fraction_speed_under2mps": 0.004651162790697674,
+          "last_new_tile_frame": 860,
+          "offroad_frames_after500": 0,
+          "progress": 1.0,
+          "return": 913.9999999999884
+        },
+        "163": {
+          "mean_speed_mps": 54.181247631073,
+          "fraction_speed_under2mps": 0.004,
+          "last_new_tile_frame": 964,
+          "offroad_frames_after500": 7,
+          "progress": 0.9716981132075472,
+          "return": 871.6981132075279
+        },
+        "188": {
+          "mean_speed_mps": 51.02690696144104,
+          "fraction_speed_under2mps": 0.004,
+          "last_new_tile_frame": 816,
+          "offroad_frames_after500": 63,
+          "progress": 0.7317784256559767,
+          "return": 631.7784256559654
+        }
+      },
+      "examples_selection": "four large-loss episodes, explicitly post-result illustration; not an independent confirmation"
+    },
+    "search7": {
+      "frame_weighted_speed_mps": 50.26436141046474,
+      "frame_weighted_brake": 0.016732325376803154,
+      "selected_failure_examples": {
+        "82": {
+          "mean_speed_mps": 31.368086245624426,
+          "fraction_speed_under2mps": 0.168,
+          "last_new_tile_frame": 860,
+          "offroad_frames_after500": 0,
+          "progress": 0.6203389830508474,
+          "return": 520.3389830508341
+        },
+        "138": {
+          "mean_speed_mps": 39.02281173203879,
+          "fraction_speed_under2mps": 0.076,
+          "last_new_tile_frame": 1000,
+          "offroad_frames_after500": 0,
+          "progress": 0.8013937282229965,
+          "return": 701.3937282229818
+        },
+        "163": {
+          "mean_speed_mps": 55.508358375549314,
+          "fraction_speed_under2mps": 0.004,
+          "last_new_tile_frame": 588,
+          "offroad_frames_after500": 407,
+          "progress": 0.5534591194968553,
+          "return": 453.4591194968403
+        },
+        "188": {
+          "mean_speed_mps": 18.0732720062468,
+          "fraction_speed_under2mps": 0.508,
+          "last_new_tile_frame": 452,
+          "offroad_frames_after500": 0,
+          "progress": 0.3002915451895043,
+          "return": 200.29154518950867
+        }
+      },
+      "examples_selection": "four large-loss episodes, explicitly post-result illustration; not an independent confirmation"
+    }
+  },
+  "private_candidate_ranks_or_oracle_returns_read": false,
+  "new_environment_or_internal_physics_frames": 0,
+  "causal_mechanism_identified": false
+}

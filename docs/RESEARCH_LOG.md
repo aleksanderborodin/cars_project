@@ -1165,3 +1165,27 @@ R52 launch update: all 113 tests and manifest/config/source validation pass. Par
 Both arms' production code, scripts and configurations were copied before launch.
 No results are available yet. Each stops at its declared 2M-native-frame review;
 no parameter changes, private ranks or final-test access are involved.
+
+## R53 — Execute paper comparisons, retain all outcomes, and state realistic timing
+
+- **User steering:** run the paper experiments and be realistic about readiness.
+- **Assistant execution:** queue the full 200-development-track comparison for
+  original seed 0 plus standalone-selected seeds 1/2. Ten conditions per policy:
+  direct, transferred fixed correction, random7 and random21 under three planning
+  streams each, original search7 and search21. No new hyperparameter selection.
+- **Reuse/gates:** preserve four existing seed 0 full panels after exact two-episode
+  parity; extend random controls with prefix checks; fresh direct panels must match
+  the selected checkpoint's first 50 dev episodes. Queue waits for all training.
+- **New caps:**5,208,000 native evaluation frames and 225,120,000 internal physics
+  frames; zero training during comparisons, private/held-out access prohibited.
+- **Analysis intent:** show every seed and method, paired ordinary driving
+  outcomes, random controls, cost and latency. Actor selection uses standalone
+  driving only. A weak or harmful-search seed is retained, not omitted.
+- **Limits/timing:** exploratory three-actor data with historical/adaptive seed 0;
+  not the complete paper or a final test. Queue runtime allowance 12–18h after
+  training, inferred from measured 5.46h one-actor broad comparison. Core data
+  target 1–2 days; full paper package planning 2–4 weeks has low confidence until
+  stronger competitors and component-study budgets are fixed. Optional evolution,
+  custom/GPU simulator and decision-space ideas remain preserved future work.
+- **Status:** [paper ledger and declaration](PAPER_CAMPAIGN_2026-10-30.md); executable
+  queue prepared with immutable source, method conditions and budget before data.

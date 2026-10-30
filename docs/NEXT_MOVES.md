@@ -1,5 +1,11 @@
 # Next moves: establish useful simulation improvement over strong drivers
 
+**Current infrastructure recovery:** the original queue stopped on a full root
+disk. [Recovery](CAMPAIGN_RECOVERY_2026-10-30.md) restarted on the secondary volume
+at 15:15 UTC, preserving all 18 completed panels and frozen methods. Follow its
+new live status; verify the 58-episode prefix after the interrupted condition is
+rerun. No new training/profile is launched during those measurements.
+
 **Execution update:** the local replications completed (selected seed 1 869.23/32%, seed 2 −17.89/0%); keep both, including the failed learner, in the active full-development search queue. The [updated comparator review](COMPARATOR_REVIEW_2026-10-30.md) identifies modern MR.Q/MRS.Q, independent competent actors and same-engine MPPI/CEM as priority gaps. Prepare source/protocol work while evaluation runs, then profile/declare external runs serially. Current PPO-only replication does not close strong-comparator or novelty gates.
 
 **Readiness work completed:** official [MR.Q/MRS.Q sources](MRQ_MRSQ_AUDIT_2026-10-30.md)

@@ -1,5 +1,11 @@
 # Roadmap and decision gates
 
+**Live recovery:** the disk-full interruption is documented in
+[the recovery guide](CAMPAIGN_RECOVERY_2026-10-30.md). The same frozen batch
+restarted on the secondary volume at 15:15 UTC; use its new live status. Eighteen
+complete panels are retained; the interrupted condition is being rerun with exact
+saved-prefix verification gates.
+
 **Current execution and open gates:** both local seeds finished; one selected actor scores −17.89/0%, leaving recipe competence/robustness open. The paper queue evaluates every actor and condition. The [refreshed comparison/novelty gate](COMPARATOR_REVIEW_2026-10-30.md) prioritizes independent competent actors, MR.Q/MRS.Q and same-engine planning controls. External adaptations, component studies and final freeze remain required; the active queue cannot establish SOTA alone.
 
 Official [MR.Q/MRS.Q](MRQ_MRSQ_AUDIT_2026-10-30.md) and

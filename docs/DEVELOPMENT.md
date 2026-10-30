@@ -1,5 +1,20 @@
 # Development guide: research and legacy execution paths
 
+## Frozen search recovery
+
+The [recovery guide](CAMPAIGN_RECOVERY_2026-10-30.md) records the disk-full
+interruption, retained results and new mounted-volume workspace. Validate its
+existing frozen declaration without running an environment:
+
+```bash
+uv run python scripts/recover_paper_search.py --campaign /media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/queue --check
+```
+
+Do not start a second controller over an active recovery. The new live status is
+in that workspace; the original queue status is historical. New runs have recovery
+suffixes, exact prefix gates and explicit failed-attempt cost bounds. No completed
+run is overwritten. Temporary/cache outputs also use the secondary volume.
+
 ## External algorithm source staging
 
 The [external interface and synthetic verification](EXTERNAL_INTERFACE_2026-10-30.md)

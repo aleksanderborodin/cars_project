@@ -1,5 +1,13 @@
 # Implementation and evidence status
 
+**Storage interruption and recovery:** the original queue stopped at 18/30 full
+conditions and 58/200 seed1 search7 episodes because the system disk filled.
+The [verified recovery](CAMPAIGN_RECOVERY_2026-10-30.md) restarted on the mounted
+secondary volume at 2026-10-30 15:15 UTC. Completed panels are retained; frozen
+methods/source/analysis are unchanged. Use the recovery workspace's live status,
+not the stale original status JSON. Remaining fixed batch ETA: about 12–15 hours
+after restart; this does not complete all paper experiments.
+
 **Current execution:** fresh local replications are complete: selected seed 1 869.23/32%, seed 2 −17.89/0%. The latter failed task competence at the declared review and remains in the active [paper comparison queue](PAPER_CAMPAIGN_2026-10-30.md). No policy-training campaign is active. The [comparator/novelty review](COMPARATOR_REVIEW_2026-10-30.md) corrects missing MRS.Q/APC-RL prior art and makes strong external comparisons explicit blocking gates. The ongoing dataset is exploratory mechanism evidence, not a SOTA result. Latest full CPU suite: 133 passed, one CUDA-only skip; the frozen queue's launch suite remains its historical 114-test record.
 
 **External comparison preparation:** [MR.Q/MRS.Q](MRQ_MRSQ_AUDIT_2026-10-30.md)

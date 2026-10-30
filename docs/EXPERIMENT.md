@@ -1,5 +1,11 @@
 # Experiment design: modular prediction and control by search
 
+**Execution recovery:** after disk exhaustion stopped the original controller,
+the same frozen [comparison is recovering](CAMPAIGN_RECOVERY_2026-10-30.md) on a
+secondary volume. All eighteen completed panels are retained; the interrupted
+condition is rerun with exact saved-prefix validation and explicit cost bounds.
+This does not change the method, split, actor selection or analysis.
+
 The local replications have completed; one seed learned useful driving and another failed competence at the declared review. The frozen [paper queue](PAPER_CAMPAIGN_2026-10-30.md) evaluates every actor on the full control/search matrix. The [refreshed comparator/novelty review](COMPARATOR_REVIEW_2026-10-30.md) identifies missing strong external comparisons and close prior art. Current mechanism evidence is not a SOTA result; stronger baselines, controlled component studies and final-test freeze remain open.
 
 The subsequent [MR.Q/MRS.Q source audit](MRQ_MRSQ_AUDIT_2026-10-30.md) and

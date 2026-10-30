@@ -1307,3 +1307,29 @@ remain separate from the current immutable mechanism queue.
   software checks. No private diagnostic or final-test access is added.
 - **Record:** [implementation and limits](EXTERNAL_INTERFACE_2026-10-30.md), with
   source, failed/successful check configurations, provenance and timing windows.
+
+## R57 — ETA check discovers disk exhaustion; preserve and recover the fixed study
+
+- **User request:** give the current ETA. The assistant checks processes and
+  finds both original PIDs dead despite the stale status file saying evaluating.
+- **Observed cause:** root filesystem full while saving the next episode NPZ;
+  even failure/status writes were interrupted. Eighteen full condition panels and
+  58 complete seed1 search7 episodes are saved. No performance-based omission.
+- **Assistant recovery:** prune unreachable package cache without deleting data;
+  usable root space remains inadequate. Use the existing mounted secondary volume
+  with about 16 GB free. Preserve original artifacts, declaration, methods, selected
+  actors, all 69 source hashes and frozen analysis; verify completed-panel hashes
+  and development identities before reuse. New run directories have recovery suffixes.
+- **Validity/cost:** rerun interrupted search7 fully and require exact equality
+  for its 58 saved prefixes. Charge a conservative failed-attempt upper bound of
+  56,488 native and 7,908,320 internal frames; declare extra recovery allowance
+  rather than silently discarding compute. Check free space during each run.
+- **Checks/launch:** recovery preflight passed; full CPU suite 133 passed/one
+  CUDA-only skip, with temporary storage on the secondary volume and no concurrent
+  driving. Restarted at 2026-10-30 15:15:55 UTC; processes and heartbeat verified.
+- **ETA:** about 12–15 hours after restart for this batch, from measured search7
+  pace and the historical search21 ratio, including the full interrupted-condition
+  rerun. This does not estimate completion of every remaining paper experiment.
+- **Record:** [recovery declaration, storage, checks and limits](CAMPAIGN_RECOVERY_2026-10-30.md).
+  The original status JSON is historical; use the new live status path. No private
+  diagnostic, final-test access or new training method is involved.

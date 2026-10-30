@@ -1,0 +1,44 @@
+{
+  "launch": {
+    "pid": 2178542,
+    "started_utc": "2026-10-30T15:15:55.048615+00:00",
+    "command": [
+      "/home/sasha/Desktop/cars_project/.venv/bin/python3",
+      "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/queue/runner.py"
+    ],
+    "cwd": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030",
+    "free_bytes": 16040693760,
+    "tests": "133 passed; one CUDA-only skip",
+    "methods_and_analysis": "unchanged frozen source and declaration",
+    "status_path": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/queue/status.json"
+  },
+  "software_check": {
+    "exit_code": 0,
+    "elapsed_seconds": 41.04688549041748,
+    "started_epoch": 1793373201.486813,
+    "finished_epoch": 1793373242.5336993,
+    "cuda_visible_devices": "",
+    "temporary_storage": "secondary_volume",
+    "driving_campaign_running_during_tests": false,
+    "log": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/queue/software_check.log"
+  },
+  "preflight": "18 full panels, frozen declaration/source/reporter, partition and free-space validated",
+  "status_snapshot": {
+    "status": "evaluating",
+    "active": "paper_search_20261030_s1_search7_recovery1",
+    "queue_pid": 2178542,
+    "child_pid": 2178654,
+    "updated_epoch": 1793373461.0142295,
+    "free_bytes": 16039493632
+  },
+  "runner_sha256": "eb181cff8475594f7dda44e1ddccc02772696e7626165e9977ce2035a5f9d637",
+  "config_sha256": "8def5c8db21b75e77e51510433faae821bad6c670d6aa43a55ca82964b15b069",
+  "live_status_path": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/queue/status.json",
+  "remaining_execution_eta_hours": [
+    12,
+    15
+  ],
+  "methods_or_checkpoint_selection_changed": false,
+  "partial_prefix_validation": "all 58 completed episodes required to match after full rerun",
+  "heldout_or_private_access": false
+}

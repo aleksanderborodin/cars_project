@@ -10,6 +10,14 @@ queued work, required unresolved studies and optional extensions.
 
 ## What is executing now
 
+**Current recovery:** the root filesystem filled during seed1 search7, stopping
+the original controller and evaluator. Eighteen full panels remain saved. The
+[recovery declaration and verification](CAMPAIGN_RECOVERY_2026-10-30.md) moves only
+remaining outputs to the secondary volume, with the same frozen methods and
+reporter. Recovery started 2026-10-30 15:15 UTC. The original heartbeat is stale;
+read the recovery `queue/status.json`. Its remaining execution allowance is about
+12–15 hours after restart. Failed-attempt costs are conservatively charged.
+
 The [seed 1/2 replications](LOCAL_REPLICATIONS_2026-10-30.md) completed serially,
 each to its declared 2M-native-frame review. Both recipes/source snapshots were
 frozen before launch. Standalone scores selected each policy checkpoint before

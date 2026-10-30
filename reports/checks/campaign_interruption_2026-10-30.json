@@ -1,0 +1,19 @@
+{
+  "observed_utc": "2026-10-30T15:05:12.849590+00:00",
+  "campaign": "runs/queues/paper_search_sparse_20261030",
+  "status": "interrupted_disk_full; not_running",
+  "completed_conditions": 18,
+  "interrupted_condition": "paper_search_20261030_s1_search7",
+  "completed_episodes_in_interrupted_condition": 58,
+  "cause": "OSError Errno28 while writing episode NPZ; status/failure writes also interrupted",
+  "failure_log": "runs/queues/paper_search_sparse_20261030/paper_search_20261030_s1_search7.log",
+  "recovery_action": "uv cache prune removed 30174 unreachable cache files, reporting 5.4GiB; experiment data not removed",
+  "free_bytes_after_cache_prune": 4759552,
+  "execution_eta_after_restart_hours": [
+    12,
+    15
+  ],
+  "eta_basis": "First58 search7 episodes took approximately29.4min; project remaining search7/search21 with measured historical cost and allow restart/seed variability. Recovery time additional.",
+  "automatic_restart_completed": false,
+  "private_or_heldout_read": false
+}

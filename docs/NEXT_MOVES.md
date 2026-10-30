@@ -1,8 +1,8 @@
 # Next moves: establish useful simulation improvement over strong drivers
 
-**Execution update:** the native baseline, CPU/CUDA control and [local discount trial](LOCAL_DISCOUNT_TRIAL_2026-10-29.md) are complete. The discount trial’s best 691.74/2% is below original local 858.11/30%, so retain the original proposer and search. No jobs are running. Next: inspect effective action distributions, action-bound saturation and update behavior on existing public observations; then declare an independent-seed baseline replication or a justified alternate comparator. No further hyperparameter run or extension is active.
+**Execution update:** the [offline distribution audit](ACTION_DISTRIBUTION_AUDIT_2026-10-30.md) is complete: exact saved-action replay, increasing effective local variation despite decreasing learned scale, decreasing native variation; no shared collapse cause established. The [retained local recipe is being replicated](LOCAL_REPLICATIONS_2026-10-30.md) on seeds 1/2, serially from frozen code, each to its 2M review. Report both curves; freeze each standalone-selected checkpoint before subsequent direct/original-search/cheap-control tests. No new policy-distribution or hyperparameter repair is active.
 
-Updated 2026-10-29. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
+Updated 2026-10-30. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
 [Architecture](SIMULATOR_SEARCH_PLAN.md) · [Evidence](PROGRAMMED_SIMULATOR_RESULTS.md)
 
 This is the active execution order after the programmed-physics pilot. It refines

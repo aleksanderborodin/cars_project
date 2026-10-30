@@ -1,8 +1,8 @@
 # Recurrent baseline audit before longer training
 
-**Completed baseline work:** native 4M and device diagnostics are complete; the native 1M checkpoint remains selected. The [local discount trial](LOCAL_DISCOUNT_TRIAL_2026-10-29.md) also completed: best 691.74/2%, below original local 858.11/30%, and is not adopted. PPO gamma and fixed normalization gamma were verified in all four saved checkpoints. No training is active; action-distribution/update auditing is the next proposed diagnostic. Competence, independent-seed robustness and SOTA remain unestablished.
+**Current baseline work:** native, device and local-discount studies are complete. The [offline actor audit](ACTION_DISTRIBUTION_AUDIT_2026-10-30.md) finds no actor-replay discrepancy and shows that falling gSDE parameter scale can accompany rising effective local variation. [Independent seed 1/2 replications](LOCAL_REPLICATIONS_2026-10-30.md) of the retained local recipe are now running, capped at 2M native frames each under the original 8M schedule. No new training-parameter repair is bundled into these runs.
 
-Updated 2026-10-29. [Next experiments](NEXT_EXPERIMENTS.md) ·
+Updated 2026-10-30. [Next experiments](NEXT_EXPERIMENTS.md) ·
 [References](REFERENCES.md) · [Status](STATUS.md)
 
 Status: the listed training-pipeline fixes and CPU/GPU profiling are implemented;

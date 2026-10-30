@@ -1,8 +1,8 @@
 # Roadmap and decision gates
 
-**Current baseline gate:** the [local discount trial](LOCAL_DISCOUNT_TRIAL_2026-10-29.md) is complete and not adopted: best 691.74/2% versus original local 858.11/30%. Native and device diagnostics are complete too. No experiment jobs remain active. A read-only action-distribution/update audit is proposed before another separately declared baseline run. Strong-baseline, independent-seed and trained V/L/F gates remain open.
+**Current baseline gate:** the [offline actor/update audit](ACTION_DISTRIBUTION_AUDIT_2026-10-30.md) is complete and all 113 tests pass. The [seed 1/2 replications](LOCAL_REPLICATIONS_2026-10-30.md) are running under the retained local recipe and 2M-native-frame caps, with frozen code/configs and all four checkpoints reported per seed. Prior seed 0 is historical exploratory evidence. Competence, independent-seed search gains, modern competitors and trained V/L/F gates remain open.
 
-Updated 2026-10-29. [Index](../README.md) · [User intent](USER_INTENT.md) ·
+Updated 2026-10-30. [Index](../README.md) · [User intent](USER_INTENT.md) ·
 [Status](STATUS.md) · [Proposed numerical settings](DESIGN_DECISIONS.md)
 
 The main project is a working modular prediction → internal simulation/search →

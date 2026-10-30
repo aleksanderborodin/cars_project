@@ -50,3 +50,9 @@ The [parent manifest](../configs/campaigns/local-replications-2026-10-30.json) p
 source/config hashes and both child declarations. `run_local_replications.py
 --check` validates the declared recipe differences without creating a run.
 Status: declared; full checks and frozen launch precede training.
+
+Launch observed at `2026-10-30T13:09:49.782403+00:00`. Parent campaign:
+`runs/campaigns/local_replications_20261030`; source/launch commit `9611849`.
+Both arms use copied source, runner, reporter and configs. Seed 1 starts first;
+seed 2 is queued without adapting its recipe from seed 1. This is a launch
+record; live status is in the campaign JSON, not inferred from this snapshot.

@@ -314,3 +314,22 @@ uv run python scripts/run_driver_block.py --manifest configs/campaigns/local-dis
 
 Run IDs must be new; the existing campaign is complete and must not be overwritten. Its status and
 checkpoint results live in `runs/campaigns/local_discount_20261029_s0/`.
+
+## Offline action audit and independent-seed replication
+
+The [offline audit](ACTION_DISTRIBUTION_AUDIT_2026-10-30.md) has completed. Its
+runner accepts only the declared recorded actor-input fields, checks own-history
+controls and API parity, and never creates a simulator. Analytic clipping moments
+are per-history marginals; gSDE temporal correlation requires a separate study.
+
+The active [local replication](LOCAL_REPLICATIONS_2026-10-30.md) can be validated
+without launching or creating runs:
+
+```bash
+uv run python scripts/run_local_replications.py --manifest configs/campaigns/local-replications-2026-10-30.json --check
+```
+
+The same command without `--check` launches a new immutable campaign. The current
+campaign already exists and must not be overwritten. Both seeds' source/configs
+are frozen before either starts. Status: `runs/campaigns/local_replications_20261030/status.json`;
+child checkpoint curves live in each seed's child campaign and report directory.

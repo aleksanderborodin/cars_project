@@ -1159,3 +1159,9 @@ in the [completed audit](ACTION_DISTRIBUTION_AUDIT_2026-10-30.md).
   checkpoints first. This does not establish convergence, SOTA or five-seed rigor.
 - **Status:** [declaration](LOCAL_REPLICATIONS_2026-10-30.md), full checks and frozen
   launch precede execution. Private ranking and final-test data remain sealed.
+
+R52 launch update: all 113 tests and manifest/config/source validation pass. Parent
+`local_replications_20261030` is running seed 1, with seed 2 queued serially.
+Both arms' production code, scripts and configurations were copied before launch.
+No results are available yet. Each stops at its declared 2M-native-frame review;
+no parameter changes, private ranks or final-test access are involved.

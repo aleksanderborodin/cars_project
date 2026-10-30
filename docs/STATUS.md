@@ -1,8 +1,8 @@
 # Implementation and evidence status
 
-**Latest completed trial:** the [local discount probe](LOCAL_DISCOUNT_TRIAL_2026-10-29.md) finished all four checkpoints and 200 development episodes. Best trial checkpoint: 691.74 return/2% completion, below the original local policy’s 858.11/30%; the variant is not adopted. The original proposer/search remains retained. Native and device campaigns are also complete. No experiment is running. Next proposed work is an offline action-distribution/update audit before another independently declared baseline run; 108 tests passed at the last code change.
+**Current execution:** the [offline action-distribution audit](ACTION_DISTRIBUTION_AUDIT_2026-10-30.md) completed twelve checkpoints with exact replay and zero new driving. Falling learned gSDE scale does not imply falling effective local action variation; a common collapse explanation is unsupported. [Fresh-seed local replications](LOCAL_REPLICATIONS_2026-10-30.md) are now running serially for seeds 1/2, with the retained recipe and a 2M-native-frame review cap each. All 113 tests pass. The original proposer/search remains retained; new-seed results are pending.
 
-Updated 2026-10-29. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
+Updated 2026-10-30. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
 [Roadmap](ROADMAP.md) · [Latest development results](SEQUENCE_SEARCH_2026-10-29.md)
 
 The first development experiment and control-audit follow-up are complete. The full paper

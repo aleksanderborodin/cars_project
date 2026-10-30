@@ -1,6 +1,6 @@
 # Experiment design: modular prediction and control by search
 
-The [native 4M baseline](NATIVE_BASELINE_RESULTS_2026-10-29.md), [inference-device control](NATIVE_DEVICE_AUDIT_2026-10-29.md), and [local discount trial](LOCAL_DISCOUNT_TRIAL_2026-10-29.md) are complete. The discount variant is not adopted (best 691.74/2% versus original local 858.11/30%). Retain the original local proposer/search; no jobs are running. An offline action-distribution/update audit is proposed before the next declared baseline run. Native and local result tables remain separate.
+The completed [offline actor audit](ACTION_DISTRIBUTION_AUDIT_2026-10-30.md) verifies saved-action replay and distinguishes learned gSDE scale from effective action variation. The [retained local recipe is now being replicated](LOCAL_REPLICATIONS_2026-10-30.md) on seeds 1/2 under fixed 2M-native-frame review caps. Native, device and local-discount studies are complete; earlier unsuccessful variants remain unadopted. Strong-baseline and independent-seed simulation-search claims await results.
 
 Updated 2026-10-29 following the research discussion. The project now targets a
 scientific paper about modular world models and online control, using Gymnasium CarRacing

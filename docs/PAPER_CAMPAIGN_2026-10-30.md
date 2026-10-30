@@ -15,7 +15,7 @@ its declared 2M-native-frame review. Both recipes/source snapshots were frozen
 before launch. Their standalone scores select each policy checkpoint before any
 search result exists. Prior seed 0 remains historical exploratory evidence.
 
-The next [queue declaration](../configs/campaigns/paper-search-queue-2026-10-30.json)
+The next [queue declaration](../configs/campaigns/paper-search-sparse-queue-2026-10-30.json)
 freezes **three policy seeds × 200 development tracks × ten conditions**:
 
 | Condition | Purpose |
@@ -106,3 +106,10 @@ changes to current information boundaries.
 Status: declared. Queue preparation/checks precede waiting/execution. Remaining
 unimplemented studies need explicit protocols, tests and frozen budgets before
 their data can support paper claims; they are not reported as running.
+
+Pre-execution correction: the initial waiting queue `paper_search_20261030` was
+stopped with zero new environment frames because its command selected the reference
+renderer, while the historical broad campaign used the validated sparse renderer.
+The corrected `paper_search_sparse_20261030` declaration explicitly matches sparse
+rendering and retains the same candidate engine/behavior. Original preparation
+and stop reason are preserved; no failed or completed result was overwritten.

@@ -36,6 +36,8 @@ def main() -> None:
     if (spec["partition_sha256"] != Partitions().fingerprint or spec["partition"] != "development"
             or spec["tracks"] != 200 or spec["held_out_evaluation"] or spec["user_only_oracle_access"]):
         raise ValueError("Only the declared 200-track development protocol is allowed")
+    if spec["observation_renderer"] != "sparse":
+        raise ValueError("Match the validated historical broad-comparison sparse renderer")
     if source_hashes(Path.cwd()) != spec["source_sha256"] or sha256(Path(__file__)) != spec["runner_sha256"]:
         raise ValueError("Frozen source/runner changed before preparation")
     for name, expected in spec["required_sha256"].items():
@@ -83,7 +85,7 @@ def main() -> None:
         if condition["method"] in ("policy-search", "policy-random"):
             command += ["--candidates", str(condition["candidates"]), "--planning-seed", str(condition["planning_seed"]),
                         "--horizon", "20", "--steer-sigma", "0.1", "--gas-sigma", "0.15", "--brake-sigma", "0.15",
-                        "--observation-renderer", "reference"]
+                        "--observation-renderer", spec["observation_renderer"]]
         if condition["method"] == "policy-bias":
             command += ["--action-bias", *map(str, spec["fixed_bias"])]
         write_json(root / (run_id + "_command.json"), command)

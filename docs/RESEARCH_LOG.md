@@ -1189,3 +1189,9 @@ no parameter changes, private ranks or final-test access are involved.
   custom/GPU simulator and decision-space ideas remain preserved future work.
 - **Status:** [paper ledger and declaration](PAPER_CAMPAIGN_2026-10-30.md); executable
   queue prepared with immutable source, method conditions and budget before data.
+
+R53 technical preparation correction: initial `paper_search_20261030` queue stopped
+while waiting, with zero new environment frames, after detecting reference-versus-
+sparse renderer mismatch. Replacement `paper_search_sparse_20261030` explicitly
+matches the historical broad renderer. Source/configs are re-frozen before driving;
+replication training is unaffected. Original queue and stop reason are retained.

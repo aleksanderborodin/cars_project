@@ -37,6 +37,7 @@ register separates user ideas, assistant refinements, prior work and measured ev
 | [Offline action-distribution audit](docs/ACTION_DISTRIBUTION_AUDIT_2026-10-30.md) | Completed twelve-checkpoint audit: effective local variation can rise as learned scale falls; exact replay, clipping and update summaries |
 | [Local independent-seed replications](docs/LOCAL_REPLICATIONS_2026-10-30.md) | Fixed retained recipe, seeds 1/2, serial frozen execution, 2M review per seed and all checkpoint curves |
 | [Paper execution ledger](docs/PAPER_CAMPAIGN_2026-10-30.md) | Required versus optional studies, fixed 3-policy/200-track queue, costs, remaining claim gates and realistic timeline |
+| [Comparator and novelty gap review](docs/COMPARATOR_REVIEW_2026-10-30.md) | Candid current baseline coverage, newly identified MRS.Q/APC-RL prior art, prioritized missing competitors and publication gates |
 | [Controlled intervention study](docs/INTERVENTION_STUDY.md) | Executable four-cell geometry diagnostic, isolation tests, pilot budget and staged V/L/F training design |
 | [Intervention results](docs/INTERVENTION_RESULTS_2026-10-29.md) | Completed negative driving pilot, executed-trajectory audit, better prediction with oracle road, and next validity gate |
 | [20-track reference replication](docs/REFERENCE_REPLICATION_2026-10-29.md) | Completed 20-track paired result: +286.25 versus tangent but −71.86 versus local search; failures, costs and replay evidence |

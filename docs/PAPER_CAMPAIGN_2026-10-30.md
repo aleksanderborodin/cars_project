@@ -121,3 +121,14 @@ source/launch commit `5c0a2c6`. Live status:
 training blocks complete. All 114 tests and manifest checks passed before launch.
 Project training and evaluation measurements are serialized as declared; do not
 launch additional training while this evaluation queue is active.
+
+### Comparator-quality gate refreshed 2026-10-30
+
+The user explicitly requests comparison against the best research. The
+[comparator gap review](COMPARATOR_REVIEW_2026-10-30.md) corrects the earlier
+roster with MRS.Q/ICML 2026 and APC-RL/ICLR 2026. No such external method is yet
+reproduced here. Priority is a competent independent actor (SAC/MR.Q), a matched
+same-engine MPPI/CEM planner, and a modern MR.Q/MRS.Q comparison; visual
+DreamerV3/Valdi feasibility remains separate. The current frozen queue continues
+unchanged and cannot, by itself, establish SOTA. The 2–4 week planning allowance is
+uncertain while these comparator implementations/profile budgets remain open.

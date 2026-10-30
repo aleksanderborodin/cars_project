@@ -1,0 +1,78 @@
+{
+  "review_date": "2026-10-30",
+  "origin": "User asks for actual strongest baselines and serious scientific novelty assessment; assistant refreshes prior art and corrects missing close work",
+  "sources": [
+    {
+      "work": "MRS.Q / The Surprising Difficulty of Search in Model-Based RL",
+      "primary": "https://proceedings.mlr.press/v306/chang26a.html",
+      "paper_version": "https://arxiv.org/html/2601.21306v2",
+      "code": "https://github.com/facebookresearch/MRSQ",
+      "status": "publisher paper and selected official source inspected; no pinned revision or execution"
+    },
+    {
+      "work": "APC-RL",
+      "primary": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/cb22704ebc9bc4e0ef875d1959651012-Abstract-Conference.html",
+      "paper": "https://pedrozudo.github.io/assets/documents/publications/2026/rietz2026aclrl/rietz2026aclrl.paper.pdf",
+      "code": "https://github.com/frietz58/apc-rl",
+      "status": "author PDF Appendix B.3 and repo README reviewed; no execution"
+    },
+    {
+      "work": "MR.Q",
+      "primary": "https://github.com/facebookresearch/MRQ",
+      "source_inspected": "https://raw.githubusercontent.com/facebookresearch/MRQ/main/MRQ/env_preprocessing.py",
+      "status": "official README and preprocessing inspected; no execution or CarRacing adapter"
+    },
+    {
+      "work": "TD-MPC2",
+      "primary": "https://github.com/nicklashansen/tdmpc2",
+      "status": "official README refreshed; original task/episodic requirements reviewed; no execution"
+    },
+    {
+      "work": "DreamerV3",
+      "primary": "https://github.com/danijar/dreamerv3",
+      "status": "author README refreshed; no execution"
+    },
+    {
+      "work": "Valdi",
+      "primary": "https://arxiv.org/abs/2607.00917",
+      "code": "https://github.com/Kit115/ValueDiffusionWorldModels",
+      "status": "paper abstract refreshed; existing pinned local audit retained; no execution"
+    },
+    {
+      "work": "Physics simulator MPPI",
+      "primary": "https://arxiv.org/abs/2307.09105",
+      "status": "primary abstract reviewed, prior-art threat identified; no execution"
+    },
+    {
+      "work": "POPLIN",
+      "primary": "https://arxiv.org/abs/1906.08649",
+      "status": "primary abstract refreshed; no execution"
+    },
+    {
+      "work": "TD-M(PC)^2",
+      "primary": "https://arxiv.org/abs/2502.03550",
+      "code": "https://github.com/DarthUtopian/tdmpc_square_public",
+      "status": "primary abstract and author project reviewed; no execution"
+    }
+  ],
+  "cached_primary_pdf": {
+    "path": "runs/references/comparator_refresh_20261030/rietz2026aclrl.pdf",
+    "bytes": 12216828,
+    "sha256": "1f9fdffad6cb79f49894d62b25674ed71227b07dc984c19e823471a83bf4bea2"
+  },
+  "new_repositories_pinned": false,
+  "pinning_attempt": "GitHub API commits/tree fetch attempted read-only and timed out; no pinned-audit completion claimed",
+  "third_party_code_executed": false,
+  "dependencies_installed": false,
+  "new_environment_frames": 0,
+  "private_diagnostics_read": false,
+  "final_test_read": false,
+  "current_claim": "No established SOTA comparison or verified CarRacing champion. Existing queue is a same-proposer development mechanism study.",
+  "priority": [
+    "Independent competent actor (matched SAC and MR.Q adaptation audit)",
+    "Same-engine compute/latency-matched MPPI/CEM",
+    "MR.Q/MRS.Q paired modern learned-model comparison",
+    "Native visual DreamerV3/Valdi feasibility and protocol decision"
+  ],
+  "new_decisions_are": "assistant research priorities and gaps, not already implemented experiments or user-prescribed algorithms"
+}

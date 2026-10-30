@@ -1203,3 +1203,35 @@ Actor selection is standalone only; every seed and condition is retained.
 The [paper ledger](PAPER_CAMPAIGN_2026-10-30.md) explicitly lists unimplemented
 required studies and remaining claim gates so this queue is not mistaken for
 full paper completion. Project measurement jobs are serialized as declared.
+
+## R54 — Do we have the strongest baselines and a SOTA-level research design?
+
+- **User question/intent:** compare against the best relevant methods, use current
+  research/deep reasoning, and be candid about prospects for a serious paper.
+- **Assistant answer:** not yet. PPO adaptations and careful mechanism controls
+  are useful but do not establish strong external-comparator coverage or novelty.
+- **New primary review:** earlier roster missed MRS.Q/ICML 2026, directly concerning
+  accurate-model search failure; it is now a close prior-work/comparison priority.
+  APC-RL/ICLR 2026 adds a recent CarRacing protocol audit target. Existing POPLIN
+  and physics-simulator MPPI prevent broad pipeline-as-novelty claims.
+- **Protocol finding:** APC's author Appendix B.3 uses a fixed track, simulator-
+  derived waypoints and demonstrations, so its scores are not copied into our
+  local changing-track table. Named modern algorithms are not verified champions
+  of our task. Source/code availability is distinct from a completed reproduction.
+- **Execution priority:** independent competent SAC/MR.Q, same-engine MPPI/CEM,
+  and modern MR.Q/MRS.Q readiness, then justified native visual comparisons.
+  Current queue/source/selection is preserved; no competing training is launched.
+- **Status:** [review and claim gates](COMPARATOR_REVIEW_2026-10-30.md), primary
+  links and cached author-PDF provenance. New GitHub commit-pinning attempt timed
+  out; no pinned audit, third-party execution or score reproduction is claimed.
+- **Limits:** tests, seeds and clean splits do not supply novelty; broad RL
+  inferiority, component adequacy and SOTA remain hypotheses requiring stronger
+  evidence. Be willing to narrow claims or accept a negative result.
+
+R52/R54 observed completion update: selected seed 1 mean 869.23/32%, seed 2 −17.89/0%.
+Both reached the 2M-native-frame review with finite optimization and all four
+scheduled evaluations, but seed 2 failed task competence. It is retained in the
+ongoing paper comparison. The baseline gap is therefore empirical, not just a
+missing algorithm name. Tests and implementation audits cannot substitute for
+a competent independently credible actor. All external-comparator priorities
+remain separate from the current immutable mechanism queue.

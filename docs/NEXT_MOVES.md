@@ -1,6 +1,6 @@
 # Next moves: establish useful simulation improvement over strong drivers
 
-**Execution update:** the user requested execution of the paper work with realistic claims. [Seed replications](LOCAL_REPLICATIONS_2026-10-30.md) are running, followed automatically by the frozen [three-actor/200-track/ten-condition queue](PAPER_CAMPAIGN_2026-10-30.md). It retains every seed/condition, selects actors from standalone scores and reuses validated history. Comparison runtime allowance 12–18h after training; full-paper readiness remains gated on stronger competitors and component-study evidence. No other project training should overlap queued evaluation.
+**Execution update:** the local replications completed (selected seed 1 869.23/32%, seed 2 −17.89/0%); keep both, including the failed learner, in the active full-development search queue. The [updated comparator review](COMPARATOR_REVIEW_2026-10-30.md) identifies modern MR.Q/MRS.Q, independent competent actors and same-engine MPPI/CEM as priority gaps. Prepare source/protocol work while evaluation runs, then profile/declare external runs serially. Current PPO-only replication does not close strong-comparator or novelty gates.
 
 Updated 2026-10-30. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
 [Architecture](SIMULATOR_SEARCH_PLAN.md) · [Evidence](PROGRAMMED_SIMULATOR_RESULTS.md)

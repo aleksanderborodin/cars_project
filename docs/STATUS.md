@@ -1,6 +1,6 @@
 # Implementation and evidence status
 
-**Current execution:** [seed 1/2 training](LOCAL_REPLICATIONS_2026-10-30.md) is running; the corrected [paper comparison queue](PAPER_CAMPAIGN_2026-10-30.md) is armed and waiting for both seeds. It freezes 3 selected actors × 200 development tracks × 10 conditions, including count-matched random proposals and original search7/21. Existing seed 0 panels are reused after exact replay. All 114 tests pass. Required stronger-baseline/component/final-test gates are tracked in the paper ledger; no novelty/SOTA claim is established.
+**Current execution:** fresh local replications are complete: selected seed 1 869.23/32%, seed 2 −17.89/0%. The latter failed task competence at the declared review and remains in the active [paper comparison queue](PAPER_CAMPAIGN_2026-10-30.md). No training is active. The [comparator/novelty review](COMPARATOR_REVIEW_2026-10-30.md) corrects missing MRS.Q/APC-RL prior art and makes strong external comparisons explicit blocking gates. The ongoing dataset is exploratory mechanism evidence, not a SOTA result; 114 tests passed at the last code change.
 
 Updated 2026-10-30. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
 [Roadmap](ROADMAP.md) · [Latest development results](SEQUENCE_SEARCH_2026-10-29.md)

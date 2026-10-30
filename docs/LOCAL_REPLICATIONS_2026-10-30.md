@@ -1,5 +1,11 @@
 # Local baseline replication: two fresh training seeds
 
+**Completed:** both fresh seeds reached the 2M review and finished all four scheduled
+evaluations. Selected seed 1: 869.23 return/32% completion. Selected seed 2: −17.89/0%.
+The second seed failed to learn competent driving in this budget and remains in
+the declared search comparison. This is evidence of substantial recipe variability,
+not a set of three established strong actors. See the full curves below.
+
 Pre-execution declaration, 2026-10-30. [Action audit](ACTION_DISTRIBUTION_AUDIT_2026-10-30.md)
 · [Next moves](NEXT_MOVES.md)
 
@@ -56,3 +62,24 @@ Launch observed at `2026-10-30T13:09:49.782403+00:00`. Parent campaign:
 Both arms use copied source, runner, reporter and configs. Seed 1 starts first;
 seed 2 is queued without adapting its recipe from seed 1. This is a launch
 record; live status is in the campaign JSON, not inferred from this snapshot.
+
+## Completed checkpoint curves
+
+| Requested frames | Seed 1 mean return / completion | Seed 2 mean return / completion |
+|---|---:|---:|
+| 0.2M | 317.32 /0% | −93.13 /0% |
+| 0.5M | 596.35 /0% | −93.13 /0% |
+| 1M, selected for both | 869.23 /32% | −17.89 /0% |
+| 2M | 823.54 /26% | −20.41 /0% |
+
+Both checkpoints were selected using the declared standalone score rule, before
+search evaluation. All learning diagnostics are finite and all eight checkpoint
+evaluations completed. Existing seed 0 selected score is 858.11/30% on this 50-track
+panel; it remains historical exploratory evidence. Later full 200-track results
+are a different panel and must be labeled accordingly.
+
+[Seed 1 analysis](../reports/local_replication_2026-10-30_s1/analysis.json) and
+[seed 2 analysis](../reports/local_replication_2026-10-30_s2/analysis.json) preserve
+all curves, configuration/checkpoint hashes and costs. The frozen paper queue is
+now evaluating the complete condition matrix, including the unsuccessful actor.
+No new training remains active from this replication batch.

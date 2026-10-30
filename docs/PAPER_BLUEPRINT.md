@@ -307,6 +307,9 @@ These are **Prior work**, not project-origin ideas. Primary sources reviewed
 | [Learning by Cheating, CoRL 2019](https://arxiv.org/abs/1912.12294) | Learns a privileged driving teacher and transfers to a visual agent; separating perception and control through privileged inputs is established |
 | [DriveAdapter, ICCV 2023](https://arxiv.org/abs/2308.00398) | Separates perception and planning and addresses the gap between predicted and true privileged inputs; supports our interface-distribution caution |
 | [POPLIN, ICLR 2020](https://arxiv.org/abs/1906.08649) | Policy-guided online planning and policy distillation; search around learned proposals is established |
+| [MRS.Q / Chang et al., ICML 2026](https://proceedings.mlr.press/v306/chang26a.html) | Accurate dynamics do not ensure effective search; close novelty/comparison gap identified by the 2026-10-30 review; learned-value mechanism differs from our engineered utility |
+| [Physics-simulator MPPI, RA-L 2025](https://arxiv.org/abs/2307.09105) | Uses programmed physics simulations for planning; the coded-simulator principle alone is established |
+| [APC-RL, ICLR 2026](https://proceedings.iclr.cc/paper_files/paper/2026/hash/cb22704ebc9bc4e0ef875d1959651012-Abstract-Conference.html) | Recent behavioral-prior composition on CarRacing; fixed-track symbolic/demonstration protocol requires explicit adaptation |
 | [World on Rails, ICCV 2021](https://openaccess.thecvf.com/content/ICCV2021/papers/Chen_Learning_To_Drive_From_a_World_on_Rails_ICCV_2021_paper.pdf) | Factorizes ego response from external evolution and distills model-derived choices; our exogenous/endogenous distinction has precedent |
 | [Value Equivalence, NeurIPS 2020](https://arxiv.org/abs/2011.03506) and [Objective Mismatch, L4DC 2020](https://proceedings.mlr.press/v120/lambert20a.html) | Planning usefulness and predictive accuracy are different objectives; a task-useful model alone is not a new principle |
 | [Valdi, July 2026 preprint](https://arxiv.org/html/2607.00917v1) | Direct CarRacing model-based planning reference; preliminary study with modified proprioception and 600-frame episodes, not a verified standard-task champion |
@@ -319,6 +322,8 @@ it also does not establish that every relevant representation/prediction is corr
 Our contribution would need more precise controlled attribution or a substantive
 new tradeoff/result, not simply repeating its perception-versus-planning headline.
 No result from that traffic benchmark is transferred to our racing benchmark.
+
+The [refreshed comparator review](COMPARATOR_REVIEW_2026-10-30.md) identifies missing strong external comparisons and newly identified MRS.Q prior art. The present queue addresses local mechanism replication; it is not a completed SOTA comparison.
 
 **Assistant assessment:** ingredient novelty is low; a carefully validated,
 replicated decomposition with a useful limited-compute intervention has moderate

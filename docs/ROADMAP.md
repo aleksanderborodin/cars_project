@@ -1,6 +1,6 @@
 # Roadmap and decision gates
 
-**Current execution and open gates:** independent local seeds are training; the [paper queue](PAPER_CAMPAIGN_2026-10-30.md) waits, then compares direct/fixed/random/search conditions on all 200 development tracks for seeds 0/1/2. Code/configs and analysis are frozen and 114 tests pass. This is exploratory local mechanism evidence. Strong baselines, trained component studies, headline replication and final freeze remain required; optional evolution/custom simulators remain future studies.
+**Current execution and open gates:** both local seeds finished; one selected actor scores −17.89/0%, leaving recipe competence/robustness open. The paper queue evaluates every actor and condition. The [refreshed comparison/novelty gate](COMPARATOR_REVIEW_2026-10-30.md) prioritizes independent competent actors, MR.Q/MRS.Q and same-engine planning controls. External adaptations, component studies and final freeze remain required; the active queue cannot establish SOTA alone.
 
 Updated 2026-10-30. [Index](../README.md) · [User intent](USER_INTENT.md) ·
 [Status](STATUS.md) · [Proposed numerical settings](DESIGN_DECISIONS.md)

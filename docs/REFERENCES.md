@@ -1,18 +1,20 @@
 # Research references and reproduction register
 
-Reviewed 2026-10-29. [Index](../README.md) · [Analysis](RESEARCH_PLAN.md) ·
+Reviewed 2026-10-30. [Index](../README.md) · [Analysis](RESEARCH_PLAN.md) ·
 [Comparison design](RESEARCH_PLAN.md#5-comparison-and-reproduction-plan)
 
 Sources below are primary papers, proceedings, author project pages, official
 repositories, or official documentation. Availability was checked during the
-review. **No external baseline has been reproduced in this repository.** Code
-availability is not a verified installation, correct adaptation, or matched score.
+review. **SB3 recurrent PPO recipe adaptations have run, including the separate native 4M campaign; modern author-code MR.Q/MRS.Q, TD-MPC2, DreamerV3 and Valdi have not been reproduced here.** Code availability is not a verified installation, correct adaptation or matched published score. See the [current comparator/novelty gap review](COMPARATOR_REVIEW_2026-10-30.md).
 The search is substantial but not proof that the candidate mechanism is novel.
 
 ## Closest work: read before claiming novelty
 
 | Reference | What overlaps | Paper / author source | Official code and our status |
 |---|---|---|---|
+| Chang et al., *The Surprising Difficulty of Search in Model-Based RL*, ICML 2026 | Direct prior work on accurate-model/search failures and value overestimation; raises the novelty/comparator bar | [Publisher paper](https://proceedings.mlr.press/v306/chang26a.html) | [Official MRS.Q code](https://github.com/facebookresearch/MRSQ); paper/selected source review only; no reproduction |
+| Rietz et al., *APC-RL*, ICLR 2026 | CarRacing behavior-prior composition; fixed track, symbolic simulator inputs and demonstrations require matching | [Proceedings](https://proceedings.iclr.cc/paper_files/paper/2026/hash/cb22704ebc9bc4e0ef875d1959651012-Abstract-Conference.html) | [Author code](https://github.com/frietz58/apc-rl); protocol review only; no reproduction |
+| Pezzato et al., *Sampling-based MPC Leveraging Parallelizable Physics Simulations*, RA-L 2025 | Simulator-driven MPPI is established prior work for our coded-model proposal | [Paper](https://arxiv.org/abs/2307.09105) | Prior-art review; no adaptation executed |
 | Ha & Schmidhuber, *World Models*, 2018 | Vision, predictive memory, control; direct CarRacing experiment | [Project/paper and implementation links](https://worldmodels.github.io/) | Historical context; no reproduction selected |
 | Freeman, Metz & Ha, *Learning to Predict Without Looking Ahead*, 2019 | Observational dropout and useful world models, including CarRacing | [Author project](https://learningtopredict.github.io/), [paper](https://arxiv.org/abs/1910.13038) | Context; no integration |
 | Evans, Jordaan & Engelbrecht, *High-performance Racing on Unmapped Tracks using Local Maps*, 2024 | Local sensing → geometry → racing control | [Paper](https://arxiv.org/abs/2401.17732) | Paper-based mechanism comparison; no exact implementation verified here |
@@ -49,7 +51,7 @@ Important distinctions from those sources:
 | Hafner et al., DreamerV3, Nature 2025 | [Published paper](https://www.nature.com/articles/s41586-025-08744-2) | [Author code](https://github.com/danijar/dreamerv3) | Recurrent visual world-model comparator; profile a small configuration first |
 | Fujimoto et al., MR.Q, 2025 | [Paper](https://arxiv.org/abs/2501.16142) | [Official code](https://github.com/facebookresearch/MRQ) | Additional modern model-free comparator; CarRacing adapter needed |
 | Recurrent PPO implementation | [SB3-Contrib documentation](https://sb3-contrib.readthedocs.io/en/master/modules/ppo_recurrent.html) | [Official repository](https://github.com/Stable-Baselines-Team/stable-baselines3-contrib) | First practical memory baseline; match observations, labels, and frame budgets |
-| RL Zoo recurrent CarRacing recipe | [Pinned configuration](https://github.com/DLR-RM/rl-baselines3-zoo/blob/61956d90d9f8ac126043ed4024efa12a462d97e1/hyperparams/ppo_lstm.yml) | Upstream commit pinned 2026-10-28 | [Factory/budget audit complete](BASELINE_AUDIT.md); neither local trainer reproduces its native pixel recipe |
+| RL Zoo recurrent CarRacing recipe | [Pinned configuration](https://github.com/DLR-RM/rl-baselines3-zoo/blob/61956d90d9f8ac126043ed4024efa12a462d97e1/hyperparams/ppo_lstm.yml) | Upstream commit pinned 2026-10-28 | [Factory/budget audit complete](BASELINE_AUDIT.md); separate native interface/full 4M run completed with version/partition adaptations and late regression; no matched published-score reproduction |
 | Wang & Ba, POPLIN, ICLR 2020 | [Paper](https://arxiv.org/abs/1906.08649) | Paper's linked implementation; not installed here | Closely related policy-guided planning; prevents claiming proposer improvement by simulation is itself new |
 | Pinneri et al., iCEM, CoRL 2020 / PMLR 2021 | [Proceedings](https://proceedings.mlr.press/v155/pinneri21a.html) | [Pinned official code](https://github.com/martius-lab/iCEM/tree/98c1c1fe2bfc94a87e4658b6c793f4e81bc30203); source audited, not reproduced | [Adaptation audit](SEARCH_OPTIMIZER_AUDIT.md), memory/correlated proposals and matched total-work comparison |
 | Sikchi et al., LOOP, CoRL 2021 / PMLR 2022 | [Proceedings](https://proceedings.mlr.press/v164/sikchi22a.html) | [Author project](https://hari-sikchi.github.io/loop/) | Learned-dynamics/terminal-value contrast; not the default coded-simulator architecture |

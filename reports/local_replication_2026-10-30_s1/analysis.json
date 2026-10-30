@@ -1,0 +1,66 @@
+{
+  "manifest_sha256": "d1592c9933f9bed454a4045fd8dcc6998489b79fc7d25b92d687d0caf77474e4",
+  "inputs": [
+    {
+      "evaluation": "runs/recurrent_ppo/local_replication_s1_dev_000204523",
+      "evaluation_config_sha256": "37704e0a9806b0b0ec96f4614c6312210310d43ad8b0ed8e8067f7ceef50f601",
+      "metrics_sha256": "661589515a00a3fb3e16380191d7f4e306f130b9bd91c7439063edc228248aee",
+      "checkpoint": "runs/driver_training/local_replication_20261030_s1_to2m/checkpoints/frames_000204523",
+      "checkpoint_sha256": "b2f555e298aead9130b1afad3f7eb627810f8bd62106dcf88427f2dfa3bf3cd0"
+    },
+    {
+      "evaluation": "runs/recurrent_ppo/local_replication_s1_dev_000507611",
+      "evaluation_config_sha256": "00f8b58ee1fcab229e1bd1b5a6df7217ff7bc2c663086951243ce30448692de7",
+      "metrics_sha256": "58e415d756c86415e6a674849e67f80d5f435d68432395e2f62ce27a732f5dc9",
+      "checkpoint": "runs/driver_training/local_replication_20261030_s1_to2m/checkpoints/frames_000507611",
+      "checkpoint_sha256": "873d0e8cfad0b8989c5a670bcf367b2fa26ba2cefa5a87a88498eb1549270fc9"
+    },
+    {
+      "evaluation": "runs/recurrent_ppo/local_replication_s1_dev_001007122",
+      "evaluation_config_sha256": "750098718c607c87040775a0f82eee8de4ab2a1aa3f34fd4ef5227619a525bca",
+      "metrics_sha256": "9f9a63bbedc6373ebdceb91d3d615aa816ed5746b83e8afb1dabb8b0a90d5f0e",
+      "checkpoint": "runs/driver_training/local_replication_20261030_s1_to2m/checkpoints/frames_001007122",
+      "checkpoint_sha256": "5fef21782621a16f326428dc94554baff2eb142cd040f5b623268bd9c5f1379b"
+    },
+    {
+      "evaluation": "runs/recurrent_ppo/local_replication_s1_dev_002006381",
+      "evaluation_config_sha256": "cabd2a7a7134f382e2da31de397c8acc0ca7112aa88fd2b80a24fc2584c6aa64",
+      "metrics_sha256": "f012869499abd29d17ebc6c57f959082eb11e318df8f697c429f7ff29d212dc2",
+      "checkpoint": "runs/driver_training/local_replication_20261030_s1_to2m/checkpoints/frames_002006381",
+      "checkpoint_sha256": "9a3bcf3ac64c9a607582cd26ecb967245382187ff60676a4d4e6bf594b97061b"
+    }
+  ],
+  "selected": {
+    "training_native_frames": 1007122,
+    "checkpoint": "runs/driver_training/local_replication_20261030_s1_to2m/checkpoints/frames_001007122",
+    "mean_return": 869.2326404449973,
+    "return_std_tracks": 51.264919560399214,
+    "completion": 0.32,
+    "mean_progress": 0.9647406404450112,
+    "mean_offroad_frames": 12.18,
+    "learning_rate": 8.741097500000001e-05,
+    "reward_normalization_count": 251904.0001,
+    "evaluation_native_frames": 47754
+  },
+  "training_cost": {
+    "native_frames": 2006381,
+    "cumulative_native_frames": 2006381,
+    "stop_at_native_frames": 2000000,
+    "overshoot_frames": 6381,
+    "decisions": 501760,
+    "updates": 2450,
+    "wall_time_s": 1507.4812976380053,
+    "training_native_frames_per_s": 1330.9491820188382,
+    "expert_labels": 0,
+    "truth_labels": 0,
+    "reload_check_native_frames": 8,
+    "cuda_peak_allocated_bytes": 0
+  },
+  "evaluation_native_frames": 193175,
+  "learning_diagnostics_finite": true,
+  "completed_updates": 245,
+  "all_scheduled_checkpoints_evaluated": true,
+  "interpretation": "one training seed, selected on 50 repeatedly used development tracks; competence and convergence require further assessment; no SOTA result",
+  "held_out_evaluation": false,
+  "user_only_oracle_values_read": false
+}

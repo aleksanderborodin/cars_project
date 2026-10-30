@@ -1,5 +1,14 @@
 # Next moves: establish useful simulation improvement over strong drivers
 
+**Next queued intervention:** [objective alignment](OBJECTIVE_ALIGNMENT_2026-10-30.md)
+follows the user's request to improve actual driving while keeping the study honest.
+The separate score-only pilot waits for the full current matrix; original results
+and defaults stay intact. Six twenty-track search panels compare original,
+quarter-strength and zero nonprogress penalties across two useful frozen actors.
+All arms and costs are reported; any useful setting needs separately declared
+broader validation. This bounded test does not close strong-baseline or novelty
+gates or activate an unlimited weight sweep.
+
 **Current infrastructure recovery:** the original queue stopped on a full root
 disk. [Recovery](CAMPAIGN_RECOVERY_2026-10-30.md) restarted on the secondary volume
 at 15:15 UTC, preserving all 18 completed panels and frozen methods. Follow its

@@ -94,6 +94,11 @@ def evaluate_feedback(model: PhysicsDynamics, predictor: Predictor, sensor: Loca
         total += config.centre_cost * centre_distance**2
         total += config.unknown_cost * (~road_query.visible)
         total += .01 * ego[:, 1]**2
+    # Legacy configs have no scale: keep their accumulation and subtraction exact.
+    # The separately named objective experiment changes only these proxy weights.
+    penalty_scale = getattr(config, "penalty_scale", 1.)
+    if penalty_scale != 1.:
+        total *= penalty_scale
     total -= arc[nearest] - arc[start_index]
     assert model.first_estimates is not None and model.first_ego is not None
     return RolloutBatch(np.stack(sequences, axis=1), total.copy(),

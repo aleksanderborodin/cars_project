@@ -1,6 +1,6 @@
 # User intent, decisions, and paper goal
 
-Updated 2026-10-29. [Index](../README.md) · [Experiment contract](EXPERIMENT.md) ·
+Updated 2026-10-30. [Index](../README.md) · [Experiment contract](EXPERIMENT.md) ·
 [Research assessment](PREDICTION_SELECTION.md)
 
 The [paper blueprint](PAPER_BLUEPRINT.md) is the single consolidated starting point:
@@ -29,6 +29,14 @@ an idea rather than converting a question into an agreed design.
   numerical partition counts and budgets remain proposals.
 
 ## Main system the user wants
+
+**User steering, 2026-10-30 (paraphrase):** improve search so that its choices help
+the actual final driving goal and keep the paper truthful. The assistant's first
+[bounded score intervention](OBJECTIVE_ALIGNMENT_2026-10-30.md) changes internal
+penalty strength while preserving the official environment reward and current
+frozen campaign. Its alpha values, sample counts and execution order are assistant
+choices, not user requirements. The user requests useful outcomes, not guarantees
+that a particular score repair succeeds or permission to hide negative results.
 
 Paraphrase: observe the environment, construct an internal understanding/model,
 try candidate behaviors inside that model, select the behavior with the best

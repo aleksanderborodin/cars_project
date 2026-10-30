@@ -1,0 +1,15 @@
+{
+  "pid": 3030970,
+  "started_utc": "2026-10-30T18:50:37.745864+00:00",
+  "command": [
+    "/home/sasha/Desktop/cars_project/.venv/bin/python3",
+    "/home/sasha/Desktop/cars_project/scripts/run_objective_alignment.py",
+    "--manifest",
+    "/home/sasha/Desktop/cars_project/configs/campaigns/objective-alignment-2026-10-30.json"
+  ],
+  "workspace": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/objective_alignment_20261030",
+  "expected_status": "waiting_for_frozen_matrix",
+  "dependency_status": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/queue/status.json",
+  "tests": "140 passed; one CUDA-only skip",
+  "log": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/objective_alignment_launch_20261030.log"
+}

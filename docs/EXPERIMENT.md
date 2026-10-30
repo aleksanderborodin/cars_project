@@ -6,6 +6,13 @@ secondary volume. All eighteen completed panels are retained; the interrupted
 condition is rerun with exact saved-prefix validation and explicit cost bounds.
 This does not change the method, split, actor selection or analysis.
 
+The user now requests useful, goal-aligned search with truthful paper evaluation.
+The separately declared [objective pilot](OBJECTIVE_ALIGNMENT_2026-10-30.md) scales
+the old nonprogress penalties while preserving model/proposals/horizon and official
+environment reward. It is queued after the current matrix, with legacy parity
+gates and downstream official-return comparison. It is adaptive development,
+not a new final-test result or an established repair.
+
 The local replications have completed; one seed learned useful driving and another failed competence at the declared review. The frozen [paper queue](PAPER_CAMPAIGN_2026-10-30.md) evaluates every actor on the full control/search matrix. The [refreshed comparator/novelty review](COMPARATOR_REVIEW_2026-10-30.md) identifies missing strong external comparisons and close prior art. Current mechanism evidence is not a SOTA result; stronger baselines, controlled component studies and final-test freeze remain open.
 
 The subsequent [MR.Q/MRS.Q source audit](MRQ_MRSQ_AUDIT_2026-10-30.md) and

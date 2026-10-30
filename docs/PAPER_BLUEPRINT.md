@@ -4,7 +4,7 @@ Updated 2026-10-30. [Index](../README.md) · [Experiment contract](EXPERIMENT.md
 [Evidence status](STATUS.md) · [Attributed chronology](RESEARCH_LOG.md)
 
 This is the consolidated home for the paper idea and the ideas recorded in this
-conversation, USER_INTENT and research-log R1–R58. It connects them to one study;
+conversation, USER_INTENT and research-log R1–R59. It connects them to one study;
 it does not activate every extension. The experiment contract still governs
 access and evaluation. Existing numerical defaults are development choices.
 Historical results retain their original protocol, and archived plans stay archived.
@@ -397,3 +397,9 @@ implemented and tiny official-code CPU learner/reload checks pass after a preser
 MR.Q priority failure and explicit patch. This is assistant engineering work for
 prior-work comparisons, not driving evidence. Training/competence gates stay open;
 software-check overlap is disclosed before any future efficiency claim.
+
+The user's subsequent goal-alignment request leads to a separate
+[score-only pilot](OBJECTIVE_ALIGNMENT_2026-10-30.md). Numerical penalty settings,
+two-actor/twenty-track design and controls are assistant choices. It is adaptive
+method development after an observed failure; old results stay reported and
+final-test data stays sealed. No new score is claimed useful before driving data.

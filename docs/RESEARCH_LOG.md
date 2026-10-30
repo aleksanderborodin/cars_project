@@ -1357,3 +1357,37 @@ remain separate from the current immutable mechanism queue.
   are not guaranteed to fix model/score errors. Preserve all current settings and
   finish the frozen matrix before another declared development intervention.
 - **Record:** [diagnosis and public paired artifacts](SEED1_SEARCH7_DIAGNOSIS_2026-10-30.md).
+
+## R59 — Align search with actual driving and keep the paper truthful
+
+- **User request:** change search to make it useful for the final driving goal,
+  while retaining scientific honesty. No specific score, alpha or trial count is
+  prescribed by the user.
+- **Assistant design:** a bounded score-only intervention. Compare original
+  nonprogress penalty strength1, quarter strength0.25 and zero strength, holding
+  progress term, programmed model/state/road estimate, proposer, candidates,
+  renderer, horizon, control rate and random stream fixed. This remains a proxy,
+  not an exact official reward model or a guaranteed fix.
+- **Validity:** new explicit `policy-objective` method; old defaults/campaign are
+  untouched. Direct parity and twenty-track alpha1 parity gate variants. Official
+  return is primary; completion/coverage/departures/stall-speed estimate co-reported.
+  Retain every actor/arm, negative outcomes and development costs. No oracle/private
+  rank feedback, official environment change or final-test access.
+- **Scope and selection:** two useful existing actors on the repeatedly used
+  first20 development tracks, three search settings each. Seed2 remains in the
+  original full matrix; this narrow pilot is not headline seed robustness. A
+  setting can be screened for broader validation only if point return beats
+  direct and original search for both actors; no automatic promotion/expansion.
+- **Costs/schedule:** at most124,000 new native frames and16,800,000 internal physics
+  ticks, including direct parity; zero new training. Freeze all code/configs first,
+  wait for successful current-matrix completion, then run serially on the secondary
+  volume. Approximate allowance1–1.5h after dependency completion.
+- **Checks:** full CPU suite140 passed/one CUDA-only skip; same-rollout score
+  isolation, exact legacy-cost/action behavior at alpha1, recurrence/state-commit
+  integrity, CLI separation and negative/missing-arm reporting tested. Software
+  checks overlap old search21; timing caveat is recorded rather than hidden.
+- **Prior work/uncertainty:** MRS.Q and MPC already establish search/model/utility
+  difficulties; a weight change alone is not claimed novel. High confidence in
+  interpretability of this one-axis test, low confidence in an improvement before
+  driving. More complete progress/continuation objectives remain future tests.
+- **Record:** [design, declaration and evidence limits](OBJECTIVE_ALIGNMENT_2026-10-30.md).

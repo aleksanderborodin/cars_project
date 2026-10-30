@@ -1,5 +1,11 @@
 # Roadmap and decision gates
 
+The [objective-alignment pilot](OBJECTIVE_ALIGNMENT_2026-10-30.md) is now a separate
+implemented/queued score-only intervention after the current matrix. It changes
+internal penalty strength and judges actual official driving return; no improved
+result or exact reward model is established. Strong independent baseline and
+full component-study requirements remain open.
+
 **Live recovery:** the disk-full interruption is documented in
 [the recovery guide](CAMPAIGN_RECOVERY_2026-10-30.md). The same frozen batch
 restarted on the secondary volume at 15:15 UTC; use its new live status. Eighteen

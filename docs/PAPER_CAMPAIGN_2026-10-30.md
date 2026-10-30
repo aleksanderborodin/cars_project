@@ -24,6 +24,12 @@ explains reward accounting and observed failure behavior, with causal limits.
 Search21 and remaining seed2 conditions continue unchanged. No partial search21
 result is used for tuning or conclusions.
 
+**Separate next campaign:** the [objective-alignment pilot](OBJECTIVE_ALIGNMENT_2026-10-30.md)
+is armed to wait for this entire matrix. It changes only internal penalty scale
+in an explicit method; this dataset's methods/analysis stay frozen. New costs and
+adaptive development status are separate, with all outcomes retained. No new
+objective score has yet been validated by driving.
+
 The [seed 1/2 replications](LOCAL_REPLICATIONS_2026-10-30.md) completed serially,
 each to its declared 2M-native-frame review. Both recipes/source snapshots were
 frozen before launch. Standalone scores selected each policy checkpoint before

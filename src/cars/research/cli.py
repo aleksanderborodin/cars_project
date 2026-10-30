@@ -31,7 +31,7 @@ def main(argv: list[str] | None = None) -> None:
     fitting.add_argument("--ridge", type=float, default=.01)
     fitting.add_argument("--run-id", required=True)
     evaluation = commands.add_parser("evaluate")
-    evaluation.add_argument("--method", choices=("local", "fixed", "search", "physics", "physics-global", "expert", "recurrent", "policy-search", "policy-random", "policy-bias", "policy-intervention", "policy-colored", "policy-icem"), required=True)
+    evaluation.add_argument("--method", choices=("local", "fixed", "search", "physics", "physics-global", "expert", "recurrent", "policy-search", "policy-random", "policy-bias", "policy-intervention", "policy-colored", "policy-icem", "policy-objective"), required=True)
     evaluation.add_argument("--model", type=Path)
     evaluation.add_argument("--episodes", type=int, default=20)
     evaluation.add_argument("--horizon", type=int, default=20)
@@ -44,6 +44,7 @@ def main(argv: list[str] | None = None) -> None:
     evaluation.add_argument("--steer-sigma", type=float, default=.10)
     evaluation.add_argument("--gas-sigma", type=float, default=.15)
     evaluation.add_argument("--brake-sigma", type=float, default=.15)
+    evaluation.add_argument("--penalty-scale", type=float, help="explicit policy-objective ablation only; original penalties=1, progress-only proxy=0")
     evaluation.add_argument("--observation-renderer", choices=("reference", "sparse"), default="reference")
     evaluation.add_argument("--optimizer-noise-beta", type=float, default=1., help="full-sequence colored residual methods only")
     evaluation.add_argument("--residual-bound-sigma", type=float, default=3., help="full-sequence residual clipping; actual action bounds unchanged")
@@ -110,6 +111,8 @@ def main(argv: list[str] | None = None) -> None:
         from cars.research.native_evaluation import evaluate_native
         print(evaluate_native(args.model, args.run_id, episodes=args.episodes, device=args.device))
     elif args.command == "evaluate":
+        if (args.penalty_scale is not None) != (args.method == "policy-objective"):
+            parser.error("--penalty-scale is required for policy-objective and forbidden for other methods")
         if args.method != "policy-intervention" and (args.reference != "reconstructed" or args.continuation != "prior"):
             parser.error("Geometry interventions require --method policy-intervention")
         protocol = ProtocolConfig()
@@ -143,13 +146,18 @@ def main(argv: list[str] | None = None) -> None:
                 if args.action_bias is None:
                     parser.error("policy-bias requires --action-bias STEER GAS BRAKE")
                 driver = FixedPolicyBias(args.model, tuple(args.action_bias))
-            elif args.method in ("policy-search", "policy-random", "policy-intervention", "policy-colored", "policy-icem"):
+            elif args.method in ("policy-search", "policy-random", "policy-intervention", "policy-colored", "policy-icem", "policy-objective"):
                 from cars.planning.policy_search import PolicyPhysicsSearch, PolicySearchConfig, RandomPolicyVariation
                 search = PolicySearchConfig(candidates=args.candidates,
                     horizon=args.horizon, planning_seed=args.planning_seed, steer_sigma=args.steer_sigma,
                     gas_sigma=args.gas_sigma, brake_sigma=args.brake_sigma,
                     observation_renderer=args.observation_renderer)
-                if args.method == "policy-intervention":
+                if args.method == "policy-objective":
+                    from dataclasses import asdict
+                    from cars.planning.policy_objective import ObjectiveSearchConfig, PolicyObjectiveSearch
+                    driver = PolicyObjectiveSearch(args.model, protocol,
+                        ObjectiveSearchConfig(**asdict(search), penalty_scale=args.penalty_scale))
+                elif args.method == "policy-intervention":
                     from dataclasses import replace
                     from cars.planning.intervention import InterventionConfig, PolicyGeometryIntervention
                     if protocol.view != "local":

@@ -167,3 +167,50 @@ def test_reference_tail_changes_scoring_without_changing_candidate_rollouts(acto
         old.reset()
         new.reset()
         env.close()
+
+
+def test_objective_scaling_changes_only_scores_and_preserves_legacy_at_one(actor):
+    from cars.planning.policy_objective import ObjectiveSearchConfig, PolicyObjectiveSearch
+    protocol = ProtocolConfig()
+    options = dict(candidates=7, horizon=6, planning_seed=8, observation_renderer="sparse")
+    legacy = PolicyPhysicsSearch(actor, protocol, PolicySearchConfig(**options))
+    variants = [PolicyObjectiveSearch(actor, protocol, ObjectiveSearchConfig(**options, penalty_scale=s))
+                for s in (1., .25, 0.)]
+    env = DrivingEnv(protocol, "train", seed=987)
+    try:
+        obs, _ = env.reset()
+        expected = legacy.act(obs)
+        for driver in variants:
+            driver.act(obs)
+            np.testing.assert_array_equal(driver.candidate_actions, legacy.candidate_actions)
+            np.testing.assert_array_equal(driver.model.first_ego, legacy.model.first_ego)
+            for a, b in zip(driver.actor.memory, legacy.actor.memory, strict=True):
+                np.testing.assert_array_equal(a, b)
+            chosen = driver.diagnostics["selected_candidate"]
+            np.testing.assert_array_equal(driver.model.estimate, driver.model.first_estimates[chosen])
+            assert driver.diagnostics["internal_physics_frames"] == legacy.diagnostics["internal_physics_frames"]
+        np.testing.assert_array_equal(variants[0].candidate_costs, legacy.candidate_costs)
+        np.testing.assert_array_equal(variants[0].candidate_actions[variants[0].diagnostics["selected_candidate"], 0], expected)
+        np.testing.assert_allclose(variants[1].candidate_costs,
+            .25 * variants[0].candidate_costs + .75 * variants[2].candidate_costs, rtol=0, atol=1e-10)
+        assert "penalty_scale" not in legacy.configuration()
+        assert variants[2].configuration()["objective"]["official_reward_modified"] is False
+    finally:
+        legacy.reset()
+        for driver in variants: driver.reset()
+        env.close()
+
+
+@pytest.mark.parametrize("scale", [-1., float("inf"), float("nan"), True])
+def test_objective_rejects_invalid_penalty_scale(scale):
+    from cars.planning.policy_objective import ObjectiveSearchConfig
+    with pytest.raises(ValueError, match="penalty scale"):
+        ObjectiveSearchConfig(penalty_scale=scale)
+
+
+def test_objective_cli_does_not_silently_change_other_methods():
+    from cars.research.cli import main
+    for argv in (["evaluate", "--method", "policy-search", "--penalty-scale", "0", "--run-id", "invalid"],
+                 ["evaluate", "--method", "policy-objective", "--run-id", "invalid"]):
+        with pytest.raises(SystemExit) as error: main(argv)
+        assert error.value.code == 2

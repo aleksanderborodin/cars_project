@@ -1,5 +1,22 @@
 # Development guide: research and legacy execution paths
 
+## Separate objective-alignment pilot
+
+The [declared pilot](OBJECTIVE_ALIGNMENT_2026-10-30.md) adds an explicit
+`policy-objective` method. Original methods/default configs remain unchanged;
+`--penalty-scale` is required for the new method and rejected elsewhere.
+
+```bash
+uv run python -m cars.cli research evaluate --help
+uv run python scripts/run_objective_alignment.py --manifest configs/campaigns/objective-alignment-2026-10-30.json --check
+```
+
+The queued controller uses copied source and waits for the current matrix. It
+then checks saved direct/legacy-search traces and runs all declared score settings
+serially. Do not start competing manual runs. Its report requires every actor/arm,
+retains negative effects and cannot promote a new default automatically. The
+score remains an approximate local proxy; official reward/termination are unchanged.
+
 ## Frozen search recovery
 
 The [recovery guide](CAMPAIGN_RECOVERY_2026-10-30.md) records the disk-full

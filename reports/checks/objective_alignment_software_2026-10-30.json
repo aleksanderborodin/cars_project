@@ -1,0 +1,36 @@
+{
+  "purpose": "full software verification for separately named objective ablation and pilot/report; not paper training",
+  "command": [
+    "nice",
+    "-n",
+    "19",
+    "taskset",
+    "-c",
+    "11",
+    "uv",
+    "run",
+    "pytest",
+    "-q"
+  ],
+  "start_utc": "2026-10-30T18:45:35.762797+00:00",
+  "finish_utc": "2026-10-30T18:46:24.462306+00:00",
+  "elapsed_seconds": 48.699511766433716,
+  "exit_code": 0,
+  "queue_at_start": {
+    "status": "evaluating",
+    "active": "paper_search_20261030_s1_search21_recovery1",
+    "queue_pid": 2178542,
+    "child_pid": 2545700,
+    "updated_epoch": 1793385933.2750664
+  },
+  "queue_at_finish": {
+    "status": "evaluating",
+    "active": "paper_search_20261030_s1_search21_recovery1",
+    "queue_pid": 2178542,
+    "child_pid": 2545700,
+    "updated_epoch": 1793385983.28159
+  },
+  "hardware": "CPU11/nice19; one thread; CUDA hidden; temporary files on secondary volume",
+  "latency_overlap": "Software checks overlap active old-matrix search21; retain raw timing, require dedicated clean efficiency comparison. Candidate methods and driving source snapshots unchanged.",
+  "log": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/checks/objective_alignment_20261030/pytest.log"
+}

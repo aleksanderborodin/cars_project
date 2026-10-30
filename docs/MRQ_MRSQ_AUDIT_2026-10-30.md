@@ -3,10 +3,12 @@
 Reviewed 2026-10-30. [Comparator review](COMPARATOR_REVIEW_2026-10-30.md) ·
 [Experiment contract](EXPERIMENT.md) · [Provenance](../reports/references/mrq_mrsq_source_audit_2026-10-30.json)
 
-**Status:** selected official files pinned, cached, hash-checked and inspected;
-no third-party algorithm imported, trained or evaluated. The existing frozen
-paper queue continues unchanged. This audit resolves the earlier failed download,
-not the external-baseline competence or reproduction gate.
+**Original source-audit status:** selected official files pinned, cached,
+hash-checked and inspected without importing their algorithms. The subsequent
+[interface and synthetic verification](EXTERNAL_INTERFACE_2026-10-30.md) implements
+the local boundary and passes tiny CPU learner/reload checks after a declared MR.Q
+priority fix. No external driving run or competence result exists. The frozen
+paper queue continues unchanged; the reproduction gate remains open.
 
 **Origin:** the user requests serious contemporary comparisons and autonomous
 progress. The assistant chooses this pair because MR.Q supplies an independent

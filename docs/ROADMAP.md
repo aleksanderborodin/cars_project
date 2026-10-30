@@ -3,9 +3,11 @@
 **Current execution and open gates:** both local seeds finished; one selected actor scores −17.89/0%, leaving recipe competence/robustness open. The paper queue evaluates every actor and condition. The [refreshed comparison/novelty gate](COMPARATOR_REVIEW_2026-10-30.md) prioritizes independent competent actors, MR.Q/MRS.Q and same-engine planning controls. External adaptations, component studies and final freeze remain required; the active queue cannot establish SOTA alone.
 
 Official [MR.Q/MRS.Q](MRQ_MRSQ_AUDIT_2026-10-30.md) and
-[MPPI](MPPI_READINESS_2026-10-30.md) sources are pinned and inspected. Restricted
-adapters, replay/action/RNG parity, runtime profiles and performance training are
-still unimplemented for those methods; source readiness is not their reproduction.
+[MPPI](MPPI_READINESS_2026-10-30.md) sources are pinned and inspected. The
+[external local interface](EXTERNAL_INTERFACE_2026-10-30.md) and tiny MR.Q/MRS.Q
+CPU learner/reload checks now exist, with a preserved/fixed MR.Q priority failure.
+Complete training/evaluation integration, replay/ring-wrap/continuation validation,
+GPU profiles and performance training remain open. No driving reproduction exists.
 
 Updated 2026-10-30. [Index](../README.md) · [User intent](USER_INTENT.md) ·
 [Status](STATUS.md) · [Proposed numerical settings](DESIGN_DECISIONS.md)

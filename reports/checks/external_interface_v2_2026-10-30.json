@@ -1,0 +1,36 @@
+{
+  "purpose": "CPU software verification after replay-priority fix and RNG guard",
+  "command": [
+    "nice",
+    "-n",
+    "19",
+    "taskset",
+    "-c",
+    "11",
+    "uv",
+    "run",
+    "pytest",
+    "-q"
+  ],
+  "started_utc": "2026-10-30T14:51:20.460515+00:00",
+  "finished_utc": "2026-10-30T14:52:13.958992+00:00",
+  "elapsed_seconds": 53.49847674369812,
+  "exit_code": 0,
+  "queue_at_start": {
+    "status": "evaluating",
+    "active": "paper_search_20261030_s1_search7",
+    "queue_pid": 1617069,
+    "child_pid": 1954994,
+    "updated_epoch": 1793371878.1126466
+  },
+  "queue_at_finish": {
+    "status": "evaluating",
+    "active": "paper_search_20261030_s1_search7",
+    "queue_pid": 1617069,
+    "child_pid": 1954994,
+    "updated_epoch": 1793371933.1182778
+  },
+  "latency_caveat": "Checks overlapped this evaluation. Keep raw timings; separate clean latency measurement required before efficiency claims. Current driving methods/source unchanged.",
+  "hardware_scope": "single CPU at nice19; CUDA hidden; GPU-only check skipped",
+  "log": "runs/checks/external_interface_20261030_v2/pytest.log"
+}

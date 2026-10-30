@@ -15,7 +15,7 @@ The current queue is useful development work, not a completed SOTA comparison.
 | Frozen actor, random proposals, fixed correction, search budgets | Local recurrent PPO; broad seed 0 data; seed 1/2 comparison pipeline | Establish consistency and show all seeds; this alone is insufficient |
 | Established same-world planner | Colored shooting and a policy-guided iCEM adaptation, with negative results | Add a carefully audited MPPI/CEM comparison with the same coded model, state estimate, objective and resource envelope; do not treat an adaptation's failure as refuting iCEM |
 | Strong independent direct actor | Native/local PPO; legacy SAC exists but is not a valid restricted-protocol reproduction | Prioritize a competent matched local SAC baseline and an official MR.Q adaptation audit; retain full budgets/curves and history disclosures |
-| Modern learned-model planning | No execution | Prioritize MRS.Q versus MR.Q; TD-MPC2 is another credible candidate depending on protocol and feasibility |
+| Modern learned-model planning | Tiny MR.Q/MRS.Q synthetic CPU checks only; no driving execution | Prioritize MRS.Q versus MR.Q; TD-MPC2 is another credible candidate depending on protocol and feasibility |
 | Native visual world-model control | No reproduced external score | DreamerV3 and CarRacing-specific Valdi need original-protocol and adapted-protocol decisions, profiling and verified runs |
 | Behavioral-prior composition | No execution | APC-RL is relevant recent CarRacing work; its information, demonstrations and fixed-track task need explicit matching |
 
@@ -131,8 +131,10 @@ installation, benchmark episode, private rank or held-out data was used in this 
 [MPPI source/readiness audit](MPPI_READINESS_2026-10-30.md). Those records include
 immutable revisions, cached hashes and concrete adaptation constraints. The original
 review record above preserves its earlier unsuccessful fetch honestly. Source
-inspection is now complete for the selected files; external integration, runtime
-validation and driving reproduction remain open.
+inspection is complete for the selected files. Subsequent
+[interface/synthetic checks](EXTERNAL_INTERFACE_2026-10-30.md) pass narrow CPU
+learner/action/reload gates after an explicit MR.Q replay-priority fix; full
+training integration, sustained/GPU runtime and driving reproduction remain open.
 
 ### Replication evidence observed during this review
 

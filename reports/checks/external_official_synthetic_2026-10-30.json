@@ -1,0 +1,90 @@
+{
+  "date": "2026-10-30",
+  "origin": "User asks to continue serious-paper work; assistant implements restricted interface and synthetic official-code checks. Algorithms are prior work.",
+  "scope": "CPU synthetic arrays; reduced network, replay, batch and optimizer/planner sizes declared in each run config. Not benchmark training or baseline competence.",
+  "runs": [
+    {
+      "run": "runs/external_synthetic/mrq_20261030",
+      "config_sha256": "e25f18240d1e9dda4521dba27a6cd0bcd5d0575bb570068bae12f3396452f07d",
+      "runner_sha256": "91b99862265ae0d1f19931be4dace1b1a6d0b36bfb8f22f352e55e978fc611cd",
+      "outcome_artifact": "runs/external_synthetic/mrq_20261030/failure.json",
+      "outcome_sha256": "3f0f27ae3a082d66bab0dd7eb745e400a98436acec7e39ac58f9be06b6ee9c62",
+      "outcome": {
+        "type": "IndexError",
+        "error": "index 64 is out of bounds for dimension 0 with size 64",
+        "native_frames": 0,
+        "internal_physics_frames": 0
+      }
+    },
+    {
+      "run": "runs/external_synthetic/mrq_defined_priorities_20261030",
+      "config_sha256": "b6e4d39c106e3539d40363ccd04968d0dfc616ddcfbea2107904a8ce02bf0d14",
+      "runner_sha256": "7037a8a069d390f36490b74acddd4c22afb9b74b7b6a53e1c2e31149f03cf708",
+      "outcome_artifact": "runs/external_synthetic/mrq_defined_priorities_20261030/result.json",
+      "outcome_sha256": "30622c627d38882493f290b22ece50a6471d3e451444791b4964d94a8c450460",
+      "outcome": {
+        "status": "passed",
+        "algorithm": "MRQ",
+        "native_frames": 0,
+        "internal_physics_frames": 0,
+        "synthetic_transitions": 16,
+        "learner_calls": 1,
+        "encoder_parameters_changed": true,
+        "finite_parameters": true,
+        "fixed_rng_action_repeat_exact": true,
+        "cpu_reload_action_exact": true,
+        "history": 1,
+        "storage_device": "cpu",
+        "pixel_branch_tested": false,
+        "gpu_tested": false,
+        "ring_wrap_tested": false,
+        "exact_mid_episode_training_resume_tested": false,
+        "performance_or_convergence_evidence": false,
+        "started_epoch": 1793371815.123449,
+        "finished_epoch": 1793371815.2032678,
+        "active_queue_start": "paper_search_20261030_s1_search7",
+        "active_queue_finish": "paper_search_20261030_s1_search7",
+        "latency_overlap": "synthetic CPU check overlapped queue; clean timings remain required"
+      }
+    },
+    {
+      "run": "runs/external_synthetic/mrsq_cpu_replay_20261030",
+      "config_sha256": "de63d2454e5a679932ea7cc10965c15c84b7f2687067b30275ce1d005fc9b509",
+      "runner_sha256": "7037a8a069d390f36490b74acddd4c22afb9b74b7b6a53e1c2e31149f03cf708",
+      "outcome_artifact": "runs/external_synthetic/mrsq_cpu_replay_20261030/result.json",
+      "outcome_sha256": "5890a97d31a1d4c457062bd4a27ba3accee128753a91264d4a4eb6a8bbbe22a2",
+      "outcome": {
+        "status": "passed",
+        "algorithm": "MRSQ",
+        "native_frames": 0,
+        "internal_physics_frames": 0,
+        "synthetic_transitions": 16,
+        "learner_calls": 1,
+        "encoder_parameters_changed": true,
+        "finite_parameters": true,
+        "fixed_rng_action_repeat_exact": true,
+        "cpu_reload_action_exact": true,
+        "history": 1,
+        "storage_device": "cpu",
+        "pixel_branch_tested": false,
+        "gpu_tested": false,
+        "ring_wrap_tested": false,
+        "exact_mid_episode_training_resume_tested": false,
+        "performance_or_convergence_evidence": false,
+        "started_epoch": 1793371834.7495227,
+        "finished_epoch": 1793371834.8812268,
+        "active_queue_start": "paper_search_20261030_s1_search7",
+        "active_queue_finish": "paper_search_20261030_s1_search7",
+        "latency_overlap": "synthetic CPU check overlapped queue; clean timings remain required"
+      }
+    }
+  ],
+  "original_failure_preserved": true,
+  "mrq_fix": "Zero unused replay priorities to prevent deterministic PyTorch NaNs in masked sampling CDF; separately staged alongside explicit CPU storage.",
+  "driving_environment_frames": 0,
+  "internal_physics_frames": 0,
+  "dependencies_installed": false,
+  "private_or_heldout_access": false,
+  "gpu_pixel_ring_wrap_or_exact_resume_validated": false,
+  "timing": "CPU verification overlapped seed1 search7; retain raw timings and require separate clean timing before efficiency claims."
+}

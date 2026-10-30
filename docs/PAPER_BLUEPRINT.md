@@ -4,7 +4,7 @@ Updated 2026-10-30. [Index](../README.md) · [Experiment contract](EXPERIMENT.md
 [Evidence status](STATUS.md) · [Attributed chronology](RESEARCH_LOG.md)
 
 This is the consolidated home for the paper idea and the ideas recorded in this
-conversation, USER_INTENT and research-log R1–R55. It connects them to one study;
+conversation, USER_INTENT and research-log R1–R56. It connects them to one study;
 it does not activate every extension. The experiment contract still governs
 access and evaluation. Existing numerical defaults are development choices.
 Historical results retain their original protocol, and archived plans stay archived.
@@ -390,4 +390,10 @@ The [MR.Q/MRS.Q](MRQ_MRSQ_AUDIT_2026-10-30.md) and
 [MPPI readiness](MPPI_READINESS_2026-10-30.md) audits now pin selected official
 sources and identify concrete adapter and compute constraints. These are assistant
 implementation preparations for prior-work comparisons, not new user ideas or
-completed external runs. Preserve the frozen current queue while preparing them.
+completed external driving runs. Preserve the frozen current queue while preparing them.
+
+The subsequent [external local interface](EXTERNAL_INTERFACE_2026-10-30.md) is
+implemented and tiny official-code CPU learner/reload checks pass after a preserved
+MR.Q priority failure and explicit patch. This is assistant engineering work for
+prior-work comparisons, not driving evidence. Training/competence gates stay open;
+software-check overlap is disclosed before any future efficiency claim.

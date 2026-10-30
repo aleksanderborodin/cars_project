@@ -4,10 +4,13 @@
 
 **Readiness work completed:** official [MR.Q/MRS.Q sources](MRQ_MRSQ_AUDIT_2026-10-30.md)
 and [MPPI references](MPPI_READINESS_2026-10-30.md) are pinned, cached and inspected.
-Implement the restricted harness and synthetic action/replay/RNG checks next;
-resolve explicit storage and history before a serial readiness profile. MPPI must
-charge simulation of its synthesized executed action and preserve algorithm
-identity. These gates do not launch training during the active measurement queue.
+The [restricted interface/stager and CPU synthetic checks](EXTERNAL_INTERFACE_2026-10-30.md)
+now exist, including a documented MR.Q unused-priority fix. Next complete the
+training/evaluation harness, full replay boundary/ring-wrap and continuation checks,
+then resolve storage/history before a serial driving-readiness profile. MPPI must
+charge its synthesized-control simulation and preserve algorithm identity.
+Driving training/profiles remain deferred during the active queue; bounded software
+verification overlap is recorded and requires separate clean latency measurement.
 
 Updated 2026-10-30. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
 [Architecture](SIMULATOR_SEARCH_PLAN.md) · [Evidence](PROGRAMMED_SIMULATOR_RESULTS.md)

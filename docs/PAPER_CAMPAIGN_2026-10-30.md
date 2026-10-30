@@ -140,5 +140,14 @@ uncertain while these comparator implementations/profile budgets remain open.
 Follow-up preparation has now [pinned MR.Q/MRS.Q](MRQ_MRSQ_AUDIT_2026-10-30.md)
 and [MPPI reference sources](MPPI_READINESS_2026-10-30.md). The audits identify
 specific harness/storage/history/RNG and synthesized-control accounting gates;
-none of those external algorithms has been executed. No competing training or
-profiling is launched during the current evaluation measurements.
+at that preparation stage none of those external algorithms had been executed.
+Driving training/profiling remains deferred during the evaluation measurements.
+
+The subsequent [external interface and synthetic verification](EXTERNAL_INTERFACE_2026-10-30.md)
+implements the local boundary/stager and passes reduced CPU learner/reload checks.
+No external driving training or throughput profile is active. The assistant
+permits bounded software verification at low priority while preserving the frozen
+queue. Its windows overlap seed1 search7 and are recorded in public check files;
+raw times are retained. A clean separately declared timing comparison is required
+before any inference-efficiency claim. This supersedes the preparation-only
+schedule above for software checks, not for driving experiments.

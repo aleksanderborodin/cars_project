@@ -1269,3 +1269,41 @@ remain separate from the current immutable mechanism queue.
   no competing training or profiling, private ranks or held-out access is added.
 - **Records:** [MR.Q/MRS.Q source readiness](MRQ_MRSQ_AUDIT_2026-10-30.md),
   [MPPI readiness](MPPI_READINESS_2026-10-30.md) and their public hash records.
+
+## R56 — Implement the external boundary and verify official code on synthetic data
+
+- **User steering:** continue autonomously toward the serious-paper comparison
+  plan. The user does not prescribe a new encoder, algorithm repair or run budget.
+- **Assistant implementation:** restricted local float32 vector/action codec,
+  infrastructure-only environment wrapper, isolated RNG scope and hash-verified
+  separate source staging. The actor receives only arrays; train/development
+  remain the allowed partitions. This is history-one preflight, not native pixels
+  or a recurrence-matched strong-policy claim.
+- **Observed failure:** the first official MR.Q synthetic learner call failed.
+  A minimal source check shows deterministic PyTorch fills unused `torch.empty`
+  priorities with NaNs, which enter the masked cumulative sampling distribution.
+  Preserve `runs/external_synthetic/mrq_20261030` and its failure unchanged.
+- **Explicit correction:** initialize unused MR.Q priorities to zero in a new
+  stage; preserve filled-slot priority formulas and record the changed source.
+  Both algorithms have an explicit CPU observation-storage patch. Undefined
+  upstream memory behavior is not claimed equivalent to the corrected version.
+- **Narrow evidence:** corrected MR.Q and CPU-staged MRS.Q each pass one learner
+  call on sixteen synthetic transitions with reduced declared dimensions, finite
+  and changed encoder weights, fixed-RNG action repeat, and exact CPU save/reload.
+  Zero driving environments or internal physics frames. GPU, pixel, ring-wrap,
+  exact continuation and driving competence remain unvalidated.
+- **Software checks:** first suite 132 passed/one CUDA-only skip; after replay
+  correction and late-CUDA-init guard, full CPU suite 133 passed/one skip. Keep
+  both check records. Late CUDA initialization fails rather than silently leaving
+  an untracked GPU random stream.
+- **Scheduling choice/revision:** permit bounded software checks on one CPU at
+  nice19 with CUDA hidden while the frozen queue runs, rather than restricting
+  all work to source reading. Record their overlap with seed1 search7 and keep all
+  raw latency. Require separate clean timing before an efficiency claim. This
+  does not authorize competing driving training/profiles or change queued methods.
+- **Next gate:** complete training/checkpoint/evaluation integration and replay
+  boundary/ring-wrap/resume tests, then declare a serial measured driving-readiness
+  profile after the current queue. Do not promote an actor as strong from synthetic
+  software checks. No private diagnostic or final-test access is added.
+- **Record:** [implementation and limits](EXTERNAL_INTERFACE_2026-10-30.md), with
+  source, failed/successful check configurations, provenance and timing windows.

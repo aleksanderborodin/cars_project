@@ -1,5 +1,23 @@
 # Development guide: research and legacy execution paths
 
+## External algorithm source staging
+
+The [external interface and synthetic verification](EXTERNAL_INTERFACE_2026-10-30.md)
+provides the restricted local vector/action boundary, explicit source patches and
+RNG isolation. This is feedforward local preflight, not a native-pixel or driving
+reproduction. The stager verifies selected cached official bytes against the public
+source audit, retains licenses, refuses overwrites and imports no external code.
+
+```bash
+uv run python scripts/stage_external_baseline.py --help
+uv run python scripts/stage_external_baseline.py --algorithm MRQ --output runs/external_sources/NEW_MRQ_STAGE
+uv run python scripts/stage_external_baseline.py --algorithm MRSQ --output runs/external_sources/NEW_MRSQ_STAGE
+```
+
+Use fresh output directories. This command does not start training. Small CPU
+synthetic learner/reload checks passed after a declared MR.Q priority-initialization
+fix; full training/evaluation, replay continuation/ring-wrap and GPU checks remain.
+
 ## Separate native recipe commands
 
 The [native interface/profile](NATIVE_RECIPE_2026-10-29.md) uses official images,

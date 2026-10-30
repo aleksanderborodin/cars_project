@@ -38,7 +38,8 @@ register separates user ideas, assistant refinements, prior work and measured ev
 | [Local independent-seed replications](docs/LOCAL_REPLICATIONS_2026-10-30.md) | Fixed retained recipe, seeds 1/2, serial frozen execution, 2M review per seed and all checkpoint curves |
 | [Paper execution ledger](docs/PAPER_CAMPAIGN_2026-10-30.md) | Required versus optional studies, fixed 3-policy/200-track queue, costs, remaining claim gates and realistic timeline |
 | [Comparator and novelty gap review](docs/COMPARATOR_REVIEW_2026-10-30.md) | Candid current baseline coverage, newly identified MRS.Q/APC-RL prior art, prioritized missing competitors and publication gates |
-| [MR.Q/MRS.Q source readiness](docs/MRQ_MRSQ_AUDIT_2026-10-30.md) | Pinned official sources, action/history/replay and stochastic-evaluation constraints; no external execution yet |
+| [MR.Q/MRS.Q source readiness](docs/MRQ_MRSQ_AUDIT_2026-10-30.md) | Pinned official sources, action/history/replay and stochastic-evaluation constraints; subsequent synthetic checks linked below |
+| [External interface and synthetic checks](docs/EXTERNAL_INTERFACE_2026-10-30.md) | Implemented local-array boundary, staged source patches, preserved MR.Q replay failure and passing CPU learner/reload checks; no driving result |
 | [MPPI comparison readiness](docs/MPPI_READINESS_2026-10-30.md) | Pinned reference, algorithm identity, synthesized-action state commit and full work accounting before integration |
 | [Controlled intervention study](docs/INTERVENTION_STUDY.md) | Executable four-cell geometry diagnostic, isolation tests, pilot budget and staged V/L/F training design |
 | [Intervention results](docs/INTERVENTION_RESULTS_2026-10-29.md) | Completed negative driving pilot, executed-trajectory audit, better prediction with oracle road, and next validity gate |

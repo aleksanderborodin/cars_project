@@ -7,6 +7,12 @@ The subsequent [MR.Q/MRS.Q source audit](MRQ_MRSQ_AUDIT_2026-10-30.md) and
 record concrete adaptation/cost constraints. No external execution or change to
 the current frozen queue is implied.
 
+Follow-up [external-interface verification](EXTERNAL_INTERFACE_2026-10-30.md)
+implements the local array boundary/stager and passes tiny synthetic CPU checks
+with declared source patches. It is not a driving reproduction. Software-check
+overlap with seed1 search7 is recorded; raw timing is retained and clean timing
+must be measured separately before an efficiency claim.
+
 Updated 2026-10-30 following the research discussion. The project now targets a
 scientific paper about modular world models and online control, using Gymnasium CarRacing
 only and the current workstation. Physical robots and other simulators are out

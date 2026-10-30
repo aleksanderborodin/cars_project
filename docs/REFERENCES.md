@@ -11,6 +11,9 @@ Subsequent [MR.Q/MRS.Q](MRQ_MRSQ_AUDIT_2026-10-30.md) and
 [MPPI](MPPI_READINESS_2026-10-30.md) readiness audits pin selected official source
 files and hashes. They establish source provenance and adaptation constraints,
 not an installation, runtime check or performance reproduction.
+The separate [interface verification](EXTERNAL_INTERFACE_2026-10-30.md) now
+executes tiny CPU MR.Q/MRS.Q learner/reload checks with declared replay patches;
+no external driving reproduction or score is established.
 
 ## Closest work: read before claiming novelty
 

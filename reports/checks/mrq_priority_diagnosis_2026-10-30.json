@@ -1,0 +1,11 @@
+{
+  "purpose": "synthetic diagnosis of preserved MRQ smoke failure",
+  "deterministic_algorithms": true,
+  "unused_priority_nan_count": 63,
+  "masked_priority_nan_count": 63,
+  "cumulative_last_finite": false,
+  "native_frames": 0,
+  "source_stage": "/home/sasha/Desktop/cars_project/runs/external_sources/mrq_local_readiness_20261030",
+  "source_file": "buffer.py",
+  "failure_run": "runs/external_synthetic/mrq_20261030"
+}

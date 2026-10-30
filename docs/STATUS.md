@@ -1,13 +1,18 @@
 # Implementation and evidence status
 
-**Current execution:** fresh local replications are complete: selected seed 1 869.23/32%, seed 2 −17.89/0%. The latter failed task competence at the declared review and remains in the active [paper comparison queue](PAPER_CAMPAIGN_2026-10-30.md). No training is active. The [comparator/novelty review](COMPARATOR_REVIEW_2026-10-30.md) corrects missing MRS.Q/APC-RL prior art and makes strong external comparisons explicit blocking gates. The ongoing dataset is exploratory mechanism evidence, not a SOTA result; 114 tests passed at the last code change.
+**Current execution:** fresh local replications are complete: selected seed 1 869.23/32%, seed 2 −17.89/0%. The latter failed task competence at the declared review and remains in the active [paper comparison queue](PAPER_CAMPAIGN_2026-10-30.md). No policy-training campaign is active. The [comparator/novelty review](COMPARATOR_REVIEW_2026-10-30.md) corrects missing MRS.Q/APC-RL prior art and makes strong external comparisons explicit blocking gates. The ongoing dataset is exploratory mechanism evidence, not a SOTA result. Latest full CPU suite: 133 passed, one CUDA-only skip; the frozen queue's launch suite remains its historical 114-test record.
 
 **External comparison preparation:** [MR.Q/MRS.Q](MRQ_MRSQ_AUDIT_2026-10-30.md)
 and [MPPI](MPPI_READINESS_2026-10-30.md) reference sources are now pinned and
 hash-checked. Source inspection identified action/history/storage and stochastic
 evaluation constraints, plus required accounting for MPPI's synthesized control.
-No external algorithm was imported, integrated or executed; runtime and competence
-gates remain open. Current evaluation source and measurements are unchanged.
+The [local-array interface and source stager](EXTERNAL_INTERFACE_2026-10-30.md)
+are now implemented. Small official-code CPU learner/action/reload checks passed
+after a preserved MR.Q uninitialized-priority failure and explicit fix. No external
+driving training/evaluation occurred; full harness, replay boundaries, GPU and
+competence gates remain open. CPU verification overlapped seed1 search7: keep raw
+times and require separate clean timing before efficiency claims. Frozen driving
+source and methods are unchanged.
 
 Updated 2026-10-30. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
 [Roadmap](ROADMAP.md) · [Latest development results](SEQUENCE_SEARCH_2026-10-29.md)
@@ -80,6 +85,7 @@ remaining budget and protocol gaps. These are development findings, not SOTA.
 | models/physics.py, planning/physics_search.py | Upstream vehicle equations and Box2D in independently reconstructed worlds; observation-corrected wheel estimate; simulated candidate selection | Approximate five-point wheel contact and latent-state initialization; no exact evaluation-state cloning |
 | planning/ | Local pursuit, same-family fixed controller, 21-candidate/20-step search, shared road query for grip and margins | Single straight road continuation; fixed-controller gains unestablished; adaptive sequence search is separate; no multi-world planning |
 | research/data.py | Partition-checked collection, model fitting and development diagnostics | No large offline corpus, calibrated predictor or modern pretrained model |
+| research/external_interface.py, external_sources.py, external_rng.py | Restricted local vector/action boundary, verified separate source staging, explicit replay fixes and RNG isolation; tiny MR.Q/MRS.Q CPU checks passed | No external driving trainer/evaluator, competitive encoder, GPU/pixel validation or full replay/resume parity |
 | research/recurrent.py | Local/native CNN-LSTM PPO adapter; recurrent reload; training-state continuation with fresh episodes | 100k pilot did not learn useful driving; strong reproduction remains open |
 | planning/global_search.py | Explicit full-map geometry diagnostic with unchanged estimated vehicle state | Also changes centerline reconstruction; privileged, not equal-input superiority |
 | planning/intervention.py, visible_reference.py | Separate visible objective-reference and hidden-road substitutions; exact local negative control; actor input/memory isolation tests | Privileged fixed-controller geometry diagnostic; not trained V/L/F policies or a visual-perception finding |

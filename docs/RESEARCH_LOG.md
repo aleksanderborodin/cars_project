@@ -1109,3 +1109,26 @@ The variant is not adopted and no extension is launched. Original local
 proposer/search remains retained. Next assistant proposal is a read-only audit
 of effective action distributions, saturation and update behavior before another
 independent-seed baseline or alternate comparator; it is not yet running.
+
+## R51 — Observe effective action distributions before another training change
+
+- **Origin:** user requests continued work; assistant implements the previously
+  proposed offline actor/update audit after unsuccessful training variants.
+- **Question:** do logged gSDE scale reductions imply less action variation, and
+  do clipping/overlap or mean-versus-sampled-action differences accompany regression?
+- **Design:** all four original-local, discount-local and native checkpoints;
+  first five recorded development episodes on own and fixed common histories.
+  Replay recurrent memory from zero; only permitted actor inputs enter inference.
+- **Controls:** own-history actions must match saved evaluation; first 16 states
+  per episode also match the standard predict API exactly. Analytic clipped-normal
+  moments are checked against independent numerical integration. Common histories
+  condition each actor on the same observations, not its hypothetical future drive.
+- **Budget:** zero new racing, training or simulator steps; at most 60,000 offline
+  decisions and 61,920 actor forward examples. No hidden ranks or held-out access.
+- **Confidence and limits:** high confidence in the need to measure actual marginal
+  variance; unknown mechanism. gSDE temporal correlation and driving benefits are
+  outside this observational audit. No new controller or parameter selection occurs.
+- **Status:** [declaration](ACTION_DISTRIBUTION_AUDIT_2026-10-30.md); implementation
+  passes numerical and synthetic recurrent-parity tests; full regression checks
+  precede execution. A separately declared independent-seed baseline is a possible
+  next experiment if no actionable implementation fault is found.

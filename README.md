@@ -34,6 +34,7 @@ register separates user ideas, assistant refinements, prior work and measured ev
 | [Native baseline results](docs/NATIVE_BASELINE_RESULTS_2026-10-29.md) | Completed 4M curve, selected 1M driver, later regression, 200-trace audit and full costs |
 | [Native inference-device audit](docs/NATIVE_DEVICE_AUDIT_2026-10-29.md) | Completed CPU/CUDA control: later regression persists on both devices; 12 exact episode replays |
 | [Local discount trial](docs/LOCAL_DISCOUNT_TRIAL_2026-10-29.md) | Completed negative probe: best 691.74/2%, original local retained; all checkpoints, costs and next diagnostic |
+| [Offline action-distribution audit](docs/ACTION_DISTRIBUTION_AUDIT_2026-10-30.md) | Declared gSDE marginal variance, control clipping and fixed-history replay across twelve checkpoints; zero new driving |
 | [Controlled intervention study](docs/INTERVENTION_STUDY.md) | Executable four-cell geometry diagnostic, isolation tests, pilot budget and staged V/L/F training design |
 | [Intervention results](docs/INTERVENTION_RESULTS_2026-10-29.md) | Completed negative driving pilot, executed-trajectory audit, better prediction with oracle road, and next validity gate |
 | [20-track reference replication](docs/REFERENCE_REPLICATION_2026-10-29.md) | Completed 20-track paired result: +286.25 versus tangent but −71.86 versus local search; failures, costs and replay evidence |

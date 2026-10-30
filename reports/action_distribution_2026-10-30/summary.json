@@ -1,0 +1,1282 @@
+{
+  "status": {
+    "status": "complete",
+    "completed": [
+      "/home/sasha/Desktop/cars_project/runs/action_audit/action_audit_20261030_local_original_0200k",
+      "/home/sasha/Desktop/cars_project/runs/action_audit/action_audit_20261030_local_original_0500k",
+      "/home/sasha/Desktop/cars_project/runs/action_audit/action_audit_20261030_local_original_1m",
+      "/home/sasha/Desktop/cars_project/runs/action_audit/action_audit_20261030_local_original_2m",
+      "/home/sasha/Desktop/cars_project/runs/action_audit/action_audit_20261030_local_discount_0200k",
+      "/home/sasha/Desktop/cars_project/runs/action_audit/action_audit_20261030_local_discount_0500k",
+      "/home/sasha/Desktop/cars_project/runs/action_audit/action_audit_20261030_local_discount_1m",
+      "/home/sasha/Desktop/cars_project/runs/action_audit/action_audit_20261030_local_discount_2m",
+      "/home/sasha/Desktop/cars_project/runs/action_audit/action_audit_20261030_native_0500k",
+      "/home/sasha/Desktop/cars_project/runs/action_audit/action_audit_20261030_native_1m",
+      "/home/sasha/Desktop/cars_project/runs/action_audit/action_audit_20261030_native_2m",
+      "/home/sasha/Desktop/cars_project/runs/action_audit/action_audit_20261030_native_4m"
+    ],
+    "replayed_decisions": 55750,
+    "actor_forward_examples": 57670,
+    "new_environment_frames": 0,
+    "internal_physics_steps": 0,
+    "optimizer_updates": 0,
+    "wall_seconds": 34.22620767299668
+  },
+  "rows": [
+    {
+      "family": "local_original",
+      "checkpoint_label": "0200k",
+      "panel": "own",
+      "run_id": "action_audit_20261030_local_original_0200k",
+      "parameter_scale_mean": 0.13212119042873383,
+      "own_recorded_action_max_error": 0.0,
+      "predictor_parity_max_error": 0.0,
+      "decisions": 1250,
+      "channels": {
+        "steer": {
+          "raw_mean_mean": -0.03447786718606949,
+          "marginal_std_median": 0.043623410165309906,
+          "marginal_std_p90": 0.04722227156162262,
+          "clipped_std_median": 0.043623412027955055,
+          "deterministic_action_mean": -0.03447786718606949,
+          "deterministic_bound_fraction": 0.0,
+          "expected_sample_clip_fraction": 1.3242808405948357e-45,
+          "expected_sample_action_mean": -0.03447786864638329,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0
+        },
+        "gas": {
+          "raw_mean_mean": 0.061690039932727814,
+          "marginal_std_median": 0.04513402655720711,
+          "marginal_std_p90": 0.04880759119987488,
+          "clipped_std_median": 0.04196407678389673,
+          "deterministic_action_mean": 0.061690039932727814,
+          "deterministic_bound_fraction": 0.0,
+          "expected_sample_clip_fraction": 0.08825974116482453,
+          "expected_sample_action_mean": 0.06354796413926142,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0018579252078916452
+        },
+        "brake": {
+          "raw_mean_mean": -0.06977423280477524,
+          "marginal_std_median": 0.04456663504242897,
+          "marginal_std_p90": 0.048272162675857544,
+          "clipped_std_median": 0.006106973837297126,
+          "deterministic_action_mean": 0.0,
+          "deterministic_bound_fraction": 1.0,
+          "expected_sample_clip_fraction": 0.9437931855924937,
+          "expected_sample_action_mean": 0.0011044136084895101,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0011044136084895101
+        }
+      },
+      "gas_brake_overlap_probability_mean": 0.002385348081588745,
+      "deterministic_gas_brake_overlap_fraction": 0.0
+    },
+    {
+      "family": "local_original",
+      "checkpoint_label": "0200k",
+      "panel": "common",
+      "run_id": "action_audit_20261030_local_original_0200k",
+      "parameter_scale_mean": 0.13212119042873383,
+      "own_recorded_action_max_error": null,
+      "predictor_parity_max_error": 0.0,
+      "decisions": 1115,
+      "channels": {
+        "steer": {
+          "raw_mean_mean": -0.034385718405246735,
+          "marginal_std_median": 0.041652485728263855,
+          "marginal_std_p90": 0.04490872472524643,
+          "clipped_std_median": 0.041652485728263855,
+          "deterministic_action_mean": -0.034385718405246735,
+          "deterministic_bound_fraction": 0.0,
+          "expected_sample_clip_fraction": 1.4508420961921383e-61,
+          "expected_sample_action_mean": -0.03438571717907495,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0
+        },
+        "gas": {
+          "raw_mean_mean": 0.06689871847629547,
+          "marginal_std_median": 0.04309499263763428,
+          "marginal_std_p90": 0.046431127935647964,
+          "clipped_std_median": 0.040920036199417045,
+          "deterministic_action_mean": 0.06689871847629547,
+          "deterministic_bound_fraction": 0.0,
+          "expected_sample_clip_fraction": 0.06123120361445804,
+          "expected_sample_action_mean": 0.06805965809553001,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0011609408437357916
+        },
+        "brake": {
+          "raw_mean_mean": -0.06697914749383926,
+          "marginal_std_median": 0.0425836443901062,
+          "marginal_std_p90": 0.04592123255133629,
+          "clipped_std_median": 0.005545958516187261,
+          "deterministic_action_mean": 0.0,
+          "deterministic_bound_fraction": 1.0,
+          "expected_sample_clip_fraction": 0.9429044582459805,
+          "expected_sample_action_mean": 0.0010524089867127039,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0010524089867127039
+        }
+      },
+      "gas_brake_overlap_probability_mean": 0.0020514209754765034,
+      "deterministic_gas_brake_overlap_fraction": 0.0
+    },
+    {
+      "family": "local_original",
+      "checkpoint_label": "0500k",
+      "panel": "own",
+      "run_id": "action_audit_20261030_local_original_0500k",
+      "parameter_scale_mean": 0.12796401977539062,
+      "own_recorded_action_max_error": 0.0,
+      "predictor_parity_max_error": 0.0,
+      "decisions": 1205,
+      "channels": {
+        "steer": {
+          "raw_mean_mean": -0.030406245961785316,
+          "marginal_std_median": 0.04182446748018265,
+          "marginal_std_p90": 0.050464730709791183,
+          "clipped_std_median": 0.04182446748018265,
+          "deterministic_action_mean": -0.030406245961785316,
+          "deterministic_bound_fraction": 0.0,
+          "expected_sample_clip_fraction": 1.3602243892703307e-13,
+          "expected_sample_action_mean": -0.03040624419497968,
+          "expected_sample_vs_mode_mean_absolute_gap": 2.1673764673263224e-15
+        },
+        "gas": {
+          "raw_mean_mean": 0.08780394494533539,
+          "marginal_std_median": 0.04486287757754326,
+          "marginal_std_p90": 0.05441344529390335,
+          "clipped_std_median": 0.04318883473434036,
+          "deterministic_action_mean": 0.08853308856487274,
+          "deterministic_bound_fraction": 0.11535269709543569,
+          "expected_sample_clip_fraction": 0.10308973801077907,
+          "expected_sample_action_mean": 0.0913707799089319,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0028376857174796277
+        },
+        "brake": {
+          "raw_mean_mean": -0.0655582994222641,
+          "marginal_std_median": 0.0440027229487896,
+          "marginal_std_p90": 0.05338931083679199,
+          "clipped_std_median": 0.005278480010414804,
+          "deterministic_action_mean": 0.00024583833874203265,
+          "deterministic_bound_fraction": 0.9759336099585062,
+          "expected_sample_clip_fraction": 0.9053266612265505,
+          "expected_sample_action_mean": 0.0027979281299216857,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.002552089786566515
+        }
+      },
+      "gas_brake_overlap_probability_mean": 0.00866214744746685,
+      "deterministic_gas_brake_overlap_fraction": 0.0
+    },
+    {
+      "family": "local_original",
+      "checkpoint_label": "0500k",
+      "panel": "common",
+      "run_id": "action_audit_20261030_local_original_0500k",
+      "parameter_scale_mean": 0.12796401977539062,
+      "own_recorded_action_max_error": null,
+      "predictor_parity_max_error": 0.0,
+      "decisions": 1115,
+      "channels": {
+        "steer": {
+          "raw_mean_mean": -0.04039542004466057,
+          "marginal_std_median": 0.03824807330965996,
+          "marginal_std_p90": 0.04842476546764374,
+          "clipped_std_median": 0.03824807330965996,
+          "deterministic_action_mean": -0.04039542004466057,
+          "deterministic_bound_fraction": 0.0,
+          "expected_sample_clip_fraction": 4.0186772921486634e-12,
+          "expected_sample_action_mean": -0.04039541622923316,
+          "expected_sample_vs_mode_mean_absolute_gap": 7.17072639433187e-14
+        },
+        "gas": {
+          "raw_mean_mean": 0.09767048805952072,
+          "marginal_std_median": 0.04109460487961769,
+          "marginal_std_p90": 0.052098363637924194,
+          "clipped_std_median": 0.040675759014245826,
+          "deterministic_action_mean": 0.09777867048978806,
+          "deterministic_bound_fraction": 0.012556053811659192,
+          "expected_sample_clip_fraction": 0.03430065857212539,
+          "expected_sample_action_mean": 0.09894115526956178,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0011624869247390925
+        },
+        "brake": {
+          "raw_mean_mean": -0.06674307584762573,
+          "marginal_std_median": 0.040149930864572525,
+          "marginal_std_p90": 0.051247406750917435,
+          "clipped_std_median": 0.004287448280209469,
+          "deterministic_action_mean": 0.00012319647066760808,
+          "deterministic_bound_fraction": 0.9901345291479821,
+          "expected_sample_clip_fraction": 0.9316891604782849,
+          "expected_sample_action_mean": 0.0018816541165507716,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0017584576571462154
+        }
+      },
+      "gas_brake_overlap_probability_mean": 0.006173235829919577,
+      "deterministic_gas_brake_overlap_fraction": 0.0
+    },
+    {
+      "family": "local_original",
+      "checkpoint_label": "1m",
+      "panel": "own",
+      "run_id": "action_audit_20261030_local_original_1m",
+      "parameter_scale_mean": 0.12264581769704819,
+      "own_recorded_action_max_error": 0.0,
+      "predictor_parity_max_error": 0.0,
+      "decisions": 1115,
+      "channels": {
+        "steer": {
+          "raw_mean_mean": -0.01652434468269348,
+          "marginal_std_median": 0.03915199264883995,
+          "marginal_std_p90": 0.05645237863063812,
+          "clipped_std_median": 0.03915199264883995,
+          "deterministic_action_mean": -0.01652434468269348,
+          "deterministic_bound_fraction": 0.0,
+          "expected_sample_clip_fraction": 1.187973181156116e-05,
+          "expected_sample_action_mean": -0.01652464656368465,
+          "expected_sample_vs_mode_mean_absolute_gap": 5.524759875649598e-07
+        },
+        "gas": {
+          "raw_mean_mean": 0.11151780188083649,
+          "marginal_std_median": 0.04301771521568298,
+          "marginal_std_p90": 0.06245707720518112,
+          "clipped_std_median": 0.04230728086281937,
+          "deterministic_action_mean": 0.11199820041656494,
+          "deterministic_bound_fraction": 0.01883408071748879,
+          "expected_sample_clip_fraction": 0.035697583114639754,
+          "expected_sample_action_mean": 0.11381540876064429,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0018172124535924205
+        },
+        "brake": {
+          "raw_mean_mean": -0.05689625069499016,
+          "marginal_std_median": 0.041051045060157776,
+          "marginal_std_p90": 0.06003182381391525,
+          "clipped_std_median": 0.005213454134352632,
+          "deterministic_action_mean": 0.0035945840645581484,
+          "deterministic_bound_fraction": 0.9452914798206278,
+          "expected_sample_clip_fraction": 0.8812954507252196,
+          "expected_sample_action_mean": 0.006296646699121524,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.002702062671106301
+        }
+      },
+      "gas_brake_overlap_probability_mean": 0.016030186787247658,
+      "deterministic_gas_brake_overlap_fraction": 0.0026905829596412557
+    },
+    {
+      "family": "local_original",
+      "checkpoint_label": "1m",
+      "panel": "common",
+      "run_id": "action_audit_20261030_local_original_1m",
+      "parameter_scale_mean": 0.12264581769704819,
+      "own_recorded_action_max_error": null,
+      "predictor_parity_max_error": 0.0,
+      "decisions": 1115,
+      "channels": {
+        "steer": {
+          "raw_mean_mean": -0.01652434468269348,
+          "marginal_std_median": 0.03915199264883995,
+          "marginal_std_p90": 0.05645237863063812,
+          "clipped_std_median": 0.03915199264883995,
+          "deterministic_action_mean": -0.01652434468269348,
+          "deterministic_bound_fraction": 0.0,
+          "expected_sample_clip_fraction": 1.187973181156116e-05,
+          "expected_sample_action_mean": -0.01652464656368465,
+          "expected_sample_vs_mode_mean_absolute_gap": 5.524759875649598e-07
+        },
+        "gas": {
+          "raw_mean_mean": 0.11151780188083649,
+          "marginal_std_median": 0.04301771521568298,
+          "marginal_std_p90": 0.06245707720518112,
+          "clipped_std_median": 0.04230728086281937,
+          "deterministic_action_mean": 0.11199820041656494,
+          "deterministic_bound_fraction": 0.01883408071748879,
+          "expected_sample_clip_fraction": 0.035697583114639754,
+          "expected_sample_action_mean": 0.11381540876064429,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0018172124535924205
+        },
+        "brake": {
+          "raw_mean_mean": -0.05689625069499016,
+          "marginal_std_median": 0.041051045060157776,
+          "marginal_std_p90": 0.06003182381391525,
+          "clipped_std_median": 0.005213454134352632,
+          "deterministic_action_mean": 0.0035945840645581484,
+          "deterministic_bound_fraction": 0.9452914798206278,
+          "expected_sample_clip_fraction": 0.8812954507252196,
+          "expected_sample_action_mean": 0.006296646699121524,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.002702062671106301
+        }
+      },
+      "gas_brake_overlap_probability_mean": 0.016030186787247658,
+      "deterministic_gas_brake_overlap_fraction": 0.0026905829596412557
+    },
+    {
+      "family": "local_original",
+      "checkpoint_label": "2m",
+      "panel": "own",
+      "run_id": "action_audit_20261030_local_original_2m",
+      "parameter_scale_mean": 0.10583174228668213,
+      "own_recorded_action_max_error": 0.0,
+      "predictor_parity_max_error": 0.0,
+      "decisions": 1250,
+      "channels": {
+        "steer": {
+          "raw_mean_mean": -0.020184310153126717,
+          "marginal_std_median": 0.0501839816570282,
+          "marginal_std_p90": 0.10419868677854538,
+          "clipped_std_median": 0.05018398351967335,
+          "deterministic_action_mean": -0.020184310153126717,
+          "deterministic_bound_fraction": 0.0,
+          "expected_sample_clip_fraction": 0.0007738715867297403,
+          "expected_sample_action_mean": -0.02026261670603241,
+          "expected_sample_vs_mode_mean_absolute_gap": 7.831204734007727e-05
+        },
+        "gas": {
+          "raw_mean_mean": 0.14764750003814697,
+          "marginal_std_median": 0.06080362945795059,
+          "marginal_std_p90": 0.1276497095823288,
+          "clipped_std_median": 0.05621654740156565,
+          "deterministic_action_mean": 0.1554558277130127,
+          "deterministic_bound_fraction": 0.1704,
+          "expected_sample_clip_fraction": 0.13975674527392423,
+          "expected_sample_action_mean": 0.16201266717547802,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.006556861290767317
+        },
+        "brake": {
+          "raw_mean_mean": -0.02620512992143631,
+          "marginal_std_median": 0.05542195588350296,
+          "marginal_std_p90": 0.12048531323671341,
+          "clipped_std_median": 0.018762208498683947,
+          "deterministic_action_mean": 0.025784403085708618,
+          "deterministic_bound_fraction": 0.7472,
+          "expected_sample_clip_fraction": 0.6718545151462095,
+          "expected_sample_action_mean": 0.03329958223616644,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.007515179332251987
+        }
+      },
+      "gas_brake_overlap_probability_mean": 0.07561131566762924,
+      "deterministic_gas_brake_overlap_fraction": 0.0136
+    },
+    {
+      "family": "local_original",
+      "checkpoint_label": "2m",
+      "panel": "common",
+      "run_id": "action_audit_20261030_local_original_2m",
+      "parameter_scale_mean": 0.10583174228668213,
+      "own_recorded_action_max_error": null,
+      "predictor_parity_max_error": 0.0,
+      "decisions": 1115,
+      "channels": {
+        "steer": {
+          "raw_mean_mean": 0.022035684436559677,
+          "marginal_std_median": 0.05159454792737961,
+          "marginal_std_p90": 0.10587934404611588,
+          "clipped_std_median": 0.05159454792737961,
+          "deterministic_action_mean": 0.022035684436559677,
+          "deterministic_bound_fraction": 0.0,
+          "expected_sample_clip_fraction": 0.001261563700744637,
+          "expected_sample_action_mean": 0.02189313395717203,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.00014257472346642888
+        },
+        "gas": {
+          "raw_mean_mean": 0.21225005388259888,
+          "marginal_std_median": 0.06418533623218536,
+          "marginal_std_p90": 0.12644128501415253,
+          "clipped_std_median": 0.06222656295925151,
+          "deterministic_action_mean": 0.21374179422855377,
+          "deterministic_bound_fraction": 0.03139013452914798,
+          "expected_sample_clip_fraction": 0.04087664128667742,
+          "expected_sample_action_mean": 0.215525011767793,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0018843101473318702
+        },
+        "brake": {
+          "raw_mean_mean": -0.08644214272499084,
+          "marginal_std_median": 0.0590289831161499,
+          "marginal_std_p90": 0.11572867631912231,
+          "clipped_std_median": 0.00803821392495064,
+          "deterministic_action_mean": 0.0058608693070709705,
+          "deterministic_bound_fraction": 0.9192825112107623,
+          "expected_sample_clip_fraction": 0.8572959303323042,
+          "expected_sample_action_mean": 0.009760303628984035,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0038994341460893856
+        }
+      },
+      "gas_brake_overlap_probability_mean": 0.03266597539186478,
+      "deterministic_gas_brake_overlap_fraction": 0.006278026905829596
+    },
+    {
+      "family": "local_discount",
+      "checkpoint_label": "0200k",
+      "panel": "own",
+      "run_id": "action_audit_20261030_local_discount_0200k",
+      "parameter_scale_mean": 0.12981654703617096,
+      "own_recorded_action_max_error": 0.0,
+      "predictor_parity_max_error": 0.0,
+      "decisions": 1250,
+      "channels": {
+        "steer": {
+          "raw_mean_mean": -0.04307553917169571,
+          "marginal_std_median": 0.04040859639644623,
+          "marginal_std_p90": 0.04642019420862198,
+          "clipped_std_median": 0.04040859825909138,
+          "deterministic_action_mean": -0.04307553917169571,
+          "deterministic_bound_fraction": 0.0,
+          "expected_sample_clip_fraction": 1.8696483017715764e-48,
+          "expected_sample_action_mean": -0.043075540524721144,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0
+        },
+        "gas": {
+          "raw_mean_mean": 0.08016877621412277,
+          "marginal_std_median": 0.04155678302049637,
+          "marginal_std_p90": 0.04796846956014633,
+          "clipped_std_median": 0.03979296253727377,
+          "deterministic_action_mean": 0.08016877621412277,
+          "deterministic_bound_fraction": 0.0,
+          "expected_sample_clip_fraction": 0.05085723673308045,
+          "expected_sample_action_mean": 0.08119907791913425,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0010302981510845264
+        },
+        "brake": {
+          "raw_mean_mean": -0.08991575241088867,
+          "marginal_std_median": 0.04108653962612152,
+          "marginal_std_p90": 0.04749872535467148,
+          "clipped_std_median": 0.002779514438603351,
+          "deterministic_action_mean": 0.0,
+          "deterministic_bound_fraction": 1.0,
+          "expected_sample_clip_fraction": 0.9823066652375605,
+          "expected_sample_action_mean": 0.0002900253821421228,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0002900253821421228
+        }
+      },
+      "gas_brake_overlap_probability_mean": 0.0005261460319161415,
+      "deterministic_gas_brake_overlap_fraction": 0.0
+    },
+    {
+      "family": "local_discount",
+      "checkpoint_label": "0200k",
+      "panel": "common",
+      "run_id": "action_audit_20261030_local_discount_0200k",
+      "parameter_scale_mean": 0.12981654703617096,
+      "own_recorded_action_max_error": null,
+      "predictor_parity_max_error": 0.0,
+      "decisions": 1115,
+      "channels": {
+        "steer": {
+          "raw_mean_mean": -0.046483028680086136,
+          "marginal_std_median": 0.03979671746492386,
+          "marginal_std_p90": 0.04269661381840706,
+          "clipped_std_median": 0.03979671746492386,
+          "deterministic_action_mean": -0.046483028680086136,
+          "deterministic_bound_fraction": 0.0,
+          "expected_sample_clip_fraction": 3.0595307589718674e-64,
+          "expected_sample_action_mean": -0.04648303077827655,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0
+        },
+        "gas": {
+          "raw_mean_mean": 0.08702126890420914,
+          "marginal_std_median": 0.04108729958534241,
+          "marginal_std_p90": 0.044122111052274704,
+          "clipped_std_median": 0.04047791610402509,
+          "deterministic_action_mean": 0.08702126890420914,
+          "deterministic_bound_fraction": 0.0,
+          "expected_sample_clip_fraction": 0.020615578330419826,
+          "expected_sample_action_mean": 0.08736079932358352,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0003395276095366028
+        },
+        "brake": {
+          "raw_mean_mean": -0.08730984479188919,
+          "marginal_std_median": 0.0406901016831398,
+          "marginal_std_p90": 0.04368998855352402,
+          "clipped_std_median": 0.0024332645097591738,
+          "deterministic_action_mean": 0.0,
+          "deterministic_bound_fraction": 1.0,
+          "expected_sample_clip_fraction": 0.9841607064167183,
+          "expected_sample_action_mean": 0.00023809692140680074,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.00023809692140680074
+        }
+      },
+      "gas_brake_overlap_probability_mean": 0.0003581297642085701,
+      "deterministic_gas_brake_overlap_fraction": 0.0
+    },
+    {
+      "family": "local_discount",
+      "checkpoint_label": "0500k",
+      "panel": "own",
+      "run_id": "action_audit_20261030_local_discount_0500k",
+      "parameter_scale_mean": 0.12332770228385925,
+      "own_recorded_action_max_error": 0.0,
+      "predictor_parity_max_error": 0.0,
+      "decisions": 1212,
+      "channels": {
+        "steer": {
+          "raw_mean_mean": -0.04552396759390831,
+          "marginal_std_median": 0.03826223313808441,
+          "marginal_std_p90": 0.04672152176499367,
+          "clipped_std_median": 0.03826223500072956,
+          "deterministic_action_mean": -0.04552396759390831,
+          "deterministic_bound_fraction": 0.0,
+          "expected_sample_clip_fraction": 7.608177316291175e-28,
+          "expected_sample_action_mean": -0.04552396788898081,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0
+        },
+        "gas": {
+          "raw_mean_mean": 0.08292416483163834,
+          "marginal_std_median": 0.04162965714931488,
+          "marginal_std_p90": 0.050819281488657,
+          "clipped_std_median": 0.0400459263084603,
+          "deterministic_action_mean": 0.08297982811927795,
+          "deterministic_bound_fraction": 0.006600660066006601,
+          "expected_sample_clip_fraction": 0.05830577942886627,
+          "expected_sample_action_mean": 0.08451294154816244,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0015331145461642132
+        },
+        "brake": {
+          "raw_mean_mean": -0.06417886912822723,
+          "marginal_std_median": 0.040102895349264145,
+          "marginal_std_p90": 0.048974715173244476,
+          "clipped_std_median": 0.0053768304293104925,
+          "deterministic_action_mean": 0.00026338952011428773,
+          "deterministic_bound_fraction": 0.9826732673267327,
+          "expected_sample_clip_fraction": 0.9199566342748776,
+          "expected_sample_action_mean": 0.0020449525958769477,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.001781563079316593
+        }
+      },
+      "gas_brake_overlap_probability_mean": 0.007003940641880035,
+      "deterministic_gas_brake_overlap_fraction": 0.0
+    },
+    {
+      "family": "local_discount",
+      "checkpoint_label": "0500k",
+      "panel": "common",
+      "run_id": "action_audit_20261030_local_discount_0500k",
+      "parameter_scale_mean": 0.12332770228385925,
+      "own_recorded_action_max_error": null,
+      "predictor_parity_max_error": 0.0,
+      "decisions": 1115,
+      "channels": {
+        "steer": {
+          "raw_mean_mean": -0.05861803516745567,
+          "marginal_std_median": 0.03499152883887291,
+          "marginal_std_p90": 0.0397612527012825,
+          "clipped_std_median": 0.03499152883887291,
+          "deterministic_action_mean": -0.05861803516745567,
+          "deterministic_bound_fraction": 0.0,
+          "expected_sample_clip_fraction": 4.21530628497392e-14,
+          "expected_sample_action_mean": -0.05861803253469512,
+          "expected_sample_vs_mode_mean_absolute_gap": 6.561268718177102e-16
+        },
+        "gas": {
+          "raw_mean_mean": 0.08364096283912659,
+          "marginal_std_median": 0.03804120793938637,
+          "marginal_std_p90": 0.0433630645275116,
+          "clipped_std_median": 0.03724385641361787,
+          "deterministic_action_mean": 0.08364096283912659,
+          "deterministic_bound_fraction": 0.0,
+          "expected_sample_clip_fraction": 0.02726531114209109,
+          "expected_sample_action_mean": 0.08420211845230766,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0005611575109074327
+        },
+        "brake": {
+          "raw_mean_mean": -0.06901011615991592,
+          "marginal_std_median": 0.03657350689172745,
+          "marginal_std_p90": 0.04179256036877632,
+          "clipped_std_median": 0.0033137613251113143,
+          "deterministic_action_mean": 7.870541594456881e-05,
+          "deterministic_bound_fraction": 0.9955156950672646,
+          "expected_sample_clip_fraction": 0.9560076141201304,
+          "expected_sample_action_mean": 0.0009883292207782163,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0009096238065172322
+        }
+      },
+      "gas_brake_overlap_probability_mean": 0.0034175249747931957,
+      "deterministic_gas_brake_overlap_fraction": 0.0
+    },
+    {
+      "family": "local_discount",
+      "checkpoint_label": "1m",
+      "panel": "own",
+      "run_id": "action_audit_20261030_local_discount_1m",
+      "parameter_scale_mean": 0.11486997455358505,
+      "own_recorded_action_max_error": 0.0,
+      "predictor_parity_max_error": 0.0,
+      "decisions": 1250,
+      "channels": {
+        "steer": {
+          "raw_mean_mean": -0.05736634507775307,
+          "marginal_std_median": 0.03873370215296745,
+          "marginal_std_p90": 0.059752367436885834,
+          "clipped_std_median": 0.03873370215296745,
+          "deterministic_action_mean": -0.05736634507775307,
+          "deterministic_bound_fraction": 0.0,
+          "expected_sample_clip_fraction": 3.263569318789318e-11,
+          "expected_sample_action_mean": -0.0573663419282826,
+          "expected_sample_vs_mode_mean_absolute_gap": 6.350244774466774e-13
+        },
+        "gas": {
+          "raw_mean_mean": 0.11848866939544678,
+          "marginal_std_median": 0.04485688358545303,
+          "marginal_std_p90": 0.06905847787857056,
+          "clipped_std_median": 0.04241306680904246,
+          "deterministic_action_mean": 0.1222791001200676,
+          "deterministic_bound_fraction": 0.0744,
+          "expected_sample_clip_fraction": 0.09667032203102083,
+          "expected_sample_action_mean": 0.12401023013100684,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.001731132791495905
+        },
+        "brake": {
+          "raw_mean_mean": -0.0900096446275711,
+          "marginal_std_median": 0.04209744557738304,
+          "marginal_std_p90": 0.06506418436765671,
+          "clipped_std_median": 0.0024980857859599873,
+          "deterministic_action_mean": 0.0005429478478617966,
+          "deterministic_bound_fraction": 0.9664,
+          "expected_sample_clip_fraction": 0.9364427142590291,
+          "expected_sample_action_mean": 0.0024168948353440038,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0018739469648510689
+        }
+      },
+      "gas_brake_overlap_probability_mean": 0.012801829725503922,
+      "deterministic_gas_brake_overlap_fraction": 0.0008
+    },
+    {
+      "family": "local_discount",
+      "checkpoint_label": "1m",
+      "panel": "common",
+      "run_id": "action_audit_20261030_local_discount_1m",
+      "parameter_scale_mean": 0.11486997455358505,
+      "own_recorded_action_max_error": null,
+      "predictor_parity_max_error": 0.0,
+      "decisions": 1115,
+      "channels": {
+        "steer": {
+          "raw_mean_mean": -0.054817404597997665,
+          "marginal_std_median": 0.04014039412140846,
+          "marginal_std_p90": 0.047963447868824005,
+          "clipped_std_median": 0.04014039412140846,
+          "deterministic_action_mean": -0.054817404597997665,
+          "deterministic_bound_fraction": 0.0,
+          "expected_sample_clip_fraction": 5.891299299292419e-07,
+          "expected_sample_action_mean": -0.05481742550409764,
+          "expected_sample_vs_mode_mean_absolute_gap": 2.20621093396647e-08
+        },
+        "gas": {
+          "raw_mean_mean": 0.14198468625545502,
+          "marginal_std_median": 0.0466533824801445,
+          "marginal_std_p90": 0.055787984281778336,
+          "clipped_std_median": 0.046308885486969036,
+          "deterministic_action_mean": 0.14304745197296143,
+          "deterministic_bound_fraction": 0.02062780269058296,
+          "expected_sample_clip_fraction": 0.031801744157251934,
+          "expected_sample_action_mean": 0.14368666561413213,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0006392104103584011
+        },
+        "brake": {
+          "raw_mean_mean": -0.10764873772859573,
+          "marginal_std_median": 0.04334009438753128,
+          "marginal_std_p90": 0.05187780037522316,
+          "clipped_std_median": 0.0015909642956856874,
+          "deterministic_action_mean": 0.0,
+          "deterministic_bound_fraction": 1.0,
+          "expected_sample_clip_fraction": 0.9855917558704691,
+          "expected_sample_action_mean": 0.0003872420318131911,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0003872420318131911
+        }
+      },
+      "gas_brake_overlap_probability_mean": 0.001850163214839995,
+      "deterministic_gas_brake_overlap_fraction": 0.0
+    },
+    {
+      "family": "local_discount",
+      "checkpoint_label": "2m",
+      "panel": "own",
+      "run_id": "action_audit_20261030_local_discount_2m",
+      "parameter_scale_mean": 0.09826973080635071,
+      "own_recorded_action_max_error": 0.0,
+      "predictor_parity_max_error": 0.0,
+      "decisions": 1250,
+      "channels": {
+        "steer": {
+          "raw_mean_mean": -0.04605519399046898,
+          "marginal_std_median": 0.0449116975069046,
+          "marginal_std_p90": 0.06932753324508667,
+          "clipped_std_median": 0.0449116975069046,
+          "deterministic_action_mean": -0.04605519399046898,
+          "deterministic_bound_fraction": 0.0,
+          "expected_sample_clip_fraction": 8.591371980222782e-12,
+          "expected_sample_action_mean": -0.04605519640435384,
+          "expected_sample_vs_mode_mean_absolute_gap": 1.217446143897405e-13
+        },
+        "gas": {
+          "raw_mean_mean": 0.15075728297233582,
+          "marginal_std_median": 0.05943278223276138,
+          "marginal_std_p90": 0.0913630947470665,
+          "clipped_std_median": 0.05470015939217476,
+          "deterministic_action_mean": 0.15678443014621735,
+          "deterministic_bound_fraction": 0.1272,
+          "expected_sample_clip_fraction": 0.13726091274650148,
+          "expected_sample_action_mean": 0.1593319509661791,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0025475414306241604
+        },
+        "brake": {
+          "raw_mean_mean": -0.124900683760643,
+          "marginal_std_median": 0.05614352971315384,
+          "marginal_std_p90": 0.08579246699810028,
+          "clipped_std_median": 0.002872920740740999,
+          "deterministic_action_mean": 0.0017866237321868539,
+          "deterministic_bound_fraction": 0.9496,
+          "expected_sample_clip_fraction": 0.9228819595425913,
+          "expected_sample_action_mean": 0.003489804822014524,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0017031810043322579
+        }
+      },
+      "gas_brake_overlap_probability_mean": 0.011759458109736443,
+      "deterministic_gas_brake_overlap_fraction": 0.0016
+    },
+    {
+      "family": "local_discount",
+      "checkpoint_label": "2m",
+      "panel": "common",
+      "run_id": "action_audit_20261030_local_discount_2m",
+      "parameter_scale_mean": 0.09826973080635071,
+      "own_recorded_action_max_error": null,
+      "predictor_parity_max_error": 0.0,
+      "decisions": 1115,
+      "channels": {
+        "steer": {
+          "raw_mean_mean": -0.03215485438704491,
+          "marginal_std_median": 0.038842372596263885,
+          "marginal_std_p90": 0.05598125979304314,
+          "clipped_std_median": 0.038842372596263885,
+          "deterministic_action_mean": -0.03215485438704491,
+          "deterministic_bound_fraction": 0.0,
+          "expected_sample_clip_fraction": 4.915317825738023e-11,
+          "expected_sample_action_mean": -0.032154852231288666,
+          "expected_sample_vs_mode_mean_absolute_gap": 7.676762066093148e-13
+        },
+        "gas": {
+          "raw_mean_mean": 0.19940678775310516,
+          "marginal_std_median": 0.053018372505903244,
+          "marginal_std_p90": 0.07573709636926651,
+          "clipped_std_median": 0.052266028873231445,
+          "deterministic_action_mean": 0.2004937082529068,
+          "deterministic_bound_fraction": 0.02780269058295964,
+          "expected_sample_clip_fraction": 0.04302716731702533,
+          "expected_sample_action_mean": 0.20145242110254408,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0009587170149534659
+        },
+        "brake": {
+          "raw_mean_mean": -0.1048320010304451,
+          "marginal_std_median": 0.04977217689156532,
+          "marginal_std_p90": 0.07181411236524582,
+          "clipped_std_median": 0.0044543724390002605,
+          "deterministic_action_mean": 0.00048072519712150097,
+          "deterministic_bound_fraction": 0.9901345291479821,
+          "expected_sample_clip_fraction": 0.961587571446222,
+          "expected_sample_action_mean": 0.0011685801566675422,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0006878549547432566
+        }
+      },
+      "gas_brake_overlap_probability_mean": 0.004506486933678389,
+      "deterministic_gas_brake_overlap_fraction": 0.0026905829596412557
+    },
+    {
+      "family": "native",
+      "checkpoint_label": "0500k",
+      "panel": "own",
+      "run_id": "action_audit_20261030_native_0500k",
+      "parameter_scale_mean": 0.10641930252313614,
+      "own_recorded_action_max_error": 0.0,
+      "predictor_parity_max_error": 0.0,
+      "decisions": 4712,
+      "channels": {
+        "steer": {
+          "raw_mean_mean": -0.033294085413217545,
+          "marginal_std_median": 0.05124221742153168,
+          "marginal_std_p90": 0.08280656486749649,
+          "clipped_std_median": 0.051242219284176826,
+          "deterministic_action_mean": -0.033294085413217545,
+          "deterministic_bound_fraction": 0.0,
+          "expected_sample_clip_fraction": 0.00016884129889860295,
+          "expected_sample_action_mean": -0.0332802509677975,
+          "expected_sample_vs_mode_mean_absolute_gap": 1.4041675634890135e-05
+        },
+        "gas": {
+          "raw_mean_mean": 0.09854524582624435,
+          "marginal_std_median": 0.05167215317487717,
+          "marginal_std_p90": 0.08350667357444763,
+          "clipped_std_median": 0.04591146145711905,
+          "deterministic_action_mean": 0.10614397376775742,
+          "deterministic_bound_fraction": 0.11651103565365026,
+          "expected_sample_clip_fraction": 0.13711892861305003,
+          "expected_sample_action_mean": 0.10961868351063521,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.003474718343380867
+        },
+        "brake": {
+          "raw_mean_mean": -0.11456451565027237,
+          "marginal_std_median": 0.05167611688375473,
+          "marginal_std_p90": 0.08375600725412369,
+          "clipped_std_median": 0.0031790878936808634,
+          "deterministic_action_mean": 0.0015410585328936577,
+          "deterministic_bound_fraction": 0.9671052631578947,
+          "expected_sample_clip_fraction": 0.913558210477935,
+          "expected_sample_action_mean": 0.0042335342795175885,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.00269247579959389
+        }
+      },
+      "gas_brake_overlap_probability_mean": 0.017189789563417435,
+      "deterministic_gas_brake_overlap_fraction": 0.004456706281833617
+    },
+    {
+      "family": "native",
+      "checkpoint_label": "0500k",
+      "panel": "common",
+      "run_id": "action_audit_20261030_native_0500k",
+      "parameter_scale_mean": 0.10641930252313614,
+      "own_recorded_action_max_error": null,
+      "predictor_parity_max_error": 0.0,
+      "decisions": 4576,
+      "channels": {
+        "steer": {
+          "raw_mean_mean": -0.011435402557253838,
+          "marginal_std_median": 0.05547802150249481,
+          "marginal_std_p90": 0.07890485227108002,
+          "clipped_std_median": 0.05547801963984966,
+          "deterministic_action_mean": -0.011435402557253838,
+          "deterministic_bound_fraction": 0.0,
+          "expected_sample_clip_fraction": 5.9777826441770244e-05,
+          "expected_sample_action_mean": -0.011432414157754459,
+          "expected_sample_vs_mode_mean_absolute_gap": 3.0767449936343592e-06
+        },
+        "gas": {
+          "raw_mean_mean": 0.09854654222726822,
+          "marginal_std_median": 0.05598727986216545,
+          "marginal_std_p90": 0.07967399060726166,
+          "clipped_std_median": 0.05049152571604974,
+          "deterministic_action_mean": 0.10746211558580399,
+          "deterministic_bound_fraction": 0.11647727272727272,
+          "expected_sample_clip_fraction": 0.14239291022255232,
+          "expected_sample_action_mean": 0.11069342647792693,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.00323130581838908
+        },
+        "brake": {
+          "raw_mean_mean": -0.10816707462072372,
+          "marginal_std_median": 0.0559723898768425,
+          "marginal_std_p90": 0.07955855131149292,
+          "clipped_std_median": 0.005034553569556635,
+          "deterministic_action_mean": 0.0013897564494982362,
+          "deterministic_bound_fraction": 0.9766171328671329,
+          "expected_sample_clip_fraction": 0.9144554316756611,
+          "expected_sample_action_mean": 0.004110678489907508,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0027209219858650305
+        }
+      },
+      "gas_brake_overlap_probability_mean": 0.01620669849216938,
+      "deterministic_gas_brake_overlap_fraction": 0.004589160839160839
+    },
+    {
+      "family": "native",
+      "checkpoint_label": "1m",
+      "panel": "own",
+      "run_id": "action_audit_20261030_native_1m",
+      "parameter_scale_mean": 0.06485562771558762,
+      "own_recorded_action_max_error": 0.0,
+      "predictor_parity_max_error": 0.0,
+      "decisions": 4576,
+      "channels": {
+        "steer": {
+          "raw_mean_mean": -0.036729954183101654,
+          "marginal_std_median": 0.03912423551082611,
+          "marginal_std_p90": 0.06987448036670685,
+          "clipped_std_median": 0.03912423737347126,
+          "deterministic_action_mean": -0.03672724589705467,
+          "deterministic_bound_fraction": 0.00021853146853146853,
+          "expected_sample_clip_fraction": 0.0004648610160622102,
+          "expected_sample_action_mean": -0.03671708767680943,
+          "expected_sample_vs_mode_mean_absolute_gap": 3.075831984895771e-05
+        },
+        "gas": {
+          "raw_mean_mean": 0.12072872370481491,
+          "marginal_std_median": 0.03999137878417969,
+          "marginal_std_p90": 0.07190509140491486,
+          "clipped_std_median": 0.03606468027042585,
+          "deterministic_action_mean": 0.13323326408863068,
+          "deterministic_bound_fraction": 0.1138548951048951,
+          "expected_sample_clip_fraction": 0.12687133549906815,
+          "expected_sample_action_mean": 0.13506136757969456,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0018453675945425188
+        },
+        "brake": {
+          "raw_mean_mean": -0.14048372209072113,
+          "marginal_std_median": 0.04271174967288971,
+          "marginal_std_p90": 0.07645739614963531,
+          "clipped_std_median": 0.00021358624749470798,
+          "deterministic_action_mean": 0.00831696204841137,
+          "deterministic_bound_fraction": 0.9073426573426573,
+          "expected_sample_clip_fraction": 0.8951825470215463,
+          "expected_sample_action_mean": 0.010088678565861058,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0017717387554470265
+        }
+      },
+      "gas_brake_overlap_probability_mean": 0.040102146565914154,
+      "deterministic_gas_brake_overlap_fraction": 0.036931818181818184
+    },
+    {
+      "family": "native",
+      "checkpoint_label": "1m",
+      "panel": "common",
+      "run_id": "action_audit_20261030_native_1m",
+      "parameter_scale_mean": 0.06485562771558762,
+      "own_recorded_action_max_error": null,
+      "predictor_parity_max_error": 0.0,
+      "decisions": 4576,
+      "channels": {
+        "steer": {
+          "raw_mean_mean": -0.036729954183101654,
+          "marginal_std_median": 0.03912423551082611,
+          "marginal_std_p90": 0.06987448036670685,
+          "clipped_std_median": 0.03912423737347126,
+          "deterministic_action_mean": -0.03672724589705467,
+          "deterministic_bound_fraction": 0.00021853146853146853,
+          "expected_sample_clip_fraction": 0.0004648610160622102,
+          "expected_sample_action_mean": -0.03671708767680943,
+          "expected_sample_vs_mode_mean_absolute_gap": 3.075831984895771e-05
+        },
+        "gas": {
+          "raw_mean_mean": 0.12072872370481491,
+          "marginal_std_median": 0.03999137878417969,
+          "marginal_std_p90": 0.07190509140491486,
+          "clipped_std_median": 0.03606468027042585,
+          "deterministic_action_mean": 0.13323326408863068,
+          "deterministic_bound_fraction": 0.1138548951048951,
+          "expected_sample_clip_fraction": 0.12687133549906815,
+          "expected_sample_action_mean": 0.13506136757969456,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0018453675945425188
+        },
+        "brake": {
+          "raw_mean_mean": -0.14048372209072113,
+          "marginal_std_median": 0.04271174967288971,
+          "marginal_std_p90": 0.07645739614963531,
+          "clipped_std_median": 0.00021358624749470798,
+          "deterministic_action_mean": 0.00831696204841137,
+          "deterministic_bound_fraction": 0.9073426573426573,
+          "expected_sample_clip_fraction": 0.8951825470215463,
+          "expected_sample_action_mean": 0.010088678565861058,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0017717387554470265
+        }
+      },
+      "gas_brake_overlap_probability_mean": 0.040102146565914154,
+      "deterministic_gas_brake_overlap_fraction": 0.036931818181818184
+    },
+    {
+      "family": "native",
+      "checkpoint_label": "2m",
+      "panel": "own",
+      "run_id": "action_audit_20261030_native_2m",
+      "parameter_scale_mean": 0.029349414631724358,
+      "own_recorded_action_max_error": 0.0,
+      "predictor_parity_max_error": 0.0,
+      "decisions": 4456,
+      "channels": {
+        "steer": {
+          "raw_mean_mean": -0.023163218051195145,
+          "marginal_std_median": 0.020792942494153976,
+          "marginal_std_p90": 0.03719474747776985,
+          "clipped_std_median": 0.0207504378631711,
+          "deterministic_action_mean": -0.022774280980229378,
+          "deterministic_bound_fraction": 0.0033662477558348293,
+          "expected_sample_clip_fraction": 0.0032053830624238842,
+          "expected_sample_action_mean": -0.022754126510736102,
+          "expected_sample_vs_mode_mean_absolute_gap": 3.3388361244095895e-05
+        },
+        "gas": {
+          "raw_mean_mean": 0.19270864129066467,
+          "marginal_std_median": 0.020301900804042816,
+          "marginal_std_p90": 0.03658799082040787,
+          "clipped_std_median": 0.01900896150618787,
+          "deterministic_action_mean": 0.20378459990024567,
+          "deterministic_bound_fraction": 0.08999102333931777,
+          "expected_sample_clip_fraction": 0.09193511729300384,
+          "expected_sample_action_mean": 0.20400797708895335,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.00022340157635525966
+        },
+        "brake": {
+          "raw_mean_mean": -0.11237487196922302,
+          "marginal_std_median": 0.019770298153162003,
+          "marginal_std_p90": 0.03567509353160858,
+          "clipped_std_median": 9.318001552872023e-07,
+          "deterministic_action_mean": 0.006224590353667736,
+          "deterministic_bound_fraction": 0.9106822262118492,
+          "expected_sample_clip_fraction": 0.9040829689035575,
+          "expected_sample_action_mean": 0.0066726551070942376,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.00044859631105392665
+        }
+      },
+      "gas_brake_overlap_probability_mean": 0.02520126849412918,
+      "deterministic_gas_brake_overlap_fraction": 0.02333931777378815
+    },
+    {
+      "family": "native",
+      "checkpoint_label": "2m",
+      "panel": "common",
+      "run_id": "action_audit_20261030_native_2m",
+      "parameter_scale_mean": 0.029349414631724358,
+      "own_recorded_action_max_error": null,
+      "predictor_parity_max_error": 0.0,
+      "decisions": 4576,
+      "channels": {
+        "steer": {
+          "raw_mean_mean": -0.0035337775480002165,
+          "marginal_std_median": 0.020908448845148087,
+          "marginal_std_p90": 0.034116558730602264,
+          "clipped_std_median": 0.020908448845148087,
+          "deterministic_action_mean": -0.0035328753292560577,
+          "deterministic_bound_fraction": 0.00021853146853146853,
+          "expected_sample_clip_fraction": 0.00012851196334107934,
+          "expected_sample_action_mean": -0.0035288501061250047,
+          "expected_sample_vs_mode_mean_absolute_gap": 4.202952043799578e-06
+        },
+        "gas": {
+          "raw_mean_mean": 0.20614975690841675,
+          "marginal_std_median": 0.020364224910736084,
+          "marginal_std_p90": 0.03358566015958786,
+          "clipped_std_median": 0.019424498081207185,
+          "deterministic_action_mean": 0.21448253095149994,
+          "deterministic_bound_fraction": 0.06927447552447552,
+          "expected_sample_clip_fraction": 0.07153644256045207,
+          "expected_sample_action_mean": 0.21466631029592637,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.00020104248466385562
+        },
+        "brake": {
+          "raw_mean_mean": -0.11410559713840485,
+          "marginal_std_median": 0.019762367010116577,
+          "marginal_std_p90": 0.03275766968727112,
+          "clipped_std_median": 8.293116996737173e-07,
+          "deterministic_action_mean": 0.003425204660743475,
+          "deterministic_bound_fraction": 0.9224213286713286,
+          "expected_sample_clip_fraction": 0.9154886151034068,
+          "expected_sample_action_mean": 0.003827295783392773,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.0004020910143749088
+        }
+      },
+      "gas_brake_overlap_probability_mean": 0.020245186984539032,
+      "deterministic_gas_brake_overlap_fraction": 0.018138111888111888
+    },
+    {
+      "family": "native",
+      "checkpoint_label": "4m",
+      "panel": "own",
+      "run_id": "action_audit_20261030_native_4m",
+      "parameter_scale_mean": 0.01660352759063244,
+      "own_recorded_action_max_error": 0.0,
+      "predictor_parity_max_error": 0.0,
+      "decisions": 5000,
+      "channels": {
+        "steer": {
+          "raw_mean_mean": -0.06141003966331482,
+          "marginal_std_median": 0.01370121818035841,
+          "marginal_std_p90": 0.03185777738690376,
+          "clipped_std_median": 0.013646745588630422,
+          "deterministic_action_mean": -0.06112432852387428,
+          "deterministic_bound_fraction": 0.0044,
+          "expected_sample_clip_fraction": 0.004539211341768831,
+          "expected_sample_action_mean": -0.06111559486861934,
+          "expected_sample_vs_mode_mean_absolute_gap": 1.7144496703660228e-05
+        },
+        "gas": {
+          "raw_mean_mean": 0.21009880304336548,
+          "marginal_std_median": 0.013070158660411835,
+          "marginal_std_p90": 0.03063957393169403,
+          "clipped_std_median": 0.012395010795444302,
+          "deterministic_action_mean": 0.22221775352954865,
+          "deterministic_bound_fraction": 0.1026,
+          "expected_sample_clip_fraction": 0.10229257527509786,
+          "expected_sample_action_mean": 0.2223010931384673,
+          "expected_sample_vs_mode_mean_absolute_gap": 9.061983110041178e-05
+        },
+        "brake": {
+          "raw_mean_mean": -0.1470942497253418,
+          "marginal_std_median": 0.012175524607300758,
+          "marginal_std_p90": 0.02864866890013218,
+          "clipped_std_median": 0.0,
+          "deterministic_action_mean": 0.005047198850661516,
+          "deterministic_bound_fraction": 0.9148,
+          "expected_sample_clip_fraction": 0.9139969954476904,
+          "expected_sample_action_mean": 0.005169007149430058,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.00012180819669558813
+        }
+      },
+      "gas_brake_overlap_probability_mean": 0.027997368946671486,
+      "deterministic_gas_brake_overlap_fraction": 0.026
+    },
+    {
+      "family": "native",
+      "checkpoint_label": "4m",
+      "panel": "common",
+      "run_id": "action_audit_20261030_native_4m",
+      "parameter_scale_mean": 0.01660352759063244,
+      "own_recorded_action_max_error": null,
+      "predictor_parity_max_error": 0.0,
+      "decisions": 4576,
+      "channels": {
+        "steer": {
+          "raw_mean_mean": 0.021455567330121994,
+          "marginal_std_median": 0.013856496661901474,
+          "marginal_std_p90": 0.02199573814868927,
+          "clipped_std_median": 0.013856497127562761,
+          "deterministic_action_mean": 0.021455567330121994,
+          "deterministic_bound_fraction": 0.0,
+          "expected_sample_clip_fraction": 2.0288116546617635e-09,
+          "expected_sample_action_mean": 0.02145556922115994,
+          "expected_sample_vs_mode_mean_absolute_gap": 2.166711660031631e-11
+        },
+        "gas": {
+          "raw_mean_mean": 0.21093693375587463,
+          "marginal_std_median": 0.013230662792921066,
+          "marginal_std_p90": 0.021186864003539085,
+          "clipped_std_median": 0.012673472519963962,
+          "deterministic_action_mean": 0.2199455201625824,
+          "deterministic_bound_fraction": 0.07714160839160839,
+          "expected_sample_clip_fraction": 0.07700822722155701,
+          "expected_sample_action_mean": 0.21999540806409337,
+          "expected_sample_vs_mode_mean_absolute_gap": 8.304428299223121e-05
+        },
+        "brake": {
+          "raw_mean_mean": -0.14213813841342926,
+          "marginal_std_median": 0.012334082275629044,
+          "marginal_std_p90": 0.01975860446691513,
+          "clipped_std_median": 0.0,
+          "deterministic_action_mean": 0.0035737711004912853,
+          "deterministic_bound_fraction": 0.9274475524475524,
+          "expected_sample_clip_fraction": 0.926351375607655,
+          "expected_sample_action_mean": 0.0036796930556444833,
+          "expected_sample_vs_mode_mean_absolute_gap": 0.00010592190956398116
+        }
+      },
+      "gas_brake_overlap_probability_mean": 0.01705259457230568,
+      "deterministic_gas_brake_overlap_fraction": 0.015952797202797204
+    }
+  ],
+  "update_windows": {
+    "action_audit_20261030_local_original_0200k": {
+      "rows": 20,
+      "median": {
+        "train/approx_kl": 0.0212921453639855,
+        "train/clip_fraction": 0.21357421875,
+        "train/std": 0.13325498253107,
+        "train/explained_variance": 0.432242274284362
+      },
+      "note": "Last up-to-20 completed rollout logs before checkpoint; observational, not a causal update ablation"
+    },
+    "action_audit_20261030_local_original_0500k": {
+      "rows": 20,
+      "median": {
+        "train/approx_kl": 0.0282387556508175,
+        "train/clip_fraction": 0.294580078125,
+        "train/std": 0.12865374982356953,
+        "train/explained_variance": 0.6174660921096795
+      },
+      "note": "Last up-to-20 completed rollout logs before checkpoint; observational, not a causal update ablation"
+    },
+    "action_audit_20261030_local_original_1m": {
+      "rows": 20,
+      "median": {
+        "train/approx_kl": 0.032208012416958504,
+        "train/clip_fraction": 0.27275390624999996,
+        "train/std": 0.12368614971637701,
+        "train/explained_variance": 0.1921871900558465
+      },
+      "note": "Last up-to-20 completed rollout logs before checkpoint; observational, not a causal update ablation"
+    },
+    "action_audit_20261030_local_original_2m": {
+      "rows": 20,
+      "median": {
+        "train/approx_kl": 0.08818008378148001,
+        "train/clip_fraction": 0.42421875,
+        "train/std": 0.1074793636798855,
+        "train/explained_variance": 0.437626630067825
+      },
+      "note": "Last up-to-20 completed rollout logs before checkpoint; observational, not a causal update ablation"
+    },
+    "action_audit_20261030_local_discount_0200k": {
+      "rows": 20,
+      "median": {
+        "train/approx_kl": 0.020871383138,
+        "train/clip_fraction": 0.2423095703125,
+        "train/std": 0.13209670037031102,
+        "train/explained_variance": 0.5319753885269161
+      },
+      "note": "Last up-to-20 completed rollout logs before checkpoint; observational, not a causal update ablation"
+    },
+    "action_audit_20261030_local_discount_0500k": {
+      "rows": 20,
+      "median": {
+        "train/approx_kl": 0.029587533324956002,
+        "train/clip_fraction": 0.3146728515625,
+        "train/std": 0.12431124597787802,
+        "train/explained_variance": 0.7505757510662077
+      },
+      "note": "Last up-to-20 completed rollout logs before checkpoint; observational, not a causal update ablation"
+    },
+    "action_audit_20261030_local_discount_1m": {
+      "rows": 20,
+      "median": {
+        "train/approx_kl": 0.0563283022493115,
+        "train/clip_fraction": 0.384814453125,
+        "train/std": 0.116587255150079,
+        "train/explained_variance": 0.705627530813217
+      },
+      "note": "Last up-to-20 completed rollout logs before checkpoint; observational, not a causal update ablation"
+    },
+    "action_audit_20261030_local_discount_2m": {
+      "rows": 20,
+      "median": {
+        "train/approx_kl": 0.124532829970121,
+        "train/clip_fraction": 0.47575683593749996,
+        "train/std": 0.099539447575807,
+        "train/explained_variance": 0.7104219198226921
+      },
+      "note": "Last up-to-20 completed rollout logs before checkpoint; observational, not a causal update ablation"
+    },
+    "action_audit_20261030_native_0500k": {
+      "rows": 20,
+      "median": {
+        "train/approx_kl": 0.1323739588260645,
+        "train/clip_fraction": 0.53193359375,
+        "train/std": 0.10948834195733001,
+        "train/explained_variance": 0.6991618573665616
+      },
+      "note": "Last up-to-20 completed rollout logs before checkpoint; observational, not a causal update ablation"
+    },
+    "action_audit_20261030_native_1m": {
+      "rows": 20,
+      "median": {
+        "train/approx_kl": 0.269201204180717,
+        "train/clip_fraction": 0.62862548828125,
+        "train/std": 0.06775239855051,
+        "train/explained_variance": 0.777715533971786
+      },
+      "note": "Last up-to-20 completed rollout logs before checkpoint; observational, not a causal update ablation"
+    },
+    "action_audit_20261030_native_2m": {
+      "rows": 20,
+      "median": {
+        "train/approx_kl": 0.456175237894058,
+        "train/clip_fraction": 0.66708984375,
+        "train/std": 0.030034123919904003,
+        "train/explained_variance": 0.9450354278087612
+      },
+      "note": "Last up-to-20 completed rollout logs before checkpoint; observational, not a causal update ablation"
+    },
+    "action_audit_20261030_native_4m": {
+      "rows": 20,
+      "median": {
+        "train/approx_kl": 0.009984737262129501,
+        "train/clip_fraction": 0.08338623046874999,
+        "train/std": 0.016603996045887002,
+        "train/explained_variance": 0.9508002996444701
+      },
+      "note": "Last up-to-20 completed rollout logs before checkpoint; observational, not a causal update ablation"
+    }
+  },
+  "source_files_verified": 828,
+  "all_saved_actions_match": true,
+  "predictor_api_parity_exact": true,
+  "scope": "12 frozen checkpoints, 5 development episodes each on own/common histories; conditional marginal analysis, not closed-loop sampled driving",
+  "interpretation": "Effective action variation increases late in original local policy despite falling parameter scale; native variation decreases. No shared exploration-collapse cause established."
+}

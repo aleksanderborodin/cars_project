@@ -1079,7 +1079,7 @@ no new training. Retain original CPU-based selection; no native sweep is activat
 - **Rationale:** the factory audit identifies different physical discount under
   repeat four. Test gamma=0.99^4=0.96059601 per decision, while explicitly holding
   reward-normalization gamma at the existing 0.99. Existing defaults remain intact.
-- **Design:** same local information, repeat four, encoder, seed0, CPU4, GAE/SDE,
+- **Design:** same local information, repeat four, encoder, seed 0, CPU4, GAE/SDE,
   optimizer and 8M-native-frame LR schedule; stop at the bounded 2M review. Four
   checkpoints on the same first 50 development tracks; historical original local
   checkpoint is the reference. Exact two-episode historical replay precedes launch.
@@ -1132,3 +1132,30 @@ independent-seed baseline or alternate comparator; it is not yet running.
   passes numerical and synthetic recurrent-parity tests; full regression checks
   precede execution. A separately declared independent-seed baseline is a possible
   next experiment if no actionable implementation fault is found.
+
+R51 completed: all saved own-history actions and standard-predict checks match
+exactly; 828 frozen source hashes verify. Original local effective steering/gas
+marginal SD increases from 1M to 2M despite the learned scale falling; native marginal
+variation decreases. No shared exploration-collapse explanation is established.
+Cost 55,750 offline decisions, 57,670 actor examples, 34.23 s; zero new racing/training.
+Keep current policies/controllers. Full conditional/clipping tables and limits are
+in the [completed audit](ACTION_DISTRIBUTION_AUDIT_2026-10-30.md).
+
+## R52 — Replicate the retained local recipe on independent seeds
+
+- **Origin:** assistant execution choice supporting the user's credible same-
+  proposer simulated-selection paper; independent-seed replication was already
+  proposed in the project roadmap. The user did not prescribe seed 1/2 or 2M.
+- **Purpose:** quantify reproducibility across initialization/training streams
+  after failure of discount/KL/learning-rate variants and no actor-replay fault.
+- **Frozen design:** only training seed changes from original local; seeds 1/2 run
+  serially from frozen source/configs. Each stops at 2M native review under the same
+  global 8M LR schedule, with 0.2/0.5/1/2M checkpoints and fixed first 50 dev selection.
+- **Budget:** at most 4,016,382 new native training frames, 400,000 development frames
+  and 16 train-only reload frames, plus resets. Prior seed 0 is historical exploratory
+  evidence; no seed is omitted because of its score and no automatic extension.
+- **Uncertainty:** high confidence in replication's validity role, low confidence
+  it creates a stronger driver. Later direct/search comparisons freeze standalone
+  checkpoints first. This does not establish convergence, SOTA or five-seed rigor.
+- **Status:** [declaration](LOCAL_REPLICATIONS_2026-10-30.md), full checks and frozen
+  launch precede execution. Private ranking and final-test data remain sealed.

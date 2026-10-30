@@ -53,5 +53,55 @@ noise-scale parameters alone cannot establish exploration collapse. The audit
 may motivate one separately declared replay/learning control or an independent-
 seed baseline replication. It does not authorize an open-ended repair sweep.
 
-Status: declared; implementation/tests precede execution. All existing checkpoint
-and method-selection decisions remain as recorded in the completed campaigns.
+Status: complete. All existing checkpoint and method-selection decisions remain
+as recorded in the completed campaigns.
+
+## Completed measurements and decision
+
+All twelve own-history actor replays reproduce saved controls with **zero maximum
+error**; all standard-predict API checks match exactly. All 828 frozen source-file
+hashes verify. The [public summary](../reports/action_distribution_2026-10-30/summary.json)
+contains every own/common panel and the nearby update-log summaries;
+[provenance](../reports/action_distribution_2026-10-30/provenance.json) pins raw
+measurements and scripts.
+
+| Family / checkpoint | Learned scale mean | Steering marginal SD, median | Gas marginal SD, median | Brake marginal SD, median |
+|---|---:|---:|---:|---:|
+| Original local 1M | 0.1226 | 0.039 | 0.043 | 0.041 |
+| Original local 2M | 0.1058 | 0.052 | 0.064 | 0.059 |
+| Discount local 1M | 0.1149 | 0.040 | 0.047 | 0.043 |
+| Discount local 2M | 0.0983 | 0.039 | 0.053 | 0.050 |
+| Native 1M | 0.0649 | 0.039 | 0.040 | 0.043 |
+| Native 2M | 0.0293 | 0.021 | 0.020 | 0.020 |
+| Native 4M | 0.0166 | 0.014 | 0.013 | 0.012 |
+
+Table values use the fixed common-history panel within each protocol, pooled by
+recorded decision. Local/native panels differ and remain separate conditional
+analyses. The learned scale decreases for all families, while effective local
+action variation can increase. A single shared exploration-collapse explanation
+for the training regressions is therefore unsupported. The median clipped gas SD also increases from 0.0423 to 0.0622 in original local 1M→2M,
+while native 1M→4M decreases from 0.0361 to 0.0127. Thus the contrast survives the
+action bounds in these histories. Native variation does
+shrink substantially, but the observations alone do not show that it caused
+regression or how more stochastic driving would perform.
+
+![Learned scale and effective marginal variation](../reports/action_distribution_2026-10-30/action_variation.png)
+
+At original local 1M/2M, deterministic brake controls hit the lower bound on
+95%/92% of the common histories; predicted sampled brake clipping is 88%/86%.
+For native 1M/4M the corresponding rates are 91%/93% and 90%/93%. Steering hardly
+clips in this panel. A zero-brake action is valid; these rates alone do not prove
+a defect. State-conditioned gas/brake overlap and expected-clipped-action gaps
+are in the full table. Temporal noise correlation and closed-loop performance
+were not measured. Nearby PPO update logs are descriptive correlates only.
+
+Measured cost: **55,750 offline decision replays, 57,670 actor forward examples,
+34.23 seconds**, zero new racing, model-physics steps or optimizer updates. Unit-
+test costs are separate. Final-test/calibration/private ranking data stays sealed.
+
+**Assistant decision:** retain both original method-selection decisions and make
+no action-distribution/controller change from this audit. The checked replay and
+variance calculations identify no implementation fault. Next run the separately
+[declared local seed 1/2 replications](LOCAL_REPLICATIONS_2026-10-30.md) to measure
+whether the retained recipe's useful early policy and later degradation recur.
+Report every seed and checkpoint; these are exploratory 2M-review trials.

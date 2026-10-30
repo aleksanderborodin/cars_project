@@ -113,3 +113,11 @@ renderer, while the historical broad campaign used the validated sparse renderer
 The corrected `paper_search_sparse_20261030` declaration explicitly matches sparse
 rendering and retains the same candidate engine/behavior. Original preparation
 and stop reason are preserved; no failed or completed result was overwritten.
+
+Corrected queue launch observed at `2026-10-30T13:29:11.279191+00:00`,
+source/launch commit `5c0a2c6`. Live status:
+`runs/queues/paper_search_sparse_20261030/status.json`. It is waiting for
+`local_replications_20261030` and will execute/report automatically after both
+training blocks complete. All 114 tests and manifest checks passed before launch.
+Project training and evaluation measurements are serialized as declared; do not
+launch additional training while this evaluation queue is active.

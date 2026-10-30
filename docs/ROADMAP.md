@@ -1,6 +1,6 @@
 # Roadmap and decision gates
 
-**Current baseline gate:** the [offline actor/update audit](ACTION_DISTRIBUTION_AUDIT_2026-10-30.md) is complete and all 113 tests pass. The [seed 1/2 replications](LOCAL_REPLICATIONS_2026-10-30.md) are running under the retained local recipe and 2M-native-frame caps, with frozen code/configs and all four checkpoints reported per seed. Prior seed 0 is historical exploratory evidence. Competence, independent-seed search gains, modern competitors and trained V/L/F gates remain open.
+**Current execution and open gates:** independent local seeds are training; the [paper queue](PAPER_CAMPAIGN_2026-10-30.md) waits, then compares direct/fixed/random/search conditions on all 200 development tracks for seeds 0/1/2. Code/configs and analysis are frozen and 114 tests pass. This is exploratory local mechanism evidence. Strong baselines, trained component studies, headline replication and final freeze remain required; optional evolution/custom simulators remain future studies.
 
 Updated 2026-10-30. [Index](../README.md) · [User intent](USER_INTENT.md) ·
 [Status](STATUS.md) · [Proposed numerical settings](DESIGN_DECISIONS.md)

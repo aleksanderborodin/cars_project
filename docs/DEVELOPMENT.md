@@ -333,3 +333,19 @@ The same command without `--check` launches a new immutable campaign. The curren
 campaign already exists and must not be overwritten. Both seeds' source/configs
 are frozen before either starts. Status: `runs/campaigns/local_replications_20261030/status.json`;
 child checkpoint curves live in each seed's child campaign and report directory.
+
+## Queued paper development comparison
+
+The [paper execution ledger](PAPER_CAMPAIGN_2026-10-30.md) records required gates,
+optional branches, budgets and timeline estimates. Its corrected queue is already
+prepared and waiting for the seed replications. Validate its immutable declaration:
+
+```bash
+uv run python scripts/run_paper_search_queue.py --manifest configs/campaigns/paper-search-sparse-queue-2026-10-30.json --check
+```
+
+Without `--check` the command prepares a new immutable queue; the current ID
+already exists. Production code, reporter and configs are copied before execution.
+The initial reference-renderer preparation was stopped before any new episodes;
+its records are retained. Use the corrected sparse declaration above. Do not run
+other project training concurrently with the queued measurement phase.

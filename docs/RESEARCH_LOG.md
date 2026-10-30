@@ -1195,3 +1195,11 @@ while waiting, with zero new environment frames, after detecting reference-versu
 sparse renderer mismatch. Replacement `paper_search_sparse_20261030` explicitly
 matches the historical broad renderer. Source/configs are re-frozen before driving;
 replication training is unaffected. Original queue and stop reason are retained.
+
+R53 corrected launch: all 114 tests and frozen declaration checks pass. Queue
+`paper_search_sparse_20261030` is armed and waiting for both training seeds, then
+runs the full fixed matrix and publishes tables/paired analyses automatically.
+Actor selection is standalone only; every seed and condition is retained.
+The [paper ledger](PAPER_CAMPAIGN_2026-10-30.md) explicitly lists unimplemented
+required studies and remaining claim gates so this queue is not mistaken for
+full paper completion. Project measurement jobs are serialized as declared.

@@ -1,11 +1,11 @@
 # Implementation and evidence status
 
-**Current execution:** the [offline action-distribution audit](ACTION_DISTRIBUTION_AUDIT_2026-10-30.md) completed twelve checkpoints with exact replay and zero new driving. Falling learned gSDE scale does not imply falling effective local action variation; a common collapse explanation is unsupported. [Fresh-seed local replications](LOCAL_REPLICATIONS_2026-10-30.md) are now running serially for seeds 1/2, with the retained recipe and a 2M-native-frame review cap each. All 113 tests pass. The original proposer/search remains retained; new-seed results are pending.
+**Current execution:** [seed 1/2 training](LOCAL_REPLICATIONS_2026-10-30.md) is running; the corrected [paper comparison queue](PAPER_CAMPAIGN_2026-10-30.md) is armed and waiting for both seeds. It freezes 3 selected actors × 200 development tracks × 10 conditions, including count-matched random proposals and original search7/21. Existing seed 0 panels are reused after exact replay. All 114 tests pass. Required stronger-baseline/component/final-test gates are tracked in the paper ledger; no novelty/SOTA claim is established.
 
 Updated 2026-10-30. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
 [Roadmap](ROADMAP.md) · [Latest development results](SEQUENCE_SEARCH_2026-10-29.md)
 
-The first development experiment and control-audit follow-up are complete. The full paper
+The first development experiment and control-audit follow-up are complete. The final held-out paper
 campaign has not started. User decisions are in [USER_INTENT.md](USER_INTENT.md);
 attributed questions, ideas and probes are in [RESEARCH_LOG.md](RESEARCH_LOG.md).
 

@@ -1,6 +1,6 @@
 # Next moves: establish useful simulation improvement over strong drivers
 
-**Execution update:** the [offline distribution audit](ACTION_DISTRIBUTION_AUDIT_2026-10-30.md) is complete: exact saved-action replay, increasing effective local variation despite decreasing learned scale, decreasing native variation; no shared collapse cause established. The [retained local recipe is being replicated](LOCAL_REPLICATIONS_2026-10-30.md) on seeds 1/2, serially from frozen code, each to its 2M review. Report both curves; freeze each standalone-selected checkpoint before subsequent direct/original-search/cheap-control tests. No new policy-distribution or hyperparameter repair is active.
+**Execution update:** the user requested execution of the paper work with realistic claims. [Seed replications](LOCAL_REPLICATIONS_2026-10-30.md) are running, followed automatically by the frozen [three-actor/200-track/ten-condition queue](PAPER_CAMPAIGN_2026-10-30.md). It retains every seed/condition, selects actors from standalone scores and reuses validated history. Comparison runtime allowance 12–18h after training; full-paper readiness remains gated on stronger competitors and component-study evidence. No other project training should overlap queued evaluation.
 
 Updated 2026-10-30. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
 [Architecture](SIMULATOR_SEARCH_PLAN.md) · [Evidence](PROGRAMMED_SIMULATOR_RESULTS.md)

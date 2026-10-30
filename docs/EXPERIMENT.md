@@ -1,6 +1,6 @@
 # Experiment design: modular prediction and control by search
 
-The completed [offline actor audit](ACTION_DISTRIBUTION_AUDIT_2026-10-30.md) verifies saved-action replay and distinguishes learned gSDE scale from effective action variation. The [retained local recipe is now being replicated](LOCAL_REPLICATIONS_2026-10-30.md) on seeds 1/2 under fixed 2M-native-frame review caps. Native, device and local-discount studies are complete; earlier unsuccessful variants remain unadopted. Strong-baseline and independent-seed simulation-search claims await results.
+The [offline actor audit](ACTION_DISTRIBUTION_AUDIT_2026-10-30.md) is complete. The [retained local recipe is being replicated](LOCAL_REPLICATIONS_2026-10-30.md) on seeds 1/2 under fixed 2M-native-frame review caps. The corrected [paper queue](PAPER_CAMPAIGN_2026-10-30.md) is armed for three selected policies, 200 development tracks and ten direct/control/search conditions after training ends. This extends local mechanism evidence; stronger competitors, trained component studies and the final-test freeze remain unresolved.
 
 Updated 2026-10-29 following the research discussion. The project now targets a
 scientific paper about modular world models and online control, using Gymnasium CarRacing

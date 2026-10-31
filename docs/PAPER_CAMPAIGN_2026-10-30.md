@@ -1,6 +1,6 @@
 # Paper execution ledger and next queued campaign
 
-Updated 2026-10-30. [Intent](USER_INTENT.md) · [Blueprint](PAPER_BLUEPRINT.md)
+Updated 2026-10-31. [Intent](USER_INTENT.md) · [Blueprint](PAPER_BLUEPRINT.md)
 
 **User steering:** execute the experiments needed for an actual scientific paper,
 with realistic claims and complete documentation. **Assistant execution choice:**
@@ -8,41 +8,27 @@ finish the retained-recipe seed replications and queue a fixed full-development
 same-proposer comparison. This ledger distinguishes executed work, executable
 queued work, required unresolved studies and optional extensions.
 
-## What is executing now
+## Completed execution
 
-**October31 status:** the computer slept overnight for about11h09m. The existing
-controllers resumed; [verified progress and revised estimates](PROGRESS_2026-10-31.md)
-target this evening for the remaining matrix plus objective pilot. Yesterday's
-calendar ETA assumed continuous operation. A temporary sleep/idle inhibitor is
-scoped to the two jobs; data/methods and budgets remain unchanged.
+Both queues completed on October31. The [results report](RESULTS_2026-10-31.md)
+contains all30 main conditions, eight objective-pilot summaries, paired contrasts,
+costs and provenance. Search21 return changes are +22.06/−20.05/+6.65 for the three
+actors; seed2 remains a failed learner. Neither objective variant passes the
+screen, so no new default or automatic expansion is justified.
 
-**Current recovery:** the root filesystem filled during seed1 search7, stopping
-the original controller and evaluator. Eighteen full panels remain saved. The
-[recovery declaration and verification](CAMPAIGN_RECOVERY_2026-10-30.md) moves only
-remaining outputs to the secondary volume, with the same frozen methods and
-reporter. Recovery started 2026-10-30 15:15 UTC. The original heartbeat is stale;
-read the recovery `queue/status.json`. Its remaining execution allowance is about
-12–15 hours after restart. Failed-attempt costs are conservatively charged.
-
-Seed1 search7 has now completed and passed all 58 prefix checks: **842.87/38.5%**
-versus direct **865.42/30.5%**. The [post-result diagnosis](SEED1_SEARCH7_DIAGNOSIS_2026-10-30.md)
-explains reward accounting and observed failure behavior, with causal limits.
-Search21 and remaining seed2 conditions continue unchanged. No partial search21
-result is used for tuning or conclusions.
-
-**Separate next campaign:** the [objective-alignment pilot](OBJECTIVE_ALIGNMENT_2026-10-30.md)
-is armed to wait for this entire matrix. It changes only internal penalty scale
-in an explicit method; this dataset's methods/analysis stay frozen. New costs and
-adaptive development status are separate, with all outcomes retained. No new
-objective score has yet been validated by driving.
+The [recovery](CAMPAIGN_RECOVERY_2026-10-30.md) retained completed panels and
+passed all58 prefix comparisons after the disk interruption. The
+[progress note](PROGRESS_2026-10-31.md) preserves the overnight suspend and morning
+ETA; both jobs are now done and the temporary keep-awake guard has released.
+No final-test evaluation has started. Remaining paper gates below remain open.
 
 The [seed 1/2 replications](LOCAL_REPLICATIONS_2026-10-30.md) completed serially,
 each to its declared 2M-native-frame review. Both recipes/source snapshots were
 frozen before launch. Standalone scores selected each policy checkpoint before
 search evaluation: seed 1 869.23/32%, seed 2 −17.89/0% on 50 development tracks.
 The unsuccessful actor is retained. Prior seed 0 remains historical exploratory
-evidence. The corrected full-development queue is now evaluating the fixed matrix;
-live progress is in its status JSON, not the historical launch snapshot below.
+evidence. The corrected full-development queue has completed the fixed matrix; its final
+status and reports supersede the historical launch snapshot below.
 
 The frozen [queue declaration](../configs/campaigns/paper-search-sparse-queue-2026-10-30.json)
 freezes **three policy seeds × 200 development tracks × ten conditions**:

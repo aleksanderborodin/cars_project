@@ -1,13 +1,17 @@
 # Paper blueprint: what limits a learned driver?
 
-Updated 2026-10-30. [Index](../README.md) · [Experiment contract](EXPERIMENT.md) ·
+Updated 2026-10-31. [Index](../README.md) · [Experiment contract](EXPERIMENT.md) ·
 [Evidence status](STATUS.md) · [Attributed chronology](RESEARCH_LOG.md)
 
 This is the consolidated home for the paper idea and the ideas recorded in this
-conversation, USER_INTENT and research-log R1–R60. It connects them to one study;
+conversation, USER_INTENT and research-log R1–R61. It connects them to one study;
 it does not activate every extension. The experiment contract still governs
 access and evaluation. Existing numerical defaults are development choices.
 Historical results retain their original protocol, and archived plans stay archived.
+
+**Latest evidence:** the [completed three-actor comparison and objective pilot](RESULTS_2026-10-31.md)
+show no consistent return improvement and no passing objective setting. Preserve
+all actor/arm outcomes; no broader study or stronger scientific claim is activated.
 
 ## Origin and evidence are separate
 
@@ -295,7 +299,7 @@ recommendations or engineering choices, not retrospectively user requirements.
 | A17 | Align native recipe and audit competence before larger comparison claims | Assistant refinement; [4M campaign complete](NATIVE_BASELINE_RESULTS_2026-10-29.md), selected 1M 843.82/38%, later regression; [inference-device control](NATIVE_DEVICE_AUDIT_2026-10-29.md) complete |
 | A18 | Test local PPO discount while holding normalization timescale fixed | Assistant probe [completed and not adopted](LOCAL_DISCOUNT_TRIAL_2026-10-29.md): best 691.74/2% versus original local 858.11/30%; no general discount/convergence claim |
 | A19 | Measure state-dependent action variance/clipping on own and shared permitted histories before further training changes | Assistant [offline audit complete](ACTION_DISTRIBUTION_AUDIT_2026-10-30.md): all replays match, learned scale is an unreliable proxy for local effective variance; no causal mechanism established |
-| A20 | Replicate the retained local recipe with fresh seeds before interpreting a single actor as representative | Assistant execution of prior replication plan; [seeds 1/2 running](LOCAL_REPLICATIONS_2026-10-30.md) at 2M review caps, all curves retained; seed 0 historical, headline multi-seed study pending |
+| A20 | Replicate the retained local recipe with fresh seeds before interpreting a single actor as representative | Assistant execution of prior replication plan; [seeds 1/2 complete](LOCAL_REPLICATIONS_2026-10-30.md) at 2M review caps, all curves retained; seed 0 historical, headline multi-seed study pending |
 
 ## Prior work and novelty assessment
 

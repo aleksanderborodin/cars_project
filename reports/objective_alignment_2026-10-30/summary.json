@@ -1,0 +1,271 @@
+{
+  "conditions": [
+    {
+      "seed": 0,
+      "condition": "direct",
+      "penalty_scale": null,
+      "evaluation": "/home/sasha/Desktop/cars_project/runs/recurrent_ppo/broad_driver_20261028_direct",
+      "reused": true,
+      "metrics_sha256": "d6f225d389e8a36b21782e557359c58136d26367c1f0a3596a8d8959df8b27a6",
+      "config_sha256": "7c37bd8e4f4e4c9df6905a3d6ec30ddc83a21c8e34669eff1aed1349d4f26ec7",
+      "mean_return": 863.5476800830795,
+      "completion": 0.4,
+      "mean_progress": 0.9562626800830927,
+      "mean_offroad_steps": 23.7,
+      "frame_weighted_decision_speed_below2mps": 0.004314296500026965
+    },
+    {
+      "seed": 0,
+      "condition": "scale1",
+      "penalty_scale": 1.0,
+      "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/objective_alignment_20261030/runs/policy_objective_search/objective_20261030_s0_scale1",
+      "reused": false,
+      "metrics_sha256": "99487f0fb3bf68ce0dadb6203039f1b2c53cffa575cbbcb95d197a4cc34daca4",
+      "config_sha256": "4604f776ada611ba14f35e79228a4ab22967fab384dced4470f12ef67746a578",
+      "mean_return": 885.7015133227717,
+      "completion": 0.7,
+      "mean_progress": 0.9763565133227843,
+      "mean_offroad_steps": 1.9,
+      "frame_weighted_decision_speed_below2mps": 0.004412332469251558
+    },
+    {
+      "seed": 0,
+      "condition": "scale025",
+      "penalty_scale": 0.25,
+      "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/objective_alignment_20261030/runs/policy_objective_search/objective_20261030_s0_scale025",
+      "reused": false,
+      "metrics_sha256": "da389ac91f1d5ac9374abd839c0645c85004e0a49ffcea3d7265b46c68683359",
+      "config_sha256": "ea2dd774b54d56b6c713d98ab7f85717ff353b5087de5bd5026a1e25f2512476",
+      "mean_return": 899.0923921757521,
+      "completion": 0.65,
+      "mean_progress": 0.9884473921757646,
+      "mean_offroad_steps": 4.75,
+      "frame_weighted_decision_speed_below2mps": 0.00447652621565665
+    },
+    {
+      "seed": 0,
+      "condition": "scale0",
+      "penalty_scale": 0.0,
+      "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/objective_alignment_20261030/runs/policy_objective_search/objective_20261030_s0_scale0",
+      "reused": false,
+      "metrics_sha256": "e7e49fce03748b3234107b057ba2e50eea3342276cc2672f74b39298a532e74a",
+      "config_sha256": "f8d0f3b5ae0f9d854c3a89a58412a3255e30f20e47233f426b955d36295576e6",
+      "mean_return": 881.1875258316653,
+      "completion": 0.3,
+      "mean_progress": 0.9763725258316794,
+      "mean_offroad_steps": 23.15,
+      "frame_weighted_decision_speed_below2mps": 0.004202342806114409
+    },
+    {
+      "seed": 1,
+      "condition": "direct",
+      "penalty_scale": null,
+      "evaluation": "/home/sasha/Desktop/cars_project/runs/recurrent_ppo/paper_search_20261030_s1_direct",
+      "reused": true,
+      "metrics_sha256": "410e16e72a7f42f7630d9434205e7d63c250ceabf43942733c89d0f4cd41d35c",
+      "config_sha256": "d29817cf854f44bc8bac9ed9c4eadfc4416fd70c64593bf86f79e57e948a3073",
+      "mean_return": 880.0452592512432,
+      "completion": 0.4,
+      "mean_progress": 0.973730259251257,
+      "mean_offroad_steps": 14.85,
+      "frame_weighted_decision_speed_below2mps": 0.004269626941346
+    },
+    {
+      "seed": 1,
+      "condition": "scale1",
+      "penalty_scale": 1.0,
+      "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/objective_alignment_20261030/runs/policy_objective_search/objective_20261030_s1_scale1",
+      "reused": false,
+      "metrics_sha256": "275b84c312df13b93864f972331bcd271e17adfe01e334ce2cb909626698494f",
+      "config_sha256": "7eef98b15eb28bf30cd14a599251e5acc5079c1b4dac445fc11bb214f7eba729",
+      "mean_return": 860.8995444078535,
+      "completion": 0.45,
+      "mean_progress": 0.9550395444078668,
+      "mean_offroad_steps": 4.65,
+      "frame_weighted_decision_speed_below2mps": 0.00934777990227321
+    },
+    {
+      "seed": 1,
+      "condition": "scale025",
+      "penalty_scale": 0.25,
+      "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/objective_alignment_20261030/runs/policy_objective_search/objective_20261030_s1_scale025",
+      "reused": false,
+      "metrics_sha256": "60a29fb84a6200706b8e0c951a52b98a4822c4d430952d3129d1cb3569462c22",
+      "config_sha256": "3975208f87052be4e7120a535510131fae9e9430938fe44c06d5ba944e55ffd5",
+      "mean_return": 865.4691317061648,
+      "completion": 0.45,
+      "mean_progress": 0.9604741317061782,
+      "mean_offroad_steps": 18.15,
+      "frame_weighted_decision_speed_below2mps": 0.004841850428924793
+    },
+    {
+      "seed": 1,
+      "condition": "scale0",
+      "penalty_scale": 0.0,
+      "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/objective_alignment_20261030/runs/policy_objective_search/objective_20261030_s1_scale0",
+      "reused": false,
+      "metrics_sha256": "77520520d402b97098a9c081a4043df21d8a6ef191e0636547396505d09c5603",
+      "config_sha256": "b55991948d654ae2be9d33e8d5d1cf4d8bda21fdfbb558fc896b70f6ae694e25",
+      "mean_return": 821.66503702655,
+      "completion": 0.4,
+      "mean_progress": 0.9151800370265638,
+      "mean_offroad_steps": 62.75,
+      "frame_weighted_decision_speed_below2mps": 0.004277388654226595
+    }
+  ],
+  "contrasts": [
+    {
+      "seed": 0,
+      "condition": "scale025",
+      "control": "scale1",
+      "mean_return_change": 13.390878852980467,
+      "descriptive_paired_track95": [
+        -1.0700057717536628,
+        31.215935084741393
+      ]
+    },
+    {
+      "seed": 1,
+      "condition": "scale025",
+      "control": "scale1",
+      "mean_return_change": 4.569587298311296,
+      "descriptive_paired_track95": [
+        -21.447740549385415,
+        31.972135479129893
+      ]
+    },
+    {
+      "seed": 0,
+      "condition": "scale025",
+      "control": "direct",
+      "mean_return_change": 35.54471209267274,
+      "descriptive_paired_track95": [
+        7.955193580812423,
+        69.53212096529302
+      ]
+    },
+    {
+      "seed": 1,
+      "condition": "scale025",
+      "control": "direct",
+      "mean_return_change": -14.576127545078588,
+      "descriptive_paired_track95": [
+        -35.79782930145431,
+        5.284746228856265
+      ]
+    },
+    {
+      "seed": 0,
+      "condition": "scale0",
+      "control": "scale1",
+      "mean_return_change": -4.5139874911064855,
+      "descriptive_paired_track95": [
+        -22.19693457386285,
+        16.23093121025094
+      ]
+    },
+    {
+      "seed": 1,
+      "condition": "scale0",
+      "control": "scale1",
+      "mean_return_change": -39.23450738130346,
+      "descriptive_paired_track95": [
+        -99.30793610041529,
+        10.775220523301247
+      ]
+    },
+    {
+      "seed": 0,
+      "condition": "scale0",
+      "control": "direct",
+      "mean_return_change": 17.63984574858579,
+      "descriptive_paired_track95": [
+        -9.253936774527071,
+        49.61848628403531
+      ]
+    },
+    {
+      "seed": 1,
+      "condition": "scale0",
+      "control": "direct",
+      "mean_return_change": -58.38022222469333,
+      "descriptive_paired_track95": [
+        -124.62378772795054,
+        -6.43952415794031
+      ]
+    }
+  ],
+  "new_costs": [
+    {
+      "native_frames": 1803,
+      "decisions": 451,
+      "model_transitions": 0,
+      "internal_physics_frames": 0,
+      "actor_forward_examples": 451,
+      "wall_time_s": 0.799959039024543
+    },
+    {
+      "native_frames": 18131,
+      "decisions": 4538,
+      "model_transitions": 635320,
+      "internal_physics_frames": 2541280,
+      "actor_forward_examples": 608092,
+      "wall_time_s": 543.8292412350129
+    },
+    {
+      "native_frames": 17871,
+      "decisions": 4474,
+      "model_transitions": 626360,
+      "internal_physics_frames": 2505440,
+      "actor_forward_examples": 599516,
+      "wall_time_s": 533.1437163539813
+    },
+    {
+      "native_frames": 19037,
+      "decisions": 4761,
+      "model_transitions": 666540,
+      "internal_physics_frames": 2666160,
+      "actor_forward_examples": 637974,
+      "wall_time_s": 570.4959967420145
+    },
+    {
+      "native_frames": 1824,
+      "decisions": 456,
+      "model_transitions": 0,
+      "internal_physics_frames": 0,
+      "actor_forward_examples": 456,
+      "wall_time_s": 0.80938000898459
+    },
+    {
+      "native_frames": 18828,
+      "decisions": 4709,
+      "model_transitions": 659260,
+      "internal_physics_frames": 2637040,
+      "actor_forward_examples": 631006,
+      "wall_time_s": 560.0374803119921
+    },
+    {
+      "native_frames": 19001,
+      "decisions": 4753,
+      "model_transitions": 665420,
+      "internal_physics_frames": 2661680,
+      "actor_forward_examples": 636902,
+      "wall_time_s": 567.1211503370141
+    },
+    {
+      "native_frames": 18703,
+      "decisions": 4679,
+      "model_transitions": 655060,
+      "internal_physics_frames": 2620240,
+      "actor_forward_examples": 626986,
+      "wall_time_s": 560.4085110779852
+    }
+  ],
+  "primary": "scale025-minus-scale1 mean official return, separately for both frozen actors",
+  "screened_for_separately_declared_broader_validation": [],
+  "automatic_promotion_or_expansion": false,
+  "interpretation": "post-diagnosis adaptive development; two historical actors, reused first20 tracks; not untouched/final evidence or a SOTA result",
+  "uncertainty": "5000 paired track resamples, seed20261030; not independent training uncertainty or tuning-adjusted intervals",
+  "official_reward_changed": false,
+  "private_or_heldout_access": false
+}

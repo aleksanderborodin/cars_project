@@ -1,27 +1,18 @@
 # Next moves: establish useful simulation improvement over strong drivers
 
-**October31 execution:** the queues are healthy after an11h09m system suspend.
-[The verified progress note](PROGRESS_2026-10-31.md) supersedes yesterday's calendar
-ETA. Seed1 search21 is complete; finish seed2 conditions, then the armed score pilot;
-allow roughly7–9.5h of continuous operation for both. A scoped keep-awake guard
-is active. External baselines and component studies remain subsequent work.
+**October31 decision:** both campaigns are complete; [full results](RESULTS_2026-10-31.md)
+show no consistent return improvement. Neither objective variant passes the
+predeclared screen, so do not expand this penalty sweep or promote a new default.
+All negative conditions and the failed actor remain in the report. No experiment
+from these queues is still running. Older execution/ETA paragraphs below are
+historical context, not current live status.
 
-**Next queued intervention:** [objective alignment](OBJECTIVE_ALIGNMENT_2026-10-30.md)
-follows the user's request to improve actual driving while keeping the study honest.
-The separate score-only pilot waits for the full current matrix; original results
-and defaults stay intact. Six twenty-track search panels compare original,
-quarter-strength and zero nonprogress penalties across two useful frozen actors.
-All arms and costs are reported; any useful setting needs separately declared
-broader validation. This bounded test does not close strong-baseline or novelty
-gates or activate an unlimited weight sweep.
-
-**Current infrastructure recovery:** the original queue stopped on a full root
-disk. [Recovery](CAMPAIGN_RECOVERY_2026-10-30.md) restarted on the secondary volume
-at 15:15 UTC, preserving all 18 completed panels and frozen methods. Follow its
-new live status; verify the 58-episode prefix after the interrupted condition is
-rerun. No new training/profile is launched during those measurements.
-
-**Execution update:** the local replications completed (selected seed 1 869.23/32%, seed 2 −17.89/0%); keep both, including the failed learner, in the active full-development search queue. The [updated comparator review](COMPARATOR_REVIEW_2026-10-30.md) identifies modern MR.Q/MRS.Q, independent competent actors and same-engine MPPI/CEM as priority gaps. Prepare source/protocol work while evaluation runs, then profile/declare external runs serially. Current PPO-only replication does not close strong-comparator or novelty gates.
+Next complete the independent-baseline harness and its correctness/readiness
+gates, then declare a bounded driving budget. Separately specify a targeted test
+that distinguishes objective/continuation, model error and candidate inadequacy;
+do not infer the causal bottleneck from the aggregate penalty pilot. Strong
+external driving comparisons and component-isolation studies remain necessary.
+Neither final evaluation nor the future custom/GPU/evolution simulator is activated.
 
 **Readiness work completed:** official [MR.Q/MRS.Q sources](MRQ_MRSQ_AUDIT_2026-10-30.md)
 and [MPPI references](MPPI_READINESS_2026-10-30.md) are pinned, cached and inspected.
@@ -30,8 +21,8 @@ now exist, including a documented MR.Q unused-priority fix. Next complete the
 training/evaluation harness, full replay boundary/ring-wrap and continuation checks,
 then resolve storage/history before a serial driving-readiness profile. MPPI must
 charge its synthesized-control simulation and preserve algorithm identity.
-Driving training/profiles remain deferred during the active queue; bounded software
-verification overlap is recorded and requires separate clean latency measurement.
+No external driving profile/training has run. Earlier software-check overlap is
+recorded and requires separate clean latency measurement.
 
 Updated 2026-10-31. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
 [Architecture](SIMULATOR_SEARCH_PLAN.md) · [Evidence](PROGRAMMED_SIMULATOR_RESULTS.md)

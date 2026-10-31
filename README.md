@@ -18,8 +18,10 @@ required if the resulting decisions improve actual driving.
 The broad perception–world-model–planning pipeline is established prior work.
 Our goal is competitive actual driving, supported by component-level evidence.
 Hidden-road forecasts are one possible component; predictor-space selection by
-validation driving is an optional study. A frozen-policy development comparison now shows a promising search gain.
-There is **no established general advantage, novelty or SOTA result**.
+validation driving is an optional study. The completed multi-actor development
+comparison finds that search helps one useful actor and hurts another; the
+score-only pilot does not pass its improvement screen. There is **no established
+general advantage, novelty or SOTA result**.
 
 Start with the [paper blueprint](docs/PAPER_BLUEPRINT.md): the consolidated idea
 register separates user ideas, assistant refinements, prior work and measured evidence.
@@ -28,6 +30,7 @@ register separates user ideas, assistant refinements, prior work and measured ev
 
 | Document | Read it for |
 |---|---|
+| [Completed October31 results](docs/RESULTS_2026-10-31.md) | All30 main conditions, separate20-track score pilot, failed improvement screen, costs and evidence limits |
 | [Paper blueprint](docs/PAPER_BLUEPRINT.md) | Central three-stage study, all project ideas with origin/status, validity checks, novelty and execution gates |
 | [Native recipe interface and profile](docs/NATIVE_RECIPE_2026-10-29.md) | Separate audited pixel CNN-LSTM interface, parity checks, completed CPU/GPU profile, verification correction and costs |
 | [Native baseline campaign](docs/NATIVE_BASELINE_2026-10-29.md) | One-seed 4M decision budget, fixed checkpoint/development selection, completed execution and declared selection |
@@ -37,7 +40,7 @@ register separates user ideas, assistant refinements, prior work and measured ev
 | [Offline action-distribution audit](docs/ACTION_DISTRIBUTION_AUDIT_2026-10-30.md) | Completed twelve-checkpoint audit: effective local variation can rise as learned scale falls; exact replay, clipping and update summaries |
 | [Local independent-seed replications](docs/LOCAL_REPLICATIONS_2026-10-30.md) | Fixed retained recipe, seeds 1/2, serial frozen execution, 2M review per seed and all checkpoint curves |
 | [Paper execution ledger](docs/PAPER_CAMPAIGN_2026-10-30.md) | Required versus optional studies, fixed 3-policy/200-track queue, costs, remaining claim gates and realistic timeline |
-| [October31 progress and ETA](docs/PROGRESS_2026-10-31.md) | Verified overnight system sleep, scoped keep-awake guard, current queues and remaining paper work |
+| [October31 operational history](docs/PROGRESS_2026-10-31.md) | Overnight sleep and morning ETA, superseded by completed results; temporary guard released |
 | [Storage recovery and revised ETA](docs/CAMPAIGN_RECOVERY_2026-10-30.md) | Disk-full interruption, verified retained panels, unchanged-method restart on the secondary volume and recovery cost accounting |
 | [Seed1 search7 loss diagnosis](docs/SEED1_SEARCH7_DIAGNOSIS_2026-10-30.md) | Exact reward accounting, poorer unfinished runs and observed stalls; separates measured effects from unproven causes |
 | [Objective-alignment pilot](docs/OBJECTIVE_ALIGNMENT_2026-10-30.md) | Separate score-only method, three penalty settings, two actors, actual-return selection and a dependency-gated twenty-track pilot |
@@ -91,8 +94,11 @@ Local search sees a 30 m road mask, ego sensors and permitted history. Hidden ro
 uses a tangent prior; learned road distributions and visual reconstruction remain
 unimplemented. Current evaluation pauses the environment while planning.
 
-The completed 200-track comparison scored **884.48 return / 72% completion** with
-21-candidate search versus **862.42 / 35.5%** for the same direct policy. Its p95
+The completed200-track comparison scored **884.48 return /72% completion** with
+21-candidate search versus **862.42 /35.5%** for the original direct policy. A fresh
+useful actor instead lost return: **845.37 versus865.42**, despite higher completion.
+The [complete three-actor matrix and penalty pilot](docs/RESULTS_2026-10-31.md) are
+finished; no penalty setting passes the screen. The original actor's search p95
 latency was 362.11 ms, above the 80 ms action interval. This is one selected actor
 on development tracks. The [baseline audit](docs/BASELINE_AUDIT.md) confirms that
 its training is an early-stopped local adaptation, not a converged reference or

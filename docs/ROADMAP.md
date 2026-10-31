@@ -1,18 +1,15 @@
 # Roadmap and decision gates
 
-The [objective-alignment pilot](OBJECTIVE_ALIGNMENT_2026-10-30.md) is now a separate
-implemented/queued score-only intervention after the current matrix. It changes
-internal penalty strength and judges actual official driving return; no improved
-result or exact reward model is established. Strong independent baseline and
-full component-study requirements remain open.
+**October31 completion:** the [full comparison and score pilot](RESULTS_2026-10-31.md)
+finished. Search21 helps one useful actor and hurts the other; the failed learner
+remains nonfunctional. Neither score variant passes its declared screen. No
+method promotion or automatic expansion follows. Storage recovery and the sleep
+interruption remain historical records; no current queue is running.
 
-**Live recovery:** the disk-full interruption is documented in
-[the recovery guide](CAMPAIGN_RECOVERY_2026-10-30.md). The same frozen batch
-restarted on the secondary volume at 15:15 UTC; use its new live status. Eighteen
-complete panels are retained; the interrupted condition is being rerun with exact
-saved-prefix verification gates.
-
-**Current execution and open gates:** both local seeds finished; one selected actor scores −17.89/0%, leaving recipe competence/robustness open. The paper queue evaluates every actor and condition. The [refreshed comparison/novelty gate](COMPARATOR_REVIEW_2026-10-30.md) prioritizes independent competent actors, MR.Q/MRS.Q and same-engine planning controls. External adaptations, component studies and final freeze remain required; the active queue cannot establish SOTA alone.
+**Next gates:** complete competent independent driving baselines and a separately
+declared diagnosis of objective/model/proposal limitations. Then conduct controlled
+component studies and the eventual final freeze. These completed development
+results do not establish consistent improvement, component adequacy or SOTA.
 
 Official [MR.Q/MRS.Q](MRQ_MRSQ_AUDIT_2026-10-30.md) and
 [MPPI](MPPI_READINESS_2026-10-30.md) sources are pinned and inspected. The
@@ -21,7 +18,7 @@ CPU learner/reload checks now exist, with a preserved/fixed MR.Q priority failur
 Complete training/evaluation integration, replay/ring-wrap/continuation validation,
 GPU profiles and performance training remain open. No driving reproduction exists.
 
-Updated 2026-10-30. [Index](../README.md) · [User intent](USER_INTENT.md) ·
+Updated 2026-10-31. [Index](../README.md) · [User intent](USER_INTENT.md) ·
 [Status](STATUS.md) · [Proposed numerical settings](DESIGN_DECISIONS.md)
 
 The main project is a working modular prediction → internal simulation/search →

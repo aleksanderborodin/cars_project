@@ -1,0 +1,811 @@
+{
+  "conditions": [
+    {
+      "seed": 0,
+      "condition": "direct",
+      "evaluation": "/home/sasha/Desktop/cars_project/runs/recurrent_ppo/broad_driver_20261028_direct",
+      "reused": true,
+      "mean_return": 862.4152395093547,
+      "completion": 0.355,
+      "model_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741",
+      "metrics_sha256": "d6f225d389e8a36b21782e557359c58136d26367c1f0a3596a8d8959df8b27a6",
+      "config_sha256": "7c37bd8e4f4e4c9df6905a3d6ec30ddc83a21c8e34669eff1aed1349d4f26ec7"
+    },
+    {
+      "seed": 0,
+      "condition": "fixed",
+      "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_bias/broad_driver_20261028_mean7",
+      "reused": true,
+      "mean_return": 865.9478208540589,
+      "completion": 0.395,
+      "model_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741",
+      "metrics_sha256": "05adb4b97c950cce9ddc062152a470cba73bf565a0b93a8cc6a5bedb30699ea2",
+      "config_sha256": "0cb91159f98157ed39f2be38f8c36c52e7296c5c3c3382dd09652c8060252639"
+    },
+    {
+      "seed": 0,
+      "condition": "random7_s0",
+      "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s0_random7_s0",
+      "reused": false,
+      "mean_return": 179.97553366905754,
+      "completion": 0.0,
+      "model_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741",
+      "metrics_sha256": "ae8dc1c3e5526432c15eb9cfb8f4d40f669507e747b73967a5d03946f0382f8c",
+      "config_sha256": "cf5809bbd6a4d2c0b5e349b2446c3887eae2594f4c448f7d44532eeddc2b9458"
+    },
+    {
+      "seed": 0,
+      "condition": "random7_s1",
+      "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s0_random7_s1",
+      "reused": false,
+      "mean_return": 195.80196292905123,
+      "completion": 0.0,
+      "model_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741",
+      "metrics_sha256": "72e33f1df0351a07799613913965b071e2dbe3b90d02ebeea916f7a231170f4e",
+      "config_sha256": "60d9f5940fc6c18721e8e2673a084ea2b0f1e6b635f837f6083f71eb83a6dfd0"
+    },
+    {
+      "seed": 0,
+      "condition": "random7_s2",
+      "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s0_random7_s2",
+      "reused": false,
+      "mean_return": 240.82023152700887,
+      "completion": 0.0,
+      "model_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741",
+      "metrics_sha256": "1eeefeb1ed0f39c680d141f16355588a82958d653f5b6202d169bdf8d9333cb3",
+      "config_sha256": "58604316b55dc417633ec7d3f8c8a58a10b05e2c73786be6067dfaaddb24e3d8"
+    },
+    {
+      "seed": 0,
+      "condition": "random21_s0",
+      "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s0_random21_s0",
+      "reused": false,
+      "mean_return": 260.6301640400983,
+      "completion": 0.0,
+      "model_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741",
+      "metrics_sha256": "0eb9b84886335b0b4a21c8f597114e17186dd9b78d907212eae3ac4c8249fa25",
+      "config_sha256": "12301f004b17e572ed59c379be68232116a3f9765e950eccd2af5a6d59b846d2"
+    },
+    {
+      "seed": 0,
+      "condition": "random21_s1",
+      "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s0_random21_s1",
+      "reused": false,
+      "mean_return": 222.26475032292043,
+      "completion": 0.0,
+      "model_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741",
+      "metrics_sha256": "f991dfbd126dd54ed79a89e2197ec87a4cf0f45bb434375d0562e0c623362dbc",
+      "config_sha256": "580cd74a4e00fcf72abd85fef87edb69118bea388474f98c6e856c358071e6d2"
+    },
+    {
+      "seed": 0,
+      "condition": "random21_s2",
+      "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s0_random21_s2",
+      "reused": false,
+      "mean_return": 168.01550557544803,
+      "completion": 0.0,
+      "model_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741",
+      "metrics_sha256": "a4ddff0150568fc942340347ca9113f3711ff0dbd6c6fdb576f772e78c8ef4e9",
+      "config_sha256": "8aa023de1d9e9299127ff6e3221895655ec8abf0f538cf2a1fafac7cd4ee27da"
+    },
+    {
+      "seed": 0,
+      "condition": "search7",
+      "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_physics_search/broad_driver_20261028_search7",
+      "reused": true,
+      "mean_return": 873.0518253757577,
+      "completion": 0.585,
+      "model_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741",
+      "metrics_sha256": "1f473d22c70de0cc1b47d38e90fa46449b7daf90a4191d4e2fa75cc8e4bbf64e",
+      "config_sha256": "9e539ac311872a8d6214b8504697a807ddf9c285a808541765da32cac4735967"
+    },
+    {
+      "seed": 0,
+      "condition": "search21",
+      "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_physics_search/broad_driver_20261028_search21",
+      "reused": true,
+      "mean_return": 884.4774272490276,
+      "completion": 0.72,
+      "model_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741",
+      "metrics_sha256": "e5e81c1ec0c897bacc5a4e85d5fa9f09b8496effb2118cdac40a9b447ea5f828",
+      "config_sha256": "96c31dd67dfaa0d1785bb3b11452151eef3d2d3ce05627fd8dd3b3d35625f050"
+    },
+    {
+      "seed": 1,
+      "condition": "direct",
+      "evaluation": "/home/sasha/Desktop/cars_project/runs/recurrent_ppo/paper_search_20261030_s1_direct",
+      "reused": false,
+      "mean_return": 865.4215546490381,
+      "completion": 0.305,
+      "model_sha256": "5fef21782621a16f326428dc94554baff2eb142cd040f5b623268bd9c5f1379b",
+      "metrics_sha256": "410e16e72a7f42f7630d9434205e7d63c250ceabf43942733c89d0f4cd41d35c",
+      "config_sha256": "d29817cf854f44bc8bac9ed9c4eadfc4416fd70c64593bf86f79e57e948a3073"
+    },
+    {
+      "seed": 1,
+      "condition": "fixed",
+      "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_bias/paper_search_20261030_s1_fixed",
+      "reused": false,
+      "mean_return": 850.5411816314555,
+      "completion": 0.225,
+      "model_sha256": "5fef21782621a16f326428dc94554baff2eb142cd040f5b623268bd9c5f1379b",
+      "metrics_sha256": "ca769fc1860f5d6ff7be0075c0e2b8d6a83223f85f156b8e80d728af5702a8ba",
+      "config_sha256": "5a6afc4d1a86dab3f2965657d8fcd83a679ddc05ea65bbfc223ca88b37c0a641"
+    },
+    {
+      "seed": 1,
+      "condition": "random7_s0",
+      "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s1_random7_s0",
+      "reused": false,
+      "mean_return": 227.1940792037991,
+      "completion": 0.0,
+      "model_sha256": "5fef21782621a16f326428dc94554baff2eb142cd040f5b623268bd9c5f1379b",
+      "metrics_sha256": "4fbcf95406e2b0c263d4b5817b6cc11f969caf86cb023a6169bc27de4bd7f54c",
+      "config_sha256": "35083d91a553684e16c8567f46be9073a68cd342b9c3f77ee56ab00548feafe1"
+    },
+    {
+      "seed": 1,
+      "condition": "random7_s1",
+      "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s1_random7_s1",
+      "reused": false,
+      "mean_return": 237.19745046009876,
+      "completion": 0.0,
+      "model_sha256": "5fef21782621a16f326428dc94554baff2eb142cd040f5b623268bd9c5f1379b",
+      "metrics_sha256": "14cee168e1d6cb902e5e1f3b45b9bd8769c342b86e95d68ec074286a1a408663",
+      "config_sha256": "57e8e01cfe9f7d53d5851e9601e5b6f3c46044b590afe13671c78a3cf279cd6e"
+    },
+    {
+      "seed": 1,
+      "condition": "random7_s2",
+      "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s1_random7_s2",
+      "reused": false,
+      "mean_return": 308.8227317615519,
+      "completion": 0.0,
+      "model_sha256": "5fef21782621a16f326428dc94554baff2eb142cd040f5b623268bd9c5f1379b",
+      "metrics_sha256": "f988ffe5bf358dd95192debdfbfc8bd614a14413013b6278365e219434911c73",
+      "config_sha256": "67e84f507d4703eda460941afc2e81e6c203dddb634624fc6a5fdcb15e16556c"
+    },
+    {
+      "seed": 1,
+      "condition": "random21_s0",
+      "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s1_random21_s0",
+      "reused": false,
+      "mean_return": 295.03672714184523,
+      "completion": 0.0,
+      "model_sha256": "5fef21782621a16f326428dc94554baff2eb142cd040f5b623268bd9c5f1379b",
+      "metrics_sha256": "4861fb55436e1ae64e62596222b9cff667add1401965ebb8e667aa637e2d9412",
+      "config_sha256": "915888c2c69dbd20a4c846c8605f45687849c4c2742790920ac285d0c5254338"
+    },
+    {
+      "seed": 1,
+      "condition": "random21_s1",
+      "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s1_random21_s1",
+      "reused": false,
+      "mean_return": 266.355999270161,
+      "completion": 0.0,
+      "model_sha256": "5fef21782621a16f326428dc94554baff2eb142cd040f5b623268bd9c5f1379b",
+      "metrics_sha256": "e7b264c90a4ce459819aaf3f1f2a32d3bd3aa8d12ae5ab08ec2e414f1cf6ff5f",
+      "config_sha256": "01eebc2569ac9122fd188b4f5ff9627a69c95380b8741de1286080393488a06a"
+    },
+    {
+      "seed": 1,
+      "condition": "random21_s2",
+      "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s1_random21_s2",
+      "reused": false,
+      "mean_return": 212.8043021910118,
+      "completion": 0.0,
+      "model_sha256": "5fef21782621a16f326428dc94554baff2eb142cd040f5b623268bd9c5f1379b",
+      "metrics_sha256": "fc9ff7a3b569097e2485decd832c5f7f9549099fa608b70f032e614eecc46e2c",
+      "config_sha256": "9552684ce2f3ef6ea96fd60a0f39e80fe76b2c1fd07b7de64d8e472e935c14c9"
+    },
+    {
+      "seed": 1,
+      "condition": "search7",
+      "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_physics_search/paper_search_20261030_s1_search7_recovery1",
+      "reused": false,
+      "mean_return": 842.865433078625,
+      "completion": 0.385,
+      "model_sha256": "5fef21782621a16f326428dc94554baff2eb142cd040f5b623268bd9c5f1379b",
+      "metrics_sha256": "8247df25fdb272956446139ac97055b6ad4594215d987853796f5fea82ba6dbc",
+      "config_sha256": "558aaace2f82a777d8da30cc8718f3ae808086edc202610ef2af02d036fb7e7a"
+    },
+    {
+      "seed": 1,
+      "condition": "search21",
+      "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_physics_search/paper_search_20261030_s1_search21_recovery1",
+      "reused": false,
+      "mean_return": 845.3713720288291,
+      "completion": 0.54,
+      "model_sha256": "5fef21782621a16f326428dc94554baff2eb142cd040f5b623268bd9c5f1379b",
+      "metrics_sha256": "1f510788fb06a1b802a198556616aefcff6c53daebc570bd37a296a9effc000d",
+      "config_sha256": "18a63d67ec760c0664cccf8518f44fbec84a048b7100a95a931f8188c8a457f2"
+    },
+    {
+      "seed": 2,
+      "condition": "direct",
+      "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/recurrent_ppo/paper_search_20261030_s2_direct_recovery1",
+      "reused": false,
+      "mean_return": -20.079540632894588,
+      "completion": 0.0,
+      "model_sha256": "713163df36c252aaa715991ed352d33e0cdb6ab30c96ab5084a15b79ca004986",
+      "metrics_sha256": "b2f55be8697016885dc2049f62bdcf4809ce50fdc812192c92ea213f1c2c1f22",
+      "config_sha256": "a44be665c0746847b91c9c2ee36f99e28b31cb305547320952ca28548e88ebf0"
+    },
+    {
+      "seed": 2,
+      "condition": "fixed",
+      "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_bias/paper_search_20261030_s2_fixed_recovery1",
+      "reused": false,
+      "mean_return": -20.09792298583576,
+      "completion": 0.0,
+      "model_sha256": "713163df36c252aaa715991ed352d33e0cdb6ab30c96ab5084a15b79ca004986",
+      "metrics_sha256": "60c23e215590d2384c5e8c8592112499b3d5a3e96db389ab548189704f234853",
+      "config_sha256": "b61778ddb7146924d6fca250eeea463f8e90b46f23fa45468031fbf5045f2f72"
+    },
+    {
+      "seed": 2,
+      "condition": "random7_s0",
+      "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_variation/paper_search_20261030_s2_random7_s0_recovery1",
+      "reused": false,
+      "mean_return": -25.633488587048404,
+      "completion": 0.0,
+      "model_sha256": "713163df36c252aaa715991ed352d33e0cdb6ab30c96ab5084a15b79ca004986",
+      "metrics_sha256": "6b76acb11feae7316cb12858fa9c1930c4f1b948dc6d0aa71038186b68e08af1",
+      "config_sha256": "914e285d4f600b62dd53800206a4d341308f9b741fee5e705e1ef5a22a909b70"
+    },
+    {
+      "seed": 2,
+      "condition": "random7_s1",
+      "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_variation/paper_search_20261030_s2_random7_s1_recovery1",
+      "reused": false,
+      "mean_return": -25.688499480294595,
+      "completion": 0.0,
+      "model_sha256": "713163df36c252aaa715991ed352d33e0cdb6ab30c96ab5084a15b79ca004986",
+      "metrics_sha256": "6edacc25d8e6f9fe48e523097aea41ac5a3a1adc89f4b7c8fe1e843ae0880b0a",
+      "config_sha256": "b32397ae4967c3f0a59b2bdc6832bf6d05ad902be3e2af0719148dfdc7c83bc3"
+    },
+    {
+      "seed": 2,
+      "condition": "random7_s2",
+      "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_variation/paper_search_20261030_s2_random7_s2_recovery1",
+      "reused": false,
+      "mean_return": -24.88143865333297,
+      "completion": 0.0,
+      "model_sha256": "713163df36c252aaa715991ed352d33e0cdb6ab30c96ab5084a15b79ca004986",
+      "metrics_sha256": "964ead64945eba9cea32af00f3e952a876fd734dd0cb485d98bbcb12b4b8751f",
+      "config_sha256": "d080f9dbee2c9c0f68d53bef3493a40ff821bb541d5d6230feaf5c289633e7c0"
+    },
+    {
+      "seed": 2,
+      "condition": "random21_s0",
+      "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_variation/paper_search_20261030_s2_random21_s0_recovery1",
+      "reused": false,
+      "mean_return": -24.88143865333299,
+      "completion": 0.0,
+      "model_sha256": "713163df36c252aaa715991ed352d33e0cdb6ab30c96ab5084a15b79ca004986",
+      "metrics_sha256": "8f988ddf5566b717c03c5fd4405f2451707b593d7ca65dbe10c82ff6353e2b1c",
+      "config_sha256": "ba37640132acb18c83a61e4c766c8a907313b78f57c9e7216952f3f027e8f0a9"
+    },
+    {
+      "seed": 2,
+      "condition": "random21_s1",
+      "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_variation/paper_search_20261030_s2_random21_s1_recovery1",
+      "reused": false,
+      "mean_return": -24.848263400983534,
+      "completion": 0.0,
+      "model_sha256": "713163df36c252aaa715991ed352d33e0cdb6ab30c96ab5084a15b79ca004986",
+      "metrics_sha256": "96e87745104cb18661cf1f31dd7968d9d2835256c51e20566b892af5ee8ab5d7",
+      "config_sha256": "08a027c17d1812ae1ee7c74f59660471ef4622ebd4c9c3c381ffe2e34aa52943"
+    },
+    {
+      "seed": 2,
+      "condition": "random21_s2",
+      "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_variation/paper_search_20261030_s2_random21_s2_recovery1",
+      "reused": false,
+      "mean_return": -26.603907842797717,
+      "completion": 0.0,
+      "model_sha256": "713163df36c252aaa715991ed352d33e0cdb6ab30c96ab5084a15b79ca004986",
+      "metrics_sha256": "6f14194a83f73e9e1a3d37498c53f4d12633d389f7846f7c21e0bcdaccb8c42e",
+      "config_sha256": "9da9441a43533fe29bd3dca339ca2e043bb923b151f64f79ee6b19ea3c3a710b"
+    },
+    {
+      "seed": 2,
+      "condition": "search7",
+      "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_physics_search/paper_search_20261030_s2_search7_recovery1",
+      "reused": false,
+      "mean_return": -17.48002951258934,
+      "completion": 0.0,
+      "model_sha256": "713163df36c252aaa715991ed352d33e0cdb6ab30c96ab5084a15b79ca004986",
+      "metrics_sha256": "02061840a671be2bb111ec0a453d07876206d87436fbde2372e48c5454ef0525",
+      "config_sha256": "e6814cb421bcf42c399c9a806ce0a8d165e28c5cc9a4ebb5dff86f9e9152fb12"
+    },
+    {
+      "seed": 2,
+      "condition": "search21",
+      "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_physics_search/paper_search_20261030_s2_search21_recovery1",
+      "reused": false,
+      "mean_return": -13.428755356442217,
+      "completion": 0.0,
+      "model_sha256": "713163df36c252aaa715991ed352d33e0cdb6ab30c96ab5084a15b79ca004986",
+      "metrics_sha256": "a3c8c0e32c0cc7d10d2e16f3bf01b7f496aafbaf96cb6ca04bde4fe2ca38a9cf",
+      "config_sha256": "2ea2315dbad99c376543a0cbad8aec60e2370d72024cfd2856965621cec8b0aa"
+    }
+  ],
+  "contrasts": [
+    {
+      "contrast": "search21_minus_direct",
+      "by_seed": [
+        {
+          "seed": 0,
+          "mean_return_change": 22.062187739673035,
+          "paired_track_bootstrap95": [
+            9.640409555387246,
+            33.340021753382985
+          ],
+          "completion_change_percentage_points": 36.5
+        },
+        {
+          "seed": 1,
+          "mean_return_change": -20.050182620209164,
+          "paired_track_bootstrap95": [
+            -40.45894815266024,
+            -1.9299026380005748
+          ],
+          "completion_change_percentage_points": 23.5
+        },
+        {
+          "seed": 2,
+          "mean_return_change": 6.650785276452373,
+          "paired_track_bootstrap95": [
+            3.96812039203468,
+            9.603928603978952
+          ],
+          "completion_change_percentage_points": 0.0
+        }
+      ],
+      "mean_across_seeds": 2.88759679863875,
+      "descriptive_seed_and_track_bootstrap95": [
+        -21.10098983453813,
+        23.693148636002626
+      ]
+    },
+    {
+      "contrast": "search7_minus_direct",
+      "by_seed": [
+        {
+          "seed": 0,
+          "mean_return_change": 10.636585866403072,
+          "paired_track_bootstrap95": [
+            -2.989293684710218,
+            22.624861560337745
+          ],
+          "completion_change_percentage_points": 23.0
+        },
+        {
+          "seed": 1,
+          "mean_return_change": -22.55612157041317,
+          "paired_track_bootstrap95": [
+            -33.367604044939405,
+            -12.686337683704808
+          ],
+          "completion_change_percentage_points": 8.0
+        },
+        {
+          "seed": 2,
+          "mean_return_change": 2.5995111203052454,
+          "paired_track_bootstrap95": [
+            0.163220960929028,
+            5.225245651371658
+          ],
+          "completion_change_percentage_points": 0.0
+        }
+      ],
+      "mean_across_seeds": -3.1066748612349504,
+      "descriptive_seed_and_track_bootstrap95": [
+        -21.377861830126246,
+        13.679425215139469
+      ]
+    },
+    {
+      "contrast": "search21_minus_random21_mean",
+      "by_seed": [
+        {
+          "seed": 0,
+          "mean_return_change": 667.5072872695388,
+          "paired_track_bootstrap95": [
+            655.7527516815476,
+            677.3451629947198
+          ],
+          "completion_change_percentage_points": 72.0
+        },
+        {
+          "seed": 1,
+          "mean_return_change": 587.3056958278229,
+          "paired_track_bootstrap95": [
+            564.989666212976,
+            607.4941660449955
+          ],
+          "completion_change_percentage_points": 54.0
+        },
+        {
+          "seed": 2,
+          "mean_return_change": 12.015781275929198,
+          "paired_track_bootstrap95": [
+            8.114101688326237,
+            16.20785039032808
+          ],
+          "completion_change_percentage_points": 0.0
+        }
+      ],
+      "mean_across_seeds": 422.2762547910969,
+      "descriptive_seed_and_track_bootstrap95": [
+        13.067027669559653,
+        666.5260336539053
+      ]
+    },
+    {
+      "contrast": "search7_minus_random7_mean",
+      "by_seed": [
+        {
+          "seed": 0,
+          "mean_return_change": 667.5192493340519,
+          "paired_track_bootstrap95": [
+            655.7654960485712,
+            677.8476086193102
+          ],
+          "completion_change_percentage_points": 58.5
+        },
+        {
+          "seed": 1,
+          "mean_return_change": 585.1273459368084,
+          "paired_track_bootstrap95": [
+            571.9080266127247,
+            596.9170729813785
+          ],
+          "completion_change_percentage_points": 38.5
+        },
+        {
+          "seed": 2,
+          "mean_return_change": 7.92111272763598,
+          "paired_track_bootstrap95": [
+            4.362993030732691,
+            11.81462257762338
+          ],
+          "completion_change_percentage_points": 0.0
+        }
+      ],
+      "mean_across_seeds": 420.18923599949875,
+      "descriptive_seed_and_track_bootstrap95": [
+        8.833274805812048,
+        665.9618935106897
+      ]
+    },
+    {
+      "contrast": "search21_minus_fixed",
+      "by_seed": [
+        {
+          "seed": 0,
+          "mean_return_change": 18.529606394968866,
+          "paired_track_bootstrap95": [
+            4.749948956452065,
+            31.739232807946763
+          ],
+          "completion_change_percentage_points": 32.5
+        },
+        {
+          "seed": 1,
+          "mean_return_change": -5.1698096026265645,
+          "paired_track_bootstrap95": [
+            -26.052904047281267,
+            13.666693409406822
+          ],
+          "completion_change_percentage_points": 31.5
+        },
+        {
+          "seed": 2,
+          "mean_return_change": 6.669167629393544,
+          "paired_track_bootstrap95": [
+            3.9975345816620282,
+            9.628558708546342
+          ],
+          "completion_change_percentage_points": 0.0
+        }
+      ],
+      "mean_across_seeds": 6.676321473911948,
+      "descriptive_seed_and_track_bootstrap95": [
+        -10.065605746368094,
+        21.386672174426756
+      ]
+    },
+    {
+      "contrast": "search21_minus_search7",
+      "by_seed": [
+        {
+          "seed": 0,
+          "mean_return_change": 11.425601873269962,
+          "paired_track_bootstrap95": [
+            -0.27040199542293114,
+            24.34781833626176
+          ],
+          "completion_change_percentage_points": 13.5
+        },
+        {
+          "seed": 1,
+          "mean_return_change": 2.505938950204006,
+          "paired_track_bootstrap95": [
+            -18.183385360068645,
+            21.94088879054271
+          ],
+          "completion_change_percentage_points": 15.5
+        },
+        {
+          "seed": 2,
+          "mean_return_change": 4.051274156147127,
+          "paired_track_bootstrap95": [
+            3.5617658336244458,
+            4.650675140339103
+          ],
+          "completion_change_percentage_points": 0.0
+        }
+      ],
+      "mean_across_seeds": 5.994271659873698,
+      "descriptive_seed_and_track_bootstrap95": [
+        -5.490563361079601,
+        17.05657468289661
+      ]
+    }
+  ],
+  "new_costs": [
+    {
+      "native_frames": 1803,
+      "decisions": 451,
+      "model_transitions": 0,
+      "internal_physics_frames": 0,
+      "actor_forward_examples": 451,
+      "wall_time_s": 0.8617022489779629
+    },
+    {
+      "native_frames": 1783,
+      "decisions": 446,
+      "model_transitions": 0,
+      "internal_physics_frames": 0,
+      "actor_forward_examples": 446,
+      "wall_time_s": 0.825916039000731
+    },
+    {
+      "native_frames": 200000,
+      "decisions": 50000,
+      "model_transitions": 0,
+      "internal_physics_frames": 0,
+      "actor_forward_examples": 50000,
+      "wall_time_s": 102.39170774500235
+    },
+    {
+      "native_frames": 200000,
+      "decisions": 50000,
+      "model_transitions": 0,
+      "internal_physics_frames": 0,
+      "actor_forward_examples": 50000,
+      "wall_time_s": 95.1804134020058
+    },
+    {
+      "native_frames": 200000,
+      "decisions": 50000,
+      "model_transitions": 0,
+      "internal_physics_frames": 0,
+      "actor_forward_examples": 50000,
+      "wall_time_s": 97.15824625402456
+    },
+    {
+      "native_frames": 200000,
+      "decisions": 50000,
+      "model_transitions": 0,
+      "internal_physics_frames": 0,
+      "actor_forward_examples": 50000,
+      "wall_time_s": 101.30411120998906
+    },
+    {
+      "native_frames": 200000,
+      "decisions": 50000,
+      "model_transitions": 0,
+      "internal_physics_frames": 0,
+      "actor_forward_examples": 50000,
+      "wall_time_s": 100.26233158199466
+    },
+    {
+      "native_frames": 200000,
+      "decisions": 50000,
+      "model_transitions": 0,
+      "internal_physics_frames": 0,
+      "actor_forward_examples": 50000,
+      "wall_time_s": 97.69354175199987
+    },
+    {
+      "native_frames": 1827,
+      "decisions": 457,
+      "model_transitions": 63980,
+      "internal_physics_frames": 255920,
+      "actor_forward_examples": 61238,
+      "wall_time_s": 56.44737468002131
+    },
+    {
+      "native_frames": 1607,
+      "decisions": 403,
+      "model_transitions": 169260,
+      "internal_physics_frames": 677040,
+      "actor_forward_examples": 161200,
+      "wall_time_s": 131.58567657400272
+    },
+    {
+      "native_frames": 190113,
+      "decisions": 47552,
+      "model_transitions": 0,
+      "internal_physics_frames": 0,
+      "actor_forward_examples": 47552,
+      "wall_time_s": 88.41800487600267
+    },
+    {
+      "native_frames": 191680,
+      "decisions": 47937,
+      "model_transitions": 0,
+      "internal_physics_frames": 0,
+      "actor_forward_examples": 47937,
+      "wall_time_s": 89.51015546100098
+    },
+    {
+      "native_frames": 200000,
+      "decisions": 50000,
+      "model_transitions": 0,
+      "internal_physics_frames": 0,
+      "actor_forward_examples": 50000,
+      "wall_time_s": 94.41062298900215
+    },
+    {
+      "native_frames": 200000,
+      "decisions": 50000,
+      "model_transitions": 0,
+      "internal_physics_frames": 0,
+      "actor_forward_examples": 50000,
+      "wall_time_s": 93.918992951978
+    },
+    {
+      "native_frames": 200000,
+      "decisions": 50000,
+      "model_transitions": 0,
+      "internal_physics_frames": 0,
+      "actor_forward_examples": 50000,
+      "wall_time_s": 94.98222493100911
+    },
+    {
+      "native_frames": 200000,
+      "decisions": 50000,
+      "model_transitions": 0,
+      "internal_physics_frames": 0,
+      "actor_forward_examples": 50000,
+      "wall_time_s": 98.76564003599924
+    },
+    {
+      "native_frames": 200000,
+      "decisions": 50000,
+      "model_transitions": 0,
+      "internal_physics_frames": 0,
+      "actor_forward_examples": 50000,
+      "wall_time_s": 97.4047708940052
+    },
+    {
+      "native_frames": 200000,
+      "decisions": 50000,
+      "model_transitions": 0,
+      "internal_physics_frames": 0,
+      "actor_forward_examples": 50000,
+      "wall_time_s": 96.62393189498107
+    },
+    {
+      "native_frames": 56488,
+      "internal_physics_frames": 7908320,
+      "cost_scope": "conservative upper bound for failed original attempt; not additional scored episodes",
+      "failed_run": "/home/sasha/Desktop/cars_project/runs/policy_physics_search/paper_search_20261030_s1_search7",
+      "native_frames_exact": false
+    },
+    {
+      "native_frames": 190347,
+      "decisions": 47613,
+      "model_transitions": 6665820,
+      "internal_physics_frames": 26663280,
+      "actor_forward_examples": 6380142,
+      "wall_time_s": 5811.688665399997
+    },
+    {
+      "native_frames": 180424,
+      "decisions": 45147,
+      "model_transitions": 18961740,
+      "internal_physics_frames": 75846960,
+      "actor_forward_examples": 18058800,
+      "wall_time_s": 14207.695750814019
+    },
+    {
+      "native_frames": 200000,
+      "decisions": 50000,
+      "model_transitions": 0,
+      "internal_physics_frames": 0,
+      "actor_forward_examples": 50000,
+      "wall_time_s": 84.27087683000718
+    },
+    {
+      "native_frames": 200000,
+      "decisions": 50000,
+      "model_transitions": 0,
+      "internal_physics_frames": 0,
+      "actor_forward_examples": 50000,
+      "wall_time_s": 83.5183766509872
+    },
+    {
+      "native_frames": 200000,
+      "decisions": 50000,
+      "model_transitions": 0,
+      "internal_physics_frames": 0,
+      "actor_forward_examples": 50000,
+      "wall_time_s": 89.10416727999109
+    },
+    {
+      "native_frames": 200000,
+      "decisions": 50000,
+      "model_transitions": 0,
+      "internal_physics_frames": 0,
+      "actor_forward_examples": 50000,
+      "wall_time_s": 88.50473268699716
+    },
+    {
+      "native_frames": 200000,
+      "decisions": 50000,
+      "model_transitions": 0,
+      "internal_physics_frames": 0,
+      "actor_forward_examples": 50000,
+      "wall_time_s": 89.25752318801824
+    },
+    {
+      "native_frames": 200000,
+      "decisions": 50000,
+      "model_transitions": 0,
+      "internal_physics_frames": 0,
+      "actor_forward_examples": 50000,
+      "wall_time_s": 92.50566804601112
+    },
+    {
+      "native_frames": 200000,
+      "decisions": 50000,
+      "model_transitions": 0,
+      "internal_physics_frames": 0,
+      "actor_forward_examples": 50000,
+      "wall_time_s": 92.9486959320202
+    },
+    {
+      "native_frames": 200000,
+      "decisions": 50000,
+      "model_transitions": 0,
+      "internal_physics_frames": 0,
+      "actor_forward_examples": 50000,
+      "wall_time_s": 92.6101222760044
+    },
+    {
+      "native_frames": 200000,
+      "decisions": 50000,
+      "model_transitions": 7000000,
+      "internal_physics_frames": 28000000,
+      "actor_forward_examples": 6700000,
+      "wall_time_s": 5661.560126386001
+    },
+    {
+      "native_frames": 200000,
+      "decisions": 50000,
+      "model_transitions": 21000000,
+      "internal_physics_frames": 84000000,
+      "actor_forward_examples": 20000000,
+      "wall_time_s": 14415.081470388017
+    }
+  ],
+  "uncertainty": "5000 paired track and hierarchical training-seed/track resamples, seed20261030; exploratory adaptive development, historical seed0, three actors; no multiplicity or selection correction",
+  "all_seeds_and_conditions_included": true,
+  "held_out_evaluation": false,
+  "interpretation": "Report harmful and beneficial effects equally; competence and SOTA require separate evidence"
+}

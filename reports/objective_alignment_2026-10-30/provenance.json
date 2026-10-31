@@ -1,0 +1,38 @@
+{
+  "evaluations": {
+    "/home/sasha/Desktop/cars_project/runs/recurrent_ppo/broad_driver_20261028_direct": {
+      "config.json": "7c37bd8e4f4e4c9df6905a3d6ec30ddc83a21c8e34669eff1aed1349d4f26ec7",
+      "metrics.csv": "d6f225d389e8a36b21782e557359c58136d26367c1f0a3596a8d8959df8b27a6"
+    },
+    "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/objective_alignment_20261030/runs/policy_objective_search/objective_20261030_s0_scale1": {
+      "config.json": "4604f776ada611ba14f35e79228a4ab22967fab384dced4470f12ef67746a578",
+      "metrics.csv": "99487f0fb3bf68ce0dadb6203039f1b2c53cffa575cbbcb95d197a4cc34daca4"
+    },
+    "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/objective_alignment_20261030/runs/policy_objective_search/objective_20261030_s0_scale025": {
+      "config.json": "ea2dd774b54d56b6c713d98ab7f85717ff353b5087de5bd5026a1e25f2512476",
+      "metrics.csv": "da389ac91f1d5ac9374abd839c0645c85004e0a49ffcea3d7265b46c68683359"
+    },
+    "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/objective_alignment_20261030/runs/policy_objective_search/objective_20261030_s0_scale0": {
+      "config.json": "f8d0f3b5ae0f9d854c3a89a58412a3255e30f20e47233f426b955d36295576e6",
+      "metrics.csv": "e7e49fce03748b3234107b057ba2e50eea3342276cc2672f74b39298a532e74a"
+    },
+    "/home/sasha/Desktop/cars_project/runs/recurrent_ppo/paper_search_20261030_s1_direct": {
+      "config.json": "d29817cf854f44bc8bac9ed9c4eadfc4416fd70c64593bf86f79e57e948a3073",
+      "metrics.csv": "410e16e72a7f42f7630d9434205e7d63c250ceabf43942733c89d0f4cd41d35c"
+    },
+    "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/objective_alignment_20261030/runs/policy_objective_search/objective_20261030_s1_scale1": {
+      "config.json": "7eef98b15eb28bf30cd14a599251e5acc5079c1b4dac445fc11bb214f7eba729",
+      "metrics.csv": "275b84c312df13b93864f972331bcd271e17adfe01e334ce2cb909626698494f"
+    },
+    "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/objective_alignment_20261030/runs/policy_objective_search/objective_20261030_s1_scale025": {
+      "config.json": "3975208f87052be4e7120a535510131fae9e9430938fe44c06d5ba944e55ffd5",
+      "metrics.csv": "60a29fb84a6200706b8e0c951a52b98a4822c4d430952d3129d1cb3569462c22"
+    },
+    "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/objective_alignment_20261030/runs/policy_objective_search/objective_20261030_s1_scale0": {
+      "config.json": "b55991948d654ae2be9d33e8d5d1cf4d8bda21fdfbb558fc896b70f6ae694e25",
+      "metrics.csv": "77520520d402b97098a9c081a4043df21d8a6ef191e0636547396505d09c5603"
+    }
+  },
+  "config_sha256": "84bf63f3897a4bf43fff6b618af74dc636cbf177007f7091587661f0f776ea3a",
+  "reporter_sha256": "641d95857ada04d5155294fdfdee68b772da0b5307d4bbcc312b0b4fb5b611e3"
+}

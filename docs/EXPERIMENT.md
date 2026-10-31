@@ -1,23 +1,18 @@
 # Experiment design: modular prediction and control by search
 
-**Latest operational check:** [October31 progress](PROGRESS_2026-10-31.md) records
-an overnight system suspend, resumed queues, a temporary keep-awake guard and
-revised calendar estimates. No scientific protocol changes follow from the pause.
+**October31 completion:** the full frozen three-actor comparison and separate
+objective pilot are complete. [Results and provenance](RESULTS_2026-10-31.md)
+retain all conditions: search helps one useful actor but hurts the other; the
+failed learner remains failed. Neither penalty variant passes its declared
+screen. No default promotion, broader expansion or final-test evaluation follows.
 
-**Execution recovery:** after disk exhaustion stopped the original controller,
-the same frozen [comparison is recovering](CAMPAIGN_RECOVERY_2026-10-30.md) on a
-secondary volume. All eighteen completed panels are retained; the interrupted
-condition is rerun with exact saved-prefix validation and explicit cost bounds.
-This does not change the method, split, actor selection or analysis.
-
-The user now requests useful, goal-aligned search with truthful paper evaluation.
-The separately declared [objective pilot](OBJECTIVE_ALIGNMENT_2026-10-30.md) scales
-the old nonprogress penalties while preserving model/proposals/horizon and official
-environment reward. It is queued after the current matrix, with legacy parity
-gates and downstream official-return comparison. It is adaptive development,
-not a new final-test result or an established repair.
-
-The local replications have completed; one seed learned useful driving and another failed competence at the declared review. The frozen [paper queue](PAPER_CAMPAIGN_2026-10-30.md) evaluates every actor on the full control/search matrix. The [refreshed comparator/novelty review](COMPARATOR_REVIEW_2026-10-30.md) identifies missing strong external comparisons and close prior art. Current mechanism evidence is not a SOTA result; stronger baselines, controlled component studies and final-test freeze remain open.
+[Storage recovery](CAMPAIGN_RECOVERY_2026-10-30.md) and
+[overnight suspend](PROGRESS_2026-10-31.md) are historical operational records;
+both queues finished and the temporary sleep guard released. The
+[objective intervention](OBJECTIVE_ALIGNMENT_2026-10-30.md) remains an adaptive
+development study, not an established repair. The [execution ledger](PAPER_CAMPAIGN_2026-10-30.md)
+and [comparator review](COMPARATOR_REVIEW_2026-10-30.md) identify remaining strong
+baseline, component-study and final-freeze requirements. No SOTA claim is supported.
 
 The subsequent [MR.Q/MRS.Q source audit](MRQ_MRSQ_AUDIT_2026-10-30.md) and
 [MPPI readiness audit](MPPI_READINESS_2026-10-30.md) pin official references and

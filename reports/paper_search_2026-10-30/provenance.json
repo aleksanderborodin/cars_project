@@ -1,0 +1,563 @@
+{
+  "runs": {
+    "/home/sasha/Desktop/cars_project/runs/recurrent_ppo/broad_driver_20261028_direct": {
+      "config.json": "7c37bd8e4f4e4c9df6905a3d6ec30ddc83a21c8e34669eff1aed1349d4f26ec7",
+      "metrics.csv": "d6f225d389e8a36b21782e557359c58136d26367c1f0a3596a8d8959df8b27a6",
+      "cost.json": "1a3bfa121916b683ea6d83f75caee8c32be69dd4a4689b02b527dd73f04ea5ef",
+      "summary.json": "583a0c5ce791830a481c83bccc52f9743145ea14dac9eab7dad957828bb22746"
+    },
+    "/home/sasha/Desktop/cars_project/runs/policy_bias/broad_driver_20261028_mean7": {
+      "config.json": "0cb91159f98157ed39f2be38f8c36c52e7296c5c3c3382dd09652c8060252639",
+      "metrics.csv": "05adb4b97c950cce9ddc062152a470cba73bf565a0b93a8cc6a5bedb30699ea2",
+      "cost.json": "ffa2bcffe854bfa40225f2bc2d187963be871585d68b3f4a92689f2156f87c82",
+      "summary.json": "208d6826241b3d9efdfc24e34ea8e196d231d49cc56191d545e402e99b9fa46b"
+    },
+    "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s0_random7_s0": {
+      "config.json": "cf5809bbd6a4d2c0b5e349b2446c3887eae2594f4c448f7d44532eeddc2b9458",
+      "metrics.csv": "ae8dc1c3e5526432c15eb9cfb8f4d40f669507e747b73967a5d03946f0382f8c",
+      "cost.json": "b3865cb7e834e35eef92c913fdcd18678cfe498d8359e1078e968d1ded4bf7eb",
+      "summary.json": "63ba7a5027ef028f4d857eb1b7f3ce1bbda3263324be8fa859142c9dcefdc31b"
+    },
+    "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s0_random7_s1": {
+      "config.json": "60d9f5940fc6c18721e8e2673a084ea2b0f1e6b635f837f6083f71eb83a6dfd0",
+      "metrics.csv": "72e33f1df0351a07799613913965b071e2dbe3b90d02ebeea916f7a231170f4e",
+      "cost.json": "e25a76fdf5bebb24f50e762a2d79a535789865b9a0640e878d8bae11ac149e61",
+      "summary.json": "cf8587e8dd2876d17586a57bae5ed7227d31bb78a2e4ee59d2875ca4a2d31fff"
+    },
+    "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s0_random7_s2": {
+      "config.json": "58604316b55dc417633ec7d3f8c8a58a10b05e2c73786be6067dfaaddb24e3d8",
+      "metrics.csv": "1eeefeb1ed0f39c680d141f16355588a82958d653f5b6202d169bdf8d9333cb3",
+      "cost.json": "4749cf5fa7411c5804339ad1e6819a8c444b52adf7eff20810538c26298c8e91",
+      "summary.json": "d714dbad36b87e8383d6d06741e75f19040ea7163ebb6f925aff922de609c8ae"
+    },
+    "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s0_random21_s0": {
+      "config.json": "12301f004b17e572ed59c379be68232116a3f9765e950eccd2af5a6d59b846d2",
+      "metrics.csv": "0eb9b84886335b0b4a21c8f597114e17186dd9b78d907212eae3ac4c8249fa25",
+      "cost.json": "c0cb63a9242a81348b42d3c772f84cee4c3b7723d8cc2667791d21c9dd594935",
+      "summary.json": "ad16e7c2a22180a2b7331563f62978f00aefd6116b81abf1ba031d2970eead10"
+    },
+    "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s0_random21_s1": {
+      "config.json": "580cd74a4e00fcf72abd85fef87edb69118bea388474f98c6e856c358071e6d2",
+      "metrics.csv": "f991dfbd126dd54ed79a89e2197ec87a4cf0f45bb434375d0562e0c623362dbc",
+      "cost.json": "8c158781400d96fcf2440ca90ca424a1bd31a9af1c500011bb3c3e0bc72c7c0c",
+      "summary.json": "dfc0a79c3eb92ebe2b031701579516371105288e64aaf5312b8f76c213240a0f"
+    },
+    "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s0_random21_s2": {
+      "config.json": "8aa023de1d9e9299127ff6e3221895655ec8abf0f538cf2a1fafac7cd4ee27da",
+      "metrics.csv": "a4ddff0150568fc942340347ca9113f3711ff0dbd6c6fdb576f772e78c8ef4e9",
+      "cost.json": "58604f6d6c28581b378ace95eed1a0c16428117531713f7bcbf332bbfc9e8e39",
+      "summary.json": "abc1ee7120318192352841388f16f99213220b33ec33dd496636c5da057f62ab"
+    },
+    "/home/sasha/Desktop/cars_project/runs/policy_physics_search/broad_driver_20261028_search7": {
+      "config.json": "9e539ac311872a8d6214b8504697a807ddf9c285a808541765da32cac4735967",
+      "metrics.csv": "1f473d22c70de0cc1b47d38e90fa46449b7daf90a4191d4e2fa75cc8e4bbf64e",
+      "cost.json": "f3a62e1ade74e3e8a56d2e726d8e5605cd2afb46bd4d7c2e44003109d8662dbc",
+      "summary.json": "5cceacccf661265ff4daed00ee52d805c2aba5df128ecb8e5315da14ac8862b8"
+    },
+    "/home/sasha/Desktop/cars_project/runs/policy_physics_search/broad_driver_20261028_search21": {
+      "config.json": "96c31dd67dfaa0d1785bb3b11452151eef3d2d3ce05627fd8dd3b3d35625f050",
+      "metrics.csv": "e5e81c1ec0c897bacc5a4e85d5fa9f09b8496effb2118cdac40a9b447ea5f828",
+      "cost.json": "7a8eb6fb4c19fe6d4be49cce8461ba7d8daf269e15ae8deda3137cfafcb688b5",
+      "summary.json": "ea89b7cb371ecc80f07a039551b9ad906bbd3fdb0b2bd6528ce1784fedd7612f"
+    },
+    "/home/sasha/Desktop/cars_project/runs/recurrent_ppo/paper_search_20261030_s1_direct": {
+      "config.json": "d29817cf854f44bc8bac9ed9c4eadfc4416fd70c64593bf86f79e57e948a3073",
+      "metrics.csv": "410e16e72a7f42f7630d9434205e7d63c250ceabf43942733c89d0f4cd41d35c",
+      "cost.json": "f2f3542614d56357724385134a9d1733521921b886810a6876bd1220f175a318",
+      "summary.json": "29266ad6f2df2e9842ff1c7382e175cc679fc8d8d2e83792f653f8bfb4f0bd47"
+    },
+    "/home/sasha/Desktop/cars_project/runs/policy_bias/paper_search_20261030_s1_fixed": {
+      "config.json": "5a6afc4d1a86dab3f2965657d8fcd83a679ddc05ea65bbfc223ca88b37c0a641",
+      "metrics.csv": "ca769fc1860f5d6ff7be0075c0e2b8d6a83223f85f156b8e80d728af5702a8ba",
+      "cost.json": "1d839e3da0605e9fdb24ecc39f994c9ac4f0fc9dbdcfc7597a556af26b593f60",
+      "summary.json": "87641c1cf91d24a3681a02d481c34b31c3ee040619d5c2f0072eb0a05949c905"
+    },
+    "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s1_random7_s0": {
+      "config.json": "35083d91a553684e16c8567f46be9073a68cd342b9c3f77ee56ab00548feafe1",
+      "metrics.csv": "4fbcf95406e2b0c263d4b5817b6cc11f969caf86cb023a6169bc27de4bd7f54c",
+      "cost.json": "a3c934678bde106a22ef1c2a6c14daa1a3bd290296f06b719db996edbc0adfca",
+      "summary.json": "ee755b6abbed817a397a17f1190c86189e6f479a402812fbe3cbf3a01f9d1f04"
+    },
+    "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s1_random7_s1": {
+      "config.json": "57e8e01cfe9f7d53d5851e9601e5b6f3c46044b590afe13671c78a3cf279cd6e",
+      "metrics.csv": "14cee168e1d6cb902e5e1f3b45b9bd8769c342b86e95d68ec074286a1a408663",
+      "cost.json": "8b83e727d945a0fd7b460f9697983267332d7f147ce620922ee7b14d528d5041",
+      "summary.json": "31c59b304a67ce0d42224e3feb34387da35fb407b68468a1629122135bccb8b3"
+    },
+    "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s1_random7_s2": {
+      "config.json": "67e84f507d4703eda460941afc2e81e6c203dddb634624fc6a5fdcb15e16556c",
+      "metrics.csv": "f988ffe5bf358dd95192debdfbfc8bd614a14413013b6278365e219434911c73",
+      "cost.json": "3f39a5d2c7b1be8e4829d415e2e712c18140e41d5e5419082c5496ba39c5c24b",
+      "summary.json": "5d5f80fdb6011ad4e69cfb00e573b2cc09a7c12132651a35db0b2391d4381b2a"
+    },
+    "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s1_random21_s0": {
+      "config.json": "915888c2c69dbd20a4c846c8605f45687849c4c2742790920ac285d0c5254338",
+      "metrics.csv": "4861fb55436e1ae64e62596222b9cff667add1401965ebb8e667aa637e2d9412",
+      "cost.json": "4821463005cca239971a64f5b72db4112cd98578c1ea686c52139b60c4ef6bfe",
+      "summary.json": "19b18c27e1b6406c452dee572b1cb679d02fbc56f456074078869b8a0a52bea5"
+    },
+    "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s1_random21_s1": {
+      "config.json": "01eebc2569ac9122fd188b4f5ff9627a69c95380b8741de1286080393488a06a",
+      "metrics.csv": "e7b264c90a4ce459819aaf3f1f2a32d3bd3aa8d12ae5ab08ec2e414f1cf6ff5f",
+      "cost.json": "e978085a87f5493fbbcc1e652b98aa55265e1d7dcf8d17f892831db321e6e170",
+      "summary.json": "9980ef1eff8c9a7eab170cb60b6f894b3a1099f190632f4bb42dae83c70d8963"
+    },
+    "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s1_random21_s2": {
+      "config.json": "9552684ce2f3ef6ea96fd60a0f39e80fe76b2c1fd07b7de64d8e472e935c14c9",
+      "metrics.csv": "fc9ff7a3b569097e2485decd832c5f7f9549099fa608b70f032e614eecc46e2c",
+      "cost.json": "ef85842475e78ec4ab2cfd013275f4dc5bf1178346cd16122d7357c8531775df",
+      "summary.json": "1a628ddcc70ee86ff9a574152b35e3f2d1374ae55e46badc3d96cdf77ea6390b"
+    },
+    "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_physics_search/paper_search_20261030_s1_search7_recovery1": {
+      "config.json": "558aaace2f82a777d8da30cc8718f3ae808086edc202610ef2af02d036fb7e7a",
+      "metrics.csv": "8247df25fdb272956446139ac97055b6ad4594215d987853796f5fea82ba6dbc",
+      "cost.json": "a633feceb2b6a8875d133925005fa1c9bb7ee1942e978998529952444df668ad",
+      "summary.json": "7ae75e1faac1446ab83a69bc7c9e8d533383fd04c33835423f9c70a433eda778"
+    },
+    "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_physics_search/paper_search_20261030_s1_search21_recovery1": {
+      "config.json": "18a63d67ec760c0664cccf8518f44fbec84a048b7100a95a931f8188c8a457f2",
+      "metrics.csv": "1f510788fb06a1b802a198556616aefcff6c53daebc570bd37a296a9effc000d",
+      "cost.json": "0431a19cf1aaac70566176f9cd886b1d8e413129616ed88d4e4987c34e61fa6f",
+      "summary.json": "d0a94059d8ddbada75fd103da846312fdbfd00610357441e61766417098367d3"
+    },
+    "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/recurrent_ppo/paper_search_20261030_s2_direct_recovery1": {
+      "config.json": "a44be665c0746847b91c9c2ee36f99e28b31cb305547320952ca28548e88ebf0",
+      "metrics.csv": "b2f55be8697016885dc2049f62bdcf4809ce50fdc812192c92ea213f1c2c1f22",
+      "cost.json": "39082eaa242b6d8fc805f3ffdda213479a86fb5b3478f5f25824e363931dba0e",
+      "summary.json": "a62936646e91361f0edcbcd6b11077a2f87810a22deb8c781608a91fb224b100"
+    },
+    "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_bias/paper_search_20261030_s2_fixed_recovery1": {
+      "config.json": "b61778ddb7146924d6fca250eeea463f8e90b46f23fa45468031fbf5045f2f72",
+      "metrics.csv": "60c23e215590d2384c5e8c8592112499b3d5a3e96db389ab548189704f234853",
+      "cost.json": "3fd78b454bbcf4303021e125efd037e89667cbb791fe8c22213ad1829813c2ee",
+      "summary.json": "e27365fdc9707e372c7ac0bb74b23e086808dbae017c7ad64a78c90ad1f74c31"
+    },
+    "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_variation/paper_search_20261030_s2_random7_s0_recovery1": {
+      "config.json": "914e285d4f600b62dd53800206a4d341308f9b741fee5e705e1ef5a22a909b70",
+      "metrics.csv": "6b76acb11feae7316cb12858fa9c1930c4f1b948dc6d0aa71038186b68e08af1",
+      "cost.json": "a0971c5bcd5e8911bc6b36e14c83d7af88a4c345ba303a36fd189c34ed96d0f7",
+      "summary.json": "b6ea389385ac8f9493916931542692125cac224001b00882ae29b79c7bdc3c1a"
+    },
+    "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_variation/paper_search_20261030_s2_random7_s1_recovery1": {
+      "config.json": "b32397ae4967c3f0a59b2bdc6832bf6d05ad902be3e2af0719148dfdc7c83bc3",
+      "metrics.csv": "6edacc25d8e6f9fe48e523097aea41ac5a3a1adc89f4b7c8fe1e843ae0880b0a",
+      "cost.json": "1f8775ec37622e3ba289ca7dd64ada41a7841ad009f9eea97a091e3d146d1a3a",
+      "summary.json": "138ec52d4369cc4060bbf7e0a2d071702220b79b79513d12f2ae41baa8dbff52"
+    },
+    "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_variation/paper_search_20261030_s2_random7_s2_recovery1": {
+      "config.json": "d080f9dbee2c9c0f68d53bef3493a40ff821bb541d5d6230feaf5c289633e7c0",
+      "metrics.csv": "964ead64945eba9cea32af00f3e952a876fd734dd0cb485d98bbcb12b4b8751f",
+      "cost.json": "81516785e3209052ea842008f42a6f946cb1fe6df1d35b7338cfe2f12af0be1f",
+      "summary.json": "cf353debaabcd23cef50ed4b4ab895ca3e35c21ca8f37629c56a47975ebaef35"
+    },
+    "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_variation/paper_search_20261030_s2_random21_s0_recovery1": {
+      "config.json": "ba37640132acb18c83a61e4c766c8a907313b78f57c9e7216952f3f027e8f0a9",
+      "metrics.csv": "8f988ddf5566b717c03c5fd4405f2451707b593d7ca65dbe10c82ff6353e2b1c",
+      "cost.json": "4612d3c87ca93f53ceb3adc52ae8fc3fd4059b8fbce12d5c891f4858a831b45f",
+      "summary.json": "3004e694e7a6d40fca0baebebfac28443da938d8df284ee2342a4dc4106ef4b0"
+    },
+    "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_variation/paper_search_20261030_s2_random21_s1_recovery1": {
+      "config.json": "08a027c17d1812ae1ee7c74f59660471ef4622ebd4c9c3c381ffe2e34aa52943",
+      "metrics.csv": "96e87745104cb18661cf1f31dd7968d9d2835256c51e20566b892af5ee8ab5d7",
+      "cost.json": "818b8de7dfaf432cf84f0c497371d84bd4aeb84acbae90b2643d91cc31750336",
+      "summary.json": "baed26e0a9337da5d108e192e8f3d314e14395129e99a89a2372a20c93f20c58"
+    },
+    "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_variation/paper_search_20261030_s2_random21_s2_recovery1": {
+      "config.json": "9da9441a43533fe29bd3dca339ca2e043bb923b151f64f79ee6b19ea3c3a710b",
+      "metrics.csv": "6f14194a83f73e9e1a3d37498c53f4d12633d389f7846f7c21e0bcdaccb8c42e",
+      "cost.json": "3242419fb1e4a286c583ba72bfd56c1d9416b1d2c037a5eb8048a6e7f6c08509",
+      "summary.json": "f76abbc3ba972c3490b6a1270ad1ef4fe2c1deaaf4ec2ee6837e86a26061e520"
+    },
+    "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_physics_search/paper_search_20261030_s2_search7_recovery1": {
+      "config.json": "e6814cb421bcf42c399c9a806ce0a8d165e28c5cc9a4ebb5dff86f9e9152fb12",
+      "metrics.csv": "02061840a671be2bb111ec0a453d07876206d87436fbde2372e48c5454ef0525",
+      "cost.json": "a86b7d5f714acb30a226fb5c6b9911c3913f9d684ccf81c463c06819a286e04a",
+      "summary.json": "55b4963a63dca8aa6901f10d494584166ecab0cd72089d6175d55cdddeb3eb31"
+    },
+    "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_physics_search/paper_search_20261030_s2_search21_recovery1": {
+      "config.json": "2ea2315dbad99c376543a0cbad8aec60e2370d72024cfd2856965621cec8b0aa",
+      "metrics.csv": "a3c8c0e32c0cc7d10d2e16f3bf01b7f496aafbaf96cb6ca04bde4fe2ca38a9cf",
+      "cost.json": "d310405d711c1959527ad1e78e89fe4b70af7d26411fae673cdfde2875e0470c",
+      "summary.json": "de489ccd4cc51579f60757830c0485178452286ddc433f30e5fe385fdbcac65d"
+    }
+  },
+  "campaign": {
+    "paper_search_20261030_s2_fixed_recovery1_command.json": "8754de5d46da5c50c792759306a1f8c2103a62598439b85598393e82419c2abd",
+    "paper_search_20261030_s2_random7_s1_recovery1_command.json": "991c12bf11a72033bb1d19f6f8f0b7f256a844245bf277bcbc7db0940d9412df",
+    "paper_search_20261030_s2_random7_s2_recovery1.log": "a485d3cf1a0b88c3ffedecbe8774cc567afb51d9448212bad0e1024865005496",
+    "paper_search_20261030_s2_random7_s2_recovery1_command.json": "518e08c83234293bc039f629c961d997a96fd456af880363d0e1bf65c62154f1",
+    "paper_search_20261030_s2_search21_recovery1.log": "160c290d19c0384b870acf928d18599f04c32c89993e82d17419f4a22c632b90",
+    "paper_search_20261030_s2_search21_recovery1_command.json": "ff9bded5b1775428dbb41085aaf8a044f135bd829bea6e3552f7ae5b06bcb170",
+    "paper_search_20261030_s2_search7_recovery1.log": "e37e89cb3ef82bb9c1491364f9e6c1b734a3557c803a2289bdb0de7911f36016",
+    "paper_search_20261030_s2_search7_recovery1_command.json": "1338dceb8f4219719e7369a03cbe46c5b4f654e5a7a97db00d0598bf5ded17f7",
+    "prior_results.json": "fb98bdb772c1f8acc06296da4ef094c88e62295b413b059c700cb999b7d46043",
+    "recovered_prefix_check.json": "7ba86df1ad131c13bafe716c5cfed40238cf520e10dcbec165210a32d6dcb9b2",
+    "reporter.py": "50a26230814fefa114a50a2f2d99e0fa8a478fe6f12da2155112852a9afa83fa",
+    "results.json": "685f313fbed4cbb9849ef3667b4082649ccde9a9ee816c5414f624d328b1844a",
+    "runner.py": "eb181cff8475594f7dda44e1ddccc02772696e7626165e9977ce2035a5f9d637",
+    "software_check.json": "5e69fbd61d40379db93f3dfdfda24a2c4bf7d99c492ce546426c542da32d8008",
+    "software_check.log": "0f75226a15a80bd042d86f40d251d621bf48f620da1f9be8fcdfcdb8759b6f37",
+    "config.json": "8def5c8db21b75e77e51510433faae821bad6c670d6aa43a55ca82964b15b069",
+    "controller.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "initial_prefix_check.json": "1d9b900902f3bd604d5c11c99dc69bfd9b07a8701187e84f7f547ebb1b93c0ea",
+    "launch.json": "795267151951c4965b81533acb1d955a187a82d88ae25a1fa66e396afe990d03",
+    "paper_search_20261030_s1_search21_recovery1.log": "44b3e1c57d47e786d680939520da58bbeeef7ca18d3dc7f053ecbee433bfd238",
+    "paper_search_20261030_s1_search21_recovery1_command.json": "e8f11494ab19425de85d8c0576da5f4cc90395f2e2b56184257d19bddca7f835",
+    "paper_search_20261030_s1_search7_recovery1.log": "0b65a64e862570e24cdd7d604f8e4a911507fe59ae4a4b9a768f261e7b2b5699",
+    "paper_search_20261030_s1_search7_recovery1_command.json": "2773d5f1bc83a8fb80a9e8d179b841d1fcf79f33cff6d87e05f6d30401fd61d7",
+    "paper_search_20261030_s2_direct_recovery1.log": "a70998c07523b2e20ac39083091e56c492ed0ed8baef7418d59b65cd384d33b6",
+    "paper_search_20261030_s2_direct_recovery1_command.json": "f3af61059a6cc97e469ba1d6258bd682cac526264276049b0dffdb2c9a22d5b9",
+    "paper_search_20261030_s2_fixed_recovery1.log": "59e1d9c3c0517628c03d29f449bcf5242cf64fdcaf6d37d934a5d78739e47b19",
+    "paper_search_20261030_s2_random21_s0_recovery1.log": "92d93e4d16fdfcd6433a33e91da0cb70aa49eae469311bec1dcb52d4a9f499f0",
+    "paper_search_20261030_s2_random21_s0_recovery1_command.json": "f2a71690fee34722631c070d78d2af82132ff5a68e6080cb6d4137f7011241f9",
+    "paper_search_20261030_s2_random21_s1_recovery1.log": "80824cdd39cec4d7555e016c8438daa89a604211e88c3d8f874b32a9e3cb7ecd",
+    "paper_search_20261030_s2_random21_s1_recovery1_command.json": "a6ea8f0a2ed8c9a3778b4c5a3212dd75373ba92681960d934c3878b8e4584b10",
+    "paper_search_20261030_s2_random21_s2_recovery1.log": "928b5b6a35e4d0e4a3172e9874187a4783f19e334525b31a85d4707556738a0a",
+    "paper_search_20261030_s2_random21_s2_recovery1_command.json": "a85b23498f0dfc9549d2995a16a3a5f3242a86ca49770acf6c8780e0ab9c7005",
+    "paper_search_20261030_s2_random7_s0_recovery1.log": "0c6b54be9b528b06c0e738efd0bad62c9a801305528414471df3b6773d03444d",
+    "paper_search_20261030_s2_random7_s0_recovery1_command.json": "d0e7d002fa2626b235854b6be45ba896e6e770690905febfa3f8b43acc14fcbe",
+    "paper_search_20261030_s2_random7_s1_recovery1.log": "51d9fc25a6a4ecff94d958ff8a42048a995c60582f51763b58101e41cb3e436a"
+  },
+  "campaign_status_at_analysis": {
+    "status": "evaluations_complete",
+    "queue_pid": 2178542,
+    "updated_epoch": 1793454385.964146,
+    "completed": [
+      {
+        "seed": 0,
+        "condition": "direct",
+        "evaluation": "/home/sasha/Desktop/cars_project/runs/recurrent_ppo/broad_driver_20261028_direct",
+        "reused": true,
+        "mean_return": 862.4152395093547,
+        "completion": 0.355,
+        "model_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741",
+        "metrics_sha256": "d6f225d389e8a36b21782e557359c58136d26367c1f0a3596a8d8959df8b27a6",
+        "config_sha256": "7c37bd8e4f4e4c9df6905a3d6ec30ddc83a21c8e34669eff1aed1349d4f26ec7"
+      },
+      {
+        "seed": 0,
+        "condition": "fixed",
+        "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_bias/broad_driver_20261028_mean7",
+        "reused": true,
+        "mean_return": 865.9478208540589,
+        "completion": 0.395,
+        "model_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741",
+        "metrics_sha256": "05adb4b97c950cce9ddc062152a470cba73bf565a0b93a8cc6a5bedb30699ea2",
+        "config_sha256": "0cb91159f98157ed39f2be38f8c36c52e7296c5c3c3382dd09652c8060252639"
+      },
+      {
+        "seed": 0,
+        "condition": "random7_s0",
+        "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s0_random7_s0",
+        "reused": false,
+        "mean_return": 179.97553366905754,
+        "completion": 0.0,
+        "model_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741",
+        "metrics_sha256": "ae8dc1c3e5526432c15eb9cfb8f4d40f669507e747b73967a5d03946f0382f8c",
+        "config_sha256": "cf5809bbd6a4d2c0b5e349b2446c3887eae2594f4c448f7d44532eeddc2b9458"
+      },
+      {
+        "seed": 0,
+        "condition": "random7_s1",
+        "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s0_random7_s1",
+        "reused": false,
+        "mean_return": 195.80196292905123,
+        "completion": 0.0,
+        "model_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741",
+        "metrics_sha256": "72e33f1df0351a07799613913965b071e2dbe3b90d02ebeea916f7a231170f4e",
+        "config_sha256": "60d9f5940fc6c18721e8e2673a084ea2b0f1e6b635f837f6083f71eb83a6dfd0"
+      },
+      {
+        "seed": 0,
+        "condition": "random7_s2",
+        "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s0_random7_s2",
+        "reused": false,
+        "mean_return": 240.82023152700887,
+        "completion": 0.0,
+        "model_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741",
+        "metrics_sha256": "1eeefeb1ed0f39c680d141f16355588a82958d653f5b6202d169bdf8d9333cb3",
+        "config_sha256": "58604316b55dc417633ec7d3f8c8a58a10b05e2c73786be6067dfaaddb24e3d8"
+      },
+      {
+        "seed": 0,
+        "condition": "random21_s0",
+        "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s0_random21_s0",
+        "reused": false,
+        "mean_return": 260.6301640400983,
+        "completion": 0.0,
+        "model_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741",
+        "metrics_sha256": "0eb9b84886335b0b4a21c8f597114e17186dd9b78d907212eae3ac4c8249fa25",
+        "config_sha256": "12301f004b17e572ed59c379be68232116a3f9765e950eccd2af5a6d59b846d2"
+      },
+      {
+        "seed": 0,
+        "condition": "random21_s1",
+        "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s0_random21_s1",
+        "reused": false,
+        "mean_return": 222.26475032292043,
+        "completion": 0.0,
+        "model_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741",
+        "metrics_sha256": "f991dfbd126dd54ed79a89e2197ec87a4cf0f45bb434375d0562e0c623362dbc",
+        "config_sha256": "580cd74a4e00fcf72abd85fef87edb69118bea388474f98c6e856c358071e6d2"
+      },
+      {
+        "seed": 0,
+        "condition": "random21_s2",
+        "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s0_random21_s2",
+        "reused": false,
+        "mean_return": 168.01550557544803,
+        "completion": 0.0,
+        "model_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741",
+        "metrics_sha256": "a4ddff0150568fc942340347ca9113f3711ff0dbd6c6fdb576f772e78c8ef4e9",
+        "config_sha256": "8aa023de1d9e9299127ff6e3221895655ec8abf0f538cf2a1fafac7cd4ee27da"
+      },
+      {
+        "seed": 0,
+        "condition": "search7",
+        "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_physics_search/broad_driver_20261028_search7",
+        "reused": true,
+        "mean_return": 873.0518253757577,
+        "completion": 0.585,
+        "model_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741",
+        "metrics_sha256": "1f473d22c70de0cc1b47d38e90fa46449b7daf90a4191d4e2fa75cc8e4bbf64e",
+        "config_sha256": "9e539ac311872a8d6214b8504697a807ddf9c285a808541765da32cac4735967"
+      },
+      {
+        "seed": 0,
+        "condition": "search21",
+        "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_physics_search/broad_driver_20261028_search21",
+        "reused": true,
+        "mean_return": 884.4774272490276,
+        "completion": 0.72,
+        "model_sha256": "9475b51cb882f0afcd73f9b9cf66643860a3a989d6a67918bce3198ad4f7d741",
+        "metrics_sha256": "e5e81c1ec0c897bacc5a4e85d5fa9f09b8496effb2118cdac40a9b447ea5f828",
+        "config_sha256": "96c31dd67dfaa0d1785bb3b11452151eef3d2d3ce05627fd8dd3b3d35625f050"
+      },
+      {
+        "seed": 1,
+        "condition": "direct",
+        "evaluation": "/home/sasha/Desktop/cars_project/runs/recurrent_ppo/paper_search_20261030_s1_direct",
+        "reused": false,
+        "mean_return": 865.4215546490381,
+        "completion": 0.305,
+        "model_sha256": "5fef21782621a16f326428dc94554baff2eb142cd040f5b623268bd9c5f1379b",
+        "metrics_sha256": "410e16e72a7f42f7630d9434205e7d63c250ceabf43942733c89d0f4cd41d35c",
+        "config_sha256": "d29817cf854f44bc8bac9ed9c4eadfc4416fd70c64593bf86f79e57e948a3073"
+      },
+      {
+        "seed": 1,
+        "condition": "fixed",
+        "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_bias/paper_search_20261030_s1_fixed",
+        "reused": false,
+        "mean_return": 850.5411816314555,
+        "completion": 0.225,
+        "model_sha256": "5fef21782621a16f326428dc94554baff2eb142cd040f5b623268bd9c5f1379b",
+        "metrics_sha256": "ca769fc1860f5d6ff7be0075c0e2b8d6a83223f85f156b8e80d728af5702a8ba",
+        "config_sha256": "5a6afc4d1a86dab3f2965657d8fcd83a679ddc05ea65bbfc223ca88b37c0a641"
+      },
+      {
+        "seed": 1,
+        "condition": "random7_s0",
+        "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s1_random7_s0",
+        "reused": false,
+        "mean_return": 227.1940792037991,
+        "completion": 0.0,
+        "model_sha256": "5fef21782621a16f326428dc94554baff2eb142cd040f5b623268bd9c5f1379b",
+        "metrics_sha256": "4fbcf95406e2b0c263d4b5817b6cc11f969caf86cb023a6169bc27de4bd7f54c",
+        "config_sha256": "35083d91a553684e16c8567f46be9073a68cd342b9c3f77ee56ab00548feafe1"
+      },
+      {
+        "seed": 1,
+        "condition": "random7_s1",
+        "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s1_random7_s1",
+        "reused": false,
+        "mean_return": 237.19745046009876,
+        "completion": 0.0,
+        "model_sha256": "5fef21782621a16f326428dc94554baff2eb142cd040f5b623268bd9c5f1379b",
+        "metrics_sha256": "14cee168e1d6cb902e5e1f3b45b9bd8769c342b86e95d68ec074286a1a408663",
+        "config_sha256": "57e8e01cfe9f7d53d5851e9601e5b6f3c46044b590afe13671c78a3cf279cd6e"
+      },
+      {
+        "seed": 1,
+        "condition": "random7_s2",
+        "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s1_random7_s2",
+        "reused": false,
+        "mean_return": 308.8227317615519,
+        "completion": 0.0,
+        "model_sha256": "5fef21782621a16f326428dc94554baff2eb142cd040f5b623268bd9c5f1379b",
+        "metrics_sha256": "f988ffe5bf358dd95192debdfbfc8bd614a14413013b6278365e219434911c73",
+        "config_sha256": "67e84f507d4703eda460941afc2e81e6c203dddb634624fc6a5fdcb15e16556c"
+      },
+      {
+        "seed": 1,
+        "condition": "random21_s0",
+        "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s1_random21_s0",
+        "reused": false,
+        "mean_return": 295.03672714184523,
+        "completion": 0.0,
+        "model_sha256": "5fef21782621a16f326428dc94554baff2eb142cd040f5b623268bd9c5f1379b",
+        "metrics_sha256": "4861fb55436e1ae64e62596222b9cff667add1401965ebb8e667aa637e2d9412",
+        "config_sha256": "915888c2c69dbd20a4c846c8605f45687849c4c2742790920ac285d0c5254338"
+      },
+      {
+        "seed": 1,
+        "condition": "random21_s1",
+        "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s1_random21_s1",
+        "reused": false,
+        "mean_return": 266.355999270161,
+        "completion": 0.0,
+        "model_sha256": "5fef21782621a16f326428dc94554baff2eb142cd040f5b623268bd9c5f1379b",
+        "metrics_sha256": "e7b264c90a4ce459819aaf3f1f2a32d3bd3aa8d12ae5ab08ec2e414f1cf6ff5f",
+        "config_sha256": "01eebc2569ac9122fd188b4f5ff9627a69c95380b8741de1286080393488a06a"
+      },
+      {
+        "seed": 1,
+        "condition": "random21_s2",
+        "evaluation": "/home/sasha/Desktop/cars_project/runs/policy_variation/paper_search_20261030_s1_random21_s2",
+        "reused": false,
+        "mean_return": 212.8043021910118,
+        "completion": 0.0,
+        "model_sha256": "5fef21782621a16f326428dc94554baff2eb142cd040f5b623268bd9c5f1379b",
+        "metrics_sha256": "fc9ff7a3b569097e2485decd832c5f7f9549099fa608b70f032e614eecc46e2c",
+        "config_sha256": "9552684ce2f3ef6ea96fd60a0f39e80fe76b2c1fd07b7de64d8e472e935c14c9"
+      },
+      {
+        "seed": 1,
+        "condition": "search7",
+        "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_physics_search/paper_search_20261030_s1_search7_recovery1",
+        "reused": false,
+        "mean_return": 842.865433078625,
+        "completion": 0.385,
+        "model_sha256": "5fef21782621a16f326428dc94554baff2eb142cd040f5b623268bd9c5f1379b",
+        "metrics_sha256": "8247df25fdb272956446139ac97055b6ad4594215d987853796f5fea82ba6dbc",
+        "config_sha256": "558aaace2f82a777d8da30cc8718f3ae808086edc202610ef2af02d036fb7e7a"
+      },
+      {
+        "seed": 1,
+        "condition": "search21",
+        "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_physics_search/paper_search_20261030_s1_search21_recovery1",
+        "reused": false,
+        "mean_return": 845.3713720288291,
+        "completion": 0.54,
+        "model_sha256": "5fef21782621a16f326428dc94554baff2eb142cd040f5b623268bd9c5f1379b",
+        "metrics_sha256": "1f510788fb06a1b802a198556616aefcff6c53daebc570bd37a296a9effc000d",
+        "config_sha256": "18a63d67ec760c0664cccf8518f44fbec84a048b7100a95a931f8188c8a457f2"
+      },
+      {
+        "seed": 2,
+        "condition": "direct",
+        "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/recurrent_ppo/paper_search_20261030_s2_direct_recovery1",
+        "reused": false,
+        "mean_return": -20.079540632894588,
+        "completion": 0.0,
+        "model_sha256": "713163df36c252aaa715991ed352d33e0cdb6ab30c96ab5084a15b79ca004986",
+        "metrics_sha256": "b2f55be8697016885dc2049f62bdcf4809ce50fdc812192c92ea213f1c2c1f22",
+        "config_sha256": "a44be665c0746847b91c9c2ee36f99e28b31cb305547320952ca28548e88ebf0"
+      },
+      {
+        "seed": 2,
+        "condition": "fixed",
+        "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_bias/paper_search_20261030_s2_fixed_recovery1",
+        "reused": false,
+        "mean_return": -20.09792298583576,
+        "completion": 0.0,
+        "model_sha256": "713163df36c252aaa715991ed352d33e0cdb6ab30c96ab5084a15b79ca004986",
+        "metrics_sha256": "60c23e215590d2384c5e8c8592112499b3d5a3e96db389ab548189704f234853",
+        "config_sha256": "b61778ddb7146924d6fca250eeea463f8e90b46f23fa45468031fbf5045f2f72"
+      },
+      {
+        "seed": 2,
+        "condition": "random7_s0",
+        "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_variation/paper_search_20261030_s2_random7_s0_recovery1",
+        "reused": false,
+        "mean_return": -25.633488587048404,
+        "completion": 0.0,
+        "model_sha256": "713163df36c252aaa715991ed352d33e0cdb6ab30c96ab5084a15b79ca004986",
+        "metrics_sha256": "6b76acb11feae7316cb12858fa9c1930c4f1b948dc6d0aa71038186b68e08af1",
+        "config_sha256": "914e285d4f600b62dd53800206a4d341308f9b741fee5e705e1ef5a22a909b70"
+      },
+      {
+        "seed": 2,
+        "condition": "random7_s1",
+        "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_variation/paper_search_20261030_s2_random7_s1_recovery1",
+        "reused": false,
+        "mean_return": -25.688499480294595,
+        "completion": 0.0,
+        "model_sha256": "713163df36c252aaa715991ed352d33e0cdb6ab30c96ab5084a15b79ca004986",
+        "metrics_sha256": "6edacc25d8e6f9fe48e523097aea41ac5a3a1adc89f4b7c8fe1e843ae0880b0a",
+        "config_sha256": "b32397ae4967c3f0a59b2bdc6832bf6d05ad902be3e2af0719148dfdc7c83bc3"
+      },
+      {
+        "seed": 2,
+        "condition": "random7_s2",
+        "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_variation/paper_search_20261030_s2_random7_s2_recovery1",
+        "reused": false,
+        "mean_return": -24.88143865333297,
+        "completion": 0.0,
+        "model_sha256": "713163df36c252aaa715991ed352d33e0cdb6ab30c96ab5084a15b79ca004986",
+        "metrics_sha256": "964ead64945eba9cea32af00f3e952a876fd734dd0cb485d98bbcb12b4b8751f",
+        "config_sha256": "d080f9dbee2c9c0f68d53bef3493a40ff821bb541d5d6230feaf5c289633e7c0"
+      },
+      {
+        "seed": 2,
+        "condition": "random21_s0",
+        "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_variation/paper_search_20261030_s2_random21_s0_recovery1",
+        "reused": false,
+        "mean_return": -24.88143865333299,
+        "completion": 0.0,
+        "model_sha256": "713163df36c252aaa715991ed352d33e0cdb6ab30c96ab5084a15b79ca004986",
+        "metrics_sha256": "8f988ddf5566b717c03c5fd4405f2451707b593d7ca65dbe10c82ff6353e2b1c",
+        "config_sha256": "ba37640132acb18c83a61e4c766c8a907313b78f57c9e7216952f3f027e8f0a9"
+      },
+      {
+        "seed": 2,
+        "condition": "random21_s1",
+        "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_variation/paper_search_20261030_s2_random21_s1_recovery1",
+        "reused": false,
+        "mean_return": -24.848263400983534,
+        "completion": 0.0,
+        "model_sha256": "713163df36c252aaa715991ed352d33e0cdb6ab30c96ab5084a15b79ca004986",
+        "metrics_sha256": "96e87745104cb18661cf1f31dd7968d9d2835256c51e20566b892af5ee8ab5d7",
+        "config_sha256": "08a027c17d1812ae1ee7c74f59660471ef4622ebd4c9c3c381ffe2e34aa52943"
+      },
+      {
+        "seed": 2,
+        "condition": "random21_s2",
+        "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_variation/paper_search_20261030_s2_random21_s2_recovery1",
+        "reused": false,
+        "mean_return": -26.603907842797717,
+        "completion": 0.0,
+        "model_sha256": "713163df36c252aaa715991ed352d33e0cdb6ab30c96ab5084a15b79ca004986",
+        "metrics_sha256": "6f14194a83f73e9e1a3d37498c53f4d12633d389f7846f7c21e0bcdaccb8c42e",
+        "config_sha256": "9da9441a43533fe29bd3dca339ca2e043bb923b151f64f79ee6b19ea3c3a710b"
+      },
+      {
+        "seed": 2,
+        "condition": "search7",
+        "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_physics_search/paper_search_20261030_s2_search7_recovery1",
+        "reused": false,
+        "mean_return": -17.48002951258934,
+        "completion": 0.0,
+        "model_sha256": "713163df36c252aaa715991ed352d33e0cdb6ab30c96ab5084a15b79ca004986",
+        "metrics_sha256": "02061840a671be2bb111ec0a453d07876206d87436fbde2372e48c5454ef0525",
+        "config_sha256": "e6814cb421bcf42c399c9a806ce0a8d165e28c5cc9a4ebb5dff86f9e9152fb12"
+      },
+      {
+        "seed": 2,
+        "condition": "search21",
+        "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_physics_search/paper_search_20261030_s2_search21_recovery1",
+        "reused": false,
+        "mean_return": -13.428755356442217,
+        "completion": 0.0,
+        "model_sha256": "713163df36c252aaa715991ed352d33e0cdb6ab30c96ab5084a15b79ca004986",
+        "metrics_sha256": "a3c8c0e32c0cc7d10d2e16f3bf01b7f496aafbaf96cb6ca04bde4fe2ca38a9cf",
+        "config_sha256": "2ea2315dbad99c376543a0cbad8aec60e2370d72024cfd2856965621cec8b0aa"
+      }
+    ],
+    "recovery_wall_seconds": 40872.131696707016,
+    "native_frames_including_failed_attempt_bound": 5216072,
+    "internal_frames_including_failed_attempt_bound": 223351520,
+    "free_bytes": 15714177024
+  },
+  "analysis_script_sha256": "50a26230814fefa114a50a2f2d99e0fa8a478fe6f12da2155112852a9afa83fa"
+}

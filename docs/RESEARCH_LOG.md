@@ -1420,3 +1420,30 @@ versus direct865.42/30.5%; return change −20.05. The queue advanced into seed2
 conditions. The completed-condition hashes/costs are recorded; no partial score
 was promoted. The objective pilot's numerical settings and analysis remain as
 frozen before this result.
+
+
+## R61 — Completed replication and unsuccessful score-only repair
+
+- **User intent:** report actual results, improve official driving return and
+  distinguish understanding from deciding without inventing a positive outcome.
+- **Measured:** all30 main conditions complete. Search21 gains22.06 on historical
+  actor0 but loses20.05 on fresh useful actor1. Actor2 gains6.65 but remains failed
+  at−13.43/0% completion. Across-seed mean2.89 has descriptive95% interval
+  [−21.10,23.69]; no robust improvement is established.
+- **Assistant intervention, now measured:** the previously declared quarter/zero
+  penalty pilot finished all arms on20 reused development tracks. Quarter-scale
+  point gains over original search are13.39/4.57, both intervals crossing zero;
+  seed1 still loses14.58 versus direct. Zero penalties are worse. Neither setting
+  passes the requirement to beat both controls on both actors; no promotion or
+  expansion occurs. User's usefulness objective and assistant's experimental
+  implementation remain separately attributed; prior planning work is not novel.
+- **Integrity:** every saved condition's metrics/config hashes verified, report
+  copies byte-identical, all failed/negative outcomes retained. No private or
+  held-out feedback used. Direct and alpha1 parity gates passed. Pilot charges
+  115,198 native frames/15,631,840 internal physics ticks and zero training.
+- **Next choice and uncertainty:** complete competent independent baseline
+  integration and declare a bounded diagnosis distinguishing score/model/proposal
+  limitations before another method run. Aggregate results do not isolate cause;
+  do not initiate an unrestricted weight sweep or final evaluation.
+- **Operational status:** both controllers complete; temporary sleep guard released.
+  [Results, full reports and limitations](RESULTS_2026-10-31.md).

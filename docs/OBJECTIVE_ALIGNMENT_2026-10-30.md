@@ -1,5 +1,11 @@
 # Align search with measured driving: bounded score-only pilot
 
+**Completion update, October31:** both campaigns finished successfully. See
+[completed results](RESULTS_2026-10-31.md). Neither penalty variant passed the
+pilot screen; no setting is promoted and no automatic expansion follows. Both
+jobs ended and the scoped sleep guard released. Execution/ETA statements below
+preserve the earlier declaration or morning snapshot, not current live status.
+
 Declared 2026-10-30. [Loss diagnosis](SEED1_SEARCH7_DIAGNOSIS_2026-10-30.md) ·
 [Experiment contract](EXPERIMENT.md) · [Campaign declaration](../configs/campaigns/objective-alignment-2026-10-30.json)
 

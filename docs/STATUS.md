@@ -1,38 +1,21 @@
 # Implementation and evidence status
 
-**October31 live check:** both controllers are healthy. Seed1 search21 completed:
-845.37 return/54% completion versus direct865.42/30.5%, a −20.05 return change.
-Seed2's conditions are now executing; the score pilot is waiting.
-[Power logs and revised ETA](PROGRESS_2026-10-31.md) confirm an11h09m
-system sleep overnight. A temporary sleep/idle inhibitor now lasts until the jobs
-finish. Allow about6–8h awake for the remaining matrix, then1–1.5h for the pilot;
-current combined target is this evening. Historical ETA paragraphs below retain
-their earlier assumptions; they are superseded by this live check.
+**October31 completed results:** both campaigns finished successfully. All30
+main conditions and eight pilot summaries are retained and input-hash verified.
+Search21 changes return by +22.06/−20.05/+6.65 for actor seeds0/1/2; the third
+actor failed competence. Across-seed change +2.89 has a descriptive95% interval
+[−21.10,23.69], so no consistent improvement is established. Quarter penalties
+improve pilot point scores over original search but still lose14.58 versus direct
+on seed1; neither variant passes the declared screen. No setting is promoted,
+no expansion is triggered and no training/evaluation from these queues remains
+active. See [completed tables, costs and limitations](RESULTS_2026-10-31.md).
 
-**New objective intervention:** [score-only alignment pilot](OBJECTIVE_ALIGNMENT_2026-10-30.md)
-implemented and armed after the current frozen matrix. `policy-objective` compares
-penalty scales1/0.25/0 with the same model, candidates, horizon and actors. It has
-not produced driving results; no setting is promoted. Full CPU suite: 140 passed,
-one CUDA-only skip. Check overlap with the old matrix's search21 is recorded;
-efficiency claims still need clean measurement. Actual official return is primary,
-and all settings/negative outcomes must be retained.
-
-**Storage interruption and recovery:** the original queue stopped at 18/30 full
-conditions and 58/200 seed1 search7 episodes because the system disk filled.
-The [verified recovery](CAMPAIGN_RECOVERY_2026-10-30.md) restarted on the mounted
-secondary volume at 2026-10-30 15:15 UTC. Completed panels are retained; frozen
-methods/source/analysis are unchanged. Use the recovery workspace's live status,
-not the stale original status JSON. Remaining fixed batch ETA: about 12–15 hours
-after restart; this does not complete all paper experiments.
-
-**Completed seed1 search7:** 842.87 return/38.5% completion versus direct
-865.42/30.5%. The full 58-episode recovery prefix matched exactly.
-[Descriptive diagnosis](SEED1_SEARCH7_DIAGNOSIS_2026-10-30.md) attributes
-−22.439 reward points to less tile coverage and −0.117 to extra native steps.
-Some unfinished runs stall or fail badly despite more total completions. The
-specific model/utility/proposal cause remains unisolated; current methods stay frozen.
-
-**Current execution:** fresh local replications are complete: selected seed 1 869.23/32%, seed 2 −17.89/0%. The latter failed task competence at the declared review and remains in the active [paper comparison queue](PAPER_CAMPAIGN_2026-10-30.md). No policy-training campaign is active. The [comparator/novelty review](COMPARATOR_REVIEW_2026-10-30.md) corrects missing MRS.Q/APC-RL prior art and makes strong external comparisons explicit blocking gates. The ongoing dataset is exploratory mechanism evidence, not a SOTA result. Latest full CPU suite: 140 passed, one CUDA-only skip; the frozen queue's launch suite remains its historical 114-test record.
+The [storage recovery](CAMPAIGN_RECOVERY_2026-10-30.md) retained completed panels
+and passed all58 interrupted-run prefix checks. The overnight suspend and former
+ETAs remain [historical operational records](PROGRESS_2026-10-31.md); the temporary
+sleep guard has released. Latest code checks remain140 passed/one CUDA-only skip;
+this completion update changes documentation/reports only. Strong external driving
+comparisons, controlled component studies and final-test freeze remain open.
 
 **External comparison preparation:** [MR.Q/MRS.Q](MRQ_MRSQ_AUDIT_2026-10-30.md)
 and [MPPI](MPPI_READINESS_2026-10-30.md) reference sources are now pinned and
@@ -47,7 +30,7 @@ times and require separate clean timing before efficiency claims. Frozen driving
 source and methods are unchanged.
 
 Updated 2026-10-31. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
-[Roadmap](ROADMAP.md) · [Latest development results](SEQUENCE_SEARCH_2026-10-29.md)
+[Roadmap](ROADMAP.md) · [Latest development results](RESULTS_2026-10-31.md)
 
 The first development experiment and control-audit follow-up are complete. The final held-out paper
 campaign has not started. User decisions are in [USER_INTENT.md](USER_INTENT.md);

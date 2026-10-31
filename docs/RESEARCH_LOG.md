@@ -1391,3 +1391,32 @@ remain separate from the current immutable mechanism queue.
   interpretability of this one-axis test, low confidence in an improvement before
   driving. More complete progress/continuation objectives remain future tests.
 - **Record:** [design, declaration and evidence limits](OBJECTIVE_ALIGNMENT_2026-10-30.md).
+
+## R60 — October31 readiness/ETA check and scoped sleep prevention
+
+- **User request:** are we ready to continue, what remains to run, and what is
+  the ETA? The assistant verifies both controllers/processes, live output and storage.
+- **Observed status:** main matrix19/30 complete, seed1 search21 near200 tracks;
+  all ten seed2 conditions remain. Objective pilot is alive and waiting, with no
+  pilot driving frames. No manual restart is needed.
+- **Verified interruption:** systemd-suspend logs show sleep from October30
+  23:41 to October31 10:50 Moscow, about11h09m; monotonic/calendar elapsed clocks
+  corroborate it. Earlier ETA assumed continuous operation. Completed data,
+  method settings, splits and failed outcomes are retained.
+- **Assistant operational choice:** a temporary sleep/idle inhibitor monitors
+  only the two technical status files and releases when they finish/fail/exit.
+  No permanent power setting or scientific source is changed. Command, PID and
+  helper hash are recorded; no private diagnostic or held-out data is accessed.
+- **Revised estimate:** roughly6–8h awake for remaining main conditions, followed
+  by1–1.5h objective pilot; combined target this evening, approximately18–21 Moscow.
+  This is conditional on continued operation and ordinary timing variability.
+- **Remaining paper gates:** actual strong external baselines, controlled
+  component comparisons, adequate independent seeds and final freeze/evaluation.
+  Current-job completion is not full-paper readiness; no firm paper ETA is claimed.
+- **Record:** [progress, source evidence and limits](PROGRESS_2026-10-31.md).
+
+R60 completion update: seed1 search21 finished during the check at845.37/54%,
+versus direct865.42/30.5%; return change −20.05. The queue advanced into seed2
+conditions. The completed-condition hashes/costs are recorded; no partial score
+was promoted. The objective pilot's numerical settings and analysis remain as
+frozen before this result.

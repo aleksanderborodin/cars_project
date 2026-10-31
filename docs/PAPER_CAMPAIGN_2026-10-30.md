@@ -10,6 +10,12 @@ queued work, required unresolved studies and optional extensions.
 
 ## What is executing now
 
+**October31 status:** the computer slept overnight for about11h09m. The existing
+controllers resumed; [verified progress and revised estimates](PROGRESS_2026-10-31.md)
+target this evening for the remaining matrix plus objective pilot. Yesterday's
+calendar ETA assumed continuous operation. A temporary sleep/idle inhibitor is
+scoped to the two jobs; data/methods and budgets remain unchanged.
+
 **Current recovery:** the root filesystem filled during seed1 search7, stopping
 the original controller and evaluator. Eighteen full panels remain saved. The
 [recovery declaration and verification](CAMPAIGN_RECOVERY_2026-10-30.md) moves only

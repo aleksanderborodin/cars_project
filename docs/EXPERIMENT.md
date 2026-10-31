@@ -1,5 +1,9 @@
 # Experiment design: modular prediction and control by search
 
+**Latest operational check:** [October31 progress](PROGRESS_2026-10-31.md) records
+an overnight system suspend, resumed queues, a temporary keep-awake guard and
+revised calendar estimates. No scientific protocol changes follow from the pause.
+
 **Execution recovery:** after disk exhaustion stopped the original controller,
 the same frozen [comparison is recovering](CAMPAIGN_RECOVERY_2026-10-30.md) on a
 secondary volume. All eighteen completed panels are retained; the interrupted

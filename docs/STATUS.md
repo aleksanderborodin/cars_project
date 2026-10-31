@@ -1,5 +1,14 @@
 # Implementation and evidence status
 
+**October31 live check:** both controllers are healthy. Seed1 search21 completed:
+845.37 return/54% completion versus direct865.42/30.5%, a −20.05 return change.
+Seed2's conditions are now executing; the score pilot is waiting.
+[Power logs and revised ETA](PROGRESS_2026-10-31.md) confirm an11h09m
+system sleep overnight. A temporary sleep/idle inhibitor now lasts until the jobs
+finish. Allow about6–8h awake for the remaining matrix, then1–1.5h for the pilot;
+current combined target is this evening. Historical ETA paragraphs below retain
+their earlier assumptions; they are superseded by this live check.
+
 **New objective intervention:** [score-only alignment pilot](OBJECTIVE_ALIGNMENT_2026-10-30.md)
 implemented and armed after the current frozen matrix. `policy-objective` compares
 penalty scales1/0.25/0 with the same model, candidates, horizon and actors. It has
@@ -17,8 +26,8 @@ not the stale original status JSON. Remaining fixed batch ETA: about 12–15 hou
 after restart; this does not complete all paper experiments.
 
 **Completed seed1 search7:** 842.87 return/38.5% completion versus direct
-865.42/30.5%. The full 58-episode recovery prefix matched exactly; search21 is
-evaluating. [Descriptive diagnosis](SEED1_SEARCH7_DIAGNOSIS_2026-10-30.md) attributes
+865.42/30.5%. The full 58-episode recovery prefix matched exactly.
+[Descriptive diagnosis](SEED1_SEARCH7_DIAGNOSIS_2026-10-30.md) attributes
 −22.439 reward points to less tile coverage and −0.117 to extra native steps.
 Some unfinished runs stall or fail badly despite more total completions. The
 specific model/utility/proposal cause remains unisolated; current methods stay frozen.
@@ -37,7 +46,7 @@ competence gates remain open. CPU verification overlapped seed1 search7: keep ra
 times and require separate clean timing before efficiency claims. Frozen driving
 source and methods are unchanged.
 
-Updated 2026-10-30. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
+Updated 2026-10-31. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
 [Roadmap](ROADMAP.md) · [Latest development results](SEQUENCE_SEARCH_2026-10-29.md)
 
 The first development experiment and control-audit follow-up are complete. The final held-out paper

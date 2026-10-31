@@ -37,6 +37,7 @@ register separates user ideas, assistant refinements, prior work and measured ev
 | [Offline action-distribution audit](docs/ACTION_DISTRIBUTION_AUDIT_2026-10-30.md) | Completed twelve-checkpoint audit: effective local variation can rise as learned scale falls; exact replay, clipping and update summaries |
 | [Local independent-seed replications](docs/LOCAL_REPLICATIONS_2026-10-30.md) | Fixed retained recipe, seeds 1/2, serial frozen execution, 2M review per seed and all checkpoint curves |
 | [Paper execution ledger](docs/PAPER_CAMPAIGN_2026-10-30.md) | Required versus optional studies, fixed 3-policy/200-track queue, costs, remaining claim gates and realistic timeline |
+| [October31 progress and ETA](docs/PROGRESS_2026-10-31.md) | Verified overnight system sleep, scoped keep-awake guard, current queues and remaining paper work |
 | [Storage recovery and revised ETA](docs/CAMPAIGN_RECOVERY_2026-10-30.md) | Disk-full interruption, verified retained panels, unchanged-method restart on the secondary volume and recovery cost accounting |
 | [Seed1 search7 loss diagnosis](docs/SEED1_SEARCH7_DIAGNOSIS_2026-10-30.md) | Exact reward accounting, poorer unfinished runs and observed stalls; separates measured effects from unproven causes |
 | [Objective-alignment pilot](docs/OBJECTIVE_ALIGNMENT_2026-10-30.md) | Separate score-only method, three penalty settings, two actors, actual-return selection and a dependency-gated twenty-track pilot |

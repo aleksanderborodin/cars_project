@@ -1,0 +1,39 @@
+{
+  "observed_utc": "2026-10-31T08:01:20.394499+00:00",
+  "scope": "completed seed1 200-track development condition; not full three-actor study or final test",
+  "search21": {
+    "seed": 1,
+    "condition": "search21",
+    "evaluation": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/runs/policy_physics_search/paper_search_20261030_s1_search21_recovery1",
+    "reused": false,
+    "mean_return": 845.3713720288291,
+    "completion": 0.54,
+    "model_sha256": "5fef21782621a16f326428dc94554baff2eb142cd040f5b623268bd9c5f1379b",
+    "metrics_sha256": "1f510788fb06a1b802a198556616aefcff6c53daebc570bd37a296a9effc000d",
+    "config_sha256": "18a63d67ec760c0664cccf8518f44fbec84a048b7100a95a931f8188c8a457f2"
+  },
+  "direct": {
+    "mean_return": 865.4215546490381,
+    "completion": 0.305,
+    "evaluation": "/home/sasha/Desktop/cars_project/runs/recurrent_ppo/paper_search_20261030_s1_direct"
+  },
+  "mean_return_change": -20.050182620208943,
+  "completion_change_percentage_points": 23.500000000000004,
+  "cost": {
+    "native_frames": 180424,
+    "decisions": 45147,
+    "model_transitions": 18961740,
+    "internal_physics_frames": 75846960,
+    "actor_forward_examples": 18058800,
+    "wall_time_s": 14207.695750814019
+  },
+  "provenance": {
+    "config.json": "18a63d67ec760c0664cccf8518f44fbec84a048b7100a95a931f8188c8a457f2",
+    "metrics.csv": "1f510788fb06a1b802a198556616aefcff6c53daebc570bd37a296a9effc000d",
+    "cost.json": "0431a19cf1aaac70566176f9cd886b1d8e413129616ed88d4e4987c34e61fa6f",
+    "summary.json": "d0a94059d8ddbada75fd103da846312fdbfd00610357441e61766417098367d3"
+  },
+  "current_main_active": "paper_search_20261030_s2_fixed_recovery1",
+  "objective_pilot_changed_based_on_this_result": false,
+  "private_or_heldout_access": false
+}

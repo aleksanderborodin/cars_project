@@ -1,5 +1,11 @@
 # Next moves: establish useful simulation improvement over strong drivers
 
+**October31 execution:** the queues are healthy after an11h09m system suspend.
+[The verified progress note](PROGRESS_2026-10-31.md) supersedes yesterday's calendar
+ETA. Seed1 search21 is complete; finish seed2 conditions, then the armed score pilot;
+allow roughly7–9.5h of continuous operation for both. A scoped keep-awake guard
+is active. External baselines and component studies remain subsequent work.
+
 **Next queued intervention:** [objective alignment](OBJECTIVE_ALIGNMENT_2026-10-30.md)
 follows the user's request to improve actual driving while keeping the study honest.
 The separate score-only pilot waits for the full current matrix; original results
@@ -27,7 +33,7 @@ charge its synthesized-control simulation and preserve algorithm identity.
 Driving training/profiles remain deferred during the active queue; bounded software
 verification overlap is recorded and requires separate clean latency measurement.
 
-Updated 2026-10-30. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
+Updated 2026-10-31. [Index](../README.md) · [Specification](EXPERIMENT.md) ·
 [Architecture](SIMULATOR_SEARCH_PLAN.md) · [Evidence](PROGRAMMED_SIMULATOR_RESULTS.md)
 
 This is the active execution order after the programmed-physics pilot. It refines

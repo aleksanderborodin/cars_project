@@ -1,0 +1,67 @@
+{
+  "observed_utc": "2026-10-31T07:58:09.572627+00:00",
+  "main": {
+    "state": "evaluating",
+    "completed_conditions": 19,
+    "active": "paper_search_20261030_s1_search21_recovery1",
+    "active_completed_tracks": 199,
+    "status_path": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/queue/status.json",
+    "free_bytes": 15913889792
+  },
+  "objective_pilot": {
+    "state": "waiting_for_frozen_matrix",
+    "completed_conditions": 0,
+    "native_frames": 0,
+    "status_path": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/objective_alignment_20261030/queue/status.json"
+  },
+  "verified_suspend": {
+    "source": "journalctl -u systemd-suspend.service",
+    "entered_local": "2026-10-30T23:41:00+03:00",
+    "resumed_local": "2026-10-31T10:50:20+03:00",
+    "duration_seconds": 40160,
+    "wallclock_minus_controller_elapsed_seconds": 40161.23694692759,
+    "effect": "calendar ETA delayed; frozen methods and completed data unchanged; monotonic run costs exclude system suspend"
+  },
+  "temporary_awake_guard": {
+    "started_utc": "2026-10-31T07:55:01.561711+00:00",
+    "pid": 3430589,
+    "command": [
+      "systemd-inhibit",
+      "--what=idle:sleep",
+      "--mode=block",
+      "--who=CarRacing experiments",
+      "--why=Finish frozen driving matrix and queued objective pilot",
+      "/home/sasha/Desktop/cars_project/.venv/bin/python3",
+      "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/operations/awake_20261031/wait.py",
+      "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/queue/status.json",
+      "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/objective_alignment_20261030/queue/status.json"
+    ],
+    "scope": "Temporary idle/sleep inhibitor, released when both declared campaign controllers reach terminal state or exit",
+    "status_paths": [
+      "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/queue/status.json",
+      "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/objective_alignment_20261030/queue/status.json"
+    ],
+    "script_sha256": "60c58b20331c43849df6609ab4cdeeed4c51b9093a0a16b6d5794a4e9b212c60",
+    "operation_directory": "/media/sasha/72AECF44AECEFF99/cars_project_recovery_20261030/operations/awake_20261031",
+    "scientific_method_changed": false,
+    "new_simulator_frames": 0
+  },
+  "eta_remaining_hours_continuous_awake": {
+    "main": [
+      6,
+      8
+    ],
+    "objective_after_main": [
+      1,
+      1.5
+    ],
+    "combined": [
+      7,
+      9.5
+    ]
+  },
+  "eta_basis": "remaining seed1 search21 episodes, all ten seed2 conditions; search7 about0.122s/decision, search21 about0.314s/decision, at most50000 decisions per200-track condition; controls and timing variability included",
+  "full_paper_eta": "not established; strong external baselines, controlled component study and final freeze/evaluation remain",
+  "new_simulator_frames_from_status_check": 0,
+  "private_or_heldout_access": false
+}
